@@ -60,7 +60,7 @@ const NavBar = () => {
                         <Select
                             defaultValue={localStorage.getItem('language') || 'en'}
                             style={{ width: 120 }}
-                            bordered={false}
+                            variant="borderless"
                             onChange={handleLanguageChange}
                         >
                             <Option value="zh">简体中文</Option>

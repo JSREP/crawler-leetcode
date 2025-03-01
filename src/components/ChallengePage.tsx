@@ -1,19 +1,18 @@
-// src/components/ChallengePage.tsx
 import { useState, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import {
-  Button, Card, Input, List, Pagination, Select, Space, Tag, Typography
+  Button, Card, Input, List, Pagination, Select, Space, Tag, Typography, message,
 } from 'antd';
-import { ArrowDownOutlined, ArrowUpOutlined, StarFilled } from '@ant-design/icons';
+import { ArrowDownOutlined, ArrowUpOutlined, StarFilled, ShareAltOutlined } from '@ant-design/icons';
 
-type Solution = {
+export type Solution = {
   title: string;
   url: string;
   source: string;
 };
 
-type Challenge = {
+export type Challenge = {
   id: number;
   number: number;
   title: string;
@@ -29,8 +28,39 @@ const { Search } = Input;
 const { Option } = Select;
 const { Text } = Typography;
 
+const generateMockData = (count: number): Challenge[] => {
+  const tagsPool = ['JavaScript', 'React', 'WebSocket', '算法', '逆向', '网络', 'Node.js', 'TypeScript'];
+  const sources = ['LeetCode官方', '社区贡献', 'GitHub精选', '个人博客'];
+
+  return Array.from({ length: count }, (_, i) => {
+    const baseDate = new Date();
+    const createDate = new Date(baseDate.setMonth(baseDate.getMonth() - Math.random() * 24));
+    const updateDate = new Date(createDate.getTime() + Math.random() * 30 * 24 * 60 * 60 * 1000);
+
+    return {
+      id: i + 1,
+      number: i + 1,
+      title: `编程挑战题目 #${i + 1}`,
+      description: `这是用于测试分页功能的第${i + 1}个题目，包含多种算法场景的模拟数据。通过这个题目可以练习数据结构和网络协议相关技能。`,
+      difficulty: Math.floor(Math.random() * 3) + 1,
+      tags: Array.from({ length: Math.floor(Math.random() * 3) + 1 }, () =>
+          tagsPool[Math.floor(Math.random() * tagsPool.length)]
+      ),
+      solutions: Array.from({ length: Math.floor(Math.random() * 3) + 1 }, (_, j) => ({
+        title: `解决方案 ${j + 1}`,
+        url: `<url id="cv1cjqvpma9i7s5ab6t0" type="url" status="failed" title="" wc="0">https://example.com/solution/</url> ${i}-${j}`,
+        source: sources[Math.floor(Math.random() * sources.length)]
+      })),
+      createTime: createDate,
+      updateTime: Math.random() > 0.5 ? updateDate : createDate
+    };
+  });
+};
+
+export const challenges: Challenge[] = generateMockData(500);
+
 const ChallengePage = () => {
-  const { t } = useTranslation(); // 修复点1：正确获取翻译函数
+  const { t } = useTranslation();
   const [filters, setFilters] = useState({
     difficulty: 'all',
     tags: [] as string[],
@@ -41,33 +71,12 @@ const ChallengePage = () => {
   const [pagination, setPagination] = useState({ current: 1, pageSize: 10 });
   const navigate = useNavigate();
 
-  // 示例数据
-  const challenges: Challenge[] = [
-    {
-      id: 1,
-      number: 1,
-      title: '两数之和',
-      description: '给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那两个整数，并返回他们的数组下标。',
-      difficulty: 1,
-      tags: ['JavaScript-Reverse', 'WebSocket'],
-      solutions: [
-        { title: '哈希表解法', url: 'https://example.com/solution1', source: 'LeetCode官方' },
-        { title: '暴力解法', url: 'https://example.com/solution2', source: '社区贡献' }
-      ],
-      createTime: new Date('2020-01-01'),
-      updateTime: new Date('2021-03-15')
-    },
-    // 更多数据...
-  ];
-
-  // 所有可用标签
   const allTags = useMemo(() => {
     const tags = new Set<string>();
     challenges.forEach(challenge => challenge.tags.forEach(tag => tags.add(tag)));
     return Array.from(tags);
   }, []);
 
-  // 过滤和排序后的挑战列表
   const filteredChallenges = useMemo(() => {
     return challenges
         .filter(challenge => {
@@ -94,16 +103,26 @@ const ChallengePage = () => {
         });
   }, [filters, searchQuery, sortBy, sortOrder]);
 
-  // 分页后的数据
   const paginatedData = useMemo(() => {
     const start = (pagination.current - 1) * pagination.pageSize;
     return filteredChallenges.slice(start, start + pagination.pageSize);
   }, [filteredChallenges, pagination]);
 
+  const handleShare = (challenge: Challenge) => {
+    const shareText = `【${challenge.title}】\n 🌟学习地址: ${window.location.origin}/challenge/${challenge.id}`;
+    navigator.clipboard
+        .writeText(shareText)
+        .then(() => {
+          message.success('已复制到剪切板');
+        })
+        .catch(() => {
+          message.error('复制失败，请重试');
+        });
+  };
+
   return (
       <div style={{ padding: 24 }}>
         <Space direction="vertical" style={{ width: '100%' }}>
-          {/* 过滤控制区 */}
           <Space wrap>
             <Select
                 mode="multiple"
@@ -149,7 +168,6 @@ const ChallengePage = () => {
             />
           </Space>
 
-          {/* 挑战列表 */}
           <List
               grid={{ gutter: 16, column: 1 }}
               dataSource={paginatedData}
@@ -158,6 +176,7 @@ const ChallengePage = () => {
                     <Card
                         hoverable
                         onClick={() => navigate(`/challenge/${challenge.id}`)}
+                        style={{ cursor: 'pointer' }}
                     >
                       <Space direction="vertical" style={{ width: '100%' }}>
                         <Space>
@@ -180,6 +199,12 @@ const ChallengePage = () => {
                           <Text type="secondary">
                             {t('challenges.dates.updated')}: {challenge.updateTime.toLocaleDateString()}
                           </Text>
+                          <Button
+                              size="small"
+                              icon={<ShareAltOutlined />}
+                              onClick={() => handleShare(challenge)}
+                              title="点击复制分享内容"
+                          />
                         </Space>
                       </Space>
                     </Card>
@@ -187,7 +212,6 @@ const ChallengePage = () => {
               )}
           />
 
-          {/* 分页控制 */}
           <Pagination
               current={pagination.current}
               pageSize={pagination.pageSize}
