@@ -10,20 +10,12 @@ const ChallengeDetailPage = () => {
     const navigate = useNavigate();
     const challenge = challenges.find(c => c.id === Number(id));
 
-    if (!challenge) {
-        return (
-            <div style={{ padding: 24 }}>
-                <Button onClick={() => navigate(-1)} style={{ marginBottom: 16 }}>返回列表</Button>
-                <Card>
-                    <Title level={4}>题目不存在</Title>
-                    <Text>找不到ID为{id}的题目</Text>
-                </Card>
-            </div>
-        );
-    }
+    const handleTagClick = (tag: string) => {
+        navigate(`/challenges?tag=${encodeURIComponent(tag)}`);
+    };
 
     const handleShare = () => {
-        const shareText = `【${challenge.title}】\n 🌟学习地址: ${window.location.origin}/challenge/${challenge.id}`;
+        const shareText = `【${challenge?.title}】\n 🌟学习地址: ${window.location.origin}/challenge/${challenge?.id}`;
         navigator.clipboard
             .writeText(shareText)
             .then(() => {
@@ -34,8 +26,20 @@ const ChallengeDetailPage = () => {
             });
     };
 
+    if (!challenge) {
+        return (
+            <div style={{ padding: 24, maxWidth: '60%', margin: '0 auto' }}>
+                <Button onClick={() => navigate(-1)} style={{ marginBottom: 16 }}>返回列表</Button>
+                <Card>
+                    <Title level={4}>题目不存在</Title>
+                    <Text>找不到ID为{id}的题目</Text>
+                </Card>
+            </div>
+        );
+    }
+
     return (
-        <div style={{ padding: 24 }}>
+        <div style={{ padding: 24, maxWidth: '60%', margin: '0 auto' }}>
             <Button onClick={() => navigate(-1)} style={{ marginBottom: 16 }}>返回列表</Button>
             <Card style={{ position: 'relative' }}>
                 <div style={{
@@ -68,7 +72,14 @@ const ChallengeDetailPage = () => {
                             {'★'.repeat(challenge.difficulty)}
                         </Tag>
                         {challenge.tags.map(tag => (
-                            <Tag key={tag} color="blue">{tag}</Tag>
+                            <Tag
+                                key={tag}
+                                color="blue"
+                                onClick={() => handleTagClick(tag)}
+                                style={{ cursor: 'pointer' }}
+                            >
+                                {tag}
+                            </Tag>
                         ))}
                         <Text type="secondary" style={{ marginLeft: 8 }}>
                             创建时间: {challenge.createTime.toLocaleDateString()}
