@@ -1,0 +1,20 @@
+export interface Challenge {
+    id: number;
+    title: string;
+    difficulty: string;
+    description: string;
+    example: string;
+    testCases: Array<{
+        input: string;
+        expectedOutput: string;
+    }>;
+    createdAt: string;
+    updatedAt: string;
+    tags: string[];
+    solutions: Array<{
+        title: string;
+        url: string;
+        source: string;
+    }>;
+    externalLink: string;
+}

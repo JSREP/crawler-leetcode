@@ -1,8 +1,11 @@
-import {useEffect, useMemo, useState} from 'react';
-import {useTranslation} from 'react-i18next';
-import {useNavigate, useSearchParams} from 'react-router-dom';
-import {Button, Card, Input, List, message, Pagination, Select, Space, Tag, Typography,} from 'antd';
-import {ArrowDownOutlined, ArrowUpOutlined, CloseOutlined, StarFilled} from '@ant-design/icons';
+import { useEffect, useMemo, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useNavigate, useSearchParams } from 'react-router-dom';
+import { Button, Card, Input, List, Pagination, Select, Space, Tag, Typography } from 'antd';
+import { ArrowDownOutlined, ArrowUpOutlined, CloseOutlined } from '@ant-design/icons';
+import StarRating from './StarRating';
+// 使用模拟数据代替插件导入
+// import rawChallenges from '../plugins/VirtualFileSystemPlugin'; // 移除错误的导入
 
 export type Solution = {
     title: string;
@@ -20,42 +23,74 @@ export type Challenge = {
     solutions: Solution[];
     createTime: Date;
     updateTime: Date;
+    externalLink: string;
 };
 
-const {Search} = Input;
-const {Option} = Select;
-const {Text} = Typography;
-
-const generateMockData = (count: number): Challenge[] => {
-    const tagsPool = ['JavaScript', 'React', 'WebSocket', '算法', '逆向', '网络', 'Node.js', 'TypeScript'];
-    const sources = ['LeetCode官方', '社区贡献', 'GitHub精选', '个人博客'];
-
-    return Array.from({length: count}, (_, i) => {
-        const baseDate = new Date();
-        const createDate = new Date(baseDate.setMonth(baseDate.getMonth() - Math.random() * 24));
-        const updateDate = new Date(createDate.getTime() + Math.random() * 30 * 24 * 60 * 60 * 1000);
-
-        return {
-            id: i + 1,
-            number: i + 1,
-            title: `编程挑战题目 #${i + 1}`,
-            description: `这是用于测试分页功能的第${i + 1}个题目，包含多种算法场景的模拟数据。通过这个题目可以练习数据结构和网络协议相关技能。`,
-            difficulty: Math.floor(Math.random() * 3) + 1,
-            tags: Array.from({length: Math.floor(Math.random() * 3) + 1}, () =>
-                tagsPool[Math.floor(Math.random() * tagsPool.length)]
-            ),
-            solutions: Array.from({length: Math.floor(Math.random() * 3) + 1}, (_, j) => ({
-                title: `解决方案 ${j + 1}`,
-                url: `<url id="cv1cjqvpma9i7s5ab6t0" type="url" status="failed" title="" wc="0">https://example.com/solution/</url> ${i}-${j}`,
-                source: sources[Math.floor(Math.random() * sources.length)]
-            })),
-            createTime: createDate,
-            updateTime: Math.random() > 0.5 ? updateDate : createDate
-        };
-    });
+const parseChallenges = (raw: any[]): Challenge[] => {
+    if (!Array.isArray(raw)) {
+        console.warn('Expected raw challenges to be an array, got:', typeof raw);
+        return []; // 返回空数组避免错误
+    }
+    return raw.map(c => ({
+        id: c.id,
+        number: c.number,
+        title: c.title,
+        description: c.description,
+        difficulty: c.difficulty,
+        tags: c.tags,
+        solutions: c.solutions,
+        createTime: new Date(c.createTime),
+        updateTime: new Date(c.updateTime),
+        externalLink: c.externalLink
+    }));
 };
 
-export const challenges: Challenge[] = generateMockData(500);
+// 使用模拟数据代替实际数据
+const mockChallenges = [
+  {
+    id: 1,
+    number: 1,
+    title: "两数之和",
+    description: "给定一个整数数组和一个目标值，找出数组中和为目标值的两个数。",
+    difficulty: 1,
+    tags: ["数组", "哈希表"],
+    solutions: [],
+    createTime: "2023-01-01T00:00:00.000Z",
+    updateTime: "2023-01-01T00:00:00.000Z",
+    externalLink: "https://leetcode.cn/problems/two-sum/"
+  },
+  {
+    id: 2,
+    number: 2,
+    title: "两数相加",
+    description: "给你两个非空的链表，表示两个非负的整数。它们每位数字都是按照逆序的方式存储的，并且每个节点只能存储一位数字。请你将两个数相加，并以相同形式返回一个表示和的链表。",
+    difficulty: 2,
+    tags: ["链表", "数学"],
+    solutions: [],
+    createTime: "2023-01-02T00:00:00.000Z",
+    updateTime: "2023-01-02T00:00:00.000Z",
+    externalLink: "https://leetcode.cn/problems/add-two-numbers/"
+  },
+  {
+    id: 3,
+    number: 3,
+    title: "无重复字符的最长子串",
+    description: "给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。",
+    difficulty: 2,
+    tags: ["哈希表", "字符串", "滑动窗口"],
+    solutions: [],
+    createTime: "2023-01-03T00:00:00.000Z",
+    updateTime: "2023-01-03T00:00:00.000Z",
+    externalLink: "https://leetcode.cn/problems/longest-substring-without-repeating-characters/"
+  }
+];
+
+// 使用模拟数据
+export const challenges: Challenge[] = parseChallenges(mockChallenges);
+
+const { Search } = Input;
+const { Option } = Select;
+const { Text } = Typography;
 
 const ChallengePage = () => {
     const {t} = useTranslation();
@@ -80,6 +115,12 @@ const ChallengePage = () => {
         currentSearchParams.delete('tags');
         newTags.forEach(tag => currentSearchParams.append('tags', tag));
         navigate(`/challenges?${currentSearchParams.toString()}`);
+    };
+
+    const handleDifficultyClick = (difficulty: string) => {
+        const newSearchParams = new URLSearchParams(searchParams);
+        newSearchParams.set('difficulty', difficulty);
+        navigate(`/challenges?${newSearchParams.toString()}`);
     };
 
     useEffect(() => {
@@ -130,18 +171,6 @@ const ChallengePage = () => {
         return filteredChallenges.slice(start, start + pagination.pageSize);
     }, [filteredChallenges, pagination]);
 
-    const handleShare = (challenge: Challenge) => {
-        const shareText = `【${challenge.title}】\n 🌟学习地址: ${window.location.origin}/challenge/${challenge.id}`;
-        navigator.clipboard
-            .writeText(shareText)
-            .then(() => {
-                message.success('已复制到剪切板');
-            })
-            .catch(() => {
-                message.error('复制失败，请重试');
-            });
-    };
-
     const handleFilterRemove = (type: 'tag' | 'difficulty', value?: string) => {
         const newSearchParams = new URLSearchParams(searchParams);
 
@@ -171,7 +200,6 @@ const ChallengePage = () => {
             transition: 'all 0.3s ease'
         }}>
             <Space direction="vertical" style={{width: '100%'}}>
-                {/* 筛选条件展示区域 */}
                 {(filters.tags.length > 0 || filters.difficulty !== 'all') && (
                     <Space wrap style={{marginBottom: 16}}>
                         {filters.difficulty !== 'all' && (
@@ -180,7 +208,7 @@ const ChallengePage = () => {
                                 onClose={() => handleFilterRemove('difficulty')}
                                 style={{background: '#f0f5ff', borderColor: '#adc6ff'}}
                             >
-                                难度: {'★'.repeat(parseInt(filters.difficulty))}
+                                难度: <StarRating difficulty={parseInt(filters.difficulty)} />
                             </Tag>
                         )}
                         {filters.tags.map(tag => (
@@ -207,7 +235,7 @@ const ChallengePage = () => {
                 <Space wrap>
                     <Select
                         mode="multiple"
-                        placeholder={t('challenges.filters.tags')}
+                        placeholder="筛选标签"
                         style={{width: 200}}
                         value={filters.tags}
                         onChange={tags => {
@@ -220,19 +248,17 @@ const ChallengePage = () => {
                     />
 
                     <Select
-                        placeholder={t('challenges.filters.difficulty')}
-                        style={{width: 120}}
+                        placeholder="选择难度"
+                        style={{width: 140}}
                         value={filters.difficulty}
-                        onChange={difficulty => {
-                            const newSearchParams = new URLSearchParams(searchParams);
-                            newSearchParams.set('difficulty', difficulty);
-                            navigate(`/challenges?${newSearchParams.toString()}`);
-                        }}
+                        onChange={difficulty => handleDifficultyClick(difficulty)}
                     >
-                        <Option value="all">{t('challenges.filters.allDifficulties')}</Option>
-                        <Option value="1">★</Option>
-                        <Option value="2">★★</Option>
-                        <Option value="3">★★★</Option>
+                        <Option value="all">全部难度</Option>
+                        {[1, 2, 3, 4, 5].map(n => (
+                            <Option key={n} value={String(n)}>
+                                <StarRating difficulty={n} />
+                            </Option>
+                        ))}
                     </Select>
 
                     <Select
@@ -240,10 +266,10 @@ const ChallengePage = () => {
                         style={{width: 120}}
                         onChange={value => setSortBy(value)}
                     >
-                        <Option value="number">{t('challenges.sort.number')}</Option>
-                        <Option value="difficulty">{t('challenges.sort.difficulty')}</Option>
-                        <Option value="createTime">{t('challenges.sort.createTime')}</Option>
-                        <Option value="updateTime">{t('challenges.sort.updateTime')}</Option>
+                        <Option value="number">编号排序</Option>
+                        <Option value="difficulty">难度排序</Option>
+                        <Option value="createTime">创建时间</Option>
+                        <Option value="updateTime">更新时间</Option>
                     </Select>
 
                     <Button
@@ -252,7 +278,7 @@ const ChallengePage = () => {
                     />
 
                     <Search
-                        placeholder={t('challenges.filters.search')}
+                        placeholder="搜索题目"
                         allowClear
                         style={{width: 200}}
                         onSearch={value => setSearchQuery(value)}
@@ -278,9 +304,10 @@ const ChallengePage = () => {
                                     <Text type="secondary">{challenge.description}</Text>
 
                                     <Space wrap>
-                                        <Tag icon={<StarFilled/>} color="gold">
-                                            {'★'.repeat(challenge.difficulty)}
-                                        </Tag>
+                                        <StarRating
+                                            difficulty={challenge.difficulty}
+                                            onClick={(difficulty) => handleDifficultyClick(String(difficulty))}
+                                        />
                                         {challenge.tags.map(tag => (
                                             <Tag
                                                 key={tag}
@@ -295,12 +322,23 @@ const ChallengePage = () => {
                                             </Tag>
                                         ))}
                                         <Text type="secondary">
-                                            {t('challenges.dates.created')}: {challenge.createTime.toLocaleDateString()}
+                                            创建时间: {challenge.createTime.toLocaleDateString()}
                                         </Text>
                                         <Text type="secondary">
-                                            {t('challenges.dates.updated')}: {challenge.updateTime.toLocaleDateString()}
+                                            更新时间: {challenge.updateTime.toLocaleDateString()}
                                         </Text>
                                     </Space>
+
+                                    <div style={{marginTop: 12}}>
+                                        <Button
+                                            type="link"
+                                            href={challenge.externalLink}
+                                            target="_blank"
+                                            onClick={(e) => e.stopPropagation()}
+                                        >
+                                            去试试 ➔
+                                        </Button>
+                                    </div>
                                 </Space>
                             </Card>
                         </List.Item>

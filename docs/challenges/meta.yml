@@ -1,0 +1,69 @@
+# 元数据配置文件格式版本号
+# 用于在数据结构变更时进行版本兼容性校验，必须为整数
+# 当数据结构发生不兼容变更时需递增版本号
+version: 1
+
+# 挑战题目集合定义
+challenges:
+  # 单个挑战题目定义，每个题目都有一个唯一的id标识，id是必须的
+  - id: xxx
+    # 题目标签系统（数组格式，选填）
+    # 用于分类和筛选，支持多个标签
+    # 示例: ["js-reverse", "wasm", "jsvmp"]
+    tags:
+      - js-reverse
+      - wasm
+      - jsvmp
+
+    # 题目适用平台（枚举值，必填）
+    # 允许值: Web / Android / iOS
+    platform: Web
+
+    # 题目显示名称（必填）
+    # 作为列表和详情页的标题，建议控制在30个字符以内
+    name: xx
+
+    # 难度评级（整数类型，必填）
+    # 取值范围: 1-5，1表示最简单，5表示最难
+    # 前端展示时会转换为星级显示
+    difficulty-level: 1
+
+    # 题目文字描述（字符串）
+    # 用于列表项的简短描述，建议使用纯文本格式
+    # 与description-markdown字段二选一使用，必须选一个
+    description: xx
+
+    # Markdown格式详细描述（可选）
+    # 当需要复杂排版时使用，优先级高于description字段，必须选一个
+    # 只能使用相对路径
+    description-markdown: xx
+
+    # 题目所在页面的URL地址的ase64
+    base64-url: aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8=
+
+    # 链接有效性状态（布尔值）
+    # 标记题目链接是否失效，true表示已失效
+    # 失效题目会在前端显示警告标志
+    is-expired: false
+
+    # 解决方案集合（数组）
+    # 每个解决方案应包含以下字段:
+    #   title: 解决方案标题（必填）
+    #   url: 解决方案链接（完整URL）
+    #   source: 来源平台（如GitHub、LeetCode等）
+    #   author: 提交者名称（可选）
+    solutions:
+      - title: xxx
+        url: xxx
+        source: xx
+        author: xxx
+
+    # 创建时间（ISO 8601格式）
+    # 记录题目首次创建时间，格式: YYYY-MM-DD HH:mm:ss
+    # 时区默认为UTC+8
+    create-time: 2025-03-01 20:42:17
+
+    # 最后更新时间（ISO 8601格式）
+    # 记录题目最后修改时间，格式与create-time相同
+    # 当任何字段变更时需同步更新此时间
+    update-time: 2025-03-01 20:42:17
