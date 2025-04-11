@@ -7,6 +7,7 @@ import { challenges } from './ChallengeData';
 import ChallengeFilters from './ChallengeFilters';
 import ChallengeControls from './ChallengeControls';
 import SimpleChallengeList from './SimpleChallengeList';
+import { searchService } from '../../services/SearchService';
 
 /**
  * 挑战列表页面组件
@@ -25,6 +26,11 @@ const ChallengeListPage = () => {
     const [pagination, setPagination] = useState({ current: 1, pageSize: 10 });
     const navigate = useNavigate();
     const [searchParams] = useSearchParams();
+
+    // 初始化搜索服务
+    useEffect(() => {
+        searchService.initialize(challenges);
+    }, []);
 
     // 处理标签点击
     const handleTagClick = (clickedTag: string) => {
@@ -53,6 +59,13 @@ const ChallengeListPage = () => {
         navigate(`/challenges?${newSearchParams.toString()}`);
     };
 
+    // 处理搜索
+    const handleSearch = (query: string) => {
+        setSearchQuery(query);
+        // 重置分页到第一页
+        setPagination(prev => ({ ...prev, current: 1 }));
+    };
+
     // 从URL同步过滤器状态
     useEffect(() => {
         const tags = searchParams.getAll('tags');
@@ -79,39 +92,32 @@ const ChallengeListPage = () => {
         return Array.from(platforms);
     }, []);
 
-    // 过滤和排序挑战
+    // 使用Fuse.js过滤和排序挑战
     const filteredChallenges = useMemo(() => {
-        return challenges
-            .filter((challenge: Challenge) => {
-                const matchesSearch = [challenge.title, challenge.description]
-                    .some(text => text.toLowerCase().includes(searchQuery.toLowerCase()));
+        // 使用搜索服务过滤
+        const filtered = searchService.filterChallenges(challenges, {
+            tags: filters.tags,
+            difficulty: filters.difficulty,
+            platform: filters.platform,
+            query: searchQuery
+        });
 
-                const matchesDifficulty = filters.difficulty === 'all' ||
-                    challenge.difficulty === parseInt(filters.difficulty);
-
-                const matchesTags = filters.tags.length === 0 ||
-                    filters.tags.every(tag => challenge.tags.includes(tag));
-                    
-                const matchesPlatform = filters.platform === 'all' ||
-                    challenge.platform === filters.platform;
-
-                return matchesSearch && matchesDifficulty && matchesTags && matchesPlatform;
-            })
-            .sort((a: Challenge, b: Challenge) => {
-                const orderModifier = sortOrder === 'asc' ? 1 : -1;
-                switch (sortBy) {
-                    case 'number':
-                        return (a.number - b.number) * orderModifier;
-                    case 'difficulty':
-                        return (a.difficulty - b.difficulty) * orderModifier;
-                    case 'createTime':
-                        return (a.createTime.getTime() - b.createTime.getTime()) * orderModifier;
-                    case 'updateTime':
-                        return (a.updateTime.getTime() - b.updateTime.getTime()) * orderModifier;
-                    default:
-                        return 0;
-                }
-            });
+        // 排序
+        return filtered.sort((a: Challenge, b: Challenge) => {
+            const orderModifier = sortOrder === 'asc' ? 1 : -1;
+            switch (sortBy) {
+                case 'number':
+                    return (a.number - b.number) * orderModifier;
+                case 'difficulty':
+                    return (a.difficulty - b.difficulty) * orderModifier;
+                case 'createTime':
+                    return (a.createTime.getTime() - b.createTime.getTime()) * orderModifier;
+                case 'updateTime':
+                    return (a.updateTime.getTime() - b.updateTime.getTime()) * orderModifier;
+                default:
+                    return 0;
+            }
+        });
     }, [filters, searchQuery, sortBy, sortOrder]);
 
     // 分页数据
@@ -177,6 +183,8 @@ const ChallengeListPage = () => {
                     onRemoveDifficulty={() => handleFilterRemove('difficulty')}
                     onRemovePlatform={() => handleFilterRemove('platform')}
                     onClearAll={handleClearAllFilters}
+                    onSearch={handleSearch}
+                    searchValue={searchQuery}
                 />
 
                 {/* 搜索和控制项 */}
@@ -193,7 +201,6 @@ const ChallengeListPage = () => {
                     onPlatformChange={handlePlatformChange}
                     onSortByChange={setSortBy}
                     onSortOrderChange={() => setSortOrder(prev => prev === 'asc' ? 'desc' : 'asc')}
-                    onSearch={setSearchQuery}
                 />
 
                 {/* 挑战列表和分页 */}
