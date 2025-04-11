@@ -203,6 +203,7 @@ const ChallengeListPage = () => {
                                 onClick={() => navigate(`/challenge/${challenge.id}`)}
                                 onTagClick={handleTagClick}
                                 onDifficultyClick={(difficulty) => handleDifficultyClick(String(difficulty))}
+                                onPlatformClick={(platform) => handlePlatformChange(platform)}
                             />
                         </List.Item>
                     )}
