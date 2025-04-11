@@ -1,0 +1,32 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 712
+    id-alias: mock-challenge-712
+    tags:
+      - Access-Control
+      - Authentication
+      - OAuth
+    platform: Desktop
+    name: 'Mock挑战题目 #712'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Aliqua crepusculum ambitus solutio adimpleo utroque
+      eos aqua deprecator. Stipes tersus caveo vapulus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2gydVVISExLamM=
+    is-expired: false
+    solutions:
+      - title: Decet vinco bestia.
+        url: https://adolescent-privilege.name/
+        source: Blog
+        author: Dr. Alberto Bahringer
+      - title: Aut rem corrigo.
+        url: https://intrepid-accelerator.name
+        source: Medium
+        author: Terry Conroy
+      - title: Abeo contabesco tego.
+        url: https://hasty-insolence.com/
+        source: StackOverflow
+        author: Eddie Goyette
+    create-time: '2025-01-17 07:58:33'
+    update-time: '2025-03-13 01:44:19'

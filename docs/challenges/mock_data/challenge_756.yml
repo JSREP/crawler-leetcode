@@ -1,0 +1,26 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 756
+    id-alias: mock-challenge-756
+    tags:
+      - CSP
+      - Access-Control
+      - Command-Injection
+      - GraphQL
+    platform: API
+    name: 'Mock挑战题目 #756'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Adfero adaugeo desipio sumo porro ciminatio combibo
+      veniam. Porro minima magni conduco copiose vaco odit compono sollers
+      aedificium.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1d2NXdrUGt2Nkg=
+    is-expired: false
+    solutions:
+      - title: Succurro congregatio spiritus.
+        url: https://unrealistic-zen.name
+        source: Medium
+        author: Daisy Abbott
+    create-time: '2023-11-05 10:37:01'
+    update-time: '2024-07-30 12:33:06'

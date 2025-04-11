@@ -1,0 +1,28 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 101
+    id-alias: mock-challenge-101
+    tags:
+      - Authentication
+      - Deserialization
+      - GraphQL
+    platform: API
+    name: 'Mock挑战题目 #101'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Sto amiculum vestrum aedificium summisse textilis
+      hic. Callide timidus thermae.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1NqM01jOUN5Zk0=
+    is-expired: false
+    solutions:
+      - title: Stabilis utrum cruciamentum.
+        url: https://superficial-ice-cream.name
+        source: Medium
+        author: Alice Okuneva
+      - title: Aeternus clementia statim.
+        url: https://flawless-premise.com/
+        source: Blog
+        author: Roderick Crist
+    create-time: '2023-04-20 14:47:10'
+    update-time: '2024-12-13 01:56:55'

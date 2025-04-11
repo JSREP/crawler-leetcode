@@ -1,0 +1,32 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 180
+    id-alias: mock-challenge-180
+    tags:
+      - Deserialization
+      - Authentication
+      - API-Security
+    platform: IoT
+    name: 'Mock挑战题目 #180'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Crebro adulescens texo acsi tantillus. Cariosus
+      degenero repellendus agnitio cruentus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3hTdXZ5WUVIQmc=
+    is-expired: false
+    solutions:
+      - title: Thermae absens facilis.
+        url: https://big-requirement.net
+        source: Medium
+        author: Felipe Fadel
+      - title: Demo aestas acies.
+        url: https://elastic-gray.com
+        source: GitHub
+        author: Nettie Goyette
+      - title: Somniculosus catena delicate.
+        url: https://murky-hyphenation.name/
+        source: Blog
+        author: Dr. Susie Barton
+    create-time: '2023-11-01 04:58:19'
+    update-time: '2024-12-01 03:32:24'

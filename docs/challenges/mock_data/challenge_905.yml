@@ -1,0 +1,19 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 905
+    id-alias: mock-challenge-905
+    tags:
+      - SQL-Injection
+      - Hashing
+    platform: Mobile
+    name: 'Mock挑战题目 #905'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Crustulum addo utrum theatrum atavus et tersus iure
+      aer veritatis. Cohors tibi adsidue reiciendis auctor.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3R0djBOM09UMXY=
+    is-expired: false
+    solutions: []
+    create-time: '2023-08-12 10:05:41'
+    update-time: '2024-06-21 16:51:33'

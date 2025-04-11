@@ -1,0 +1,22 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 163
+    id-alias: mock-challenge-163
+    tags:
+      - Input-Validation
+      - XSS
+      - Mobile-Security
+      - CSP
+      - CORS
+    platform: IoT
+    name: 'Mock挑战题目 #163'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Accusantium animus deserunt sto vigor. Vaco brevis
+      textilis cinis tamdiu amo sint.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0xlTEVoMmdGMGQ=
+    is-expired: false
+    solutions: []
+    create-time: '2023-04-13 15:40:57'
+    update-time: '2024-10-04 20:35:39'

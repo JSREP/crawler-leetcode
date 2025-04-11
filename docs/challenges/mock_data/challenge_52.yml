@@ -1,27 +1,19 @@
 # 挑战题目文件
 version: 1
-
 challenges:
-  - id: mock-challenge-52
+  - id: 52
+    id-alias: mock-challenge-52
     tags:
-      - device-motion
-      - rate-limiting
-      - webpack
-      - js-reverse
-    platform: Android
-    name: Mock挑战题目 #52
-    difficulty-level: 4
-    description: 这是一个示例挑战题目的描述，难度为4星级。
-    base64-url: aHR0cHM6Ly93d3cuZXhhbXBsZS5jb20vcHJvYmxlbS94eXoxMjM=
+      - JWT
+      - XXE
+    platform: API
+    name: 'Mock挑战题目 #52'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Quasi velut velociter copiose creator pectus amor
+      creptio explicabo cerno. Abstergo vito bibo enim denego.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1F1VzBuVUYwTUk=
     is-expired: false
-    solutions:
-      - title: Hook方法绕过
-        url: https://github.com/user/repo
-        source: GitHub
-        author: Web Security Expert
-      - title: Hook方法绕过
-        url: https://gist.github.com/user/id
-        source: StackOverflow
-        author: 
-    create-time: 2023-06-15 13:02:14
-    update-time: 2025-10-13 14:47:46
+    solutions: []
+    create-time: '2024-09-30 06:00:35'
+    update-time: '2025-02-01 14:15:50'

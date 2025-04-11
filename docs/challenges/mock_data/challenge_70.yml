@@ -1,24 +1,28 @@
 # 挑战题目文件
 version: 1
-
 challenges:
-  - id: mock-challenge-70
+  - id: 70
+    id-alias: mock-challenge-70
     tags:
-      - browser-check
-    platform: Android
-    name: Mock挑战题目 #70
-    difficulty-level: 4
-    description: 这是一个示例挑战题目的描述，难度为4星级。
-    base64-url: aHR0cHM6Ly9sZWV0Y29kZS5jb20vcXVpei82Nzg5MA==
+      - XSS
+      - CSRF
+      - Output-Encoding
+    platform: Desktop
+    name: 'Mock挑战题目 #70'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Aestus umquam casso. Votum caute calcar cribro tribuo
+      verecundia.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzR5SDhLNGhMUXo=
     is-expired: false
     solutions:
-      - title: Hook方法绕过
-        url: https://medium.com/@user/article
-        source: GitHub
-        author: 
-      - title: 使用Puppeteer绕过检测
-        url: https://github.com/user/repo
+      - title: Combibo tactus theologus.
+        url: https://rectangular-insolence.info/
+        source: Blog
+        author: Mrs. Harriet Wunsch-Daugherty DDS
+      - title: Clibanus admoneo tristis.
+        url: https://brown-assist.com/
         source: Medium
-        author: 
-    create-time: 2025-03-11 09:08:00
-    update-time: 2024-12-09 05:22:06
+        author: Shannon Rempel
+    create-time: '2024-06-16 11:00:24'
+    update-time: '2024-10-29 13:37:33'

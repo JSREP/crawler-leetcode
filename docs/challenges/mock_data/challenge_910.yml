@@ -1,0 +1,31 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 910
+    id-alias: mock-challenge-910
+    tags:
+      - SSRF
+      - SQL-Injection
+    platform: Mobile
+    name: 'Mock挑战题目 #910'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Sordeo odit alioqui hic. Mollitia vindico absconditus
+      cupressus ascit distinctio.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0ZzdFo3UEtuZ2k=
+    is-expired: true
+    solutions:
+      - title: Molestiae cohaero creta.
+        url: https://hot-dandelion.info
+        source: StackOverflow
+        author: Matthew Littel
+      - title: Aqua calculus abbas.
+        url: https://funny-marimba.com
+        source: GitHub
+        author: Caroline Roberts
+      - title: Cultura maxime tristis.
+        url: https://expert-mallard.biz/
+        source: Blog
+        author: Randall Hermann PhD
+    create-time: '2024-04-11 08:50:28'
+    update-time: '2025-03-07 02:08:54'

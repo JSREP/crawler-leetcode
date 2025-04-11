@@ -1,0 +1,34 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 852
+    id-alias: mock-challenge-852
+    tags:
+      - SQL-Injection
+      - Output-Encoding
+      - Authorization
+      - Input-Validation
+      - CSRF
+    platform: API
+    name: 'Mock挑战题目 #852'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Vomer testimonium volup atrox itaque turba abutor
+      adopto denuncio nisi. Ex tolero ante.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3JkdUw0UkFqamE=
+    is-expired: false
+    solutions:
+      - title: Cunae caput venustas.
+        url: https://strong-linseed.net/
+        source: YouTube
+        author: Dorothy McCullough
+      - title: Velit crepusculum voluntarius.
+        url: https://colossal-substitution.info
+        source: GitHub
+        author: Betsy Collier-Walter
+      - title: Minus statim conatus.
+        url: https://selfish-pearl.net/
+        source: StackOverflow
+        author: Erma Kreiger-Mertz
+    create-time: '2024-10-07 00:57:08'
+    update-time: '2025-02-23 21:08:35'

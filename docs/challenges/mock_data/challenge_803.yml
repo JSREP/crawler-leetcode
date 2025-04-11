@@ -1,0 +1,23 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 803
+    id-alias: mock-challenge-803
+    tags:
+      - GraphQL
+      - OAuth
+      - Hashing
+      - File-Upload
+      - SQL-Injection
+    platform: Web
+    name: 'Mock挑战题目 #803'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Alienus calculus attollo ustilo collum color tenetur
+      cur. Crinis delibero curriculum dedecor accommodo corroboro iure voco
+      caute defendo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0Y1WkhySTM1amo=
+    is-expired: true
+    solutions: []
+    create-time: '2025-02-28 22:07:58'
+    update-time: '2025-04-01 00:25:47'

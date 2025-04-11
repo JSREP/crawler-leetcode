@@ -1,0 +1,31 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 745
+    id-alias: mock-challenge-745
+    tags:
+      - Command-Injection
+      - Session-Management
+    platform: Web
+    name: 'Mock挑战题目 #745'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Usitas cicuta thermae confugo deludo cupiditas.
+      Adstringo ancilla crastinus modi.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1ZTeXlFaTZaSkw=
+    is-expired: false
+    solutions:
+      - title: Abeo decumbo contra.
+        url: https://finished-eyeliner.info
+        source: Medium
+        author: Dr. John Stehr DVM
+      - title: Denique nemo umerus.
+        url: https://clear-disclosure.name/
+        source: StackOverflow
+        author: Shirley Muller
+      - title: Adeo aequitas tolero.
+        url: https://webbed-midwife.name
+        source: Blog
+        author: Aaron Cummings
+    create-time: '2024-04-14 04:29:59'
+    update-time: '2024-11-14 18:18:13'

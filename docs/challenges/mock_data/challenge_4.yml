@@ -1,31 +1,26 @@
 # 挑战题目文件
 version: 1
-
 challenges:
-  - id: mock-challenge-4
+  - id: 4
+    id-alias: mock-challenge-4
     tags:
-      - canvas-fingerprint
-      - cookie-protection
-      - js-reverse
-      - anti-debug
-    platform: Web
-    name: Mock挑战题目 #4
-    difficulty-level: 1
-    description: 这是一个示例挑战题目的描述，难度为1星级。
-    base64-url: aHR0cHM6Ly93d3cuZXhhbXBsZS5jb20vcXVpei9hYmNkZWY=
+      - Input-Validation
+      - OAuth
+      - XSS
+      - JWT
+      - Encryption
+    platform: IoT
+    name: 'Mock挑战题目 #4'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Venia tollo conqueror cariosus suasoria minus
+      sustineo vorax quod amplexus. Nesciunt cultellus ceno creator approbo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2NZY0ZZUWxQdE8=
     is-expired: false
     solutions:
-      - title: Hook方法绕过
-        url: https://medium.com/@user/article
-        source: Personal Blog
-        author: Alex Chen
-      - title: 静态分析方法
-        url: https://github.com/user/repo
-        source: StackOverflow
-        author: Alex Chen
-      - title: Hook方法绕过
-        url: https://gist.github.com/user/id
-        source: GitHub
-        author: John Doe
-    create-time: 2025-06-03 06:18:45
-    update-time: 2023-04-14 12:45:02
+      - title: A audax creo.
+        url: https://jagged-duster.biz/
+        source: Medium
+        author: Luz Kertzmann
+    create-time: '2024-01-03 19:14:57'
+    update-time: '2024-10-12 13:44:37'

@@ -1,0 +1,22 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 507
+    id-alias: mock-challenge-507
+    tags:
+      - CSP
+      - SSRF
+      - SQL-Injection
+      - OAuth
+      - Deserialization
+    platform: Web
+    name: 'Mock挑战题目 #507'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Denuo commodi averto cilicium. Bellum tripudio
+      cubicularis vulgivagus numquam ea aranea a succedo virga.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2dSS2Y3YnhpRWw=
+    is-expired: false
+    solutions: []
+    create-time: '2023-05-11 14:40:22'
+    update-time: '2023-11-29 11:47:59'

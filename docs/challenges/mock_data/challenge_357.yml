@@ -1,0 +1,29 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 357
+    id-alias: mock-challenge-357
+    tags:
+      - OAuth
+      - API-Security
+      - Command-Injection
+    platform: Web
+    name: 'Mock挑战题目 #357'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Trado degero demulceo ambulo pecto comprehendo
+      aegrotatio ante viriliter calculus. Vulticulus tertius utroque aegrus creo
+      cubitum animadverto timidus vito.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzNlVktvRjNGcmQ=
+    is-expired: false
+    solutions:
+      - title: Tamquam beatus beatae.
+        url: https://puzzled-mozzarella.com
+        source: StackOverflow
+        author: Mr. Austin Conn
+      - title: Demum decerno aliqua.
+        url: https://writhing-cutlet.net/
+        source: Blog
+        author: Ralph Bernier
+    create-time: '2024-10-31 20:31:26'
+    update-time: '2025-03-03 11:39:07'

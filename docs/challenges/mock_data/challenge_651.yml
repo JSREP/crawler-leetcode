@@ -1,0 +1,34 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 651
+    id-alias: mock-challenge-651
+    tags:
+      - CORS
+      - Race-Condition
+      - WebSockets
+      - Command-Injection
+    platform: IoT
+    name: 'Mock挑战题目 #651'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Casso animi tenus unde aperte deleo provident
+      temeritas spero. Administratio subseco thesaurus creo compono validus
+      concedo tubineus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L29vZlA1S01mODg=
+    is-expired: false
+    solutions:
+      - title: Bellum accedo facilis.
+        url: https://lazy-stitcher.name/
+        source: GitHub
+        author: Dr. Adrienne Spencer
+      - title: Teneo adflicto tametsi.
+        url: https://athletic-sprinkles.net/
+        source: Blog
+        author: Jessie Swift
+      - title: Copiose deripio caries.
+        url: https://optimal-meatloaf.com/
+        source: YouTube
+        author: Marian O'Reilly I
+    create-time: '2024-02-13 04:53:49'
+    update-time: '2024-06-30 15:23:17'

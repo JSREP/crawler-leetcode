@@ -1,0 +1,22 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 335
+    id-alias: mock-challenge-335
+    tags:
+      - XXE
+      - WebSockets
+      - Access-Control
+      - CORS
+      - GraphQL
+    platform: Web
+    name: 'Mock挑战题目 #335'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Peior traho creptio cornu sono clibanus. Comprehendo
+      conventus voluptatem arma color censura tandem tactus ait.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0ZBbGl5TlAyaVU=
+    is-expired: false
+    solutions: []
+    create-time: '2024-12-25 17:36:28'
+    update-time: '2025-04-05 12:07:28'

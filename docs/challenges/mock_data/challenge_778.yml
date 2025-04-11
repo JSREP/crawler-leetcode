@@ -1,0 +1,24 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 778
+    id-alias: mock-challenge-778
+    tags:
+      - CSP
+      - OAuth
+      - WebSockets
+    platform: IoT
+    name: 'Mock挑战题目 #778'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Tutis decerno summa voluptatem quae. Cervus
+      stillicidium advoco porro.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3EybXpKRWs1YnI=
+    is-expired: false
+    solutions:
+      - title: Desino spargo cupiditas.
+        url: https://fatal-feather.info/
+        source: GitHub
+        author: ''
+    create-time: '2023-12-29 18:53:27'
+    update-time: '2024-07-27 10:41:00'

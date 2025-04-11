@@ -1,0 +1,32 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 764
+    id-alias: mock-challenge-764
+    tags:
+      - WebSockets
+      - SQL-Injection
+      - Command-Injection
+    platform: IoT
+    name: 'Mock挑战题目 #764'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Eius cattus unus. Desino placeat arbor tabella
+      absconditus calco.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1FmdDRBNjFReUM=
+    is-expired: false
+    solutions:
+      - title: Ademptio damno culpo.
+        url: https://ripe-cheetah.info
+        source: Medium
+        author: ''
+      - title: Defessus volva tactus.
+        url: https://elliptical-cinema.org
+        source: GitHub
+        author: Ruth Moore
+      - title: Adicio via pariatur.
+        url: https://unripe-valuable.com
+        source: Blog
+        author: Vickie Paucek
+    create-time: '2024-12-15 06:18:01'
+    update-time: '2025-03-28 10:03:34'

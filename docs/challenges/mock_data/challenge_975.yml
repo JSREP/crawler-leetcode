@@ -1,0 +1,32 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 975
+    id-alias: mock-challenge-975
+    tags:
+      - Business-Logic
+      - CORS
+      - Race-Condition
+    platform: Mobile
+    name: 'Mock挑战题目 #975'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Decens barba enim acceptus solutio tempore cornu.
+      Demergo combibo vinco solio cubitum.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3J2c004TlNRY3o=
+    is-expired: false
+    solutions:
+      - title: Crur absorbeo caelum.
+        url: https://posh-skyscraper.name
+        source: Medium
+        author: Caroline Kertzmann
+      - title: Nesciunt thymum turba.
+        url: https://smooth-tail.name/
+        source: Blog
+        author: Gustavo Harvey
+      - title: Taedium ad angulus.
+        url: https://silky-rosemary.org/
+        source: Medium
+        author: Phyllis Connelly
+    create-time: '2023-11-04 13:20:42'
+    update-time: '2023-11-21 10:50:04'

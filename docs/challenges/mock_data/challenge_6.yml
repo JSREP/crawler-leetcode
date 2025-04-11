@@ -1,24 +1,31 @@
 # 挑战题目文件
 version: 1
-
 challenges:
-  - id: mock-challenge-6
+  - id: 6
+    id-alias: mock-challenge-6
     tags:
-      - obfuscator
-    platform: Android
-    name: Mock挑战题目 #6
-    difficulty-level: 3
-    description: 这是一个示例挑战题目的描述，难度为3星级。
-    base64-url: aHR0cHM6Ly93d3cuZXhhbXBsZS5jb20vcXVpei8xMjM0NQ==
+      - OAuth
+      - Path-Traversal
+    platform: Mobile
+    name: 'Mock挑战题目 #6'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Patior defleo utilis cogo. Tempore correptius bardus
+      ullam benigne adficio ager aetas tubineus demulceo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzdDTXBLQzlLM0U=
     is-expired: false
     solutions:
-      - title: 使用Puppeteer绕过检测
-        url: https://github.com/user/repo
-        source: Medium
-        author: Web Security Expert
-      - title: Hook方法绕过
-        url: https://gist.github.com/user/id
-        source: YouTube
-        author: Jane Smith
-    create-time: 2025-01-06 02:13:34
-    update-time: 2024-02-24 02:01:15
+      - title: Voluntarius conservo universe.
+        url: https://busy-guidance.org/
+        source: GitHub
+        author: Misty Kerluke
+      - title: Admiratio turpis studio.
+        url: https://prickly-department.net/
+        source: StackOverflow
+        author: Kristi Swift V
+      - title: Curtus bellum clam.
+        url: https://gorgeous-exhaust.org
+        source: Blog
+        author: Clay Jaskolski
+    create-time: '2023-11-21 04:51:49'
+    update-time: '2024-09-07 22:29:38'

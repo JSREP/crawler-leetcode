@@ -1,0 +1,20 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 970
+    id-alias: mock-challenge-970
+    tags:
+      - Business-Logic
+      - XXE
+      - OAuth
+    platform: API
+    name: 'Mock挑战题目 #970'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Vesco angulus perspiciatis civis quod accusamus tergo
+      ocer patior acerbitas. Nobis deporto accedo eligendi sono.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1hERkhRMWFWVzM=
+    is-expired: false
+    solutions: []
+    create-time: '2023-11-12 09:25:48'
+    update-time: '2024-09-20 10:05:35'

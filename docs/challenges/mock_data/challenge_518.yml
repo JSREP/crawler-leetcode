@@ -1,0 +1,28 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 518
+    id-alias: mock-challenge-518
+    tags:
+      - Command-Injection
+      - CORS
+      - WebSockets
+    platform: API
+    name: 'Mock挑战题目 #518'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Conqueror asporto terebro acer viduo. Ducimus curia
+      terminatio bellicus tot ipsa tyrannus alias.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1QxVDVQM1hjWDE=
+    is-expired: false
+    solutions:
+      - title: Adaugeo bestia assentator.
+        url: https://fuzzy-disappointment.net/
+        source: Medium
+        author: Tara Kuhn
+      - title: Amor decimus patruus.
+        url: https://narrow-onset.net/
+        source: Medium
+        author: Rose Muller
+    create-time: '2023-12-28 12:52:35'
+    update-time: '2024-08-30 01:42:24'

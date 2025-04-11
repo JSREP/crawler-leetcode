@@ -1,27 +1,29 @@
 # 挑战题目文件
 version: 1
-
 challenges:
-  - id: mock-challenge-13
+  - id: 13
+    id-alias: mock-challenge-13
     tags:
-      - webpack
-      - fingerprint
-      - api-protection
-      - signature
-    platform: Android
-    name: Mock挑战题目 #13
-    difficulty-level: 5
-    description: 这是一个示例挑战题目的描述，难度为5星级。
-    base64-url: aHR0cHM6Ly93d3cuZXhhbXBsZS5jb20vcXVpei9hYmNkZWY=
-    is-expired: false
+      - XSS
+      - Command-Injection
+      - Rate-Limiting
+    platform: IoT
+    name: 'Mock挑战题目 #13'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Veritas delego architecto cornu suscipio desolo
+      aedificium audacia tabgo. Aveho colo arx circumvenio undique derideo
+      umerus causa.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0VOZGVveWVYUGE=
+    is-expired: true
     solutions:
-      - title: 使用Puppeteer绕过检测
-        url: https://github.com/user/repo
-        source: Medium
-        author: Jane Smith
-      - title: 静态分析方法
-        url: https://github.com/user/repo
+      - title: Denuncio adeo qui.
+        url: https://menacing-eyebrow.com
+        source: YouTube
+        author: Jodi Mann
+      - title: Tonsor vero taceo.
+        url: https://scary-accountability.name
         source: StackOverflow
-        author: Jane Smith
-    create-time: 2024-01-11 21:53:21
-    update-time: 2025-08-10 23:04:58
+        author: Rodolfo Collins
+    create-time: '2024-03-25 19:28:49'
+    update-time: '2024-05-10 10:40:19'

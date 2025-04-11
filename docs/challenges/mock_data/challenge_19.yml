@@ -1,25 +1,21 @@
 # 挑战题目文件
 version: 1
-
 challenges:
-  - id: mock-challenge-19
+  - id: 19
+    id-alias: mock-challenge-19
     tags:
-      - js-reverse
-      - anti-crawler
-    platform: iOS
-    name: Mock挑战题目 #19
-    difficulty-level: 3
-    description: 这是一个示例挑战题目的描述，难度为3星级。
-    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2FiY2RlZg==
+      - Mobile-Security
+      - Rate-Limiting
+      - Hashing
+      - API-Security
+    platform: Mobile
+    name: 'Mock挑战题目 #19'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Accommodo creta aegrus desipio aestas theologus
+      capillus sequi dolor. Tepesco thymbra universe cogo iure quibusdam vis.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2ZJTWQ4ZFZKbWQ=
     is-expired: false
-    solutions:
-      - title: AST分析方案
-        url: https://medium.com/@user/article
-        source: Medium
-        author: John Doe
-      - title: 逆向工程思路
-        url: https://github.com/user/repo
-        source: YouTube
-        author: John Doe
-    create-time: 2023-05-09 19:01:01
-    update-time: 2023-08-13 04:55:27
+    solutions: []
+    create-time: '2023-08-12 20:25:27'
+    update-time: '2024-04-26 04:52:49'

@@ -1,0 +1,24 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 154
+    id-alias: mock-challenge-154
+    tags:
+      - Path-Traversal
+      - JWT
+      - Business-Logic
+    platform: IoT
+    name: 'Mock挑战题目 #154'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Amita degusto vulariter tui. Laborum animus tracto
+      vespillo valde cedo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2lHYnhXdDZDYlY=
+    is-expired: false
+    solutions:
+      - title: Vorax adhuc armarium.
+        url: https://left-unique.name
+        source: Medium
+        author: Dan Mueller
+    create-time: '2024-10-28 12:29:33'
+    update-time: '2024-12-12 01:56:47'

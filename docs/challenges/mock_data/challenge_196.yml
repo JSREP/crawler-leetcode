@@ -1,0 +1,28 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 196
+    id-alias: mock-challenge-196
+    tags:
+      - Race-Condition
+      - Path-Traversal
+      - SQL-Injection
+    platform: Mobile
+    name: 'Mock挑战题目 #196'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Ipsam viriliter commemoro careo. Comis capitulus
+      aperiam utor videlicet templum somniculosus cimentarius hic auctor.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0xrdVZmMUlWbXU=
+    is-expired: true
+    solutions:
+      - title: Calco aeger autus.
+        url: https://wicked-kit.net/
+        source: StackOverflow
+        author: Pete Hickle-Klein
+      - title: Conculco benevolentia numquam.
+        url: https://mixed-hydrolyse.name/
+        source: StackOverflow
+        author: Bradford Runte-Ortiz
+    create-time: '2023-06-02 14:01:25'
+    update-time: '2024-06-12 16:42:38'

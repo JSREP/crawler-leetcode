@@ -1,0 +1,25 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 322
+    id-alias: mock-challenge-322
+    tags:
+      - OAuth
+      - CSP
+      - Output-Encoding
+      - Business-Logic
+    platform: API
+    name: 'Mock挑战题目 #322'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Ciminatio distinctio conor summopere cur. Subseco
+      corporis trucido viriliter eligendi.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3loc3hJOEhjZnc=
+    is-expired: false
+    solutions:
+      - title: Pauper utpote chirographum.
+        url: https://passionate-in-joke.org/
+        source: YouTube
+        author: Francis Lang
+    create-time: '2024-04-22 21:26:01'
+    update-time: '2024-06-04 14:31:24'

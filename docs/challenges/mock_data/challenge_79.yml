@@ -1,25 +1,20 @@
 # 挑战题目文件
 version: 1
-
 challenges:
-  - id: mock-challenge-79
+  - id: 79
+    id-alias: mock-challenge-79
     tags:
-      - device-motion
-      - encryption
-    platform: iOS
-    name: Mock挑战题目 #79
-    difficulty-level: 3
-    description: 这是一个示例挑战题目的描述，难度为3星级。
-    base64-url: aHR0cHM6Ly93d3cuZXhhbXBsZS5jb20vcHJvYmxlbS9hYmNkZWY=
-    is-expired: false
-    solutions:
-      - title: Hook方法绕过
-        url: https://medium.com/@user/article
-        source: YouTube
-        author: Alex Chen
-      - title: 逆向工程思路
-        url: https://github.com/user/repo
-        source: YouTube
-        author: Jane Smith
-    create-time: 2024-01-08 11:02:11
-    update-time: 2023-07-01 11:23:39
+      - XSS
+      - SQL-Injection
+      - Mobile-Security
+    platform: API
+    name: 'Mock挑战题目 #79'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Pariatur nemo vigor. Alii voveo cicuta velit rerum
+      cito dedecor considero.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3dIcTdTMEg3cVk=
+    is-expired: true
+    solutions: []
+    create-time: '2024-09-23 12:42:12'
+    update-time: '2025-03-14 12:14:54'

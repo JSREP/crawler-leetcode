@@ -1,0 +1,21 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 757
+    id-alias: mock-challenge-757
+    tags:
+      - OAuth
+      - CSRF
+      - Output-Encoding
+    platform: Desktop
+    name: 'Mock挑战题目 #757'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Repudiandae confugo asper vero terreo vergo
+      necessitatibus creber. Cariosus tabernus depopulo ullus beatus cito
+      coaegresco architecto tamisium.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3RPbUxpWTR1SzY=
+    is-expired: false
+    solutions: []
+    create-time: '2023-07-07 00:08:25'
+    update-time: '2024-06-14 07:49:43'

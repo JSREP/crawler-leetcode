@@ -1,0 +1,35 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 443
+    id-alias: mock-challenge-443
+    tags:
+      - Race-Condition
+      - Browser-Extensions
+      - File-Upload
+      - XSS
+      - Hashing
+    platform: Mobile
+    name: 'Mock挑战题目 #443'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Anser fugit pauper trucido sed aufero sperno minima
+      ulciscor venio. Charisma sollers aliquid optio tener terreo curiositas
+      curtus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L09INDlQdHNNQlI=
+    is-expired: true
+    solutions:
+      - title: Crur sub sint.
+        url: https://trivial-wriggler.biz
+        source: Medium
+        author: Edgar Gleichner
+      - title: Subiungo derelinquo non.
+        url: https://brisk-testing.com/
+        source: Blog
+        author: Kendra Kerluke
+      - title: Utor amaritudo creber.
+        url: https://bright-bourgeoisie.info
+        source: GitHub
+        author: Corey Blick II
+    create-time: '2024-01-13 18:58:43'
+    update-time: '2025-01-20 06:08:53'

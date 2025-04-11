@@ -1,0 +1,27 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 498
+    id-alias: mock-challenge-498
+    tags:
+      - CSP
+      - Authorization
+    platform: Web
+    name: 'Mock挑战题目 #498'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Curia adversus aestus consectetur delibero. Bestia
+      nobis quisquam sit clam sit subvenio dens decor.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2lNNkxFSW82SGQ=
+    is-expired: false
+    solutions:
+      - title: Vociferor vos provident.
+        url: https://sugary-privilege.net
+        source: GitHub
+        author: Kendra Gleichner
+      - title: Atrocitas volo creptio.
+        url: https://red-puppet.biz
+        source: Blog
+        author: Lori Barrows-McDermott DVM
+    create-time: '2024-03-05 14:50:24'
+    update-time: '2024-08-22 14:36:23'

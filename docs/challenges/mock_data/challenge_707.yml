@@ -1,0 +1,30 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 707
+    id-alias: mock-challenge-707
+    tags:
+      - Hashing
+      - CSP
+      - JWT
+      - SQL-Injection
+      - XSS
+    platform: Web
+    name: 'Mock挑战题目 #707'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Ter demulceo depromo uxor valens paulatim solus.
+      Aggredior sit despecto amor cogito coniuratio aeternus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0NoZ1ZVZE1oZUg=
+    is-expired: false
+    solutions:
+      - title: Vestigium benevolentia ulciscor.
+        url: https://dual-sock.info/
+        source: YouTube
+        author: ''
+      - title: Tubineus currus thymum.
+        url: https://measly-pocket-watch.org/
+        source: StackOverflow
+        author: ''
+    create-time: '2024-10-06 18:23:45'
+    update-time: '2024-10-26 12:07:34'

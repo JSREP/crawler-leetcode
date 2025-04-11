@@ -1,0 +1,29 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 885
+    id-alias: mock-challenge-885
+    tags:
+      - SSRF
+      - Session-Management
+      - XXE
+      - Encryption
+    platform: Mobile
+    name: 'Mock挑战题目 #885'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Atrocitas volutabrum ulterius carbo. Non sodalitas
+      varius coerceo cariosus venustas illo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2JyeVdlZDh2WWM=
+    is-expired: true
+    solutions:
+      - title: Debitis vulnus tutis.
+        url: https://elegant-hundred.name/
+        source: StackOverflow
+        author: ''
+      - title: Nostrum trans crinis.
+        url: https://common-ribbon.org/
+        source: Blog
+        author: Glen Corkery
+    create-time: '2023-10-19 03:09:48'
+    update-time: '2024-05-06 21:31:07'

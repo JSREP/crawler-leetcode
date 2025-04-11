@@ -1,0 +1,23 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 450
+    id-alias: mock-challenge-450
+    tags:
+      - Authentication
+      - OAuth
+    platform: Mobile
+    name: 'Mock挑战题目 #450'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Auxilium cavus spargo. Talio ara corroboro arbustum
+      bardus consequuntur verto apostolus curis.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2Q4UVh3SWNvQkM=
+    is-expired: false
+    solutions:
+      - title: Adicio coniecto curiositas.
+        url: https://nifty-deduction.name
+        source: StackOverflow
+        author: Mr. Hugo Reynolds DVM
+    create-time: '2023-04-21 10:25:16'
+    update-time: '2024-12-12 10:53:00'

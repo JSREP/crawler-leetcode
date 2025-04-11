@@ -1,0 +1,24 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 272
+    id-alias: mock-challenge-272
+    tags:
+      - CSP
+      - Deserialization
+      - Business-Logic
+    platform: Desktop
+    name: 'Mock挑战题目 #272'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Subiungo appello abscido sursum statim vapulus
+      callide nostrum aegrus bis. Tum bardus tolero circumvenio.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2NCSzhMT0JxWDc=
+    is-expired: false
+    solutions:
+      - title: Stipes auxilium perferendis.
+        url: https://downright-pliers.name
+        source: GitHub
+        author: Betty Armstrong
+    create-time: '2024-05-05 05:01:11'
+    update-time: '2024-12-13 22:45:34'

@@ -1,0 +1,28 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 693
+    id-alias: mock-challenge-693
+    tags:
+      - Authorization
+      - Browser-Extensions
+      - Session-Management
+    platform: Web
+    name: 'Mock挑战题目 #693'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Curvo velum caterva carbo super confido capio
+      capillus usus volubilis. Tristis speciosus dolor tertius.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L25JcmFaQ09QUXA=
+    is-expired: false
+    solutions:
+      - title: Similique cunctatio tui.
+        url: https://made-up-stranger.com/
+        source: StackOverflow
+        author: Andrea Cole
+      - title: Adeptio demulceo sum.
+        url: https://neglected-adviser.biz/
+        source: Medium
+        author: ''
+    create-time: '2023-07-22 22:22:07'
+    update-time: '2024-05-19 22:43:10'

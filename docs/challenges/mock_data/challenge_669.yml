@@ -1,0 +1,26 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 669
+    id-alias: mock-challenge-669
+    tags:
+      - Authorization
+      - OAuth
+      - XXE
+      - Hashing
+    platform: Mobile
+    name: 'Mock挑战题目 #669'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Accendo tripudio voluptatum deripio decumbo coma
+      cursim cohibeo trans tempora. Sponte tristis undique utilis tracto accendo
+      calamitas nihil caput vereor.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3RraXcwNHR5S20=
+    is-expired: false
+    solutions:
+      - title: Agnosco nam summopere.
+        url: https://different-dusk.info
+        source: GitHub
+        author: Kate Towne
+    create-time: '2023-10-02 22:43:05'
+    update-time: '2024-10-29 12:10:30'

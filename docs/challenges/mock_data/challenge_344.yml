@@ -1,0 +1,30 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 344
+    id-alias: mock-challenge-344
+    tags:
+      - Access-Control
+      - Race-Condition
+      - Authorization
+      - Path-Traversal
+      - Hashing
+    platform: Web
+    name: 'Mock挑战题目 #344'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Caveo vitiosus cura teres clamo textilis. Animadverto
+      depromo illum admitto thermae creta veritatis.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3JBWkxHSnY0SFk=
+    is-expired: false
+    solutions:
+      - title: Cometes comprehendo eaque.
+        url: https://vivacious-bathhouse.name/
+        source: GitHub
+        author: ''
+      - title: Tondeo vulariter comis.
+        url: https://noteworthy-stool.name/
+        source: GitHub
+        author: Douglas Hirthe
+    create-time: '2023-05-12 02:52:50'
+    update-time: '2025-03-14 20:44:44'

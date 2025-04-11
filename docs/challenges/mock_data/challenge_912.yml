@@ -1,0 +1,23 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 912
+    id-alias: mock-challenge-912
+    tags:
+      - Output-Encoding
+      - JWT
+    platform: Web
+    name: 'Mock挑战题目 #912'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Virgo aestas saepe ipsam terminatio patria a depulso
+      damno. Vorax versus vicinus vigilo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzBKa0pTcUhlM2s=
+    is-expired: false
+    solutions:
+      - title: Vis quasi soleo.
+        url: https://sentimental-outset.biz/
+        source: YouTube
+        author: Rudolph Marks
+    create-time: '2023-11-07 14:38:09'
+    update-time: '2024-09-10 13:21:17'

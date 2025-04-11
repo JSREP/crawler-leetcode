@@ -1,0 +1,30 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 451
+    id-alias: mock-challenge-451
+    tags:
+      - Output-Encoding
+      - File-Upload
+      - Command-Injection
+      - CSRF
+    platform: IoT
+    name: 'Mock挑战题目 #451'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Beatae temptatio infit argentum valeo aetas tamen
+      denuncio studio apud. Tui aestivus taceo aer vaco alter aequitas aestas
+      mollitia.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3ViSThtd2drdUY=
+    is-expired: false
+    solutions:
+      - title: Torqueo cattus admoveo.
+        url: https://winged-chap.net
+        source: StackOverflow
+        author: Lee McCullough
+      - title: Tolero bellicus congregatio.
+        url: https://passionate-effector.org/
+        source: StackOverflow
+        author: Louis Hudson
+    create-time: '2024-02-16 01:01:01'
+    update-time: '2024-12-15 13:46:13'

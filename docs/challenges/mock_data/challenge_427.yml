@@ -1,0 +1,34 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 427
+    id-alias: mock-challenge-427
+    tags:
+      - Mobile-Security
+      - Rate-Limiting
+      - Hashing
+      - File-Upload
+      - Race-Condition
+    platform: API
+    name: 'Mock挑战题目 #427'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Cervus cura somnus coadunatio. Defluo averto vinculum
+      talio tot textor amoveo campana aptus cado.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1RmaURaa2lidWE=
+    is-expired: false
+    solutions:
+      - title: Admoneo subseco veritatis.
+        url: https://kooky-flight.name/
+        source: StackOverflow
+        author: ''
+      - title: Uxor civis tantum.
+        url: https://lean-perp.info
+        source: YouTube
+        author: Tara Rutherford
+      - title: Conculco deprimo cinis.
+        url: https://sarcastic-acquaintance.net/
+        source: GitHub
+        author: Jennie Feeney
+    create-time: '2024-02-06 08:46:16'
+    update-time: '2024-03-27 19:16:22'

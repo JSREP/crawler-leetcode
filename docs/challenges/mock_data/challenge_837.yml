@@ -1,0 +1,17 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 837
+    id-alias: mock-challenge-837
+    tags:
+      - JWT
+      - Path-Traversal
+    platform: Desktop
+    name: 'Mock挑战题目 #837'
+    difficulty-level: 5
+    description: 这是一个示例挑战题目的描述，难度为5星级。In surgo utor adamo. Tabernus ascisco acsi.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2xXdXpsdUM1Y3o=
+    is-expired: false
+    solutions: []
+    create-time: '2023-11-14 03:17:25'
+    update-time: '2024-11-12 23:24:16'

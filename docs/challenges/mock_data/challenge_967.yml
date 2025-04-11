@@ -1,0 +1,24 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 967
+    id-alias: mock-challenge-967
+    tags:
+      - GraphQL
+      - XXE
+      - JWT
+    platform: API
+    name: 'Mock挑战题目 #967'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Nam aer coma deprimo convoco expedita apostolus.
+      Verbera auxilium utrum dolores quasi cernuus chirographum subnecto vitium.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3pVeTQzY01YS1k=
+    is-expired: true
+    solutions:
+      - title: Unus corrigo ait.
+        url: https://cool-toothpick.info
+        source: YouTube
+        author: Shawn Conroy
+    create-time: '2023-10-18 02:50:58'
+    update-time: '2024-02-27 17:19:47'

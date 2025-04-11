@@ -1,0 +1,32 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 700
+    id-alias: mock-challenge-700
+    tags:
+      - Output-Encoding
+      - Command-Injection
+      - Input-Validation
+    platform: Mobile
+    name: 'Mock挑战题目 #700'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Somniculosus pectus aro. Correptius cruciamentum abeo
+      corona adflicto cohaero.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L25iRUxzekp4Mzk=
+    is-expired: false
+    solutions:
+      - title: Amplexus soluta uterque.
+        url: https://admired-advertisement.com/
+        source: Blog
+        author: Percy Schuster
+      - title: Varietas uterque labore.
+        url: https://exotic-tenement.net/
+        source: Blog
+        author: Dr. Earl Koch
+      - title: Contra adamo comptus.
+        url: https://blue-ruin.com/
+        source: Blog
+        author: Shaun Herman
+    create-time: '2024-12-17 04:53:34'
+    update-time: '2025-01-16 00:43:49'

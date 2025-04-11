@@ -1,0 +1,19 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 760
+    id-alias: mock-challenge-760
+    tags:
+      - Authorization
+      - Encryption
+    platform: API
+    name: 'Mock挑战题目 #760'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Cui corrigo vaco quos arbitro tergeo acquiro claro.
+      Demoror vereor cernuus super conitor arca accendo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1Z6VUY3bXhNd2Q=
+    is-expired: false
+    solutions: []
+    create-time: '2024-12-07 08:35:22'
+    update-time: '2025-01-23 05:43:08'

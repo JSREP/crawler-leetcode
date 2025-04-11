@@ -1,0 +1,22 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 848
+    id-alias: mock-challenge-848
+    tags:
+      - CORS
+      - File-Upload
+      - HTTP-Headers
+      - Output-Encoding
+      - GraphQL
+    platform: Web
+    name: 'Mock挑战题目 #848'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Ipsam ago sub adimpleo vinum cedo. Vulgivagus appello
+      tendo thymum substantia uredo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3l4dkg1UEdHZDQ=
+    is-expired: false
+    solutions: []
+    create-time: '2024-12-21 15:40:33'
+    update-time: '2025-04-08 05:40:34'

@@ -1,0 +1,29 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 535
+    id-alias: mock-challenge-535
+    tags:
+      - HTTP-Headers
+      - GraphQL
+      - Path-Traversal
+      - Race-Condition
+    platform: API
+    name: 'Mock挑战题目 #535'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Capitulus vis thymum cur sol. Tabella arbitro odit
+      tibi amplus conspergo cernuus nulla ultio curvo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzNMeVBoNkVvWTg=
+    is-expired: false
+    solutions:
+      - title: Curia tutamen acer.
+        url: https://delicious-redesign.net
+        source: StackOverflow
+        author: Lorene Watsica
+      - title: Conscendo cruciamentum xiphias.
+        url: https://vengeful-exploration.name
+        source: Blog
+        author: Jordan Carroll
+    create-time: '2023-10-12 06:04:16'
+    update-time: '2024-05-24 09:34:56'

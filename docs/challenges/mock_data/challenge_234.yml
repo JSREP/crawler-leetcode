@@ -1,0 +1,30 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 234
+    id-alias: mock-challenge-234
+    tags:
+      - OAuth
+      - Mobile-Security
+      - CORS
+      - JWT
+      - Authentication
+    platform: Desktop
+    name: 'Mock挑战题目 #234'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Amplus cupressus adicio admoveo aestivus vomica.
+      Atrox surculus alter derelinquo debitis.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzVCOGlLZ2NGdmw=
+    is-expired: false
+    solutions:
+      - title: Peior celer copia.
+        url: https://webbed-halt.biz/
+        source: StackOverflow
+        author: Margaret Moore
+      - title: Suppellex stella benigne.
+        url: https://unsung-derby.com
+        source: Blog
+        author: Tina Weissnat
+    create-time: '2024-07-17 08:37:10'
+    update-time: '2024-08-31 23:10:22'

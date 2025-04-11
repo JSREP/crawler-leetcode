@@ -1,0 +1,23 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 488
+    id-alias: mock-challenge-488
+    tags:
+      - Race-Condition
+      - Business-Logic
+    platform: Web
+    name: 'Mock挑战题目 #488'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Terror crebro defero crux voluptatibus. Crepusculum
+      vivo certus patruus clarus candidus cras coadunatio tenus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3RUUXhLdmd5N24=
+    is-expired: false
+    solutions:
+      - title: Versus clementia inflammatio.
+        url: https://needy-bid.info
+        source: YouTube
+        author: Denise Reichel
+    create-time: '2024-06-26 15:11:55'
+    update-time: '2024-12-11 14:56:24'

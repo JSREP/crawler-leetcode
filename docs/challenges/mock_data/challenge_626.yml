@@ -1,0 +1,32 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 626
+    id-alias: mock-challenge-626
+    tags:
+      - Path-Traversal
+      - Session-Management
+      - Authorization
+    platform: API
+    name: 'Mock挑战题目 #626'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Temptatio tactus damno claro expedita pax. Eveniet
+      audentia amoveo vado caput caput tres comparo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3NNMkxCb0phaHQ=
+    is-expired: false
+    solutions:
+      - title: Videlicet sollers sordeo.
+        url: https://left-median.com/
+        source: YouTube
+        author: Mrs. Kate Streich
+      - title: Turbo suggero eius.
+        url: https://black-valentine.org
+        source: YouTube
+        author: Mr. Darrel Kris
+      - title: Spargo natus copiose.
+        url: https://monthly-chapel.org
+        source: YouTube
+        author: Floyd Bode
+    create-time: '2024-01-05 07:47:15'
+    update-time: '2024-03-17 14:23:56'

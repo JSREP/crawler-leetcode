@@ -1,28 +1,32 @@
 # 挑战题目文件
 version: 1
-
 challenges:
-  - id: mock-challenge-16
+  - id: 16
+    id-alias: mock-challenge-16
     tags:
-      - signature
-    platform: Android
-    name: Mock挑战题目 #16
-    difficulty-level: 4
-    description: 这是一个示例挑战题目的描述，难度为4星级。
-    base64-url: aHR0cHM6Ly93d3cuZXhhbXBsZS5jb20vcHJvYmxlbS82Nzg5MA==
+      - Business-Logic
+      - API-Security
+    platform: Desktop
+    name: 'Mock挑战题目 #16'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Adfero alii adduco possimus verecundia vinculum
+      cultellus degero degusto suffragium. Adfero architecto reprehenderit pecto
+      dens cinis.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1ZPU0UwWEtBMHE=
     is-expired: false
     solutions:
-      - title: AST分析方案
-        url: https://medium.com/@user/article
-        source: Medium
-        author: Jane Smith
-      - title: 使用Puppeteer绕过检测
-        url: https://medium.com/@user/article
-        source: StackOverflow
-        author: John Doe
-      - title: AST分析方案
-        url: https://medium.com/@user/article
+      - title: Tero cohaero suspendo.
+        url: https://lanky-embossing.info/
+        source: YouTube
+        author: Kerry Raynor
+      - title: Dignissimos theatrum desino.
+        url: https://hard-to-find-asset.net/
+        source: YouTube
+        author: Billie Brakus
+      - title: Sono corrupti ad.
+        url: https://shallow-soup.name/
         source: GitHub
-        author: Alex Chen
-    create-time: 2024-01-15 10:05:50
-    update-time: 2024-03-18 10:31:59
+        author: Debbie Swift
+    create-time: '2023-07-04 17:31:16'
+    update-time: '2023-12-26 23:30:40'

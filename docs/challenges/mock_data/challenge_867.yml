@@ -1,0 +1,22 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 867
+    id-alias: mock-challenge-867
+    tags:
+      - Hashing
+      - XSS
+      - API-Security
+      - HTTP-Headers
+      - CSP
+    platform: API
+    name: 'Mock挑战题目 #867'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Creber tollo deporto. Vallum arbustum ars accedo
+      peior sustineo absconditus auctor.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3NaYzc0NkgxdFA=
+    is-expired: false
+    solutions: []
+    create-time: '2024-12-16 08:29:42'
+    update-time: '2025-01-10 01:04:13'

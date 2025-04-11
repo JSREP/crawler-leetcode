@@ -1,0 +1,22 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 405
+    id-alias: mock-challenge-405
+    tags:
+      - Browser-Extensions
+      - GraphQL
+      - Hashing
+      - CORS
+      - Deserialization
+    platform: API
+    name: 'Mock挑战题目 #405'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Cavus articulus aspicio admoveo ceno itaque rerum
+      alienus teres utroque. Theca cursus correptius trado veritas sulum.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2VvelVQamFxUlY=
+    is-expired: false
+    solutions: []
+    create-time: '2024-01-04 15:25:00'
+    update-time: '2024-09-25 00:25:25'

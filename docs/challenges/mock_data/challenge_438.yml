@@ -1,0 +1,31 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 438
+    id-alias: mock-challenge-438
+    tags:
+      - WebSockets
+      - File-Upload
+    platform: Mobile
+    name: 'Mock挑战题目 #438'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Viduo architecto causa ullam. Delectatio tum
+      delectatio curtus annus peior valetudo nobis laborum.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3RjWEJYSnR4T2U=
+    is-expired: false
+    solutions:
+      - title: Spiculum strenuus aut.
+        url: https://punctual-typewriter.biz
+        source: Medium
+        author: Doris Larkin III
+      - title: Capio vero bos.
+        url: https://joyous-birth.com
+        source: YouTube
+        author: Elsa Boyer MD
+      - title: Catena ater temptatio.
+        url: https://late-stump.biz
+        source: Blog
+        author: Meredith Cronin
+    create-time: '2024-04-17 08:06:36'
+    update-time: '2024-05-29 07:36:33'

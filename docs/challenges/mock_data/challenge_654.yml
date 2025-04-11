@@ -1,0 +1,33 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 654
+    id-alias: mock-challenge-654
+    tags:
+      - WebSockets
+      - File-Upload
+      - SQL-Injection
+      - OAuth
+    platform: API
+    name: 'Mock挑战题目 #654'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Ambulo adstringo volaticus spes arma ubi urbs.
+      Defendo desidero copiose vulticulus cito timidus voluptas demulceo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3dmRE5PRGg5dTU=
+    is-expired: false
+    solutions:
+      - title: Est patria totidem.
+        url: https://jam-packed-requirement.org
+        source: YouTube
+        author: Miranda Gorczany
+      - title: Curo votum acies.
+        url: https://equatorial-shadowbox.biz/
+        source: YouTube
+        author: Dr. Shelly Kilback
+      - title: Vulgivagus conturbo capio.
+        url: https://misguided-galoshes.biz/
+        source: Blog
+        author: Clifford Williamson
+    create-time: '2025-02-27 10:36:31'
+    update-time: '2025-04-07 14:22:09'

@@ -1,0 +1,34 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 108
+    id-alias: mock-challenge-108
+    tags:
+      - WebSockets
+      - Command-Injection
+      - JWT
+      - Authentication
+      - Deserialization
+    platform: IoT
+    name: 'Mock挑战题目 #108'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Alii cinis velociter nam alias tenus ciminatio. Infit
+      rerum deficio.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2U3UU42V0Q3UUE=
+    is-expired: false
+    solutions:
+      - title: Utroque tantum deputo.
+        url: https://corrupt-captain.name/
+        source: StackOverflow
+        author: Suzanne Gerlach
+      - title: Terebro a ubi.
+        url: https://standard-icebreaker.info
+        source: Blog
+        author: Jeannie Boehm
+      - title: Degenero tripudio aer.
+        url: https://pleasing-festival.net/
+        source: Blog
+        author: Penny Swaniawski
+    create-time: '2023-05-22 21:54:44'
+    update-time: '2023-08-10 16:32:29'

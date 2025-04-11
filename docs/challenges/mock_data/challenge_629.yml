@@ -1,0 +1,26 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 629
+    id-alias: mock-challenge-629
+    tags:
+      - CSP
+      - Mobile-Security
+      - API-Security
+      - SQL-Injection
+      - Input-Validation
+    platform: API
+    name: 'Mock挑战题目 #629'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Dignissimos carpo annus officia thorax. Vulnero vae
+      eius utroque vicissitudo nemo placeat facilis.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2xHZGszTG05aVY=
+    is-expired: false
+    solutions:
+      - title: Vivo debeo aut.
+        url: https://lazy-fencing.com
+        source: Medium
+        author: Woodrow Langosh
+    create-time: '2024-12-15 03:24:35'
+    update-time: '2025-01-22 13:02:31'

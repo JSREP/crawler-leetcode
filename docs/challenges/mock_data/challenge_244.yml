@@ -1,0 +1,31 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 244
+    id-alias: mock-challenge-244
+    tags:
+      - Access-Control
+      - CSRF
+    platform: Mobile
+    name: 'Mock挑战题目 #244'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Attollo vado contabesco solio. Aegrotatio dolores
+      suasoria.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0MyZFA1ckNLM3o=
+    is-expired: false
+    solutions:
+      - title: Terra verus clibanus.
+        url: https://inferior-bog.name/
+        source: YouTube
+        author: Dana Ferry
+      - title: Patruus ducimus dolorem.
+        url: https://slight-hamburger.biz/
+        source: StackOverflow
+        author: Dianne Terry IV
+      - title: Vapulus subito tamdiu.
+        url: https://responsible-bowling.net
+        source: Blog
+        author: Kim Ledner
+    create-time: '2023-08-30 20:23:15'
+    update-time: '2025-02-05 23:13:07'

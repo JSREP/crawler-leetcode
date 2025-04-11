@@ -1,0 +1,34 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 952
+    id-alias: mock-challenge-952
+    tags:
+      - SQL-Injection
+      - XSS
+      - Access-Control
+      - Race-Condition
+      - GraphQL
+    platform: Web
+    name: 'Mock挑战题目 #952'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Deficio sum maiores tubineus adipiscor vilitas deinde
+      sufficio sopor. Crastinus degero appello.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzkzdFNyTXlXNjg=
+    is-expired: false
+    solutions:
+      - title: Tergo decretum cedo.
+        url: https://tragic-battle.org/
+        source: Medium
+        author: Joseph Quitzon
+      - title: Suppono absens decumbo.
+        url: https://entire-fireplace.biz/
+        source: YouTube
+        author: Miss Johanna Feest
+      - title: Acceptus adhaero officia.
+        url: https://happy-go-lucky-governance.info/
+        source: Blog
+        author: Ms. Caroline Fritsch
+    create-time: '2023-04-17 12:10:20'
+    update-time: '2023-08-19 19:54:48'

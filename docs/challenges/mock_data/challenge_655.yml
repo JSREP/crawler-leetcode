@@ -1,0 +1,26 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 655
+    id-alias: mock-challenge-655
+    tags:
+      - Business-Logic
+      - Authorization
+      - GraphQL
+      - SSRF
+    platform: Mobile
+    name: 'Mock挑战题目 #655'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Conqueror amissio correptius corona degenero nulla
+      tametsi spero distinctio amoveo. Amplitudo sperno voluptatum totus
+      dignissimos voluntarius vobis annus esse.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzVLbWdoQklCUWE=
+    is-expired: false
+    solutions:
+      - title: Desino bestia tenuis.
+        url: https://dental-festival.biz
+        source: YouTube
+        author: ''
+    create-time: '2024-01-06 01:56:00'
+    update-time: '2024-12-02 05:02:39'

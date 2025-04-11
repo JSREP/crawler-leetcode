@@ -1,0 +1,27 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 979
+    id-alias: mock-challenge-979
+    tags:
+      - Browser-Extensions
+      - GraphQL
+      - Input-Validation
+      - Output-Encoding
+      - Authentication
+    platform: Desktop
+    name: 'Mock挑战题目 #979'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Caelestis carcer blanditiis thermae trucido suspendo
+      arceo umquam tergo. Spectaculum doloremque amita capto alienus cubo ater
+      vae.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2dQc0tFWUZEOEU=
+    is-expired: false
+    solutions:
+      - title: Accusamus usque tactus.
+        url: https://memorable-pomelo.net/
+        source: Blog
+        author: ''
+    create-time: '2023-05-11 04:03:05'
+    update-time: '2024-10-26 19:33:20'

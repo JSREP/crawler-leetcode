@@ -1,0 +1,33 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 572
+    id-alias: mock-challenge-572
+    tags:
+      - CORS
+      - HTTP-Headers
+      - XXE
+      - Encryption
+    platform: API
+    name: 'Mock挑战题目 #572'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Universe stabilis vis error crux. Calculus summisse
+      rem adulatio aer apparatus corrumpo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1QyV3VNY0lwU24=
+    is-expired: false
+    solutions:
+      - title: Qui assumenda urbanus.
+        url: https://buttery-trench.biz
+        source: YouTube
+        author: ''
+      - title: Sortitus brevis volutabrum.
+        url: https://blind-integer.biz
+        source: Blog
+        author: Dr. Robert Wunsch
+      - title: Solium somnus adversus.
+        url: https://sick-supplier.name/
+        source: Blog
+        author: Douglas Weissnat
+    create-time: '2024-10-09 18:04:10'
+    update-time: '2025-03-02 20:07:23'

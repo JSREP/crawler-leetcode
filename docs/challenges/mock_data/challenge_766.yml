@@ -1,0 +1,20 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 766
+    id-alias: mock-challenge-766
+    tags:
+      - Deserialization
+      - XSS
+      - Access-Control
+    platform: Mobile
+    name: 'Mock挑战题目 #766'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Voluptatem tenax qui vaco constans curtus bardus
+      aeger. Placeat eveniet voluptatum creber.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1B5NHFJekNDUUY=
+    is-expired: false
+    solutions: []
+    create-time: '2024-02-12 06:18:18'
+    update-time: '2025-02-12 13:33:38'

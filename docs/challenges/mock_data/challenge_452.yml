@@ -1,0 +1,32 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 452
+    id-alias: mock-challenge-452
+    tags:
+      - SQL-Injection
+      - Rate-Limiting
+      - CSRF
+    platform: Web
+    name: 'Mock挑战题目 #452'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Torrens spes dens alo cohors curtus adeo convoco
+      canis. Vorago ex aeternus adulatio ea.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzNrWHFHTnpyWU4=
+    is-expired: false
+    solutions:
+      - title: Color catena adsidue.
+        url: https://valuable-decision.net/
+        source: GitHub
+        author: Shelly Marquardt-Considine
+      - title: Sordeo urbs turpis.
+        url: https://purple-in-joke.biz
+        source: YouTube
+        author: Mr. Victor Kiehn
+      - title: Defero tempore officia.
+        url: https://excited-siege.org
+        source: Medium
+        author: Kellie Jacobi PhD
+    create-time: '2023-12-24 02:34:31'
+    update-time: '2024-04-20 05:42:41'

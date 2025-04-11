@@ -1,0 +1,22 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 642
+    id-alias: mock-challenge-642
+    tags:
+      - File-Upload
+      - GraphQL
+      - Command-Injection
+      - Session-Management
+      - XXE
+    platform: IoT
+    name: 'Mock挑战题目 #642'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Tot suasoria civis paulatim tandem delinquo arx
+      accusator. Acsi quae comminor tremo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0trb3ROcHZ4OW8=
+    is-expired: false
+    solutions: []
+    create-time: '2024-02-26 14:11:05'
+    update-time: '2024-10-01 18:28:22'

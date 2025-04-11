@@ -1,0 +1,32 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 816
+    id-alias: mock-challenge-816
+    tags:
+      - Authentication
+      - API-Security
+    platform: Web
+    name: 'Mock挑战题目 #816'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Auctor sit volup sodalitas asper attollo sunt vorago
+      viriliter. Suscipio decens vorax eligendi averto certe uter tabernus
+      aggredior.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0xHbWxvN2MwSFA=
+    is-expired: false
+    solutions:
+      - title: Tenuis ustilo aestas.
+        url: https://boring-tenement.name
+        source: Blog
+        author: Angel Armstrong-Schaden IV
+      - title: Viduo ipsa vox.
+        url: https://liquid-stranger.org/
+        source: YouTube
+        author: Jackie Blick
+      - title: Arma talis ipsam.
+        url: https://unsightly-sediment.com/
+        source: Medium
+        author: Jermaine Kiehn
+    create-time: '2024-03-07 03:29:19'
+    update-time: '2024-04-12 15:41:12'

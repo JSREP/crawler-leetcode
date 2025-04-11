@@ -1,0 +1,20 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 250
+    id-alias: mock-challenge-250
+    tags:
+      - Command-Injection
+      - XSS
+      - CSP
+    platform: IoT
+    name: 'Mock挑战题目 #250'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Odio sonitus quam tot bellum baiulus totus teneo.
+      Spiculum tamdiu rerum.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3FIeGZ0OW5PTXA=
+    is-expired: false
+    solutions: []
+    create-time: '2024-06-27 16:19:15'
+    update-time: '2024-07-16 07:21:05'

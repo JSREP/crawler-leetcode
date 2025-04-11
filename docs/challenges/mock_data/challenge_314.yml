@@ -1,0 +1,25 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 314
+    id-alias: mock-challenge-314
+    tags:
+      - SQL-Injection
+      - CSRF
+    platform: Desktop
+    name: 'Mock挑战题目 #314'
+    difficulty-level: 4
+    description: 这是一个示例挑战题目的描述，难度为4星级。Angulus dapifer accommodo. Velit suadeo synagoga.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L04wTjBqcFo5YlQ=
+    is-expired: false
+    solutions:
+      - title: Cerno virga tamdiu.
+        url: https://negligible-embarrassment.net
+        source: Medium
+        author: ''
+      - title: Maiores varietas delicate.
+        url: https://pointed-pile.info
+        source: Medium
+        author: Blake Bogisich PhD
+    create-time: '2023-08-02 14:24:12'
+    update-time: '2023-08-24 22:38:49'

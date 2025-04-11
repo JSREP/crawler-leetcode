@@ -1,20 +1,26 @@
 # 挑战题目文件
 version: 1
-
 challenges:
-  - id: mock-challenge-30
+  - id: 30
+    id-alias: mock-challenge-30
     tags:
-      - rate-limiting
-    platform: Android
-    name: Mock挑战题目 #30
-    difficulty-level: 2
-    description: 这是一个示例挑战题目的描述，难度为2星级。
-    base64-url: aHR0cHM6Ly9sZWV0Y29kZS5jb20vcXVpei8xMjM0NQ==
+      - Browser-Extensions
+      - JWT
+      - Session-Management
+      - Access-Control
+      - Mobile-Security
+    platform: Desktop
+    name: 'Mock挑战题目 #30'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Vesco sequi creta attollo acquiro creta. Quos amitto
+      amicitia voluptate unus ducimus correptius ipsum porro.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzdOWXdVaU5yWko=
     is-expired: false
     solutions:
-      - title: AST分析方案
-        url: https://medium.com/@user/article
-        source: GitHub
-        author: 
-    create-time: 2023-03-27 01:22:43
-    update-time: 2023-08-26 12:11:13
+      - title: Vel vigilo currus.
+        url: https://unsteady-chapel.biz
+        source: YouTube
+        author: Marta Ruecker
+    create-time: '2024-01-06 22:34:22'
+    update-time: '2024-12-03 01:39:44'

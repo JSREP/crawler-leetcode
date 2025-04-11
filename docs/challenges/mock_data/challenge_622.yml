@@ -1,0 +1,26 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 622
+    id-alias: mock-challenge-622
+    tags:
+      - JWT
+      - Deserialization
+      - HTTP-Headers
+      - Command-Injection
+    platform: Mobile
+    name: 'Mock挑战题目 #622'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Sit ullus cunae minus vereor vilicus vesper ulciscor.
+      Tumultus utpote quibusdam summopere aedificium tonsor deprecator comminor
+      caste toties.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3ZWVUNEem5Bbnc=
+    is-expired: true
+    solutions:
+      - title: Rem decerno damno.
+        url: https://admired-going.com
+        source: Blog
+        author: Lauren Bins
+    create-time: '2024-12-26 23:26:20'
+    update-time: '2025-03-21 08:56:32'

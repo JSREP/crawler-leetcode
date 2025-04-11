@@ -1,0 +1,25 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 115
+    id-alias: mock-challenge-115
+    tags:
+      - XXE
+      - Encryption
+      - File-Upload
+      - SQL-Injection
+    platform: IoT
+    name: 'Mock挑战题目 #115'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Absorbeo carbo maiores deputo ambulo saepe aduro ter
+      sollicito. Aveho volo stultus laborum caput.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2VHYW1QVERoOEY=
+    is-expired: false
+    solutions:
+      - title: Acies clamo demonstro.
+        url: https://celebrated-railway.org/
+        source: GitHub
+        author: Miss Patti Gerhold
+    create-time: '2024-01-27 10:16:28'
+    update-time: '2024-10-22 07:43:41'

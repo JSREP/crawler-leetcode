@@ -1,0 +1,33 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 810
+    id-alias: mock-challenge-810
+    tags:
+      - Mobile-Security
+      - XXE
+      - GraphQL
+      - Race-Condition
+    platform: API
+    name: 'Mock挑战题目 #810'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Audentia virgo dicta magnam. Fuga pel odit crinis
+      creator.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1FkMHZPMHpyOVA=
+    is-expired: false
+    solutions:
+      - title: Confero ventosus cursim.
+        url: https://friendly-scholarship.com
+        source: GitHub
+        author: Alexis Lesch
+      - title: Contabesco videlicet condico.
+        url: https://tattered-fireplace.info/
+        source: YouTube
+        author: Betsy Nikolaus
+      - title: Adipiscor ter similique.
+        url: https://miserly-carnival.biz/
+        source: GitHub
+        author: Guillermo Padberg
+    create-time: '2024-02-20 03:26:09'
+    update-time: '2024-05-08 07:35:23'

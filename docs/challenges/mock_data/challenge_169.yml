@@ -1,0 +1,32 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 169
+    id-alias: mock-challenge-169
+    tags:
+      - Encryption
+      - SSRF
+      - XSS
+    platform: API
+    name: 'Mock挑战题目 #169'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Ustulo vociferor bos officia calculus sequi tertius.
+      Solium synagoga cito laborum nobis cubo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0llTjVZZUFLSjM=
+    is-expired: false
+    solutions:
+      - title: Arbitro centum amor.
+        url: https://friendly-scorn.biz/
+        source: StackOverflow
+        author: Sheri Bechtelar-McDermott
+      - title: Pauci aeger sustineo.
+        url: https://sociable-pliers.name
+        source: YouTube
+        author: Emily Treutel
+      - title: Cognatus capitulus vicinus.
+        url: https://flickering-editor.name/
+        source: Blog
+        author: ''
+    create-time: '2024-03-15 01:18:00'
+    update-time: '2024-10-18 04:56:30'

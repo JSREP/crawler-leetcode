@@ -1,0 +1,19 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 374
+    id-alias: mock-challenge-374
+    tags:
+      - OAuth
+      - Encryption
+    platform: Web
+    name: 'Mock挑战题目 #374'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Nihil arbor accusamus arbustum avarus. Esse utrum
+      termes abeo talio.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2lvcXNLWTRrQU8=
+    is-expired: false
+    solutions: []
+    create-time: '2024-12-07 09:53:15'
+    update-time: '2025-03-08 13:40:51'

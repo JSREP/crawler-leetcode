@@ -1,0 +1,22 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 772
+    id-alias: mock-challenge-772
+    tags:
+      - SSRF
+      - XXE
+      - JWT
+      - XSS
+    platform: Web
+    name: 'Mock挑战题目 #772'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Magnam vulariter pectus calculus denique defleo
+      amita. Derideo acquiro una admiratio agnitio candidus vulgaris caelum
+      teres vulariter.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0Z4WFE2eEF3MnU=
+    is-expired: false
+    solutions: []
+    create-time: '2023-11-11 14:12:35'
+    update-time: '2024-07-07 19:13:28'

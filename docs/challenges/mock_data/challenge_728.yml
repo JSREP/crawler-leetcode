@@ -1,0 +1,23 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 728
+    id-alias: mock-challenge-728
+    tags:
+      - OAuth
+      - Output-Encoding
+    platform: IoT
+    name: 'Mock挑战题目 #728'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Copia cognomen mollitia terreo adulatio adnuo
+      perspiciatis cultellus. Beneficium validus tabgo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6Lzc1cmdIWVpEa20=
+    is-expired: false
+    solutions:
+      - title: Umerus usus ventus.
+        url: https://vague-traditionalism.name/
+        source: StackOverflow
+        author: Deborah Keeling
+    create-time: '2025-04-11 11:57:33'
+    update-time: '2025-04-11 15:01:06'

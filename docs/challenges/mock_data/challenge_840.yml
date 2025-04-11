@@ -1,0 +1,26 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 840
+    id-alias: mock-challenge-840
+    tags:
+      - Session-Management
+      - SSRF
+      - Business-Logic
+      - HTTP-Headers
+      - JWT
+    platform: Web
+    name: 'Mock挑战题目 #840'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Territo acervus suspendo caveo dicta dolorem aptus.
+      Defendo cariosus turbo virgo confido vehemens turbo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2hxRlRSdUhaWDQ=
+    is-expired: true
+    solutions:
+      - title: Conscendo absconditus tyrannus.
+        url: https://purple-accountability.biz/
+        source: Blog
+        author: Rachel Rohan
+    create-time: '2024-02-02 10:32:11'
+    update-time: '2024-12-13 13:01:35'

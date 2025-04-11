@@ -1,0 +1,25 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 641
+    id-alias: mock-challenge-641
+    tags:
+      - Input-Validation
+      - OAuth
+      - Deserialization
+      - Race-Condition
+    platform: Web
+    name: 'Mock挑战题目 #641'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Creber molestiae verecundia paulatim depromo. Facere
+      cunabula tunc.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2RlaUwzNUNxSVQ=
+    is-expired: false
+    solutions:
+      - title: Curriculum subito deficio.
+        url: https://sneaky-pile.name/
+        source: YouTube
+        author: Stephen Ziemann
+    create-time: '2023-11-26 14:41:55'
+    update-time: '2024-11-02 06:44:11'

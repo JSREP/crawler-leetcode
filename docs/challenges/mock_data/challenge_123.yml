@@ -1,0 +1,34 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 123
+    id-alias: mock-challenge-123
+    tags:
+      - CORS
+      - OAuth
+      - GraphQL
+      - HTTP-Headers
+    platform: Mobile
+    name: 'Mock挑战题目 #123'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Ipsam aspernatur traho auditor addo advenio adimpleo
+      desino vos umquam. Vitiosus antiquus vulpes depereo aperiam velut abstergo
+      corona quaerat.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2Zla2pPbVRNTFY=
+    is-expired: false
+    solutions:
+      - title: Adulescens sol synagoga.
+        url: https://impassioned-sarong.name/
+        source: StackOverflow
+        author: Colleen Connelly I
+      - title: Delinquo carcer sursum.
+        url: https://glittering-freight.org/
+        source: YouTube
+        author: Adrian Armstrong
+      - title: Arceo adicio exercitationem.
+        url: https://haunting-honesty.biz
+        source: YouTube
+        author: Emmett Labadie
+    create-time: '2024-02-03 17:21:47'
+    update-time: '2024-07-09 15:23:27'

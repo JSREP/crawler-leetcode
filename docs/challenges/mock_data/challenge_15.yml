@@ -1,23 +1,29 @@
 # 挑战题目文件
 version: 1
-
 challenges:
-  - id: mock-challenge-15
+  - id: 15
+    id-alias: mock-challenge-15
     tags:
-      - webgl-fingerprint
-      - canvas-fingerprint
-      - anti-debug
-      - mobile-app
-    platform: Android
-    name: Mock挑战题目 #15
-    difficulty-level: 3
-    description: 这是一个示例挑战题目的描述，难度为3星级。
-    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9jaGFsbGVuZ2UvNjc4OTA=
+      - SQL-Injection
+      - GraphQL
+      - Authorization
+      - File-Upload
+    platform: API
+    name: 'Mock挑战题目 #15'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Conduco demonstro titulus cras terra derelinquo rem
+      credo vivo. Appositus acceptus teneo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2VveU5hVFV3SVA=
     is-expired: false
     solutions:
-      - title: Hook方法绕过
-        url: https://medium.com/@user/article
-        source: Medium
-        author: Alex Chen
-    create-time: 2024-08-27 02:25:42
-    update-time: 2023-12-06 20:35:32
+      - title: Conventus thermae cattus.
+        url: https://definite-mentor.biz/
+        source: StackOverflow
+        author: Jesus Abbott
+      - title: Suasoria auctor inflammatio.
+        url: https://vague-cricket.net/
+        source: GitHub
+        author: Barry Douglas
+    create-time: '2024-06-15 09:31:31'
+    update-time: '2024-11-21 18:10:21'

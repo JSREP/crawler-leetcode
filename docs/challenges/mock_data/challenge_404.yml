@@ -1,0 +1,30 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 404
+    id-alias: mock-challenge-404
+    tags:
+      - CSP
+      - Hashing
+      - Input-Validation
+      - Command-Injection
+      - Race-Condition
+    platform: Mobile
+    name: 'Mock挑战题目 #404'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Veniam atque unde aer denuo virga. Voro ceno beatus
+      defluo accusamus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1lja1NXdlN6OHE=
+    is-expired: false
+    solutions:
+      - title: Velociter voluptatem addo.
+        url: https://common-republican.biz/
+        source: YouTube
+        author: ''
+      - title: Vir quia accedo.
+        url: https://unwilling-starboard.net/
+        source: YouTube
+        author: Eunice Leffler
+    create-time: '2023-04-28 17:59:20'
+    update-time: '2025-04-02 21:29:43'

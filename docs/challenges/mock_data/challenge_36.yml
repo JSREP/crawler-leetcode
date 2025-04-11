@@ -1,23 +1,32 @@
 # 挑战题目文件
 version: 1
-
 challenges:
-  - id: mock-challenge-36
+  - id: 36
+    id-alias: mock-challenge-36
     tags:
-      - mobile-app
-      - device-motion
-      - webpack
-      - token-validation
-    platform: iOS
-    name: Mock挑战题目 #36
+      - Access-Control
+      - CSP
+      - Path-Traversal
+    platform: API
+    name: 'Mock挑战题目 #36'
     difficulty-level: 3
-    description: 这是一个示例挑战题目的描述，难度为3星级。
-    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzY3ODkw
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Ars veniam caries spargo una laudantium derideo
+      totam. Demergo tunc tendo despecto.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L25BWm5wVDJSaGY=
     is-expired: false
     solutions:
-      - title: Hook方法绕过
-        url: https://gist.github.com/user/id
-        source: Personal Blog
-        author: John Doe
-    create-time: 2025-07-10 14:03:44
-    update-time: 2024-09-15 06:54:30
+      - title: Caveo caelestis crur.
+        url: https://crazy-assist.name
+        source: StackOverflow
+        author: Devin Bartell
+      - title: Ager fuga trans.
+        url: https://fortunate-rawhide.name/
+        source: Medium
+        author: Nadine Sipes
+      - title: Vilitas sum statim.
+        url: https://smoggy-tomb.biz/
+        source: GitHub
+        author: April Spinka I
+    create-time: '2023-05-14 18:28:14'
+    update-time: '2024-12-12 23:29:41'

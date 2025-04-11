@@ -1,0 +1,25 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 589
+    id-alias: mock-challenge-589
+    tags:
+      - Input-Validation
+      - API-Security
+      - HTTP-Headers
+      - Authentication
+    platform: API
+    name: 'Mock挑战题目 #589'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Strenuus admoneo desolo cavus adipisci tego vinco
+      praesentium solus sublime. Angulus fugit celer somniculosus delibero.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0pGQ2xodGJoYjY=
+    is-expired: false
+    solutions:
+      - title: Usitas tertius congregatio.
+        url: https://frozen-tomb.info/
+        source: Blog
+        author: Lindsey Oberbrunner
+    create-time: '2023-04-28 13:36:09'
+    update-time: '2023-12-01 08:07:39'

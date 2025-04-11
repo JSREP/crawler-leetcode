@@ -1,0 +1,28 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 264
+    id-alias: mock-challenge-264
+    tags:
+      - OAuth
+      - Authentication
+      - Command-Injection
+    platform: IoT
+    name: 'Mock挑战题目 #264'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。In convoco patruus officia coaegresco curtus
+      speciosus aggero. Succedo tristis antiquus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzJrMXFsN2V4bDg=
+    is-expired: false
+    solutions:
+      - title: Tandem video utrimque.
+        url: https://delectable-laughter.biz
+        source: GitHub
+        author: Colleen O'Connell
+      - title: Torqueo validus sublime.
+        url: https://variable-replacement.biz
+        source: GitHub
+        author: Stuart Durgan
+    create-time: '2025-03-04 12:13:15'
+    update-time: '2025-03-30 13:27:40'

@@ -1,0 +1,20 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 924
+    id-alias: mock-challenge-924
+    tags:
+      - Authentication
+      - Rate-Limiting
+    platform: Web
+    name: 'Mock挑战题目 #924'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Commemoro aliquam verumtamen assumenda constans
+      victus eius surgo degusto. Iste angustus sortitus anser claustrum demum
+      clibanus alveus abscido illum.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L21abVFLTG9XR1c=
+    is-expired: false
+    solutions: []
+    create-time: '2023-11-06 05:57:29'
+    update-time: '2024-09-23 16:48:24'

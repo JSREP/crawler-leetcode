@@ -1,0 +1,21 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 768
+    id-alias: mock-challenge-768
+    tags:
+      - WebSockets
+      - JWT
+      - Authentication
+      - SSRF
+    platform: API
+    name: 'Mock挑战题目 #768'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Attero tergum solutio. Colo crux conturbo caries
+      teres umerus vix dicta terror tyrannus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzFJWGl1d2Y5Ylc=
+    is-expired: false
+    solutions: []
+    create-time: '2024-03-06 19:32:46'
+    update-time: '2025-01-08 05:35:52'

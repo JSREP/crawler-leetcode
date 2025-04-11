@@ -1,0 +1,35 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 135
+    id-alias: mock-challenge-135
+    tags:
+      - Rate-Limiting
+      - WebSockets
+      - Output-Encoding
+      - CORS
+      - Input-Validation
+    platform: API
+    name: 'Mock挑战题目 #135'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Conturbo artificiose defaeco fugit ambitus ver comis
+      tredecim tollo. Complectus neque vilicus ciminatio cohibeo universe uter
+      aptus comitatus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3Bsang2bVdjdHM=
+    is-expired: false
+    solutions:
+      - title: Vis solum volubilis.
+        url: https://lumpy-lieu.biz/
+        source: Medium
+        author: Paulette Kunze
+      - title: Cras appello colo.
+        url: https://clear-ecliptic.name/
+        source: YouTube
+        author: Glen Feeney
+      - title: Antiquus tenus earum.
+        url: https://unpleasant-integer.net
+        source: StackOverflow
+        author: Desiree Hauck
+    create-time: '2023-07-05 14:38:25'
+    update-time: '2025-03-13 14:21:48'

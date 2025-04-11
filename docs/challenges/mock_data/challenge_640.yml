@@ -1,0 +1,29 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 640
+    id-alias: mock-challenge-640
+    tags:
+      - JWT
+      - HTTP-Headers
+      - GraphQL
+      - SSRF
+    platform: Mobile
+    name: 'Mock挑战题目 #640'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Arbor suspendo usque asperiores urbs nihil vindico.
+      Turpis aut attollo conspergo aliquid denuo voluptate amo viduo modi.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0FreGJmWmUydm4=
+    is-expired: false
+    solutions:
+      - title: Condico succurro denuo.
+        url: https://wrong-transparency.biz/
+        source: GitHub
+        author: ''
+      - title: Adulatio bardus viduo.
+        url: https://cruel-pressure.com/
+        source: YouTube
+        author: Megan Daugherty
+    create-time: '2023-09-20 10:05:11'
+    update-time: '2023-11-07 17:08:50'

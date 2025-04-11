@@ -1,0 +1,23 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 435
+    id-alias: mock-challenge-435
+    tags:
+      - SQL-Injection
+      - Access-Control
+      - Race-Condition
+      - Authentication
+      - CSP
+    platform: Web
+    name: 'Mock挑战题目 #435'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Trepide curiositas accusantium aranea talis
+      crustulum. Corporis adstringo desidero angulus sperno curso testimonium
+      adicio.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6Lzg5MEV2Vm9WYlA=
+    is-expired: false
+    solutions: []
+    create-time: '2024-06-22 17:23:52'
+    update-time: '2025-03-14 03:38:11'

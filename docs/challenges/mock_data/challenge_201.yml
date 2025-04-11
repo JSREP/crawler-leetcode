@@ -1,0 +1,28 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 201
+    id-alias: mock-challenge-201
+    tags:
+      - XXE
+      - Race-Condition
+    platform: Mobile
+    name: 'Mock挑战题目 #201'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Adnuo cito aspicio via voluptatibus vulgivagus
+      accusantium deprecator doloremque. Tristis vinculum amoveo allatus deporto
+      vito ab bonus deduco acidus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzVNVzFteGJEMkM=
+    is-expired: false
+    solutions:
+      - title: Corona pauci aperio.
+        url: https://infamous-other.info
+        source: StackOverflow
+        author: Tracey Schuppe DVM
+      - title: Canto adaugeo decet.
+        url: https://mediocre-apricot.biz
+        source: Blog
+        author: ''
+    create-time: '2024-11-27 10:35:02'
+    update-time: '2025-03-19 10:02:43'

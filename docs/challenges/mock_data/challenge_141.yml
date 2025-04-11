@@ -1,0 +1,25 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 141
+    id-alias: mock-challenge-141
+    tags:
+      - XSS
+      - Input-Validation
+      - Path-Traversal
+      - API-Security
+    platform: API
+    name: 'Mock挑战题目 #141'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Deserunt vilis nam. Aestivus suggero soleo sum amo
+      denique abscido video repudiandae curvo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2xVRVVjWHZXSjM=
+    is-expired: false
+    solutions:
+      - title: In atque suadeo.
+        url: https://well-documented-valentine.org/
+        source: Blog
+        author: Mrs. Vanessa Farrell
+    create-time: '2024-12-17 00:04:19'
+    update-time: '2024-12-25 11:24:29'

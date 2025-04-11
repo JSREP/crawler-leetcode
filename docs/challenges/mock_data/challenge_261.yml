@@ -1,0 +1,30 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 261
+    id-alias: mock-challenge-261
+    tags:
+      - API-Security
+      - Input-Validation
+      - Deserialization
+      - SQL-Injection
+      - Command-Injection
+    platform: IoT
+    name: 'Mock挑战题目 #261'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Spero votum calamitas victoria. Aequitas error
+      ancilla aiunt crustulum balbus socius.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L29mUE9WS3lrcHg=
+    is-expired: true
+    solutions:
+      - title: Aptus vito cupiditate.
+        url: https://pushy-duffel.org
+        source: Medium
+        author: Joyce Metz III
+      - title: Theatrum tribuo centum.
+        url: https://outstanding-mantua.biz/
+        source: Medium
+        author: Pete Bradtke II
+    create-time: '2024-02-03 21:44:28'
+    update-time: '2024-06-19 12:10:45'

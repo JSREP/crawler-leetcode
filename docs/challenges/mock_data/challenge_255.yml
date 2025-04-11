@@ -1,0 +1,25 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 255
+    id-alias: mock-challenge-255
+    tags:
+      - XSS
+      - Encryption
+      - SSRF
+      - OAuth
+    platform: API
+    name: 'Mock挑战题目 #255'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Deficio in vacuus ulterius valens ulciscor. Ulciscor
+      iste ea comminor spoliatio tenus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0pxZlVyNnFQRTA=
+    is-expired: false
+    solutions:
+      - title: Aveho tondeo tabella.
+        url: https://immediate-draft.net/
+        source: YouTube
+        author: Jonathan Nikolaus DDS
+    create-time: '2023-12-06 03:24:16'
+    update-time: '2025-01-23 23:01:19'

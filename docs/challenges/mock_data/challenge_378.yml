@@ -1,0 +1,29 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 378
+    id-alias: mock-challenge-378
+    tags:
+      - XXE
+      - Command-Injection
+      - CSRF
+      - Access-Control
+    platform: Mobile
+    name: 'Mock挑战题目 #378'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Velociter ubi creta verumtamen cito venustas defaeco.
+      Facere deserunt acquiro addo vicinus statim colligo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3FPQzVzV1hvNWQ=
+    is-expired: false
+    solutions:
+      - title: Perspiciatis numquam vel.
+        url: https://elderly-hovercraft.biz
+        source: YouTube
+        author: Ashley O'Reilly
+      - title: Sint cado torrens.
+        url: https://hidden-saloon.info
+        source: YouTube
+        author: Dr. Kelly Maggio
+    create-time: '2024-09-06 10:38:12'
+    update-time: '2024-10-06 16:55:31'

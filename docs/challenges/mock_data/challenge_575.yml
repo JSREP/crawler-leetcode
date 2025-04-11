@@ -1,0 +1,28 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 575
+    id-alias: mock-challenge-575
+    tags:
+      - Rate-Limiting
+      - Encryption
+      - Mobile-Security
+    platform: IoT
+    name: 'Mock挑战题目 #575'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Vomito decretum aveho earum teneo deporto tibi
+      agnitio summisse. Theca ambitus tempus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0k2TmZ0MDhrZWw=
+    is-expired: false
+    solutions:
+      - title: Damno auditor numquam.
+        url: https://subtle-doing.biz/
+        source: Blog
+        author: Woodrow Vandervort
+      - title: Amiculum accendo sordeo.
+        url: https://unsung-director.org
+        source: StackOverflow
+        author: Terry Schaden
+    create-time: '2023-12-14 15:17:28'
+    update-time: '2024-05-19 21:59:16'

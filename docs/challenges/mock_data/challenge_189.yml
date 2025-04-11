@@ -1,0 +1,26 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 189
+    id-alias: mock-challenge-189
+    tags:
+      - HTTP-Headers
+      - WebSockets
+      - OAuth
+      - Authorization
+    platform: API
+    name: 'Mock挑战题目 #189'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Comparo uterque spes solvo arcus ambitus ultio
+      vehemens facere. Calco pauci subnecto combibo caelestis alter voluptatum
+      solvo cornu comes.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzZEcmdxa3Q4U08=
+    is-expired: false
+    solutions:
+      - title: Claudeo decimus textus.
+        url: https://anguished-eternity.net/
+        source: StackOverflow
+        author: Jane Corwin
+    create-time: '2024-09-13 09:40:22'
+    update-time: '2025-01-21 18:28:32'

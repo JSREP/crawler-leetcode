@@ -1,0 +1,26 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 949
+    id-alias: mock-challenge-949
+    tags:
+      - HTTP-Headers
+      - Encryption
+      - OAuth
+      - Session-Management
+      - SQL-Injection
+    platform: API
+    name: 'Mock挑战题目 #949'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Theca bellum commemoro canonicus cena chirographum.
+      Attonbitus uter alius turpis aurum curo tendo maxime crapula soleo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzA4V1h5OG4zRkM=
+    is-expired: false
+    solutions:
+      - title: Ara venia umquam.
+        url: https://bowed-emergent.biz
+        source: Medium
+        author: Lori Okuneva
+    create-time: '2023-09-30 20:57:00'
+    update-time: '2024-11-06 20:21:08'

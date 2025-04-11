@@ -1,0 +1,27 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 807
+    id-alias: mock-challenge-807
+    tags:
+      - Race-Condition
+      - Rate-Limiting
+      - HTTP-Headers
+      - SSRF
+    platform: IoT
+    name: 'Mock挑战题目 #807'
+    difficulty-level: 5
+    description: 这是一个示例挑战题目的描述，难度为5星级。Venio sed argentum vos spero. Modi tenuis adeptio.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6Lzc3TmJ1N1ZTVW4=
+    is-expired: false
+    solutions:
+      - title: Ad utique desipio.
+        url: https://cheerful-loyalty.name/
+        source: Medium
+        author: Della Douglas MD
+      - title: Natus cito modi.
+        url: https://sweet-overcoat.info/
+        source: Medium
+        author: Miss Paula Waters
+    create-time: '2024-10-14 04:55:19'
+    update-time: '2025-01-23 18:51:18'

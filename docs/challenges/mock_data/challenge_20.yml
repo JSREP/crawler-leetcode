@@ -1,21 +1,22 @@
 # 挑战题目文件
 version: 1
-
 challenges:
-  - id: mock-challenge-20
+  - id: 20
+    id-alias: mock-challenge-20
     tags:
-      - rate-limiting
-      - fingerprint
-    platform: Android
-    name: Mock挑战题目 #20
+      - GraphQL
+      - Input-Validation
+      - HTTP-Headers
+      - Deserialization
+      - Authorization
+    platform: Mobile
+    name: 'Mock挑战题目 #20'
     difficulty-level: 1
-    description: 这是一个示例挑战题目的描述，难度为1星级。
-    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9leGVyY2lzZS9hYmNkZWY=
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Cohibeo laboriosam dolor tum adfectus stabilis
+      strenuus venio harum. Cohors corona dedico aut thesis curvo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0l1ckdmM0xsclk=
     is-expired: false
-    solutions:
-      - title: Hook方法绕过
-        url: https://gist.github.com/user/id
-        source: YouTube
-        author: John Doe
-    create-time: 2023-03-03 04:27:07
-    update-time: 2024-02-24 10:28:03
+    solutions: []
+    create-time: '2024-11-16 04:38:35'
+    update-time: '2024-12-28 17:17:30'

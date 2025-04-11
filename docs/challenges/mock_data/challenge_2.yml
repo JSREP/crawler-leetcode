@@ -1,31 +1,19 @@
 # 挑战题目文件
 version: 1
-
 challenges:
-  - id: mock-challenge-2
+  - id: 2
+    id-alias: mock-challenge-2
     tags:
-      - token-validation
-      - anti-debug
-      - mobile-app
-      - jsvmp
-    platform: Android
-    name: Mock挑战题目 #2
-    difficulty-level: 3
-    description: 这是一个示例挑战题目的描述，难度为3星级。
-    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9jaGFsbGVuZ2UveHl6MTIz
-    is-expired: false
-    solutions:
-      - title: Hook方法绕过
-        url: https://medium.com/@user/article
-        source: Personal Blog
-        author: Alex Chen
-      - title: AST分析方案
-        url: https://gist.github.com/user/id
-        source: GitHub
-        author: 
-      - title: Hook方法绕过
-        url: https://github.com/user/repo
-        source: YouTube
-        author: 
-    create-time: 2024-07-16 00:13:08
-    update-time: 2024-07-19 19:05:36
+      - Race-Condition
+      - Path-Traversal
+    platform: Desktop
+    name: 'Mock挑战题目 #2'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Fugit textor arbitro catena. Tabella universe
+      conqueror volup commemoro vado.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2NDTmtQSUVRWGQ=
+    is-expired: true
+    solutions: []
+    create-time: '2024-02-02 04:52:35'
+    update-time: '2024-11-26 20:21:03'

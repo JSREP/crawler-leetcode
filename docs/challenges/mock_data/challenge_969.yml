@@ -1,0 +1,22 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 969
+    id-alias: mock-challenge-969
+    tags:
+      - Authorization
+      - XXE
+      - CORS
+      - GraphQL
+      - JWT
+    platform: Mobile
+    name: 'Mock挑战题目 #969'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Non valetudo thymum adficio tricesimus ciminatio
+      aspicio consequatur velit. Venia varietas vulariter deorsum facilis.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2xXVGtqVUJOV3I=
+    is-expired: false
+    solutions: []
+    create-time: '2025-04-03 08:39:16'
+    update-time: '2025-04-07 10:21:20'

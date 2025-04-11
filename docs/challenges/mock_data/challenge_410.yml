@@ -1,0 +1,25 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 410
+    id-alias: mock-challenge-410
+    tags:
+      - Business-Logic
+      - GraphQL
+      - Race-Condition
+      - Encryption
+    platform: API
+    name: 'Mock挑战题目 #410'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Bellicus admoneo thema decumbo decet conor apostolus
+      velum civitas. Agnosco delicate vehemens paens.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L09lS1YyMmNMVEg=
+    is-expired: false
+    solutions:
+      - title: Cedo tyrannus venia.
+        url: https://helpful-quinoa.org/
+        source: Medium
+        author: Ray Luettgen
+    create-time: '2024-12-24 14:27:10'
+    update-time: '2025-03-14 13:30:18'

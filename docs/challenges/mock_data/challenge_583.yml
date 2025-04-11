@@ -1,0 +1,22 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 583
+    id-alias: mock-challenge-583
+    tags:
+      - CORS
+      - Authorization
+      - Rate-Limiting
+      - CSP
+    platform: API
+    name: 'Mock挑战题目 #583'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Antea ventus arguo urbanus advoco civitas coerceo
+      dolor ver demulceo. Carpo vulnus comis eveniet aequus officia vulariter
+      somniculosus tego tener.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6Lzg2MkVTbUt4UXE=
+    is-expired: false
+    solutions: []
+    create-time: '2024-08-09 11:15:04'
+    update-time: '2024-12-02 17:50:59'

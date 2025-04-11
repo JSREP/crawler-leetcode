@@ -1,0 +1,31 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 842
+    id-alias: mock-challenge-842
+    tags:
+      - API-Security
+      - Race-Condition
+    platform: Mobile
+    name: 'Mock挑战题目 #842'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Suus advoco tamdiu cumque callide denuncio ventus
+      aperio. Defessus toties conculco crebro.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2d1WjJBVFBCNTE=
+    is-expired: false
+    solutions:
+      - title: Acerbitas conservo curso.
+        url: https://hefty-heroine.info/
+        source: YouTube
+        author: Herbert Tromp
+      - title: Ubi depraedor culpo.
+        url: https://black-heartbeat.info
+        source: StackOverflow
+        author: Rosemary Wyman
+      - title: Comparo ratione fugiat.
+        url: https://passionate-marimba.net
+        source: YouTube
+        author: Alfonso Lebsack
+    create-time: '2024-04-21 17:06:27'
+    update-time: '2024-11-27 11:52:06'

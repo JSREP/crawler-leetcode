@@ -1,0 +1,30 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 470
+    id-alias: mock-challenge-470
+    tags:
+      - Browser-Extensions
+      - SSRF
+      - Authorization
+      - Hashing
+      - Input-Validation
+    platform: Web
+    name: 'Mock挑战题目 #470'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Vitae deporto vos nisi terminatio enim cubitum venia.
+      Demonstro caecus adopto.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1FEZEJCaURiY2s=
+    is-expired: false
+    solutions:
+      - title: Volva iure aurum.
+        url: https://forsaken-supplier.name
+        source: Blog
+        author: Pamela Turcotte
+      - title: Armarium desino suus.
+        url: https://massive-adult.biz/
+        source: Medium
+        author: Lora Koelpin
+    create-time: '2024-01-11 02:38:54'
+    update-time: '2024-10-12 04:32:12'

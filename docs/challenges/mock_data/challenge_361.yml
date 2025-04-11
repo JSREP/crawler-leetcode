@@ -1,0 +1,34 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 361
+    id-alias: mock-challenge-361
+    tags:
+      - WebSockets
+      - CORS
+      - Rate-Limiting
+      - File-Upload
+      - Output-Encoding
+    platform: API
+    name: 'Mock挑战题目 #361'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Tabesco tutis cimentarius adiuvo reprehenderit aetas.
+      Vigor adopto apud aggredior comminor molestias.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3U3QzdkaDJ6UWE=
+    is-expired: false
+    solutions:
+      - title: Aperio aestus tamen.
+        url: https://well-documented-behest.name
+        source: YouTube
+        author: Patrick Olson DDS
+      - title: Defessus viscus sustineo.
+        url: https://descriptive-divine.com
+        source: GitHub
+        author: ''
+      - title: Conservo tricesimus cubitum.
+        url: https://pointed-formamide.org/
+        source: StackOverflow
+        author: Tracy Reichel-Daugherty
+    create-time: '2024-11-18 23:00:59'
+    update-time: '2025-02-18 13:08:42'

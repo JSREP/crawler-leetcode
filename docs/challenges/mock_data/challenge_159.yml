@@ -1,0 +1,30 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 159
+    id-alias: mock-challenge-159
+    tags:
+      - Hashing
+      - Deserialization
+      - CSRF
+      - GraphQL
+    platform: Web
+    name: 'Mock挑战题目 #159'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Nobis arca ventus concido nesciunt verecundia xiphias
+      thesaurus laboriosam. Spectaculum quasi voveo coerceo credo tempus suggero
+      cerno amo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2Z0RXhYOG83VkU=
+    is-expired: true
+    solutions:
+      - title: Cavus comparo consequuntur.
+        url: https://elegant-community.biz/
+        source: Medium
+        author: Leticia Homenick
+      - title: Solio comes corrupti.
+        url: https://unlucky-travel.info
+        source: GitHub
+        author: Irvin Mante
+    create-time: '2023-06-03 05:05:49'
+    update-time: '2024-05-05 12:02:00'

@@ -1,0 +1,23 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 770
+    id-alias: mock-challenge-770
+    tags:
+      - SSRF
+      - File-Upload
+    platform: Web
+    name: 'Mock挑战题目 #770'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Considero solum triduana. Vox aliquid saepe quod
+      aggredior crur.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2o4YkxqTXB0Mjk=
+    is-expired: false
+    solutions:
+      - title: Aduro adfero verus.
+        url: https://shameful-arcade.name
+        source: YouTube
+        author: Todd Larkin II
+    create-time: '2023-11-13 01:36:04'
+    update-time: '2024-02-18 23:58:23'

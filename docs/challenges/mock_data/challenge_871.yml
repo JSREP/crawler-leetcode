@@ -1,0 +1,29 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 871
+    id-alias: mock-challenge-871
+    tags:
+      - CSP
+      - Hashing
+      - Path-Traversal
+      - CORS
+    platform: Web
+    name: 'Mock挑战题目 #871'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Sui necessitatibus viscus cur illum volup cuius
+      tempore appello. Tam laborum aeger dicta animus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L08xZjVIb3lwTjU=
+    is-expired: false
+    solutions:
+      - title: Tui comminor consuasor.
+        url: https://diligent-bathhouse.name/
+        source: YouTube
+        author: Ryan Ryan
+      - title: Facilis sub capio.
+        url: https://self-assured-stay.info
+        source: StackOverflow
+        author: Antonia Schumm
+    create-time: '2023-06-08 10:33:19'
+    update-time: '2025-01-01 04:34:17'

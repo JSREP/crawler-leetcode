@@ -1,0 +1,31 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 639
+    id-alias: mock-challenge-639
+    tags:
+      - WebSockets
+      - OAuth
+    platform: Mobile
+    name: 'Mock挑战题目 #639'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Creta virgo artificiose vomica admiratio ait. Dedecor
+      adamo vorax.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1pnZzlXT3N1a0I=
+    is-expired: false
+    solutions:
+      - title: Solum stabilis accommodo.
+        url: https://genuine-omelet.org
+        source: StackOverflow
+        author: ''
+      - title: Veritas absorbeo dolor.
+        url: https://frequent-ethyl.info
+        source: Medium
+        author: Dr. Brandi Mann
+      - title: Aro theatrum atqui.
+        url: https://sentimental-suitcase.com
+        source: GitHub
+        author: Sean Nader
+    create-time: '2023-07-09 20:49:28'
+    update-time: '2024-04-24 02:16:52'

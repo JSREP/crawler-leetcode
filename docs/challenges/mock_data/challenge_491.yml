@@ -1,0 +1,32 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 491
+    id-alias: mock-challenge-491
+    tags:
+      - Authentication
+      - Business-Logic
+      - API-Security
+    platform: Desktop
+    name: 'Mock挑战题目 #491'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Validus copia cornu virgo bonus. Tot triumphus uter
+      animus amissio tondeo cilicium.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L21MR2FST1hxT1E=
+    is-expired: false
+    solutions:
+      - title: Uter tergum adsidue.
+        url: https://pointed-integer.net/
+        source: GitHub
+        author: Stanley Monahan
+      - title: Virga suasoria apostolus.
+        url: https://diligent-backbone.biz
+        source: Medium
+        author: Mrs. Ethel MacGyver
+      - title: Adsuesco tardus amet.
+        url: https://wise-subexpression.org
+        source: YouTube
+        author: Josefina Cummings
+    create-time: '2023-06-04 04:05:25'
+    update-time: '2023-12-27 13:45:41'

@@ -1,0 +1,24 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 882
+    id-alias: mock-challenge-882
+    tags:
+      - Command-Injection
+      - Access-Control
+      - File-Upload
+    platform: Mobile
+    name: 'Mock挑战题目 #882'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Absum supra tracto decens degenero cetera nam alii.
+      Vilis uterque votum paulatim adversus umerus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2pkdVRIZUNvelI=
+    is-expired: false
+    solutions:
+      - title: Abscido xiphias sursum.
+        url: https://nifty-draw.net/
+        source: GitHub
+        author: Vernon O'Conner
+    create-time: '2024-09-17 08:51:09'
+    update-time: '2024-11-26 00:20:18'

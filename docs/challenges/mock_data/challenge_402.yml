@@ -1,0 +1,34 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 402
+    id-alias: mock-challenge-402
+    tags:
+      - OAuth
+      - Authorization
+      - HTTP-Headers
+      - JWT
+      - Output-Encoding
+    platform: API
+    name: 'Mock挑战题目 #402'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Crudelis crepusculum dolorum termes ustilo esse
+      veritatis. Cunabula aqua vesco.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2JQT29ZcThyb04=
+    is-expired: false
+    solutions:
+      - title: Conduco vilitas aliqua.
+        url: https://livid-vibraphone.com/
+        source: Blog
+        author: Jean Boyer
+      - title: Curo autus illum.
+        url: https://wonderful-recommendation.com
+        source: Medium
+        author: Kayla Gleason
+      - title: Antea anser varius.
+        url: https://these-cook.name
+        source: GitHub
+        author: Oscar Schoen
+    create-time: '2024-06-10 00:59:38'
+    update-time: '2024-10-30 23:10:55'

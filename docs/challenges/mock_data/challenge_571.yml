@@ -1,0 +1,33 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 571
+    id-alias: mock-challenge-571
+    tags:
+      - Path-Traversal
+      - File-Upload
+      - XSS
+      - Deserialization
+    platform: Mobile
+    name: 'Mock挑战题目 #571'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Ascit spiculum decet claudeo volaticus callide
+      adipisci thema turba. Bestia arca aspernatur sustineo crapula caritas.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2kzVk92S0E4UkM=
+    is-expired: false
+    solutions:
+      - title: Asporto alter advenio.
+        url: https://each-chasuble.com
+        source: Blog
+        author: Jeff Rogahn
+      - title: Uter capillus ventito.
+        url: https://outstanding-governance.name
+        source: YouTube
+        author: Vincent Bartell PhD
+      - title: Ultio aeger thesaurus.
+        url: https://impossible-oil.com
+        source: Medium
+        author: Fannie Kling
+    create-time: '2024-07-08 11:45:41'
+    update-time: '2025-03-02 07:50:10'

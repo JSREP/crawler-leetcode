@@ -1,0 +1,29 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 219
+    id-alias: mock-challenge-219
+    tags:
+      - Authentication
+      - File-Upload
+      - Browser-Extensions
+      - Command-Injection
+    platform: Desktop
+    name: 'Mock挑战题目 #219'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Adulatio arx vester depraedor. Pariatur vilicus
+      spero.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0x2Ump5VndmbkM=
+    is-expired: false
+    solutions:
+      - title: Quae suadeo capio.
+        url: https://frozen-scorpion.com/
+        source: Blog
+        author: Erik Schneider II
+      - title: Arbustum complectus aestus.
+        url: https://specific-premeditation.name/
+        source: GitHub
+        author: Sylvester Stracke
+    create-time: '2024-08-30 17:42:55'
+    update-time: '2024-11-12 22:45:13'

@@ -1,0 +1,33 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 381
+    id-alias: mock-challenge-381
+    tags:
+      - Encryption
+      - SSRF
+      - Hashing
+      - Authorization
+    platform: Web
+    name: 'Mock挑战题目 #381'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Coerceo aureus veniam. Auctor sapiente doloribus
+      error cribro sub tepesco vulgivagus tui atqui.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L01JQ21oWWxNM3g=
+    is-expired: true
+    solutions:
+      - title: Statua ater sapiente.
+        url: https://damaged-stay.info
+        source: GitHub
+        author: Leo Hessel
+      - title: Unde voro adduco.
+        url: https://fatal-gray.net
+        source: StackOverflow
+        author: Miss Celia Quitzon
+      - title: Absens conspergo barba.
+        url: https://tall-creature.net
+        source: Medium
+        author: Terrell Jerde
+    create-time: '2023-07-26 11:26:46'
+    update-time: '2024-08-14 17:10:27'

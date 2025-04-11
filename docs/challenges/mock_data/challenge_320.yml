@@ -1,0 +1,19 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 320
+    id-alias: mock-challenge-320
+    tags:
+      - SSRF
+      - CSP
+    platform: IoT
+    name: 'Mock挑战题目 #320'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Peccatus cohors suggero canonicus adopto tamen cribro
+      abbas ubi. Utique argentum basium.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1VWbGRBWldJeGI=
+    is-expired: true
+    solutions: []
+    create-time: '2024-01-09 19:31:07'
+    update-time: '2024-05-18 12:41:05'

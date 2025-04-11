@@ -1,0 +1,19 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 647
+    id-alias: mock-challenge-647
+    tags:
+      - Business-Logic
+      - Hashing
+    platform: Desktop
+    name: 'Mock挑战题目 #647'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Eos defendo coepi tum cometes repellat absorbeo
+      defaeco. Apparatus utroque denuncio alii arbitro.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1l1N0N5UmxFcnc=
+    is-expired: false
+    solutions: []
+    create-time: '2024-07-29 11:25:30'
+    update-time: '2025-02-02 23:21:53'

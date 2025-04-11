@@ -1,0 +1,23 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 529
+    id-alias: mock-challenge-529
+    tags:
+      - WebSockets
+      - XSS
+      - JWT
+      - Command-Injection
+      - Race-Condition
+    platform: Desktop
+    name: 'Mock挑战题目 #529'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Summopere abeo cumque claudeo solitudo decens
+      deleniti delinquo pauper dignissimos. Turbo vae laborum supplanto candidus
+      vulnero curto terra.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0czUlhvdnd0V20=
+    is-expired: false
+    solutions: []
+    create-time: '2023-05-29 15:16:37'
+    update-time: '2023-08-14 17:25:09'

@@ -1,0 +1,27 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 503
+    id-alias: mock-challenge-503
+    tags:
+      - OAuth
+      - Encryption
+    platform: Mobile
+    name: 'Mock挑战题目 #503'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Corroboro denuncio asperiores adimpleo cometes vado.
+      Credo solio ocer congregatio ventus cauda quibusdam trucido caecus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1h3TDNsMGgzejE=
+    is-expired: false
+    solutions:
+      - title: Facere tantillus absum.
+        url: https://enchanting-beret.org/
+        source: Blog
+        author: Domingo Jaskolski
+      - title: Tyrannus via vix.
+        url: https://concerned-travel.net
+        source: StackOverflow
+        author: Mae Nienow
+    create-time: '2024-01-18 20:27:37'
+    update-time: '2024-11-09 02:31:23'

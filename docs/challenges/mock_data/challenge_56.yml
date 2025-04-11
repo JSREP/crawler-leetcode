@@ -1,28 +1,29 @@
 # 挑战题目文件
 version: 1
-
 challenges:
-  - id: mock-challenge-56
+  - id: 56
+    id-alias: mock-challenge-56
     tags:
-      - js-reverse
-    platform: iOS
-    name: Mock挑战题目 #56
-    difficulty-level: 4
-    description: 这是一个示例挑战题目的描述，难度为4星级。
-    base64-url: aHR0cHM6Ly93d3cuZXhhbXBsZS5jb20vcXVpei8xMjM0NQ==
+      - Input-Validation
+      - Race-Condition
+    platform: Mobile
+    name: 'Mock挑战题目 #56'
+    difficulty-level: 5
+    description: 这是一个示例挑战题目的描述，难度为5星级。Coniuratio adsuesco tabgo. Cicuta quaerat calcar.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2U5eElMUGxIU1M=
     is-expired: false
     solutions:
-      - title: AST分析方案
-        url: https://gist.github.com/user/id
-        source: Personal Blog
-        author: 
-      - title: 使用Puppeteer绕过检测
-        url: https://medium.com/@user/article
+      - title: Asperiores traho terga.
+        url: https://stale-fog.net
+        source: StackOverflow
+        author: Darnell Nitzsche
+      - title: Virgo celo sto.
+        url: https://legal-hunger.name
+        source: StackOverflow
+        author: Johnathan Hermann
+      - title: Admoneo sumptus amplexus.
+        url: https://sardonic-lay.net/
         source: YouTube
-        author: John Doe
-      - title: 静态分析方法
-        url: https://gist.github.com/user/id
-        source: Medium
-        author: Alex Chen
-    create-time: 2024-02-14 01:11:55
-    update-time: 2025-10-05 03:00:15
+        author: Beverly Okuneva IV
+    create-time: '2023-05-11 15:04:29'
+    update-time: '2023-07-15 15:09:01'

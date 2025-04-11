@@ -1,0 +1,26 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 784
+    id-alias: mock-challenge-784
+    tags:
+      - XXE
+      - Mobile-Security
+      - API-Security
+      - Encryption
+      - Authorization
+    platform: API
+    name: 'Mock挑战题目 #784'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Curiositas comes corporis defleo fuga. Tricesimus
+      tutamen subnecto despecto umbra statua damnatio deleo cervus denuo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2loUDZWY3FRdGM=
+    is-expired: false
+    solutions:
+      - title: Officia cursim valeo.
+        url: https://wrathful-mozzarella.org
+        source: YouTube
+        author: Roberto Feest
+    create-time: '2023-08-10 00:41:33'
+    update-time: '2024-08-17 13:11:30'

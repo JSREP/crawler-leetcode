@@ -1,0 +1,34 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 502
+    id-alias: mock-challenge-502
+    tags:
+      - CSP
+      - Output-Encoding
+      - SSRF
+      - GraphQL
+      - Encryption
+    platform: Mobile
+    name: 'Mock挑战题目 #502'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Aestus alveus voluptate tenetur ascisco tabula.
+      Patria amor considero defungo aegre umquam vestrum.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2dWNWdoMzZRMGM=
+    is-expired: false
+    solutions:
+      - title: Paulatim temperantia testimonium.
+        url: https://neat-hunger.com/
+        source: Blog
+        author: Nelson Collier
+      - title: Audio depereo cimentarius.
+        url: https://terrible-gerbil.net/
+        source: YouTube
+        author: ''
+      - title: Aetas teres calco.
+        url: https://productive-recommendation.name/
+        source: GitHub
+        author: Lora Morissette
+    create-time: '2024-11-08 15:24:47'
+    update-time: '2025-02-06 22:40:32'

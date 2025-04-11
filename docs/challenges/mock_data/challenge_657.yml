@@ -1,0 +1,31 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 657
+    id-alias: mock-challenge-657
+    tags:
+      - CORS
+      - Command-Injection
+      - Mobile-Security
+      - XXE
+      - SQL-Injection
+    platform: Web
+    name: 'Mock挑战题目 #657'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Villa dapifer et conduco solum beatus barba defungo
+      doloribus umquam. Thesis nostrum aliqua vinitor sortitus teneo tui crur
+      succurro.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3hlaHJDMHU0Qlc=
+    is-expired: false
+    solutions:
+      - title: Cerno celo tantum.
+        url: https://monstrous-minority.com/
+        source: Blog
+        author: Al Bradtke
+      - title: Campana confugo circumvenio.
+        url: https://lone-sonata.biz
+        source: Medium
+        author: Lorene Cassin
+    create-time: '2023-07-10 12:46:00'
+    update-time: '2024-04-26 15:59:14'

@@ -1,0 +1,31 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 815
+    id-alias: mock-challenge-815
+    tags:
+      - Mobile-Security
+      - SQL-Injection
+    platform: Mobile
+    name: 'Mock挑战题目 #815'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Depereo conatus contra toties dolores celer temptatio
+      tantillus. Accusantium vester tutamen subiungo suus accusantium id.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L252TzZibkpOdjQ=
+    is-expired: true
+    solutions:
+      - title: Cunctatio sequi speculum.
+        url: https://quintessential-ghost.biz/
+        source: YouTube
+        author: Brittany Rice
+      - title: Cerno vestigium consequuntur.
+        url: https://mysterious-unblinking.biz
+        source: Blog
+        author: Randolph Bergnaum
+      - title: Crux acsi velit.
+        url: https://snappy-trolley.name
+        source: YouTube
+        author: Wanda Willms
+    create-time: '2024-04-09 23:36:22'
+    update-time: '2025-01-16 21:51:14'

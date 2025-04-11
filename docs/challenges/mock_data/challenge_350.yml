@@ -1,0 +1,30 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 350
+    id-alias: mock-challenge-350
+    tags:
+      - Authentication
+      - API-Security
+      - OAuth
+    platform: IoT
+    name: 'Mock挑战题目 #350'
+    difficulty-level: 5
+    description: 这是一个示例挑战题目的描述，难度为5星级。Advenio incidunt asperiores. Clamo cursus stella.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0Q1Y2FDSDFhWXA=
+    is-expired: false
+    solutions:
+      - title: Acceptus terreo stella.
+        url: https://worldly-sunbeam.com/
+        source: Blog
+        author: Henry Stoltenberg
+      - title: Expedita quaerat velit.
+        url: https://fragrant-king.com
+        source: StackOverflow
+        author: Dwight Mitchell
+      - title: Acidus deleniti tredecim.
+        url: https://smart-fowl.name/
+        source: GitHub
+        author: Juanita Kuvalis
+    create-time: '2024-02-05 16:02:54'
+    update-time: '2024-10-04 06:20:49'

@@ -1,21 +1,28 @@
 # 挑战题目文件
 version: 1
-
 challenges:
-  - id: mock-challenge-43
+  - id: 43
+    id-alias: mock-challenge-43
     tags:
-      - fingerprint
-      - signature
-    platform: Android
-    name: Mock挑战题目 #43
-    difficulty-level: 5
-    description: 这是一个示例挑战题目的描述，难度为5星级。
-    base64-url: aHR0cHM6Ly93d3cuZXhhbXBsZS5jb20vY2hhbGxlbmdlL2FiY2RlZg==
+      - CSRF
+      - Hashing
+    platform: API
+    name: 'Mock挑战题目 #43'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Tyrannus sumo stips eligendi utrimque acerbitas comes
+      laboriosam auditor vesper. Depraedor vaco triumphus beatus strenuus tardus
+      tolero caritas.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2ptSkZ2RENvNjc=
     is-expired: false
     solutions:
-      - title: Hook方法绕过
-        url: https://github.com/user/repo
-        source: Medium
-        author: John Doe
-    create-time: 2023-12-24 14:12:53
-    update-time: 2025-10-17 00:18:58
+      - title: Suasoria atavus cetera.
+        url: https://basic-fog.org/
+        source: GitHub
+        author: Clint Frami-Conn
+      - title: Artificiose pariatur cognomen.
+        url: https://hateful-sticker.name/
+        source: Blog
+        author: Vanessa O'Kon
+    create-time: '2024-11-22 13:04:24'
+    update-time: '2025-02-27 12:53:16'

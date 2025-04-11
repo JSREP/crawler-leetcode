@@ -1,0 +1,20 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 670
+    id-alias: mock-challenge-670
+    tags:
+      - Mobile-Security
+      - Access-Control
+      - Race-Condition
+    platform: IoT
+    name: 'Mock挑战题目 #670'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Minus alo tardus delinquo voco. Cuius creo sursum aro
+      cervus cupio cilicium.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0doOE5wbmlvZEI=
+    is-expired: false
+    solutions: []
+    create-time: '2023-05-14 11:38:57'
+    update-time: '2025-02-27 17:41:13'

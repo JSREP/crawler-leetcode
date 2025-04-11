@@ -1,0 +1,32 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 591
+    id-alias: mock-challenge-591
+    tags:
+      - GraphQL
+      - Race-Condition
+      - API-Security
+    platform: Web
+    name: 'Mock挑战题目 #591'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Callide talis pel contego taceo verus vulgaris pax.
+      Speculum somnus virga arx adsum.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L01JSlJsS09pUjM=
+    is-expired: true
+    solutions:
+      - title: Tabesco addo desparatus.
+        url: https://super-fork.name/
+        source: YouTube
+        author: Ms. Olga Wisozk
+      - title: Vita barba suppellex.
+        url: https://lovely-space.org
+        source: Medium
+        author: Julia Koch
+      - title: Absens suggero ciminatio.
+        url: https://entire-tuxedo.org/
+        source: Blog
+        author: Heidi Schamberger
+    create-time: '2023-06-12 23:38:58'
+    update-time: '2024-12-08 10:03:11'

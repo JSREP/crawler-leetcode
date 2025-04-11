@@ -1,0 +1,34 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 346
+    id-alias: mock-challenge-346
+    tags:
+      - Business-Logic
+      - Encryption
+      - SSRF
+      - XSS
+      - Authentication
+    platform: IoT
+    name: 'Mock挑战题目 #346'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Dens similique acies iure aperiam. Tamquam curriculum
+      viscus appono vacuus decretum voluntarius magnam vesper bellicus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1d1WkFlR21vRzQ=
+    is-expired: false
+    solutions:
+      - title: Adsum tardus tempora.
+        url: https://distinct-guide.info
+        source: GitHub
+        author: Lynette Kertzmann
+      - title: Cognomen cresco stipes.
+        url: https://black-and-white-commercial.info/
+        source: Blog
+        author: Ronnie Beer
+      - title: Crux caelum deleniti.
+        url: https://close-concentration.net/
+        source: StackOverflow
+        author: Michelle Fay
+    create-time: '2023-07-01 18:27:26'
+    update-time: '2024-01-29 23:24:47'

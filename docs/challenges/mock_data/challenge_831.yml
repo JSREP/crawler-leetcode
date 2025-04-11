@@ -1,0 +1,31 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 831
+    id-alias: mock-challenge-831
+    tags:
+      - Access-Control
+      - OAuth
+    platform: IoT
+    name: 'Mock挑战题目 #831'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Occaecati dolores allatus custodia amissio solium
+      pecco. Quo ars bellum correptius.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1NGVDhjM3k2a0c=
+    is-expired: false
+    solutions:
+      - title: Agnosco abbas concido.
+        url: https://honored-strategy.net
+        source: GitHub
+        author: Saul Morissette
+      - title: Concedo crepusculum suppellex.
+        url: https://upset-diversity.org
+        source: Medium
+        author: Dolores Predovic
+      - title: Adnuo sui sufficio.
+        url: https://sarcastic-battle.name/
+        source: StackOverflow
+        author: Tara Osinski
+    create-time: '2024-04-08 06:29:03'
+    update-time: '2025-03-07 06:08:45'

@@ -1,0 +1,32 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 875
+    id-alias: mock-challenge-875
+    tags:
+      - Race-Condition
+      - Input-Validation
+      - Path-Traversal
+    platform: Web
+    name: 'Mock挑战题目 #875'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Administratio dens pectus. Appello eum abscido
+      cernuus absconditus nulla suasoria cubitum solium accedo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0IyVUcwaWRYblM=
+    is-expired: true
+    solutions:
+      - title: Somnus sperno desparatus.
+        url: https://strange-retrospectivity.info/
+        source: Blog
+        author: Fred Kulas V
+      - title: Blandior stella adversus.
+        url: https://lumpy-cricket.net
+        source: StackOverflow
+        author: Dr. Sue Homenick
+      - title: Tepesco surgo statim.
+        url: https://utilized-toothpick.info
+        source: Blog
+        author: Alison Fadel
+    create-time: '2023-08-30 06:32:43'
+    update-time: '2024-08-15 19:09:55'

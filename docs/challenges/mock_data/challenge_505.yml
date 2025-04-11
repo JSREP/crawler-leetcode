@@ -1,0 +1,25 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 505
+    id-alias: mock-challenge-505
+    tags:
+      - Browser-Extensions
+      - JWT
+      - XXE
+      - XSS
+    platform: Web
+    name: 'Mock挑战题目 #505'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Sufficio delego spargo voluptates ducimus. Victus
+      vallum tyrannus officia celebrer adeo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0RvWVpFQXphWVk=
+    is-expired: false
+    solutions:
+      - title: Solus dedico aer.
+        url: https://wide-eyed-ceramic.biz/
+        source: YouTube
+        author: Sylvester Johns
+    create-time: '2024-10-29 22:50:49'
+    update-time: '2024-12-15 09:44:37'

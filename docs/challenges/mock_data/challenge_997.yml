@@ -1,0 +1,22 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 997
+    id-alias: mock-challenge-997
+    tags:
+      - Authorization
+      - File-Upload
+      - Command-Injection
+      - Race-Condition
+      - XSS
+    platform: IoT
+    name: 'Mock挑战题目 #997'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Xiphias voluntarius contego sortitus torqueo
+      ciminatio aestivus. Stillicidium spectaculum natus bellicus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2N1QUhPVTl1Ykk=
+    is-expired: false
+    solutions: []
+    create-time: '2024-04-17 00:56:18'
+    update-time: '2025-02-01 18:10:17'

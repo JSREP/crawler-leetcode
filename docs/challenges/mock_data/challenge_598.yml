@@ -1,0 +1,26 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 598
+    id-alias: mock-challenge-598
+    tags:
+      - Path-Traversal
+      - Access-Control
+      - Input-Validation
+      - XXE
+      - API-Security
+    platform: IoT
+    name: 'Mock挑战题目 #598'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Spargo vilis vivo sophismata similique. Super auditor
+      colligo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzYzeTNuMWU5eEs=
+    is-expired: true
+    solutions:
+      - title: Agnosco viduo stella.
+        url: https://made-up-underneath.net
+        source: Medium
+        author: Kerry McGlynn-Satterfield
+    create-time: '2024-02-11 08:46:32'
+    update-time: '2024-08-13 22:07:30'

@@ -1,0 +1,21 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 121
+    id-alias: mock-challenge-121
+    tags:
+      - SSRF
+      - Browser-Extensions
+      - Race-Condition
+      - OAuth
+    platform: Mobile
+    name: 'Mock挑战题目 #121'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Sono demitto cultellus. Atque vivo abutor animadverto
+      amaritudo tenetur corporis xiphias termes.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L201ZWwzZjRmUkM=
+    is-expired: false
+    solutions: []
+    create-time: '2023-05-05 02:49:00'
+    update-time: '2023-11-09 04:03:29'

@@ -1,0 +1,34 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 646
+    id-alias: mock-challenge-646
+    tags:
+      - GraphQL
+      - Hashing
+      - CSP
+      - CSRF
+      - OAuth
+    platform: IoT
+    name: 'Mock挑战题目 #646'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Tenetur advenio tondeo sed. Timidus aeger totam
+      asperiores coaegresco.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzFHdG1YZ3cweFU=
+    is-expired: false
+    solutions:
+      - title: Ait usus chirographum.
+        url: https://excited-markup.net
+        source: Blog
+        author: Woodrow Hermiston
+      - title: Animus sumo sublime.
+        url: https://livid-following.name
+        source: Blog
+        author: Dianne Sauer
+      - title: Cunabula desipio adhaero.
+        url: https://lonely-ethyl.com
+        source: Medium
+        author: Alan Towne
+    create-time: '2024-07-26 03:54:09'
+    update-time: '2024-10-10 12:41:58'

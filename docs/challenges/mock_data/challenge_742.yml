@@ -1,0 +1,34 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 742
+    id-alias: mock-challenge-742
+    tags:
+      - OAuth
+      - Browser-Extensions
+      - Path-Traversal
+      - SQL-Injection
+      - Input-Validation
+    platform: IoT
+    name: 'Mock挑战题目 #742'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Vulgivagus adeo demonstro aurum ullus. Doloribus
+      tabella ipsum apparatus summopere tristis demulceo volup tempora super.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L05NZGhBTlNjZ3I=
+    is-expired: false
+    solutions:
+      - title: Supellex appono appositus.
+        url: https://slushy-summer.net/
+        source: YouTube
+        author: Nellie Nikolaus
+      - title: Abeo strenuus peior.
+        url: https://massive-alert.com/
+        source: Blog
+        author: Laurence Parker
+      - title: Torqueo itaque aliquid.
+        url: https://sudden-ad.com/
+        source: Medium
+        author: Glen Schumm
+    create-time: '2024-05-01 18:19:00'
+    update-time: '2024-06-02 13:38:17'

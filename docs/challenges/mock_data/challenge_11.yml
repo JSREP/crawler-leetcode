@@ -1,21 +1,19 @@
 # 挑战题目文件
 version: 1
-
 challenges:
-  - id: mock-challenge-11
+  - id: 11
+    id-alias: mock-challenge-11
     tags:
-      - device-motion
-      - webpack
-    platform: iOS
-    name: Mock挑战题目 #11
+      - Mobile-Security
+      - OAuth
+      - Input-Validation
+      - Deserialization
+    platform: IoT
+    name: 'Mock挑战题目 #11'
     difficulty-level: 5
-    description: 这是一个示例挑战题目的描述，难度为5星级。
-    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9leGVyY2lzZS94eXoxMjM=
+    description: 这是一个示例挑战题目的描述，难度为5星级。Cras vehemens quod solium. Velum sursum valde.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L256S0lONGVzbmE=
     is-expired: false
-    solutions:
-      - title: AST分析方案
-        url: https://gist.github.com/user/id
-        source: Medium
-        author: 
-    create-time: 2025-06-02 08:55:13
-    update-time: 2023-12-08 06:07:28
+    solutions: []
+    create-time: '2024-02-13 07:52:20'
+    update-time: '2024-06-17 08:29:10'

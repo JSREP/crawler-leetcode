@@ -1,0 +1,28 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 418
+    id-alias: mock-challenge-418
+    tags:
+      - OAuth
+      - File-Upload
+    platform: Mobile
+    name: 'Mock挑战题目 #418'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Victoria antiquus umquam absorbeo advoco aperiam
+      temeritas deficio victoria. Credo congregatio defessus comes umquam
+      armarium adstringo condico cerno.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0pncjJZVXVLMnU=
+    is-expired: false
+    solutions:
+      - title: Circumvenio thymbra virga.
+        url: https://rotten-pop.biz
+        source: Blog
+        author: Louis Mertz
+      - title: Porro cupiditas maxime.
+        url: https://flustered-unit.info
+        source: YouTube
+        author: Dr. Lela Rosenbaum DDS
+    create-time: '2024-10-17 06:41:33'
+    update-time: '2024-12-28 18:57:16'

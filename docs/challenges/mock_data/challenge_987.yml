@@ -1,0 +1,24 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 987
+    id-alias: mock-challenge-987
+    tags:
+      - Command-Injection
+      - Mobile-Security
+      - OAuth
+    platform: API
+    name: 'Mock挑战题目 #987'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Cupiditas volaticus utroque maxime copiose aspicio
+      curiositas. Architecto terreo tibi amaritudo caute certus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L240ZFZ4QmJ0ZVM=
+    is-expired: false
+    solutions:
+      - title: Catena facere addo.
+        url: https://idolized-responsibility.biz/
+        source: Blog
+        author: ''
+    create-time: '2024-05-20 18:41:54'
+    update-time: '2024-11-17 06:11:21'

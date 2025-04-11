@@ -1,0 +1,32 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 903
+    id-alias: mock-challenge-903
+    tags:
+      - CSRF
+      - SQL-Injection
+      - Authorization
+    platform: API
+    name: 'Mock挑战题目 #903'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Vesco argumentum solio spiculum. Ago spectaculum
+      comprehendo spiculum adfero tepidus acervus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzZIQXFwbHdBNGw=
+    is-expired: false
+    solutions:
+      - title: Assumenda cinis aperiam.
+        url: https://silent-cutover.info/
+        source: YouTube
+        author: ''
+      - title: Odit aurum optio.
+        url: https://abandoned-scout.org
+        source: StackOverflow
+        author: Miss Lorraine Emard
+      - title: Absque animus ustulo.
+        url: https://twin-swordfish.org/
+        source: YouTube
+        author: Mr. Chad Keeling
+    create-time: '2024-06-04 14:28:22'
+    update-time: '2025-01-14 06:23:51'

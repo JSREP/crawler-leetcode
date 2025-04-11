@@ -1,0 +1,28 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 231
+    id-alias: mock-challenge-231
+    tags:
+      - CSRF
+      - XXE
+    platform: Web
+    name: 'Mock挑战题目 #231'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Delectus arcus comis vobis xiphias sonitus versus
+      alius umbra. Copia sordeo solium reprehenderit bis volva demergo
+      complectus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1ZQS2JmekduTlo=
+    is-expired: true
+    solutions:
+      - title: Pel appello utroque.
+        url: https://unselfish-adviser.com
+        source: Medium
+        author: ''
+      - title: Deserunt corrupti maiores.
+        url: https://qualified-ceramics.com
+        source: GitHub
+        author: ''
+    create-time: '2023-08-24 06:21:24'
+    update-time: '2024-09-29 06:01:44'

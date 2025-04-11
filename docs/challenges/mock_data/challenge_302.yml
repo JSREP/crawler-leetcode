@@ -1,0 +1,26 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 302
+    id-alias: mock-challenge-302
+    tags:
+      - Session-Management
+      - File-Upload
+      - Mobile-Security
+      - Command-Injection
+      - Access-Control
+    platform: Desktop
+    name: 'Mock挑战题目 #302'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Allatus conicio bellicus curvo villa. Aut ustilo
+      socius tenus aveho trans.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L21iVzdsVU9BYlE=
+    is-expired: false
+    solutions:
+      - title: Coadunatio vitiosus surculus.
+        url: https://innocent-instruction.net
+        source: Medium
+        author: Ginger Schultz
+    create-time: '2024-01-29 17:00:16'
+    update-time: '2025-03-04 16:10:26'

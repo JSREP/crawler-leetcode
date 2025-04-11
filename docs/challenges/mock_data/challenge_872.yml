@@ -1,0 +1,21 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 872
+    id-alias: mock-challenge-872
+    tags:
+      - SQL-Injection
+      - Access-Control
+      - HTTP-Headers
+      - OAuth
+    platform: Web
+    name: 'Mock挑战题目 #872'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Tumultus vobis verecundia celo adeptio currus. Nobis
+      sortitus aestus torqueo capto cena.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2ljdUtCdjdlV3I=
+    is-expired: false
+    solutions: []
+    create-time: '2023-09-16 02:17:45'
+    update-time: '2024-04-21 14:11:55'

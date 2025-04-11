@@ -1,0 +1,27 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 824
+    id-alias: mock-challenge-824
+    tags:
+      - CSP
+      - Business-Logic
+    platform: Web
+    name: 'Mock挑战题目 #824'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Solum adfero vox sequi. Modi rem thermae peior
+      spiculum vergo collum texo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L09HR0dJYUt3YlA=
+    is-expired: false
+    solutions:
+      - title: Utilis tepidus bonus.
+        url: https://dull-stall.name
+        source: StackOverflow
+        author: Lula Bailey
+      - title: Quia depraedor facere.
+        url: https://inferior-polyester.info
+        source: StackOverflow
+        author: Mona Bartell
+    create-time: '2025-04-07 21:58:39'
+    update-time: '2025-04-10 08:21:45'

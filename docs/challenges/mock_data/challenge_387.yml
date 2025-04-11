@@ -1,0 +1,33 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 387
+    id-alias: mock-challenge-387
+    tags:
+      - Output-Encoding
+      - Command-Injection
+      - HTTP-Headers
+      - Race-Condition
+    platform: API
+    name: 'Mock挑战题目 #387'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Crebro toties cupiditate defessus sophismata audax
+      adsuesco. Patruus laboriosam acidus laboriosam allatus agnitio.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2NvQXV3OTYyUFM=
+    is-expired: false
+    solutions:
+      - title: Curso possimus colligo.
+        url: https://salty-outlaw.net
+        source: StackOverflow
+        author: Steve Franecki
+      - title: Caveo canonicus vae.
+        url: https://vague-interchange.info/
+        source: StackOverflow
+        author: Clint Heaney
+      - title: Ara cilicium explicabo.
+        url: https://rotten-humor.org
+        source: YouTube
+        author: Santos Cummings II
+    create-time: '2023-12-18 15:20:44'
+    update-time: '2024-05-04 01:10:00'

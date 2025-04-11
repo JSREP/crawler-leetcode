@@ -1,0 +1,19 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 176
+    id-alias: mock-challenge-176
+    tags:
+      - Encryption
+      - CSP
+    platform: Mobile
+    name: 'Mock挑战题目 #176'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Desidero virtus curiositas voluptates saepe abundans.
+      Aggero audio vaco crux.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1prMmN6N0F1Q3g=
+    is-expired: false
+    solutions: []
+    create-time: '2024-02-08 04:45:32'
+    update-time: '2024-03-13 05:31:36'

@@ -1,0 +1,32 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 330
+    id-alias: mock-challenge-330
+    tags:
+      - SSRF
+      - API-Security
+      - Command-Injection
+    platform: Desktop
+    name: 'Mock挑战题目 #330'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Addo coadunatio stipes varius aegrus. Contego rerum
+      antea consectetur enim victoria accommodo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2dRZVgzQUhJRWs=
+    is-expired: false
+    solutions:
+      - title: Audax facere angulus.
+        url: https://unconscious-synergy.info/
+        source: StackOverflow
+        author: Joanna West
+      - title: Nemo summa villa.
+        url: https://wide-eyed-ectoderm.info/
+        source: Blog
+        author: Dominick Tremblay
+      - title: Abutor vesco ars.
+        url: https://carefree-individual.net/
+        source: Blog
+        author: David Glover
+    create-time: '2024-05-22 19:59:15'
+    update-time: '2024-09-04 05:19:57'

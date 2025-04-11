@@ -1,0 +1,27 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 976
+    id-alias: mock-challenge-976
+    tags:
+      - SSRF
+      - Mobile-Security
+    platform: Mobile
+    name: 'Mock挑战题目 #976'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Taceo ocer sollers despecto bos depromo venustas.
+      Adipisci vulgaris caste.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3BZeW5tdG0xN3U=
+    is-expired: false
+    solutions:
+      - title: Facilis annus tepidus.
+        url: https://shocked-millet.net
+        source: Medium
+        author: Mrs. Judith Bruen
+      - title: Congregatio facere quibusdam.
+        url: https://beloved-iridescence.com
+        source: StackOverflow
+        author: Mario Zulauf
+    create-time: '2024-09-14 22:50:34'
+    update-time: '2024-12-08 12:57:09'

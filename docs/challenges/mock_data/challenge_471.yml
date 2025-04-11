@@ -1,0 +1,23 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 471
+    id-alias: mock-challenge-471
+    tags:
+      - CSP
+      - Browser-Extensions
+    platform: Desktop
+    name: 'Mock挑战题目 #471'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Doloribus compono aliquam ambitus. Verto vomito
+      apparatus torqueo usque.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L21sQzFBd3JhNDU=
+    is-expired: false
+    solutions:
+      - title: Cum spargo clam.
+        url: https://shadowy-substitution.biz
+        source: GitHub
+        author: Garrett Heidenreich
+    create-time: '2023-10-08 07:05:42'
+    update-time: '2025-02-24 02:20:33'

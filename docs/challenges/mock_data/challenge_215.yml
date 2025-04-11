@@ -1,0 +1,31 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 215
+    id-alias: mock-challenge-215
+    tags:
+      - Access-Control
+      - WebSockets
+    platform: IoT
+    name: 'Mock挑战题目 #215'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Cilicium tunc pax supellex versus supra temporibus
+      theatrum. Ustulo assentator compello culpa.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0hITXg4aHk0U3g=
+    is-expired: false
+    solutions:
+      - title: Cilicium strenuus conor.
+        url: https://unlucky-steeple.name
+        source: Blog
+        author: Maria Homenick DDS
+      - title: Curvo consequatur tumultus.
+        url: https://nice-morning.net
+        source: YouTube
+        author: Morris Boyer
+      - title: Pectus bardus quis.
+        url: https://spotless-inspection.info/
+        source: Blog
+        author: ''
+    create-time: '2023-05-20 08:24:11'
+    update-time: '2024-01-24 18:56:06'

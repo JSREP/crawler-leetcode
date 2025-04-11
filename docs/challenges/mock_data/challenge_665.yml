@@ -1,0 +1,34 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 665
+    id-alias: mock-challenge-665
+    tags:
+      - Path-Traversal
+      - JWT
+      - Rate-Limiting
+      - Business-Logic
+      - CSRF
+    platform: Desktop
+    name: 'Mock挑战题目 #665'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Accommodo curo corona aurum commemoro vindico pel
+      civitas nam aut. Crapula usus sequi carus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6Lzhvb0o5ZUFmVTI=
+    is-expired: true
+    solutions:
+      - title: Adficio pax sub.
+        url: https://self-reliant-guacamole.com/
+        source: StackOverflow
+        author: Felix Sawayn
+      - title: Uberrime via aptus.
+        url: https://writhing-fork.name/
+        source: Medium
+        author: Kendra Crooks
+      - title: Explicabo amplitudo officia.
+        url: https://youthful-gastropod.name
+        source: GitHub
+        author: Jeffery Friesen
+    create-time: '2024-10-17 14:37:27'
+    update-time: '2024-10-25 01:02:28'

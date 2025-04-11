@@ -1,0 +1,20 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 351
+    id-alias: mock-challenge-351
+    tags:
+      - SQL-Injection
+      - JWT
+    platform: IoT
+    name: 'Mock挑战题目 #351'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Defendo modi demitto nam bestia accusamus tutamen
+      sordeo accedo totidem. Alveus desidero appositus totus umquam ventus
+      ascisco.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L29yeFV2QTd0cUE=
+    is-expired: false
+    solutions: []
+    create-time: '2024-02-19 09:08:59'
+    update-time: '2024-10-26 05:32:04'

@@ -1,0 +1,34 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 132
+    id-alias: mock-challenge-132
+    tags:
+      - Access-Control
+      - Encryption
+      - SQL-Injection
+      - API-Security
+      - Path-Traversal
+    platform: API
+    name: 'Mock挑战题目 #132'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Aequitas accedo anser cenaculum tero subnecto a
+      valeo. Desino repudiandae patria cogito thermae concedo abscido caritas.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1YyMHEwUlFKaGQ=
+    is-expired: false
+    solutions:
+      - title: Carpo aperio depopulo.
+        url: https://nocturnal-ribbon.biz
+        source: StackOverflow
+        author: Deanna Oberbrunner
+      - title: Sponte aeger casus.
+        url: https://unrealistic-assist.net/
+        source: StackOverflow
+        author: Walter Lowe
+      - title: Aliquid decipio tamdiu.
+        url: https://impossible-armchair.biz
+        source: StackOverflow
+        author: Debbie Bernhard
+    create-time: '2025-04-05 22:27:45'
+    update-time: '2025-04-10 19:46:58'

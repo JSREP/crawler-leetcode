@@ -1,0 +1,31 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 441
+    id-alias: mock-challenge-441
+    tags:
+      - Session-Management
+      - CSP
+      - JWT
+      - GraphQL
+      - WebSockets
+    platform: Desktop
+    name: 'Mock挑战题目 #441'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Cilicium appositus appositus pax quod molestiae
+      viriliter caries substantia quis. Pecus absens benigne asper solum itaque
+      iste texo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1VCSHczcnUyV1c=
+    is-expired: false
+    solutions:
+      - title: Animadverto correptius adopto.
+        url: https://limited-knickers.biz
+        source: Blog
+        author: Eula Denesik
+      - title: Cursus vallum tripudio.
+        url: https://deadly-disconnection.name
+        source: YouTube
+        author: Erin Murray-Wolf
+    create-time: '2025-03-14 14:25:49'
+    update-time: '2025-04-08 00:23:23'

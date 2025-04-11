@@ -1,0 +1,27 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 458
+    id-alias: mock-challenge-458
+    tags:
+      - Encryption
+      - CORS
+      - Browser-Extensions
+      - WebSockets
+      - Race-Condition
+    platform: Mobile
+    name: 'Mock挑战题目 #458'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Quasi addo appello aeneus theatrum trans ab alioqui
+      vindico volva. Ustulo fugit conor xiphias assentator architecto ciminatio
+      tersus pectus thalassinus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1hZb29GNHhqWW0=
+    is-expired: false
+    solutions:
+      - title: Aureus vaco aufero.
+        url: https://troubled-habit.biz
+        source: GitHub
+        author: Kevin Howell
+    create-time: '2024-12-02 01:26:04'
+    update-time: '2024-12-02 17:05:39'

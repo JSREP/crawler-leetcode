@@ -1,0 +1,30 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 454
+    id-alias: mock-challenge-454
+    tags:
+      - Authentication
+      - Session-Management
+      - XXE
+      - CSRF
+      - OAuth
+    platform: Web
+    name: 'Mock挑战题目 #454'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Beatae ex crur decretum terra caelum. Ullam arceo
+      voveo ea.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0drakhIVjc0Ukw=
+    is-expired: false
+    solutions:
+      - title: Clamo pel spero.
+        url: https://tame-cope.biz/
+        source: StackOverflow
+        author: Otis Williamson
+      - title: Utroque contabesco succedo.
+        url: https://waterlogged-pocket-watch.info/
+        source: GitHub
+        author: Hattie Frami
+    create-time: '2025-03-05 17:26:04'
+    update-time: '2025-03-24 08:24:54'

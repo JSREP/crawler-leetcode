@@ -1,0 +1,21 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 874
+    id-alias: mock-challenge-874
+    tags:
+      - Command-Injection
+      - File-Upload
+      - Browser-Extensions
+      - Rate-Limiting
+    platform: IoT
+    name: 'Mock挑战题目 #874'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Viscus sordeo quisquam subnecto. Sunt laboriosam
+      ulterius alter sono.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzRtc0xJc1VWNnQ=
+    is-expired: false
+    solutions: []
+    create-time: '2023-08-25 21:33:49'
+    update-time: '2024-02-06 20:32:04'

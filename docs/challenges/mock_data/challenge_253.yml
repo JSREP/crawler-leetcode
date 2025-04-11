@@ -1,0 +1,27 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 253
+    id-alias: mock-challenge-253
+    tags:
+      - OAuth
+      - File-Upload
+    platform: API
+    name: 'Mock挑战题目 #253'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Decimus sub vitium expedita aegrus. Defessus voluptas
+      subnecto depopulo amor antiquus crebro vito aequus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzFsSXlOY0VkWDE=
+    is-expired: false
+    solutions:
+      - title: Calamitas depopulo trucido.
+        url: https://wee-moment.biz
+        source: YouTube
+        author: Della Wyman
+      - title: Patior suus totidem.
+        url: https://pastel-lifestyle.com
+        source: YouTube
+        author: Heather Prosacco
+    create-time: '2025-04-03 00:45:44'
+    update-time: '2025-04-09 15:26:12'

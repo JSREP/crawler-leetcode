@@ -1,0 +1,31 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 475
+    id-alias: mock-challenge-475
+    tags:
+      - Path-Traversal
+      - HTTP-Headers
+    platform: Mobile
+    name: 'Mock挑战题目 #475'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Tutis doloribus taceo tamdiu charisma. Aequus auctus
+      volutabrum.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2VaaXpGaWZpRUE=
+    is-expired: false
+    solutions:
+      - title: Substantia argumentum valeo.
+        url: https://mundane-co-producer.name/
+        source: YouTube
+        author: Alberto Shanahan
+      - title: Acies perspiciatis ago.
+        url: https://ruddy-cheetah.biz
+        source: Medium
+        author: Edmund Walsh
+      - title: Utpote cursus tui.
+        url: https://disloyal-parsnip.net
+        source: StackOverflow
+        author: Muriel Konopelski
+    create-time: '2023-05-23 16:35:44'
+    update-time: '2024-11-10 14:50:52'

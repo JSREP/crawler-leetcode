@@ -1,0 +1,31 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 729
+    id-alias: mock-challenge-729
+    tags:
+      - CORS
+      - CSRF
+    platform: Web
+    name: 'Mock挑战题目 #729'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Surgo strues carcer combibo ver ab amoveo stips esse.
+      Deprimo placeat comedo curso tepidus vinculum arbustum decimus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0FZQmdtVXNERTc=
+    is-expired: false
+    solutions:
+      - title: Bardus candidus necessitatibus.
+        url: https://optimal-presume.name/
+        source: GitHub
+        author: Nina Cassin
+      - title: Canto tempus arx.
+        url: https://those-popularity.name/
+        source: YouTube
+        author: Mr. Allan Stracke
+      - title: Nesciunt censura desolo.
+        url: https://faint-pecan.info
+        source: Blog
+        author: Allison Douglas
+    create-time: '2023-10-30 05:00:56'
+    update-time: '2025-02-01 03:48:39'

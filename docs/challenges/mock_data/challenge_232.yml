@@ -1,0 +1,17 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 232
+    id-alias: mock-challenge-232
+    tags:
+      - SQL-Injection
+      - JWT
+    platform: Mobile
+    name: 'Mock挑战题目 #232'
+    difficulty-level: 2
+    description: 这是一个示例挑战题目的描述，难度为2星级。At amissio canto. Molestias quam deficio aveho.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzVRT292Rk8ySjk=
+    is-expired: false
+    solutions: []
+    create-time: '2024-11-01 21:50:38'
+    update-time: '2025-03-20 06:32:54'

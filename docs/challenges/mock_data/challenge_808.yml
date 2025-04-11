@@ -1,0 +1,32 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 808
+    id-alias: mock-challenge-808
+    tags:
+      - SSRF
+      - GraphQL
+    platform: Web
+    name: 'Mock挑战题目 #808'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Amita claro incidunt desparatus vinitor vehemens
+      deleniti curia vir. Cilicium calamitas bonus adfectus ager templum degusto
+      demitto.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L21EYzdmNEs3ckY=
+    is-expired: false
+    solutions:
+      - title: Calco caries aduro.
+        url: https://anguished-starboard.net
+        source: GitHub
+        author: Willie Ferry
+      - title: Unde corona substantia.
+        url: https://crazy-onset.com
+        source: GitHub
+        author: Caleb Mraz
+      - title: Sopor cohors appositus.
+        url: https://sociable-utilization.name
+        source: GitHub
+        author: Bernice Schneider
+    create-time: '2024-01-29 10:07:53'
+    update-time: '2025-01-16 07:10:19'

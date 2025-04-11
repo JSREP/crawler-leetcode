@@ -1,0 +1,24 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 754
+    id-alias: mock-challenge-754
+    tags:
+      - Session-Management
+      - Input-Validation
+      - Encryption
+    platform: Desktop
+    name: 'Mock挑战题目 #754'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Curo molestiae trepide. Curriculum cubicularis vorago
+      nesciunt textus impedit patior vis.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzhFZXhRSTU4SnE=
+    is-expired: false
+    solutions:
+      - title: Bos suppono decens.
+        url: https://variable-concentration.net/
+        source: YouTube
+        author: ''
+    create-time: '2024-06-07 08:21:13'
+    update-time: '2025-01-17 19:54:34'

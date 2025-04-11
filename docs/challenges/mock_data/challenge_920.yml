@@ -1,0 +1,22 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 920
+    id-alias: mock-challenge-920
+    tags:
+      - CSRF
+      - Browser-Extensions
+      - Input-Validation
+      - Output-Encoding
+      - XXE
+    platform: IoT
+    name: 'Mock挑战题目 #920'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Delectatio acerbitas apparatus tribuo spiculum. In
+      territo vilicus amaritudo appositus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0VVNHZtak5GTUQ=
+    is-expired: false
+    solutions: []
+    create-time: '2024-08-14 04:06:42'
+    update-time: '2025-03-26 13:00:32'

@@ -1,0 +1,29 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 744
+    id-alias: mock-challenge-744
+    tags:
+      - Browser-Extensions
+      - API-Security
+      - Encryption
+      - Business-Logic
+    platform: IoT
+    name: 'Mock挑战题目 #744'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Terminatio comis totam advenio iure. Vapulus aer vix
+      vulariter celer.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0xxQUY0MzJzUnU=
+    is-expired: false
+    solutions:
+      - title: Conculco consectetur cognomen.
+        url: https://dutiful-spear.net
+        source: Blog
+        author: Frankie Bruen
+      - title: Cunae debeo socius.
+        url: https://stark-outlaw.org/
+        source: Blog
+        author: Terry Vandervort
+    create-time: '2024-01-21 12:35:42'
+    update-time: '2024-06-29 06:37:51'

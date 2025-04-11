@@ -1,0 +1,34 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 735
+    id-alias: mock-challenge-735
+    tags:
+      - WebSockets
+      - CSP
+      - API-Security
+      - Input-Validation
+      - SSRF
+    platform: API
+    name: 'Mock挑战题目 #735'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Decimus arbor contego correptius. Cimentarius ars
+      amita delectus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1BnS2V0bmlRa1M=
+    is-expired: false
+    solutions:
+      - title: Totus virgo fugit.
+        url: https://mammoth-reach.net
+        source: StackOverflow
+        author: Shane Ward
+      - title: Cinis unus termes.
+        url: https://subtle-conservation.org/
+        source: Blog
+        author: Perry Greenfelder
+      - title: Aer terebro arbor.
+        url: https://tinted-compromise.biz
+        source: StackOverflow
+        author: Mattie Schmitt I
+    create-time: '2025-01-17 05:18:58'
+    update-time: '2025-01-31 08:20:46'

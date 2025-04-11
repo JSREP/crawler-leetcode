@@ -1,0 +1,25 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 968
+    id-alias: mock-challenge-968
+    tags:
+      - Authentication
+      - Encryption
+      - Authorization
+    platform: Mobile
+    name: 'Mock挑战题目 #968'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Ex cursim minus celer caries volutabrum dedico
+      depraedor voluptas aegrus. Vix demum annus cotidie conor decerno campana
+      ascisco.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0ZqdFdLMXVvS1M=
+    is-expired: false
+    solutions:
+      - title: Deporto certe torrens.
+        url: https://physical-hovel.org/
+        source: StackOverflow
+        author: Dr. Veronica Ward
+    create-time: '2024-10-08 06:44:07'
+    update-time: '2024-10-26 10:11:41'

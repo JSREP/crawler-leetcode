@@ -1,0 +1,30 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 165
+    id-alias: mock-challenge-165
+    tags:
+      - Browser-Extensions
+      - File-Upload
+      - XXE
+      - CSP
+      - SQL-Injection
+    platform: IoT
+    name: 'Mock挑战题目 #165'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Strenuus cimentarius volutabrum cursus comprehendo.
+      Suggero via cimentarius depopulo fuga.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2tyamFHak1kUTY=
+    is-expired: false
+    solutions:
+      - title: Terreo cribro versus.
+        url: https://frail-birth.com
+        source: Medium
+        author: Clint Schmidt
+      - title: Ancilla vitae ara.
+        url: https://nice-nightlife.com/
+        source: Blog
+        author: Darnell Wisoky
+    create-time: '2023-10-06 03:50:35'
+    update-time: '2024-09-08 23:59:55'

@@ -1,0 +1,19 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 996
+    id-alias: mock-challenge-996
+    tags:
+      - Hashing
+      - OAuth
+    platform: Mobile
+    name: 'Mock挑战题目 #996'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Aegrotatio sollicito patrocinor adulescens cultellus
+      cruentus. Audentia quos fugit claro tollo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1RtaWliVmFLTHQ=
+    is-expired: false
+    solutions: []
+    create-time: '2024-03-24 09:05:13'
+    update-time: '2024-07-04 16:31:28'

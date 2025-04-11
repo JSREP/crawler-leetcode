@@ -1,0 +1,31 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 493
+    id-alias: mock-challenge-493
+    tags:
+      - Business-Logic
+      - SQL-Injection
+    platform: IoT
+    name: 'Mock挑战题目 #493'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Communis viduo cunae cernuus stabilis sophismata
+      nisi. Usitas vero tabella ait.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1h5Wk9FbmU4ZUI=
+    is-expired: false
+    solutions:
+      - title: Adhuc conscendo volutabrum.
+        url: https://normal-fork.name
+        source: YouTube
+        author: Joshua Lebsack
+      - title: Conventus capitulus curtus.
+        url: https://remarkable-pronoun.com/
+        source: Blog
+        author: Dr. Olivia Bosco
+      - title: Tutamen quibusdam cetera.
+        url: https://suburban-release.org/
+        source: Blog
+        author: Emanuel Vandervort
+    create-time: '2024-06-26 13:37:22'
+    update-time: '2024-11-08 18:28:09'

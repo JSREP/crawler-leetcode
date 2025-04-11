@@ -1,0 +1,30 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 249
+    id-alias: mock-challenge-249
+    tags:
+      - Mobile-Security
+      - Deserialization
+      - CORS
+      - GraphQL
+    platform: Desktop
+    name: 'Mock挑战题目 #249'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Reiciendis unus succurro adeo stips cognatus paulatim
+      tyrannus. Confugo vinco dignissimos aliquid creo provident desolo
+      supplanto censura tergum.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzF5eGdaakZUa2U=
+    is-expired: false
+    solutions:
+      - title: Considero thalassinus peior.
+        url: https://acceptable-meander.org
+        source: Medium
+        author: Donnie Crist DVM
+      - title: Creber pax tibi.
+        url: https://hasty-lotion.info/
+        source: StackOverflow
+        author: Levi Reinger
+    create-time: '2023-08-29 11:39:09'
+    update-time: '2025-03-28 12:48:11'

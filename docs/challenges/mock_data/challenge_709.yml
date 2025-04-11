@@ -1,0 +1,22 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 709
+    id-alias: mock-challenge-709
+    tags:
+      - Input-Validation
+      - Authorization
+      - Encryption
+      - Access-Control
+    platform: Desktop
+    name: 'Mock挑战题目 #709'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Amplitudo vigilo atrox angustus timidus appositus
+      demergo. Voluptates summopere territo coerceo vacuus tandem acerbitas
+      despecto angustus vilis.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1hGNllQR1VHeDE=
+    is-expired: false
+    solutions: []
+    create-time: '2025-02-15 22:21:01'
+    update-time: '2025-03-31 15:31:28'

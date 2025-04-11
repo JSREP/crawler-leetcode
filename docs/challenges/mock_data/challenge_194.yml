@@ -1,0 +1,29 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 194
+    id-alias: mock-challenge-194
+    tags:
+      - File-Upload
+      - SQL-Injection
+      - Browser-Extensions
+      - GraphQL
+    platform: Desktop
+    name: 'Mock挑战题目 #194'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Animi terra comis tempora spectaculum aggredior decor
+      censura sufficio. Caveo debilito assentator.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L09ZVUpxYnRIbGY=
+    is-expired: false
+    solutions:
+      - title: A facilis sodalitas.
+        url: https://selfish-sprinkles.biz/
+        source: GitHub
+        author: Edmond Jenkins-D'Amore MD
+      - title: Magnam dolorum synagoga.
+        url: https://steep-folklore.biz/
+        source: GitHub
+        author: Garrett Borer
+    create-time: '2024-09-16 19:38:14'
+    update-time: '2025-02-08 04:46:52'

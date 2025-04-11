@@ -1,0 +1,27 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 776
+    id-alias: mock-challenge-776
+    tags:
+      - XSS
+      - Authentication
+      - Browser-Extensions
+      - Deserialization
+    platform: Mobile
+    name: 'Mock挑战题目 #776'
+    difficulty-level: 3
+    description: 这是一个示例挑战题目的描述，难度为3星级。Fugit astrum ager. Arbor annus volup.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1RLQ3pEcWVPTWk=
+    is-expired: false
+    solutions:
+      - title: Repellat audax apostolus.
+        url: https://somber-fat.info/
+        source: YouTube
+        author: ''
+      - title: Terminatio decipio vitium.
+        url: https://breakable-angle.name
+        source: GitHub
+        author: Dave Greenfelder
+    create-time: '2025-03-21 02:14:09'
+    update-time: '2025-04-09 22:20:06'

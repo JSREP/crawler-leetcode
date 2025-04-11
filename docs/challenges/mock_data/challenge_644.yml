@@ -1,0 +1,35 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 644
+    id-alias: mock-challenge-644
+    tags:
+      - Authentication
+      - Session-Management
+      - Path-Traversal
+      - API-Security
+      - Access-Control
+    platform: Web
+    name: 'Mock挑战题目 #644'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Supra aestus terminatio cruentus vita. Vicissitudo
+      aestivus inflammatio cilicium soluta speciosus caries suscipit argumentum
+      curiositas.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0ZQV0dnVG1taHo=
+    is-expired: false
+    solutions:
+      - title: Eos a suffoco.
+        url: https://rowdy-couch.net
+        source: Medium
+        author: Elijah Jerde-VonRueden
+      - title: Cornu abeo vicinus.
+        url: https://rare-sunbeam.biz
+        source: Blog
+        author: Marco Fritsch
+      - title: Aspernatur impedit territo.
+        url: https://thin-humidity.name/
+        source: Blog
+        author: Pat Rowe
+    create-time: '2024-09-03 19:27:41'
+    update-time: '2025-03-30 23:28:20'

@@ -1,0 +1,20 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 789
+    id-alias: mock-challenge-789
+    tags:
+      - Deserialization
+      - OAuth
+      - Rate-Limiting
+    platform: Desktop
+    name: 'Mock挑战题目 #789'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Quos vestrum animadverto pel tamquam. Aperte surculus
+      vivo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L21iMnpJY1hwRlE=
+    is-expired: true
+    solutions: []
+    create-time: '2023-09-13 19:07:56'
+    update-time: '2023-10-09 10:05:51'

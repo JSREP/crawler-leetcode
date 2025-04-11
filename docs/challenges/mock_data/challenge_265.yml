@@ -1,0 +1,32 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 265
+    id-alias: mock-challenge-265
+    tags:
+      - Race-Condition
+      - Hashing
+      - Rate-Limiting
+    platform: Mobile
+    name: 'Mock挑战题目 #265'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Dolore suscipio decerno voluptatem audax. Incidunt
+      culpo sapiente incidunt antepono.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0tFQjNiOWx1dzQ=
+    is-expired: false
+    solutions:
+      - title: Credo denego depulso.
+        url: https://standard-bar.biz
+        source: GitHub
+        author: Dorothy Corwin
+      - title: Alii vulgaris arx.
+        url: https://yellow-minority.name
+        source: Medium
+        author: Betty Heaney
+      - title: Denuncio ventito arguo.
+        url: https://recent-pigpen.com
+        source: GitHub
+        author: Salvador Torphy
+    create-time: '2024-08-11 07:25:39'
+    update-time: '2025-02-06 17:12:21'

@@ -1,0 +1,28 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 207
+    id-alias: mock-challenge-207
+    tags:
+      - CORS
+      - CSRF
+      - Mobile-Security
+    platform: Web
+    name: 'Mock挑战题目 #207'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Peior uterque demoror magnam derideo curatio
+      videlicet laudantium tres alius. Conor colo incidunt consuasor confero.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzhYNGhJeDkxd3M=
+    is-expired: false
+    solutions:
+      - title: Placeat vereor volo.
+        url: https://frizzy-junior.biz
+        source: Medium
+        author: Everett Kunde
+      - title: Celebrer videlicet vulariter.
+        url: https://indelible-extension.name
+        source: GitHub
+        author: Gilberto Ullrich
+    create-time: '2025-02-16 16:31:54'
+    update-time: '2025-02-26 15:47:24'

@@ -1,0 +1,30 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 148
+    id-alias: mock-challenge-148
+    tags:
+      - WebSockets
+      - Browser-Extensions
+      - Path-Traversal
+      - XXE
+      - Business-Logic
+    platform: IoT
+    name: 'Mock挑战题目 #148'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Vehemens audio audentia ubi ago error curso atrox ut.
+      Aedificium carus viridis.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3RORjBBZWpYaFY=
+    is-expired: true
+    solutions:
+      - title: Supplanto cotidie vilicus.
+        url: https://good-natured-doubter.org
+        source: Blog
+        author: Josephine Sipes
+      - title: Absens recusandae cuppedia.
+        url: https://haunting-ownership.com
+        source: Medium
+        author: Natalie Durgan
+    create-time: '2024-07-13 01:33:03'
+    update-time: '2025-01-13 15:42:48'

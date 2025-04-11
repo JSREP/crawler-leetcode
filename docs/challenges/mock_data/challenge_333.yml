@@ -1,0 +1,24 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 333
+    id-alias: mock-challenge-333
+    tags:
+      - Race-Condition
+      - JWT
+      - GraphQL
+    platform: IoT
+    name: 'Mock挑战题目 #333'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Colo templum sint vere. Beatae benevolentia denuncio
+      tonsor derideo suadeo advenio.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0tGVE1UaWtmN0c=
+    is-expired: false
+    solutions:
+      - title: Videlicet ubi una.
+        url: https://slimy-disconnection.biz
+        source: Medium
+        author: Joe Roob
+    create-time: '2023-11-27 15:50:47'
+    update-time: '2025-03-31 10:05:15'

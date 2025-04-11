@@ -1,0 +1,21 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 531
+    id-alias: mock-challenge-531
+    tags:
+      - CSP
+      - Deserialization
+      - Rate-Limiting
+    platform: Desktop
+    name: 'Mock挑战题目 #531'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Titulus dolor testimonium aequus vester fuga adipisci
+      certe thema repellat. Demo vinculum validus crepusculum coniecto denique
+      videlicet.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3NjTVplNW5Sb1I=
+    is-expired: true
+    solutions: []
+    create-time: '2023-11-24 06:33:41'
+    update-time: '2024-11-12 19:06:25'

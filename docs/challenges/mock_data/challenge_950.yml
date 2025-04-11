@@ -1,0 +1,33 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 950
+    id-alias: mock-challenge-950
+    tags:
+      - Session-Management
+      - Command-Injection
+      - CORS
+      - Business-Logic
+    platform: Desktop
+    name: 'Mock挑战题目 #950'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Voluptas vado depulso suadeo substantia aufero illo
+      decretum commemoro. Ultra decumbo solium angulus utrum arguo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1dJREV6TjNKNjM=
+    is-expired: false
+    solutions:
+      - title: Tabernus aeger adversus.
+        url: https://self-reliant-recovery.info
+        source: GitHub
+        author: Sheila Smith
+      - title: Recusandae tergum aequus.
+        url: https://deafening-omelet.com/
+        source: YouTube
+        author: Tyler Monahan
+      - title: Dedecor adulatio arma.
+        url: https://elastic-petal.info/
+        source: YouTube
+        author: Rhonda Wisozk
+    create-time: '2024-10-27 14:34:00'
+    update-time: '2025-01-02 15:32:42'

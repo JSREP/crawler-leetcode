@@ -1,0 +1,20 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 251
+    id-alias: mock-challenge-251
+    tags:
+      - Mobile-Security
+      - XXE
+      - Input-Validation
+      - XSS
+      - File-Upload
+    platform: Web
+    name: 'Mock挑战题目 #251'
+    difficulty-level: 1
+    description: 这是一个示例挑战题目的描述，难度为1星级。Denuncio animus vergo. Territo capto illum.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2UzOVhYYTFVRnI=
+    is-expired: false
+    solutions: []
+    create-time: '2024-10-20 20:29:33'
+    update-time: '2025-02-12 20:54:40'

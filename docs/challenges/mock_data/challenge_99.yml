@@ -1,26 +1,21 @@
 # 挑战题目文件
 version: 1
-
 challenges:
-  - id: mock-challenge-99
+  - id: 99
+    id-alias: mock-challenge-99
     tags:
-      - anti-debug
-      - jsvmp
-      - rate-limiting
+      - Session-Management
+      - Access-Control
+      - Input-Validation
+      - CSP
     platform: Web
-    name: Mock挑战题目 #99
-    difficulty-level: 2
-    description: 这是一个示例挑战题目的描述，难度为2星级。
-    base64-url: aHR0cHM6Ly93d3cuZXhhbXBsZS5jb20vY2hhbGxlbmdlLzEyMzQ1
+    name: 'Mock挑战题目 #99'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Repellat maxime crustulum. Quasi decipio altus
+      sortitus laboriosam.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L00yb2tGVWdsSU4=
     is-expired: false
-    solutions:
-      - title: 静态分析方法
-        url: https://github.com/user/repo
-        source: GitHub
-        author: 
-      - title: Hook方法绕过
-        url: https://gist.github.com/user/id
-        source: Medium
-        author: Jane Smith
-    create-time: 2023-10-18 10:19:10
-    update-time: 2024-06-04 14:56:11
+    solutions: []
+    create-time: '2024-01-28 09:25:23'
+    update-time: '2024-12-01 08:03:25'

@@ -1,0 +1,28 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 569
+    id-alias: mock-challenge-569
+    tags:
+      - HTTP-Headers
+      - Output-Encoding
+      - Access-Control
+    platform: Web
+    name: 'Mock挑战题目 #569'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Cattus theca vestigium verumtamen terra quibusdam
+      soleo umquam demens adaugeo. Urbs decumbo sollicito.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0ZLeFowTFVVbHM=
+    is-expired: false
+    solutions:
+      - title: Eaque aliquam cras.
+        url: https://pink-clamp.net/
+        source: Blog
+        author: Ms. Bobbie Tillman
+      - title: Adsidue perspiciatis quia.
+        url: https://tangible-smoke.info
+        source: Medium
+        author: Vincent Donnelly
+    create-time: '2023-11-28 06:42:06'
+    update-time: '2024-07-11 07:54:37'

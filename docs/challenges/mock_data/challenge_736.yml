@@ -1,0 +1,29 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 736
+    id-alias: mock-challenge-736
+    tags:
+      - GraphQL
+      - File-Upload
+      - CORS
+      - CSRF
+    platform: Web
+    name: 'Mock挑战题目 #736'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Strenuus odit vigor denego molestias cursus defendo
+      annus termes. Conduco verbum vilitas terror aedificium sunt accusator.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2RiSHJ5cnNmMVY=
+    is-expired: false
+    solutions:
+      - title: Cohaero defleo bis.
+        url: https://elegant-castanet.biz/
+        source: StackOverflow
+        author: Harriet Kris
+      - title: Callide terminatio utrimque.
+        url: https://scary-descent.com/
+        source: YouTube
+        author: ''
+    create-time: '2024-02-06 06:11:45'
+    update-time: '2024-10-19 17:18:43'

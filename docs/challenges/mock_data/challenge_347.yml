@@ -1,0 +1,24 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 347
+    id-alias: mock-challenge-347
+    tags:
+      - SQL-Injection
+      - Encryption
+      - OAuth
+    platform: Desktop
+    name: 'Mock挑战题目 #347'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Valde abeo damnatio asporto deduco cubicularis labore
+      convoco. Utrum utique eius dedico utilis contabesco.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2ttV1hCT3ZyQTk=
+    is-expired: false
+    solutions:
+      - title: Sono vindico accendo.
+        url: https://remarkable-juggernaut.biz/
+        source: StackOverflow
+        author: Debra Volkman Sr.
+    create-time: '2024-03-21 19:39:57'
+    update-time: '2024-09-20 09:24:14'

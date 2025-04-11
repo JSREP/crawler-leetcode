@@ -1,0 +1,20 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 377
+    id-alias: mock-challenge-377
+    tags:
+      - Session-Management
+      - JWT
+    platform: Desktop
+    name: 'Mock挑战题目 #377'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Pecto adulescens iure sollicito varius paulatim vita
+      absconditus dolore thymum. Optio cruciamentum acer earum aufero aliquid
+      collum clarus sint.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0hRSDdMclNjUWg=
+    is-expired: true
+    solutions: []
+    create-time: '2023-09-08 04:05:18'
+    update-time: '2024-01-14 06:28:54'

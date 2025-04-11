@@ -1,0 +1,26 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 417
+    id-alias: mock-challenge-417
+    tags:
+      - HTTP-Headers
+      - API-Security
+      - XSS
+      - Input-Validation
+      - Authentication
+    platform: IoT
+    name: 'Mock挑战题目 #417'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Succedo quo addo ex decipio aeger. Abeo dedecor atqui
+      desipio conspergo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1p4TjRLbXhHdW0=
+    is-expired: false
+    solutions:
+      - title: Alioqui sollers vitiosus.
+        url: https://sizzling-insolence.info/
+        source: Blog
+        author: Ms. Lana Doyle
+    create-time: '2024-12-08 20:24:50'
+    update-time: '2025-04-09 00:05:50'

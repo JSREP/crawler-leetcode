@@ -1,27 +1,26 @@
 # 挑战题目文件
 version: 1
-
 challenges:
-  - id: mock-challenge-23
+  - id: 23
+    id-alias: mock-challenge-23
     tags:
-      - canvas-fingerprint
-      - anti-debug
-      - cookie-protection
-      - fingerprint
-    platform: iOS
-    name: Mock挑战题目 #23
-    difficulty-level: 3
-    description: 这是一个示例挑战题目的描述，难度为3星级。
-    base64-url: aHR0cHM6Ly93d3cuZXhhbXBsZS5jb20vY2hhbGxlbmdlL3h5ejEyMw==
-    is-expired: false
+      - Browser-Extensions
+      - GraphQL
+      - Command-Injection
+      - Business-Logic
+      - Session-Management
+    platform: API
+    name: 'Mock挑战题目 #23'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Theatrum solio audacia. Bonus sit volva placeat
+      beneficium contra minus demitto canonicus demonstro.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2pxM1oxWm44ckc=
+    is-expired: true
     solutions:
-      - title: Hook方法绕过
-        url: https://github.com/user/repo
-        source: YouTube
-        author: Web Security Expert
-      - title: 静态分析方法
-        url: https://medium.com/@user/article
+      - title: Conturbo adflicto adstringo.
+        url: https://tall-disclosure.info/
         source: GitHub
-        author: Alex Chen
-    create-time: 2025-05-13 07:50:59
-    update-time: 2025-05-07 00:37:21
+        author: Marty Farrell
+    create-time: '2023-09-30 21:23:14'
+    update-time: '2024-07-06 19:20:34'

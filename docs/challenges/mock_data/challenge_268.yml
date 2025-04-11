@@ -1,0 +1,34 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 268
+    id-alias: mock-challenge-268
+    tags:
+      - CORS
+      - Authorization
+      - Path-Traversal
+      - XSS
+      - WebSockets
+    platform: API
+    name: 'Mock挑战题目 #268'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Tremo socius vel carbo ipsa paens nam cunae validus
+      totidem. Tempore allatus acer qui excepturi iste auctus solus teres.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3N2T2xJRmtqSzM=
+    is-expired: false
+    solutions:
+      - title: Caecus ventito depromo.
+        url: https://focused-submitter.net
+        source: Blog
+        author: Mr. Marcos Will II
+      - title: Uxor demergo vere.
+        url: https://flashy-blight.net/
+        source: Medium
+        author: Blanche Adams
+      - title: Sto custodia conturbo.
+        url: https://dreary-taro.com
+        source: YouTube
+        author: Denise Ortiz
+    create-time: '2024-05-20 15:44:47'
+    update-time: '2024-07-16 01:57:01'

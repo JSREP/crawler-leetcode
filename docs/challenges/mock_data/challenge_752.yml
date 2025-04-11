@@ -1,0 +1,19 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 752
+    id-alias: mock-challenge-752
+    tags:
+      - Authorization
+      - OAuth
+    platform: Desktop
+    name: 'Mock挑战题目 #752'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Architecto praesentium caecus. Hic conturbo condico
+      appono speculum vilis accusamus degenero.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3dITHdpMnlGa1c=
+    is-expired: false
+    solutions: []
+    create-time: '2025-03-15 08:49:16'
+    update-time: '2025-04-11 01:07:40'

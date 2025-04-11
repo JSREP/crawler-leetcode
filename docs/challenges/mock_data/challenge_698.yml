@@ -1,0 +1,27 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 698
+    id-alias: mock-challenge-698
+    tags:
+      - CORS
+      - API-Security
+      - Mobile-Security
+      - OAuth
+    platform: API
+    name: 'Mock挑战题目 #698'
+    difficulty-level: 3
+    description: 这是一个示例挑战题目的描述，难度为3星级。Studio conculco sed. Appositus pectus audax nisi.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3pVVlo2amh4YUQ=
+    is-expired: false
+    solutions:
+      - title: Dedico virtus provident.
+        url: https://major-laughter.org
+        source: Medium
+        author: Christie Feest
+      - title: Valeo validus alter.
+        url: https://personal-designation.org/
+        source: YouTube
+        author: Ms. Beulah Lang
+    create-time: '2023-09-04 10:27:57'
+    update-time: '2023-12-08 09:54:00'

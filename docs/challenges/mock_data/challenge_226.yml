@@ -1,0 +1,33 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 226
+    id-alias: mock-challenge-226
+    tags:
+      - Browser-Extensions
+      - Command-Injection
+      - Hashing
+      - Authentication
+    platform: IoT
+    name: 'Mock挑战题目 #226'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Terra delego terra capillus armarium. Tamdiu ara
+      super ultra ver adaugeo voluntarius cenaculum.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzdlYmlvM1BzbGg=
+    is-expired: false
+    solutions:
+      - title: Viduo cohibeo rerum.
+        url: https://eminent-fund.net/
+        source: Medium
+        author: Tammy Morissette
+      - title: Triduana depraedor torrens.
+        url: https://honored-yarmulke.biz
+        source: Medium
+        author: Deanna Lueilwitz
+      - title: Aqua necessitatibus conduco.
+        url: https://sinful-negotiation.net
+        source: StackOverflow
+        author: Tina Conroy
+    create-time: '2023-08-25 13:38:39'
+    update-time: '2024-09-02 11:17:01'

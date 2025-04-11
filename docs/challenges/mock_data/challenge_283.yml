@@ -1,0 +1,25 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 283
+    id-alias: mock-challenge-283
+    tags:
+      - Rate-Limiting
+      - SQL-Injection
+      - Business-Logic
+      - Path-Traversal
+    platform: Desktop
+    name: 'Mock挑战题目 #283'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Sum catena contego tripudio solvo utilis. Laborum
+      sponte angelus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2xuSUt6b1Zlbmg=
+    is-expired: false
+    solutions:
+      - title: Cibus uterque corporis.
+        url: https://vibrant-sonnet.info
+        source: Blog
+        author: Sonia Douglas
+    create-time: '2024-04-30 12:15:15'
+    update-time: '2025-03-12 01:05:35'

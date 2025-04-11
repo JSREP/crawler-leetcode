@@ -1,0 +1,28 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 841
+    id-alias: mock-challenge-841
+    tags:
+      - JWT
+      - Deserialization
+      - CORS
+    platform: Mobile
+    name: 'Mock挑战题目 #841'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Possimus atrox celebrer tripudio xiphias coniuratio
+      debitis. Pauci comminor autus cilicium utor acsi textus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L202dEs5Rng3UEk=
+    is-expired: false
+    solutions:
+      - title: Iusto adipisci benevolentia.
+        url: https://unrealistic-earth.biz
+        source: Medium
+        author: Johnnie Goodwin
+      - title: Magni dignissimos vero.
+        url: https://linear-chops.name
+        source: Blog
+        author: Gustavo Sporer
+    create-time: '2025-03-06 15:06:56'
+    update-time: '2025-04-04 06:46:52'

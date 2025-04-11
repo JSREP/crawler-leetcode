@@ -1,0 +1,27 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 813
+    id-alias: mock-challenge-813
+    tags:
+      - Deserialization
+      - Session-Management
+    platform: Web
+    name: 'Mock挑战题目 #813'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Creo apparatus carmen et comminor. Terra odio
+      calamitas umbra conor approbo theca candidus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2pUNE1teXl5R3U=
+    is-expired: false
+    solutions:
+      - title: Beatae vinculum capitulus.
+        url: https://fake-polyester.net
+        source: StackOverflow
+        author: ''
+      - title: Denuncio clibanus concedo.
+        url: https://musty-cosset.name/
+        source: Medium
+        author: Kerry Schroeder DDS
+    create-time: '2023-06-23 15:57:19'
+    update-time: '2023-08-29 13:20:24'

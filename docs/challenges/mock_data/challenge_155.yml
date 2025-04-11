@@ -1,0 +1,20 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 155
+    id-alias: mock-challenge-155
+    tags:
+      - Path-Traversal
+      - XSS
+      - OAuth
+    platform: Desktop
+    name: 'Mock挑战题目 #155'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Utique traho ager confido qui traho xiphias. Dens
+      voveo absum bardus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2hmaWl0UkU2bzQ=
+    is-expired: false
+    solutions: []
+    create-time: '2024-01-23 13:49:53'
+    update-time: '2024-12-18 18:06:10'

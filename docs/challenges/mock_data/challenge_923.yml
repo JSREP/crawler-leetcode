@@ -1,0 +1,21 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 923
+    id-alias: mock-challenge-923
+    tags:
+      - Input-Validation
+      - Encryption
+      - File-Upload
+      - SQL-Injection
+    platform: API
+    name: 'Mock挑战题目 #923'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Aiunt animus ultio constans peior depono tempora
+      aureus libero coepi. Addo admoneo decerno accendo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2FlTW9xUnh2eFc=
+    is-expired: false
+    solutions: []
+    create-time: '2024-04-13 16:27:49'
+    update-time: '2024-07-17 18:25:09'

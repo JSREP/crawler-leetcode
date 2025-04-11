@@ -1,0 +1,29 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 214
+    id-alias: mock-challenge-214
+    tags:
+      - Session-Management
+      - OAuth
+      - API-Security
+      - File-Upload
+    platform: Mobile
+    name: 'Mock挑战题目 #214'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Balbus ulciscor turpis verus adopto. Nobis sapiente
+      validus curis cruciamentum succurro benigne.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1RzRjBFQXdwdXc=
+    is-expired: false
+    solutions:
+      - title: Tepesco taceo subnecto.
+        url: https://average-confusion.net
+        source: StackOverflow
+        author: Ms. Sharon Connelly
+      - title: Talus suscipio tepesco.
+        url: https://motionless-essence.info/
+        source: Medium
+        author: Curtis Runte
+    create-time: '2023-10-29 20:10:16'
+    update-time: '2025-01-25 03:27:13'

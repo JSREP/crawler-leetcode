@@ -1,29 +1,25 @@
 # 挑战题目文件
 version: 1
-
 challenges:
-  - id: mock-challenge-38
+  - id: 38
+    id-alias: mock-challenge-38
     tags:
-      - canvas-fingerprint
-      - obfuscator
-    platform: iOS
-    name: Mock挑战题目 #38
-    difficulty-level: 1
-    description: 这是一个示例挑战题目的描述，难度为1星级。
-    base64-url: aHR0cHM6Ly93d3cuZXhhbXBsZS5jb20vcHJvYmxlbS94eXoxMjM=
-    is-expired: true
+      - Hashing
+      - Session-Management
+      - CSP
+      - GraphQL
+    platform: API
+    name: 'Mock挑战题目 #38'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Vir viriliter utroque. Terra curis traho totidem
+      tabesco.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2JsdDh2OFBqazM=
+    is-expired: false
     solutions:
-      - title: 静态分析方法
-        url: https://github.com/user/repo
-        source: YouTube
-        author: Alex Chen
-      - title: Hook方法绕过
-        url: https://medium.com/@user/article
-        source: GitHub
-        author: 
-      - title: 使用Puppeteer绕过检测
-        url: https://medium.com/@user/article
-        source: GitHub
-        author: 
-    create-time: 2023-03-28 05:46:05
-    update-time: 2024-03-13 14:46:31
+      - title: Adsidue clam adfero.
+        url: https://empty-pomelo.org/
+        source: Medium
+        author: Bernadette Nicolas DDS
+    create-time: '2023-09-14 03:09:12'
+    update-time: '2024-08-23 01:14:16'

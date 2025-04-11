@@ -1,0 +1,29 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 579
+    id-alias: mock-challenge-579
+    tags:
+      - Encryption
+      - Business-Logic
+      - SSRF
+      - GraphQL
+    platform: API
+    name: 'Mock挑战题目 #579'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Vapulus trans illum adulatio aqua. Sequi vergo
+      conservo alienus quo fugiat acsi adduco abundans.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzhrU3hJSkdoTXo=
+    is-expired: false
+    solutions:
+      - title: Civis adulatio creber.
+        url: https://deafening-scorn.com/
+        source: Blog
+        author: Max Nolan
+      - title: Terror summopere aeternus.
+        url: https://major-petticoat.biz
+        source: GitHub
+        author: Lucas MacGyver
+    create-time: '2024-08-01 08:37:15'
+    update-time: '2024-12-03 07:08:31'

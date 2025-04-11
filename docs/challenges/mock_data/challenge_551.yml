@@ -1,0 +1,28 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 551
+    id-alias: mock-challenge-551
+    tags:
+      - SSRF
+      - JWT
+      - Path-Traversal
+    platform: IoT
+    name: 'Mock挑战题目 #551'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Tamdiu thymum campana cupio subito vinco sint tergeo.
+      Ullus defessus exercitationem numquam reprehenderit ascisco.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L01JdG84VWQzWEs=
+    is-expired: false
+    solutions:
+      - title: Conitor stella calco.
+        url: https://urban-hunt.info
+        source: Blog
+        author: ''
+      - title: Tolero demergo verecundia.
+        url: https://elliptical-overcoat.org/
+        source: Blog
+        author: ''
+    create-time: '2025-02-10 10:52:29'
+    update-time: '2025-02-20 07:17:52'

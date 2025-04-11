@@ -1,0 +1,19 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 289
+    id-alias: mock-challenge-289
+    tags:
+      - Deserialization
+      - Path-Traversal
+    platform: Mobile
+    name: 'Mock挑战题目 #289'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Cognomen timidus ancilla. Magnam vindico custodia
+      quod tolero.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzNLMGUySmlONGU=
+    is-expired: false
+    solutions: []
+    create-time: '2023-05-13 11:02:32'
+    update-time: '2023-11-03 16:59:48'

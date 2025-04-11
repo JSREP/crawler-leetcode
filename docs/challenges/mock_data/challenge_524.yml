@@ -1,0 +1,28 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 524
+    id-alias: mock-challenge-524
+    tags:
+      - Access-Control
+      - Deserialization
+      - Command-Injection
+    platform: API
+    name: 'Mock挑战题目 #524'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Tolero commodo cena stultus valde consuasor
+      chirographum arbor. Vereor amoveo corporis usitas cum.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0pqczBzTmtHTGI=
+    is-expired: false
+    solutions:
+      - title: Reprehenderit sponte calculus.
+        url: https://lawful-developing.net/
+        source: YouTube
+        author: Josefina Dickinson
+      - title: Cui defluo adduco.
+        url: https://deficient-optimal.biz
+        source: GitHub
+        author: Camille Crona
+    create-time: '2023-06-15 10:07:13'
+    update-time: '2024-11-20 00:59:45'

@@ -1,0 +1,34 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 172
+    id-alias: mock-challenge-172
+    tags:
+      - JWT
+      - Input-Validation
+      - Deserialization
+      - Rate-Limiting
+      - Access-Control
+    platform: IoT
+    name: 'Mock挑战题目 #172'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Comedo comes sursum officiis vilis cursus debilito.
+      Admoneo curtus tenax.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1Ixd080V1UxMDQ=
+    is-expired: false
+    solutions:
+      - title: Temperantia amiculum adversus.
+        url: https://complicated-operating.org/
+        source: YouTube
+        author: Dr. Ashley Casper
+      - title: Autus commemoro totidem.
+        url: https://sleepy-horde.com
+        source: Medium
+        author: Mr. Sean Mann
+      - title: Temporibus delego decumbo.
+        url: https://fatal-marathon.name/
+        source: YouTube
+        author: Mr. Stephen Ratke
+    create-time: '2023-12-26 06:12:31'
+    update-time: '2024-03-01 03:02:04'

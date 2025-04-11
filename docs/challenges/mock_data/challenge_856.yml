@@ -1,0 +1,29 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 856
+    id-alias: mock-challenge-856
+    tags:
+      - Browser-Extensions
+      - OAuth
+      - SSRF
+      - XSS
+    platform: IoT
+    name: 'Mock挑战题目 #856'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Color theca aufero exercitationem derelinquo. Trans
+      contra utpote videlicet distinctio appello sed.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1M4QklxQ0Q4OHQ=
+    is-expired: false
+    solutions:
+      - title: Antepono molestiae consequuntur.
+        url: https://whispered-haversack.org/
+        source: Blog
+        author: Earnest Watsica
+      - title: Anser tumultus quo.
+        url: https://minty-schedule.biz
+        source: Blog
+        author: Tami Kemmer
+    create-time: '2023-08-06 13:56:31'
+    update-time: '2023-09-02 00:54:24'

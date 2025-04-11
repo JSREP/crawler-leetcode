@@ -72,14 +72,15 @@ const NavBar = () => {
                         }}
                     />
                     <Space size="middle">
-                        {/* 语言选择器 */}
+                        {/* 语言选择器 - 增加右侧间距避免被GitHub徽标遮挡 */}
                         <Select
                             defaultValue={localStorage.getItem('language') || 'en'}
                             style={{
                                 width: 120,
                                 background: 'transparent',
                                 border: '1px solid #e8e8e8',
-                                borderRadius: '4px'
+                                borderRadius: '4px',
+                                marginRight: '70px' // 添加右侧间距，避免被GitHub徽标遮挡
                             }}
                             variant="borderless"
                             onChange={handleLanguageChange}

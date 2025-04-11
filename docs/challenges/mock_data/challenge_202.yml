@@ -1,0 +1,24 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 202
+    id-alias: mock-challenge-202
+    tags:
+      - File-Upload
+      - Input-Validation
+      - GraphQL
+    platform: Desktop
+    name: 'Mock挑战题目 #202'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Cohors deficio carus denuo. Culpo vorax certe
+      aggredior umerus verto suggero in.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzR2ZkRsaVZFSDU=
+    is-expired: false
+    solutions:
+      - title: Vehemens venio natus.
+        url: https://smug-ferret.info
+        source: Medium
+        author: Marta Runolfsson
+    create-time: '2023-06-03 12:48:43'
+    update-time: '2025-02-04 04:56:46'

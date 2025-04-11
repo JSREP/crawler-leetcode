@@ -1,0 +1,20 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 275
+    id-alias: mock-challenge-275
+    tags:
+      - Mobile-Security
+      - CORS
+    platform: API
+    name: 'Mock挑战题目 #275'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Esse textus certe ater exercitationem animus cogo
+      demoror capillus subiungo. Libero depopulo compello eaque vomito ubi
+      perspiciatis talis varietas.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3NJUG1wYVRVWDE=
+    is-expired: false
+    solutions: []
+    create-time: '2025-03-04 08:58:59'
+    update-time: '2025-04-10 02:23:57'

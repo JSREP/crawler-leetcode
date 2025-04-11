@@ -1,0 +1,29 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 717
+    id-alias: mock-challenge-717
+    tags:
+      - SSRF
+      - Input-Validation
+      - Business-Logic
+    platform: Mobile
+    name: 'Mock挑战题目 #717'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Voco vinum unde subseco deserunt arcesso curso
+      delectatio utique velut. Vobis corrigo ea spargo facere cetera thorax
+      aurum.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L05EcWdKdnJ5Rko=
+    is-expired: false
+    solutions:
+      - title: Delicate timor utroque.
+        url: https://austere-vibraphone.org
+        source: GitHub
+        author: Karla Zemlak V
+      - title: Damno ultra vado.
+        url: https://complicated-equal.org/
+        source: GitHub
+        author: Robert Weber
+    create-time: '2024-12-14 04:49:16'
+    update-time: '2025-01-24 18:08:12'

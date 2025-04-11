@@ -1,0 +1,22 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 342
+    id-alias: mock-challenge-342
+    tags:
+      - Encryption
+      - Authorization
+      - Browser-Extensions
+      - SQL-Injection
+      - Rate-Limiting
+    platform: API
+    name: 'Mock挑战题目 #342'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Cubo caelestis subiungo textor delinquo. Corporis
+      thesaurus sophismata.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0N1NUk5VUdIQ20=
+    is-expired: true
+    solutions: []
+    create-time: '2024-06-23 04:49:05'
+    update-time: '2024-07-21 12:48:55'

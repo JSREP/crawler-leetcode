@@ -1,0 +1,34 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 395
+    id-alias: mock-challenge-395
+    tags:
+      - Input-Validation
+      - Path-Traversal
+      - CSP
+      - HTTP-Headers
+      - Rate-Limiting
+    platform: Mobile
+    name: 'Mock挑战题目 #395'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Nisi traho similique turba aestas conculco. Labore
+      deludo ultra aer terror facere casso.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1JUV1d6bE9VZE8=
+    is-expired: false
+    solutions:
+      - title: Defungo adeo voluptate.
+        url: https://considerate-lox.name/
+        source: StackOverflow
+        author: Ms. Yolanda Schuppe
+      - title: Appello dedecor est.
+        url: https://plain-fibre.net
+        source: Medium
+        author: ''
+      - title: Confugo benigne vigor.
+        url: https://oily-scorpion.info/
+        source: StackOverflow
+        author: Ms. Kayla Stamm PhD
+    create-time: '2023-05-20 16:43:37'
+    update-time: '2023-11-02 17:42:34'

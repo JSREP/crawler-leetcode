@@ -1,0 +1,31 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 497
+    id-alias: mock-challenge-497
+    tags:
+      - GraphQL
+      - Deserialization
+    platform: Web
+    name: 'Mock挑战题目 #497'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Architecto conatus sursum arto numquam. Sperno
+      utroque victoria creta alioqui sum comedo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2FKdzJtN0lQYXE=
+    is-expired: false
+    solutions:
+      - title: Aiunt adopto curso.
+        url: https://slushy-cod.biz
+        source: Blog
+        author: Bobby King-Wehner
+      - title: Claro defessus decipio.
+        url: https://heavenly-pronoun.info
+        source: StackOverflow
+        author: ''
+      - title: Summopere adipiscor congregatio.
+        url: https://antique-minister.info/
+        source: Blog
+        author: Ernesto Schimmel
+    create-time: '2024-07-26 08:54:01'
+    update-time: '2024-12-14 22:59:08'

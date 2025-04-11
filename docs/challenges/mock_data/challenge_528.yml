@@ -1,0 +1,26 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 528
+    id-alias: mock-challenge-528
+    tags:
+      - OAuth
+      - XSS
+      - GraphQL
+      - Encryption
+      - File-Upload
+    platform: API
+    name: 'Mock挑战题目 #528'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Dedecor uberrime vero aduro sui vesica canonicus
+      consequatur cui. Terror bellicus accusantium.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L05LUEFUekZsekE=
+    is-expired: false
+    solutions:
+      - title: Tametsi conventus ut.
+        url: https://wrong-newsprint.name
+        source: Blog
+        author: Jon Krajcik
+    create-time: '2024-03-06 03:34:00'
+    update-time: '2024-06-07 23:40:03'

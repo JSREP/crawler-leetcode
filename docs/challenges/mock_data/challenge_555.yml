@@ -1,0 +1,33 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 555
+    id-alias: mock-challenge-555
+    tags:
+      - HTTP-Headers
+      - CORS
+      - Command-Injection
+      - GraphQL
+    platform: API
+    name: 'Mock挑战题目 #555'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Trucido tabesco dignissimos auctor articulus. Super
+      umbra apostolus tero talis amissio arbitro.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3NzUm9CTzlqOXA=
+    is-expired: false
+    solutions:
+      - title: Decumbo canto volva.
+        url: https://shady-orchid.name/
+        source: YouTube
+        author: Erica Breitenberg Sr.
+      - title: Vigilo laboriosam soluta.
+        url: https://infamous-embossing.net/
+        source: YouTube
+        author: Dr. Clint Walter
+      - title: Calcar fugit sapiente.
+        url: https://repentant-disk.net/
+        source: StackOverflow
+        author: Dr. Clay Mills
+    create-time: '2025-03-18 21:20:37'
+    update-time: '2025-04-11 00:30:10'

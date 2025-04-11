@@ -1,0 +1,20 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 586
+    id-alias: mock-challenge-586
+    tags:
+      - Deserialization
+      - File-Upload
+      - XXE
+    platform: Web
+    name: 'Mock挑战题目 #586'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Paens cena peior thymum. Tutis appello vulariter
+      comminor thema caelestis vigor caveo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2RRNXpqUFkxSU4=
+    is-expired: false
+    solutions: []
+    create-time: '2024-05-14 11:38:20'
+    update-time: '2025-02-01 21:42:14'

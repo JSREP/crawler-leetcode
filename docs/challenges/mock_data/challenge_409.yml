@@ -1,0 +1,33 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 409
+    id-alias: mock-challenge-409
+    tags:
+      - HTTP-Headers
+      - Command-Injection
+      - Deserialization
+      - CSRF
+    platform: API
+    name: 'Mock挑战题目 #409'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Vulgus aedificium patria caveo undique contego
+      suffragium ad. Ante minima armarium.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3hRQTUwV1pqR1U=
+    is-expired: false
+    solutions:
+      - title: Cultura summopere tubineus.
+        url: https://oddball-encouragement.biz/
+        source: Medium
+        author: Norman Gorczany
+      - title: Venustas celo vaco.
+        url: https://trusting-plumber.info
+        source: StackOverflow
+        author: Victoria Dickens
+      - title: Admoneo pauci vorax.
+        url: https://frank-finer.net/
+        source: GitHub
+        author: Joey Schulist II
+    create-time: '2023-10-04 02:45:35'
+    update-time: '2023-12-05 17:57:01'

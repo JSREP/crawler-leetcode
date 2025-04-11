@@ -1,0 +1,24 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 150
+    id-alias: mock-challenge-150
+    tags:
+      - Business-Logic
+      - GraphQL
+      - Authorization
+    platform: Desktop
+    name: 'Mock挑战题目 #150'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Vulgo cras brevis amiculum quibusdam quia. Sollers
+      amplus eligendi ullam dolorum degenero tergum ducimus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3U1Yzhkc1o0Mno=
+    is-expired: false
+    solutions:
+      - title: Suggero quisquam cetera.
+        url: https://urban-daddy.org
+        source: Blog
+        author: Clay Morissette
+    create-time: '2024-09-19 23:14:49'
+    update-time: '2025-01-15 06:29:47'

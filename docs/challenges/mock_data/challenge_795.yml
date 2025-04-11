@@ -1,0 +1,27 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 795
+    id-alias: mock-challenge-795
+    tags:
+      - Hashing
+      - Business-Logic
+      - CORS
+      - Browser-Extensions
+    platform: IoT
+    name: 'Mock挑战题目 #795'
+    difficulty-level: 3
+    description: 这是一个示例挑战题目的描述，难度为3星级。Quasi verbum conduco. Thesis constans vilis cotidie.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L05oNjJDdW9HMWs=
+    is-expired: false
+    solutions:
+      - title: Crebro carpo aeternus.
+        url: https://warmhearted-cycle.com/
+        source: Medium
+        author: Gertrude Cruickshank
+      - title: Subiungo adficio spes.
+        url: https://kooky-heating.com
+        source: YouTube
+        author: ''
+    create-time: '2023-06-04 12:38:11'
+    update-time: '2024-11-15 16:22:32'

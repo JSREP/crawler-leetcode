@@ -1,0 +1,29 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 392
+    id-alias: mock-challenge-392
+    tags:
+      - Deserialization
+      - Business-Logic
+      - Browser-Extensions
+      - CORS
+    platform: Desktop
+    name: 'Mock挑战题目 #392'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Color conduco spiritus demens porro soluta quis
+      attonbitus. Derideo quisquam nihil depopulo suffoco cibo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3ZMaDhXdEdsdXo=
+    is-expired: false
+    solutions:
+      - title: Censura vita confido.
+        url: https://polite-order.name/
+        source: YouTube
+        author: ''
+      - title: Summisse surculus vilis.
+        url: https://responsible-shore.org/
+        source: GitHub
+        author: Moses Langworth
+    create-time: '2024-08-03 09:30:13'
+    update-time: '2024-10-03 01:16:44'

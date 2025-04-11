@@ -1,0 +1,23 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 706
+    id-alias: mock-challenge-706
+    tags:
+      - Encryption
+      - Access-Control
+      - Hashing
+      - Path-Traversal
+      - SQL-Injection
+    platform: Desktop
+    name: 'Mock挑战题目 #706'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Catena denuo soleo urbs qui neque atrocitas curo
+      beatae ceno. Dignissimos necessitatibus suscipio vulnus dolorum hic
+      aperio.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2tLdHdkc3BBMkM=
+    is-expired: false
+    solutions: []
+    create-time: '2024-06-14 19:38:51'
+    update-time: '2024-11-11 17:20:38'

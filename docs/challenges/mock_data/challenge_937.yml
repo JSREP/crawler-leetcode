@@ -1,0 +1,25 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 937
+    id-alias: mock-challenge-937
+    tags:
+      - JWT
+      - File-Upload
+      - Deserialization
+      - WebSockets
+    platform: Desktop
+    name: 'Mock挑战题目 #937'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Delectus cariosus defungo adiuvo. Corrumpo adamo
+      voro.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzQ0OEJ5THFSbzA=
+    is-expired: false
+    solutions:
+      - title: Calco vilicus cetera.
+        url: https://thorny-chops.info
+        source: Medium
+        author: ''
+    create-time: '2023-08-25 21:46:27'
+    update-time: '2024-08-16 04:27:47'

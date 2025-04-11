@@ -1,0 +1,23 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 964
+    id-alias: mock-challenge-964
+    tags:
+      - Path-Traversal
+      - Access-Control
+    platform: Desktop
+    name: 'Mock挑战题目 #964'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Caste nemo decor stillicidium video celer. Constans
+      totidem curso cito desipio admoneo illo asporto.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6Lzk5dzFhS0poY2g=
+    is-expired: false
+    solutions:
+      - title: Celo abduco claudeo.
+        url: https://oblong-intellect.info/
+        source: Blog
+        author: Harry Toy
+    create-time: '2023-11-06 20:47:14'
+    update-time: '2024-03-11 19:24:12'

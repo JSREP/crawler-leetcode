@@ -1,0 +1,23 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 672
+    id-alias: mock-challenge-672
+    tags:
+      - Path-Traversal
+      - WebSockets
+    platform: Desktop
+    name: 'Mock挑战题目 #672'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Convoco colo commodo causa autem cauda in quia toties
+      beatae. Clementia angulus vestigium.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2JGa2ZWaU8xWTM=
+    is-expired: false
+    solutions:
+      - title: Tutis modi tunc.
+        url: https://plump-tomatillo.org/
+        source: Blog
+        author: Alma Brakus
+    create-time: '2024-08-07 01:58:56'
+    update-time: '2025-02-04 19:53:39'

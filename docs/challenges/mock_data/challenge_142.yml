@@ -1,0 +1,26 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 142
+    id-alias: mock-challenge-142
+    tags:
+      - SSRF
+      - Path-Traversal
+      - Mobile-Security
+      - CSRF
+      - Browser-Extensions
+    platform: Desktop
+    name: 'Mock挑战题目 #142'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Admoneo ademptio templum corporis succurro celo
+      vulgus vero possimus. Sollicito calculus tabula argumentum.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1dUQTQ1Wmc2MmE=
+    is-expired: false
+    solutions:
+      - title: Spectaculum curriculum ter.
+        url: https://trivial-accelerator.org/
+        source: YouTube
+        author: Erik Stamm
+    create-time: '2023-10-24 03:08:44'
+    update-time: '2025-02-16 18:07:06'

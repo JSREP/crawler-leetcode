@@ -1,0 +1,21 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 167
+    id-alias: mock-challenge-167
+    tags:
+      - Race-Condition
+      - HTTP-Headers
+      - SSRF
+      - GraphQL
+    platform: Mobile
+    name: 'Mock挑战题目 #167'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Suscipio vulgus demum demens depono suffoco labore.
+      Statim artificiose defero exercitationem quaerat.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzNoREdqbHk4UG4=
+    is-expired: false
+    solutions: []
+    create-time: '2024-12-23 16:05:22'
+    update-time: '2025-01-31 00:45:03'

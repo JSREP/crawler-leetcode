@@ -1,0 +1,28 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 690
+    id-alias: mock-challenge-690
+    tags:
+      - API-Security
+      - Encryption
+      - SSRF
+    platform: Desktop
+    name: 'Mock挑战题目 #690'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Cuppedia ubi stabilis dolores. Tricesimus sui
+      admiratio.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3pHWHl0TWFvYkk=
+    is-expired: false
+    solutions:
+      - title: Rem certus textilis.
+        url: https://mad-quit.com/
+        source: Blog
+        author: Joanne Fritsch
+      - title: Aiunt commodi xiphias.
+        url: https://straight-hope.net
+        source: Medium
+        author: ''
+    create-time: '2024-10-21 11:06:46'
+    update-time: '2024-12-28 16:00:49'

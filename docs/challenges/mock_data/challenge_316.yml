@@ -1,0 +1,23 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 316
+    id-alias: mock-challenge-316
+    tags:
+      - CORS
+      - Input-Validation
+    platform: API
+    name: 'Mock挑战题目 #316'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Vulariter constans textus damno communis tabesco.
+      Taedium delinquo officia aperte quasi sum omnis.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3JaU0RwNjhsaW0=
+    is-expired: false
+    solutions:
+      - title: Cornu tantillus quos.
+        url: https://bouncy-pressure.org/
+        source: YouTube
+        author: Casey Keebler
+    create-time: '2024-04-07 12:09:03'
+    update-time: '2024-07-06 16:38:00'

@@ -1,0 +1,32 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 236
+    id-alias: mock-challenge-236
+    tags:
+      - Mobile-Security
+      - Authentication
+      - CORS
+    platform: Desktop
+    name: 'Mock挑战题目 #236'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Decimus cresco patior pel adamo benigne. Vergo arbor
+      curso.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1FpVE5RRU00Qmc=
+    is-expired: false
+    solutions:
+      - title: Vado cuius astrum.
+        url: https://massive-jump.net
+        source: Blog
+        author: Roger Frami
+      - title: Crudelis sursum carus.
+        url: https://odd-dulcimer.org
+        source: YouTube
+        author: Erin Schoen
+      - title: Caste hic voluntarius.
+        url: https://regular-deer.net/
+        source: YouTube
+        author: ''
+    create-time: '2023-11-06 02:38:34'
+    update-time: '2025-02-13 01:53:40'

@@ -1,0 +1,34 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 703
+    id-alias: mock-challenge-703
+    tags:
+      - XXE
+      - Input-Validation
+      - SSRF
+      - API-Security
+      - Hashing
+    platform: Mobile
+    name: 'Mock挑战题目 #703'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Pauci denuncio vivo aperio. Varietas tepidus velum
+      arcesso cibo vulgus comedo decet.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzVLc3ZCMDBRWTc=
+    is-expired: true
+    solutions:
+      - title: Pecus vestrum degusto.
+        url: https://cluttered-moment.com
+        source: Blog
+        author: Gustavo Stamm
+      - title: Quod adinventitias vulariter.
+        url: https://forceful-giggle.info
+        source: StackOverflow
+        author: Dr. Reginald Ebert
+      - title: Arbustum utilis argumentum.
+        url: https://sour-hyena.name
+        source: Medium
+        author: Tabitha Blick
+    create-time: '2023-06-22 09:36:38'
+    update-time: '2023-09-19 16:52:30'

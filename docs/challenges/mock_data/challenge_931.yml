@@ -1,0 +1,21 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 931
+    id-alias: mock-challenge-931
+    tags:
+      - Race-Condition
+      - Session-Management
+      - XXE
+    platform: Desktop
+    name: 'Mock挑战题目 #931'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Sursum vinum pauper repudiandae adnuo suscipio
+      repellat demo theca victoria. Velit adsuesco somnus contabesco aeger
+      architecto.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L25Rc2RWMzlVY0s=
+    is-expired: false
+    solutions: []
+    create-time: '2023-12-18 16:16:31'
+    update-time: '2025-03-07 02:09:34'

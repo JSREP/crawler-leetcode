@@ -1,0 +1,31 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 540
+    id-alias: mock-challenge-540
+    tags:
+      - Hashing
+      - Command-Injection
+      - JWT
+      - XSS
+      - CORS
+    platform: Mobile
+    name: 'Mock挑战题目 #540'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Omnis timidus officiis aureus eos cotidie tardus.
+      Libero degenero sursum aegrotatio supra collum coruscus caelum deficio
+      arca.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3RtUkxMbjJ4U0U=
+    is-expired: false
+    solutions:
+      - title: Deludo quisquam calcar.
+        url: https://rotten-reward.net
+        source: StackOverflow
+        author: Al Goldner
+      - title: Vox curtus officia.
+        url: https://unhealthy-sushi.net/
+        source: StackOverflow
+        author: Cody Tillman
+    create-time: '2023-06-29 18:28:21'
+    update-time: '2024-09-19 18:09:19'

@@ -1,0 +1,27 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 506
+    id-alias: mock-challenge-506
+    tags:
+      - Command-Injection
+      - Input-Validation
+    platform: Web
+    name: 'Mock挑战题目 #506'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Solio ante itaque adicio talus dolorum aduro paens.
+      Vilis consequuntur asporto trepide fugiat vergo vobis.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0lGTk9pazdDRUk=
+    is-expired: false
+    solutions:
+      - title: Tepesco cognatus at.
+        url: https://back-self-confidence.com
+        source: GitHub
+        author: Keith Gulgowski
+      - title: Pariatur certe vir.
+        url: https://admired-pantyhose.net/
+        source: YouTube
+        author: Craig Muller
+    create-time: '2024-11-05 23:36:30'
+    update-time: '2025-02-09 12:32:17'

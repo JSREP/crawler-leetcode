@@ -1,0 +1,27 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 262
+    id-alias: mock-challenge-262
+    tags:
+      - Race-Condition
+      - OAuth
+    platform: Web
+    name: 'Mock挑战题目 #262'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Atrocitas amoveo convoco cunae cunae pariatur arca
+      id. Vox amo tam.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1dRNUxyRnFSc1o=
+    is-expired: false
+    solutions:
+      - title: Sperno vinculum ocer.
+        url: https://irresponsible-excess.info
+        source: Medium
+        author: Claudia Schneider
+      - title: Ascisco soleo cruciamentum.
+        url: https://ill-fated-hierarchy.net
+        source: Blog
+        author: Kelli Jaskolski
+    create-time: '2025-03-16 14:55:34'
+    update-time: '2025-03-31 04:02:50'

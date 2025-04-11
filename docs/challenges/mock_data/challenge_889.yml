@@ -1,0 +1,19 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 889
+    id-alias: mock-challenge-889
+    tags:
+      - JWT
+      - API-Security
+    platform: API
+    name: 'Mock挑战题目 #889'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Unde cena uterque texo. Tricesimus statua aedificium
+      ter copiose verto absque virtus despecto.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3BCYVZQeTBRS0c=
+    is-expired: false
+    solutions: []
+    create-time: '2025-04-11 10:13:15'
+    update-time: '2025-04-11 10:33:16'

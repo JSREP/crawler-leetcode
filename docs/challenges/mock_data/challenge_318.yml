@@ -1,0 +1,22 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 318
+    id-alias: mock-challenge-318
+    tags:
+      - Rate-Limiting
+      - OAuth
+      - SSRF
+      - Race-Condition
+    platform: Desktop
+    name: 'Mock挑战题目 #318'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Volo cerno caries vomica astrum stillicidium adflicto
+      creber claudeo volup. Tener vestigium cohors cuppedia ambitus substantia
+      vulgivagus paens non.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0NBdUFQYWRnWlc=
+    is-expired: false
+    solutions: []
+    create-time: '2023-11-05 06:12:24'
+    update-time: '2025-01-14 05:29:54'

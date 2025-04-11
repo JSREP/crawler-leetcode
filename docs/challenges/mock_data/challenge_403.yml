@@ -1,0 +1,28 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 403
+    id-alias: mock-challenge-403
+    tags:
+      - Session-Management
+      - HTTP-Headers
+      - Browser-Extensions
+    platform: IoT
+    name: 'Mock挑战题目 #403'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Cometes pax vestrum abbas. Veritas arbor tibi claro
+      suscipit.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1I1dGlUbEpkeU4=
+    is-expired: false
+    solutions:
+      - title: Aer stipes vomer.
+        url: https://helpful-perp.biz
+        source: GitHub
+        author: Casey Bednar
+      - title: Asperiores terga arx.
+        url: https://squiggly-stock.com
+        source: GitHub
+        author: Ruben Berge
+    create-time: '2024-05-20 20:24:22'
+    update-time: '2024-09-06 22:44:42'

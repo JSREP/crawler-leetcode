@@ -1,0 +1,34 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 792
+    id-alias: mock-challenge-792
+    tags:
+      - Access-Control
+      - Deserialization
+      - Output-Encoding
+      - Rate-Limiting
+      - SSRF
+    platform: Desktop
+    name: 'Mock挑战题目 #792'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Curto clam adduco quis ventito creo canto libero
+      comes. Cubo illum tenuis ex.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2pDMms0dTE5VWg=
+    is-expired: false
+    solutions:
+      - title: Appono vae repudiandae.
+        url: https://oily-technician.name/
+        source: GitHub
+        author: ''
+      - title: Asper accedo cedo.
+        url: https://wide-management.net
+        source: Blog
+        author: Claude Mitchell
+      - title: Claustrum vulgivagus apto.
+        url: https://wealthy-sundae.org
+        source: YouTube
+        author: Melba Pacocha
+    create-time: '2023-06-23 04:16:26'
+    update-time: '2024-08-23 17:59:34'

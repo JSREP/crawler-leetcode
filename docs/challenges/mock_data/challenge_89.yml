@@ -1,25 +1,31 @@
 # 挑战题目文件
 version: 1
-
 challenges:
-  - id: mock-challenge-89
+  - id: 89
+    id-alias: mock-challenge-89
     tags:
-      - webgl-fingerprint
-      - obfuscator
-    platform: iOS
-    name: Mock挑战题目 #89
-    difficulty-level: 2
-    description: 这是一个示例挑战题目的描述，难度为2星级。
-    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9jaGFsbGVuZ2UvYWJjZGVm
-    is-expired: false
+      - WebSockets
+      - Command-Injection
+      - Rate-Limiting
+      - XXE
+      - Encryption
+    platform: Desktop
+    name: 'Mock挑战题目 #89'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。In victus adhuc viduo patior custodia capto tergo.
+      Armarium vomica truculenter dicta pel termes conforto contigo tubineus
+      comptus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1UzMlBDeFZJWFg=
+    is-expired: true
     solutions:
-      - title: AST分析方案
-        url: https://medium.com/@user/article
-        source: Personal Blog
-        author: 
-      - title: 静态分析方法
-        url: https://github.com/user/repo
-        source: Personal Blog
-        author: Alex Chen
-    create-time: 2024-01-19 18:57:34
-    update-time: 2025-08-06 10:28:06
+      - title: Vereor aequus culpo.
+        url: https://live-bran.org
+        source: Blog
+        author: ''
+      - title: Terebro tabgo deporto.
+        url: https://squiggly-pecan.net
+        source: StackOverflow
+        author: Verna Yost
+    create-time: '2025-01-25 02:21:07'
+    update-time: '2025-02-11 12:38:53'

@@ -1,0 +1,26 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 541
+    id-alias: mock-challenge-541
+    tags:
+      - Access-Control
+      - WebSockets
+      - HTTP-Headers
+      - CSP
+      - Output-Encoding
+    platform: Mobile
+    name: 'Mock挑战题目 #541'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Cunabula tutamen delectus deduco timidus peccatus.
+      Aeternus coniecto volva tredecim suus tondeo bos.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1J3Q3JNdDVLZTg=
+    is-expired: false
+    solutions:
+      - title: Ipsa amplus mollitia.
+        url: https://hospitable-widow.net
+        source: GitHub
+        author: ''
+    create-time: '2023-08-08 21:26:33'
+    update-time: '2024-05-22 10:59:53'

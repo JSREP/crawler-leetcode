@@ -1,0 +1,26 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 727
+    id-alias: mock-challenge-727
+    tags:
+      - Authorization
+      - WebSockets
+      - XSS
+      - Mobile-Security
+      - API-Security
+    platform: IoT
+    name: 'Mock挑战题目 #727'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Crinis adflicto chirographum denego acquiro. Attero
+      cavus magnam culpa decimus ambulo accusamus adflicto delectatio cinis.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzZnVmU5WUpkc3M=
+    is-expired: false
+    solutions:
+      - title: Vivo vel super.
+        url: https://sunny-goat.net/
+        source: StackOverflow
+        author: ''
+    create-time: '2023-07-17 00:34:50'
+    update-time: '2024-07-06 18:13:10'

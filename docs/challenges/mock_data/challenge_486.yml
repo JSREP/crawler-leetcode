@@ -1,0 +1,20 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 486
+    id-alias: mock-challenge-486
+    tags:
+      - Access-Control
+      - Browser-Extensions
+      - Race-Condition
+    platform: Desktop
+    name: 'Mock挑战题目 #486'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Tripudio acies vestrum tamen. Laborum stultus cultura
+      desolo advenio audentia quo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2VaQXJDdmZnNWw=
+    is-expired: false
+    solutions: []
+    create-time: '2023-12-21 20:03:21'
+    update-time: '2024-02-24 16:39:35'

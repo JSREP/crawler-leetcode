@@ -1,0 +1,27 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 308
+    id-alias: mock-challenge-308
+    tags:
+      - Business-Logic
+      - JWT
+    platform: API
+    name: 'Mock挑战题目 #308'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Nisi asperiores conculco ullam aureus soleo desolo.
+      Deprecator neque trans maiores accusator deserunt solium.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2tPY21zODY4eEg=
+    is-expired: false
+    solutions:
+      - title: Distinctio solio defleo.
+        url: https://descriptive-doing.biz
+        source: Blog
+        author: Susie Weber
+      - title: Sulum necessitatibus quisquam.
+        url: https://dearest-rosemary.com/
+        source: YouTube
+        author: Norma Towne
+    create-time: '2024-09-21 22:44:04'
+    update-time: '2024-10-23 06:06:33'

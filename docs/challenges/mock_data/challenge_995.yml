@@ -1,0 +1,27 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 995
+    id-alias: mock-challenge-995
+    tags:
+      - XXE
+      - OAuth
+    platform: Mobile
+    name: 'Mock挑战题目 #995'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Tabesco inflammatio anser caritas corrumpo succurro
+      amaritudo sopor carus dolore. Tumultus dens cui.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2ZaR3hvZTN6ZXo=
+    is-expired: false
+    solutions:
+      - title: Temperantia capio officiis.
+        url: https://miserly-pepper.org
+        source: GitHub
+        author: Emilio Smith
+      - title: Vulnus atque tripudio.
+        url: https://productive-sand.org
+        source: YouTube
+        author: Kathy Okuneva
+    create-time: '2024-05-14 15:28:43'
+    update-time: '2025-01-14 07:33:13'

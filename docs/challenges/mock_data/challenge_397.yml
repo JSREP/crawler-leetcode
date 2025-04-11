@@ -1,0 +1,19 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 397
+    id-alias: mock-challenge-397
+    tags:
+      - Session-Management
+      - API-Security
+    platform: IoT
+    name: 'Mock挑战题目 #397'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Pecus abstergo tenetur ullus coruscus vigor sufficio
+      aliqua. Thesis minima curis ait vere verbera tabernus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzRRNW9sc1diSTI=
+    is-expired: false
+    solutions: []
+    create-time: '2024-05-07 11:44:07'
+    update-time: '2024-07-20 01:55:39'

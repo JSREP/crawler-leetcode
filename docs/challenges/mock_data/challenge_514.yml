@@ -1,0 +1,31 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 514
+    id-alias: mock-challenge-514
+    tags:
+      - HTTP-Headers
+      - Mobile-Security
+    platform: Mobile
+    name: 'Mock挑战题目 #514'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Utroque charisma absconditus crux consectetur deripio
+      curatio. Curiositas sumptus tonsor vulgaris ventosus videlicet.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0ZnYUNsNjhMQkI=
+    is-expired: false
+    solutions:
+      - title: Stillicidium aperiam truculenter.
+        url: https://amazing-cricket.name/
+        source: Medium
+        author: Nancy Bernier
+      - title: Cubo eveniet eveniet.
+        url: https://cheap-meatloaf.org
+        source: StackOverflow
+        author: Erik Koch
+      - title: Ipsam ante antea.
+        url: https://memorable-unibody.com
+        source: Blog
+        author: Dr. Jordan Watsica
+    create-time: '2023-04-25 10:54:52'
+    update-time: '2024-06-18 10:14:15'

@@ -1,31 +1,27 @@
 # 挑战题目文件
 version: 1
-
 challenges:
-  - id: mock-challenge-33
+  - id: 33
+    id-alias: mock-challenge-33
     tags:
-      - rate-limiting
-      - webpack
-      - js-reverse
-      - browser-check
-    platform: Web
-    name: Mock挑战题目 #33
-    difficulty-level: 4
-    description: 这是一个示例挑战题目的描述，难度为4星级。
-    base64-url: aHR0cHM6Ly9sZWV0Y29kZS5jb20vY2hhbGxlbmdlL2FiY2RlZg==
+      - Command-Injection
+      - Rate-Limiting
+    platform: Desktop
+    name: 'Mock挑战题目 #33'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Nam canonicus constans trucido ad vulgivagus tristis
+      apparatus quia. Causa vestigium decipio adulescens abstergo decet.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1NXQ1o3WW1lWVE=
     is-expired: false
     solutions:
-      - title: 逆向工程思路
-        url: https://gist.github.com/user/id
+      - title: Succedo acerbitas audax.
+        url: https://rapid-cop-out.name/
         source: Medium
-        author: John Doe
-      - title: 逆向工程思路
-        url: https://medium.com/@user/article
-        source: StackOverflow
-        author: 
-      - title: 使用Puppeteer绕过检测
-        url: https://medium.com/@user/article
-        source: StackOverflow
-        author: Web Security Expert
-    create-time: 2023-07-13 10:10:24
-    update-time: 2023-12-13 14:43:39
+        author: Sammy Lang
+      - title: Cur depulso soleo.
+        url: https://proper-horde.com/
+        source: Medium
+        author: Ms. Sally Gorczany
+    create-time: '2025-03-28 20:08:39'
+    update-time: '2025-03-31 22:18:44'

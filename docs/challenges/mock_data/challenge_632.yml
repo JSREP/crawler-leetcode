@@ -1,0 +1,33 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 632
+    id-alias: mock-challenge-632
+    tags:
+      - Deserialization
+      - Access-Control
+      - Output-Encoding
+      - File-Upload
+    platform: Web
+    name: 'Mock挑战题目 #632'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Ipsum corporis sublime. Aeternus dolores centum
+      deorsum.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzNWMElpaE5rUjk=
+    is-expired: false
+    solutions:
+      - title: Averto brevis creo.
+        url: https://excited-pick.biz
+        source: Medium
+        author: Larry Murray
+      - title: Esse sollicito itaque.
+        url: https://best-dime.com
+        source: StackOverflow
+        author: Gina Lehner
+      - title: Aliquam benigne utique.
+        url: https://gullible-fold.com
+        source: GitHub
+        author: Tonya Wilkinson
+    create-time: '2024-08-17 03:34:01'
+    update-time: '2024-08-19 13:06:00'

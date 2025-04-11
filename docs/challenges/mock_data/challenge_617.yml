@@ -1,0 +1,23 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 617
+    id-alias: mock-challenge-617
+    tags:
+      - Mobile-Security
+      - File-Upload
+    platform: Mobile
+    name: 'Mock挑战题目 #617'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Adduco alo vinco illo recusandae tenuis cognatus
+      alienus fugiat. Ara uxor theologus theologus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1BlRUJ4Zmt6Tks=
+    is-expired: false
+    solutions:
+      - title: Apparatus carcer voluptas.
+        url: https://prime-pepper.name
+        source: Medium
+        author: Phillip Herman
+    create-time: '2023-09-23 17:04:46'
+    update-time: '2024-03-27 16:54:24'

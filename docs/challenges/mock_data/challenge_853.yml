@@ -1,0 +1,29 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 853
+    id-alias: mock-challenge-853
+    tags:
+      - JWT
+      - Authentication
+      - Output-Encoding
+      - Mobile-Security
+    platform: IoT
+    name: 'Mock挑战题目 #853'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Ter alveus umerus audax caelestis auxilium quasi iure
+      carcer. Recusandae uter bonus deduco talis confero sint.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2RkNkY2S0lKWjE=
+    is-expired: true
+    solutions:
+      - title: Speciosus desolo adfero.
+        url: https://superficial-beret.biz/
+        source: YouTube
+        author: Kyle Baumbach
+      - title: Civitas solvo sui.
+        url: https://rubbery-swordfish.info/
+        source: GitHub
+        author: Dr. Rodney Funk
+    create-time: '2024-12-17 06:52:45'
+    update-time: '2024-12-20 22:31:59'

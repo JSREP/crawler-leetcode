@@ -1,0 +1,33 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 942
+    id-alias: mock-challenge-942
+    tags:
+      - Browser-Extensions
+      - CSRF
+      - JWT
+      - Session-Management
+    platform: API
+    name: 'Mock挑战题目 #942'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Tactus sophismata adaugeo conculco sint valde cuius
+      avarus socius stillicidium. Tripudio urbs denego carcer cunctatio cavus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzF2MGQ5aFRmUkk=
+    is-expired: false
+    solutions:
+      - title: Virga casus aliquam.
+        url: https://unlawful-knuckle.org/
+        source: GitHub
+        author: Myra Crooks
+      - title: Cibus arto officiis.
+        url: https://familiar-muscat.org/
+        source: Blog
+        author: Glen Terry
+      - title: Carbo brevis ambulo.
+        url: https://pretty-polyester.net
+        source: GitHub
+        author: Chelsea Funk
+    create-time: '2023-05-27 15:50:50'
+    update-time: '2023-11-08 12:40:26'

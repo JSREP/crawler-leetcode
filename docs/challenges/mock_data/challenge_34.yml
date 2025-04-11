@@ -1,21 +1,29 @@
 # 挑战题目文件
 version: 1
-
 challenges:
-  - id: mock-challenge-34
+  - id: 34
+    id-alias: mock-challenge-34
     tags:
-      - js-reverse
-      - browser-check
-    platform: Web
-    name: Mock挑战题目 #34
-    difficulty-level: 1
-    description: 这是一个示例挑战题目的描述，难度为1星级。
-    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9leGVyY2lzZS82Nzg5MA==
+      - XXE
+      - Session-Management
+      - Business-Logic
+      - CSRF
+    platform: API
+    name: 'Mock挑战题目 #34'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Vallum tenetur urbs adsidue. Crastinus terminatio
+      tubineus vitiosus coruscus acer via ullus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3MxTlhBbUQzOGc=
     is-expired: false
     solutions:
-      - title: 逆向工程思路
-        url: https://gist.github.com/user/id
+      - title: Excepturi admoneo adipiscor.
+        url: https://uniform-hunger.net
         source: Medium
-        author: Web Security Expert
-    create-time: 2023-11-22 17:38:58
-    update-time: 2025-11-25 10:46:14
+        author: Velma Stanton
+      - title: Thema adamo cibo.
+        url: https://whirlwind-summer.org
+        source: GitHub
+        author: Iris Shanahan
+    create-time: '2023-09-07 02:02:30'
+    update-time: '2024-06-18 07:25:34'

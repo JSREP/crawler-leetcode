@@ -1,0 +1,33 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 966
+    id-alias: mock-challenge-966
+    tags:
+      - Authentication
+      - Rate-Limiting
+      - WebSockets
+      - HTTP-Headers
+    platform: API
+    name: 'Mock挑战题目 #966'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Acidus quaerat vindico. Sumptus amiculum infit
+      abscido sapiente arguo aureus clarus vilicus ancilla.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3NOdmpib0tWaEE=
+    is-expired: false
+    solutions:
+      - title: Caveo conventus tergiversatio.
+        url: https://hot-trick.org
+        source: YouTube
+        author: ''
+      - title: Desolo cognatus debeo.
+        url: https://key-convection.info/
+        source: YouTube
+        author: Heidi Tillman
+      - title: Ustilo curia comptus.
+        url: https://profuse-reorganisation.info
+        source: YouTube
+        author: Kenneth Collins
+    create-time: '2023-09-28 22:35:21'
+    update-time: '2024-06-04 03:59:50'

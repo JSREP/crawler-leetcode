@@ -1,0 +1,27 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 183
+    id-alias: mock-challenge-183
+    tags:
+      - Authentication
+      - OAuth
+    platform: IoT
+    name: 'Mock挑战题目 #183'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Conscendo votum tenuis canto aufero damnatio ventus.
+      Desino caterva vetus aer comburo colo creta uredo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2gzcjZId2ttUkg=
+    is-expired: false
+    solutions:
+      - title: Vinco suscipit virga.
+        url: https://glaring-fledgling.biz
+        source: StackOverflow
+        author: Mr. Aubrey Hirthe
+      - title: Deleniti audax bos.
+        url: https://altruistic-cleaner.com/
+        source: GitHub
+        author: Mr. Greg Pfannerstill
+    create-time: '2024-06-16 05:31:39'
+    update-time: '2024-11-21 12:34:32'

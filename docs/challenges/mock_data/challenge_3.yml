@@ -1,20 +1,22 @@
 # 挑战题目文件
 version: 1
-
 challenges:
-  - id: mock-challenge-3
+  - id: 3
+    id-alias: mock-challenge-3
     tags:
-      - obfuscator
-    platform: Android
-    name: Mock挑战题目 #3
-    difficulty-level: 2
-    description: 这是一个示例挑战题目的描述，难度为2星级。
-    base64-url: aHR0cHM6Ly93d3cuZXhhbXBsZS5jb20vcXVpei82Nzg5MA==
+      - Mobile-Security
+      - SQL-Injection
+      - Deserialization
+      - CSP
+      - SSRF
+    platform: Web
+    name: 'Mock挑战题目 #3'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Nulla condico textus amissio clamo crur. Celebrer
+      velociter tumultus curo ad delicate nemo currus aro autus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0ZuQllzRGVkbjc=
     is-expired: false
-    solutions:
-      - title: 使用Puppeteer绕过检测
-        url: https://github.com/user/repo
-        source: Personal Blog
-        author: Web Security Expert
-    create-time: 2024-05-27 13:46:51
-    update-time: 2025-10-22 04:54:09
+    solutions: []
+    create-time: '2023-11-29 00:11:07'
+    update-time: '2023-12-15 11:19:00'

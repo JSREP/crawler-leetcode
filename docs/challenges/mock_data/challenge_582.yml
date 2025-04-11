@@ -1,0 +1,19 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 582
+    id-alias: mock-challenge-582
+    tags:
+      - SSRF
+      - SQL-Injection
+    platform: Web
+    name: 'Mock挑战题目 #582'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Crudelis surculus suscipit toties addo suspendo
+      velit. Thesis aptus vicissitudo caries summisse talis.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2VCWTFVdDMzbXo=
+    is-expired: false
+    solutions: []
+    create-time: '2025-02-07 06:40:55'
+    update-time: '2025-03-07 07:21:23'

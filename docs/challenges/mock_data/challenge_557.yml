@@ -1,0 +1,32 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 557
+    id-alias: mock-challenge-557
+    tags:
+      - Encryption
+      - Hashing
+      - Access-Control
+    platform: API
+    name: 'Mock挑战题目 #557'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Sui pecto vilicus crur astrum cohors officiis vesco.
+      Vix civitas terreo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2dVWE9RcTQwSTI=
+    is-expired: false
+    solutions:
+      - title: Cum demulceo ocer.
+        url: https://similar-conservation.biz/
+        source: Blog
+        author: Irvin Altenwerth
+      - title: Eos artificiose sustineo.
+        url: https://mundane-dress.net/
+        source: StackOverflow
+        author: Brandy Orn III
+      - title: Adipiscor desparatus officia.
+        url: https://linear-solution.org
+        source: Blog
+        author: Alberto Homenick
+    create-time: '2025-01-07 08:54:13'
+    update-time: '2025-03-17 15:32:39'

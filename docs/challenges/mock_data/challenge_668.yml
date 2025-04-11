@@ -1,0 +1,31 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 668
+    id-alias: mock-challenge-668
+    tags:
+      - Encryption
+      - SQL-Injection
+      - OAuth
+      - API-Security
+      - CSRF
+    platform: API
+    name: 'Mock挑战题目 #668'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Commemoro aestas umquam vitium contra contego
+      clibanus aedificium cervus. Iure deputo minus amoveo cupiditate clarus
+      sonitus delectatio aetas autus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0dVTHZBSThud3U=
+    is-expired: false
+    solutions:
+      - title: Aggero truculenter terreo.
+        url: https://scared-conversation.net/
+        source: Medium
+        author: Herbert Gleichner
+      - title: Curvo suus numquam.
+        url: https://ordinary-suitcase.info
+        source: Blog
+        author: Lynda Stracke
+    create-time: '2023-06-04 21:55:02'
+    update-time: '2024-02-17 22:27:14'

@@ -1,0 +1,21 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 716
+    id-alias: mock-challenge-716
+    tags:
+      - WebSockets
+      - Path-Traversal
+      - Output-Encoding
+      - Encryption
+    platform: IoT
+    name: 'Mock挑战题目 #716'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Cohors delicate crapula virgo suus amissio compono.
+      Apto adfero tutis.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0lIbnh1UW9HOTA=
+    is-expired: false
+    solutions: []
+    create-time: '2024-07-14 11:01:53'
+    update-time: '2024-10-06 19:24:12'

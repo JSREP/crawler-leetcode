@@ -1,0 +1,34 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 893
+    id-alias: mock-challenge-893
+    tags:
+      - OAuth
+      - Command-Injection
+      - HTTP-Headers
+      - Encryption
+    platform: API
+    name: 'Mock挑战题目 #893'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Sufficio vergo creber tabgo ait titulus sit thema
+      dolore. Ulterius catena ceno cervus depopulo decerno appositus adeptio
+      acer.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3ZXTzZ1cWxJUlU=
+    is-expired: false
+    solutions:
+      - title: Arma paens earum.
+        url: https://writhing-volleyball.com/
+        source: Medium
+        author: ''
+      - title: Auctus pecto cupressus.
+        url: https://political-understanding.info
+        source: GitHub
+        author: Tiffany Treutel
+      - title: Sumo cupressus clementia.
+        url: https://fond-zen.com/
+        source: Medium
+        author: Brandon Stehr
+    create-time: '2025-03-07 08:32:03'
+    update-time: '2025-03-14 17:30:17'

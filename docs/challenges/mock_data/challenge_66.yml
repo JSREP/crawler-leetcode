@@ -1,27 +1,26 @@
 # 挑战题目文件
 version: 1
-
 challenges:
-  - id: mock-challenge-66
+  - id: 66
+    id-alias: mock-challenge-66
     tags:
-      - mobile-app
-      - anti-crawler
-      - fingerprint
-      - browser-check
+      - Access-Control
+      - Input-Validation
+      - Command-Injection
+      - API-Security
     platform: Web
-    name: Mock挑战题目 #66
-    difficulty-level: 4
-    description: 这是一个示例挑战题目的描述，难度为4星级。
-    base64-url: aHR0cHM6Ly93d3cuZXhhbXBsZS5jb20vZXhlcmNpc2UveHl6MTIz
-    is-expired: false
+    name: 'Mock挑战题目 #66'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Crastinus depraedor tactus allatus volaticus valeo
+      ventito agnosco urbanus. Cilicium non degusto itaque teneo illum amita
+      vapulus barba.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L214Rk1vZGhNVGY=
+    is-expired: true
     solutions:
-      - title: AST分析方案
-        url: https://github.com/user/repo
+      - title: Temeritas et arbustum.
+        url: https://tedious-gym.org
         source: YouTube
-        author: 
-      - title: 使用Puppeteer绕过检测
-        url: https://medium.com/@user/article
-        source: YouTube
-        author: Web Security Expert
-    create-time: 2024-06-06 20:30:54
-    update-time: 2023-06-25 08:12:25
+        author: Jacqueline Strosin
+    create-time: '2023-11-11 03:55:10'
+    update-time: '2024-04-13 11:47:25'

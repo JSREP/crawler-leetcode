@@ -1,0 +1,30 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 737
+    id-alias: mock-challenge-737
+    tags:
+      - SSRF
+      - XSS
+      - CORS
+      - Path-Traversal
+      - Input-Validation
+    platform: IoT
+    name: 'Mock挑战题目 #737'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Accusantium defluo tum arto truculenter vitae tollo.
+      Dedecor laudantium deputo vigor pauci.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3VDTFNVMXNaZ2I=
+    is-expired: false
+    solutions:
+      - title: Eligendi conor quidem.
+        url: https://old-sarong.com
+        source: Medium
+        author: Jackie Block
+      - title: Tabesco venio voveo.
+        url: https://merry-membership.net/
+        source: YouTube
+        author: Norma Johnson
+    create-time: '2023-08-04 18:45:27'
+    update-time: '2024-09-15 07:38:33'

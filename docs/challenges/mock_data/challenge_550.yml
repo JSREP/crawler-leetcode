@@ -1,0 +1,29 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 550
+    id-alias: mock-challenge-550
+    tags:
+      - SSRF
+      - HTTP-Headers
+      - JWT
+      - Command-Injection
+    platform: API
+    name: 'Mock挑战题目 #550'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Consectetur baiulus aestas tremo supplanto cunabula
+      defleo vesper congregatio. Vehemens creator vigilo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L25hVGY2ZW9BeWM=
+    is-expired: true
+    solutions:
+      - title: Clamo taceo civis.
+        url: https://shadowy-morbidity.name
+        source: StackOverflow
+        author: Dr. Carl Schuster
+      - title: Temptatio sunt adulatio.
+        url: https://supportive-department.com/
+        source: YouTube
+        author: Jill Oberbrunner
+    create-time: '2025-03-24 22:17:48'
+    update-time: '2025-04-03 23:29:02'

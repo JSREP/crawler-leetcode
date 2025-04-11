@@ -1,0 +1,24 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 120
+    id-alias: mock-challenge-120
+    tags:
+      - HTTP-Headers
+      - Deserialization
+      - GraphQL
+    platform: IoT
+    name: 'Mock挑战题目 #120'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Volaticus advenio facilis uredo tener video. Virtus
+      adicio adnuo beatae.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzRwWkpvQzFsMHU=
+    is-expired: false
+    solutions:
+      - title: Abundans compono sub.
+        url: https://roasted-order.org/
+        source: GitHub
+        author: Isabel Conn
+    create-time: '2023-11-23 13:33:48'
+    update-time: '2024-08-27 14:04:25'

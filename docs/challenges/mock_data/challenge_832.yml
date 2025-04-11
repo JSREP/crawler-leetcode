@@ -1,0 +1,33 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 832
+    id-alias: mock-challenge-832
+    tags:
+      - XSS
+      - Access-Control
+      - CSRF
+      - Rate-Limiting
+    platform: API
+    name: 'Mock挑战题目 #832'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Acidus chirographum canto. Dolor decimus copiose
+      dedico aufero.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3RReW5QMW95Wno=
+    is-expired: false
+    solutions:
+      - title: Crebro cerno demulceo.
+        url: https://grouchy-nerve.biz/
+        source: GitHub
+        author: Ernesto Turcotte PhD
+      - title: Calamitas cervus cognatus.
+        url: https://actual-e-mail.biz
+        source: Blog
+        author: Nathan Steuber
+      - title: Talis suscipit stillicidium.
+        url: https://deep-version.org/
+        source: StackOverflow
+        author: Carlos Farrell
+    create-time: '2024-11-28 09:16:32'
+    update-time: '2025-04-08 02:56:23'

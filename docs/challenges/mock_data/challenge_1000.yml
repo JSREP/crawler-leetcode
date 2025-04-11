@@ -1,0 +1,27 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 1000
+    id-alias: mock-challenge-1000
+    tags:
+      - Path-Traversal
+      - Business-Logic
+    platform: Mobile
+    name: 'Mock挑战题目 #1000'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Taedium tepesco stabilis comes vestigium. Itaque a
+      tergiversatio ademptio cohors.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzcwVzk3S2MxVHg=
+    is-expired: false
+    solutions:
+      - title: Utpote amplus thesis.
+        url: https://greedy-hovel.name
+        source: StackOverflow
+        author: Lynn Schimmel III
+      - title: Laborum fugiat viridis.
+        url: https://petty-igloo.name
+        source: YouTube
+        author: Margarita O'Reilly
+    create-time: '2024-03-30 07:19:51'
+    update-time: '2024-06-21 19:59:12'

@@ -1,0 +1,31 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 104
+    id-alias: mock-challenge-104
+    tags:
+      - WebSockets
+      - Authentication
+    platform: IoT
+    name: 'Mock挑战题目 #104'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Vicinus tibi altus conqueror sono non cognatus
+      possimus. Pax aequitas cito vobis natus cuius contabesco conturbo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3c4TlBnaUZndVE=
+    is-expired: false
+    solutions:
+      - title: Calamitas consequatur tergum.
+        url: https://teeming-linseed.biz
+        source: Medium
+        author: Mr. Clay Luettgen
+      - title: Campana est apud.
+        url: https://joyous-status.info
+        source: YouTube
+        author: Dr. Amos Schaefer
+      - title: Alo decerno acies.
+        url: https://grimy-characterization.net/
+        source: GitHub
+        author: Mr. Morris Sawayn
+    create-time: '2025-02-19 09:31:37'
+    update-time: '2025-03-25 09:43:05'

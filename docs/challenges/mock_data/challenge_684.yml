@@ -1,0 +1,20 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 684
+    id-alias: mock-challenge-684
+    tags:
+      - Authorization
+      - OAuth
+      - Input-Validation
+    platform: Web
+    name: 'Mock挑战题目 #684'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Terra alienus aliquid artificiose delibero
+      congregatio. Capitulus sed alienus ara vado.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3dZNDluRjFDejQ=
+    is-expired: false
+    solutions: []
+    create-time: '2024-02-12 10:41:44'
+    update-time: '2024-09-08 19:49:48'

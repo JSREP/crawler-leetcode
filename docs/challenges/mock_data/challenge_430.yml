@@ -1,0 +1,26 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 430
+    id-alias: mock-challenge-430
+    tags:
+      - Browser-Extensions
+      - File-Upload
+      - Race-Condition
+      - Session-Management
+      - Path-Traversal
+    platform: IoT
+    name: 'Mock挑战题目 #430'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Varius pax appositus quisquam auditor tripudio urbs
+      sopor numquam. Eaque usitas caput adnuo surculus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0NJSkZVMm04U2U=
+    is-expired: false
+    solutions:
+      - title: Absens urbs nulla.
+        url: https://windy-depot.net
+        source: StackOverflow
+        author: ''
+    create-time: '2023-09-11 12:28:26'
+    update-time: '2025-03-08 15:36:35'

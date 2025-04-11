@@ -1,0 +1,28 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 195
+    id-alias: mock-challenge-195
+    tags:
+      - Input-Validation
+      - CSP
+    platform: Web
+    name: 'Mock挑战题目 #195'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Ullam coma eaque acerbitas tergum itaque iure thorax
+      repellendus. Crinis itaque sponte blanditiis ater crustulum pax annus
+      cenaculum.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzlHT1d6SnU5Z1A=
+    is-expired: false
+    solutions:
+      - title: Veritas validus sollicito.
+        url: https://glittering-costume.com
+        source: YouTube
+        author: Eleanor Jerde
+      - title: Beneficium maxime asporto.
+        url: https://well-lit-tenant.com
+        source: GitHub
+        author: Miranda Gerhold-Schimmel
+    create-time: '2024-07-02 05:30:04'
+    update-time: '2024-10-11 07:15:35'

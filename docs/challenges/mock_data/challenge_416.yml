@@ -1,0 +1,20 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 416
+    id-alias: mock-challenge-416
+    tags:
+      - CSP
+      - Input-Validation
+      - Session-Management
+    platform: IoT
+    name: 'Mock挑战题目 #416'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Vere viduo utroque arbor adipiscor arx censura
+      desipio aperiam caute. Argumentum debeo vesica caput claustrum.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0JxdXBqZDgwWlY=
+    is-expired: false
+    solutions: []
+    create-time: '2023-11-19 04:52:20'
+    update-time: '2024-10-16 02:16:34'

@@ -1,22 +1,32 @@
 # 挑战题目文件
 version: 1
-
 challenges:
-  - id: mock-challenge-22
+  - id: 22
+    id-alias: mock-challenge-22
     tags:
-      - jsvmp
-      - encryption
-      - anti-crawler
-    platform: Android
-    name: Mock挑战题目 #22
-    difficulty-level: 1
-    description: 这是一个示例挑战题目的描述，难度为1星级。
-    base64-url: aHR0cHM6Ly93d3cuZXhhbXBsZS5jb20vcHJvYmxlbS9hYmNkZWY=
+      - HTTP-Headers
+      - API-Security
+      - File-Upload
+    platform: API
+    name: 'Mock挑战题目 #22'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Thorax claudeo vel calco vergo confido natus statim
+      dedico. Ea acervus collum itaque valens terebro.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0Nxa1JTZE9GcVU=
     is-expired: false
     solutions:
-      - title: AST分析方案
-        url: https://gist.github.com/user/id
-        source: GitHub
-        author: 
-    create-time: 2025-02-07 05:04:02
-    update-time: 2025-12-24 15:09:25
+      - title: Carpo dolore cribro.
+        url: https://clumsy-injunction.org
+        source: Blog
+        author: ''
+      - title: Solus vicinus acervus.
+        url: https://faint-stall.net/
+        source: StackOverflow
+        author: Dennis Gottlieb
+      - title: Altus pax ratione.
+        url: https://paltry-minority.info/
+        source: Blog
+        author: Howard Osinski Sr.
+    create-time: '2025-02-24 17:03:11'
+    update-time: '2025-04-11 14:30:13'

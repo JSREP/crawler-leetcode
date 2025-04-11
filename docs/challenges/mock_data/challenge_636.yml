@@ -1,0 +1,33 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 636
+    id-alias: mock-challenge-636
+    tags:
+      - File-Upload
+      - XSS
+      - XXE
+      - Business-Logic
+    platform: API
+    name: 'Mock挑战题目 #636'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Claustrum officia culpa canonicus. Saepe iusto
+      assumenda sustineo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzIwNDZsb05Uemk=
+    is-expired: true
+    solutions:
+      - title: Beneficium aspicio audacia.
+        url: https://concrete-bakeware.net
+        source: Medium
+        author: Mr. Noel Rutherford
+      - title: Acies curto adipiscor.
+        url: https://motionless-instance.name/
+        source: Blog
+        author: Dana Schowalter
+      - title: Sumptus centum appello.
+        url: https://shadowy-teriyaki.info/
+        source: GitHub
+        author: Barbara Heidenreich II
+    create-time: '2024-05-13 12:43:54'
+    update-time: '2024-07-22 05:01:18'

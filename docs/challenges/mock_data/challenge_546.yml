@@ -1,0 +1,29 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 546
+    id-alias: mock-challenge-546
+    tags:
+      - JWT
+      - XXE
+      - SQL-Injection
+      - Session-Management
+    platform: Desktop
+    name: 'Mock挑战题目 #546'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Summa earum celebrer venio vita. Victoria damno
+      facilis molestiae amaritudo quod ustilo impedit ventosus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzU1OTJvSXYwMno=
+    is-expired: false
+    solutions:
+      - title: Animus cariosus sortitus.
+        url: https://unwieldy-executor.net
+        source: StackOverflow
+        author: Alfredo Lockman
+      - title: Tibi optio inventore.
+        url: https://golden-bowler.net/
+        source: Blog
+        author: Mr. Alex Mills
+    create-time: '2023-06-11 13:18:02'
+    update-time: '2024-04-27 07:27:08'

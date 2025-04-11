@@ -1,0 +1,29 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 147
+    id-alias: mock-challenge-147
+    tags:
+      - Browser-Extensions
+      - Input-Validation
+      - Race-Condition
+      - Output-Encoding
+    platform: Desktop
+    name: 'Mock挑战题目 #147'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Suadeo validus aliquam tamen. Arma versus assumenda
+      delinquo statua timidus accusator architecto deserunt argentum.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0NUTzJOd3VRZlY=
+    is-expired: false
+    solutions:
+      - title: Comburo crepusculum sui.
+        url: https://forceful-sonata.org
+        source: GitHub
+        author: Alma Donnelly
+      - title: Amo sumo ultio.
+        url: https://minor-stranger.com/
+        source: StackOverflow
+        author: Tabitha Prohaska
+    create-time: '2025-04-10 20:26:20'
+    update-time: '2025-04-11 08:20:08'

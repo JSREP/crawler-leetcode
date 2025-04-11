@@ -1,0 +1,28 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 879
+    id-alias: mock-challenge-879
+    tags:
+      - XSS
+      - Command-Injection
+      - OAuth
+    platform: Web
+    name: 'Mock挑战题目 #879'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Artificiose minus aptus. Tantillus tabernus vulgaris
+      crepusculum vindico.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1luTzdQMFlhc1Q=
+    is-expired: false
+    solutions:
+      - title: Assentator argumentum ducimus.
+        url: https://rigid-legging.biz
+        source: StackOverflow
+        author: Violet Stamm
+      - title: Architecto volutabrum truculenter.
+        url: https://creamy-coin.net/
+        source: GitHub
+        author: Dr. Bradley Ferry
+    create-time: '2024-03-28 15:52:32'
+    update-time: '2024-07-02 05:12:09'

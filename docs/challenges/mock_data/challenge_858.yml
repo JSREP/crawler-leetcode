@@ -1,0 +1,19 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 858
+    id-alias: mock-challenge-858
+    tags:
+      - Input-Validation
+      - JWT
+    platform: Desktop
+    name: 'Mock挑战题目 #858'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Video nulla coepi ea decens. Ulciscor vehemens
+      truculenter.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzV0dlNvMDZMMWI=
+    is-expired: false
+    solutions: []
+    create-time: '2023-06-11 10:16:28'
+    update-time: '2024-05-31 17:03:26'

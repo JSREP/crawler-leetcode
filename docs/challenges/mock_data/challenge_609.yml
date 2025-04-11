@@ -1,0 +1,22 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 609
+    id-alias: mock-challenge-609
+    tags:
+      - Hashing
+      - Mobile-Security
+      - API-Security
+      - Deserialization
+      - Business-Logic
+    platform: Desktop
+    name: 'Mock挑战题目 #609'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Acer verumtamen ater deludo usitas ara aliqua.
+      Abscido apto victoria attero.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3lkNzR2NGU5d2Q=
+    is-expired: false
+    solutions: []
+    create-time: '2024-08-02 16:59:11'
+    update-time: '2024-12-10 21:03:32'

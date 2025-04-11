@@ -1,0 +1,32 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 577
+    id-alias: mock-challenge-577
+    tags:
+      - XXE
+      - CSP
+      - Encryption
+    platform: Mobile
+    name: 'Mock挑战题目 #577'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Suspendo adaugeo voluptas socius vulpes. Defero
+      convoco amplitudo abundans aliquam.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2RVbGdJWkNZUUo=
+    is-expired: false
+    solutions:
+      - title: Ventito constans audeo.
+        url: https://happy-hello.com/
+        source: GitHub
+        author: Angie Steuber
+      - title: Appono theologus confugo.
+        url: https://frequent-grandpa.org
+        source: StackOverflow
+        author: Georgia Morissette
+      - title: Aiunt conitor arcus.
+        url: https://swift-bookend.info/
+        source: Medium
+        author: Olga Rosenbaum PhD
+    create-time: '2024-12-05 06:23:34'
+    update-time: '2024-12-22 08:06:47'

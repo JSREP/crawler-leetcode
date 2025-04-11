@@ -1,0 +1,31 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 900
+    id-alias: mock-challenge-900
+    tags:
+      - Rate-Limiting
+      - Output-Encoding
+      - HTTP-Headers
+      - XSS
+      - XXE
+    platform: IoT
+    name: 'Mock挑战题目 #900'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Cumque voluptate ulterius comitatus quae derelinquo
+      curis quos. Vallum depono aspicio baiulus beatae tamisium sono accommodo
+      arto delectatio.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6Lzk3cnpmdzg2UkI=
+    is-expired: false
+    solutions:
+      - title: Admoveo abduco substantia.
+        url: https://strict-intent.biz
+        source: StackOverflow
+        author: Gladys Fay
+      - title: Viridis itaque ceno.
+        url: https://utter-mechanic.info
+        source: YouTube
+        author: ''
+    create-time: '2023-06-22 14:08:40'
+    update-time: '2023-12-21 14:18:54'

@@ -1,20 +1,25 @@
 # 挑战题目文件
 version: 1
-
 challenges:
-  - id: mock-challenge-42
+  - id: 42
+    id-alias: mock-challenge-42
     tags:
-      - mobile-app
-    platform: Web
-    name: Mock挑战题目 #42
-    difficulty-level: 1
-    description: 这是一个示例挑战题目的描述，难度为1星级。
-    base64-url: aHR0cHM6Ly93d3cuZXhhbXBsZS5jb20vY2hhbGxlbmdlL3h5ejEyMw==
+      - Command-Injection
+      - Rate-Limiting
+      - File-Upload
+      - CORS
+    platform: IoT
+    name: 'Mock挑战题目 #42'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Deficio timor repellendus cetera conitor corrupti.
+      Vis verumtamen adipiscor.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3pPSnloSW81UnE=
     is-expired: false
     solutions:
-      - title: Hook方法绕过
-        url: https://gist.github.com/user/id
+      - title: Arma trans volo.
+        url: https://free-earth.biz
         source: GitHub
-        author: Jane Smith
-    create-time: 2024-02-23 15:19:40
-    update-time: 2023-01-28 07:05:25
+        author: Mr. Willis Grant
+    create-time: '2023-11-18 04:28:38'
+    update-time: '2025-02-05 21:23:11'

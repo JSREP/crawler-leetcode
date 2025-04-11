@@ -1,0 +1,33 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 204
+    id-alias: mock-challenge-204
+    tags:
+      - Access-Control
+      - OAuth
+      - Output-Encoding
+      - Input-Validation
+    platform: Mobile
+    name: 'Mock挑战题目 #204'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Cito ascisco valde amplitudo altus facilis. Ab
+      acceptus aranea vitiosus cernuus bibo solutio solum velut circumvenio.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3BLQkpHWkN5OFo=
+    is-expired: false
+    solutions:
+      - title: Succurro asperiores strenuus.
+        url: https://vain-numeric.biz
+        source: Blog
+        author: ''
+      - title: Cicuta tremo aeternus.
+        url: https://ideal-fishery.org
+        source: Medium
+        author: Mercedes Batz
+      - title: Subnecto ademptio cubitum.
+        url: https://torn-formation.com/
+        source: YouTube
+        author: Brett Rolfson
+    create-time: '2024-04-07 13:42:35'
+    update-time: '2024-12-11 23:17:44'

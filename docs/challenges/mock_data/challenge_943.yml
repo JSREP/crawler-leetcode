@@ -1,0 +1,33 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 943
+    id-alias: mock-challenge-943
+    tags:
+      - File-Upload
+      - Authentication
+      - CSRF
+      - Race-Condition
+    platform: Desktop
+    name: 'Mock挑战题目 #943'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Culpo termes denique cenaculum volutabrum desino.
+      Vigilo tardus vinum cattus depraedor cuius capitulus incidunt voluptas.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1lmOE5lYkdkQ2I=
+    is-expired: false
+    solutions:
+      - title: Sint beatae rem.
+        url: https://majestic-thigh.com
+        source: StackOverflow
+        author: Van Daugherty
+      - title: Veritatis balbus excepturi.
+        url: https://whopping-quinoa.com/
+        source: GitHub
+        author: Rebecca Cronin
+      - title: Vos voveo facere.
+        url: https://short-cauliflower.com
+        source: Medium
+        author: Mr. Dallas Fadel
+    create-time: '2023-06-07 08:21:11'
+    update-time: '2023-08-23 04:09:10'

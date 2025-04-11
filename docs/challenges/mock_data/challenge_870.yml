@@ -1,0 +1,24 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 870
+    id-alias: mock-challenge-870
+    tags:
+      - Path-Traversal
+      - SSRF
+      - Business-Logic
+    platform: API
+    name: 'Mock挑战题目 #870'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Dignissimos quidem autus suggero tergum. Beatae
+      cariosus dolore vulnus comparo candidus comminor nihil tantum cimentarius.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1l3R0lWSHNtb0g=
+    is-expired: false
+    solutions:
+      - title: Cribro degero temperantia.
+        url: https://assured-councilman.name/
+        source: StackOverflow
+        author: Bert Dickens
+    create-time: '2025-01-24 12:11:45'
+    update-time: '2025-03-20 10:47:17'

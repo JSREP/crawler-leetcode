@@ -1,24 +1,22 @@
 # 挑战题目文件
 version: 1
-
 challenges:
-  - id: mock-challenge-88
+  - id: 88
+    id-alias: mock-challenge-88
     tags:
-      - webgl-fingerprint
-    platform: Web
-    name: Mock挑战题目 #88
-    difficulty-level: 2
-    description: 这是一个示例挑战题目的描述，难度为2星级。
-    base64-url: aHR0cHM6Ly9sZWV0Y29kZS5jb20vcHJvYmxlbS9hYmNkZWY=
+      - Output-Encoding
+      - CSRF
+      - CSP
+      - File-Upload
+      - GraphQL
+    platform: IoT
+    name: 'Mock挑战题目 #88'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Eum cado sollers conor delego sapiente titulus sol.
+      Capitulus arceo somnus vinitor voluntarius vicinus atqui fugiat.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2thMTExZ3oyNkk=
     is-expired: false
-    solutions:
-      - title: 逆向工程思路
-        url: https://github.com/user/repo
-        source: Personal Blog
-        author: 
-      - title: Hook方法绕过
-        url: https://gist.github.com/user/id
-        source: GitHub
-        author: John Doe
-    create-time: 2024-12-17 15:05:12
-    update-time: 2023-08-18 12:48:52
+    solutions: []
+    create-time: '2024-06-04 05:53:33'
+    update-time: '2024-08-14 00:11:06'

@@ -1,0 +1,33 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 992
+    id-alias: mock-challenge-992
+    tags:
+      - Rate-Limiting
+      - Session-Management
+      - Access-Control
+      - Mobile-Security
+    platform: API
+    name: 'Mock挑战题目 #992'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Audacia sufficio deprecator benevolentia. Vallum nam
+      versus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L01kV2s5c2JrMVY=
+    is-expired: false
+    solutions:
+      - title: Allatus arbitro tantillus.
+        url: https://lavish-platter.name/
+        source: Medium
+        author: Lela Steuber
+      - title: Vitae vulgivagus angelus.
+        url: https://tasty-pasta.name
+        source: YouTube
+        author: Camille Langosh
+      - title: Aegrotatio nisi clam.
+        url: https://evil-spear.biz/
+        source: YouTube
+        author: Mr. Clayton Wilkinson
+    create-time: '2023-07-10 10:26:00'
+    update-time: '2025-02-12 08:49:48'

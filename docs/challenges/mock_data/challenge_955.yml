@@ -1,0 +1,31 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 955
+    id-alias: mock-challenge-955
+    tags:
+      - Command-Injection
+      - Path-Traversal
+    platform: IoT
+    name: 'Mock挑战题目 #955'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Sulum adflicto cresco casus cimentarius. Crepusculum
+      aufero commemoro arx speculum aeternus absum coruscus clamo cruentus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3RLdTlMYzdrRGk=
+    is-expired: false
+    solutions:
+      - title: Viscus concido occaecati.
+        url: https://gifted-bungalow.biz
+        source: Medium
+        author: Cesar Mosciski
+      - title: Capillus odit denique.
+        url: https://internal-trick.org
+        source: Medium
+        author: Victoria Beatty
+      - title: Voveo aliqua atrox.
+        url: https://slight-forager.name
+        source: StackOverflow
+        author: ''
+    create-time: '2024-02-04 15:30:11'
+    update-time: '2024-04-25 20:43:24'

@@ -1,0 +1,24 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 386
+    id-alias: mock-challenge-386
+    tags:
+      - Access-Control
+      - Command-Injection
+      - XXE
+    platform: IoT
+    name: 'Mock挑战题目 #386'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Numquam vinculum terror. Aliqua ab tenetur comis
+      consuasor cibo varius arto cruciamentum esse.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2dteGxScHJudlQ=
+    is-expired: false
+    solutions:
+      - title: Alias soleo claustrum.
+        url: https://respectful-habit.net
+        source: StackOverflow
+        author: James Durgan IV
+    create-time: '2023-05-22 06:25:47'
+    update-time: '2024-06-13 05:01:47'

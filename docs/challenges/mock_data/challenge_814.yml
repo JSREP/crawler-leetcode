@@ -1,0 +1,23 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 814
+    id-alias: mock-challenge-814
+    tags:
+      - Output-Encoding
+      - Browser-Extensions
+    platform: IoT
+    name: 'Mock挑战题目 #814'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Corrigo despecto cursus celebrer. Tabgo triumphus
+      cohors acquiro supra.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3NRUHhObjZyOVg=
+    is-expired: false
+    solutions:
+      - title: Verto antepono delicate.
+        url: https://key-larva.net/
+        source: GitHub
+        author: Marco Jaskolski
+    create-time: '2025-01-02 15:57:42'
+    update-time: '2025-03-04 22:32:32'

@@ -1,0 +1,19 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 886
+    id-alias: mock-challenge-886
+    tags:
+      - HTTP-Headers
+      - GraphQL
+    platform: Mobile
+    name: 'Mock挑战题目 #886'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Explicabo deludo carcer aureus acidus bonus incidunt.
+      Beatae defaeco aliquid.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0gxUjNPOVczcVI=
+    is-expired: false
+    solutions: []
+    create-time: '2023-05-14 13:11:27'
+    update-time: '2025-02-15 18:29:03'

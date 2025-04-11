@@ -1,0 +1,34 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 445
+    id-alias: mock-challenge-445
+    tags:
+      - Rate-Limiting
+      - Path-Traversal
+      - SSRF
+      - Input-Validation
+    platform: Web
+    name: 'Mock挑战题目 #445'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Commemoro verto et tondeo abscido fuga summa
+      occaecati nihil contra. Benigne vae conqueror vitium tardus ut
+      adinventitias.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzF5VjhDTjBaV0s=
+    is-expired: false
+    solutions:
+      - title: Beatus deficio recusandae.
+        url: https://ill-brace.info/
+        source: Medium
+        author: Jenny Kautzer
+      - title: Condico pecto demulceo.
+        url: https://big-coast.biz/
+        source: Blog
+        author: Joshua Schmidt
+      - title: Voluntarius ante summisse.
+        url: https://harmful-pecan.com/
+        source: YouTube
+        author: Rachel Denesik
+    create-time: '2024-10-15 02:36:17'
+    update-time: '2025-02-25 13:49:51'

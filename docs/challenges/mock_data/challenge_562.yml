@@ -1,0 +1,30 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 562
+    id-alias: mock-challenge-562
+    tags:
+      - Rate-Limiting
+      - WebSockets
+      - Path-Traversal
+      - Session-Management
+    platform: Desktop
+    name: 'Mock挑战题目 #562'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Nihil timidus adipiscor summopere tunc statim alveus
+      agnosco. Aqua statim dolorum neque validus custodia sapiente cotidie
+      peior.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0t0QzRGMk5UT1o=
+    is-expired: false
+    solutions:
+      - title: Velociter blanditiis toties.
+        url: https://narrow-essence.net
+        source: YouTube
+        author: Jennie Collins
+      - title: Callide tenuis cubicularis.
+        url: https://stingy-petticoat.com
+        source: StackOverflow
+        author: Amos Willms
+    create-time: '2024-04-24 02:55:17'
+    update-time: '2025-03-18 20:52:37'

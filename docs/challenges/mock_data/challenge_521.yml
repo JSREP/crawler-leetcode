@@ -1,0 +1,25 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 521
+    id-alias: mock-challenge-521
+    tags:
+      - CSRF
+      - API-Security
+      - Path-Traversal
+      - Output-Encoding
+    platform: Web
+    name: 'Mock挑战题目 #521'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Vigilo pecco uxor deleo adopto adflicto. Adfectus
+      cilicium triduana ultio degenero tantillus cupiditate.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzAwSlNuRU9qcFM=
+    is-expired: false
+    solutions:
+      - title: Animi speciosus textor.
+        url: https://warmhearted-bog.net
+        source: YouTube
+        author: Dr. Jeff Daniel
+    create-time: '2024-06-10 09:41:42'
+    update-time: '2024-09-11 07:20:23'

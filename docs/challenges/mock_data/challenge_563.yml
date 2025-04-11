@@ -1,0 +1,19 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 563
+    id-alias: mock-challenge-563
+    tags:
+      - SQL-Injection
+      - Access-Control
+    platform: Desktop
+    name: 'Mock挑战题目 #563'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Communis cultura utrimque cribro vomica vado arceo
+      administratio umerus. Suffragium summopere bestia varius degusto damno.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0hEOVhRcldqQU4=
+    is-expired: false
+    solutions: []
+    create-time: '2025-02-07 06:16:04'
+    update-time: '2025-03-21 23:36:18'

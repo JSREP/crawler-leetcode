@@ -1,21 +1,22 @@
 # 挑战题目文件
 version: 1
-
 challenges:
-  - id: mock-challenge-45
+  - id: 45
+    id-alias: mock-challenge-45
     tags:
-      - anti-debug
-      - signature
-    platform: Android
-    name: Mock挑战题目 #45
-    difficulty-level: 5
-    description: 这是一个示例挑战题目的描述，难度为5星级。
-    base64-url: aHR0cHM6Ly93d3cuZXhhbXBsZS5jb20vcXVpei8xMjM0NQ==
+      - Hashing
+      - Deserialization
+      - Encryption
+      - Command-Injection
+    platform: Mobile
+    name: 'Mock挑战题目 #45'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Uxor contego credo claustrum spoliatio vos vindico.
+      Aggero quisquam culpa corporis viridis ventito varietas depromo campana
+      alveus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1BlUmprMllxRGw=
     is-expired: false
-    solutions:
-      - title: 静态分析方法
-        url: https://github.com/user/repo
-        source: Medium
-        author: John Doe
-    create-time: 2023-12-18 09:48:36
-    update-time: 2023-08-24 07:58:29
+    solutions: []
+    create-time: '2023-04-14 11:34:16'
+    update-time: '2023-08-13 17:20:32'

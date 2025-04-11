@@ -1,0 +1,23 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 800
+    id-alias: mock-challenge-800
+    tags:
+      - Encryption
+      - Access-Control
+    platform: IoT
+    name: 'Mock挑战题目 #800'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Vulgus ait et vulgus bis abbas acies ascisco arguo
+      vulgaris. Appono utilis maxime cultura vita stips amiculum vitae.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L014YlhvVzBwSHI=
+    is-expired: false
+    solutions:
+      - title: Currus quibusdam turba.
+        url: https://untrue-vestment.org/
+        source: Medium
+        author: Lynette Pfannerstill
+    create-time: '2023-05-27 02:26:59'
+    update-time: '2025-02-06 07:58:49'

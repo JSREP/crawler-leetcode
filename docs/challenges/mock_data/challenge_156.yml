@@ -1,0 +1,25 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 156
+    id-alias: mock-challenge-156
+    tags:
+      - Path-Traversal
+      - GraphQL
+      - Output-Encoding
+      - File-Upload
+    platform: Web
+    name: 'Mock挑战题目 #156'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Tollo est benevolentia ad depono ultra ventito. Terga
+      barba caste animus sunt cotidie baiulus corpus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1VXMmtIZUFVSDI=
+    is-expired: false
+    solutions:
+      - title: Talio arbustum denuncio.
+        url: https://obedient-kit.org/
+        source: GitHub
+        author: ''
+    create-time: '2023-09-30 00:51:22'
+    update-time: '2024-08-03 02:07:52'

@@ -1,0 +1,20 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 580
+    id-alias: mock-challenge-580
+    tags:
+      - Authentication
+      - Rate-Limiting
+    platform: IoT
+    name: 'Mock挑战题目 #580'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Atrox socius totam tamdiu cattus dignissimos alienus
+      cometes clementia decipio. Sursum abbas demergo coadunatio creo tolero
+      tergo ullus calculus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0tVRXgwd213YVI=
+    is-expired: false
+    solutions: []
+    create-time: '2023-12-12 02:10:36'
+    update-time: '2025-03-07 00:18:14'

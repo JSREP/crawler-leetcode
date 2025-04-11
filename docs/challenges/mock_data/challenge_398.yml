@@ -1,0 +1,22 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 398
+    id-alias: mock-challenge-398
+    tags:
+      - Input-Validation
+      - Session-Management
+      - Access-Control
+      - Deserialization
+      - Hashing
+    platform: Web
+    name: 'Mock挑战题目 #398'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Casso caelum volo cognomen tergiversatio iste decipio
+      careo varietas apud. Quaerat succurro capio.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0FrVmhqQTQ1RFE=
+    is-expired: false
+    solutions: []
+    create-time: '2024-11-22 22:52:44'
+    update-time: '2025-01-27 03:04:38'

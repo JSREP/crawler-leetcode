@@ -1,0 +1,22 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 850
+    id-alias: mock-challenge-850
+    tags:
+      - Authorization
+      - CSP
+      - GraphQL
+      - WebSockets
+    platform: Desktop
+    name: 'Mock挑战题目 #850'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Ars urbs laboriosam cado brevis coaegresco vallum
+      temptatio clam illo. Stella decretum conculco strenuus adflicto stabilis
+      accusantium censura.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0ltWGlKYnZKU2s=
+    is-expired: false
+    solutions: []
+    create-time: '2023-12-21 00:32:24'
+    update-time: '2024-05-25 21:32:06'

@@ -1,0 +1,25 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 325
+    id-alias: mock-challenge-325
+    tags:
+      - API-Security
+      - GraphQL
+      - OAuth
+      - Encryption
+    platform: Desktop
+    name: 'Mock挑战题目 #325'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Ter adamo defetiscor fugit terreo sortitus. Vilis
+      comedo cohibeo comparo paulatim tergeo cribro cenaculum.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1laS052czR2TjM=
+    is-expired: false
+    solutions:
+      - title: Officia tero capto.
+        url: https://elderly-hunt.org
+        source: Blog
+        author: Oscar Jakubowski
+    create-time: '2024-06-13 00:24:18'
+    update-time: '2024-09-16 00:51:03'

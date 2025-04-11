@@ -1,0 +1,27 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 474
+    id-alias: mock-challenge-474
+    tags:
+      - CSRF
+      - CSP
+    platform: Mobile
+    name: 'Mock挑战题目 #474'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Ea solio desidero error defleo benigne territo
+      vulgaris. Aestus textor odio carcer sursum tum quis valetudo esse.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3hLYlhIZ1RRMnY=
+    is-expired: false
+    solutions:
+      - title: Cupiditate cuius aestivus.
+        url: https://squeaky-chapel.org/
+        source: Medium
+        author: Pamela Kris
+      - title: Volutabrum uterque arbor.
+        url: https://impartial-premium.name/
+        source: Medium
+        author: Robyn Metz-Rice
+    create-time: '2024-11-11 22:09:33'
+    update-time: '2025-04-08 02:30:21'

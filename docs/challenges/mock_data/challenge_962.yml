@@ -1,0 +1,27 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 962
+    id-alias: mock-challenge-962
+    tags:
+      - Encryption
+      - Browser-Extensions
+    platform: Desktop
+    name: 'Mock挑战题目 #962'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Adiuvo tenetur curatio dolor. Talus adinventitias
+      vindico cruentus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3NkM1dsSGw0T1A=
+    is-expired: false
+    solutions:
+      - title: Mollitia sum cultellus.
+        url: https://frugal-follower.org
+        source: Blog
+        author: Clint Reynolds
+      - title: Universe tamen conforto.
+        url: https://fine-secret.info/
+        source: Medium
+        author: Randolph Adams
+    create-time: '2023-11-25 06:42:09'
+    update-time: '2024-11-16 00:42:48'

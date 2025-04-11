@@ -1,0 +1,30 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 633
+    id-alias: mock-challenge-633
+    tags:
+      - Session-Management
+      - WebSockets
+      - CORS
+      - Input-Validation
+      - Output-Encoding
+    platform: Desktop
+    name: 'Mock挑战题目 #633'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Stella cado libero dapifer cervus commemoro. Degenero
+      eos agnosco audacia vos.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1paeW9xckliang=
+    is-expired: false
+    solutions:
+      - title: Amplitudo certus nisi.
+        url: https://avaricious-clamp.name/
+        source: Blog
+        author: Mr. Mitchell Grady
+      - title: Aufero cognomen vehemens.
+        url: https://competent-chiffonier.org/
+        source: YouTube
+        author: Muriel Gutkowski
+    create-time: '2024-05-05 11:32:41'
+    update-time: '2024-05-23 07:46:25'

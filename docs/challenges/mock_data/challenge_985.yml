@@ -1,0 +1,27 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 985
+    id-alias: mock-challenge-985
+    tags:
+      - Encryption
+      - XXE
+    platform: Mobile
+    name: 'Mock挑战题目 #985'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Labore ipsa dolores coerceo capto suggero minus
+      civitas. Cilicium spargo vinitor corrupti fuga eaque tantum harum.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1NLc3ZjMGJPMzU=
+    is-expired: false
+    solutions:
+      - title: Sublime confugo possimus.
+        url: https://focused-vein.biz/
+        source: StackOverflow
+        author: Tracy Waters-Kihn
+      - title: Aggero admoneo totam.
+        url: https://unrealistic-someplace.com
+        source: Blog
+        author: Lynne Conroy
+    create-time: '2023-07-23 17:29:55'
+    update-time: '2024-02-06 09:45:47'

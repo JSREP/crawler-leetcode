@@ -1,0 +1,31 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 420
+    id-alias: mock-challenge-420
+    tags:
+      - Authorization
+      - XSS
+    platform: Desktop
+    name: 'Mock挑战题目 #420'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Cultura celo terror aequus aestas certus degusto
+      taceo taceo suppellex. Depopulo arcesso unus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2dkN3NtMVhoTUU=
+    is-expired: false
+    solutions:
+      - title: Stultus dignissimos video.
+        url: https://fluffy-asset.info
+        source: StackOverflow
+        author: Becky Orn
+      - title: Ubi spoliatio desparatus.
+        url: https://moist-teammate.biz/
+        source: YouTube
+        author: Lois Gleason
+      - title: Ratione sperno cohors.
+        url: https://careless-quart.biz/
+        source: Blog
+        author: Marcus Kreiger
+    create-time: '2024-10-13 11:21:35'
+    update-time: '2025-02-11 19:48:05'

@@ -1,0 +1,31 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 623
+    id-alias: mock-challenge-623
+    tags:
+      - JWT
+      - Authentication
+    platform: API
+    name: 'Mock挑战题目 #623'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Agnosco qui autus. Tabgo teres dedecor theatrum
+      impedit sperno.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L25xcU5iRlVsSE8=
+    is-expired: false
+    solutions:
+      - title: Laborum adsum conturbo.
+        url: https://immense-bin.info
+        source: YouTube
+        author: Lonnie Kirlin
+      - title: Avaritia ex ventito.
+        url: https://stormy-intent.biz/
+        source: YouTube
+        author: Jason Morar
+      - title: Averto patria ars.
+        url: https://valuable-someplace.net/
+        source: StackOverflow
+        author: Kristie Kuvalis MD
+    create-time: '2024-01-12 02:17:32'
+    update-time: '2024-11-18 19:33:48'

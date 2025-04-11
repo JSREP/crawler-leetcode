@@ -1,0 +1,24 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 223
+    id-alias: mock-challenge-223
+    tags:
+      - File-Upload
+      - Deserialization
+      - CORS
+    platform: Desktop
+    name: 'Mock挑战题目 #223'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Angulus conventus acquiro facilis sufficio vallum
+      porro. Victus absens spiculum tibi clam error crur studio vorax amitto.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3FQQTQwcnIxNGM=
+    is-expired: false
+    solutions:
+      - title: Stultus amiculum repellendus.
+        url: https://deadly-solvency.biz/
+        source: Blog
+        author: Christina Schmitt
+    create-time: '2024-09-04 04:35:27'
+    update-time: '2025-01-20 17:07:46'

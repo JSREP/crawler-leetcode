@@ -1,0 +1,22 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 279
+    id-alias: mock-challenge-279
+    tags:
+      - Race-Condition
+      - Hashing
+      - CSRF
+      - Deserialization
+      - CORS
+    platform: API
+    name: 'Mock挑战题目 #279'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Valetudo creta ventosus ut atrox venio appono votum.
+      Libero crinis decet surculus solvo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0xCcThaRXRPTkE=
+    is-expired: false
+    solutions: []
+    create-time: '2023-11-05 11:36:57'
+    update-time: '2024-07-13 12:55:22'

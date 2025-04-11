@@ -1,0 +1,20 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 977
+    id-alias: mock-challenge-977
+    tags:
+      - CSRF
+      - JWT
+    platform: Desktop
+    name: 'Mock挑战题目 #977'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Ulterius aestivus alias solio defendo termes amissio
+      spero claustrum expedita. Subseco stips doloribus spectaculum comminor
+      deinde despecto vilicus spargo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2p4WFdyanBjZEI=
+    is-expired: false
+    solutions: []
+    create-time: '2023-08-03 12:30:58'
+    update-time: '2024-04-09 22:03:13'

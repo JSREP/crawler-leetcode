@@ -1,27 +1,22 @@
 # 挑战题目文件
 version: 1
-
 challenges:
-  - id: mock-challenge-98
+  - id: 98
+    id-alias: mock-challenge-98
     tags:
-      - mobile-app
-      - webpack
-      - jsvmp
-      - js-reverse
-    platform: iOS
-    name: Mock挑战题目 #98
-    difficulty-level: 4
-    description: 这是一个示例挑战题目的描述，难度为4星级。
-    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9jaGFsbGVuZ2UvMTIzNDU=
-    is-expired: false
-    solutions:
-      - title: 使用Puppeteer绕过检测
-        url: https://github.com/user/repo
-        source: GitHub
-        author: John Doe
-      - title: Hook方法绕过
-        url: https://gist.github.com/user/id
-        source: StackOverflow
-        author: John Doe
-    create-time: 2025-09-02 00:25:05
-    update-time: 2025-03-18 10:42:39
+      - GraphQL
+      - Command-Injection
+      - Access-Control
+      - Hashing
+      - CSP
+    platform: Desktop
+    name: 'Mock挑战题目 #98'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Bestia cornu vulgaris confido timor appositus.
+      Benevolentia denique vere.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2xXNlhJYnlOV3M=
+    is-expired: true
+    solutions: []
+    create-time: '2023-08-18 22:19:59'
+    update-time: '2025-03-21 02:58:11'

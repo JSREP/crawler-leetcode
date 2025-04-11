@@ -1,0 +1,33 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 110
+    id-alias: mock-challenge-110
+    tags:
+      - Race-Condition
+      - Path-Traversal
+      - Mobile-Security
+      - OAuth
+    platform: API
+    name: 'Mock挑战题目 #110'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Compello aer cometes allatus sub angelus tenax tutis
+      apostolus deduco. Caelestis defero blanditiis voro ager amor voluptate.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1NpVGd0Y2NXZG4=
+    is-expired: false
+    solutions:
+      - title: Pel vinum atque.
+        url: https://that-providence.com/
+        source: YouTube
+        author: Wilbert Hessel
+      - title: Crepusculum patior ceno.
+        url: https://grumpy-metabolite.com/
+        source: Blog
+        author: Eduardo Hayes
+      - title: Clibanus doloribus attollo.
+        url: https://downright-cd.net/
+        source: StackOverflow
+        author: Elvira Price Sr.
+    create-time: '2025-03-25 08:01:34'
+    update-time: '2025-04-08 23:48:16'

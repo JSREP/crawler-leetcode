@@ -1,0 +1,29 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 767
+    id-alias: mock-challenge-767
+    tags:
+      - Access-Control
+      - HTTP-Headers
+      - Browser-Extensions
+    platform: IoT
+    name: 'Mock挑战题目 #767'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Alter adversus ulterius cibus quisquam tres
+      spectaculum. Cunabula sortitus vitium corroboro statua thymbra claro
+      brevis.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3V1dnpGbWIwSHE=
+    is-expired: false
+    solutions:
+      - title: Adhuc articulus aegre.
+        url: https://expert-digit.net
+        source: StackOverflow
+        author: Thomas Jast
+      - title: Universe depereo quibusdam.
+        url: https://hasty-spring.org/
+        source: GitHub
+        author: Charlene Lynch
+    create-time: '2024-04-28 12:40:28'
+    update-time: '2025-01-15 01:23:25'

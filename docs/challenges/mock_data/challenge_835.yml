@@ -1,0 +1,25 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 835
+    id-alias: mock-challenge-835
+    tags:
+      - SQL-Injection
+      - WebSockets
+      - API-Security
+      - HTTP-Headers
+    platform: API
+    name: 'Mock挑战题目 #835'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Soleo stabilis textor eos. Reprehenderit aegrus
+      claudeo apud cursus creber.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1A4OGVyVWNTZWg=
+    is-expired: false
+    solutions:
+      - title: Bos textilis conforto.
+        url: https://frail-deduction.com
+        source: YouTube
+        author: Dr. Sylvia Beahan
+    create-time: '2023-09-03 01:10:36'
+    update-time: '2024-08-12 03:26:34'

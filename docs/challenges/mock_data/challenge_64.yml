@@ -1,23 +1,30 @@
 # 挑战题目文件
 version: 1
-
 challenges:
-  - id: mock-challenge-64
+  - id: 64
+    id-alias: mock-challenge-64
     tags:
-      - fingerprint
-      - token-validation
-      - signature
-      - webgl-fingerprint
-    platform: Android
-    name: Mock挑战题目 #64
-    difficulty-level: 3
-    description: 这是一个示例挑战题目的描述，难度为3星级。
-    base64-url: aHR0cHM6Ly9sZWV0Y29kZS5jb20vZXhlcmNpc2UvNjc4OTA=
+      - Session-Management
+      - XSS
+      - Encryption
+      - XXE
+      - File-Upload
+    platform: Mobile
+    name: 'Mock挑战题目 #64'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Varius conscendo patruus adsidue utor canto territo
+      statim excepturi. Cedo thema utrimque suasoria illo creator.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzBpcDdodDFiWG0=
     is-expired: false
     solutions:
-      - title: 逆向工程思路
-        url: https://gist.github.com/user/id
-        source: StackOverflow
-        author: Alex Chen
-    create-time: 2024-12-24 01:13:04
-    update-time: 2025-01-14 05:29:45
+      - title: Adfectus verto socius.
+        url: https://ripe-hovercraft.biz
+        source: Medium
+        author: Kristen Jenkins-Beier
+      - title: Suspendo debilito canonicus.
+        url: https://warmhearted-freezing.info
+        source: Blog
+        author: Genevieve Heaney
+    create-time: '2025-01-15 10:00:21'
+    update-time: '2025-03-28 23:58:58'

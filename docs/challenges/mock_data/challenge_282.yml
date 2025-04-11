@@ -1,0 +1,23 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 282
+    id-alias: mock-challenge-282
+    tags:
+      - Encryption
+      - Command-Injection
+    platform: API
+    name: 'Mock挑战题目 #282'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Somniculosus decumbo atrox crapula. Dolorem adstringo
+      asporto velum summopere.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2JjeXp6VG5VdzY=
+    is-expired: false
+    solutions:
+      - title: Ultio solvo sto.
+        url: https://humble-plumber.info/
+        source: StackOverflow
+        author: Zachary Wiza
+    create-time: '2024-10-26 18:17:33'
+    update-time: '2025-04-09 10:19:26'

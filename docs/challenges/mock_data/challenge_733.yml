@@ -1,0 +1,28 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 733
+    id-alias: mock-challenge-733
+    tags:
+      - Output-Encoding
+      - CORS
+      - CSRF
+    platform: Mobile
+    name: 'Mock挑战题目 #733'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Viriliter trucido virgo voluptate ullam aut nesciunt
+      coma censura. Aggredior arbor defleo carcer custodia.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0EwV3BXbWttOTc=
+    is-expired: true
+    solutions:
+      - title: Ciminatio laudantium adimpleo.
+        url: https://likely-monocle.info
+        source: StackOverflow
+        author: ''
+      - title: Spes cedo curo.
+        url: https://aggressive-mantua.biz
+        source: StackOverflow
+        author: Wallace Kulas III
+    create-time: '2024-06-03 11:05:51'
+    update-time: '2025-02-26 15:14:18'

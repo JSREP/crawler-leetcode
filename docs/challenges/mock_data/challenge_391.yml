@@ -1,0 +1,22 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 391
+    id-alias: mock-challenge-391
+    tags:
+      - File-Upload
+      - Access-Control
+      - CSP
+      - HTTP-Headers
+      - Encryption
+    platform: API
+    name: 'Mock挑战题目 #391'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Crustulum valde attollo defungo vinculum damno.
+      Baiulus texo caecus absorbeo tabgo voveo curriculum id.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3NHd254YVFmMmo=
+    is-expired: false
+    solutions: []
+    create-time: '2024-08-23 07:25:08'
+    update-time: '2025-01-11 12:49:49'

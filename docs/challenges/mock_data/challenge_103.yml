@@ -1,0 +1,32 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 103
+    id-alias: mock-challenge-103
+    tags:
+      - Encryption
+      - HTTP-Headers
+      - Hashing
+    platform: IoT
+    name: 'Mock挑战题目 #103'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Atrox copiose rerum sortitus comparo deripio aqua
+      apostolus contego avarus. Adsum temperantia vigor.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0lZU1czdG9VTnU=
+    is-expired: false
+    solutions:
+      - title: Vorax barba quod.
+        url: https://similar-fledgling.name/
+        source: YouTube
+        author: Barbara Mann
+      - title: Adulatio deserunt crux.
+        url: https://upbeat-petticoat.org
+        source: Blog
+        author: ''
+      - title: Ver censura cur.
+        url: https://gracious-digestive.net/
+        source: GitHub
+        author: Violet Champlin
+    create-time: '2024-09-17 09:54:46'
+    update-time: '2025-03-27 14:21:52'

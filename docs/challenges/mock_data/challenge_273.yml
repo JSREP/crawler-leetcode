@@ -1,0 +1,19 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 273
+    id-alias: mock-challenge-273
+    tags:
+      - Input-Validation
+      - Output-Encoding
+    platform: Desktop
+    name: 'Mock挑战题目 #273'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Cerno aperte umquam bene. Arceo tubineus stipes
+      delinquo vorago apostolus veritatis.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3AxckpYSmtrS0s=
+    is-expired: false
+    solutions: []
+    create-time: '2023-11-25 07:44:45'
+    update-time: '2024-03-21 22:30:06'

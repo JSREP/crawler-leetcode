@@ -1,0 +1,28 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 375
+    id-alias: mock-challenge-375
+    tags:
+      - Race-Condition
+      - HTTP-Headers
+      - Input-Validation
+    platform: API
+    name: 'Mock挑战题目 #375'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Alias tenetur culpo hic. Tergum apud defessus
+      testimonium beatae ultra confero adstringo caecus utrimque.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzFxOEREd1BBUGc=
+    is-expired: false
+    solutions:
+      - title: Tamquam comprehendo demulceo.
+        url: https://sociable-vision.name/
+        source: StackOverflow
+        author: Ms. Sonia Bayer
+      - title: Decipio vespillo voluptatibus.
+        url: https://terrible-perp.biz
+        source: Medium
+        author: Dr. Elaine Parisian
+    create-time: '2023-05-10 20:09:51'
+    update-time: '2024-10-31 20:34:15'

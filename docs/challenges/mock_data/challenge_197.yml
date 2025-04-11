@@ -1,0 +1,29 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 197
+    id-alias: mock-challenge-197
+    tags:
+      - CSP
+      - Hashing
+      - XXE
+      - Mobile-Security
+    platform: Desktop
+    name: 'Mock挑战题目 #197'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Depopulo socius canto. Terga tepesco toties arceo
+      dedecor thermae coepi caelum combibo una.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2tRNUpObU5iUXM=
+    is-expired: false
+    solutions:
+      - title: Amitto utpote voco.
+        url: https://snappy-someplace.net
+        source: YouTube
+        author: Ignacio Breitenberg Sr.
+      - title: Vaco tricesimus non.
+        url: https://tricky-trash.com/
+        source: GitHub
+        author: Mr. Karl Leffler
+    create-time: '2024-06-19 10:04:47'
+    update-time: '2025-01-08 21:29:40'

@@ -1,0 +1,25 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 177
+    id-alias: mock-challenge-177
+    tags:
+      - Authorization
+      - Mobile-Security
+      - Command-Injection
+    platform: API
+    name: 'Mock挑战题目 #177'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Solum vinum arma aetas crux toties consuasor amor.
+      Pauper velociter aeger adimpleo voro appello conservo admiratio dicta
+      vulariter.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3dnRWhRdWd3aWc=
+    is-expired: true
+    solutions:
+      - title: Timor sed theatrum.
+        url: https://neat-markup.com
+        source: Blog
+        author: Miss Monique Skiles
+    create-time: '2023-06-15 02:32:57'
+    update-time: '2023-07-17 18:58:00'

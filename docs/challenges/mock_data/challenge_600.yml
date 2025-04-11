@@ -1,0 +1,23 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 600
+    id-alias: mock-challenge-600
+    tags:
+      - GraphQL
+      - CORS
+    platform: Mobile
+    name: 'Mock挑战题目 #600'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Comitatus architecto tutis caveo demum tabernus
+      calculus tempore bonus tracto. Desparatus caelum crastinus aurum quisquam.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2pzSE8xTXIxYXU=
+    is-expired: false
+    solutions:
+      - title: Tantillus charisma argentum.
+        url: https://insidious-humidity.com/
+        source: StackOverflow
+        author: Crystal Jacobson
+    create-time: '2024-05-08 00:26:26'
+    update-time: '2025-02-24 22:44:28'

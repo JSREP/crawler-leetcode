@@ -1,0 +1,19 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 356
+    id-alias: mock-challenge-356
+    tags:
+      - OAuth
+      - CSP
+    platform: Desktop
+    name: 'Mock挑战题目 #356'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Voluptatum consuasor calculus quasi soleo. Derideo
+      somnus ciminatio crebro subnecto facere ars aegre quibusdam.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3JYRW1FazBOeDU=
+    is-expired: true
+    solutions: []
+    create-time: '2024-01-17 15:41:37'
+    update-time: '2024-05-11 20:23:19'

@@ -1,25 +1,31 @@
 # 挑战题目文件
 version: 1
-
 challenges:
-  - id: mock-challenge-37
+  - id: 37
+    id-alias: mock-challenge-37
     tags:
-      - signature
-      - anti-debug
-    platform: Android
-    name: Mock挑战题目 #37
-    difficulty-level: 1
-    description: 这是一个示例挑战题目的描述，难度为1星级。
-    base64-url: aHR0cHM6Ly9sZWV0Y29kZS5jb20vZXhlcmNpc2UvMTIzNDU=
-    is-expired: true
+      - Browser-Extensions
+      - Encryption
+    platform: Web
+    name: 'Mock挑战题目 #37'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Ulciscor abbas ars. Claustrum sol alveus voveo
+      cursus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2pPWnBoRkxvdTY=
+    is-expired: false
     solutions:
-      - title: 逆向工程思路
-        url: https://medium.com/@user/article
+      - title: Aqua conor subseco.
+        url: https://bulky-advancement.info/
         source: GitHub
-        author: Web Security Expert
-      - title: 静态分析方法
-        url: https://medium.com/@user/article
-        source: StackOverflow
-        author: 
-    create-time: 2023-11-13 22:55:08
-    update-time: 2023-02-12 11:43:51
+        author: Dr. Bruce Bergnaum V
+      - title: Deprecator vero triumphus.
+        url: https://uncomfortable-hyena.name
+        source: YouTube
+        author: ''
+      - title: Convoco uberrime patruus.
+        url: https://webbed-knuckle.info/
+        source: GitHub
+        author: Terrance Fisher
+    create-time: '2023-07-02 14:23:11'
+    update-time: '2025-01-10 23:38:45'

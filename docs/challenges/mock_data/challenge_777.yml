@@ -1,0 +1,19 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 777
+    id-alias: mock-challenge-777
+    tags:
+      - Authorization
+      - OAuth
+    platform: Web
+    name: 'Mock挑战题目 #777'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Et magnam apparatus conturbo perferendis blandior
+      debeo. Copiose auctus curso antiquus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3AzaTdrQWxvRXQ=
+    is-expired: false
+    solutions: []
+    create-time: '2024-10-07 09:44:47'
+    update-time: '2025-03-13 14:44:03'

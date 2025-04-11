@@ -1,0 +1,34 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 584
+    id-alias: mock-challenge-584
+    tags:
+      - GraphQL
+      - Authorization
+      - Input-Validation
+      - WebSockets
+      - Browser-Extensions
+    platform: IoT
+    name: 'Mock挑战题目 #584'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Timor contigo aro astrum thesis copia adficio
+      depopulo. Thermae tamisium patruus turpis aiunt cruentus vilicus cedo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1pDT0lrOE1FT20=
+    is-expired: true
+    solutions:
+      - title: Curvo angulus clamo.
+        url: https://awesome-cantaloupe.name
+        source: Medium
+        author: Bennie Langworth
+      - title: Sponte accendo aliquam.
+        url: https://baggy-pharmacopoeia.org
+        source: YouTube
+        author: Cary Strosin
+      - title: Vix cerno tempora.
+        url: https://well-documented-jacket.org
+        source: GitHub
+        author: Kellie Romaguera
+    create-time: '2023-06-07 12:37:12'
+    update-time: '2024-02-15 06:45:40'

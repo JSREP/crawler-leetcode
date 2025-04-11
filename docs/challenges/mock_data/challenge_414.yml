@@ -1,0 +1,26 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 414
+    id-alias: mock-challenge-414
+    tags:
+      - CORS
+      - Session-Management
+      - Browser-Extensions
+      - Deserialization
+      - Path-Traversal
+    platform: Desktop
+    name: 'Mock挑战题目 #414'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Totidem surgo cunabula acsi terminatio arbustum cena
+      cibo. Deprimo cubo consectetur.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L09ZYWdoN0NHd0M=
+    is-expired: false
+    solutions:
+      - title: Vitae sapiente tutamen.
+        url: https://well-worn-mousse.org
+        source: GitHub
+        author: Kristy Hoeger
+    create-time: '2024-10-16 11:04:20'
+    update-time: '2025-03-07 12:24:55'

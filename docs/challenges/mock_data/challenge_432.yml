@@ -1,0 +1,22 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 432
+    id-alias: mock-challenge-432
+    tags:
+      - Deserialization
+      - Authentication
+      - Path-Traversal
+      - Command-Injection
+    platform: Web
+    name: 'Mock挑战题目 #432'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Vomica virga virgo appello ver tamisium. Varietas
+      civitas deputo adfero corporis tibi brevis perferendis sufficio
+      spectaculum.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6Lzl4d0p2anRXcVY=
+    is-expired: false
+    solutions: []
+    create-time: '2025-04-02 03:53:55'
+    update-time: '2025-04-04 12:52:39'

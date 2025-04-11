@@ -1,0 +1,31 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 174
+    id-alias: mock-challenge-174
+    tags:
+      - HTTP-Headers
+      - Encryption
+    platform: Mobile
+    name: 'Mock挑战题目 #174'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Tantum virtus spectaculum umerus. Recusandae
+      articulus supplanto.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1hkckVhdFFCREQ=
+    is-expired: false
+    solutions:
+      - title: Vulgaris vita trans.
+        url: https://trim-impostor.com
+        source: StackOverflow
+        author: Hilda Grant PhD
+      - title: Concido decumbo aequus.
+        url: https://both-costume.net
+        source: Blog
+        author: Gwendolyn Weber
+      - title: Colligo labore constans.
+        url: https://coordinated-kettledrum.info/
+        source: Medium
+        author: Dave Larson
+    create-time: '2023-04-26 23:27:35'
+    update-time: '2023-07-12 04:28:08'

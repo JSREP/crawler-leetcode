@@ -1,0 +1,21 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 892
+    id-alias: mock-challenge-892
+    tags:
+      - WebSockets
+      - Input-Validation
+      - Session-Management
+    platform: Desktop
+    name: 'Mock挑战题目 #892'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Ustilo aureus reiciendis commodi vaco centum desidero
+      expedita somnus suffragium. Solus repellendus vorago sui crapula voro
+      amicitia decor dignissimos.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3ZBTU5hZjUyVFk=
+    is-expired: true
+    solutions: []
+    create-time: '2024-09-22 11:37:26'
+    update-time: '2024-12-04 15:31:11'

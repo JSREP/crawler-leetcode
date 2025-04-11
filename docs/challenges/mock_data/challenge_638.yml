@@ -1,0 +1,28 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 638
+    id-alias: mock-challenge-638
+    tags:
+      - Session-Management
+      - API-Security
+      - Deserialization
+    platform: IoT
+    name: 'Mock挑战题目 #638'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Ultio carpo tutis aptus vestigium aequus aequitas
+      adnuo audentia. Carpo caveo denique.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0hjTDdkQllDcWM=
+    is-expired: false
+    solutions:
+      - title: Valeo suppellex surculus.
+        url: https://intelligent-step-mother.biz/
+        source: GitHub
+        author: Dr. Theresa Wehner
+      - title: Qui combibo vorax.
+        url: https://powerful-cinder.org
+        source: YouTube
+        author: Neal Davis
+    create-time: '2023-06-11 07:56:13'
+    update-time: '2024-08-03 10:22:04'

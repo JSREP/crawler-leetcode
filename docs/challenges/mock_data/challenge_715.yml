@@ -1,0 +1,27 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 715
+    id-alias: mock-challenge-715
+    tags:
+      - Mobile-Security
+      - Business-Logic
+      - File-Upload
+      - Authorization
+      - Hashing
+    platform: Mobile
+    name: 'Mock挑战题目 #715'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Aufero stipes demoror comminor coadunatio theologus
+      delectus patruus alveus. Sursum audentia tertius atque peccatus vos cum
+      argentum terreo capto.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzVlSnFPdTE4SjE=
+    is-expired: false
+    solutions:
+      - title: Decerno nihil utilis.
+        url: https://torn-dependency.org/
+        source: StackOverflow
+        author: ''
+    create-time: '2024-08-20 12:56:40'
+    update-time: '2025-03-14 19:49:55'

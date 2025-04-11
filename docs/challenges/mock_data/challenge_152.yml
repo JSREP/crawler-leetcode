@@ -1,0 +1,23 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 152
+    id-alias: mock-challenge-152
+    tags:
+      - XSS
+      - Hashing
+      - Race-Condition
+      - OAuth
+    platform: IoT
+    name: 'Mock挑战题目 #152'
+    difficulty-level: 3
+    description: 这是一个示例挑战题目的描述，难度为3星级。Delectus earum audacia copiose. Audeo uredo utpote.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1g1ME5oM3dURk0=
+    is-expired: true
+    solutions:
+      - title: Sulum desidero teneo.
+        url: https://scary-cornet.info
+        source: Medium
+        author: Lee Cartwright
+    create-time: '2024-10-13 13:41:27'
+    update-time: '2024-11-06 07:42:24'

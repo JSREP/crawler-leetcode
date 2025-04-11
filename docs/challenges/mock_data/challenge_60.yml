@@ -1,23 +1,31 @@
 # 挑战题目文件
 version: 1
-
 challenges:
-  - id: mock-challenge-60
+  - id: 60
+    id-alias: mock-challenge-60
     tags:
-      - token-validation
-      - canvas-fingerprint
-      - rate-limiting
-      - device-motion
-    platform: Web
-    name: Mock挑战题目 #60
-    difficulty-level: 5
-    description: 这是一个示例挑战题目的描述，难度为5星级。
-    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9jaGFsbGVuZ2UvMTIzNDU=
-    is-expired: true
+      - HTTP-Headers
+      - Path-Traversal
+    platform: API
+    name: 'Mock挑战题目 #60'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Adhuc demens aequus. Natus capio nisi incidunt volva
+      capillus curvo enim.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzZzUkxBYUxna3o=
+    is-expired: false
     solutions:
-      - title: 逆向工程思路
-        url: https://medium.com/@user/article
+      - title: Vorax solitudo delicate.
+        url: https://prickly-sock.biz/
         source: Medium
-        author: Alex Chen
-    create-time: 2025-02-19 05:17:21
-    update-time: 2023-02-15 10:48:08
+        author: ''
+      - title: Ait vilicus suadeo.
+        url: https://animated-kiss.name/
+        source: StackOverflow
+        author: Gail Mitchell
+      - title: Tergum turpis corrigo.
+        url: https://whole-labourer.com
+        source: StackOverflow
+        author: Anthony Lockman
+    create-time: '2023-06-13 04:52:02'
+    update-time: '2024-12-23 08:28:31'

@@ -1,0 +1,20 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 959
+    id-alias: mock-challenge-959
+    tags:
+      - Input-Validation
+      - File-Upload
+      - HTTP-Headers
+    platform: Web
+    name: 'Mock挑战题目 #959'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Decumbo crudelis blandior velociter fugiat pecus. Aro
+      contego theologus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1BhNXlBM0dCTks=
+    is-expired: false
+    solutions: []
+    create-time: '2024-02-17 06:16:46'
+    update-time: '2025-03-12 23:57:04'

@@ -1,0 +1,28 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 935
+    id-alias: mock-challenge-935
+    tags:
+      - Race-Condition
+      - Output-Encoding
+      - HTTP-Headers
+    platform: Desktop
+    name: 'Mock挑战题目 #935'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Crepusculum vilicus clementia beneficium verbum
+      appono comes ocer crebro. Trucido amplexus concido.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2ZJeW4wT0wwNVQ=
+    is-expired: false
+    solutions:
+      - title: Accedo vehemens exercitationem.
+        url: https://whispered-adult.name/
+        source: Medium
+        author: Malcolm Goldner
+      - title: Tactus aegre trepide.
+        url: https://rare-finger.org
+        source: YouTube
+        author: Dr. Nick Rosenbaum-Weber
+    create-time: '2023-09-06 14:32:50'
+    update-time: '2023-12-10 00:40:51'

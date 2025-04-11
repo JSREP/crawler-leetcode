@@ -1,0 +1,27 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 360
+    id-alias: mock-challenge-360
+    tags:
+      - CORS
+      - Business-Logic
+    platform: IoT
+    name: 'Mock挑战题目 #360'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Peior peccatus tametsi concedo. Strues complectus
+      auctor.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2QyVVYzNjRCQms=
+    is-expired: false
+    solutions:
+      - title: Culpo curatio utor.
+        url: https://uneven-devil.com/
+        source: Blog
+        author: Mrs. Tricia Littel
+      - title: Depono clarus amet.
+        url: https://confused-alliance.info/
+        source: YouTube
+        author: Dr. Meredith Herman
+    create-time: '2023-07-25 18:33:16'
+    update-time: '2023-09-17 03:54:02'

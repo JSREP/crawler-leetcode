@@ -1,0 +1,22 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 820
+    id-alias: mock-challenge-820
+    tags:
+      - SQL-Injection
+      - Output-Encoding
+      - Deserialization
+      - Hashing
+    platform: Desktop
+    name: 'Mock挑战题目 #820'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Vae concido aegre uter comminor cura abutor curis
+      triduana. Adficio attonbitus ex ademptio sui nesciunt laboriosam tempore
+      deserunt subseco.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2Ryb0dIUFhUdHM=
+    is-expired: false
+    solutions: []
+    create-time: '2024-06-10 19:24:36'
+    update-time: '2025-03-25 07:31:35'

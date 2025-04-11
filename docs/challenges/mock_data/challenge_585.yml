@@ -1,0 +1,27 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 585
+    id-alias: mock-challenge-585
+    tags:
+      - File-Upload
+      - CORS
+    platform: Web
+    name: 'Mock挑战题目 #585'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Adsidue corroboro tutis abduco arbustum. Cras
+      ademptio vigilo caveo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3ZxcWltdGR0MVg=
+    is-expired: false
+    solutions:
+      - title: Antea solitudo architecto.
+        url: https://that-farm.org/
+        source: Medium
+        author: Angel Goldner
+      - title: Ustilo auctor advoco.
+        url: https://unselfish-colon.com
+        source: Medium
+        author: Reginald Orn
+    create-time: '2024-03-08 11:15:20'
+    update-time: '2024-09-17 05:36:02'

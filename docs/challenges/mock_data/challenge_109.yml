@@ -1,0 +1,34 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 109
+    id-alias: mock-challenge-109
+    tags:
+      - XXE
+      - Session-Management
+      - OAuth
+      - Path-Traversal
+      - Browser-Extensions
+    platform: Web
+    name: 'Mock挑战题目 #109'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Quisquam ustilo textilis usus paulatim et. Uterque
+      cibo subseco somnus suppono iste argumentum amplitudo aequus vesco.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzdrbWlhTzdoT24=
+    is-expired: false
+    solutions:
+      - title: Adnuo tardus delibero.
+        url: https://valuable-community.org
+        source: StackOverflow
+        author: Timothy Reinger
+      - title: Uxor tondeo currus.
+        url: https://punctual-gym.biz/
+        source: YouTube
+        author: Jody Kohler
+      - title: Vitae aestas carmen.
+        url: https://all-premier.org
+        source: Blog
+        author: Claude Fadel-O'Reilly Jr.
+    create-time: '2023-11-26 20:46:25'
+    update-time: '2024-02-17 15:26:54'

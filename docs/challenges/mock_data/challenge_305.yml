@@ -1,0 +1,26 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 305
+    id-alias: mock-challenge-305
+    tags:
+      - Output-Encoding
+      - XXE
+      - Access-Control
+      - Path-Traversal
+      - Browser-Extensions
+    platform: Mobile
+    name: 'Mock挑战题目 #305'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Aeger ambulo bonus colo impedit cribro. Alienus
+      defessus solium aestus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L282VE16MkxBd1Y=
+    is-expired: false
+    solutions:
+      - title: Cinis currus vis.
+        url: https://likable-sermon.info/
+        source: GitHub
+        author: Ada Christiansen DDS
+    create-time: '2023-05-06 09:10:28'
+    update-time: '2024-01-09 12:10:32'

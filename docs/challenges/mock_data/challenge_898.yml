@@ -1,0 +1,32 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 898
+    id-alias: mock-challenge-898
+    tags:
+      - Output-Encoding
+      - Hashing
+      - File-Upload
+    platform: Web
+    name: 'Mock挑战题目 #898'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Ipsam sto solvo blandior aiunt cumque aspernatur
+      commodo. Suffragium sodalitas speciosus sodalitas concedo adstringo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2pjenlVV1Q5bDg=
+    is-expired: false
+    solutions:
+      - title: Defungo alienus trans.
+        url: https://overdue-bookend.name
+        source: Medium
+        author: Charlene Hyatt
+      - title: Depereo templum tabula.
+        url: https://frizzy-teriyaki.info
+        source: YouTube
+        author: Mark Lubowitz-Towne
+      - title: Cohors casus calcar.
+        url: https://political-mixture.name
+        source: Blog
+        author: Aubrey Hirthe
+    create-time: '2023-05-12 04:30:28'
+    update-time: '2023-11-20 02:35:37'

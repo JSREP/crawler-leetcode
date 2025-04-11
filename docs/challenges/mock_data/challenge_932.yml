@@ -1,0 +1,26 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 932
+    id-alias: mock-challenge-932
+    tags:
+      - Hashing
+      - API-Security
+      - WebSockets
+      - JWT
+      - HTTP-Headers
+    platform: API
+    name: 'Mock挑战题目 #932'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Adsum verumtamen solvo complectus territo mollitia.
+      Claudeo arma solio voluptas solitudo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1I4TjRkUWxrcFY=
+    is-expired: false
+    solutions:
+      - title: Aggredior amet ulciscor.
+        url: https://deserted-pronoun.info/
+        source: GitHub
+        author: David Simonis IV
+    create-time: '2023-09-04 14:58:44'
+    update-time: '2023-12-18 01:03:45'

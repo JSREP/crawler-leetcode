@@ -1,0 +1,29 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 263
+    id-alias: mock-challenge-263
+    tags:
+      - HTTP-Headers
+      - Mobile-Security
+      - CSP
+    platform: API
+    name: 'Mock挑战题目 #263'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Carbo tonsor corporis vaco aspernatur timidus studio
+      tripudio volubilis. Claudeo officiis acsi umerus civitas vetus appono
+      dignissimos.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L05xOWdqeVNOTDI=
+    is-expired: false
+    solutions:
+      - title: Facilis sponte creptio.
+        url: https://bossy-scarification.name/
+        source: GitHub
+        author: Tony Swift
+      - title: Vitae voco adipisci.
+        url: https://specific-label.name
+        source: StackOverflow
+        author: Dave Pacocha
+    create-time: '2023-09-28 02:23:06'
+    update-time: '2024-02-20 12:04:39'

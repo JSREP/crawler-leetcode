@@ -1,0 +1,22 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 208
+    id-alias: mock-challenge-208
+    tags:
+      - Race-Condition
+      - Output-Encoding
+      - Authorization
+      - SSRF
+      - HTTP-Headers
+    platform: Desktop
+    name: 'Mock挑战题目 #208'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Veniam aggredior magni sopor cunabula. Subnecto
+      tergiversatio subiungo creber.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0IxQmJVSVB2N3k=
+    is-expired: false
+    solutions: []
+    create-time: '2024-07-09 09:00:54'
+    update-time: '2025-02-10 04:22:01'

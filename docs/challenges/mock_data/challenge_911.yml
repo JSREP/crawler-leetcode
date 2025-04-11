@@ -1,0 +1,21 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 911
+    id-alias: mock-challenge-911
+    tags:
+      - Authentication
+      - OAuth
+      - Rate-Limiting
+      - HTTP-Headers
+    platform: Desktop
+    name: 'Mock挑战题目 #911'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Alioqui demens vorax decor comitatus absorbeo aranea.
+      Teres textilis autem tondeo aureus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0xLNEF3VlJaVEQ=
+    is-expired: false
+    solutions: []
+    create-time: '2023-10-02 17:46:06'
+    update-time: '2024-12-21 03:58:25'

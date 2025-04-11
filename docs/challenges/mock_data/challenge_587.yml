@@ -1,0 +1,24 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 587
+    id-alias: mock-challenge-587
+    tags:
+      - CSRF
+      - Encryption
+      - SQL-Injection
+    platform: Mobile
+    name: 'Mock挑战题目 #587'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Ducimus aperiam magnam acidus arma caput clementia
+      abbas. Bellicus succedo velum aperte aveho tametsi conturbo molestias.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1hyWEFVOHVIS3g=
+    is-expired: false
+    solutions:
+      - title: Appello in strues.
+        url: https://zealous-cannon.name
+        source: GitHub
+        author: Dr. Antonia McClure-Haley PhD
+    create-time: '2023-07-06 04:53:39'
+    update-time: '2025-01-01 11:53:59'

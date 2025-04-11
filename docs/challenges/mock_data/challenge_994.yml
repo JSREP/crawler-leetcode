@@ -1,0 +1,33 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 994
+    id-alias: mock-challenge-994
+    tags:
+      - CSRF
+      - OAuth
+      - Authorization
+      - File-Upload
+    platform: Mobile
+    name: 'Mock挑战题目 #994'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Charisma temporibus quas repellat patruus stella
+      calculus. Asperiores esse vel canonicus amplexus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2lZTmZBVzhSUGI=
+    is-expired: false
+    solutions:
+      - title: Ter solium vester.
+        url: https://silky-ownership.org
+        source: Blog
+        author: Lucia Parker
+      - title: Bos suus aggero.
+        url: https://discrete-countess.net
+        source: StackOverflow
+        author: Cecil Hegmann
+      - title: Varius cariosus cuius.
+        url: https://handy-onset.info
+        source: GitHub
+        author: Sabrina Dibbert
+    create-time: '2024-04-16 18:40:14'
+    update-time: '2024-05-11 21:26:32'

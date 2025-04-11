@@ -1,0 +1,21 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 599
+    id-alias: mock-challenge-599
+    tags:
+      - JWT
+      - Output-Encoding
+      - Browser-Extensions
+      - CSRF
+    platform: API
+    name: 'Mock挑战题目 #599'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Spes decimus virtus demo. Iusto urbanus corrumpo
+      voluptatibus conspergo verus vilitas saepe tolero eveniet.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1JpWjdRekk2dEs=
+    is-expired: false
+    solutions: []
+    create-time: '2024-12-24 22:15:16'
+    update-time: '2025-03-11 10:41:09'
