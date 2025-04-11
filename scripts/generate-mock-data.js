@@ -157,6 +157,48 @@ function generateVulnerableCode() {
   };
 }
 
+// 生成随机挑战数据
+function generateRandomChallenge(id) {
+  // 选择1-4个随机标签
+  const tagCount = faker.number.int({ min: 1, max: 4 });
+  const tags = faker.helpers.arrayElements(possibleTags, tagCount);
+  
+  // 选择一个平台
+  const platform = faker.helpers.arrayElement(possiblePlatforms);
+  
+  // 生成随机难度 1-5
+  const difficulty = faker.number.int({ min: 1, max: 5 });
+  
+  // 随机决定是否已过期
+  const isExpired = Math.random() < 0.1; // 10%的概率已过期
+  
+  // 生成随机创建时间和更新时间
+  const createTime = faker.date.past({ years: 2 }).toISOString();
+  // 更新时间在创建时间之后
+  const updateTime = faker.date.between({ 
+    from: createTime, 
+    to: new Date() 
+  }).toISOString();
+  
+  // 生成一个链接
+  const externalLink = faker.internet.url();
+  
+  // 构建挑战对象
+  return {
+    id: `mock_${id}`,
+    number: id,
+    title: `${platform} - ${faker.hacker.adjective()} ${faker.hacker.noun()}`,
+    difficulty: difficulty,
+    tags: tags,
+    solutions: [],
+    'create-time': createTime,
+    'update-time': updateTime,
+    'external-link': externalLink,
+    platform: platform,
+    'is-expired': isExpired
+  };
+}
+
 // 生成随机的Markdown内容
 function generateRandomMarkdown(id) {
   const sections = [];
