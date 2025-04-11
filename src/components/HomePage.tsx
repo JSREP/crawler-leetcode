@@ -1,5 +1,6 @@
 // src/components/HomePage.tsx
-import { Card, Col, Row, Typography } from 'antd';
+import { Card, Col, Row, Typography, Divider } from 'antd';
+import { challenges, SimpleChallengeList } from './ChallengeList';
 
 const { Title, Text } = Typography;
 
@@ -21,49 +22,46 @@ const features = [
   }
 ];
 
+/**
+ * 首页组件
+ * 展示网站主要功能和推荐挑战列表
+ */
 const HomePage = () => {
-  return (
-      <div style={{ padding: 24 }}>
-        <div style={{
-          textAlign: 'center',
-          padding: '48px 24px',
-          background: '#f8f9fa',
-          borderRadius: 8,
-          marginBottom: 48
-        }}>
-          <Title level={2} style={{ color: '#2c3e50', marginBottom: 16 }}>
-            欢迎使用 LeetCode 爬虫工具
-          </Title>
-          <Text style={{ fontSize: 16, color: '#6c757d' }}>
-            一个帮助您整理和管理 LeetCode 编程挑战的平台
-          </Text>
-        </div>
+  // 获取最近的3个挑战
+  const recentChallenges = challenges.slice(0, 3);
 
-        <Row gutter={[24, 24]} style={{ maxWidth: 1200, margin: '0 auto' }}>
-          {features.map((feature, index) => (
-              <Col key={index} xs={24} sm={12} lg={8}>
-                <Card
-                    hoverable
-                    style={{
-                      borderRadius: 8,
-                      transition: 'all 0.3s',
-                      borderColor: feature.color,
-                      borderWidth: 1
-                    }}
-                    styles={{ body: { padding: 24 } }}
-                >
-                  <Title level={4} style={{ color: feature.color, marginBottom: 16 }}>
-                    {feature.title}
-                  </Title>
-                  <Text style={{ color: '#6c757d', lineHeight: 1.6 }}>
-                    {feature.content}
-                  </Text>
-                </Card>
-              </Col>
-          ))}
+  return (
+    <div style={{ padding: '24px' }}>
+        <Title level={2} style={{ textAlign: 'center', marginBottom: '24px' }}>
+            欢迎来到 LeetCode 爬虫挑战平台
+        </Title>
+        
+        {/* 功能介绍 */}
+        <Row gutter={[16, 16]} justify="center" style={{ marginBottom: '32px' }}>
+            {features.map((feature, index) => (
+                <Col key={index} xs={24} sm={12} md={8}>
+                    <Card 
+                        hoverable
+                        style={{ height: '100%', borderColor: feature.color }}
+                        bodyStyle={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}
+                    >
+                        <Title level={4} style={{ color: feature.color }}>{feature.title}</Title>
+                        <Text type="secondary">{feature.content}</Text>
+                    </Card>
+                </Col>
+            ))}
         </Row>
-      </div>
-  );
+        
+        <Divider />
+        
+        {/* 最近挑战 */}
+        <SimpleChallengeList 
+            challenges={recentChallenges} 
+            title="最近的挑战"
+        />
+    </div>
+);
+
 };
 
 export default HomePage;

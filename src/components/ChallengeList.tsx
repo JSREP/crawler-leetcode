@@ -1,54 +1,22 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useNavigate, useSearchParams, Link } from 'react-router-dom';
 import { Button, Card, Input, List, Pagination, Select, Space, Tag, Typography } from 'antd';
 import { ArrowDownOutlined, ArrowUpOutlined, CloseOutlined } from '@ant-design/icons';
 import StarRating from './StarRating';
-// 使用模拟数据代替插件导入
-// import rawChallenges from '../plugins/VirtualFileSystemPlugin'; // 移除错误的导入
+// 导入虚拟文件系统生成的数据
+// @ts-ignore - 虚拟文件在构建时生成
+import rawChallenges from '/virtual-challenges.js';
+// 导入类型和解析函数
+import { Challenge, parseChallenges } from '../types/challenge';
 
-export type Solution = {
-    title: string;
-    url: string;
-    source: string;
-};
+// 使用虚拟文件系统数据
+const yamlChallenges = Array.isArray(rawChallenges) ? rawChallenges : [];
 
-export type Challenge = {
-    id: number;
-    number: number;
-    title: string;
-    description: string;
-    difficulty: number;
-    tags: string[];
-    solutions: Solution[];
-    createTime: Date;
-    updateTime: Date;
-    externalLink: string;
-};
-
-const parseChallenges = (raw: any[]): Challenge[] => {
-    if (!Array.isArray(raw)) {
-        console.warn('Expected raw challenges to be an array, got:', typeof raw);
-        return []; // 返回空数组避免错误
-    }
-    return raw.map(c => ({
-        id: c.id,
-        number: c.number,
-        title: c.title,
-        description: c.description,
-        difficulty: c.difficulty,
-        tags: c.tags,
-        solutions: c.solutions,
-        createTime: new Date(c.createTime),
-        updateTime: new Date(c.updateTime),
-        externalLink: c.externalLink
-    }));
-};
-
-// 使用模拟数据代替实际数据
+// 回退到模拟数据（如果YAML加载失败）
 const mockChallenges = [
   {
-    id: 1,
+    id: "1",
     number: 1,
     title: "两数之和",
     description: "给定一个整数数组和一个目标值，找出数组中和为目标值的两个数。",
@@ -57,10 +25,13 @@ const mockChallenges = [
     solutions: [],
     createTime: "2023-01-01T00:00:00.000Z",
     updateTime: "2023-01-01T00:00:00.000Z",
-    externalLink: "https://leetcode.cn/problems/two-sum/"
+    externalLink: "https://leetcode.cn/problems/two-sum/",
+    platform: "Web",
+    isExpired: false,
+    descriptionMarkdown: ""
   },
   {
-    id: 2,
+    id: "2",
     number: 2,
     title: "两数相加",
     description: "给你两个非空的链表，表示两个非负的整数。它们每位数字都是按照逆序的方式存储的，并且每个节点只能存储一位数字。请你将两个数相加，并以相同形式返回一个表示和的链表。",
@@ -69,10 +40,13 @@ const mockChallenges = [
     solutions: [],
     createTime: "2023-01-02T00:00:00.000Z",
     updateTime: "2023-01-02T00:00:00.000Z",
-    externalLink: "https://leetcode.cn/problems/add-two-numbers/"
+    externalLink: "https://leetcode.cn/problems/add-two-numbers/",
+    platform: "Web",
+    isExpired: false,
+    descriptionMarkdown: ""
   },
   {
-    id: 3,
+    id: "3",
     number: 3,
     title: "无重复字符的最长子串",
     description: "给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。",
@@ -81,18 +55,78 @@ const mockChallenges = [
     solutions: [],
     createTime: "2023-01-03T00:00:00.000Z",
     updateTime: "2023-01-03T00:00:00.000Z",
-    externalLink: "https://leetcode.cn/problems/longest-substring-without-repeating-characters/"
+    externalLink: "https://leetcode.cn/problems/longest-substring-without-repeating-characters/",
+    platform: "Web",
+    isExpired: false,
+    descriptionMarkdown: ""
   }
 ];
 
-// 使用模拟数据
-export const challenges: Challenge[] = parseChallenges(mockChallenges);
+// 优先使用YAML数据，如果为空则使用模拟数据
+export const challenges: Challenge[] = yamlChallenges.length > 0 
+    ? parseChallenges(yamlChallenges) 
+    : parseChallenges(mockChallenges);
+
+export type Solution = {
+    title: string;
+    url: string;
+    source: string;
+};
 
 const { Search } = Input;
 const { Option } = Select;
-const { Text } = Typography;
+const { Text, Title } = Typography;
 
-const ChallengePage = () => {
+/**
+ * 简单挑战列表组件
+ * 用于在首页等地方显示简略版挑战列表
+ * 
+ * @param {Object} props - 组件属性
+ * @param {Challenge[]} props.challenges - 要显示的挑战数组
+ * @param {string} [props.title="挑战列表"] - 列表标题
+ * @returns {JSX.Element} 挑战列表组件
+ */
+export const SimpleChallengeList = ({ 
+    challenges, 
+    title = "挑战列表" 
+}: { 
+    challenges: Challenge[], 
+    title?: string 
+}) => {
+    return (
+        <Space direction="vertical" style={{ width: '100%' }}>
+            <Title level={4}>{title}</Title>
+            {challenges.map((challenge) => (
+                <Card 
+                    key={challenge.id} 
+                    style={{ width: '100%' }}
+                    hoverable
+                >
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                        <div>
+                            <Text strong>{challenge.number}. {challenge.title}</Text>
+                            <div style={{ marginTop: 4 }}>
+                                <StarRating difficulty={challenge.difficulty} />
+                                <Text type="secondary" style={{ marginLeft: 8 }}>
+                                    {challenge.tags.join(', ')}
+                                </Text>
+                            </div>
+                        </div>
+                        <Link to={`/challenge/${challenge.id}`}>
+                            查看详情
+                        </Link>
+                    </div>
+                </Card>
+            ))}
+        </Space>
+    );
+};
+
+/**
+ * 挑战列表页面组件
+ * 展示所有挑战，支持过滤、排序和搜索
+ */
+const ChallengeList = () => {
     const {t} = useTranslation();
     const [filters, setFilters] = useState({
         difficulty: 'all',
@@ -131,13 +165,13 @@ const ChallengePage = () => {
 
     const allTags = useMemo(() => {
         const tags = new Set<string>();
-        challenges.forEach(challenge => challenge.tags.forEach(tag => tags.add(tag)));
+        challenges.forEach((challenge: Challenge) => challenge.tags.forEach(tag => tags.add(tag)));
         return Array.from(tags);
     }, []);
 
     const filteredChallenges = useMemo(() => {
         return challenges
-            .filter(challenge => {
+            .filter((challenge: Challenge) => {
                 const matchesSearch = [challenge.title, challenge.description]
                     .some(text => text.toLowerCase().includes(searchQuery.toLowerCase()));
 
@@ -149,7 +183,7 @@ const ChallengePage = () => {
 
                 return matchesSearch && matchesDifficulty && matchesTags;
             })
-            .sort((a, b) => {
+            .sort((a: Challenge, b: Challenge) => {
                 const orderModifier = sortOrder === 'asc' ? 1 : -1;
                 switch (sortBy) {
                     case 'number':
@@ -238,7 +272,7 @@ const ChallengePage = () => {
                         placeholder="筛选标签"
                         style={{width: 200}}
                         value={filters.tags}
-                        onChange={tags => {
+                        onChange={(tags: string[]) => {
                             const newSearchParams = new URLSearchParams(searchParams);
                             newSearchParams.delete('tags');
                             tags.forEach(tag => newSearchParams.append('tags', tag));
@@ -281,14 +315,14 @@ const ChallengePage = () => {
                         placeholder="搜索题目"
                         allowClear
                         style={{width: 200}}
-                        onSearch={value => setSearchQuery(value)}
+                        onSearch={(value: string) => setSearchQuery(value)}
                     />
                 </Space>
 
                 <List
                     grid={{gutter: 16, column: 1}}
                     dataSource={paginatedData}
-                    renderItem={challenge => (
+                    renderItem={(challenge: Challenge) => (
                         <List.Item>
                             <Card
                                 hoverable
@@ -312,7 +346,7 @@ const ChallengePage = () => {
                                             <Tag
                                                 key={tag}
                                                 color={filters.tags.includes(tag) ? 'geekblue' : 'blue'}
-                                                onClick={(e) => {
+                                                onClick={(e: React.MouseEvent) => {
                                                     e.stopPropagation();
                                                     handleTagClick(tag);
                                                 }}
@@ -334,7 +368,7 @@ const ChallengePage = () => {
                                             type="link"
                                             href={challenge.externalLink}
                                             target="_blank"
-                                            onClick={(e) => e.stopPropagation()}
+                                            onClick={(e: React.MouseEvent) => e.stopPropagation()}
                                         >
                                             去试试 ➔
                                         </Button>
@@ -358,4 +392,4 @@ const ChallengePage = () => {
     );
 };
 
-export default ChallengePage;
+export default ChallengeList; 
