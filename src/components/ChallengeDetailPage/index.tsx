@@ -30,9 +30,13 @@ const ChallengeDetailPage = () => {
     useEffect(() => {
         if (id) {
             try {
-                // 获取所有挑战的索引，支持通过id或idAlias查找
+                // 尝试将id解析为数字，以支持通过id查找
+                const numericId = parseInt(id, 10);
+                const isNumericId = !isNaN(numericId);
+
+                // 获取所有挑战的索引，支持通过数字id或字符串idAlias查找
                 const currentIndex = challenges.findIndex(c => 
-                    c.id === id || c.idAlias === id
+                    (isNumericId && c.id === numericId) || c.idAlias === id
                 );
                 
                 if (currentIndex !== -1) {
@@ -72,11 +76,11 @@ const ChallengeDetailPage = () => {
         const handleKeyDown = (e: KeyboardEvent) => {
             // 左方向键 - 上一个挑战
             if (e.key === 'ArrowLeft' && prevChallenge) {
-                navigate(`/challenge/${prevChallenge.idAlias || prevChallenge.id}`);
+                navigate(`/challenge/${prevChallenge.idAlias || prevChallenge.id.toString()}`);
             }
             // 右方向键 - 下一个挑战
             else if (e.key === 'ArrowRight' && nextChallenge) {
-                navigate(`/challenge/${nextChallenge.idAlias || nextChallenge.id}`);
+                navigate(`/challenge/${nextChallenge.idAlias || nextChallenge.id.toString()}`);
             }
         };
 
@@ -91,14 +95,14 @@ const ChallengeDetailPage = () => {
     // 导航到前一个挑战
     const goToPrevChallenge = () => {
         if (prevChallenge) {
-            navigate(`/challenge/${prevChallenge.idAlias || prevChallenge.id}`);
+            navigate(`/challenge/${prevChallenge.idAlias || prevChallenge.id.toString()}`);
         }
     };
 
     // 导航到后一个挑战
     const goToNextChallenge = () => {
         if (nextChallenge) {
-            navigate(`/challenge/${nextChallenge.idAlias || nextChallenge.id}`);
+            navigate(`/challenge/${nextChallenge.idAlias || nextChallenge.id.toString()}`);
         }
     };
 
