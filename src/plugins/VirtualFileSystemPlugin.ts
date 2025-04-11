@@ -36,7 +36,6 @@ function processMarkdownImages(markdown: string, basePath: string, isBuild = fal
     // 处理图片路径，保持相对路径结构
     const processImgPath = (imgPath: string): string => {
         console.log(`[DEBUG] 处理图片路径: ${imgPath}`);
-        // 保持相对路径不变
         return imgPath;
     };
     
@@ -63,6 +62,12 @@ function processMarkdownImages(markdown: string, basePath: string, isBuild = fal
                     fullPath: imgPath
                 };
             }
+            return {
+                success: true,
+                data: '',
+                mimeType: '',
+                fullPath: imgPath // 保持原始Base64
+            };
         }
         
         try {
@@ -119,7 +124,6 @@ function processMarkdownImages(markdown: string, basePath: string, isBuild = fal
                 const base64Img = imgBuffer.toString('base64');
                 
                 console.log(`[DEBUG] 成功读取图片，大小: ${imgBuffer.length} 字节`);
-                console.log(`[DEBUG] Base64长度: ${base64Img.length}`);
                 
                 return {
                     success: true,
@@ -132,7 +136,7 @@ function processMarkdownImages(markdown: string, basePath: string, isBuild = fal
                 return result;
             }
         } catch (error) {
-            console.error(`读取图片文件出错:`, error);
+            console.error(`处理图片路径出错:`, error);
             return result;
         }
     };
@@ -140,6 +144,12 @@ function processMarkdownImages(markdown: string, basePath: string, isBuild = fal
     // 处理Markdown格式的图片
     let processedMd = markdown.replace(mdImgRegex, (match, alt, imgPath) => {
         console.log(`[DEBUG] 处理Markdown图片: ${match}`);
+        
+        // 如果已经是Base64格式，直接保留
+        if (imgPath.startsWith('data:image/')) {
+            return match;
+        }
+        
         const result = convertImgToBase64(imgPath);
         if (result.success) {
             if (isBuild) {
@@ -147,20 +157,28 @@ function processMarkdownImages(markdown: string, basePath: string, isBuild = fal
                 const buildPath = processImgPath(result.fullPath);
                 return `![${alt}](${buildPath})`;
             }
-            // 开发模式下使用Base64，确保URL格式正确
-            const base64Url = `data:${result.mimeType};base64,${result.data}`;
-            console.log(`[DEBUG] 生成Base64 URL: ${base64Url.substring(0, 50)}...`);
             
-            // 确保Base64不包含URL编码字符
-            return `![${alt}](${base64Url.replace(/%/g, '')})`;
+            // 开发模式下如果有Base64数据，使用它
+            if (result.data) {
+                // 开发模式下使用Base64
+                const base64Url = `data:${result.mimeType};base64,${result.data}`;
+                console.log(`[DEBUG] 生成Base64 URL`);
+                return `![${alt}](${base64Url})`;
+            }
         }
-        console.log(`[DEBUG] 图片处理失败，保留原始链接: ${match}`);
-        return match; // 出错时保留原始链接
+        
+        return match; // 出错或无数据时保留原始链接
     });
     
     // 处理HTML格式的图片
     processedMd = processedMd.replace(htmlImgRegex, (match, imgPath) => {
         console.log(`[DEBUG] 处理HTML图片: ${match}`);
+        
+        // 如果已经是Base64格式，直接保留
+        if (imgPath.startsWith('data:image/')) {
+            return match;
+        }
+        
         const result = convertImgToBase64(imgPath);
         if (result.success) {
             // 从原始标签中提取属性
@@ -172,15 +190,16 @@ function processMarkdownImages(markdown: string, basePath: string, isBuild = fal
                 const buildPath = processImgPath(result.fullPath);
                 return `<img src="${buildPath}" alt="${alt}" />`;
             }
-            // 开发模式下使用Base64，确保URL格式正确
-            const base64Url = `data:${result.mimeType};base64,${result.data}`;
-            console.log(`[DEBUG] 生成Base64 URL: ${base64Url.substring(0, 50)}...`);
             
-            // 确保Base64不包含URL编码字符
-            return `<img src="${base64Url.replace(/%/g, '')}" alt="${alt}" />`;
+            // 开发模式下如果有Base64数据，使用它
+            if (result.data) {
+                const base64Url = `data:${result.mimeType};base64,${result.data}`;
+                console.log(`[DEBUG] 生成Base64 URL`);
+                return `<img src="${base64Url}" alt="${alt}" />`;
+            }
         }
-        console.log(`[DEBUG] 图片处理失败，保留原始链接: ${match}`);
-        return match; // 出错时保留原始链接
+        
+        return match; // 出错或无数据时保留原始链接
     });
     
     return processedMd;

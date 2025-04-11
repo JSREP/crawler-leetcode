@@ -1,7 +1,9 @@
 /* 挑战描述Markdown样式 */
 .markdown-content {
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.8;
+  color: rgba(0, 0, 0, 0.85);
+  padding: 8px 0;
 }
 
 .markdown-content h1,
@@ -14,6 +16,7 @@
   margin-bottom: 16px;
   font-weight: 600;
   line-height: 1.25;
+  color: rgba(0, 0, 0, 0.85);
 }
 
 .markdown-content h1 {
@@ -54,8 +57,9 @@
   font-size: 85%;
   line-height: 1.45;
   background-color: #f6f8fa;
-  border-radius: 3px;
+  border-radius: 6px;
   margin-bottom: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .markdown-content code {
@@ -64,6 +68,7 @@
   font-size: 85%;
   background-color: rgba(27, 31, 35, 0.05);
   border-radius: 3px;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
 }
 
 .markdown-content pre > code {
@@ -74,6 +79,8 @@
   white-space: pre;
   background: transparent;
   border: 0;
+  display: block;
+  overflow-x: auto;
 }
 
 .markdown-content ul,
@@ -84,17 +91,57 @@
 
 .markdown-content img {
   max-width: 100%;
-  box-sizing: content-box;
+  box-sizing: border-box;
   display: block;
-  margin: 16px auto;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
+  margin: 24px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
 }
 
 .markdown-content hr {
-  height: 0.25em;
+  height: 1px;
   padding: 0;
   margin: 24px 0;
   background-color: #e1e4e8;
   border: 0;
+}
+
+/* 表格样式 */
+.markdown-content table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  margin-top: 0;
+  margin-bottom: 16px;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+.markdown-content table tr {
+  background-color: #fff;
+  border-top: 1px solid #c6cbd1;
+}
+
+.markdown-content table tr:nth-child(2n) {
+  background-color: #f6f8fa;
+}
+
+.markdown-content table th,
+.markdown-content table td {
+  padding: 6px 13px;
+  border: 1px solid #dfe2e5;
+}
+
+.markdown-content table th {
+  font-weight: 600;
+}
+
+/* 链接样式 */
+.markdown-content a {
+  color: #1890ff;
+  text-decoration: none;
+}
+
+.markdown-content a:hover {
+  text-decoration: underline;
 } 
