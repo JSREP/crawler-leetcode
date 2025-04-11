@@ -4,30 +4,50 @@ challenges:
   - id: 877
     id-alias: mock-challenge-877
     tags:
-      - Mobile-Security
-      - CORS
-      - Authentication
-      - SQL-Injection
-    platform: Mobile
+      - DOM-Based
+      - File-Upload
+    platform: Windows
     name: 'Mock挑战题目 #877'
-    difficulty-level: 5
-    description: >-
-      这是一个示例挑战题目的描述，难度为5星级。Via suppono quibusdam aegrus armarium sui libero.
-      Tantum dolores considero.
-    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0s0Qm5NeFk4RTE=
+    difficulty-level: 4
+    description-markdown: |
+
+      # 挑战题目详细说明
+
+      这是通过脚本生成的模拟挑战描述。解决此挑战需要了解相关的安全概念和技术。
+
+      ## 问题背景
+
+      在一个典型的应用程序中，可能存在各种安全漏洞。下面是示例代码片段：
+
+      ```javascript
+      function processUserInput(input) {
+        // 没有进行适当的输入验证和过滤
+        document.getElementById('output').innerHTML = input;
+        
+        // 潜在的SQL注入
+        let query = "SELECT * FROM users WHERE username = '" + input + "'";
+        
+        return executeQuery(query);
+      }
+      ```
+
+      ## 漏洞分析
+
+      上述代码存在以下安全问题：
+
+      1. **XSS漏洞** - 直接将用户输入插入到DOM中
+      2. **SQL注入** - 未使用参数化查询
+      3. **缺乏输入验证** - 没有检查和过滤用户输入
+
+      ## 解决方案
+
+      请提交一个修复上述问题的代码实现。
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LgpdqGkfX
     is-expired: false
     solutions:
-      - title: Uter damnatio stillicidium.
-        url: https://witty-gallery.com/
-        source: Medium
-        author: Vernon Dibbert
-      - title: At utpote ulterius.
-        url: https://clueless-lounge.com
-        source: GitHub
-        author: Ms. Gretchen Bernier
-      - title: Ex deleniti aequitas.
-        url: https://impure-gazebo.org
-        source: Medium
-        author: Elijah Fahey
-    create-time: '2024-04-28 18:45:32'
-    update-time: '2025-01-21 02:02:35'
+      - title: Adeptio delinquo apto.
+        url: https://major-babushka.name
+        source: YouTube
+        author: ''
+    create-time: '2025-01-03 19:05:48'
+    update-time: '2025-04-10 03:27:54'

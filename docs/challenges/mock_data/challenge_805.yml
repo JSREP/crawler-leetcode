@@ -4,28 +4,61 @@ challenges:
   - id: 805
     id-alias: mock-challenge-805
     tags:
-      - Command-Injection
+      - Security-Headers
       - Input-Validation
-    platform: API
+      - XXE
+      - DOM-Based
+      - File-Upload
+    platform: Desktop
     name: 'Mock挑战题目 #805'
-    difficulty-level: 5
-    description: >-
-      这是一个示例挑战题目的描述，难度为5星级。Aequus contigo totam adflicto cupio confido pauper
-      cena patior altus. Doloribus deprecator absconditus clibanus.
-    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2M5ZTV6OXVPUHU=
+    difficulty-level: 2
+    description-markdown: |
+
+      # 挑战题目详细说明
+
+      这是通过脚本生成的模拟挑战描述。解决此挑战需要了解相关的安全概念和技术。
+
+      ## 问题背景
+
+      在一个典型的应用程序中，可能存在各种安全漏洞。下面是示例代码片段：
+
+      ```javascript
+      function processUserInput(input) {
+        // 没有进行适当的输入验证和过滤
+        document.getElementById('output').innerHTML = input;
+        
+        // 潜在的SQL注入
+        let query = "SELECT * FROM users WHERE username = '" + input + "'";
+        
+        return executeQuery(query);
+      }
+      ```
+
+      ## 漏洞分析
+
+      上述代码存在以下安全问题：
+
+      1. **XSS漏洞** - 直接将用户输入插入到DOM中
+      2. **SQL注入** - 未使用参数化查询
+      3. **缺乏输入验证** - 没有检查和过滤用户输入
+
+      ## 解决方案
+
+      请提交一个修复上述问题的代码实现。
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2rdRiPsW
     is-expired: false
     solutions:
-      - title: Sapiente baiulus summopere.
-        url: https://bony-case.net/
-        source: StackOverflow
-        author: Jeffery Paucek
-      - title: Beatae delego animadverto.
-        url: https://smug-character.name
-        source: StackOverflow
-        author: Willard Kozey
-      - title: Defendo reprehenderit sum.
-        url: https://twin-finding.net/
+      - title: Cernuus sumo bestia.
+        url: https://hefty-amnesty.com/
+        source: Medium
+        author: ''
+      - title: Voluptate cibo adsum.
+        url: https://equatorial-reorganisation.biz
+        source: Documentation
+        author: ''
+      - title: Coniecto cruentus sodalitas.
+        url: https://bruised-orchid.org
         source: GitHub
-        author: Wallace Kulas-Farrell
-    create-time: '2025-02-08 17:59:11'
-    update-time: '2025-03-17 05:50:04'
+        author: ''
+    create-time: '2025-02-17 10:28:38'
+    update-time: '2025-04-11 15:17:35'

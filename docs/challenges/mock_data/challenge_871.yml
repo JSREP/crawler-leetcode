@@ -4,26 +4,52 @@ challenges:
   - id: 871
     id-alias: mock-challenge-871
     tags:
-      - CSP
-      - Hashing
-      - Path-Traversal
-      - CORS
-    platform: Web
+      - Cookie-Security
+      - HTTP-Headers
+      - SQL-Injection
+      - Security-Headers
+    platform: API
     name: 'Mock挑战题目 #871'
-    difficulty-level: 4
-    description: >-
-      这是一个示例挑战题目的描述，难度为4星级。Sui necessitatibus viscus cur illum volup cuius
-      tempore appello. Tam laborum aeger dicta animus.
-    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L08xZjVIb3lwTjU=
-    is-expired: false
+    difficulty-level: 2
+    description-markdown: |
+
+      # 挑战题目详细说明
+
+      这是通过脚本生成的模拟挑战描述。解决此挑战需要了解相关的安全概念和技术。
+
+      ## 问题背景
+
+      在一个典型的应用程序中，可能存在各种安全漏洞。下面是示例代码片段：
+
+      ```javascript
+      function processUserInput(input) {
+        // 没有进行适当的输入验证和过滤
+        document.getElementById('output').innerHTML = input;
+        
+        // 潜在的SQL注入
+        let query = "SELECT * FROM users WHERE username = '" + input + "'";
+        
+        return executeQuery(query);
+      }
+      ```
+
+      ## 漏洞分析
+
+      上述代码存在以下安全问题：
+
+      1. **XSS漏洞** - 直接将用户输入插入到DOM中
+      2. **SQL注入** - 未使用参数化查询
+      3. **缺乏输入验证** - 没有检查和过滤用户输入
+
+      ## 解决方案
+
+      请提交一个修复上述问题的代码实现。
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LOr1adOyd
+    is-expired: true
     solutions:
-      - title: Tui comminor consuasor.
-        url: https://diligent-bathhouse.name/
-        source: YouTube
-        author: Ryan Ryan
-      - title: Facilis sub capio.
-        url: https://self-assured-stay.info
-        source: StackOverflow
-        author: Antonia Schumm
-    create-time: '2023-06-08 10:33:19'
-    update-time: '2025-01-01 04:34:17'
+      - title: Compello tepidus tunc.
+        url: https://trained-couch.name/
+        source: Medium
+        author: Pat Williamson
+    create-time: '2025-03-12 00:15:36'
+    update-time: '2025-04-11 23:54:45'

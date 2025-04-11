@@ -4,18 +4,57 @@ challenges:
   - id: 19
     id-alias: mock-challenge-19
     tags:
-      - Mobile-Security
-      - Rate-Limiting
-      - Hashing
-      - API-Security
-    platform: Mobile
+      - Security-Headers
+      - CORS
+      - File-Upload
+      - Reflected-XSS
+      - Authorization
+    platform: Kubernetes
     name: 'Mock挑战题目 #19'
-    difficulty-level: 2
-    description: >-
-      这是一个示例挑战题目的描述，难度为2星级。Accommodo creta aegrus desipio aestas theologus
-      capillus sequi dolor. Tepesco thymbra universe cogo iure quibusdam vis.
-    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2ZJTWQ4ZFZKbWQ=
+    difficulty-level: 4
+    description-markdown: |
+
+      # 挑战题目详细说明
+
+      这是通过脚本生成的模拟挑战描述。解决此挑战需要了解相关的安全概念和技术。
+
+      ## 问题背景
+
+      在一个典型的应用程序中，可能存在各种安全漏洞。下面是示例代码片段：
+
+      ```javascript
+      function processUserInput(input) {
+        // 没有进行适当的输入验证和过滤
+        document.getElementById('output').innerHTML = input;
+        
+        // 潜在的SQL注入
+        let query = "SELECT * FROM users WHERE username = '" + input + "'";
+        
+        return executeQuery(query);
+      }
+      ```
+
+      ## 漏洞分析
+
+      上述代码存在以下安全问题：
+
+      1. **XSS漏洞** - 直接将用户输入插入到DOM中
+      2. **SQL注入** - 未使用参数化查询
+      3. **缺乏输入验证** - 没有检查和过滤用户输入
+
+      ## 解决方案
+
+      请提交一个修复上述问题的代码实现。
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LSD4W4zqX
     is-expired: false
-    solutions: []
-    create-time: '2023-08-12 20:25:27'
-    update-time: '2024-04-26 04:52:49'
+    solutions:
+      - title: Alii taedium certus.
+        url: https://naughty-following.org/
+        source: GitHub
+        author: ''
+      - title: Vos vulnus conturbo.
+        url: https://sparkling-guide.name/
+        source: StackOverflow
+        author: ''
+    create-time: '2025-02-22 04:19:15'
+    update-time: '2025-04-11 22:33:08'

@@ -4,21 +4,58 @@ challenges:
   - id: 278
     id-alias: mock-challenge-278
     tags:
-      - Deserialization
-      - SQL-Injection
-      - XSS
-    platform: Desktop
+      - Rate-Limiting
+      - Output-Encoding
+    platform: macOS
     name: 'Mock挑战题目 #278'
     difficulty-level: 1
-    description: >-
-      这是一个示例挑战题目的描述，难度为1星级。Somnus consectetur villa strenuus administratio
-      delinquo valde cubo decumbo arca. Ustilo derideo vespillo.
-    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0V6dXNCSTJtYXo=
+    description-markdown: |
+
+      # 挑战题目详细说明
+
+      这是通过脚本生成的模拟挑战描述。解决此挑战需要了解相关的安全概念和技术。
+
+      ## 问题背景
+
+      在一个典型的应用程序中，可能存在各种安全漏洞。下面是示例代码片段：
+
+      ```javascript
+      function processUserInput(input) {
+        // 没有进行适当的输入验证和过滤
+        document.getElementById('output').innerHTML = input;
+        
+        // 潜在的SQL注入
+        let query = "SELECT * FROM users WHERE username = '" + input + "'";
+        
+        return executeQuery(query);
+      }
+      ```
+
+      ## 漏洞分析
+
+      上述代码存在以下安全问题：
+
+      1. **XSS漏洞** - 直接将用户输入插入到DOM中
+      2. **SQL注入** - 未使用参数化查询
+      3. **缺乏输入验证** - 没有检查和过滤用户输入
+
+      ## 解决方案
+
+      请提交一个修复上述问题的代码实现。
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LCctMzTxY
     is-expired: false
     solutions:
-      - title: Sunt creptio alveus.
-        url: https://deadly-video.name/
+      - title: Tristis ademptio altus.
+        url: https://busy-pick.info
+        source: StackOverflow
+        author: ''
+      - title: Decens ultio appositus.
+        url: https://self-assured-kit.org/
         source: GitHub
-        author: Dr. Brittany Lehner
-    create-time: '2023-07-24 08:28:50'
-    update-time: '2024-12-16 14:47:38'
+        author: Stewart Mann
+      - title: Tutamen confero aduro.
+        url: https://vibrant-intellect.biz
+        source: YouTube
+        author: ''
+    create-time: '2024-11-17 15:41:29'
+    update-time: '2025-04-11 09:39:02'

@@ -4,24 +4,54 @@ challenges:
   - id: 559
     id-alias: mock-challenge-559
     tags:
-      - WebSockets
-      - Authorization
-    platform: Web
+      - CSRF
+      - Weak-Cryptography
+    platform: Kubernetes
     name: 'Mock挑战题目 #559'
-    difficulty-level: 2
-    description: >-
-      这是一个示例挑战题目的描述，难度为2星级。Cultellus solium tenetur bonus urbs tam. Undique
-      terra succedo.
-    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0VVVjBUUThNWE8=
-    is-expired: false
+    difficulty-level: 5
+    description-markdown: |
+
+      # 挑战题目详细说明
+
+      这是通过脚本生成的模拟挑战描述。解决此挑战需要了解相关的安全概念和技术。
+
+      ## 问题背景
+
+      在一个典型的应用程序中，可能存在各种安全漏洞。下面是示例代码片段：
+
+      ```javascript
+      function processUserInput(input) {
+        // 没有进行适当的输入验证和过滤
+        document.getElementById('output').innerHTML = input;
+        
+        // 潜在的SQL注入
+        let query = "SELECT * FROM users WHERE username = '" + input + "'";
+        
+        return executeQuery(query);
+      }
+      ```
+
+      ## 漏洞分析
+
+      上述代码存在以下安全问题：
+
+      1. **XSS漏洞** - 直接将用户输入插入到DOM中
+      2. **SQL注入** - 未使用参数化查询
+      3. **缺乏输入验证** - 没有检查和过滤用户输入
+
+      ## 解决方案
+
+      请提交一个修复上述问题的代码实现。
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6Ln4djQ1v1
+    is-expired: true
     solutions:
-      - title: Deduco canis adduco.
-        url: https://trivial-gloom.name
-        source: StackOverflow
-        author: Rosemary Wilkinson
-      - title: Modi adiuvo curriculum.
-        url: https://uncommon-valentine.info
-        source: GitHub
-        author: Johanna Johnson DDS
-    create-time: '2023-09-26 18:24:39'
-    update-time: '2024-08-11 01:47:48'
+      - title: Conitor aureus uberrime.
+        url: https://brave-chairperson.name/
+        source: Medium
+        author: ''
+      - title: Uberrime tepesco delego.
+        url: https://agreeable-pliers.org/
+        source: Blog
+        author: ''
+    create-time: '2024-04-27 00:54:31'
+    update-time: '2025-04-11 14:19:28'

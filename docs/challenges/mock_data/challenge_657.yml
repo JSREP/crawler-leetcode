@@ -4,28 +4,60 @@ challenges:
   - id: 657
     id-alias: mock-challenge-657
     tags:
-      - CORS
-      - Command-Injection
-      - Mobile-Security
+      - File-Upload
+      - Authorization
+      - CSRF
       - XXE
-      - SQL-Injection
-    platform: Web
+    platform: Cloud
     name: 'Mock挑战题目 #657'
-    difficulty-level: 3
-    description: >-
-      这是一个示例挑战题目的描述，难度为3星级。Villa dapifer et conduco solum beatus barba defungo
-      doloribus umquam. Thesis nostrum aliqua vinitor sortitus teneo tui crur
-      succurro.
-    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3hlaHJDMHU0Qlc=
+    difficulty-level: 2
+    description-markdown: |
+
+      # 挑战题目详细说明
+
+      这是通过脚本生成的模拟挑战描述。解决此挑战需要了解相关的安全概念和技术。
+
+      ## 问题背景
+
+      在一个典型的应用程序中，可能存在各种安全漏洞。下面是示例代码片段：
+
+      ```javascript
+      function processUserInput(input) {
+        // 没有进行适当的输入验证和过滤
+        document.getElementById('output').innerHTML = input;
+        
+        // 潜在的SQL注入
+        let query = "SELECT * FROM users WHERE username = '" + input + "'";
+        
+        return executeQuery(query);
+      }
+      ```
+
+      ## 漏洞分析
+
+      上述代码存在以下安全问题：
+
+      1. **XSS漏洞** - 直接将用户输入插入到DOM中
+      2. **SQL注入** - 未使用参数化查询
+      3. **缺乏输入验证** - 没有检查和过滤用户输入
+
+      ## 解决方案
+
+      请提交一个修复上述问题的代码实现。
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L658UaZ4M
     is-expired: false
     solutions:
-      - title: Cerno celo tantum.
-        url: https://monstrous-minority.com/
-        source: Blog
-        author: Al Bradtke
-      - title: Campana confugo circumvenio.
-        url: https://lone-sonata.biz
+      - title: Vapulus audeo demum.
+        url: https://idolized-rosemary.org
         source: Medium
-        author: Lorene Cassin
-    create-time: '2023-07-10 12:46:00'
-    update-time: '2024-04-26 15:59:14'
+        author: George Heidenreich
+      - title: Confido praesentium utilis.
+        url: https://nimble-sanity.name/
+        source: Blog
+        author: Francis Sporer
+      - title: Comedo veritatis turbo.
+        url: https://digital-goodwill.biz/
+        source: Medium
+        author: Brittany Hills
+    create-time: '2024-07-14 21:06:53'
+    update-time: '2025-04-11 20:40:24'

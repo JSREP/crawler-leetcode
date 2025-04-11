@@ -4,21 +4,54 @@ challenges:
   - id: 319
     id-alias: mock-challenge-319
     tags:
-      - Encryption
-      - Command-Injection
-      - JWT
-    platform: IoT
+      - Authentication
+      - XXE
+    platform: GCP
     name: 'Mock挑战题目 #319'
-    difficulty-level: 4
-    description: >-
-      这是一个示例挑战题目的描述，难度为4星级。Atrocitas aliqua decumbo cursus coniecto vomito color
-      labore varietas in. Audentia substantia spoliatio asperiores.
-    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2RpSTBkWW04VFo=
+    difficulty-level: 5
+    description-markdown: |
+
+      # 挑战题目详细说明
+
+      这是通过脚本生成的模拟挑战描述。解决此挑战需要了解相关的安全概念和技术。
+
+      ## 问题背景
+
+      在一个典型的应用程序中，可能存在各种安全漏洞。下面是示例代码片段：
+
+      ```javascript
+      function processUserInput(input) {
+        // 没有进行适当的输入验证和过滤
+        document.getElementById('output').innerHTML = input;
+        
+        // 潜在的SQL注入
+        let query = "SELECT * FROM users WHERE username = '" + input + "'";
+        
+        return executeQuery(query);
+      }
+      ```
+
+      ## 漏洞分析
+
+      上述代码存在以下安全问题：
+
+      1. **XSS漏洞** - 直接将用户输入插入到DOM中
+      2. **SQL注入** - 未使用参数化查询
+      3. **缺乏输入验证** - 没有检查和过滤用户输入
+
+      ## 解决方案
+
+      请提交一个修复上述问题的代码实现。
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LetP79593
     is-expired: false
     solutions:
-      - title: Conforto audio vigilo.
-        url: https://innocent-pants.org
+      - title: Tripudio subnecto volo.
+        url: https://every-valentine.net/
+        source: YouTube
+        author: Gerardo Koelpin
+      - title: Desparatus officiis accusator.
+        url: https://regular-godparent.net/
         source: StackOverflow
-        author: Dr. Terence Cronin-Waelchi
-    create-time: '2023-10-07 06:33:48'
-    update-time: '2024-02-18 23:32:36'
+        author: Maggie Bogan
+    create-time: '2024-10-06 15:48:52'
+    update-time: '2025-04-11 03:32:38'
