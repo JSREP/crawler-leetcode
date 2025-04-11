@@ -1,6 +1,6 @@
 // src/components/HomePage.tsx
 import { Card, Col, Row, Typography, Divider } from 'antd';
-import { challenges, SimpleChallengeList } from './ChallengeListPage';
+import { challenges, SimpleChallengeList } from './ChallengeListPage/exports';
 
 const { Title, Text } = Typography;
 
