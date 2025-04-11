@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { Card, Space, Divider, Alert, Button } from 'antd';
+import { Card, Space, Divider, Alert } from 'antd';
 import { Challenge } from '../../types/challenge';
 import { challenges } from '../ChallengeListPage/exports';
-import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 
 // 导入各个子组件
 import ChallengeHeader from './ChallengeHeader';
@@ -12,6 +11,7 @@ import ChallengeTags from './ChallengeTags';
 import ChallengeDescription from './ChallengeDescription';
 import ChallengeSolutions from './ChallengeSolutions';
 import ChallengeActions from './ChallengeActions';
+import ChallengePagination from './ChallengePagination';
 
 /**
  * 挑战详情页主组件
@@ -136,25 +136,13 @@ const ChallengeDetailPage = () => {
                 />
             )}
             
-            {/* 添加翻页按钮 */}
-            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '20px' }}>
-                <Button 
-                    type="default" 
-                    icon={<LeftOutlined />} 
-                    onClick={goToPrevChallenge} 
-                    disabled={!prevChallenge}
-                >
-                    上一题
-                </Button>
-                <Button 
-                    type="default" 
-                    icon={<RightOutlined />} 
-                    onClick={goToNextChallenge} 
-                    disabled={!nextChallenge}
-                >
-                    下一题
-                </Button>
-            </div>
+            {/* 顶部翻页按钮 */}
+            <ChallengePagination 
+                prevChallenge={prevChallenge}
+                nextChallenge={nextChallenge}
+                onPrevClick={goToPrevChallenge}
+                onNextClick={goToNextChallenge}
+            />
             
             <Card bordered={false} style={{ marginBottom: '20px' }}>
                 <Space direction="vertical" size="large" style={{ width: '100%' }}>
@@ -186,24 +174,12 @@ const ChallengeDetailPage = () => {
             </Card>
             
             {/* 底部翻页按钮 */}
-            <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '20px' }}>
-                <Button 
-                    type="default" 
-                    icon={<LeftOutlined />} 
-                    onClick={goToPrevChallenge} 
-                    disabled={!prevChallenge}
-                >
-                    上一题
-                </Button>
-                <Button 
-                    type="default" 
-                    icon={<RightOutlined />} 
-                    onClick={goToNextChallenge} 
-                    disabled={!nextChallenge}
-                >
-                    下一题
-                </Button>
-            </div>
+            <ChallengePagination 
+                prevChallenge={prevChallenge}
+                nextChallenge={nextChallenge}
+                onPrevClick={goToPrevChallenge}
+                onNextClick={goToNextChallenge}
+            />
         </div>
     );
 };
