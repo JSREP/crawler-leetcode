@@ -1,5 +1,7 @@
-import { Typography } from 'antd';
+import { Typography, Card } from 'antd';
 import { Challenge } from '../../types/challenge';
+import ReactMarkdown from 'react-markdown';
+import '../../styles/markdown.css';
 
 const { Title, Paragraph, Text } = Typography;
 
@@ -11,20 +13,29 @@ interface ChallengeDescriptionProps {
  * 挑战描述组件，显示问题描述和详细描述
  */
 const ChallengeDescription: React.FC<ChallengeDescriptionProps> = ({ challenge }) => {
+    // 优先使用Markdown内容
+    if (challenge.descriptionMarkdown) {
+        return (
+            <div>
+                <Title level={3}>问题描述</Title>
+                <Card bordered={false} style={{ marginBottom: 24 }}>
+                    <div className="markdown-content">
+                        <ReactMarkdown>
+                            {challenge.descriptionMarkdown}
+                        </ReactMarkdown>
+                    </div>
+                </Card>
+            </div>
+        );
+    }
+    
+    // 回退到纯文本描述
     return (
         <div>
             <Title level={3}>问题描述</Title>
             <Paragraph style={{ whiteSpace: 'pre-line' }}>
                 {challenge.description}
             </Paragraph>
-            {challenge.descriptionMarkdown && (
-                <div>
-                    <Text type="secondary">详细描述 (Markdown):</Text>
-                    <Paragraph style={{ marginTop: '8px', backgroundColor: '#f5f5f5', padding: '16px' }}>
-                        {challenge.descriptionMarkdown}
-                    </Paragraph>
-                </div>
-            )}
         </div>
     );
 };
