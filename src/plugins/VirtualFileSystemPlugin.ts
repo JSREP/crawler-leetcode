@@ -21,7 +21,6 @@ interface Challenge {
     number: string;
     title: string;
     name: string;
-    description: string;
     'description-markdown': string;
     difficulty: string;
     'difficulty-level': string;
@@ -120,7 +119,6 @@ function collectYAMLChallenges(dirPath: string, rootDir: string): Challenge[] {
                             number: challenge.number || '0',
                             title: challenge.name || '',
                             name: challenge.name || '',
-                            description: challenge.description || '',
                             'description-markdown': challenge['description-markdown'] || '',
                             difficulty: challenge.difficulty || '1',
                             'difficulty-level': challenge['difficulty-level'] || '1',
@@ -141,7 +139,7 @@ function collectYAMLChallenges(dirPath: string, rootDir: string): Challenge[] {
                             platform: challenge.platform || 'Web',
                             'is-expired': challenge['is-expired'] || false,
                             'id-alias': challenge['id-alias'] || challenge.id?.toString() || '',
-                            descriptionMarkdown: markdownContent // 添加统一的Markdown内容字段
+                            descriptionMarkdown: markdownContent // 构建时将Markdown内容统一赋值给descriptionMarkdown字段
                         };
                         challenges.push(transformed);
                     });
