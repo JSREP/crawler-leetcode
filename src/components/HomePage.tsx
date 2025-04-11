@@ -43,7 +43,7 @@ const HomePage = () => {
                     <Card 
                         hoverable
                         style={{ height: '100%', borderColor: feature.color }}
-                        bodyStyle={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}
+                        styles={{ body: { display: 'flex', flexDirection: 'column', justifyContent: 'space-between' } }}
                     >
                         <Title level={4} style={{ color: feature.color }}>{feature.title}</Title>
                         <Text type="secondary">{feature.content}</Text>

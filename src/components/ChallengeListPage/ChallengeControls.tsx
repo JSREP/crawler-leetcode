@@ -1,6 +1,8 @@
 import { Space, Select, Button, Input } from 'antd';
 import { ArrowUpOutlined, ArrowDownOutlined } from '@ant-design/icons';
 import StarRating from '../StarRating';
+import { useMemo } from 'react';
+import { Col } from 'antd';
 
 const { Search } = Input;
 const { Option } = Select;
@@ -12,6 +14,11 @@ interface ChallengeControlsProps {
     allTags: string[];
     
     /**
+     * 所有可选平台
+     */
+    allPlatforms: string[];
+    
+    /**
      * 当前选中的标签
      */
     selectedTags: string[];
@@ -20,6 +27,11 @@ interface ChallengeControlsProps {
      * 当前选中的难度
      */
     selectedDifficulty: string;
+    
+    /**
+     * 当前选中的平台
+     */
+    selectedPlatform: string;
     
     /**
      * 当前排序字段
@@ -42,6 +54,11 @@ interface ChallengeControlsProps {
     onDifficultyChange: (difficulty: string) => void;
     
     /**
+     * 平台变更回调
+     */
+    onPlatformChange: (platform: string) => void;
+    
+    /**
      * 排序字段变更回调
      */
     onSortByChange: (field: string) => void;
@@ -62,16 +79,28 @@ interface ChallengeControlsProps {
  */
 const ChallengeControls: React.FC<ChallengeControlsProps> = ({
     allTags,
+    allPlatforms,
     selectedTags,
     selectedDifficulty,
+    selectedPlatform,
     sortBy,
     sortOrder,
     onTagsChange,
     onDifficultyChange,
+    onPlatformChange,
     onSortByChange,
     onSortOrderChange,
     onSearch
 }) => {
+    // 确保LeetCode平台在平台列表中
+    const platformOptions = useMemo(() => {
+        const platforms = [...new Set([...allPlatforms, 'LeetCode'])];
+        return [
+            { value: 'all', label: '所有平台' },
+            ...platforms.map(platform => ({ value: platform, label: platform }))
+        ];
+    }, [allPlatforms]);
+
     return (
         <Space wrap>
             <Select
@@ -96,6 +125,13 @@ const ChallengeControls: React.FC<ChallengeControlsProps> = ({
                     </Option>
                 ))}
             </Select>
+
+            <Select
+                style={{ width: 140 }}
+                value={selectedPlatform}
+                onChange={onPlatformChange}
+                options={platformOptions}
+            />
 
             <Select
                 value={sortBy}

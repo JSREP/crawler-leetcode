@@ -1,0 +1,95 @@
+# LeetCode平台挑战题目
+version: 1
+
+challenges:
+  - id: leetcode-1
+    tags:
+      - 数组
+      - 哈希表
+    platform: LeetCode
+    name: 两数之和
+    difficulty-level: 1
+    description: 给定一个整数数组和一个目标值，找出数组中和为目标值的两个数。
+    base64-url: aHR0cHM6Ly9sZWV0Y29kZS5jbi9wcm9ibGVtcy90d28tc3VtLw==
+    is-expired: false
+    solutions:
+      - title: JavaScript解法
+        url: https://github.com/JSREP/crawler-leetcode/solutions/two-sum
+        source: GitHub
+        author: JSREP
+    create-time: 2023-01-01 00:00:00
+    update-time: 2023-01-01 00:00:00
+
+  - id: leetcode-2
+    tags:
+      - 链表
+      - 数学
+    platform: LeetCode
+    name: 两数相加
+    difficulty-level: 2
+    description: 给你两个非空的链表，表示两个非负的整数。它们每位数字都是按照逆序的方式存储的，并且每个节点只能存储一位数字。请你将两个数相加，并以相同形式返回一个表示和的链表。
+    base64-url: aHR0cHM6Ly9sZWV0Y29kZS5jbi9wcm9ibGVtcy9hZGQtdHdvLW51bWJlcnMv
+    is-expired: false
+    solutions:
+      - title: JavaScript解法
+        url: https://github.com/JSREP/crawler-leetcode/solutions/add-two-numbers
+        source: GitHub
+        author: JSREP
+    create-time: 2023-01-02 00:00:00
+    update-time: 2023-01-02 00:00:00
+
+  - id: leetcode-3
+    tags:
+      - 哈希表
+      - 字符串
+      - 滑动窗口
+    platform: LeetCode
+    name: 无重复字符的最长子串
+    difficulty-level: 2
+    description: 给定一个字符串，请你找出其中不含有重复字符的最长子串的长度。
+    base64-url: aHR0cHM6Ly9sZWV0Y29kZS5jbi9wcm9ibGVtcy9sb25nZXN0LXN1YnN0cmluZy13aXRob3V0LXJlcGVhdGluZy1jaGFyYWN0ZXJzLw==
+    is-expired: false
+    solutions:
+      - title: JavaScript解法
+        url: https://github.com/JSREP/crawler-leetcode/solutions/longest-substring
+        source: GitHub
+        author: JSREP
+    create-time: 2023-01-03 00:00:00
+    update-time: 2023-01-03 00:00:00
+    
+  - id: leetcode-4
+    tags:
+      - 数组
+      - 二分查找
+      - 分治
+    platform: LeetCode
+    name: 寻找两个正序数组的中位数
+    difficulty-level: 4
+    description: 给定两个大小分别为 m 和 n 的正序（从小到大）数组 nums1 和 nums2。请你找出并返回这两个正序数组的中位数。
+    base64-url: aHR0cHM6Ly9sZWV0Y29kZS5jbi9wcm9ibGVtcy9tZWRpYW4tb2YtdHdvLXNvcnRlZC1hcnJheXMv
+    is-expired: false
+    solutions:
+      - title: JavaScript解法
+        url: https://github.com/JSREP/crawler-leetcode/solutions/median-of-two-sorted-arrays
+        source: GitHub
+        author: JSREP
+    create-time: 2023-01-04 00:00:00
+    update-time: 2023-01-04 00:00:00
+    
+  - id: leetcode-5
+    tags:
+      - 字符串
+      - 动态规划
+    platform: LeetCode
+    name: 最长回文子串
+    difficulty-level: 2
+    description: 给你一个字符串 s，找到 s 中最长的回文子串。
+    base64-url: aHR0cHM6Ly9sZWV0Y29kZS5jbi9wcm9ibGVtcy9sb25nZXN0LXBhbGluZHJvbWljLXN1YnN0cmluZy8=
+    is-expired: false
+    solutions:
+      - title: JavaScript解法
+        url: https://github.com/JSREP/crawler-leetcode/solutions/longest-palindromic-substring
+        source: GitHub
+        author: JSREP
+    create-time: 2023-01-05 00:00:00
+    update-time: 2023-01-05 00:00:00 
