@@ -1,6 +1,7 @@
 import { Typography, Card, Empty } from 'antd';
 import { Challenge } from '../../types/challenge';
 import ReactMarkdown from 'react-markdown';
+import rehypeRaw from 'rehype-raw';
 import '../../styles/markdown.css';
 
 const { Title } = Typography;
@@ -19,7 +20,7 @@ const ChallengeDescription: React.FC<ChallengeDescriptionProps> = ({ challenge }
             {challenge.descriptionMarkdown ? (
                 <Card bordered={false} style={{ marginBottom: 24 }}>
                     <div className="markdown-content">
-                        <ReactMarkdown>
+                        <ReactMarkdown rehypePlugins={[rehypeRaw]}>
                             {challenge.descriptionMarkdown}
                         </ReactMarkdown>
                     </div>
