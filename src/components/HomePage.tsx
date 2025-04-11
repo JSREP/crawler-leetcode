@@ -50,7 +50,7 @@ const HomePage = () => {
                       borderColor: feature.color,
                       borderWidth: 1
                     }}
-                    bodyStyle={{ padding: 24 }}
+                    styles={{ body: { padding: 24 } }}
                 >
                   <Title level={4} style={{ color: feature.color, marginBottom: 16 }}>
                     {feature.title}
