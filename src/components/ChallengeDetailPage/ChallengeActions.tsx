@@ -1,4 +1,3 @@
-import { Alert } from 'antd';
 import { Link } from 'react-router-dom';
 import { Challenge } from '../../types/challenge';
 
@@ -13,14 +12,6 @@ const ChallengeActions: React.FC<ChallengeActionsProps> = ({ challenge }) => {
     return (
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <div>
-                {challenge.isExpired && (
-                    <Alert 
-                        message="此题目链接可能已失效" 
-                        type="warning" 
-                        showIcon 
-                        style={{ marginBottom: '16px' }}
-                    />
-                )}
                 <a
                     href={challenge.externalLink}
                     target="_blank"
