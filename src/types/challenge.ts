@@ -10,7 +10,6 @@ export type Challenge = {
     idAlias?: string; // 唯一字符串别名，用于友好URL和显示
     number: number;
     title: string;
-    description: string;
     difficulty: number;
     tags: string[];
     solutions: Solution[];
@@ -19,7 +18,7 @@ export type Challenge = {
     externalLink: string;
     platform?: string;  // 添加平台字段
     isExpired?: boolean;  // 添加链接失效状态字段
-    descriptionMarkdown?: string;  // Markdown描述字段，优先使用
+    descriptionMarkdown: string;  // Markdown描述字段，唯一的描述方式
 };
 
 export const parseChallenges = (raw: any[]): Challenge[] => {
@@ -32,7 +31,6 @@ export const parseChallenges = (raw: any[]): Challenge[] => {
         idAlias: c['id-alias'] || c.id?.toString() || "", // 获取id-alias或使用id作为备选
         number: parseInt(c.number || "0", 10),
         title: c.title || c.name || "",
-        description: c.description || "",
         difficulty: parseInt(c.difficulty || c['difficulty-level'] || "1", 10),
         tags: c.tags || [],
         solutions: (c.solutions || []).map((s: any) => ({
@@ -46,7 +44,7 @@ export const parseChallenges = (raw: any[]): Challenge[] => {
         externalLink: c.externalLink || "",
         platform: c.platform || "",
         isExpired: c['is-expired'] || false,
-        // 优先使用统一处理后的descriptionMarkdown字段，然后是原始的description-markdown
+        // 运行时只有一个统一的Markdown内容字段
         descriptionMarkdown: c.descriptionMarkdown || c['description-markdown'] || "",
     }));
 }; 
