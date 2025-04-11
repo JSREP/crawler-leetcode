@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Card, Space, Divider } from 'antd';
 import { Challenge } from '../../types/challenge';
-import { challenges } from '../ChallengeListPage';
+import { challenges } from '../ChallengeListPage/exports';
 
 // 导入各个子组件
 import ChallengeHeader from './ChallengeHeader';
