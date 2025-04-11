@@ -1,12 +1,12 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import { List, Pagination, Space } from 'antd';
+import { Space } from 'antd';
 import { Challenge } from '../../types/challenge';
 import { challenges } from './ChallengeData';
 import ChallengeFilters from './ChallengeFilters';
 import ChallengeControls from './ChallengeControls';
-import ChallengeListItem from './ChallengeListItem';
+import SimpleChallengeList from './SimpleChallengeList';
 
 /**
  * 挑战列表页面组件
@@ -120,6 +120,11 @@ const ChallengeListPage = () => {
         return filteredChallenges.slice(start, start + pagination.pageSize);
     }, [filteredChallenges, pagination]);
 
+    // 处理分页变化
+    const handlePaginationChange = (page: number, pageSize: number) => {
+        setPagination({ current: page, pageSize });
+    };
+
     // 移除过滤器
     const handleFilterRemove = (type: 'tag' | 'difficulty' | 'platform', value?: string) => {
         const newSearchParams = new URLSearchParams(searchParams);
@@ -191,32 +196,17 @@ const ChallengeListPage = () => {
                     onSearch={setSearchQuery}
                 />
 
-                {/* 挑战列表 */}
-                <List
-                    grid={{ gutter: 16, column: 1 }}
-                    dataSource={paginatedData}
-                    renderItem={(challenge: Challenge) => (
-                        <List.Item>
-                            <ChallengeListItem
-                                challenge={challenge}
-                                selectedTags={filters.tags}
-                                onClick={() => navigate(`/challenge/${challenge.idAlias || challenge.id.toString()}`)}
-                                onTagClick={handleTagClick}
-                                onDifficultyClick={(difficulty) => handleDifficultyClick(String(difficulty))}
-                                onPlatformClick={(platform) => handlePlatformChange(platform)}
-                            />
-                        </List.Item>
-                    )}
-                />
-
-                {/* 分页 */}
-                <Pagination
-                    current={pagination.current}
-                    pageSize={pagination.pageSize}
+                {/* 挑战列表和分页 */}
+                <SimpleChallengeList 
+                    challenges={paginatedData}
+                    selectedTags={filters.tags}
+                    pagination={pagination}
+                    onPaginationChange={handlePaginationChange}
+                    onTagClick={handleTagClick}
+                    onDifficultyClick={handleDifficultyClick}
+                    onPlatformClick={handlePlatformChange}
+                    onChallengeClick={(id) => navigate(`/challenge/${id}`)}
                     total={filteredChallenges.length}
-                    showSizeChanger
-                    onChange={(page, pageSize) => setPagination({ current: page, pageSize: pageSize || 10 })}
-                    style={{ marginTop: 24, textAlign: 'center' }}
                 />
             </Space>
         </div>
