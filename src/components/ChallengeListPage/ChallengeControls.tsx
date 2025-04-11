@@ -1,11 +1,10 @@
-import { Space, Select, Button, Input } from 'antd';
+import { Space, Select, Button } from 'antd';
 import { ArrowUpOutlined, ArrowDownOutlined } from '@ant-design/icons';
 import StarRating from '../StarRating';
 import { useMemo } from 'react';
 import { Col } from 'antd';
 import '../../styles/dropdown.css';
 
-const { Search } = Input;
 const { Option } = Select;
 
 interface ChallengeControlsProps {
@@ -68,11 +67,6 @@ interface ChallengeControlsProps {
      * 排序顺序变更回调
      */
     onSortOrderChange: () => void;
-    
-    /**
-     * 搜索提交回调
-     */
-    onSearch: (value: string) => void;
 }
 
 /**
@@ -90,8 +84,7 @@ const ChallengeControls: React.FC<ChallengeControlsProps> = ({
     onDifficultyChange,
     onPlatformChange,
     onSortByChange,
-    onSortOrderChange,
-    onSearch
+    onSortOrderChange
 }) => {
     // 确保LeetCode平台在平台列表中
     const platformOptions = useMemo(() => {
@@ -157,13 +150,6 @@ const ChallengeControls: React.FC<ChallengeControlsProps> = ({
             <Button
                 icon={sortOrder === 'asc' ? <ArrowUpOutlined /> : <ArrowDownOutlined />}
                 onClick={onSortOrderChange}
-            />
-
-            <Search
-                placeholder="搜索题目"
-                allowClear
-                style={{ width: 200 }}
-                onSearch={onSearch}
             />
         </Space>
     );
