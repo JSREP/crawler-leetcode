@@ -215,8 +215,13 @@ function processChallengeData(challenge: any, rootDir: string, isBuild: boolean)
     
     // 如果有description-markdown-path，读取对应文件内容
     if (challenge['description-markdown-path']) {
-        const mdPath = path.resolve(rootDir, challenge['description-markdown-path']);
-        console.log(`解析Markdown路径: ${challenge['description-markdown-path']} -> ${mdPath}`);
+        // 获取原始路径
+        const origPath = challenge['description-markdown-path'];
+        console.log(`处理Markdown路径: ${origPath}`);
+        
+        // 直接尝试解析原始路径
+        let mdPath = path.resolve(rootDir, origPath);
+        console.log(`解析为绝对路径: ${mdPath}`);
         
         if (fs.existsSync(mdPath)) {
             try {
@@ -224,24 +229,30 @@ function processChallengeData(challenge: any, rootDir: string, isBuild: boolean)
                 const rawMd = fs.readFileSync(mdPath, 'utf8');
                 // 处理Markdown中的图片路径，根据环境决定如何处理图片
                 markdownContent = processMarkdownImages(rawMd, path.dirname(mdPath), isBuild);
+                console.log(`成功读取Markdown文件: ${mdPath}`);
             } catch (err) {
-                console.error(`Error reading Markdown file ${mdPath}:`, err);
+                console.error(`读取Markdown文件出错: ${mdPath}`, err);
             }
         } else {
-            console.warn(`Markdown file not found: ${mdPath}`);
-            // 尝试在docs目录查找
-            const altPath = path.resolve(rootDir, 'docs/challenges', challenge['description-markdown-path']);
-            console.log(`尝试替代路径: ${altPath}`);
-            if (fs.existsSync(altPath)) {
-                try {
-                    const rawMd = fs.readFileSync(altPath, 'utf8');
-                    markdownContent = processMarkdownImages(rawMd, path.dirname(altPath), isBuild);
-                    console.log(`成功使用替代路径读取Markdown: ${altPath}`);
-                } catch (err) {
-                    console.error(`Error reading alternate Markdown file ${altPath}:`, err);
+            console.warn(`Markdown文件不存在: ${mdPath}`);
+            
+            // 检查路径是否已包含docs/challenges前缀
+            if (!origPath.startsWith('docs/challenges/')) {
+                // 尝试添加docs/challenges前缀
+                const altPath = path.resolve(rootDir, 'docs/challenges', origPath);
+                console.log(`尝试添加前缀后路径: ${altPath}`);
+                
+                if (fs.existsSync(altPath)) {
+                    try {
+                        const rawMd = fs.readFileSync(altPath, 'utf8');
+                        markdownContent = processMarkdownImages(rawMd, path.dirname(altPath), isBuild);
+                        console.log(`成功使用添加前缀后路径读取Markdown: ${altPath}`);
+                    } catch (err) {
+                        console.error(`读取添加前缀后Markdown文件出错: ${altPath}`, err);
+                    }
+                } else {
+                    console.warn(`添加前缀后Markdown文件仍不存在: ${altPath}`);
                 }
-            } else {
-                console.warn(`Alternate Markdown file not found: ${altPath}`);
             }
         }
     } 
@@ -252,7 +263,7 @@ function processChallengeData(challenge: any, rootDir: string, isBuild: boolean)
 
     // 确保id是字符串或数字，并确保title有一个有效值
     const challengeId = challenge.id || challenge.number || '0';
-    const challengeTitle = challenge.title || '未命名挑战';
+    const challengeTitle = challenge.name || challenge.title || '未命名挑战';
     
     console.log(`处理挑战: ID=${challengeId}, Title=${challengeTitle}`);
 
