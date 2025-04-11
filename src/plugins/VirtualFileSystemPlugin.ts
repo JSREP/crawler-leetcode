@@ -193,22 +193,41 @@ function processChallengeData(challenge: any, rootDir: string, isBuild: boolean)
         const mdPath = challenge['description-markdown-path'];
         console.log(`处理Markdown路径: ${mdPath}`);
         
-        // 仅为了读取内容，构建完整路径
-        const fullMdPath = path.join(process.cwd(), mdPath);
-        console.log(`读取文件的完整路径: ${fullMdPath}`);
+        // 尝试多种可能的路径
+        // 1. 直接从项目根目录读取
+        let fullMdPath = path.join(process.cwd(), mdPath);
+        console.log(`尝试路径1(项目根目录): ${fullMdPath}`);
         
+        // 2. 从docs/challenges目录读取
+        let fullMdPathWithDocs = path.join(process.cwd(), 'docs/challenges', mdPath);
+        console.log(`尝试路径2(docs/challenges/): ${fullMdPathWithDocs}`);
+        
+        // 先检查路径1
         if (fs.existsSync(fullMdPath)) {
             try {
                 // 读取Markdown文件内容
                 const rawMd = fs.readFileSync(fullMdPath, 'utf8');
                 // 处理Markdown中的图片路径，传入文件所在目录作为基础路径
                 markdownContent = processMarkdownImages(rawMd, path.dirname(fullMdPath), isBuild);
-                console.log(`成功读取Markdown文件: ${mdPath}`);
+                console.log(`成功从路径1读取Markdown文件: ${mdPath}`);
             } catch (err) {
-                console.error(`读取Markdown文件出错: ${mdPath}`, err);
+                console.error(`读取路径1 Markdown文件出错: ${mdPath}`, err);
             }
-        } else {
-            console.warn(`Markdown文件不存在: ${fullMdPath}`);
+        } 
+        // 再检查路径2
+        else if (fs.existsSync(fullMdPathWithDocs)) {
+            try {
+                // 读取Markdown文件内容
+                const rawMd = fs.readFileSync(fullMdPathWithDocs, 'utf8');
+                // 处理Markdown中的图片路径，传入文件所在目录作为基础路径
+                markdownContent = processMarkdownImages(rawMd, path.dirname(fullMdPathWithDocs), isBuild);
+                console.log(`成功从路径2读取Markdown文件: ${mdPath}`);
+            } catch (err) {
+                console.error(`读取路径2 Markdown文件出错: ${mdPath}`, err);
+            }
+        }
+        else {
+            console.warn(`所有尝试的路径都不存在Markdown文件，最后尝试路径: ${fullMdPathWithDocs}`);
         }
     } 
     // 否则使用内联的description-markdown
