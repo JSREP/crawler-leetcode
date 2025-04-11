@@ -12,7 +12,7 @@ const App = () => {
         <Router>
             <div className="App">
                 <div className="github-fork-ribbon-wrapper right">
-                    <div className="github-fork-ribbon">
+                    <div className="github-fork-ribbon" data-ribbon="Fork me on GitHub">
                         <a href="https://github.com/JSREP/crawler-leetcode" target="_blank" rel="noopener noreferrer">Fork me on GitHub</a>
                     </div>
                 </div>
