@@ -9,7 +9,7 @@
 - WebAssembly模块加载
 - 基于JSVMP的代码保护
 
-![网站截图](./assets/website-screenshot.png)
+![网站截图](assets/website-screenshot.png)
 
 ## 技术要点
 
@@ -20,7 +20,7 @@
 3. **字符串加密** - 对字符串常量进行加密
 4. **死代码注入** - 添加不会执行的代码段
 
-![混淆技术](./assets/obfuscation-techniques.png)
+![混淆技术](assets/obfuscation-techniques.png)
 
 ## 挑战任务
 
