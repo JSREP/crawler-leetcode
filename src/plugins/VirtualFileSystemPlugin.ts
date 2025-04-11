@@ -28,8 +28,10 @@ interface ImageProcessResult {
 // 处理相对路径的图片链接，转换为Base64或保持相对路径
 function processMarkdownImages(markdown: string, basePath: string, isBuild = false): string {
     // 匹配Markdown和HTML格式的图片链接
-    const mdImgRegex = /!\[(.*?)\]\(((?:\.\/|\.\.|\/)[^)]+)\)/g;
-    const htmlImgRegex = /<img.*?src=["']((?:\.\/|\.\.|\/)[^"']+)["'].*?>/g;
+    const mdImgRegex = /!\[(.*?)\]\(([^)]+)\)/g;
+    const htmlImgRegex = /<img.*?src=["']([^"']+)["'].*?>/g;
+    
+    console.log(`[DEBUG] 处理Markdown内容: ${markdown.substring(0, 100)}...`);
     
     // 处理图片路径，保持相对路径结构
     const processImgPath = (imgPath: string): string => {
@@ -95,15 +97,25 @@ function processMarkdownImages(markdown: string, basePath: string, isBuild = fal
             }
             
             // 开发模式下，读取图片文件并转换为Base64
-            const imgBuffer = fs.readFileSync(fullImgPath);
-            const base64Img = imgBuffer.toString('base64');
-            
-            return {
-                success: true,
-                data: base64Img,
-                mimeType,
-                fullPath: imgPath // 保持原始相对路径
-            };
+            try {
+                // 读取图片文件并直接转换为Base64字符串
+                const imgBuffer = fs.readFileSync(fullImgPath);
+                // 使用Buffer.from().toString('base64')方法转换
+                const base64Img = imgBuffer.toString('base64');
+                
+                console.log(`[DEBUG] 成功读取图片，大小: ${imgBuffer.length} 字节`);
+                console.log(`[DEBUG] Base64长度: ${base64Img.length}`);
+                
+                return {
+                    success: true,
+                    data: base64Img,
+                    mimeType,
+                    fullPath: imgPath // 保持原始相对路径
+                };
+            } catch (imgError) {
+                console.error(`读取图片文件出错: ${fullImgPath}`, imgError);
+                return result;
+            }
         } catch (error) {
             console.error(`读取图片文件出错:`, error);
             return result;
@@ -112,6 +124,7 @@ function processMarkdownImages(markdown: string, basePath: string, isBuild = fal
     
     // 处理Markdown格式的图片
     let processedMd = markdown.replace(mdImgRegex, (match, alt, imgPath) => {
+        console.log(`[DEBUG] 处理Markdown图片: ${match}`);
         const result = convertImgToBase64(imgPath);
         if (result.success) {
             if (isBuild) {
@@ -119,14 +132,20 @@ function processMarkdownImages(markdown: string, basePath: string, isBuild = fal
                 const buildPath = processImgPath(result.fullPath);
                 return `![${alt}](${buildPath})`;
             }
-            // 开发模式下使用Base64
-            return `![${alt}](data:${result.mimeType};base64,${result.data})`;
+            // 开发模式下使用Base64，确保URL格式正确
+            const base64Url = `data:${result.mimeType};base64,${result.data}`;
+            console.log(`[DEBUG] 生成Base64 URL: ${base64Url.substring(0, 50)}...`);
+            
+            // 确保Base64不包含URL编码字符
+            return `![${alt}](${base64Url.replace(/%/g, '')})`;
         }
+        console.log(`[DEBUG] 图片处理失败，保留原始链接: ${match}`);
         return match; // 出错时保留原始链接
     });
     
     // 处理HTML格式的图片
     processedMd = processedMd.replace(htmlImgRegex, (match, imgPath) => {
+        console.log(`[DEBUG] 处理HTML图片: ${match}`);
         const result = convertImgToBase64(imgPath);
         if (result.success) {
             // 从原始标签中提取属性
@@ -138,9 +157,14 @@ function processMarkdownImages(markdown: string, basePath: string, isBuild = fal
                 const buildPath = processImgPath(result.fullPath);
                 return `<img src="${buildPath}" alt="${alt}" />`;
             }
-            // 开发模式下使用Base64
-            return `<img src="data:${result.mimeType};base64,${result.data}" alt="${alt}" />`;
+            // 开发模式下使用Base64，确保URL格式正确
+            const base64Url = `data:${result.mimeType};base64,${result.data}`;
+            console.log(`[DEBUG] 生成Base64 URL: ${base64Url.substring(0, 50)}...`);
+            
+            // 确保Base64不包含URL编码字符
+            return `<img src="${base64Url.replace(/%/g, '')}" alt="${alt}" />`;
         }
+        console.log(`[DEBUG] 图片处理失败，保留原始链接: ${match}`);
         return match; // 出错时保留原始链接
     });
     
@@ -281,13 +305,13 @@ export default function virtualFileSystemPlugin(
             if (fs.existsSync(directory)) {
                 // 监听YAML文件
                 const yamlFiles = getAllYamlFiles(directory);
-                yamlFiles.forEach(file => {
+                yamlFiles.forEach((file: string) => {
                     this.addWatchFile(file);
                 });
                 
                 // 监听Markdown文件
                 const mdFiles = getAllMarkdownFiles(directory);
-                mdFiles.forEach(file => {
+                mdFiles.forEach((file: string) => {
                     this.addWatchFile(file);
                 });
             }
