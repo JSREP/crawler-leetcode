@@ -369,4 +369,4 @@ function main() {
 }
 
 // 执行主函数
-main(); 
+main();
