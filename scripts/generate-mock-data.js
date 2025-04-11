@@ -311,7 +311,7 @@ function generateYamlFile(id) {
   
   if (useMarkdownPath) {
     markdownContent = generateRandomMarkdown(id);
-    markdownPath = `docs/challenges/contents/mock_${id}/description.md`;
+    markdownPath = `contents/mock_${id}/description.md`;
     
     // 创建markdown文件
     const fullMarkdownDir = path.join(mockMarkdownDir, `mock_${id}`);
