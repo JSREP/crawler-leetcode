@@ -1,6 +1,7 @@
 import { Typography, Tag } from 'antd';
 import { Challenge } from '../../types/challenge';
-import { getDifficultyBadgeClass, getDifficultyText } from './utils';
+import StarRating from '../StarRating';
+import { useNavigate } from 'react-router-dom';
 
 const { Text } = Typography;
 
@@ -12,18 +13,34 @@ interface ChallengeMetadataProps {
  * 挑战元数据组件，展示难度、平台、创建时间等信息
  */
 const ChallengeMetadata: React.FC<ChallengeMetadataProps> = ({ challenge }) => {
+    const navigate = useNavigate();
+    
+    // 点击难度星级时跳转到列表页并按难度筛选
+    const handleDifficultyClick = (difficulty: number) => {
+        navigate(`/challenges?difficulty=${difficulty}`);
+    };
+    
     return (
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px' }}>
             <div>
                 <Text type="secondary">难度级别:</Text>
-                <span className={`badge ${getDifficultyBadgeClass(challenge.difficulty)}`} style={{ marginLeft: '8px' }}>
-                    {getDifficultyText(challenge.difficulty)}
+                <span style={{ marginLeft: '8px', display: 'inline-flex', alignItems: 'center' }}>
+                    <StarRating 
+                        difficulty={challenge.difficulty} 
+                        onClick={handleDifficultyClick}
+                    />
                 </span>
             </div>
 
             <div>
                 <Text type="secondary">适用平台:</Text>
-                <Tag color="blue" style={{ marginLeft: '8px' }}>{challenge.platform || '未指定'}</Tag>
+                <Tag 
+                    color={challenge.platform === 'LeetCode' ? 'orange' : 'purple'} 
+                    style={{ marginLeft: '8px', cursor: 'pointer' }}
+                    onClick={() => navigate(`/challenges?platform=${challenge.platform || 'all'}`)}
+                >
+                    {challenge.platform || '未指定'}
+                </Tag>
             </div>
 
             <div>
