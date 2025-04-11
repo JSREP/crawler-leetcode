@@ -33,7 +33,7 @@ const ChallengeActions: React.FC<ChallengeActionsProps> = ({ challenge }) => {
                         textDecoration: 'none'
                     }}
                 >
-                    在LeetCode上查看
+                    去试试 ➔
                 </a>
             </div>
             <Link to="/challenges" style={{ color: '#1890ff' }}>
