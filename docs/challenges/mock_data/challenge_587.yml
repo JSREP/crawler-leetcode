@@ -4,21 +4,60 @@ challenges:
   - id: 587
     id-alias: mock-challenge-587
     tags:
-      - CSRF
-      - Encryption
-      - SQL-Injection
-    platform: Mobile
+      - Output-Encoding
+      - API-Security
+      - XSS
+      - Authentication
+    platform: Backend
     name: 'Mock挑战题目 #587'
-    difficulty-level: 3
-    description: >-
-      这是一个示例挑战题目的描述，难度为3星级。Ducimus aperiam magnam acidus arma caput clementia
-      abbas. Bellicus succedo velum aperte aveho tametsi conturbo molestias.
-    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1hyWEFVOHVIS3g=
+    difficulty-level: 4
+    description-markdown: |
+
+      # 挑战题目详细说明
+
+      这是通过脚本生成的模拟挑战描述。解决此挑战需要了解相关的安全概念和技术。
+
+      ## 问题背景
+
+      在一个典型的应用程序中，可能存在各种安全漏洞。下面是示例代码片段：
+
+      ```javascript
+      function processUserInput(input) {
+        // 没有进行适当的输入验证和过滤
+        document.getElementById('output').innerHTML = input;
+        
+        // 潜在的SQL注入
+        let query = "SELECT * FROM users WHERE username = '" + input + "'";
+        
+        return executeQuery(query);
+      }
+      ```
+
+      ## 漏洞分析
+
+      上述代码存在以下安全问题：
+
+      1. **XSS漏洞** - 直接将用户输入插入到DOM中
+      2. **SQL注入** - 未使用参数化查询
+      3. **缺乏输入验证** - 没有检查和过滤用户输入
+
+      ## 解决方案
+
+      请提交一个修复上述问题的代码实现。
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LMLGW6arJ
     is-expired: false
     solutions:
-      - title: Appello in strues.
-        url: https://zealous-cannon.name
+      - title: Alioqui vox utor.
+        url: https://quarterly-soliloquy.com/
+        source: Blog
+        author: Justin Hoppe
+      - title: Tardus uterque audeo.
+        url: https://magnificent-lawmaker.info/
         source: GitHub
-        author: Dr. Antonia McClure-Haley PhD
-    create-time: '2023-07-06 04:53:39'
-    update-time: '2025-01-01 11:53:59'
+        author: ''
+      - title: Corrigo demum cur.
+        url: https://weird-dish.info/
+        source: GitHub
+        author: ''
+    create-time: '2024-10-06 20:12:36'
+    update-time: '2025-04-11 22:11:48'

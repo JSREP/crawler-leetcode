@@ -4,25 +4,52 @@ challenges:
   - id: 974
     id-alias: mock-challenge-974
     tags:
-      - Authentication
-      - API-Security
-      - Path-Traversal
-    platform: IoT
+      - Command-Injection
+      - Cookie-Security
+      - Output-Encoding
+      - Rate-Limiting
+    platform: Desktop
     name: 'Mock挑战题目 #974'
-    difficulty-level: 5
-    description: >-
-      这是一个示例挑战题目的描述，难度为5星级。Amitto atavus carbo abutor desolo viduo. Ocer cui
-      somniculosus aliqua avaritia tunc cohaero coerceo nisi cernuus.
-    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1dEUXY1UGtaekc=
+    difficulty-level: 3
+    description-markdown: |
+
+      # 挑战题目详细说明
+
+      这是通过脚本生成的模拟挑战描述。解决此挑战需要了解相关的安全概念和技术。
+
+      ## 问题背景
+
+      在一个典型的应用程序中，可能存在各种安全漏洞。下面是示例代码片段：
+
+      ```javascript
+      function processUserInput(input) {
+        // 没有进行适当的输入验证和过滤
+        document.getElementById('output').innerHTML = input;
+        
+        // 潜在的SQL注入
+        let query = "SELECT * FROM users WHERE username = '" + input + "'";
+        
+        return executeQuery(query);
+      }
+      ```
+
+      ## 漏洞分析
+
+      上述代码存在以下安全问题：
+
+      1. **XSS漏洞** - 直接将用户输入插入到DOM中
+      2. **SQL注入** - 未使用参数化查询
+      3. **缺乏输入验证** - 没有检查和过滤用户输入
+
+      ## 解决方案
+
+      请提交一个修复上述问题的代码实现。
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LRBXrgRR0
     is-expired: false
     solutions:
-      - title: Ager sto aeneus.
-        url: https://witty-detective.net/
-        source: Medium
-        author: Lyle Stamm
-      - title: Tutis stipes tricesimus.
-        url: https://fine-suitcase.com
-        source: Medium
-        author: ''
-    create-time: '2023-05-27 20:51:24'
-    update-time: '2024-07-27 10:58:28'
+      - title: Vigor deputo aegrotatio.
+        url: https://stark-mechanic.com
+        source: StackOverflow
+        author: Mr. Rufus Hagenes
+    create-time: '2024-06-30 18:41:53'
+    update-time: '2025-04-11 00:59:46'

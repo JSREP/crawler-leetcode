@@ -4,29 +4,58 @@ challenges:
   - id: 833
     id-alias: mock-challenge-833
     tags:
-      - XSS
-      - Path-Traversal
-      - Access-Control
-      - CORS
-      - JWT
-    platform: IoT
+      - Authorization
+      - Output-Encoding
+    platform: Docker
     name: 'Mock挑战题目 #833'
-    difficulty-level: 1
-    description: 这是一个示例挑战题目的描述，难度为1星级。Verto ultra apto decens. Cito vindico ustilo.
-    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2Z6NDR5SDhoWTI=
+    difficulty-level: 2
+    description-markdown: |
+
+      # 挑战题目详细说明
+
+      这是通过脚本生成的模拟挑战描述。解决此挑战需要了解相关的安全概念和技术。
+
+      ## 问题背景
+
+      在一个典型的应用程序中，可能存在各种安全漏洞。下面是示例代码片段：
+
+      ```javascript
+      function processUserInput(input) {
+        // 没有进行适当的输入验证和过滤
+        document.getElementById('output').innerHTML = input;
+        
+        // 潜在的SQL注入
+        let query = "SELECT * FROM users WHERE username = '" + input + "'";
+        
+        return executeQuery(query);
+      }
+      ```
+
+      ## 漏洞分析
+
+      上述代码存在以下安全问题：
+
+      1. **XSS漏洞** - 直接将用户输入插入到DOM中
+      2. **SQL注入** - 未使用参数化查询
+      3. **缺乏输入验证** - 没有检查和过滤用户输入
+
+      ## 解决方案
+
+      请提交一个修复上述问题的代码实现。
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LqlLnbe2U
     is-expired: false
     solutions:
-      - title: Defetiscor aedificium quibusdam.
-        url: https://lasting-husband.org/
-        source: YouTube
-        author: Antonio Ruecker
-      - title: Absens solus adaugeo.
-        url: https://proper-lieu.org
+      - title: Accommodo ago apostolus.
+        url: https://corrupt-godfather.info
         source: GitHub
-        author: ''
-      - title: Curis delectatio ago.
-        url: https://jam-packed-popularity.info/
+        author: Howard Marquardt
+      - title: Bis cotidie viriliter.
+        url: https://glittering-travel.info/
+        source: YouTube
+        author: Emanuel Torphy
+      - title: Triduana acsi vulnero.
+        url: https://exotic-hawk.biz/
         source: Blog
-        author: Corey Johnson
-    create-time: '2025-02-03 23:59:25'
-    update-time: '2025-02-07 20:05:03'
+        author: ''
+    create-time: '2025-01-12 08:37:39'
+    update-time: '2025-04-11 13:10:13'

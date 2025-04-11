@@ -4,29 +4,58 @@ challenges:
   - id: 843
     id-alias: mock-challenge-843
     tags:
-      - JWT
-      - Hashing
-      - Path-Traversal
-    platform: IoT
+      - Command-Injection
+      - Insecure-Deserialization
+    platform: Mobile
     name: 'Mock挑战题目 #843'
-    difficulty-level: 5
-    description: >-
-      这是一个示例挑战题目的描述，难度为5星级。Patrocinor annus iste patior comptus colligo iure
-      caste. Suppono traho denuncio tibi articulus versus defluo.
-    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L29rVWdSbXhjeTI=
-    is-expired: false
+    difficulty-level: 4
+    description-markdown: |
+
+      # 挑战题目详细说明
+
+      这是通过脚本生成的模拟挑战描述。解决此挑战需要了解相关的安全概念和技术。
+
+      ## 问题背景
+
+      在一个典型的应用程序中，可能存在各种安全漏洞。下面是示例代码片段：
+
+      ```javascript
+      function processUserInput(input) {
+        // 没有进行适当的输入验证和过滤
+        document.getElementById('output').innerHTML = input;
+        
+        // 潜在的SQL注入
+        let query = "SELECT * FROM users WHERE username = '" + input + "'";
+        
+        return executeQuery(query);
+      }
+      ```
+
+      ## 漏洞分析
+
+      上述代码存在以下安全问题：
+
+      1. **XSS漏洞** - 直接将用户输入插入到DOM中
+      2. **SQL注入** - 未使用参数化查询
+      3. **缺乏输入验证** - 没有检查和过滤用户输入
+
+      ## 解决方案
+
+      请提交一个修复上述问题的代码实现。
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LefNfzJHb
+    is-expired: true
     solutions:
-      - title: Antea votum curiositas.
-        url: https://crooked-smog.com
-        source: Medium
-        author: Carlton Beahan
-      - title: Conculco velit magni.
-        url: https://appropriate-beret.info/
+      - title: Arbustum tripudio arma.
+        url: https://slushy-sightseeing.info/
         source: StackOverflow
-        author: Leigh Bergnaum
-      - title: Paulatim cubicularis possimus.
-        url: https://whole-vibraphone.name
-        source: Blog
-        author: Austin Barton
-    create-time: '2023-08-07 18:30:34'
-    update-time: '2023-12-31 14:24:02'
+        author: ''
+      - title: Votum dolor sumo.
+        url: https://defenseless-orchid.name/
+        source: StackOverflow
+        author: Tyler Hilpert
+      - title: Ventus enim arma.
+        url: https://hasty-marimba.biz/
+        source: StackOverflow
+        author: Lindsay Wolff
+    create-time: '2024-08-01 22:10:56'
+    update-time: '2025-04-10 10:20:31'

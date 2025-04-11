@@ -4,30 +4,57 @@ challenges:
   - id: 992
     id-alias: mock-challenge-992
     tags:
-      - Rate-Limiting
-      - Session-Management
-      - Access-Control
-      - Mobile-Security
-    platform: API
+      - Input-Validation
+      - DOM-Based
+      - Clickjacking
+      - XSS
+      - Authorization
+    platform: Docker
     name: 'Mock挑战题目 #992'
-    difficulty-level: 1
-    description: >-
-      这是一个示例挑战题目的描述，难度为1星级。Audacia sufficio deprecator benevolentia. Vallum nam
-      versus.
-    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L01kV2s5c2JrMVY=
+    difficulty-level: 3
+    description-markdown: |
+
+      # 挑战题目详细说明
+
+      这是通过脚本生成的模拟挑战描述。解决此挑战需要了解相关的安全概念和技术。
+
+      ## 问题背景
+
+      在一个典型的应用程序中，可能存在各种安全漏洞。下面是示例代码片段：
+
+      ```javascript
+      function processUserInput(input) {
+        // 没有进行适当的输入验证和过滤
+        document.getElementById('output').innerHTML = input;
+        
+        // 潜在的SQL注入
+        let query = "SELECT * FROM users WHERE username = '" + input + "'";
+        
+        return executeQuery(query);
+      }
+      ```
+
+      ## 漏洞分析
+
+      上述代码存在以下安全问题：
+
+      1. **XSS漏洞** - 直接将用户输入插入到DOM中
+      2. **SQL注入** - 未使用参数化查询
+      3. **缺乏输入验证** - 没有检查和过滤用户输入
+
+      ## 解决方案
+
+      请提交一个修复上述问题的代码实现。
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LOyR2dADF
     is-expired: false
     solutions:
-      - title: Allatus arbitro tantillus.
-        url: https://lavish-platter.name/
-        source: Medium
-        author: Lela Steuber
-      - title: Vitae vulgivagus angelus.
-        url: https://tasty-pasta.name
+      - title: Vociferor tempora tactus.
+        url: https://separate-following.net/
+        source: Blog
+        author: ''
+      - title: Auctus vox maiores.
+        url: https://blushing-hydrolyze.net
         source: YouTube
-        author: Camille Langosh
-      - title: Aegrotatio nisi clam.
-        url: https://evil-spear.biz/
-        source: YouTube
-        author: Mr. Clayton Wilkinson
-    create-time: '2023-07-10 10:26:00'
-    update-time: '2025-02-12 08:49:48'
+        author: ''
+    create-time: '2024-11-10 09:54:51'
+    update-time: '2025-04-11 00:16:52'

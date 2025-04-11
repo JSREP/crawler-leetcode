@@ -4,24 +4,60 @@ challenges:
   - id: 990
     id-alias: mock-challenge-990
     tags:
-      - CSRF
-      - Authorization
-    platform: IoT
+      - File-Upload
+      - SQL-Injection
+      - HTTP-Headers
+      - Weak-Cryptography
+    platform: AWS
     name: 'Mock挑战题目 #990'
-    difficulty-level: 2
-    description: >-
-      这是一个示例挑战题目的描述，难度为2星级。Virtus tui terror ab. Validus uberrime utrimque
-      laudantium.
-    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzZiOFlHdkdnUlk=
-    is-expired: false
+    difficulty-level: 1
+    description-markdown: |
+
+      # 挑战题目详细说明
+
+      这是通过脚本生成的模拟挑战描述。解决此挑战需要了解相关的安全概念和技术。
+
+      ## 问题背景
+
+      在一个典型的应用程序中，可能存在各种安全漏洞。下面是示例代码片段：
+
+      ```javascript
+      function processUserInput(input) {
+        // 没有进行适当的输入验证和过滤
+        document.getElementById('output').innerHTML = input;
+        
+        // 潜在的SQL注入
+        let query = "SELECT * FROM users WHERE username = '" + input + "'";
+        
+        return executeQuery(query);
+      }
+      ```
+
+      ## 漏洞分析
+
+      上述代码存在以下安全问题：
+
+      1. **XSS漏洞** - 直接将用户输入插入到DOM中
+      2. **SQL注入** - 未使用参数化查询
+      3. **缺乏输入验证** - 没有检查和过滤用户输入
+
+      ## 解决方案
+
+      请提交一个修复上述问题的代码实现。
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LsAUVyqkr
+    is-expired: true
     solutions:
-      - title: Non amplitudo benevolentia.
-        url: https://spotless-cappelletti.org
+      - title: Appello dolore contego.
+        url: https://scared-heartache.name/
+        source: Medium
+        author: Simon Von
+      - title: Dolorem cupressus viscus.
+        url: https://buttery-attraction.name
         source: Blog
-        author: Gertrude Hodkiewicz
-      - title: Aliquam colo calco.
-        url: https://filthy-shore.org
-        source: Blog
-        author: Judith Walker
-    create-time: '2023-09-30 21:00:48'
-    update-time: '2025-02-23 16:27:42'
+        author: Andy Schuster
+      - title: Approbo nisi viscus.
+        url: https://frequent-kiss.org
+        source: GitHub
+        author: Alfonso Effertz
+    create-time: '2024-06-17 16:06:17'
+    update-time: '2025-04-10 16:26:17'

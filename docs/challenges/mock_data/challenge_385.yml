@@ -4,24 +4,55 @@ challenges:
   - id: 385
     id-alias: mock-challenge-385
     tags:
-      - Race-Condition
-      - GraphQL
-    platform: IoT
+      - Rate-Limiting
+      - SSRF
+      - Output-Encoding
+    platform: Web
     name: 'Mock挑战题目 #385'
-    difficulty-level: 4
-    description: >-
-      这是一个示例挑战题目的描述，难度为4星级。Usitas utpote fugiat decipio caute astrum apud. Spes
-      caput cunabula benevolentia.
-    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzNmRWQ4WlFNQWc=
+    difficulty-level: 2
+    description-markdown: |
+
+      # 挑战题目详细说明
+
+      这是通过脚本生成的模拟挑战描述。解决此挑战需要了解相关的安全概念和技术。
+
+      ## 问题背景
+
+      在一个典型的应用程序中，可能存在各种安全漏洞。下面是示例代码片段：
+
+      ```javascript
+      function processUserInput(input) {
+        // 没有进行适当的输入验证和过滤
+        document.getElementById('output').innerHTML = input;
+        
+        // 潜在的SQL注入
+        let query = "SELECT * FROM users WHERE username = '" + input + "'";
+        
+        return executeQuery(query);
+      }
+      ```
+
+      ## 漏洞分析
+
+      上述代码存在以下安全问题：
+
+      1. **XSS漏洞** - 直接将用户输入插入到DOM中
+      2. **SQL注入** - 未使用参数化查询
+      3. **缺乏输入验证** - 没有检查和过滤用户输入
+
+      ## 解决方案
+
+      请提交一个修复上述问题的代码实现。
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6Ld7mpsHzA
     is-expired: false
     solutions:
-      - title: Demum aperte sint.
-        url: https://delicious-nerve.name
-        source: GitHub
-        author: Ricky Roberts
-      - title: Amiculum suscipit iusto.
-        url: https://overcooked-eyeliner.name
-        source: GitHub
+      - title: Cribro laboriosam urbanus.
+        url: https://favorite-armoire.com
+        source: Blog
         author: ''
-    create-time: '2024-04-28 21:59:45'
-    update-time: '2024-07-09 07:51:15'
+      - title: Argumentum consectetur vigor.
+        url: https://shady-hexagon.org
+        source: Blog
+        author: Blanca Hoppe
+    create-time: '2024-09-20 09:59:26'
+    update-time: '2025-04-11 15:02:18'

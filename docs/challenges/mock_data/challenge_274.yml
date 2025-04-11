@@ -4,31 +4,59 @@ challenges:
   - id: 274
     id-alias: mock-challenge-274
     tags:
-      - Session-Management
       - Authentication
-      - Deserialization
-      - SQL-Injection
-      - Command-Injection
-    platform: Desktop
+      - Security-Headers
+      - Session-Management
+    platform: Linux
     name: 'Mock挑战题目 #274'
-    difficulty-level: 3
-    description: >-
-      这是一个示例挑战题目的描述，难度为3星级。Ultra tertius deludo brevis curo crur. Civis abutor
-      allatus volup una acer canto calcar vilicus corrumpo.
-    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2lqS2JCTEtkRGM=
+    difficulty-level: 1
+    description-markdown: |
+
+      # 挑战题目详细说明
+
+      这是通过脚本生成的模拟挑战描述。解决此挑战需要了解相关的安全概念和技术。
+
+      ## 问题背景
+
+      在一个典型的应用程序中，可能存在各种安全漏洞。下面是示例代码片段：
+
+      ```javascript
+      function processUserInput(input) {
+        // 没有进行适当的输入验证和过滤
+        document.getElementById('output').innerHTML = input;
+        
+        // 潜在的SQL注入
+        let query = "SELECT * FROM users WHERE username = '" + input + "'";
+        
+        return executeQuery(query);
+      }
+      ```
+
+      ## 漏洞分析
+
+      上述代码存在以下安全问题：
+
+      1. **XSS漏洞** - 直接将用户输入插入到DOM中
+      2. **SQL注入** - 未使用参数化查询
+      3. **缺乏输入验证** - 没有检查和过滤用户输入
+
+      ## 解决方案
+
+      请提交一个修复上述问题的代码实现。
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L6G1MkZtB
     is-expired: false
     solutions:
-      - title: Amoveo toties comes.
-        url: https://worldly-milestone.net/
+      - title: Deprecator angustus audentia.
+        url: https://oddball-almighty.biz
         source: GitHub
-        author: Suzanne Deckow DDS
-      - title: Admiratio triduana at.
-        url: https://svelte-roundabout.info/
-        source: StackOverflow
-        author: Austin Lakin
-      - title: Triduana apud qui.
-        url: https://snappy-soliloquy.com
+        author: Lynne O'Reilly
+      - title: Vinculum surgo ocer.
+        url: https://winged-nightlife.info
         source: Medium
-        author: Theresa Baumbach
-    create-time: '2025-02-12 11:58:00'
-    update-time: '2025-03-28 12:38:56'
+        author: Wesley Becker
+      - title: Viriliter thorax demo.
+        url: https://filthy-developing.org/
+        source: YouTube
+        author: Alexis Grimes DDS
+    create-time: '2024-11-18 02:10:03'
+    update-time: '2025-04-11 08:13:29'

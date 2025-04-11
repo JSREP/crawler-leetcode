@@ -4,22 +4,59 @@ challenges:
   - id: 141
     id-alias: mock-challenge-141
     tags:
-      - XSS
-      - Input-Validation
-      - Path-Traversal
-      - API-Security
-    platform: API
+      - DOM-Based
+      - HTTPS
+      - Cookie-Security
+    platform: Serverless
     name: 'Mock挑战题目 #141'
-    difficulty-level: 2
-    description: >-
-      这是一个示例挑战题目的描述，难度为2星级。Deserunt vilis nam. Aestivus suggero soleo sum amo
-      denique abscido video repudiandae curvo.
-    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2xVRVVjWHZXSjM=
+    difficulty-level: 4
+    description-markdown: |
+
+      # 挑战题目详细说明
+
+      这是通过脚本生成的模拟挑战描述。解决此挑战需要了解相关的安全概念和技术。
+
+      ## 问题背景
+
+      在一个典型的应用程序中，可能存在各种安全漏洞。下面是示例代码片段：
+
+      ```javascript
+      function processUserInput(input) {
+        // 没有进行适当的输入验证和过滤
+        document.getElementById('output').innerHTML = input;
+        
+        // 潜在的SQL注入
+        let query = "SELECT * FROM users WHERE username = '" + input + "'";
+        
+        return executeQuery(query);
+      }
+      ```
+
+      ## 漏洞分析
+
+      上述代码存在以下安全问题：
+
+      1. **XSS漏洞** - 直接将用户输入插入到DOM中
+      2. **SQL注入** - 未使用参数化查询
+      3. **缺乏输入验证** - 没有检查和过滤用户输入
+
+      ## 解决方案
+
+      请提交一个修复上述问题的代码实现。
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L7ZkeXwBh
     is-expired: false
     solutions:
-      - title: In atque suadeo.
-        url: https://well-documented-valentine.org/
-        source: Blog
-        author: Mrs. Vanessa Farrell
-    create-time: '2024-12-17 00:04:19'
-    update-time: '2024-12-25 11:24:29'
+      - title: Deprecator utroque ventito.
+        url: https://ill-makeover.net
+        source: Documentation
+        author: Bertha Rodriguez
+      - title: Demonstro thorax id.
+        url: https://friendly-best-seller.com
+        source: GitHub
+        author: Ms. Rosie Pouros
+      - title: Careo tergeo sordeo.
+        url: https://well-groomed-wriggler.name
+        source: Medium
+        author: Sonya Terry
+    create-time: '2024-09-06 04:57:08'
+    update-time: '2025-04-11 04:59:57'

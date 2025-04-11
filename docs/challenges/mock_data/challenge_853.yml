@@ -4,26 +4,61 @@ challenges:
   - id: 853
     id-alias: mock-challenge-853
     tags:
-      - JWT
-      - Authentication
-      - Output-Encoding
-      - Mobile-Security
-    platform: IoT
+      - SQL-Injection
+      - SSRF
+      - Weak-Cryptography
+      - XSS
+      - HTTPS
+    platform: Linux
     name: 'Mock挑战题目 #853'
     difficulty-level: 2
-    description: >-
-      这是一个示例挑战题目的描述，难度为2星级。Ter alveus umerus audax caelestis auxilium quasi iure
-      carcer. Recusandae uter bonus deduco talis confero sint.
-    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2RkNkY2S0lKWjE=
+    description-markdown: |
+
+      # 挑战题目详细说明
+
+      这是通过脚本生成的模拟挑战描述。解决此挑战需要了解相关的安全概念和技术。
+
+      ## 问题背景
+
+      在一个典型的应用程序中，可能存在各种安全漏洞。下面是示例代码片段：
+
+      ```javascript
+      function processUserInput(input) {
+        // 没有进行适当的输入验证和过滤
+        document.getElementById('output').innerHTML = input;
+        
+        // 潜在的SQL注入
+        let query = "SELECT * FROM users WHERE username = '" + input + "'";
+        
+        return executeQuery(query);
+      }
+      ```
+
+      ## 漏洞分析
+
+      上述代码存在以下安全问题：
+
+      1. **XSS漏洞** - 直接将用户输入插入到DOM中
+      2. **SQL注入** - 未使用参数化查询
+      3. **缺乏输入验证** - 没有检查和过滤用户输入
+
+      ## 解决方案
+
+      请提交一个修复上述问题的代码实现。
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LWwHGGIqX
     is-expired: true
     solutions:
-      - title: Speciosus desolo adfero.
-        url: https://superficial-beret.biz/
-        source: YouTube
-        author: Kyle Baumbach
-      - title: Civitas solvo sui.
-        url: https://rubbery-swordfish.info/
+      - title: Vicinus argentum denique.
+        url: https://shameless-trolley.net
         source: GitHub
-        author: Dr. Rodney Funk
-    create-time: '2024-12-17 06:52:45'
-    update-time: '2024-12-20 22:31:59'
+        author: Wanda Haag
+      - title: Tempus sunt ab.
+        url: https://big-hammock.name/
+        source: GitHub
+        author: Ms. Nichole McClure V
+      - title: Abstergo voluptate accusamus.
+        url: https://tame-vanadyl.net
+        source: GitHub
+        author: ''
+    create-time: '2024-06-12 20:47:28'
+    update-time: '2025-04-11 04:53:15'

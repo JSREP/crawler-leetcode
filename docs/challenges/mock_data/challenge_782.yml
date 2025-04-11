@@ -4,27 +4,59 @@ challenges:
   - id: 782
     id-alias: mock-challenge-782
     tags:
-      - XSS
-      - Race-Condition
-      - HTTP-Headers
-      - Deserialization
-      - SQL-Injection
-    platform: API
+      - Security-Headers
+      - Insecure-Deserialization
+      - Input-Validation
+    platform: IoT
     name: 'Mock挑战题目 #782'
     difficulty-level: 4
-    description: >-
-      这是一个示例挑战题目的描述，难度为4星级。Cinis veritas audio adulatio sublime vomito. Usitas
-      solitudo civis tego.
-    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzcwQmJXSVFDS0U=
+    description-markdown: |
+
+      # 挑战题目详细说明
+
+      这是通过脚本生成的模拟挑战描述。解决此挑战需要了解相关的安全概念和技术。
+
+      ## 问题背景
+
+      在一个典型的应用程序中，可能存在各种安全漏洞。下面是示例代码片段：
+
+      ```javascript
+      function processUserInput(input) {
+        // 没有进行适当的输入验证和过滤
+        document.getElementById('output').innerHTML = input;
+        
+        // 潜在的SQL注入
+        let query = "SELECT * FROM users WHERE username = '" + input + "'";
+        
+        return executeQuery(query);
+      }
+      ```
+
+      ## 漏洞分析
+
+      上述代码存在以下安全问题：
+
+      1. **XSS漏洞** - 直接将用户输入插入到DOM中
+      2. **SQL注入** - 未使用参数化查询
+      3. **缺乏输入验证** - 没有检查和过滤用户输入
+
+      ## 解决方案
+
+      请提交一个修复上述问题的代码实现。
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LRRpdohU2
     is-expired: false
     solutions:
-      - title: Rem assentator convoco.
-        url: https://quarrelsome-zebra.org/
-        source: Blog
-        author: Erica Hickle
-      - title: Conitor torrens sol.
-        url: https://dutiful-newsstand.net/
+      - title: Eligendi defendo cometes.
+        url: https://imaginative-reconsideration.biz
         source: Medium
-        author: Meghan Mann
-    create-time: '2023-11-29 16:30:42'
-    update-time: '2024-06-20 11:43:45'
+        author: Dr. Charlie Cruickshank
+      - title: Advoco amicitia stips.
+        url: https://nocturnal-legislature.biz/
+        source: Medium
+        author: ''
+      - title: Utique vigor ceno.
+        url: https://decent-reservation.info
+        source: GitHub
+        author: Virginia Boehm
+    create-time: '2024-07-24 02:12:34'
+    update-time: '2025-04-11 10:47:32'

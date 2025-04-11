@@ -4,28 +4,57 @@ challenges:
   - id: 958
     id-alias: mock-challenge-958
     tags:
+      - Security-Headers
+      - CORS
       - Path-Traversal
-      - CSRF
-    platform: Web
+      - SSRF
+      - Cookie-Security
+    platform: GCP
     name: 'Mock挑战题目 #958'
-    difficulty-level: 3
-    description: >-
-      这是一个示例挑战题目的描述，难度为3星级。Surculus apud quas utilis explicabo. Abduco at turba
-      cernuus paulatim beatae numquam maiores taedium.
-    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2ZUNzFod0hxYWU=
+    difficulty-level: 2
+    description-markdown: |
+
+      # 挑战题目详细说明
+
+      这是通过脚本生成的模拟挑战描述。解决此挑战需要了解相关的安全概念和技术。
+
+      ## 问题背景
+
+      在一个典型的应用程序中，可能存在各种安全漏洞。下面是示例代码片段：
+
+      ```javascript
+      function processUserInput(input) {
+        // 没有进行适当的输入验证和过滤
+        document.getElementById('output').innerHTML = input;
+        
+        // 潜在的SQL注入
+        let query = "SELECT * FROM users WHERE username = '" + input + "'";
+        
+        return executeQuery(query);
+      }
+      ```
+
+      ## 漏洞分析
+
+      上述代码存在以下安全问题：
+
+      1. **XSS漏洞** - 直接将用户输入插入到DOM中
+      2. **SQL注入** - 未使用参数化查询
+      3. **缺乏输入验证** - 没有检查和过滤用户输入
+
+      ## 解决方案
+
+      请提交一个修复上述问题的代码实现。
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0d2kVvXO
     is-expired: false
     solutions:
-      - title: Eum ciminatio defleo.
-        url: https://teeming-cardboard.biz/
-        source: Medium
-        author: Sophia Weber
-      - title: Depereo denego creo.
-        url: https://whopping-handle.biz/
-        source: GitHub
-        author: Israel Veum
-      - title: Cuius dolorum acsi.
-        url: https://secondary-wriggler.name/
+      - title: Correptius curis carpo.
+        url: https://curly-characterization.com/
+        source: Blog
+        author: Caleb Muller
+      - title: Caute constans adfectus.
+        url: https://austere-insolence.info/
         source: StackOverflow
-        author: Marjorie Bechtelar
-    create-time: '2023-08-25 06:20:01'
-    update-time: '2024-06-12 01:50:55'
+        author: ''
+    create-time: '2024-09-07 03:50:35'
+    update-time: '2025-04-11 00:07:54'

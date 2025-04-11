@@ -4,21 +4,58 @@ challenges:
   - id: 230
     id-alias: mock-challenge-230
     tags:
-      - Output-Encoding
-      - GraphQL
-      - SSRF
+      - Authentication
+      - Authorization
     platform: API
     name: 'Mock挑战题目 #230'
-    difficulty-level: 4
-    description: >-
-      这是一个示例挑战题目的描述，难度为4星级。Tero commodo astrum curatio vehemens denuo. Cervus
-      facilis defessus bellum calculus.
-    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0lpUFU0djYya1k=
+    difficulty-level: 1
+    description-markdown: |
+
+      # 挑战题目详细说明
+
+      这是通过脚本生成的模拟挑战描述。解决此挑战需要了解相关的安全概念和技术。
+
+      ## 问题背景
+
+      在一个典型的应用程序中，可能存在各种安全漏洞。下面是示例代码片段：
+
+      ```javascript
+      function processUserInput(input) {
+        // 没有进行适当的输入验证和过滤
+        document.getElementById('output').innerHTML = input;
+        
+        // 潜在的SQL注入
+        let query = "SELECT * FROM users WHERE username = '" + input + "'";
+        
+        return executeQuery(query);
+      }
+      ```
+
+      ## 漏洞分析
+
+      上述代码存在以下安全问题：
+
+      1. **XSS漏洞** - 直接将用户输入插入到DOM中
+      2. **SQL注入** - 未使用参数化查询
+      3. **缺乏输入验证** - 没有检查和过滤用户输入
+
+      ## 解决方案
+
+      请提交一个修复上述问题的代码实现。
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LebIuORBo
     is-expired: false
     solutions:
-      - title: Argumentum confido valde.
-        url: https://helpless-venom.name
-        source: YouTube
-        author: Mrs. Natasha Kuhn
-    create-time: '2025-01-20 00:07:45'
-    update-time: '2025-01-30 05:55:55'
+      - title: Catena verbera voluptate.
+        url: https://passionate-declaration.org
+        source: Documentation
+        author: ''
+      - title: Pecto acceptus vinitor.
+        url: https://fixed-cinder.info/
+        source: StackOverflow
+        author: ''
+      - title: Vicissitudo convoco administratio.
+        url: https://finished-distinction.net
+        source: Blog
+        author: Leo Harvey V
+    create-time: '2024-06-28 13:24:03'
+    update-time: '2025-04-10 00:01:40'
