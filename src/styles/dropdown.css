@@ -1,0 +1,16 @@
+/* 难度星级选项的样式 */
+.difficulty-option {
+    cursor: pointer !important;
+}
+
+/* 让难度下拉框始终置于顶层 */
+.ant-select-dropdown {
+    z-index: 1100 !important;
+}
+
+/* 确保下拉框内容完全可见 */
+.ant-select-item-option-content {
+    white-space: nowrap;
+    display: inline-block;
+    width: 100%;
+} 
