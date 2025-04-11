@@ -1,0 +1,10 @@
+/* 可点击的星级容器悬停效果 */
+.star-rating-clickable:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 5px rgba(255, 197, 61, 0.3);
+}
+
+/* 可点击的星星图标悬停效果 */
+.star-icon-clickable:hover {
+    transform: scale(1.1);
+} 
