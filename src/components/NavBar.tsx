@@ -2,7 +2,6 @@
 import { useState } from 'react';
 import {Link, useLocation} from 'react-router-dom';
 import {Layout, Menu, Space, Typography, Select} from 'antd';
-import { GithubOutlined } from '@ant-design/icons';
 import { useTranslation } from 'react-i18next';
 import { changeLanguage } from '../i18n';
 // @ts-ignore
@@ -56,22 +55,11 @@ const NavBar = () => {
                     </Title>
                 </Space>
 
-                {/* GitHub徽标组件 - 使用github-fork-ribbon CSS类 */}
-                <a className="github-fork-ribbon right-top" 
-                   href="https://github.com/JSREP/crawler-leetcode" 
-                   data-ribbon="Fork me on GitHub" 
-                   title="Fork me on GitHub"
-                   target="_blank" 
-                   rel="noopener noreferrer">
-                    Fork me on GitHub
-                </a>
-
                 <div style={{
                     display: 'flex',
                     alignItems: 'center',
                     width: '100%',
-                    marginLeft: '24px',
-                    paddingRight: '80px' // 为徽标预留空间
+                    marginLeft: '24px'
                 }}>
                     <Menu
                         mode="horizontal"
