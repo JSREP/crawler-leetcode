@@ -6,7 +6,7 @@ version: 1
 # 挑战题目集合定义
 challenges:
   # 单个挑战题目定义，每个题目都有一个唯一的id标识，id是必须的，ID必须是一个整数，并且全局唯一
-  - id: 1
+  - id: 0
     # 可以给ID设置一个别名，用于在列表中显示，ID别名也可以用于访问详情页
     id-alias: example
     # 题目标签系统（数组格式，选填）
@@ -30,15 +30,16 @@ challenges:
     # 前端展示时会转换为星级显示
     difficulty-level: 1
 
-    # 题目文字描述（字符串）
-    # 用于列表项的简短描述，建议使用纯文本格式
-    # 与description-markdown字段二选一使用，必须选一个
-    description: yyyyy
-
-    # Markdown格式详细描述（可选）
-    # 当需要复杂排版时使用，优先级高于description字段，必须选一个
-    # 只能使用相对路径
-    description-markdown: uuuuuu
+    # Markdown格式详细描述（必选）
+    # 当需要复杂排版时使用
+    # 与description-markdown-path字段二选一使用，必须选其中一种方式提供描述
+    # description-markdown: uuuuuu
+    
+    # Markdown文件路径（推荐）
+    # 指向包含完整描述的Markdown文件，支持图片等复杂内容
+    # 路径应为相对于项目根目录的相对路径
+    # 与description-markdown字段二选一使用
+    description-markdown-path: docs/challenges/contents/example/description.md
 
     # 题目所在页面的URL地址的ase64
     base64-url: aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8=
