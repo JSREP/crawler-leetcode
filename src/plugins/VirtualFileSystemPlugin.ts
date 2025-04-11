@@ -33,6 +33,7 @@ interface Challenge {
     externalLink: string;
     platform: string;
     'is-expired': boolean;
+    'id-alias': string;
 }
 
 function collectYAMLChallenges(dirPath: string): Challenge[] {
@@ -75,7 +76,8 @@ function collectYAMLChallenges(dirPath: string): Challenge[] {
                                 ? Buffer.from(challenge['base64-url'], 'base64').toString('utf-8')
                                 : '',
                             platform: challenge.platform || 'Web',
-                            'is-expired': challenge['is-expired'] || false
+                            'is-expired': challenge['is-expired'] || false,
+                            'id-alias': challenge['id-alias'] || challenge.id || ''
                         };
                         challenges.push(transformed);
                     });

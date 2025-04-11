@@ -30,8 +30,10 @@ const ChallengeDetailPage = () => {
     useEffect(() => {
         if (id) {
             try {
-                // 获取所有挑战的索引
-                const currentIndex = challenges.findIndex(c => c.id === id);
+                // 获取所有挑战的索引，支持通过id或idAlias查找
+                const currentIndex = challenges.findIndex(c => 
+                    c.id === id || c.idAlias === id
+                );
                 
                 if (currentIndex !== -1) {
                     // 设置当前挑战
@@ -52,7 +54,7 @@ const ChallengeDetailPage = () => {
                         setNextChallenge(null);
                     }
                 } else {
-                    throw new Error(`未找到ID为${id}的挑战`);
+                    throw new Error(`未找到ID或别名为"${id}"的挑战`);
                 }
             } catch (err) {
                 setError(err instanceof Error ? err.message : '加载挑战失败');
@@ -70,11 +72,11 @@ const ChallengeDetailPage = () => {
         const handleKeyDown = (e: KeyboardEvent) => {
             // 左方向键 - 上一个挑战
             if (e.key === 'ArrowLeft' && prevChallenge) {
-                navigate(`/challenge/${prevChallenge.id}`);
+                navigate(`/challenge/${prevChallenge.idAlias || prevChallenge.id}`);
             }
             // 右方向键 - 下一个挑战
             else if (e.key === 'ArrowRight' && nextChallenge) {
-                navigate(`/challenge/${nextChallenge.id}`);
+                navigate(`/challenge/${nextChallenge.idAlias || nextChallenge.id}`);
             }
         };
 
@@ -89,14 +91,14 @@ const ChallengeDetailPage = () => {
     // 导航到前一个挑战
     const goToPrevChallenge = () => {
         if (prevChallenge) {
-            navigate(`/challenge/${prevChallenge.id}`);
+            navigate(`/challenge/${prevChallenge.idAlias || prevChallenge.id}`);
         }
     };
 
     // 导航到后一个挑战
     const goToNextChallenge = () => {
         if (nextChallenge) {
-            navigate(`/challenge/${nextChallenge.id}`);
+            navigate(`/challenge/${nextChallenge.idAlias || nextChallenge.id}`);
         }
     };
 

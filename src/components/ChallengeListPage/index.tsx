@@ -200,7 +200,7 @@ const ChallengeListPage = () => {
                             <ChallengeListItem
                                 challenge={challenge}
                                 selectedTags={filters.tags}
-                                onClick={() => navigate(`/challenge/${challenge.id}`)}
+                                onClick={() => navigate(`/challenge/${challenge.idAlias || challenge.id}`)}
                                 onTagClick={handleTagClick}
                                 onDifficultyClick={(difficulty) => handleDifficultyClick(String(difficulty))}
                                 onPlatformClick={(platform) => handlePlatformChange(platform)}
