@@ -250,14 +250,20 @@ function processChallengeData(challenge: any, rootDir: string, isBuild: boolean)
         markdownContent = challenge['description-markdown'];
     }
 
+    // 确保id是字符串或数字，并确保title有一个有效值
+    const challengeId = challenge.id || challenge.number || '0';
+    const challengeTitle = challenge.title || '未命名挑战';
+    
+    console.log(`处理挑战: ID=${challengeId}, Title=${challengeTitle}`);
+
     // 返回原始挑战数据，不进行类型转换
     // 稍后会在parseChallenges中处理
     return {
-        id: challenge.id || '0',
-        'id-alias': challenge['id-alias'] || challenge.id?.toString() || '',
+        id: challengeId,
+        'id-alias': challenge['id-alias'] || challengeId.toString() || '',
         number: challenge.number || '0',
-        title: challenge.title || '',
-        name: challenge.title || '',
+        title: challengeTitle,
+        name: challengeTitle,
         difficulty: challenge.difficulty || 1,
         'difficulty-level': challenge.difficulty || 1,
         tags: challenge.tags || [],
