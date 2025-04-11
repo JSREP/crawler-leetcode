@@ -26,25 +26,37 @@ export const parseChallenges = (raw: any[]): Challenge[] => {
         console.warn('Expected raw challenges to be an array, got:', typeof raw);
         return []; // 返回空数组避免错误
     }
-    return raw.map(c => ({
-        id: parseInt(c.id || "0", 10), // 将id解析为数字
-        idAlias: c['id-alias'] || c.id?.toString() || "", // 获取id-alias或使用id作为备选
-        number: parseInt(c.number || "0", 10),
-        title: c.title || c.name || "",
-        difficulty: parseInt(c.difficulty || c['difficulty-level'] || "1", 10),
-        tags: c.tags || [],
-        solutions: (c.solutions || []).map((s: any) => ({
-            title: s.title || "",
-            url: s.url || "",
-            source: s.source || "",
-            author: s.author || "",
-        })),
-        createTime: new Date(c.createTime || c['create-time'] || new Date()),
-        updateTime: new Date(c.updateTime || c['update-time'] || new Date()),
-        externalLink: c.externalLink || "",
-        platform: c.platform || "",
-        isExpired: c['is-expired'] || false,
-        // 运行时只有一个统一的Markdown内容字段
-        descriptionMarkdown: c.descriptionMarkdown || c['description-markdown'] || "",
-    }));
+    
+    console.log(`解析${raw.length}个挑战数据...`);
+    
+    return raw.map(c => {
+        // 解析ID，确保它是一个数字
+        const id = parseInt(c.id || "0", 10);
+        
+        // 确保title有值
+        const title = c.title || c.name || "未命名挑战";
+        
+        console.log(`解析挑战: ID=${id}, Title=${title}`);
+        
+        return {
+            id,
+            idAlias: c['id-alias'] || c.id?.toString() || "", 
+            number: parseInt(c.number || "0", 10),
+            title,
+            difficulty: parseInt(c.difficulty || c['difficulty-level'] || "1", 10),
+            tags: c.tags || [],
+            solutions: (c.solutions || []).map((s: any) => ({
+                title: s.title || "",
+                url: s.url || "",
+                source: s.source || "",
+                author: s.author || "",
+            })),
+            createTime: new Date(c.createTime || c['create-time'] || new Date()),
+            updateTime: new Date(c.updateTime || c['update-time'] || new Date()),
+            externalLink: c.externalLink || "",
+            platform: c.platform || "",
+            isExpired: c['is-expired'] || false,
+            descriptionMarkdown: c.descriptionMarkdown || c['description-markdown'] || "",
+        };
+    });
 }; 
