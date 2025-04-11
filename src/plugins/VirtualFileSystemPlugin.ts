@@ -17,7 +17,7 @@ interface Solution {
 }
 
 interface Challenge {
-    id: string;
+    id: number;
     number: string;
     title: string;
     name: string;
@@ -53,7 +53,7 @@ function collectYAMLChallenges(dirPath: string): Challenge[] {
                 if (parsed.challenges && Array.isArray(parsed.challenges)) {
                     parsed.challenges.forEach((challenge: any) => {
                         const transformed: Challenge = {
-                            id: challenge.id || '',
+                            id: parseInt(challenge.id || '0', 10),
                             number: challenge.number || '0',
                             title: challenge.name || '',
                             name: challenge.name || '',
@@ -77,7 +77,7 @@ function collectYAMLChallenges(dirPath: string): Challenge[] {
                                 : '',
                             platform: challenge.platform || 'Web',
                             'is-expired': challenge['is-expired'] || false,
-                            'id-alias': challenge['id-alias'] || challenge.id || ''
+                            'id-alias': challenge['id-alias'] || challenge.id?.toString() || ''
                         };
                         challenges.push(transformed);
                     });
