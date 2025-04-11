@@ -174,6 +174,7 @@ function collectYAMLChallenges(dirPath: string, rootDir: string, isBuild = false
                         // 如果有description-markdown-path，读取对应文件内容
                         if (challenge['description-markdown-path']) {
                             const mdPath = path.resolve(rootDir, challenge['description-markdown-path']);
+                            console.log(`解析Markdown路径: ${challenge['description-markdown-path']} -> ${mdPath}`);
                             
                             if (fs.existsSync(mdPath)) {
                                 try {
@@ -186,6 +187,20 @@ function collectYAMLChallenges(dirPath: string, rootDir: string, isBuild = false
                                 }
                             } else {
                                 console.warn(`Markdown file not found: ${mdPath}`);
+                                // 尝试在docs目录查找
+                                const altPath = path.resolve(rootDir, 'docs/challenges', challenge['description-markdown-path']);
+                                console.log(`尝试替代路径: ${altPath}`);
+                                if (fs.existsSync(altPath)) {
+                                    try {
+                                        const rawMd = fs.readFileSync(altPath, 'utf8');
+                                        markdownContent = processMarkdownImages(rawMd, path.dirname(altPath), isBuild);
+                                        console.log(`成功使用替代路径读取Markdown: ${altPath}`);
+                                    } catch (err) {
+                                        console.error(`Error reading alternate Markdown file ${altPath}:`, err);
+                                    }
+                                } else {
+                                    console.warn(`Alternate Markdown file not found: ${altPath}`);
+                                }
                             }
                         } 
                         // 否则使用内联的description-markdown
