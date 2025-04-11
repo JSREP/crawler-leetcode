@@ -50,6 +50,21 @@ function processMarkdownImages(markdown: string, basePath: string, isBuild = fal
             fullPath: imgPath
         };
         
+        // 检查是否已经是Base64格式，如果是则直接返回
+        if (imgPath.startsWith('data:image/')) {
+            console.log(`[DEBUG] 检测到Base64图片，跳过处理`);
+            // 从data:image/png;base64,xxx提取mimeType和data部分
+            const matches = imgPath.match(/^data:([^;]+);base64,(.+)$/);
+            if (matches && matches.length === 3) {
+                return {
+                    success: true,
+                    data: matches[2],
+                    mimeType: matches[1],
+                    fullPath: imgPath
+                };
+            }
+        }
+        
         try {
             // 获取图片的完整路径，用于读取文件
             const fullImgPath = path.isAbsolute(imgPath) 
