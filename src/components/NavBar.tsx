@@ -12,17 +12,23 @@ const {Header} = Layout;
 const {Title} = Typography;
 const { Option } = Select;
 
+/**
+ * 导航栏组件
+ * 包含网站Logo、导航菜单和语言切换
+ */
 const NavBar = () => {
     const { t } = useTranslation();
     const location = useLocation();
     const [ribbonHovered, setRibbonHovered] = useState(false);
 
+    // 导航菜单项
     const items = [
         {label: <Link to="/">{t('nav.home')}</Link>, key: '/'},
         {label: <Link to="/challenges">{t('nav.challenges')}</Link>, key: '/challenges'},
         {label: <Link to="/about">{t('nav.about')}</Link>, key: '/about'},
     ];
 
+    // 处理语言变更
     const handleLanguageChange = (value: string) => {
         changeLanguage(value);
     };
@@ -78,6 +84,7 @@ const NavBar = () => {
                         }}
                     />
                     <Space size="middle">
+                        {/* 语言选择器 */}
                         <Select
                             defaultValue={localStorage.getItem('language') || 'en'}
                             style={{

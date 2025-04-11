@@ -6,7 +6,7 @@ version: 1
 # 挑战题目集合定义
 challenges:
   # 单个挑战题目定义，每个题目都有一个唯一的id标识，id是必须的
-  - id: xxx
+  - id: example
     # 题目标签系统（数组格式，选填）
     # 用于分类和筛选，支持多个标签
     # 示例: ["js-reverse", "wasm", "jsvmp"]
@@ -21,7 +21,7 @@ challenges:
 
     # 题目显示名称（必填）
     # 作为列表和详情页的标题，建议控制在30个字符以内
-    name: xx
+    name: 样例题目，展示如何
 
     # 难度评级（整数类型，必填）
     # 取值范围: 1-5，1表示最简单，5表示最难
@@ -31,12 +31,12 @@ challenges:
     # 题目文字描述（字符串）
     # 用于列表项的简短描述，建议使用纯文本格式
     # 与description-markdown字段二选一使用，必须选一个
-    description: xx
+    description: yyyyy
 
     # Markdown格式详细描述（可选）
     # 当需要复杂排版时使用，优先级高于description字段，必须选一个
     # 只能使用相对路径
-    description-markdown: xx
+    description-markdown: uuuuuu
 
     # 题目所在页面的URL地址的ase64
     base64-url: aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8=
