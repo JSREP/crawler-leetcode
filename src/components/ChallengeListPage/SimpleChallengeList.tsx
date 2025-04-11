@@ -1,57 +1,87 @@
-import { Card, Space, Typography } from 'antd';
-import { Link } from 'react-router-dom';
+import { FC, useEffect } from 'react';
+import { List, Pagination } from 'antd';
 import { Challenge } from '../../types/challenge';
-import StarRating from '../StarRating';
+import ChallengeListItem from './ChallengeListItem';
 
-const { Text, Title } = Typography;
+const PAGE_SIZE_KEY = 'challenge-list-page-size';
 
 interface SimpleChallengeListProps {
-    /**
-     * 要显示的挑战数组
-     */
-    challenges: Challenge[];
-    
-    /**
-     * 列表标题
-     */
-    title?: string;
+  challenges: Challenge[];
+  selectedTags: string[];
+  pagination: {
+    current: number;
+    pageSize: number;
+  };
+  total: number;
+  onPaginationChange: (page: number, pageSize: number) => void;
+  onTagClick: (tag: string) => void;
+  onDifficultyClick: (difficulty: string) => void;
+  onPlatformClick: (platform: string) => void;
+  onChallengeClick: (id: string) => void;
 }
 
-/**
- * 简单挑战列表组件
- * 用于在首页等地方显示简略版挑战列表
- */
-const SimpleChallengeList: React.FC<SimpleChallengeListProps> = ({ 
-    challenges, 
-    title = "挑战列表" 
+const SimpleChallengeList: FC<SimpleChallengeListProps> = ({
+  challenges,
+  selectedTags,
+  pagination,
+  total,
+  onPaginationChange,
+  onTagClick,
+  onDifficultyClick,
+  onPlatformClick,
+  onChallengeClick
 }) => {
-    return (
-        <Space direction="vertical" style={{ width: '100%' }}>
-            <Title level={4}>{title}</Title>
-            {challenges.map((challenge) => (
-                <Card 
-                    key={challenge.id} 
-                    style={{ width: '100%' }}
-                    hoverable
-                >
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                        <div>
-                            <Text strong>{challenge.number}. {challenge.title}</Text>
-                            <div style={{ marginTop: 4 }}>
-                                <StarRating difficulty={challenge.difficulty} />
-                                <Text type="secondary" style={{ marginLeft: 8 }}>
-                                    {challenge.tags.join(', ')}
-                                </Text>
-                            </div>
-                        </div>
-                        <Link to={`/challenge/${challenge.id}`}>
-                            查看详情
-                        </Link>
-                    </div>
-                </Card>
-            ))}
-        </Space>
-    );
+  // 从本地存储加载上次使用的分页大小
+  useEffect(() => {
+    const savedPageSize = localStorage.getItem(PAGE_SIZE_KEY);
+    if (savedPageSize && pagination && parseInt(savedPageSize) !== pagination.pageSize) {
+      onPaginationChange(1, parseInt(savedPageSize));
+    }
+  }, [pagination, onPaginationChange]);
+
+  // 处理分页变化
+  const handlePaginationChange = (page: number, pageSize: number) => {
+    // 保存分页大小到本地存储
+    localStorage.setItem(PAGE_SIZE_KEY, pageSize.toString());
+    onPaginationChange(page, pageSize);
+  };
+
+  // 确保pagination存在且有效
+  if (!pagination) {
+    return null;
+  }
+
+  return (
+    <>
+      {/* 挑战列表 */}
+      <List
+        grid={{ gutter: 16, column: 1 }}
+        dataSource={challenges}
+        renderItem={(challenge: Challenge) => (
+          <List.Item>
+            <ChallengeListItem
+              challenge={challenge}
+              selectedTags={selectedTags}
+              onClick={() => onChallengeClick(challenge.idAlias || challenge.id.toString())}
+              onTagClick={onTagClick}
+              onDifficultyClick={(difficulty) => onDifficultyClick(String(difficulty))}
+              onPlatformClick={(platform) => onPlatformClick(platform)}
+            />
+          </List.Item>
+        )}
+      />
+
+      {/* 分页 */}
+      <Pagination
+        current={pagination.current}
+        pageSize={pagination.pageSize}
+        total={total}
+        showSizeChanger
+        onChange={handlePaginationChange}
+        style={{ marginTop: 24, textAlign: 'center' }}
+      />
+    </>
+  );
 };
 
 export default SimpleChallengeList; 

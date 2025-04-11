@@ -26,8 +26,31 @@ const GitHubRibbon: React.FC<GitHubRibbonProps> = ({
   text = 'Fork me on GitHub',
   position = 'right'
 }) => {
+  // 根据position确定位置样式
+  const getPositionStyle = () => {
+    switch(position) {
+      case 'right':
+        return { top: 0, right: 0 };
+      case 'right-bottom':
+        return { bottom: 0, right: 0 };
+      case 'left-top':
+        return { top: 0, left: 0 };
+      case 'left-bottom':
+        return { bottom: 0, left: 0 };
+      default:
+        return { top: 0, right: 0 };
+    }
+  };
+
   return (
-    <div className={`github-fork-ribbon-wrapper ${position}`}>
+    <div 
+      className={`github-fork-ribbon-wrapper ${position}`}
+      style={{
+        position: 'fixed',
+        zIndex: 9999,
+        ...getPositionStyle()
+      }}
+    >
       <div 
         className="github-fork-ribbon" 
         data-ribbon={text}
