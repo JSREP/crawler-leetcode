@@ -1,7 +1,8 @@
-import { Typography, Tag } from 'antd';
+import { Typography } from 'antd';
 import { Challenge } from '../../types/challenge';
 import StarRating from '../StarRating';
 import { useNavigate } from 'react-router-dom';
+import PlatformTag from '../PlatformTag';
 
 const { Text } = Typography;
 
@@ -20,6 +21,11 @@ const ChallengeMetadata: React.FC<ChallengeMetadataProps> = ({ challenge }) => {
         navigate(`/challenges?difficulty=${difficulty}`);
     };
     
+    // 点击平台标签时跳转到列表页并按平台筛选
+    const handlePlatformClick = (platform: string) => {
+        navigate(`/challenges?platform=${platform || 'all'}`);
+    };
+    
     return (
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px' }}>
             <div>
@@ -34,13 +40,13 @@ const ChallengeMetadata: React.FC<ChallengeMetadataProps> = ({ challenge }) => {
 
             <div>
                 <Text type="secondary">适用平台:</Text>
-                <Tag 
-                    color={challenge.platform === 'LeetCode' ? 'orange' : 'purple'} 
-                    style={{ marginLeft: '8px', cursor: 'pointer' }}
-                    onClick={() => navigate(`/challenges?platform=${challenge.platform || 'all'}`)}
-                >
-                    {challenge.platform || '未指定'}
-                </Tag>
+                <span style={{ marginLeft: '8px' }}>
+                    <PlatformTag 
+                        platform={challenge.platform || ''} 
+                        clickable 
+                        onClick={handlePlatformClick}
+                    />
+                </span>
             </div>
 
             <div>

@@ -1,0 +1,33 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 697
+    id-alias: mock-challenge-697
+    tags:
+      - Authorization
+      - Path-Traversal
+      - Deserialization
+      - Encryption
+    platform: API
+    name: 'Mock挑战题目 #697'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Attonbitus quo vero vulnero aiunt. Crustulum spiritus
+      laudantium acsi approbo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1gwdWFVZFUwdkY=
+    is-expired: false
+    solutions:
+      - title: Vapulus id adulescens.
+        url: https://cloudy-cassava.name/
+        source: Medium
+        author: ''
+      - title: Amor undique demitto.
+        url: https://terrible-best-seller.biz/
+        source: Blog
+        author: Louise Christiansen
+      - title: Validus carbo speciosus.
+        url: https://trusting-tomb.net/
+        source: YouTube
+        author: Carrie Haag III
+    create-time: '2024-03-18 04:08:49'
+    update-time: '2024-11-30 19:56:10'

@@ -1,0 +1,18 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 701
+    id-alias: mock-challenge-701
+    tags:
+      - JWT
+      - WebSockets
+      - XSS
+    platform: IoT
+    name: 'Mock挑战题目 #701'
+    difficulty-level: 4
+    description: 这是一个示例挑战题目的描述，难度为4星级。Audentia velut terra. Ubi video delectatio aveho.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0hTTnlTVXFRQ1k=
+    is-expired: true
+    solutions: []
+    create-time: '2024-02-02 07:37:49'
+    update-time: '2024-11-25 00:38:44'

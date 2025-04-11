@@ -1,0 +1,30 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 327
+    id-alias: mock-challenge-327
+    tags:
+      - Browser-Extensions
+      - File-Upload
+      - Authorization
+      - SQL-Injection
+      - Race-Condition
+    platform: IoT
+    name: 'Mock挑战题目 #327'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Aduro vulticulus virga validus. Compello patruus
+      vociferor.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L251c291NzhyTDc=
+    is-expired: false
+    solutions:
+      - title: Calamitas sto color.
+        url: https://limp-dash.org
+        source: StackOverflow
+        author: Curtis Jacobi
+      - title: Vulpes audentia crux.
+        url: https://bitter-dash.com/
+        source: YouTube
+        author: Janice Kohler PhD
+    create-time: '2023-04-21 10:31:28'
+    update-time: '2023-06-28 13:36:01'

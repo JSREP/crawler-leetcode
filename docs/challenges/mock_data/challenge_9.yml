@@ -1,31 +1,27 @@
 # 挑战题目文件
 version: 1
-
 challenges:
-  - id: mock-challenge-9
+  - id: 9
+    id-alias: mock-challenge-9
     tags:
-      - rate-limiting
-      - mobile-app
-      - fingerprint
-      - cookie-protection
-    platform: Web
-    name: Mock挑战题目 #9
-    difficulty-level: 5
-    description: 这是一个示例挑战题目的描述，难度为5星级。
-    base64-url: aHR0cHM6Ly93d3cuZXhhbXBsZS5jb20vcXVpei94eXoxMjM=
+      - Path-Traversal
+      - Command-Injection
+    platform: Desktop
+    name: 'Mock挑战题目 #9'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Speciosus campana administratio votum optio.
+      Beneficium coepi textus tametsi claustrum odio timidus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzNCNzNFS3FRcTc=
     is-expired: false
     solutions:
-      - title: 静态分析方法
-        url: https://github.com/user/repo
-        source: Medium
-        author: 
-      - title: 逆向工程思路
-        url: https://github.com/user/repo
-        source: Personal Blog
-        author: Alex Chen
-      - title: Hook方法绕过
-        url: https://gist.github.com/user/id
+      - title: Artificiose adeo ulterius.
+        url: https://brilliant-giant.info
         source: StackOverflow
-        author: Web Security Expert
-    create-time: 2025-07-28 10:07:23
-    update-time: 2024-01-07 18:52:55
+        author: Cheryl Torphy
+      - title: Corrigo volutabrum statua.
+        url: https://slimy-scorpion.net/
+        source: Blog
+        author: Dr. Gilberto Morar
+    create-time: '2024-09-17 23:10:39'
+    update-time: '2025-02-23 06:08:43'

@@ -1,0 +1,28 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 364
+    id-alias: mock-challenge-364
+    tags:
+      - Authentication
+      - Business-Logic
+    platform: Desktop
+    name: 'Mock挑战题目 #364'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Suffragium voveo suppellex dolores ducimus delinquo
+      veritatis alii odit caterva. Aufero laboriosam expedita templum teneo
+      veritatis.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2xyY1hFNG51eGY=
+    is-expired: true
+    solutions:
+      - title: Aeternus comis teres.
+        url: https://trim-substitution.com
+        source: Medium
+        author: Marian O'Connell I
+      - title: Corporis calamitas amaritudo.
+        url: https://moral-perfection.org
+        source: Blog
+        author: ''
+    create-time: '2025-04-10 07:50:12'
+    update-time: '2025-04-11 09:35:54'

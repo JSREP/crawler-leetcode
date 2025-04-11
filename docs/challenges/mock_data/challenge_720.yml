@@ -1,0 +1,20 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 720
+    id-alias: mock-challenge-720
+    tags:
+      - SSRF
+      - HTTP-Headers
+      - API-Security
+    platform: API
+    name: 'Mock挑战题目 #720'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Videlicet tamen callide credo. Adnuo validus solutio
+      cogito templum laudantium nulla.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzJmZ3htdHR4MHg=
+    is-expired: false
+    solutions: []
+    create-time: '2024-12-09 13:07:23'
+    update-time: '2025-02-03 09:28:14'

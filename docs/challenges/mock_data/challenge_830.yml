@@ -1,0 +1,24 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 830
+    id-alias: mock-challenge-830
+    tags:
+      - XSS
+      - JWT
+    platform: Mobile
+    name: 'Mock挑战题目 #830'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Suasoria commodo auctus sublime sumo patruus amissio
+      approbo attonbitus. Clementia sublime arma certe aro volup comptus labore
+      combibo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1A2aXR3c0dTbjU=
+    is-expired: false
+    solutions:
+      - title: Capitulus adipisci apparatus.
+        url: https://buttery-exploration.com/
+        source: Medium
+        author: Guy Volkman
+    create-time: '2024-09-02 01:20:49'
+    update-time: '2025-02-07 14:49:37'

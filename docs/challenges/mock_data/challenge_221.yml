@@ -1,0 +1,29 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 221
+    id-alias: mock-challenge-221
+    tags:
+      - HTTP-Headers
+      - Output-Encoding
+      - Race-Condition
+      - Access-Control
+    platform: API
+    name: 'Mock挑战题目 #221'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Admiratio confero calco voluntarius verbum amplexus
+      apto crur tamdiu. Subito nulla degusto amitto verto.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2NDREV5ZVV3MUU=
+    is-expired: false
+    solutions:
+      - title: Vesper asper capillus.
+        url: https://beneficial-brush.net/
+        source: YouTube
+        author: Leland Greenholt
+      - title: Clarus debitis tutamen.
+        url: https://weary-availability.org/
+        source: YouTube
+        author: ''
+    create-time: '2025-04-07 05:39:10'
+    update-time: '2025-04-09 20:37:48'

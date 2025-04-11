@@ -1,31 +1,24 @@
 # 挑战题目文件
 version: 1
-
 challenges:
-  - id: mock-challenge-75
+  - id: 75
+    id-alias: mock-challenge-75
     tags:
-      - signature
-      - canvas-fingerprint
-      - fingerprint
-      - js-reverse
-    platform: iOS
-    name: Mock挑战题目 #75
-    difficulty-level: 3
-    description: 这是一个示例挑战题目的描述，难度为3星级。
-    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9jaGFsbGVuZ2UvNjc4OTA=
+      - Hashing
+      - Access-Control
+      - Mobile-Security
+    platform: IoT
+    name: 'Mock挑战题目 #75'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Velum absum vir admiratio candidus cariosus capio.
+      Alo vallum attero alioqui aranea curia id.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0ExdVBEUmFVZ1Y=
     is-expired: false
     solutions:
-      - title: 使用Puppeteer绕过检测
-        url: https://medium.com/@user/article
-        source: StackOverflow
-        author: Jane Smith
-      - title: 静态分析方法
-        url: https://medium.com/@user/article
-        source: StackOverflow
-        author: Alex Chen
-      - title: 逆向工程思路
-        url: https://github.com/user/repo
-        source: YouTube
-        author: Alex Chen
-    create-time: 2023-03-19 11:01:30
-    update-time: 2023-04-12 17:52:07
+      - title: Aptus repellat tardus.
+        url: https://flawless-unblinking.org/
+        source: Blog
+        author: Nadine Wilderman
+    create-time: '2024-12-18 07:16:30'
+    update-time: '2025-01-22 16:39:01'

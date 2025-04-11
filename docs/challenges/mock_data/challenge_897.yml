@@ -1,0 +1,22 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 897
+    id-alias: mock-challenge-897
+    tags:
+      - Browser-Extensions
+      - Path-Traversal
+      - Authorization
+    platform: API
+    name: 'Mock挑战题目 #897'
+    difficulty-level: 4
+    description: 这是一个示例挑战题目的描述，难度为4星级。Minus cornu ab. Correptius clamo coruscus tertius.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0Y1MnFCeUVRN2s=
+    is-expired: true
+    solutions:
+      - title: Cupiditate tepidus suscipio.
+        url: https://coarse-hammock.biz/
+        source: GitHub
+        author: Madeline Christiansen
+    create-time: '2024-07-30 22:14:18'
+    update-time: '2024-11-24 08:02:41'

@@ -1,0 +1,31 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 388
+    id-alias: mock-challenge-388
+    tags:
+      - CSRF
+      - API-Security
+      - Command-Injection
+      - Business-Logic
+    platform: Desktop
+    name: 'Mock挑战题目 #388'
+    difficulty-level: 5
+    description: 这是一个示例挑战题目的描述，难度为5星级。Ipsa hic careo. Desipio molestiae paens demens.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L25OTjJ1c1RDNko=
+    is-expired: false
+    solutions:
+      - title: Vigilo universe coruscus.
+        url: https://enraged-slide.name/
+        source: Blog
+        author: Rudolph Ferry
+      - title: Acerbitas uxor truculenter.
+        url: https://nice-siege.org
+        source: Medium
+        author: ''
+      - title: Admiratio vomica auctor.
+        url: https://private-dependency.biz
+        source: YouTube
+        author: ''
+    create-time: '2024-07-15 17:41:36'
+    update-time: '2024-09-09 07:32:17'

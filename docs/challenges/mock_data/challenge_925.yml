@@ -1,0 +1,28 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 925
+    id-alias: mock-challenge-925
+    tags:
+      - XSS
+      - WebSockets
+      - Output-Encoding
+    platform: Desktop
+    name: 'Mock挑战题目 #925'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Versus bellicus vis iure numquam. Cuius appono
+      concedo aro.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzdXSGxXZTBwTVA=
+    is-expired: false
+    solutions:
+      - title: Pariatur comprehendo alo.
+        url: https://nervous-slipper.com
+        source: Blog
+        author: ''
+      - title: Causa taedium celer.
+        url: https://jam-packed-noon.biz/
+        source: StackOverflow
+        author: Brandon Wisozk Sr.
+    create-time: '2024-01-21 03:09:19'
+    update-time: '2024-03-17 09:48:23'

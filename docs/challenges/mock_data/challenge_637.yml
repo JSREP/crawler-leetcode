@@ -1,0 +1,29 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 637
+    id-alias: mock-challenge-637
+    tags:
+      - GraphQL
+      - File-Upload
+      - CORS
+      - Deserialization
+    platform: Web
+    name: 'Mock挑战题目 #637'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Articulus aduro xiphias. Aliquam casus vomica civitas
+      velut via apparatus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3E0cmdNd3RvaEU=
+    is-expired: false
+    solutions:
+      - title: Conqueror bene valens.
+        url: https://unwilling-premium.org
+        source: GitHub
+        author: ''
+      - title: Territo spargo teres.
+        url: https://tangible-daddy.org
+        source: YouTube
+        author: ''
+    create-time: '2025-01-26 02:03:56'
+    update-time: '2025-02-19 08:16:41'

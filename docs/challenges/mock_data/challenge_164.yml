@@ -1,0 +1,22 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 164
+    id-alias: mock-challenge-164
+    tags:
+      - Browser-Extensions
+      - Encryption
+      - JWT
+      - OAuth
+    platform: API
+    name: 'Mock挑战题目 #164'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Adopto cinis conscendo solus pax voluptates
+      delectatio ustilo demo recusandae. Nam decimus stipes patruus blandior
+      quae absconditus auditor bellum tredecim.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3F6SzR2N2lrMHE=
+    is-expired: false
+    solutions: []
+    create-time: '2025-01-22 00:43:19'
+    update-time: '2025-03-09 04:15:44'

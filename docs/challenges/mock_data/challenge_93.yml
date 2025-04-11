@@ -1,23 +1,21 @@
 # 挑战题目文件
 version: 1
-
 challenges:
-  - id: mock-challenge-93
+  - id: 93
+    id-alias: mock-challenge-93
     tags:
-      - token-validation
-      - anti-crawler
-      - obfuscator
-      - canvas-fingerprint
-    platform: iOS
-    name: Mock挑战题目 #93
-    difficulty-level: 3
-    description: 这是一个示例挑战题目的描述，难度为3星级。
-    base64-url: aHR0cHM6Ly9sZWV0Y29kZS5jb20vY2hhbGxlbmdlLzY3ODkw
-    is-expired: true
-    solutions:
-      - title: 逆向工程思路
-        url: https://github.com/user/repo
-        source: Personal Blog
-        author: Jane Smith
-    create-time: 2025-07-07 00:13:24
-    update-time: 2024-01-05 19:11:39
+      - Race-Condition
+      - CSP
+      - Browser-Extensions
+      - XXE
+    platform: IoT
+    name: 'Mock挑战题目 #93'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Audax valeo complectus acerbitas cultura admitto.
+      Eveniet stella valens censura subiungo certus cumque sum absque ancilla.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0l2SkZPa1FsOVc=
+    is-expired: false
+    solutions: []
+    create-time: '2025-03-22 22:28:42'
+    update-time: '2025-03-30 04:30:43'

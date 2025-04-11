@@ -1,0 +1,32 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 628
+    id-alias: mock-challenge-628
+    tags:
+      - CSRF
+      - Mobile-Security
+      - GraphQL
+      - CSP
+      - Access-Control
+    platform: Mobile
+    name: 'Mock挑战题目 #628'
+    difficulty-level: 5
+    description: 这是一个示例挑战题目的描述，难度为5星级。Spiculum cattus in. Quo valetudo subiungo cum anser.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1JPRUJvb1B5cmg=
+    is-expired: false
+    solutions:
+      - title: Concedo cupiditate socius.
+        url: https://palatable-lobster.biz/
+        source: Medium
+        author: Erin Schamberger
+      - title: Spiritus ventito pauci.
+        url: https://vast-exterior.name
+        source: Medium
+        author: Kristy Blanda
+      - title: Cohaero vos deorsum.
+        url: https://junior-clamp.name/
+        source: Medium
+        author: Maria Nicolas
+    create-time: '2024-11-13 18:14:07'
+    update-time: '2025-01-06 02:43:39'

@@ -1,0 +1,23 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 801
+    id-alias: mock-challenge-801
+    tags:
+      - HTTP-Headers
+      - API-Security
+    platform: Desktop
+    name: 'Mock挑战题目 #801'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Alius terreo aperiam tabernus communis bellum.
+      Adaugeo xiphias tego velut quia vaco denuo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1AxUTh2TlM5Vjk=
+    is-expired: false
+    solutions:
+      - title: Cupiditas eligendi suus.
+        url: https://granular-flint.info
+        source: Blog
+        author: ''
+    create-time: '2024-09-09 21:18:38'
+    update-time: '2024-10-10 22:28:41'

@@ -1,0 +1,27 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 479
+    id-alias: mock-challenge-479
+    tags:
+      - OAuth
+      - CSRF
+    platform: Desktop
+    name: 'Mock挑战题目 #479'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Advoco unus cicuta ars aestivus apto creber incidunt.
+      Voro verto ver ago.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzZYUzA1RmF0U0U=
+    is-expired: false
+    solutions:
+      - title: Uberrime rerum necessitatibus.
+        url: https://somber-legging.biz/
+        source: StackOverflow
+        author: ''
+      - title: Sortitus ante damno.
+        url: https://crowded-hydrant.net
+        source: Medium
+        author: Ignacio Hyatt II
+    create-time: '2024-09-05 19:12:21'
+    update-time: '2025-02-04 04:17:13'

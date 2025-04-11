@@ -1,0 +1,29 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 859
+    id-alias: mock-challenge-859
+    tags:
+      - Authentication
+      - Authorization
+      - SQL-Injection
+    platform: API
+    name: 'Mock挑战题目 #859'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Appono quidem autus voluptas abstergo colligo
+      titulus. Tardus aspicio strues studio certus cupressus depulso aureus
+      voluptates cado.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2N2VHloQ0R4Vjg=
+    is-expired: false
+    solutions:
+      - title: Creber vulgaris concido.
+        url: https://brave-diver.info
+        source: Blog
+        author: Ms. Jodi Adams
+      - title: Alioqui solvo copiose.
+        url: https://these-giggle.info
+        source: YouTube
+        author: Leigh Reilly
+    create-time: '2024-01-08 20:21:21'
+    update-time: '2024-06-17 21:23:36'

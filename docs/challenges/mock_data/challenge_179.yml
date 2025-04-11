@@ -1,0 +1,34 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 179
+    id-alias: mock-challenge-179
+    tags:
+      - Browser-Extensions
+      - JWT
+      - SQL-Injection
+      - Input-Validation
+      - Rate-Limiting
+    platform: IoT
+    name: 'Mock挑战题目 #179'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Statua cicuta ver contabesco vicinus spargo. Ad vetus
+      asporto dolor sufficio consequuntur repudiandae suscipit decretum cogito.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzVrR0ZzcTMwamU=
+    is-expired: false
+    solutions:
+      - title: Acquiro infit ducimus.
+        url: https://helpless-impact.info/
+        source: Blog
+        author: ''
+      - title: Conscendo temptatio depereo.
+        url: https://greedy-exploration.net/
+        source: GitHub
+        author: Pablo Russel
+      - title: Baiulus trucido decens.
+        url: https://snappy-spork.name/
+        source: YouTube
+        author: Chester Mante MD
+    create-time: '2025-03-31 07:59:18'
+    update-time: '2025-04-10 23:59:34'

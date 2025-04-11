@@ -1,0 +1,27 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 286
+    id-alias: mock-challenge-286
+    tags:
+      - Command-Injection
+      - API-Security
+    platform: API
+    name: 'Mock挑战题目 #286'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Ea corrumpo thesis defero nesciunt. Degusto comitatus
+      quibusdam ait degero brevis damnatio.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2hYTHVpUWdCaHk=
+    is-expired: true
+    solutions:
+      - title: Appello necessitatibus contigo.
+        url: https://caring-parade.name/
+        source: Medium
+        author: Delbert Lindgren
+      - title: Ademptio impedit aiunt.
+        url: https://drab-coliseum.name
+        source: Blog
+        author: Wendy Kunde
+    create-time: '2024-03-11 13:59:39'
+    update-time: '2025-02-12 11:12:49'

@@ -1,0 +1,31 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 981
+    id-alias: mock-challenge-981
+    tags:
+      - Mobile-Security
+      - Path-Traversal
+      - XSS
+      - Encryption
+      - Deserialization
+    platform: IoT
+    name: 'Mock挑战题目 #981'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Stillicidium solio peccatus decerno circumvenio
+      consequuntur subito amitto terminatio audeo. Vigor creptio tubineus
+      nostrum sol auditor concido cogito.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2dkenNHSlI1Z1U=
+    is-expired: false
+    solutions:
+      - title: Clibanus damnatio maiores.
+        url: https://accurate-thunderbolt.name
+        source: StackOverflow
+        author: Michael Marquardt
+      - title: Ager adversus eos.
+        url: https://deserted-lieu.info
+        source: GitHub
+        author: Nora Bechtelar
+    create-time: '2024-10-18 16:00:31'
+    update-time: '2024-11-14 12:13:57'

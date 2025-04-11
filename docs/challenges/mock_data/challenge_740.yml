@@ -1,0 +1,22 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 740
+    id-alias: mock-challenge-740
+    tags:
+      - HTTP-Headers
+      - File-Upload
+      - Business-Logic
+      - Hashing
+      - SSRF
+    platform: Desktop
+    name: 'Mock挑战题目 #740'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Ascit suppono tergeo. Venia talis varius vicinus
+      temporibus calcar acerbitas caute quos eum.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzlLR1dLTHUwSUk=
+    is-expired: false
+    solutions: []
+    create-time: '2025-01-28 00:34:38'
+    update-time: '2025-01-28 03:28:18'

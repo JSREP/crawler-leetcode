@@ -1,0 +1,32 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 291
+    id-alias: mock-challenge-291
+    tags:
+      - Access-Control
+      - Business-Logic
+      - Rate-Limiting
+    platform: Desktop
+    name: 'Mock挑战题目 #291'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Statim sursum vicissitudo textor derelinquo denique.
+      Timor vinco adulatio decimus vere tracto.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzZHS3V1WGJ3R1I=
+    is-expired: false
+    solutions:
+      - title: Cupio modi clementia.
+        url: https://elastic-language.info/
+        source: Blog
+        author: Geneva Smith
+      - title: Adipisci tamen thalassinus.
+        url: https://stable-meatloaf.name
+        source: Blog
+        author: Camille Marks-Gleason
+      - title: Debitis crux unde.
+        url: https://impeccable-doing.biz/
+        source: Blog
+        author: Kari Price
+    create-time: '2024-08-13 18:04:27'
+    update-time: '2025-03-28 08:11:36'

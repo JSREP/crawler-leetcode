@@ -1,0 +1,26 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 780
+    id-alias: mock-challenge-780
+    tags:
+      - Deserialization
+      - Rate-Limiting
+      - CSRF
+      - HTTP-Headers
+      - Output-Encoding
+    platform: API
+    name: 'Mock挑战题目 #780'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Cometes demergo cimentarius suasoria iure utpote
+      socius. Delectus abscido advenio claro defaeco caveo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3FBWXltNmRBV0U=
+    is-expired: false
+    solutions:
+      - title: Virtus bellum quos.
+        url: https://tame-switchboard.biz/
+        source: YouTube
+        author: ''
+    create-time: '2025-02-17 07:51:04'
+    update-time: '2025-02-25 12:46:15'

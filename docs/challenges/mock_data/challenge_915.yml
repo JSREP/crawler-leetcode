@@ -1,0 +1,20 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 915
+    id-alias: mock-challenge-915
+    tags:
+      - JWT
+      - Session-Management
+      - CORS
+    platform: Desktop
+    name: 'Mock挑战题目 #915'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Celo sufficio caterva usitas arceo statim amaritudo.
+      Dedico auditor torrens nobis studio aegre.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L204aXJKaHFoSUU=
+    is-expired: false
+    solutions: []
+    create-time: '2023-05-27 14:56:22'
+    update-time: '2024-10-06 00:29:16'

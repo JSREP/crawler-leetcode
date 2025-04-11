@@ -1,0 +1,33 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 448
+    id-alias: mock-challenge-448
+    tags:
+      - Deserialization
+      - Input-Validation
+      - Hashing
+    platform: IoT
+    name: 'Mock挑战题目 #448'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Peccatus tabella audax cultura ventito cresco tergo
+      tondeo assumenda. Demum stabilis alii reprehenderit tabesco urbs traho
+      caelum.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3l0R05qRURlSlM=
+    is-expired: false
+    solutions:
+      - title: Congregatio adamo claro.
+        url: https://blind-hepatitis.biz/
+        source: StackOverflow
+        author: Jan Ortiz
+      - title: Cupiditas unde accusamus.
+        url: https://shady-deduction.com
+        source: YouTube
+        author: Cindy Daugherty
+      - title: Adulescens atque cariosus.
+        url: https://fat-kick.biz/
+        source: YouTube
+        author: Clarence Little
+    create-time: '2024-05-08 18:56:26'
+    update-time: '2024-11-22 13:38:02'

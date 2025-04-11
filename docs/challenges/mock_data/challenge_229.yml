@@ -1,0 +1,19 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 229
+    id-alias: mock-challenge-229
+    tags:
+      - Command-Injection
+      - Path-Traversal
+    platform: API
+    name: 'Mock挑战题目 #229'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Curtus corona depulso ambulo. Bestia curso id dapifer
+      aestus defaeco angulus socius vindico.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0FtUlJnWm1YcW8=
+    is-expired: false
+    solutions: []
+    create-time: '2023-12-30 04:29:53'
+    update-time: '2024-08-29 11:10:35'

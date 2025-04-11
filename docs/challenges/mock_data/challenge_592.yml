@@ -1,0 +1,21 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 592
+    id-alias: mock-challenge-592
+    tags:
+      - Input-Validation
+      - JWT
+      - API-Security
+      - SSRF
+    platform: Web
+    name: 'Mock挑战题目 #592'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Comprehendo tertius conitor suasoria delibero arceo
+      deleo omnis conventus. Absconditus summopere statim blanditiis.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3FBb0s4YkpyNHU=
+    is-expired: false
+    solutions: []
+    create-time: '2025-01-24 00:41:50'
+    update-time: '2025-03-19 06:45:32'

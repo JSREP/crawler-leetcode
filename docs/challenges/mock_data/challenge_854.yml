@@ -1,0 +1,22 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 854
+    id-alias: mock-challenge-854
+    tags:
+      - Encryption
+      - Authentication
+      - Authorization
+      - HTTP-Headers
+      - XSS
+    platform: API
+    name: 'Mock挑战题目 #854'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Arma non stillicidium culpo. Aequitas stips theatrum
+      tricesimus pel confero adhaero.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3I1cjY5d29QZ0o=
+    is-expired: false
+    solutions: []
+    create-time: '2024-07-19 12:30:13'
+    update-time: '2024-10-31 19:18:06'

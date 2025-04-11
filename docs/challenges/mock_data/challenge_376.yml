@@ -1,0 +1,27 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 376
+    id-alias: mock-challenge-376
+    tags:
+      - Race-Condition
+      - SSRF
+    platform: API
+    name: 'Mock挑战题目 #376'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Consequuntur volup utor utrimque minima hic vix
+      bellum. Vereor coruscus ubi artificiose aetas quae.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzBMS2hLT1JOdHg=
+    is-expired: false
+    solutions:
+      - title: Depopulo adamo angelus.
+        url: https://trained-pantyhose.info/
+        source: Medium
+        author: Mrs. Agnes Miller I
+      - title: Cruciamentum capio iure.
+        url: https://ethical-hydrocarbon.org
+        source: StackOverflow
+        author: ''
+    create-time: '2024-07-24 20:18:21'
+    update-time: '2024-09-30 06:05:39'

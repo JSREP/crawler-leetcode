@@ -1,0 +1,22 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 315
+    id-alias: mock-challenge-315
+    tags:
+      - Access-Control
+      - Deserialization
+      - API-Security
+      - SQL-Injection
+      - Authentication
+    platform: Desktop
+    name: 'Mock挑战题目 #315'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Testimonium decretum cognomen defaeco stillicidium
+      thalassinus. Vallum defero venio minima laboriosam suus audax animus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzF3cUw0aG9FVUc=
+    is-expired: false
+    solutions: []
+    create-time: '2025-02-25 06:37:48'
+    update-time: '2025-04-05 17:46:06'

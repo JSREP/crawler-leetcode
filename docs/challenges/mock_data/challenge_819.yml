@@ -1,0 +1,32 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 819
+    id-alias: mock-challenge-819
+    tags:
+      - Encryption
+      - Session-Management
+      - XXE
+    platform: API
+    name: 'Mock挑战题目 #819'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Aeneus asperiores cohibeo antiquus ventosus. Conatus
+      tego fuga desolo causa uberrime ventus vix titulus creta.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L21MTVNHYVB3Nlg=
+    is-expired: false
+    solutions:
+      - title: Cetera depraedor molestiae.
+        url: https://bustling-lift.org
+        source: Medium
+        author: Vincent Carroll
+      - title: Vehemens appono adversus.
+        url: https://dual-minister.biz/
+        source: Blog
+        author: Terrance Metz
+      - title: Iure capillus bonus.
+        url: https://dark-sanity.biz
+        source: StackOverflow
+        author: Frances Hodkiewicz
+    create-time: '2023-12-09 11:05:35'
+    update-time: '2024-02-19 10:35:47'

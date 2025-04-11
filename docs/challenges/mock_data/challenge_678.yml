@@ -1,0 +1,34 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 678
+    id-alias: mock-challenge-678
+    tags:
+      - WebSockets
+      - Deserialization
+      - Encryption
+      - Access-Control
+      - Race-Condition
+    platform: Desktop
+    name: 'Mock挑战题目 #678'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Arma commodi dens. Odio omnis absconditus terga
+      carmen sub degusto abbas amplexus ducimus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzNIbXNMV0ZHeFA=
+    is-expired: false
+    solutions:
+      - title: Asporto thema coaegresco.
+        url: https://exalted-incandescence.net
+        source: StackOverflow
+        author: Eva Hudson
+      - title: Adeo verbum coniuratio.
+        url: https://vague-ecliptic.biz/
+        source: StackOverflow
+        author: Hope Koepp
+      - title: Umerus vulgaris apostolus.
+        url: https://sour-league.net
+        source: Medium
+        author: Wesley Conroy
+    create-time: '2024-06-07 01:22:11'
+    update-time: '2024-06-21 13:54:12'

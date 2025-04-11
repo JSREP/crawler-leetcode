@@ -1,0 +1,31 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 779
+    id-alias: mock-challenge-779
+    tags:
+      - Business-Logic
+      - File-Upload
+    platform: API
+    name: 'Mock挑战题目 #779'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Administratio adduco succedo suppellex caveo
+      desparatus adstringo alius sed tendo. Curatio utique cubo tenuis.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzJTdURBQ2lINXo=
+    is-expired: false
+    solutions:
+      - title: Perspiciatis acquiro cervus.
+        url: https://great-ruin.com
+        source: YouTube
+        author: Wade Kuhlman
+      - title: Timor adicio tum.
+        url: https://colorless-negotiation.org
+        source: StackOverflow
+        author: ''
+      - title: Calamitas subito beneficium.
+        url: https://considerate-repeat.info
+        source: GitHub
+        author: Mr. Joel Baumbach
+    create-time: '2023-05-22 19:27:13'
+    update-time: '2024-05-29 19:57:18'

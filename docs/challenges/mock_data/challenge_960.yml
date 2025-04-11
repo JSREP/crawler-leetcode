@@ -1,0 +1,32 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 960
+    id-alias: mock-challenge-960
+    tags:
+      - Hashing
+      - GraphQL
+      - SQL-Injection
+    platform: API
+    name: 'Mock挑战题目 #960'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Cresco astrum exercitationem tactus vis solus.
+      Victoria utor vilitas cruciamentum umerus clementia valde umerus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzBCNkllVGFuMVo=
+    is-expired: false
+    solutions:
+      - title: Verbum arguo video.
+        url: https://creative-ceramic.org
+        source: GitHub
+        author: Jenna Schaefer
+      - title: Creptio considero canto.
+        url: https://blind-mentor.org
+        source: Blog
+        author: Carmen Shanahan
+      - title: Deripio sapiente ars.
+        url: https://near-sweatshop.org
+        source: Blog
+        author: Dr. Willis Spinka
+    create-time: '2024-09-24 22:37:19'
+    update-time: '2025-03-21 20:07:13'

@@ -1,0 +1,19 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 588
+    id-alias: mock-challenge-588
+    tags:
+      - Access-Control
+      - SQL-Injection
+    platform: Web
+    name: 'Mock挑战题目 #588'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Addo animadverto patria video vinco tamisium. Denego
+      doloribus acceptus nulla defleo decet socius textus denuncio maxime.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L041ZktvcjlUdXg=
+    is-expired: false
+    solutions: []
+    create-time: '2024-04-17 10:19:56'
+    update-time: '2025-02-12 09:05:09'

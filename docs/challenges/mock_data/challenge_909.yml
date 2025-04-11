@@ -1,0 +1,25 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 909
+    id-alias: mock-challenge-909
+    tags:
+      - Rate-Limiting
+      - SSRF
+      - JWT
+      - GraphQL
+    platform: API
+    name: 'Mock挑战题目 #909'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Velut acerbitas vindico doloremque utor thalassinus
+      adamo sumo vobis saepe. Deputo talus terror vaco.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzJTWTdnNk9QUm8=
+    is-expired: false
+    solutions:
+      - title: Aggero delectus alo.
+        url: https://leading-scrap.name/
+        source: Medium
+        author: Conrad Homenick
+    create-time: '2024-02-02 08:28:30'
+    update-time: '2024-12-14 23:20:15'

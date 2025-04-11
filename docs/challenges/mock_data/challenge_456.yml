@@ -1,0 +1,30 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 456
+    id-alias: mock-challenge-456
+    tags:
+      - Session-Management
+      - SSRF
+      - Business-Logic
+      - CSP
+      - Rate-Limiting
+    platform: Mobile
+    name: 'Mock挑战题目 #456'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Vix conatus amoveo. Caput torqueo arca argentum
+      textus clementia suffragium fugit apto vigilo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3hIalhtZzhyZ3g=
+    is-expired: false
+    solutions:
+      - title: Theologus tribuo cervus.
+        url: https://sociable-battle.biz
+        source: YouTube
+        author: Desiree Nienow
+      - title: Vulpes bos minus.
+        url: https://memorable-adviser.com
+        source: Blog
+        author: Nicholas Sauer II
+    create-time: '2024-09-20 23:57:36'
+    update-time: '2024-10-18 13:11:54'

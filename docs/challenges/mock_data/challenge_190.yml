@@ -1,0 +1,32 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 190
+    id-alias: mock-challenge-190
+    tags:
+      - CSP
+      - Path-Traversal
+    platform: Desktop
+    name: 'Mock挑战题目 #190'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Vir venustas canonicus quae demergo aspernatur
+      subvenio contra. Cinis vulgus deprecator chirographum molestias acies
+      dapifer desparatus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzdJY0dxOFZ4V0k=
+    is-expired: false
+    solutions:
+      - title: Ipsa adopto adnuo.
+        url: https://every-eggplant.info/
+        source: GitHub
+        author: Joseph Rath
+      - title: Tendo coepi sulum.
+        url: https://medium-icebreaker.net
+        source: StackOverflow
+        author: Ada Wilkinson
+      - title: Aeger dolor cubo.
+        url: https://blue-draft.com/
+        source: Blog
+        author: Ella Keebler
+    create-time: '2023-11-13 07:55:27'
+    update-time: '2025-03-17 11:27:17'

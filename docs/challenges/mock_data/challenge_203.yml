@@ -1,0 +1,19 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 203
+    id-alias: mock-challenge-203
+    tags:
+      - SSRF
+      - GraphQL
+    platform: IoT
+    name: 'Mock挑战题目 #203'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Volutabrum apparatus dedico defleo torrens tam damno
+      uxor. Tergo beatae amicitia.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1hJcnVKTHNRbWg=
+    is-expired: false
+    solutions: []
+    create-time: '2024-11-20 02:59:48'
+    update-time: '2025-04-09 20:51:54'

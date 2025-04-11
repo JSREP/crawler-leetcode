@@ -1,0 +1,33 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 731
+    id-alias: mock-challenge-731
+    tags:
+      - File-Upload
+      - Input-Validation
+      - Mobile-Security
+      - Browser-Extensions
+    platform: IoT
+    name: 'Mock挑战题目 #731'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Avaritia cornu volaticus tabgo. Thalassinus addo
+      sequi cruentus vilicus unde modi pauci terra thermae.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0xFa1FTOWtHdnA=
+    is-expired: false
+    solutions:
+      - title: Provident ullam quae.
+        url: https://ecstatic-fireplace.biz/
+        source: GitHub
+        author: Flora McDermott
+      - title: Viriliter numquam beatus.
+        url: https://grouchy-barge.name
+        source: Medium
+        author: Byron Weber
+      - title: Quibusdam est toties.
+        url: https://crooked-nightlife.org/
+        source: Blog
+        author: Dr. Jimmie Stehr
+    create-time: '2024-02-18 21:23:25'
+    update-time: '2025-02-16 03:42:40'

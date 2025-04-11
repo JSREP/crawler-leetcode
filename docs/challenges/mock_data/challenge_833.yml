@@ -1,0 +1,32 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 833
+    id-alias: mock-challenge-833
+    tags:
+      - XSS
+      - Path-Traversal
+      - Access-Control
+      - CORS
+      - JWT
+    platform: IoT
+    name: 'Mock挑战题目 #833'
+    difficulty-level: 1
+    description: 这是一个示例挑战题目的描述，难度为1星级。Verto ultra apto decens. Cito vindico ustilo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2Z6NDR5SDhoWTI=
+    is-expired: false
+    solutions:
+      - title: Defetiscor aedificium quibusdam.
+        url: https://lasting-husband.org/
+        source: YouTube
+        author: Antonio Ruecker
+      - title: Absens solus adaugeo.
+        url: https://proper-lieu.org
+        source: GitHub
+        author: ''
+      - title: Curis delectatio ago.
+        url: https://jam-packed-popularity.info/
+        source: Blog
+        author: Corey Johnson
+    create-time: '2025-02-03 23:59:25'
+    update-time: '2025-02-07 20:05:03'

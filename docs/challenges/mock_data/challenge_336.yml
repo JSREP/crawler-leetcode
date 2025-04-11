@@ -1,0 +1,25 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 336
+    id-alias: mock-challenge-336
+    tags:
+      - CORS
+      - CSRF
+      - API-Security
+      - Output-Encoding
+    platform: Mobile
+    name: 'Mock挑战题目 #336'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Agnosco spiritus speciosus defaeco condico aro adduco
+      carmen tempus synagoga. Nulla turpis vulticulus baiulus subvenio.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0hBMXdOUUpwUnc=
+    is-expired: false
+    solutions:
+      - title: Depraedor corroboro stips.
+        url: https://quintessential-platypus.biz
+        source: YouTube
+        author: Angel Jacobs
+    create-time: '2023-12-31 19:37:20'
+    update-time: '2024-05-19 05:39:35'

@@ -1,0 +1,32 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 566
+    id-alias: mock-challenge-566
+    tags:
+      - API-Security
+      - WebSockets
+      - CSRF
+      - Access-Control
+      - Hashing
+    platform: IoT
+    name: 'Mock挑战题目 #566'
+    difficulty-level: 1
+    description: 这是一个示例挑战题目的描述，难度为1星级。Theca adduco vox iste. Cuius sit deleo certus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1V0UFFwOWRqV3U=
+    is-expired: false
+    solutions:
+      - title: Urbs aequitas templum.
+        url: https://lovely-moment.info
+        source: YouTube
+        author: Nathan Zemlak
+      - title: Tersus accendo attero.
+        url: https://faraway-larva.info
+        source: StackOverflow
+        author: Lowell Ruecker
+      - title: Eum cubitum ulterius.
+        url: https://warm-birdcage.org/
+        source: StackOverflow
+        author: Ken Nikolaus
+    create-time: '2023-07-15 16:32:49'
+    update-time: '2024-08-11 11:27:15'

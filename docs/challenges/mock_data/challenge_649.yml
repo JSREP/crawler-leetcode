@@ -1,0 +1,30 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 649
+    id-alias: mock-challenge-649
+    tags:
+      - OAuth
+      - XXE
+      - SSRF
+      - XSS
+    platform: IoT
+    name: 'Mock挑战题目 #649'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Chirographum brevis coma vicinus fuga repellendus
+      adsidue alioqui angustus. Tergum amet arbor acer numquam arx reprehenderit
+      placeat cultellus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1VtZzJ5TnZiS3U=
+    is-expired: false
+    solutions:
+      - title: Condico patruus cubitum.
+        url: https://ambitious-plain.biz/
+        source: GitHub
+        author: Ms. Linda Conroy
+      - title: Cura cupiditate demonstro.
+        url: https://yellow-eternity.net/
+        source: Medium
+        author: Blanca Klocko
+    create-time: '2024-10-21 02:05:22'
+    update-time: '2024-11-05 03:27:07'

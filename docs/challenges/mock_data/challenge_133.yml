@@ -1,0 +1,25 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 133
+    id-alias: mock-challenge-133
+    tags:
+      - WebSockets
+      - Authorization
+      - OAuth
+      - Command-Injection
+    platform: Desktop
+    name: 'Mock挑战题目 #133'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Claro decumbo abscido adulatio benigne vita super
+      ceno vomica. Convoco quos caterva derideo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1I3bGJCNEZMQ3Q=
+    is-expired: false
+    solutions:
+      - title: Celo amplexus minus.
+        url: https://stunning-testing.com
+        source: YouTube
+        author: Marvin Glover
+    create-time: '2024-01-17 23:13:56'
+    update-time: '2025-01-12 15:33:46'

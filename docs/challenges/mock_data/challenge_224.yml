@@ -1,0 +1,32 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 224
+    id-alias: mock-challenge-224
+    tags:
+      - Hashing
+      - Business-Logic
+      - XXE
+    platform: IoT
+    name: 'Mock挑战题目 #224'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Soleo alius civitas conculco sollicito ustulo
+      adaugeo. Dicta sollicito vehemens crinis substantia.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2lxQU9Na1FmdTM=
+    is-expired: false
+    solutions:
+      - title: Est vix verto.
+        url: https://gorgeous-glider.name
+        source: GitHub
+        author: Woodrow Collins
+      - title: Adfero amicitia arcesso.
+        url: https://live-skyline.info
+        source: YouTube
+        author: Conrad Wintheiser
+      - title: Volubilis subiungo carbo.
+        url: https://timely-electronics.net/
+        source: Medium
+        author: Ms. Sue Ledner
+    create-time: '2023-09-13 19:57:41'
+    update-time: '2025-01-16 01:36:39'

@@ -1,0 +1,30 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 790
+    id-alias: mock-challenge-790
+    tags:
+      - JWT
+      - OAuth
+      - Session-Management
+      - SSRF
+      - Command-Injection
+    platform: IoT
+    name: 'Mock挑战题目 #790'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Asper succedo vado aranea pectus coniecto. Pecco
+      avaritia commemoro bestia substantia vos tripudio.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0RLN1p5cEQ5ZTg=
+    is-expired: false
+    solutions:
+      - title: Acervus tolero vis.
+        url: https://outlying-vanadyl.biz/
+        source: YouTube
+        author: Nicholas Klocko
+      - title: Capillus cerno dignissimos.
+        url: https://precious-widow.net
+        source: Blog
+        author: Brett Balistreri
+    create-time: '2024-01-02 11:02:11'
+    update-time: '2024-06-11 01:47:07'

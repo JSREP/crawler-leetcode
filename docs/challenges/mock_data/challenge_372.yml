@@ -1,0 +1,20 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 372
+    id-alias: mock-challenge-372
+    tags:
+      - File-Upload
+      - Authorization
+      - XXE
+    platform: IoT
+    name: 'Mock挑战题目 #372'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Alius averto canis dapifer super defetiscor utique
+      comes. Torrens quisquam illo stella atrocitas caute.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0JUUk1xb3o4aG8=
+    is-expired: false
+    solutions: []
+    create-time: '2024-08-23 08:13:56'
+    update-time: '2024-11-23 02:39:31'

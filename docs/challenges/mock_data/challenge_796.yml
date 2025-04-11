@@ -1,0 +1,27 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 796
+    id-alias: mock-challenge-796
+    tags:
+      - Access-Control
+      - Browser-Extensions
+      - Rate-Limiting
+      - Command-Injection
+      - Authentication
+    platform: Mobile
+    name: 'Mock挑战题目 #796'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Communis voluptas tamdiu similique constans cilicium
+      vehemens odit. Armarium tabgo soluta damnatio tonsor vita acies laudantium
+      catena conatus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L01jVUVLTU5rdGo=
+    is-expired: false
+    solutions:
+      - title: Cernuus crustulum volo.
+        url: https://wordy-hubris.net/
+        source: Blog
+        author: Amelia Moen
+    create-time: '2023-12-25 04:45:12'
+    update-time: '2024-05-05 17:47:06'

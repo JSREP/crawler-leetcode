@@ -1,0 +1,19 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 895
+    id-alias: mock-challenge-895
+    tags:
+      - File-Upload
+      - CSRF
+    platform: Mobile
+    name: 'Mock挑战题目 #895'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Considero ut vilitas succedo. Cenaculum surgo
+      veritatis.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzE5ajQ1WEpOSnc=
+    is-expired: false
+    solutions: []
+    create-time: '2023-10-14 20:25:23'
+    update-time: '2024-05-11 08:48:46'

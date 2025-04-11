@@ -1,0 +1,33 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 107
+    id-alias: mock-challenge-107
+    tags:
+      - Mobile-Security
+      - Deserialization
+      - Output-Encoding
+    platform: IoT
+    name: 'Mock挑战题目 #107'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Autus tutamen error clamo xiphias accusator blandior
+      cimentarius totidem turba. Sint cito commemoro urbanus sequi depraedor
+      textus comes viridis pauci.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3JTdDBTUzBvcFM=
+    is-expired: false
+    solutions:
+      - title: Viscus canonicus illum.
+        url: https://stained-council.net
+        source: GitHub
+        author: Stacey Runolfsdottir
+      - title: Tabula trucido surgo.
+        url: https://delectable-slime.org
+        source: Medium
+        author: Frankie Cassin
+      - title: Aetas at usque.
+        url: https://sparkling-pronoun.biz
+        source: GitHub
+        author: Marion Upton
+    create-time: '2024-01-17 19:25:50'
+    update-time: '2024-06-07 01:38:20'

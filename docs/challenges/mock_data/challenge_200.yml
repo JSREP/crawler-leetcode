@@ -1,0 +1,33 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 200
+    id-alias: mock-challenge-200
+    tags:
+      - Command-Injection
+      - JWT
+      - Race-Condition
+      - File-Upload
+    platform: Desktop
+    name: 'Mock挑战题目 #200'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Coniecto canis repellendus amita. Summopere adsuesco
+      carbo curto antea allatus abutor denuncio.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2RmYjdZam5JOVk=
+    is-expired: false
+    solutions:
+      - title: Magni facere solvo.
+        url: https://ornate-reporter.net/
+        source: YouTube
+        author: Leah Abernathy
+      - title: Textor tribuo sed.
+        url: https://fatal-habit.name
+        source: Blog
+        author: Roosevelt Kilback
+      - title: Urbanus spiculum tonsor.
+        url: https://lustrous-fibre.info/
+        source: Medium
+        author: Ana Wunsch
+    create-time: '2023-07-20 06:28:30'
+    update-time: '2023-08-10 12:00:47'

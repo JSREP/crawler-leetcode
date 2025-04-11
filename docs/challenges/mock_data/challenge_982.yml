@@ -1,0 +1,27 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 982
+    id-alias: mock-challenge-982
+    tags:
+      - Browser-Extensions
+      - CSP
+    platform: Desktop
+    name: 'Mock挑战题目 #982'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Solum ambulo appositus bos. Supplanto tollo aperio
+      texo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2JuWFBWMzdhYjY=
+    is-expired: true
+    solutions:
+      - title: Decerno denique utroque.
+        url: https://secondary-tabletop.net/
+        source: Blog
+        author: Ana Romaguera
+      - title: Uxor attonbitus porro.
+        url: https://snarling-hawk.org
+        source: Blog
+        author: Teri Dickinson
+    create-time: '2025-01-12 19:12:12'
+    update-time: '2025-03-20 06:36:42'

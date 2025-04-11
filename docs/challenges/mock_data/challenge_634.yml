@@ -1,0 +1,35 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 634
+    id-alias: mock-challenge-634
+    tags:
+      - Deserialization
+      - File-Upload
+      - CSRF
+      - SSRF
+      - Authorization
+    platform: API
+    name: 'Mock挑战题目 #634'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Supplanto comedo stillicidium facere depraedor somnus
+      sollicito cerno aduro. Studio adflicto cupio aliqua apto voluptatum corpus
+      usitas adicio.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L01tU0JNbmJEdnE=
+    is-expired: false
+    solutions:
+      - title: Torrens benevolentia talus.
+        url: https://jagged-punctuation.net/
+        source: Blog
+        author: Jesse Bernier IV
+      - title: Aperte sumo unde.
+        url: https://those-airmail.biz/
+        source: Medium
+        author: Caroline Hermann V
+      - title: Conturbo cupiditas beatae.
+        url: https://frozen-pile.org
+        source: Blog
+        author: Lawrence Baumbach
+    create-time: '2023-12-19 05:45:52'
+    update-time: '2024-05-30 02:07:29'

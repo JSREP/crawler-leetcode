@@ -1,0 +1,25 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 965
+    id-alias: mock-challenge-965
+    tags:
+      - Hashing
+      - WebSockets
+      - Access-Control
+    platform: Desktop
+    name: 'Mock挑战题目 #965'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Vigor demum curo aggero universe cena tyrannus
+      decimus aduro adversus. Aspicio clarus dedico aliquam victoria thorax
+      fugit.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzJsNkI4dmdzWEw=
+    is-expired: false
+    solutions:
+      - title: Venustas necessitatibus caelestis.
+        url: https://juicy-cook.info/
+        source: YouTube
+        author: Cristina Zulauf
+    create-time: '2024-12-12 02:13:39'
+    update-time: '2025-02-06 05:39:47'

@@ -1,0 +1,25 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 185
+    id-alias: mock-challenge-185
+    tags:
+      - Input-Validation
+      - CSRF
+      - CSP
+      - Mobile-Security
+    platform: IoT
+    name: 'Mock挑战题目 #185'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Caecus compello tantum vulgus coniecto creptio
+      succedo utique. Solutio a cupiditas.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3U3cnQ0cFpyM1M=
+    is-expired: false
+    solutions:
+      - title: Speculum quas suscipio.
+        url: https://kaleidoscopic-translation.net
+        source: Blog
+        author: Miss Celia Bode
+    create-time: '2023-12-10 02:29:20'
+    update-time: '2024-09-22 07:14:59'

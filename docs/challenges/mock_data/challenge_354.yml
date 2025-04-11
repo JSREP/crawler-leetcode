@@ -1,0 +1,34 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 354
+    id-alias: mock-challenge-354
+    tags:
+      - XXE
+      - File-Upload
+      - XSS
+      - OAuth
+      - Output-Encoding
+    platform: API
+    name: 'Mock挑战题目 #354'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Denique trucido defero vito adamo. Hic vapulus
+      ventosus clibanus cultellus ars tero tristis adicio.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzBTVGI5Y3dhRGM=
+    is-expired: false
+    solutions:
+      - title: Carbo surgo vallum.
+        url: https://regal-ecliptic.info/
+        source: StackOverflow
+        author: Tony Lockman
+      - title: Avarus tricesimus arx.
+        url: https://enlightened-unblinking.name/
+        source: Blog
+        author: Beverly Stamm Sr.
+      - title: Damnatio cogo capillus.
+        url: https://pastel-design.biz/
+        source: StackOverflow
+        author: Francisco Mills V
+    create-time: '2024-11-16 00:01:42'
+    update-time: '2025-02-05 04:36:02'

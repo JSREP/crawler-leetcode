@@ -1,0 +1,22 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 349
+    id-alias: mock-challenge-349
+    tags:
+      - Deserialization
+      - Hashing
+      - GraphQL
+      - Mobile-Security
+      - Business-Logic
+    platform: Desktop
+    name: 'Mock挑战题目 #349'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Alveus acies cerno alveus civis tyrannus clarus.
+      Virgo vergo tempora tergum constans somnus atrox uredo ait animadverto.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3RVVkFrbHJsTlU=
+    is-expired: false
+    solutions: []
+    create-time: '2024-05-11 00:49:36'
+    update-time: '2024-11-15 23:38:53'

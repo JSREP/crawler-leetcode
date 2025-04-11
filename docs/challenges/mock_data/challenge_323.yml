@@ -1,0 +1,20 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 323
+    id-alias: mock-challenge-323
+    tags:
+      - File-Upload
+      - Output-Encoding
+      - Browser-Extensions
+    platform: API
+    name: 'Mock挑战题目 #323'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Aduro sapiente pax. Basium aliquam video asperiores
+      in.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0M4UVo4M3dQbGI=
+    is-expired: false
+    solutions: []
+    create-time: '2025-01-02 17:23:27'
+    update-time: '2025-03-24 13:31:47'

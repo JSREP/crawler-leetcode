@@ -1,0 +1,19 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 358
+    id-alias: mock-challenge-358
+    tags:
+      - Input-Validation
+      - CSP
+    platform: Web
+    name: 'Mock挑战题目 #358'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Agnosco speculum virtus creo adsidue itaque ubi.
+      Conduco asper demo cupio aduro vilicus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzVSb2NORENoNDU=
+    is-expired: false
+    solutions: []
+    create-time: '2024-03-16 09:02:08'
+    update-time: '2025-03-28 12:43:44'

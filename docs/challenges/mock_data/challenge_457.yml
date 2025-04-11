@@ -1,0 +1,20 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 457
+    id-alias: mock-challenge-457
+    tags:
+      - Access-Control
+      - XSS
+      - CSP
+    platform: Mobile
+    name: 'Mock挑战题目 #457'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Impedit unus cubitum nisi verto sequi. Cariosus summa
+      territo capitulus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1lWRG5IbFloaVk=
+    is-expired: false
+    solutions: []
+    create-time: '2025-01-11 17:45:09'
+    update-time: '2025-02-14 18:22:59'

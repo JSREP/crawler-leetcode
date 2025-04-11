@@ -1,0 +1,27 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 883
+    id-alias: mock-challenge-883
+    tags:
+      - CSP
+      - Hashing
+    platform: API
+    name: 'Mock挑战题目 #883'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Corrumpo ipsam tepesco. Deleo perferendis suscipit
+      super acidus abutor terebro sub.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2xUZEw0dkJGMGM=
+    is-expired: false
+    solutions:
+      - title: Coruscus campana accusator.
+        url: https://joyous-angle.info
+        source: Medium
+        author: Pablo Bode
+      - title: Vicinus tredecim curatio.
+        url: https://ordinary-yarmulke.name/
+        source: Blog
+        author: ''
+    create-time: '2024-04-20 03:21:59'
+    update-time: '2024-08-30 14:19:29'

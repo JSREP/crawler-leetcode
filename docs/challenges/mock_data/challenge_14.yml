@@ -1,20 +1,19 @@
 # 挑战题目文件
 version: 1
-
 challenges:
-  - id: mock-challenge-14
+  - id: 14
+    id-alias: mock-challenge-14
     tags:
-      - anti-debug
-    platform: Android
-    name: Mock挑战题目 #14
-    difficulty-level: 4
-    description: 这是一个示例挑战题目的描述，难度为4星级。
-    base64-url: aHR0cHM6Ly9sZWV0Y29kZS5jb20vY2hhbGxlbmdlL2FiY2RlZg==
+      - GraphQL
+      - Path-Traversal
+    platform: Desktop
+    name: 'Mock挑战题目 #14'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Administratio cena illo. Defessus defero cuppedia
+      decens.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L05iYWtpOWFMS2s=
     is-expired: false
-    solutions:
-      - title: Hook方法绕过
-        url: https://gist.github.com/user/id
-        source: Personal Blog
-        author: Alex Chen
-    create-time: 2023-04-12 04:50:15
-    update-time: 2025-10-13 10:22:49
+    solutions: []
+    create-time: '2024-01-17 16:33:27'
+    update-time: '2025-03-07 12:10:34'

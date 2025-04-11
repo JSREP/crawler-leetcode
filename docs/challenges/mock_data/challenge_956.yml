@@ -1,0 +1,30 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 956
+    id-alias: mock-challenge-956
+    tags:
+      - XXE
+      - SQL-Injection
+      - Browser-Extensions
+      - CSP
+      - JWT
+    platform: API
+    name: 'Mock挑战题目 #956'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Caelum ceno conor quasi tracto carcer velut compono.
+      Teres artificiose magnam repudiandae clamo baiulus temperantia colligo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1Q0RkhSZTk1aHI=
+    is-expired: false
+    solutions:
+      - title: Urbanus sol velit.
+        url: https://super-advancement.org/
+        source: GitHub
+        author: ''
+      - title: Arceo verus conor.
+        url: https://ironclad-event.com/
+        source: Blog
+        author: Mr. Christopher Kuhlman
+    create-time: '2023-08-12 01:48:24'
+    update-time: '2025-02-27 03:06:27'

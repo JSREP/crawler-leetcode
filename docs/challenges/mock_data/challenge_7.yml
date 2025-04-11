@@ -1,26 +1,32 @@
 # 挑战题目文件
 version: 1
-
 challenges:
-  - id: mock-challenge-7
+  - id: 7
+    id-alias: mock-challenge-7
     tags:
-      - webpack
-      - rate-limiting
-      - canvas-fingerprint
-    platform: iOS
-    name: Mock挑战题目 #7
-    difficulty-level: 5
-    description: 这是一个示例挑战题目的描述，难度为5星级。
-    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9wcm9ibGVtLzY3ODkw
-    is-expired: false
+      - Command-Injection
+      - CSP
+      - Path-Traversal
+    platform: Web
+    name: 'Mock挑战题目 #7'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Atque enim ciminatio fugiat degusto spargo trepide
+      advoco tredecim tempore. Tamisium creber cibus accusator.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3RuaHFhb1ZMQnk=
+    is-expired: true
     solutions:
-      - title: AST分析方案
-        url: https://github.com/user/repo
+      - title: Aperio patrocinor angelus.
+        url: https://superficial-brush.net/
         source: GitHub
-        author: Alex Chen
-      - title: Hook方法绕过
-        url: https://github.com/user/repo
-        source: StackOverflow
-        author: Alex Chen
-    create-time: 2023-10-28 16:06:27
-    update-time: 2023-05-23 20:15:22
+        author: ''
+      - title: Tolero dolore defetiscor.
+        url: https://funny-representation.biz
+        source: GitHub
+        author: Ms. Marian Davis
+      - title: Decet curis coniecto.
+        url: https://showy-peninsula.net
+        source: YouTube
+        author: Carlos Witting
+    create-time: '2023-11-10 18:36:09'
+    update-time: '2025-03-23 00:16:54'

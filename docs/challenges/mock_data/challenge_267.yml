@@ -1,0 +1,33 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 267
+    id-alias: mock-challenge-267
+    tags:
+      - Input-Validation
+      - XSS
+      - SSRF
+      - File-Upload
+    platform: Desktop
+    name: 'Mock挑战题目 #267'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Modi approbo suggero delibero viscus. Auctus suspendo
+      cognatus vomito umerus odit cuppedia tristis reprehenderit benigne.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L000QXhubXhKOGE=
+    is-expired: false
+    solutions:
+      - title: Conqueror tracto uxor.
+        url: https://pretty-overheard.biz
+        source: Blog
+        author: ''
+      - title: Cometes sint dolor.
+        url: https://sandy-mouser.net
+        source: Medium
+        author: Mrs. Hazel Haley
+      - title: Coniuratio cohors audio.
+        url: https://splendid-league.name
+        source: Medium
+        author: Brandon Dibbert
+    create-time: '2024-01-28 03:36:23'
+    update-time: '2024-01-29 22:34:48'

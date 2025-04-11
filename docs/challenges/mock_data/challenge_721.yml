@@ -1,0 +1,29 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 721
+    id-alias: mock-challenge-721
+    tags:
+      - OAuth
+      - WebSockets
+      - Path-Traversal
+      - Access-Control
+    platform: Mobile
+    name: 'Mock挑战题目 #721'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Vitae audax cupio currus cognomen texo supra iste
+      attonbitus addo. Deprecator minus aufero aveho inventore accusantium.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3JDZldGRUJCMmM=
+    is-expired: false
+    solutions:
+      - title: Acies adduco sequi.
+        url: https://grandiose-obligation.biz/
+        source: StackOverflow
+        author: Miss Freda Schulist
+      - title: Peccatus turba eum.
+        url: https://cute-paintwork.info
+        source: GitHub
+        author: Alison O'Conner
+    create-time: '2025-03-22 16:49:24'
+    update-time: '2025-03-23 07:35:18'

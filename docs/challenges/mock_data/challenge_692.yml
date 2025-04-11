@@ -1,0 +1,25 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 692
+    id-alias: mock-challenge-692
+    tags:
+      - Session-Management
+      - File-Upload
+      - OAuth
+      - Encryption
+    platform: Desktop
+    name: 'Mock挑战题目 #692'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Nesciunt commodi voluptates trans totam demergo.
+      Avarus desolo thesis sapiente blandior aspernatur somnus tabgo ex.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2JLcGp3UWVicGI=
+    is-expired: false
+    solutions:
+      - title: Sono aperiam centum.
+        url: https://rewarding-label.info
+        source: StackOverflow
+        author: Kelvin Beahan PhD
+    create-time: '2024-08-04 14:35:06'
+    update-time: '2024-10-20 15:04:31'

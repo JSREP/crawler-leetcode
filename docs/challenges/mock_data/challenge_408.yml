@@ -1,0 +1,25 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 408
+    id-alias: mock-challenge-408
+    tags:
+      - SQL-Injection
+      - Encryption
+      - Input-Validation
+      - WebSockets
+    platform: API
+    name: 'Mock挑战题目 #408'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Cognomen nostrum tener tracto texo statim. Coniuratio
+      vetus doloribus attero speculum trepide.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1VBdFU3OG51SXA=
+    is-expired: false
+    solutions:
+      - title: Vos corpus adaugeo.
+        url: https://fat-devastation.net
+        source: YouTube
+        author: Virgil McClure
+    create-time: '2024-07-30 00:43:14'
+    update-time: '2024-08-16 18:14:24'

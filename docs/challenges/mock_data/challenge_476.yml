@@ -1,0 +1,23 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 476
+    id-alias: mock-challenge-476
+    tags:
+      - SQL-Injection
+      - Session-Management
+      - Access-Control
+      - Rate-Limiting
+      - File-Upload
+    platform: Mobile
+    name: 'Mock挑战题目 #476'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Inflammatio terebro tabula celer volo vir alius
+      vindico deputo. Crinis sapiente contabesco tyrannus ipsa caste vigilo
+      deprecator possimus defendo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3BlV0RSd0VxQnU=
+    is-expired: false
+    solutions: []
+    create-time: '2024-05-25 19:31:57'
+    update-time: '2024-07-06 23:40:52'

@@ -1,0 +1,35 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 746
+    id-alias: mock-challenge-746
+    tags:
+      - CORS
+      - Rate-Limiting
+      - SSRF
+      - JWT
+      - Business-Logic
+    platform: API
+    name: 'Mock挑战题目 #746'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Unde molestias subseco ager dedecor ustulo vigor
+      apostolus error. Asporto compello aestivus acceptus corrumpo aqua tremo
+      summa.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0g4UjZyZHpmWjM=
+    is-expired: true
+    solutions:
+      - title: Candidus cupiditas taedium.
+        url: https://crowded-chasuble.info
+        source: Blog
+        author: Dr. Steve Prohaska
+      - title: Terebro viriliter turba.
+        url: https://wiggly-cop-out.biz/
+        source: GitHub
+        author: Tracy Mueller
+      - title: Tempore deorsum thermae.
+        url: https://ill-fated-settler.info
+        source: GitHub
+        author: Annette Weimann
+    create-time: '2025-04-09 17:44:50'
+    update-time: '2025-04-11 09:48:35'

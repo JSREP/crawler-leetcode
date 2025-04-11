@@ -1,0 +1,33 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 393
+    id-alias: mock-challenge-393
+    tags:
+      - SSRF
+      - Path-Traversal
+      - Output-Encoding
+      - OAuth
+    platform: Mobile
+    name: 'Mock挑战题目 #393'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Coma veritas anser quisquam bibo quasi capio delibero
+      cibo carmen. Adnuo fugiat laboriosam attonbitus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2RQY0JueUhYYXg=
+    is-expired: false
+    solutions:
+      - title: Vito adinventitias artificiose.
+        url: https://hot-monocle.net/
+        source: Blog
+        author: Gwen Rowe IV
+      - title: Dedico deleniti suscipit.
+        url: https://worthless-priesthood.net
+        source: Blog
+        author: Sherman Cormier
+      - title: Arcus stabilis voro.
+        url: https://careless-ghost.name
+        source: YouTube
+        author: Brittany Ruecker
+    create-time: '2024-09-14 20:50:57'
+    update-time: '2024-11-13 19:39:53'

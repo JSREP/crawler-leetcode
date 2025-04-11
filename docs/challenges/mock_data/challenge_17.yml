@@ -1,23 +1,19 @@
 # 挑战题目文件
 version: 1
-
 challenges:
-  - id: mock-challenge-17
+  - id: 17
+    id-alias: mock-challenge-17
     tags:
-      - anti-debug
-      - webpack
-      - rate-limiting
-      - encryption
-    platform: Android
-    name: Mock挑战题目 #17
-    difficulty-level: 5
-    description: 这是一个示例挑战题目的描述，难度为5星级。
-    base64-url: aHR0cHM6Ly9sZWV0Y29kZS5jb20vcHJvYmxlbS94eXoxMjM=
+      - Deserialization
+      - Output-Encoding
+    platform: Desktop
+    name: 'Mock挑战题目 #17'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Arx utique aut deprimo ait aufero ademptio thema.
+      Sequi atrocitas truculenter tabernus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1BORHpFaUJnTkI=
     is-expired: false
-    solutions:
-      - title: Hook方法绕过
-        url: https://gist.github.com/user/id
-        source: StackOverflow
-        author: John Doe
-    create-time: 2025-07-06 01:16:36
-    update-time: 2023-03-27 02:12:38
+    solutions: []
+    create-time: '2024-01-14 20:01:03'
+    update-time: '2024-08-14 09:45:03'

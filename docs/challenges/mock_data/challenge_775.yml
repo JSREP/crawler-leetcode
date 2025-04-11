@@ -1,0 +1,19 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 775
+    id-alias: mock-challenge-775
+    tags:
+      - SSRF
+      - Mobile-Security
+    platform: Desktop
+    name: 'Mock挑战题目 #775'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Paens victus teneo calcar civis ver. Abbas sordeo
+      delinquo caterva accusator assumenda assentator ulterius texo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2hGY3o0MFJ0eXE=
+    is-expired: false
+    solutions: []
+    create-time: '2024-11-24 00:47:46'
+    update-time: '2025-02-11 22:30:25'

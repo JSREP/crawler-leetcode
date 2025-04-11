@@ -1,0 +1,19 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 300
+    id-alias: mock-challenge-300
+    tags:
+      - CSP
+      - Encryption
+    platform: Web
+    name: 'Mock挑战题目 #300'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Ocer sophismata aestus desparatus officia patrocinor
+      debeo autus. Utrimque ager totam crastinus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2VIdVJEbFpsTnU=
+    is-expired: true
+    solutions: []
+    create-time: '2024-06-22 13:37:19'
+    update-time: '2024-10-21 03:37:02'

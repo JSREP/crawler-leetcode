@@ -1,0 +1,27 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 547
+    id-alias: mock-challenge-547
+    tags:
+      - Race-Condition
+      - Authorization
+    platform: Mobile
+    name: 'Mock挑战题目 #547'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Voco officia blanditiis vulariter acies sustineo.
+      Utrum vix crustulum vorax tempore.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1pqbkxpbXlZcTQ=
+    is-expired: false
+    solutions:
+      - title: Colo careo adfectus.
+        url: https://weighty-pinstripe.net/
+        source: YouTube
+        author: Loren Mills
+      - title: Angulus cur apud.
+        url: https://compassionate-hydrolyze.org
+        source: GitHub
+        author: Mr. Shannon Orn
+    create-time: '2023-08-13 01:50:15'
+    update-time: '2023-12-03 01:54:56'

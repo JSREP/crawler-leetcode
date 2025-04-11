@@ -1,0 +1,20 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 276
+    id-alias: mock-challenge-276
+    tags:
+      - Encryption
+      - Authentication
+      - Mobile-Security
+    platform: Mobile
+    name: 'Mock挑战题目 #276'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Tamdiu tabula conicio caput adsum nisi. Sollicito
+      trado quisquam cur patior sulum compono dolor vorax.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2pJY3BqbU5DR0Y=
+    is-expired: false
+    solutions: []
+    create-time: '2024-05-19 15:03:56'
+    update-time: '2025-03-18 16:11:38'

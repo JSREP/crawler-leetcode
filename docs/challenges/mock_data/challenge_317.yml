@@ -1,0 +1,32 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 317
+    id-alias: mock-challenge-317
+    tags:
+      - XXE
+      - CSRF
+      - Input-Validation
+    platform: Desktop
+    name: 'Mock挑战题目 #317'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Defleo valeo utor aedificium decimus tametsi
+      coniuratio. Antepono consequatur antea arca.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3EzZFV4Nmwzb0o=
+    is-expired: false
+    solutions:
+      - title: Dens vulgus vehemens.
+        url: https://vengeful-rubric.org/
+        source: YouTube
+        author: Emilio Kohler IV
+      - title: Ipsum neque adopto.
+        url: https://grizzled-hammock.org/
+        source: Blog
+        author: Sally Kihn
+      - title: Consequatur theatrum alter.
+        url: https://lustrous-bob.com/
+        source: Blog
+        author: Dr. Gilbert Leuschke
+    create-time: '2025-03-18 01:26:54'
+    update-time: '2025-03-22 05:46:12'

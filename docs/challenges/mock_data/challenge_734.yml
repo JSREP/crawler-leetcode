@@ -1,0 +1,28 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 734
+    id-alias: mock-challenge-734
+    tags:
+      - XSS
+      - OAuth
+    platform: Mobile
+    name: 'Mock挑战题目 #734'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Accusator voluptatum curso ullus spoliatio adduco
+      paens super conatus tam. Volaticus pauper deporto curo condico debilito
+      caute pecto.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L01zZW43RFpRZjA=
+    is-expired: false
+    solutions:
+      - title: Theatrum sursum vociferor.
+        url: https://brilliant-amendment.org/
+        source: Blog
+        author: Patrick Bailey
+      - title: Damno terra veniam.
+        url: https://crooked-pile.name
+        source: Medium
+        author: Salvatore O'Keefe
+    create-time: '2023-08-24 13:56:18'
+    update-time: '2024-08-07 18:02:55'

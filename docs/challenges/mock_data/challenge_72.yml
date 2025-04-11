@@ -1,29 +1,34 @@
 # 挑战题目文件
 version: 1
-
 challenges:
-  - id: mock-challenge-72
+  - id: 72
+    id-alias: mock-challenge-72
     tags:
-      - fingerprint
-      - encryption
-    platform: iOS
-    name: Mock挑战题目 #72
-    difficulty-level: 4
-    description: 这是一个示例挑战题目的描述，难度为4星级。
-    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9leGVyY2lzZS8xMjM0NQ==
+      - Authentication
+      - Access-Control
+      - Mobile-Security
+      - OAuth
+      - Output-Encoding
+    platform: Web
+    name: 'Mock挑战题目 #72'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Tantillus calco corrumpo dolore beatus tabula arca.
+      Odit virgo tepidus curis.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2lkejZpaDA2clM=
     is-expired: false
     solutions:
-      - title: 静态分析方法
-        url: https://medium.com/@user/article
+      - title: Viriliter capio cultura.
+        url: https://bowed-noon.com/
+        source: StackOverflow
+        author: ''
+      - title: Voro tametsi caterva.
+        url: https://brisk-finding.info
         source: GitHub
-        author: Alex Chen
-      - title: Hook方法绕过
-        url: https://medium.com/@user/article
-        source: YouTube
-        author: Alex Chen
-      - title: Hook方法绕过
-        url: https://github.com/user/repo
+        author: Jacquelyn Pollich-Bogan
+      - title: Agnosco credo damnatio.
+        url: https://nifty-cop-out.com/
         source: Medium
-        author: 
-    create-time: 2024-10-13 15:54:33
-    update-time: 2025-04-19 08:23:29
+        author: Marianne Pagac I
+    create-time: '2024-11-05 00:24:52'
+    update-time: '2025-04-09 11:41:21'

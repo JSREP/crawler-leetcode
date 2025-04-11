@@ -1,0 +1,23 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 658
+    id-alias: mock-challenge-658
+    tags:
+      - CORS
+      - Deserialization
+    platform: Desktop
+    name: 'Mock挑战题目 #658'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Conduco at aduro theologus tondeo. Custodia versus
+      chirographum tamquam xiphias spero utpote provident.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0VyeTBPUjhDTzQ=
+    is-expired: false
+    solutions:
+      - title: Cometes tremo cribro.
+        url: https://inferior-surface.info/
+        source: Medium
+        author: Alexander Schmidt
+    create-time: '2023-12-28 21:49:59'
+    update-time: '2024-05-06 05:54:26'

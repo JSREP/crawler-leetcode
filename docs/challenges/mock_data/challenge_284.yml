@@ -1,0 +1,34 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 284
+    id-alias: mock-challenge-284
+    tags:
+      - SSRF
+      - Browser-Extensions
+      - GraphQL
+      - SQL-Injection
+    platform: Desktop
+    name: 'Mock挑战题目 #284'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Temperantia vulgaris iste architecto nostrum
+      crastinus vox cenaculum corporis. Rerum dignissimos speciosus cresco antea
+      amissio conforto constans.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3Zxclc3dnlJc1E=
+    is-expired: false
+    solutions:
+      - title: Cogo patruus torrens.
+        url: https://valuable-lox.info
+        source: YouTube
+        author: Cory Morar
+      - title: Tactus vereor aureus.
+        url: https://poor-tennis.biz/
+        source: Blog
+        author: Sheila Beatty
+      - title: Socius adsidue conscendo.
+        url: https://lonely-challenge.name/
+        source: GitHub
+        author: Ms. Jessica Strosin
+    create-time: '2024-03-06 07:36:18'
+    update-time: '2024-09-20 07:22:59'

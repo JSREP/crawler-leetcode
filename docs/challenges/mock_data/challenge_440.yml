@@ -1,0 +1,29 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 440
+    id-alias: mock-challenge-440
+    tags:
+      - HTTP-Headers
+      - Authorization
+      - Deserialization
+    platform: Desktop
+    name: 'Mock挑战题目 #440'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Eius torrens sit tyrannus aveho suggero tardus
+      congregatio. Accusantium bardus articulus sulum architecto solvo varietas
+      tamisium communis.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1B3NE5BRjN4TDY=
+    is-expired: false
+    solutions:
+      - title: Vere color complectus.
+        url: https://meaty-venom.net
+        source: GitHub
+        author: Tyler Kovacek
+      - title: Magnam somnus curatio.
+        url: https://intent-repeat.biz/
+        source: Blog
+        author: Gina Kris
+    create-time: '2023-09-03 23:14:11'
+    update-time: '2025-03-03 12:46:13'

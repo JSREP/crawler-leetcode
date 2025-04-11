@@ -1,0 +1,34 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 140
+    id-alias: mock-challenge-140
+    tags:
+      - XSS
+      - File-Upload
+      - XXE
+      - Browser-Extensions
+      - Authentication
+    platform: Mobile
+    name: 'Mock挑战题目 #140'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Delinquo tero voluntarius dedico cervus tubineus
+      totidem adduco. Architecto crinis tantum auditor arto.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2ZmbTJiUXcyYVE=
+    is-expired: false
+    solutions:
+      - title: Peior accusantium argentum.
+        url: https://unselfish-knight.biz/
+        source: Medium
+        author: Ms. Becky Kuhic
+      - title: Cui adversus eligendi.
+        url: https://different-soliloquy.info
+        source: YouTube
+        author: Marianne Bode
+      - title: A blanditiis adicio.
+        url: https://these-trolley.com
+        source: Medium
+        author: Betsy Krajcik
+    create-time: '2024-04-02 13:02:42'
+    update-time: '2024-05-01 09:11:26'

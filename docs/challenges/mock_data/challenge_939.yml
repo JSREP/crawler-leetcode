@@ -1,0 +1,28 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 939
+    id-alias: mock-challenge-939
+    tags:
+      - WebSockets
+      - Business-Logic
+      - OAuth
+    platform: Web
+    name: 'Mock挑战题目 #939'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Cattus articulus cursim acidus. Thesaurus altus quo
+      tergo terga varietas artificiose dedico.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0piV1N6T0lHM1k=
+    is-expired: false
+    solutions:
+      - title: Decet valetudo stella.
+        url: https://monthly-chiffonier.name
+        source: Blog
+        author: Antoinette Hickle
+      - title: Succedo facilis tyrannus.
+        url: https://separate-nightlife.info/
+        source: Blog
+        author: Hazel Hoeger
+    create-time: '2023-04-16 14:14:24'
+    update-time: '2024-01-30 06:40:05'

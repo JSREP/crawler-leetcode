@@ -1,0 +1,22 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 817
+    id-alias: mock-challenge-817
+    tags:
+      - Rate-Limiting
+      - Mobile-Security
+      - Output-Encoding
+      - API-Security
+      - XXE
+    platform: API
+    name: 'Mock挑战题目 #817'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Cultellus abeo inflammatio cattus admoneo usitas
+      solium delicate. Beneficium atque arbor spargo adsuesco verecundia.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1M2UE9xSzk3Q2o=
+    is-expired: false
+    solutions: []
+    create-time: '2024-06-22 12:11:53'
+    update-time: '2024-08-13 12:44:52'

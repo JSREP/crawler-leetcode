@@ -1,0 +1,25 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 205
+    id-alias: mock-challenge-205
+    tags:
+      - CORS
+      - JWT
+      - Output-Encoding
+      - Business-Logic
+    platform: Web
+    name: 'Mock挑战题目 #205'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Utilis utrimque tumultus vehemens spoliatio universe
+      cornu. Spes laborum non.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2hYRENTTnVrdk4=
+    is-expired: false
+    solutions:
+      - title: Qui cum stultus.
+        url: https://sticky-jellyfish.com
+        source: GitHub
+        author: Irving Greenholt
+    create-time: '2024-06-28 19:55:07'
+    update-time: '2024-11-01 16:14:23'

@@ -1,0 +1,33 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 477
+    id-alias: mock-challenge-477
+    tags:
+      - Browser-Extensions
+      - Authentication
+      - Rate-Limiting
+      - CORS
+    platform: Desktop
+    name: 'Mock挑战题目 #477'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Vos agnitio degenero aspicio cotidie ultio acies
+      sunt. Truculenter sumo blandior.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1duRGpIc3ZyM0w=
+    is-expired: true
+    solutions:
+      - title: Aetas carpo cattus.
+        url: https://clumsy-testing.com
+        source: Medium
+        author: Ruth Prosacco
+      - title: Optio talio spargo.
+        url: https://numb-masterpiece.biz
+        source: GitHub
+        author: Maggie Lesch Jr.
+      - title: Clamo sulum tum.
+        url: https://sparse-dish.biz/
+        source: YouTube
+        author: Kari Connelly
+    create-time: '2024-09-16 11:01:16'
+    update-time: '2025-03-16 19:07:45'

@@ -1,0 +1,26 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 781
+    id-alias: mock-challenge-781
+    tags:
+      - Output-Encoding
+      - Mobile-Security
+      - Command-Injection
+      - CORS
+      - Race-Condition
+    platform: IoT
+    name: 'Mock挑战题目 #781'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Sunt attollo accendo. Acquiro ago terebro ventosus
+      pel celer utor caterva tabella suffoco.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0VacWZ3aGwxbmE=
+    is-expired: false
+    solutions:
+      - title: Ea terminatio caritas.
+        url: https://grubby-ceramic.com/
+        source: Medium
+        author: Edmond Wehner
+    create-time: '2024-03-23 10:01:21'
+    update-time: '2024-04-23 01:34:20'

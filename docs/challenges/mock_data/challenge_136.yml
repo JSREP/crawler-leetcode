@@ -1,0 +1,19 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 136
+    id-alias: mock-challenge-136
+    tags:
+      - Access-Control
+      - API-Security
+    platform: Web
+    name: 'Mock挑战题目 #136'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Comptus tripudio assumenda. Tantillus cena desino
+      porro.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2VVdmFSa0U0akI=
+    is-expired: false
+    solutions: []
+    create-time: '2023-07-18 08:55:43'
+    update-time: '2024-03-30 08:52:38'

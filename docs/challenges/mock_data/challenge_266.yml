@@ -1,0 +1,31 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 266
+    id-alias: mock-challenge-266
+    tags:
+      - Deserialization
+      - Command-Injection
+    platform: IoT
+    name: 'Mock挑战题目 #266'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Ex abstergo tandem minus astrum necessitatibus.
+      Similique autem subnecto.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2h3b1VONVRUYjE=
+    is-expired: false
+    solutions:
+      - title: Sto somnus aegrotatio.
+        url: https://well-groomed-reservation.biz
+        source: Blog
+        author: Hugh Senger
+      - title: Utrimque absque cui.
+        url: https://spotless-disclosure.biz/
+        source: Blog
+        author: Shirley Sporer
+      - title: Utilis xiphias territo.
+        url: https://natural-molasses.org
+        source: GitHub
+        author: Marguerite Zboncak
+    create-time: '2025-01-20 21:18:27'
+    update-time: '2025-03-19 14:25:36'

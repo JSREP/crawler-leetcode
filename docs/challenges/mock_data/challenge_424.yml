@@ -1,0 +1,34 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 424
+    id-alias: mock-challenge-424
+    tags:
+      - Input-Validation
+      - OAuth
+      - Deserialization
+      - File-Upload
+      - XSS
+    platform: IoT
+    name: 'Mock挑战题目 #424'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Porro catena tepidus deprecator barba. Cultellus
+      conforto ater sophismata civis succedo aedificium temeritas torrens acer.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1MxZGIzazd6UzI=
+    is-expired: false
+    solutions:
+      - title: Culpa ver approbo.
+        url: https://meaty-descendant.biz
+        source: YouTube
+        author: Raymond Gleason
+      - title: Abstergo pauper bis.
+        url: https://gray-devastation.biz
+        source: Medium
+        author: Cindy Bernier
+      - title: Strenuus audacia stultus.
+        url: https://sudden-polyester.info/
+        source: YouTube
+        author: Randolph McClure
+    create-time: '2023-08-15 04:03:46'
+    update-time: '2024-01-27 05:49:35'

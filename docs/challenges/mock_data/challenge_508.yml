@@ -1,0 +1,22 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 508
+    id-alias: mock-challenge-508
+    tags:
+      - JWT
+      - Command-Injection
+      - API-Security
+      - Mobile-Security
+      - Encryption
+    platform: IoT
+    name: 'Mock挑战题目 #508'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Casso verto cimentarius ullam comprehendo. Thesis
+      vociferor tumultus adduco versus sui quibusdam ex magni depraedor.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2xSUWpSWndnVWc=
+    is-expired: false
+    solutions: []
+    create-time: '2024-10-17 22:01:09'
+    update-time: '2024-11-08 03:29:25'

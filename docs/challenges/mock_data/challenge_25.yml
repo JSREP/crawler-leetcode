@@ -1,25 +1,19 @@
 # 挑战题目文件
 version: 1
-
 challenges:
-  - id: mock-challenge-25
+  - id: 25
+    id-alias: mock-challenge-25
     tags:
-      - signature
-      - canvas-fingerprint
+      - Command-Injection
+      - SQL-Injection
     platform: Web
-    name: Mock挑战题目 #25
-    difficulty-level: 1
-    description: 这是一个示例挑战题目的描述，难度为1星级。
-    base64-url: aHR0cHM6Ly93d3cuZXhhbXBsZS5jb20vZXhlcmNpc2UveHl6MTIz
-    is-expired: true
-    solutions:
-      - title: Hook方法绕过
-        url: https://medium.com/@user/article
-        source: Personal Blog
-        author: Web Security Expert
-      - title: AST分析方案
-        url: https://medium.com/@user/article
-        source: YouTube
-        author: Alex Chen
-    create-time: 2023-06-08 08:45:55
-    update-time: 2024-11-24 08:34:32
+    name: 'Mock挑战题目 #25'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。A volup cur annus desipio illo apostolus impedit
+      volubilis. Abscido peior sunt spero vallum crepusculum strenuus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0V6VExNb0dXTVQ=
+    is-expired: false
+    solutions: []
+    create-time: '2025-02-16 23:03:38'
+    update-time: '2025-03-23 06:11:22'

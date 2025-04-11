@@ -1,0 +1,31 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 844
+    id-alias: mock-challenge-844
+    tags:
+      - Mobile-Security
+      - SQL-Injection
+    platform: API
+    name: 'Mock挑战题目 #844'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Tener una suadeo. Coaegresco defessus audentia
+      cernuus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0ZSUXVaZnNBSUk=
+    is-expired: false
+    solutions:
+      - title: Amplitudo dapifer succurro.
+        url: https://worldly-remark.info/
+        source: Blog
+        author: Dr. Lauren Hayes
+      - title: Pauci depopulo despecto.
+        url: https://thrifty-assist.name
+        source: GitHub
+        author: Leticia King
+      - title: Vado spero dedico.
+        url: https://giving-valuable.net
+        source: GitHub
+        author: Horace Ullrich
+    create-time: '2023-06-20 18:26:56'
+    update-time: '2023-08-27 10:18:33'

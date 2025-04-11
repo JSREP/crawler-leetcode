@@ -1,0 +1,26 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 412
+    id-alias: mock-challenge-412
+    tags:
+      - Input-Validation
+      - Rate-Limiting
+      - File-Upload
+      - CORS
+      - HTTP-Headers
+    platform: IoT
+    name: 'Mock挑战题目 #412'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Vaco adipisci demo. Deleniti viduo sunt adicio sperno
+      solitudo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1ZzZm9MQ0Mxbm0=
+    is-expired: false
+    solutions:
+      - title: Adficio adicio vis.
+        url: https://burly-babushka.org/
+        source: Blog
+        author: Bradford Bailey
+    create-time: '2025-03-14 17:52:33'
+    update-time: '2025-04-06 03:02:47'

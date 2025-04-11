@@ -1,0 +1,21 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 988
+    id-alias: mock-challenge-988
+    tags:
+      - WebSockets
+      - Business-Logic
+      - Authentication
+      - Browser-Extensions
+    platform: Web
+    name: 'Mock挑战题目 #988'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Theologus sum alo ambitus utrum coma deripio quod
+      tribuo. Ver termes in ante.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0FCd1hLQklGdnI=
+    is-expired: false
+    solutions: []
+    create-time: '2024-01-31 00:54:12'
+    update-time: '2025-03-20 10:31:48'

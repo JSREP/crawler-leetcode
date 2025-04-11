@@ -1,29 +1,27 @@
 # 挑战题目文件
 version: 1
-
 challenges:
-  - id: mock-challenge-27
+  - id: 27
+    id-alias: mock-challenge-27
     tags:
-      - device-motion
-      - encryption
+      - Mobile-Security
+      - CSP
     platform: Web
-    name: Mock挑战题目 #27
-    difficulty-level: 5
-    description: 这是一个示例挑战题目的描述，难度为5星级。
-    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9jaGFsbGVuZ2UveHl6MTIz
+    name: 'Mock挑战题目 #27'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Copiose in caelum ullam minima aestas eveniet.
+      Uberrime beatae usitas tabesco provident aliquam supra tenuis.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0htSE51ZmlHWUU=
     is-expired: false
     solutions:
-      - title: Hook方法绕过
-        url: https://github.com/user/repo
-        source: YouTube
-        author: Alex Chen
-      - title: AST分析方案
-        url: https://github.com/user/repo
+      - title: Cenaculum aqua tempora.
+        url: https://thorny-hovercraft.org/
         source: GitHub
-        author: Alex Chen
-      - title: 静态分析方法
-        url: https://github.com/user/repo
-        source: StackOverflow
-        author: Web Security Expert
-    create-time: 2023-07-19 18:52:21
-    update-time: 2024-09-20 08:17:12
+        author: Sidney Ortiz
+      - title: Venustas culpa qui.
+        url: https://corrupt-joy.com/
+        source: Blog
+        author: Sharon Hirthe
+    create-time: '2024-09-15 12:03:12'
+    update-time: '2025-03-26 00:04:03'

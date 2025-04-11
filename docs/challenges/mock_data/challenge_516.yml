@@ -1,0 +1,27 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 516
+    id-alias: mock-challenge-516
+    tags:
+      - Race-Condition
+      - Session-Management
+      - JWT
+      - Business-Logic
+      - Authentication
+    platform: Web
+    name: 'Mock挑战题目 #516'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Contabesco alo sulum tabgo appello cultellus deorsum
+      apostolus. Copia eum vulgus accedo denuo vigor vinum caste spiritus
+      tabella.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1k5RWpBNjRJMEE=
+    is-expired: false
+    solutions:
+      - title: Vitiosus vinculum sodalitas.
+        url: https://well-documented-teammate.com
+        source: Medium
+        author: Edmond Runte
+    create-time: '2024-12-27 23:08:37'
+    update-time: '2025-04-09 05:38:58'

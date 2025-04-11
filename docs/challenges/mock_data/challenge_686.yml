@@ -1,0 +1,21 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 686
+    id-alias: mock-challenge-686
+    tags:
+      - SQL-Injection
+      - Mobile-Security
+      - XSS
+      - Authorization
+    platform: IoT
+    name: 'Mock挑战题目 #686'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Caute defleo voluptate consectetur denego cur pauper
+      usus tripudio decimus. Defero quis corona comptus vergo tolero turbo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2tXdFp5WHJJaHA=
+    is-expired: false
+    solutions: []
+    create-time: '2024-08-05 01:12:29'
+    update-time: '2024-10-27 10:49:35'

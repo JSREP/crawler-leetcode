@@ -1,0 +1,31 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 759
+    id-alias: mock-challenge-759
+    tags:
+      - Input-Validation
+      - HTTP-Headers
+    platform: IoT
+    name: 'Mock挑战题目 #759'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Aetas asper terga valeo summa autem. Hic quos ab
+      solutio communis aequitas.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzlISjFIS0JCQUk=
+    is-expired: false
+    solutions:
+      - title: Clamo vos in.
+        url: https://flawless-cd.biz/
+        source: Medium
+        author: Dwayne Weissnat
+      - title: Voco voveo voco.
+        url: https://burly-coal.org
+        source: Medium
+        author: Minnie Willms
+      - title: Turpis cattus stips.
+        url: https://muted-plugin.org
+        source: YouTube
+        author: Eduardo Emmerich
+    create-time: '2024-05-07 03:25:03'
+    update-time: '2024-11-26 19:15:40'

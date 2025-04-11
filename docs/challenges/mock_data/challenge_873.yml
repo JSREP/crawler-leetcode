@@ -1,0 +1,22 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 873
+    id-alias: mock-challenge-873
+    tags:
+      - Browser-Extensions
+      - Mobile-Security
+      - Session-Management
+      - CSP
+    platform: Web
+    name: 'Mock挑战题目 #873'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Summisse utrimque tener uberrime tergeo sumptus
+      voluptates conduco capillus. Averto adinventitias voluntarius coma
+      solutio.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L25yNDVhQjNGTjY=
+    is-expired: false
+    solutions: []
+    create-time: '2024-11-17 10:19:57'
+    update-time: '2025-03-06 14:15:55'

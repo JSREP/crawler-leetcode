@@ -1,0 +1,27 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 713
+    id-alias: mock-challenge-713
+    tags:
+      - Command-Injection
+      - Business-Logic
+    platform: IoT
+    name: 'Mock挑战题目 #713'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Balbus absens curvo celo caput assentator texo cicuta
+      collum vere. Verus toties textor a.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0ZxRGFpbFc0bHA=
+    is-expired: false
+    solutions:
+      - title: Tenetur attero terreo.
+        url: https://likely-teriyaki.biz/
+        source: StackOverflow
+        author: Bernard Rohan
+      - title: Absconditus cavus ducimus.
+        url: https://submissive-scholarship.org
+        source: YouTube
+        author: Hugh Dickens-Bechtelar DDS
+    create-time: '2024-08-26 04:24:56'
+    update-time: '2024-12-18 21:12:16'

@@ -1,0 +1,30 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 146
+    id-alias: mock-challenge-146
+    tags:
+      - Encryption
+      - Path-Traversal
+      - Output-Encoding
+      - OAuth
+      - Mobile-Security
+    platform: Mobile
+    name: 'Mock挑战题目 #146'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Contabesco antea in suasoria. Ultio quibusdam civitas
+      comprehendo spiritus xiphias incidunt aeternus vinitor.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0ptUjR0bmt2NnY=
+    is-expired: false
+    solutions:
+      - title: Abutor alioqui ara.
+        url: https://sugary-heating.org
+        source: StackOverflow
+        author: Karen Schumm
+      - title: Curiositas sui amiculum.
+        url: https://bowed-gallery.org/
+        source: StackOverflow
+        author: ''
+    create-time: '2023-09-28 10:41:01'
+    update-time: '2024-02-14 10:51:21'

@@ -1,0 +1,27 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 685
+    id-alias: mock-challenge-685
+    tags:
+      - Browser-Extensions
+      - CSRF
+    platform: API
+    name: 'Mock挑战题目 #685'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Vestigium aspicio alter comitatus denuo comes terror.
+      Crustulum toties curia unus utilis est.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1JyVmMwcmRzcEY=
+    is-expired: false
+    solutions:
+      - title: Molestiae arbor super.
+        url: https://near-decongestant.biz/
+        source: StackOverflow
+        author: Estelle Hartmann
+      - title: Defungo terra debeo.
+        url: https://impure-advertisement.com/
+        source: Medium
+        author: Sophia Barrows
+    create-time: '2024-05-30 14:11:59'
+    update-time: '2024-08-24 09:20:56'

@@ -1,0 +1,24 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 368
+    id-alias: mock-challenge-368
+    tags:
+      - Path-Traversal
+      - HTTP-Headers
+      - Deserialization
+    platform: Web
+    name: 'Mock挑战题目 #368'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Cribro adicio paens adulatio creator decor abundans
+      iure. Virgo tamisium alveus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1VCSnk1MTY1QjY=
+    is-expired: false
+    solutions:
+      - title: Facilis coepi crebro.
+        url: https://thick-finger.biz/
+        source: Blog
+        author: Jeanne Sauer
+    create-time: '2024-10-19 07:13:28'
+    update-time: '2024-11-23 01:39:35'

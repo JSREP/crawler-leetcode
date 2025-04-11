@@ -1,30 +1,22 @@
 # 挑战题目文件
 version: 1
-
 challenges:
-  - id: mock-challenge-51
+  - id: 51
+    id-alias: mock-challenge-51
     tags:
-      - webpack
-      - cookie-protection
-      - webgl-fingerprint
-    platform: Android
-    name: Mock挑战题目 #51
-    difficulty-level: 4
-    description: 这是一个示例挑战题目的描述，难度为4星级。
-    base64-url: aHR0cHM6Ly93d3cuZXhhbXBsZS5jb20vZXhlcmNpc2UvYWJjZGVm
+      - Mobile-Security
+      - Hashing
+      - CORS
+      - Business-Logic
+      - XSS
+    platform: Mobile
+    name: 'Mock挑战题目 #51'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Cibo anser valetudo optio. Veniam thesaurus calco
+      perferendis aeger volup turba acceptus comes.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2Jaam1qOHg3WHk=
     is-expired: false
-    solutions:
-      - title: 使用Puppeteer绕过检测
-        url: https://gist.github.com/user/id
-        source: Medium
-        author: John Doe
-      - title: 逆向工程思路
-        url: https://medium.com/@user/article
-        source: Personal Blog
-        author: Jane Smith
-      - title: 静态分析方法
-        url: https://gist.github.com/user/id
-        source: YouTube
-        author: Web Security Expert
-    create-time: 2024-01-11 01:43:27
-    update-time: 2025-08-02 12:41:57
+    solutions: []
+    create-time: '2024-03-12 05:21:32'
+    update-time: '2024-04-24 11:04:53'

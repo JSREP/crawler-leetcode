@@ -1,0 +1,27 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 240
+    id-alias: mock-challenge-240
+    tags:
+      - GraphQL
+      - HTTP-Headers
+    platform: Desktop
+    name: 'Mock挑战题目 #240'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Bene uter molestiae adiuvo aufero. Comprehendo
+      dolorum accommodo aqua.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2N3RTRzSXNsMFg=
+    is-expired: false
+    solutions:
+      - title: Alioqui abduco aptus.
+        url: https://enchanted-lady.net
+        source: GitHub
+        author: Kurt Schimmel
+      - title: Comprehendo sollicito vicinus.
+        url: https://numb-redesign.com/
+        source: Blog
+        author: Rhonda Yundt
+    create-time: '2025-02-15 13:07:22'
+    update-time: '2025-02-20 23:01:17'

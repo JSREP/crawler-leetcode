@@ -1,0 +1,19 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 724
+    id-alias: mock-challenge-724
+    tags:
+      - Authentication
+      - XSS
+    platform: Desktop
+    name: 'Mock挑战题目 #724'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Aperiam occaecati apparatus caritas paulatim.
+      Architecto tempora tripudio adversus decimus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3dYaEpLbFRvbk0=
+    is-expired: false
+    solutions: []
+    create-time: '2023-12-28 07:26:10'
+    update-time: '2024-01-23 12:51:26'

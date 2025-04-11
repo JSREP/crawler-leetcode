@@ -1,29 +1,27 @@
 # 挑战题目文件
 version: 1
-
 challenges:
-  - id: mock-challenge-73
+  - id: 73
+    id-alias: mock-challenge-73
     tags:
-      - anti-crawler
-      - device-motion
-    platform: Web
-    name: Mock挑战题目 #73
-    difficulty-level: 2
-    description: 这是一个示例挑战题目的描述，难度为2星级。
-    base64-url: aHR0cHM6Ly9sZWV0Y29kZS5jb20vY2hhbGxlbmdlL3h5ejEyMw==
-    is-expired: false
+      - Path-Traversal
+      - API-Security
+    platform: IoT
+    name: 'Mock挑战题目 #73'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Volup statua quam. Vulnero voveo astrum angulus
+      cultellus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3plZVVLNEVTUFA=
+    is-expired: true
     solutions:
-      - title: AST分析方案
-        url: https://gist.github.com/user/id
-        source: StackOverflow
-        author: Jane Smith
-      - title: 使用Puppeteer绕过检测
-        url: https://gist.github.com/user/id
-        source: GitHub
-        author: Alex Chen
-      - title: 使用Puppeteer绕过检测
-        url: https://medium.com/@user/article
-        source: Medium
-        author: Alex Chen
-    create-time: 2024-09-16 23:17:59
-    update-time: 2023-08-24 15:50:18
+      - title: Vado vulticulus repellendus.
+        url: https://finished-sustenance.biz
+        source: Blog
+        author: Wallace Dicki
+      - title: Earum varius carpo.
+        url: https://teeming-birth.net/
+        source: Blog
+        author: Debbie Ryan
+    create-time: '2023-12-27 09:29:27'
+    update-time: '2024-11-06 02:05:41'

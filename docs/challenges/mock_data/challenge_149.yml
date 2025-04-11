@@ -1,0 +1,27 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 149
+    id-alias: mock-challenge-149
+    tags:
+      - Command-Injection
+      - CSP
+    platform: API
+    name: 'Mock挑战题目 #149'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Stella ulterius surculus decet adnuo tumultus
+      crastinus claro. Vae stips repellendus architecto nam spes.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3NvZGhmY29xUnQ=
+    is-expired: false
+    solutions:
+      - title: Peccatus stipes cibo.
+        url: https://oval-dependency.info/
+        source: Blog
+        author: Noel Kihn
+      - title: Amplitudo defero accusantium.
+        url: https://unruly-anticodon.org
+        source: GitHub
+        author: Omar O'Connell MD
+    create-time: '2024-05-26 12:46:44'
+    update-time: '2024-10-05 06:56:03'

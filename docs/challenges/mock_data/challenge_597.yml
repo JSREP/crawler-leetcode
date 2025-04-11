@@ -1,0 +1,25 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 597
+    id-alias: mock-challenge-597
+    tags:
+      - Output-Encoding
+      - Session-Management
+      - GraphQL
+      - WebSockets
+    platform: IoT
+    name: 'Mock挑战题目 #597'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Ater temeritas aperio ab coepi delectatio deficio.
+      Acervus patior thesis thorax tardus basium certus adhuc.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2o3SFFwRTVLZnA=
+    is-expired: false
+    solutions:
+      - title: Conturbo sordeo amplus.
+        url: https://unhappy-disclosure.org/
+        source: StackOverflow
+        author: Jeremiah Rodriguez IV
+    create-time: '2023-07-24 23:49:10'
+    update-time: '2024-12-28 13:14:04'

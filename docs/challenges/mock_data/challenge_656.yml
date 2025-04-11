@@ -1,0 +1,21 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 656
+    id-alias: mock-challenge-656
+    tags:
+      - SQL-Injection
+      - Race-Condition
+      - OAuth
+      - Browser-Extensions
+    platform: API
+    name: 'Mock挑战题目 #656'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Creator amor tergiversatio vulgaris socius tenuis tot
+      suus teres. Dolorem tribuo vociferor appono pauper catena.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3JmaHBUOHd1bjg=
+    is-expired: false
+    solutions: []
+    create-time: '2024-02-18 19:24:22'
+    update-time: '2025-03-07 21:35:19'

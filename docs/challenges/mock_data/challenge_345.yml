@@ -1,0 +1,25 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 345
+    id-alias: mock-challenge-345
+    tags:
+      - Authorization
+      - GraphQL
+      - HTTP-Headers
+      - Business-Logic
+    platform: Desktop
+    name: 'Mock挑战题目 #345'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Campana thesaurus vinum aeternus inventore creo aurum
+      amicitia accommodo. Degusto alias spoliatio neque avarus ex demoror tener.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0phZWJMbmpTT1A=
+    is-expired: false
+    solutions:
+      - title: Sum civis anser.
+        url: https://shameful-bowling.biz
+        source: Blog
+        author: Arturo Kassulke
+    create-time: '2024-07-02 04:29:46'
+    update-time: '2025-01-06 08:21:29'

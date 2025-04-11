@@ -1,0 +1,26 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 369
+    id-alias: mock-challenge-369
+    tags:
+      - XXE
+      - Browser-Extensions
+      - Business-Logic
+      - Authentication
+      - GraphQL
+    platform: API
+    name: 'Mock挑战题目 #369'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Averto coniecto degero ater crudelis umerus
+      administratio amiculum. Deprimo sulum acer demoror alias victus bos adnuo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3dkU0VGZ2Nta0g=
+    is-expired: true
+    solutions:
+      - title: Contra ex sollicito.
+        url: https://proud-tomatillo.info
+        source: GitHub
+        author: Hazel Hahn-Quigley
+    create-time: '2024-05-06 21:13:01'
+    update-time: '2024-09-01 14:59:28'

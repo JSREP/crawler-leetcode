@@ -1,0 +1,24 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 278
+    id-alias: mock-challenge-278
+    tags:
+      - Deserialization
+      - SQL-Injection
+      - XSS
+    platform: Desktop
+    name: 'Mock挑战题目 #278'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Somnus consectetur villa strenuus administratio
+      delinquo valde cubo decumbo arca. Ustilo derideo vespillo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0V6dXNCSTJtYXo=
+    is-expired: false
+    solutions:
+      - title: Sunt creptio alveus.
+        url: https://deadly-video.name/
+        source: GitHub
+        author: Dr. Brittany Lehner
+    create-time: '2023-07-24 08:28:50'
+    update-time: '2024-12-16 14:47:38'

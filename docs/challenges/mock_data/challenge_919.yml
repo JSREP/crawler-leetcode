@@ -1,0 +1,28 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 919
+    id-alias: mock-challenge-919
+    tags:
+      - Race-Condition
+      - Authorization
+      - Deserialization
+    platform: IoT
+    name: 'Mock挑战题目 #919'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Umbra carpo textilis verto aeger audio. Cupressus
+      talus deprimo thema virga conculco debeo magni.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L25MajBNRm4yU3I=
+    is-expired: false
+    solutions:
+      - title: Sordeo itaque cado.
+        url: https://criminal-cantaloupe.biz
+        source: Blog
+        author: Rebecca Weber
+      - title: Vilicus vis admoneo.
+        url: https://ample-planula.org/
+        source: Blog
+        author: Harry O'Hara
+    create-time: '2024-09-26 03:58:08'
+    update-time: '2025-02-26 11:33:02'

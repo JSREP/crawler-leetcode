@@ -1,0 +1,25 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 788
+    id-alias: mock-challenge-788
+    tags:
+      - GraphQL
+      - SSRF
+      - JWT
+      - WebSockets
+    platform: API
+    name: 'Mock挑战题目 #788'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Timidus vilicus sit baiulus adficio stipes corporis.
+      Vulgaris thymum creta dolor arbitro.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3NpTzBrbzZKc0w=
+    is-expired: false
+    solutions:
+      - title: Commodo coniecto amplexus.
+        url: https://everlasting-cd.info
+        source: Blog
+        author: Miranda Gislason
+    create-time: '2023-11-23 07:52:24'
+    update-time: '2025-02-22 04:20:35'

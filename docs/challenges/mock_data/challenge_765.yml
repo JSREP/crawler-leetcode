@@ -1,0 +1,22 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 765
+    id-alias: mock-challenge-765
+    tags:
+      - Browser-Extensions
+      - Mobile-Security
+      - Command-Injection
+      - Race-Condition
+      - Hashing
+    platform: Web
+    name: 'Mock挑战题目 #765'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Accusamus subvenio inventore comes amet. Deripio
+      tyrannus ara advoco deficio attero textilis thymbra sufficio teneo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0VsZFRUQ3VSaDc=
+    is-expired: false
+    solutions: []
+    create-time: '2024-10-13 08:19:38'
+    update-time: '2024-12-22 11:39:46'

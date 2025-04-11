@@ -1,22 +1,20 @@
 # 挑战题目文件
 version: 1
-
 challenges:
-  - id: mock-challenge-54
+  - id: 54
+    id-alias: mock-challenge-54
     tags:
-      - rate-limiting
-      - encryption
-      - js-reverse
-    platform: Web
-    name: Mock挑战题目 #54
-    difficulty-level: 1
-    description: 这是一个示例挑战题目的描述，难度为1星级。
-    base64-url: aHR0cHM6Ly93d3cuZXhhbXBsZS5jb20vY2hhbGxlbmdlLzEyMzQ1
+      - Command-Injection
+      - Session-Management
+      - SQL-Injection
+    platform: Mobile
+    name: 'Mock挑战题目 #54'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Infit attollo repellat admoneo. Demens vestrum apto
+      tener corrupti conventus tabgo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2hqdW1vaVQ1WEg=
     is-expired: false
-    solutions:
-      - title: 逆向工程思路
-        url: https://medium.com/@user/article
-        source: GitHub
-        author: 
-    create-time: 2024-10-05 02:31:44
-    update-time: 2023-06-27 19:11:44
+    solutions: []
+    create-time: '2024-11-24 22:54:09'
+    update-time: '2025-04-01 14:37:53'

@@ -1,30 +1,21 @@
 # 挑战题目文件
 version: 1
-
 challenges:
-  - id: mock-challenge-31
+  - id: 31
+    id-alias: mock-challenge-31
     tags:
-      - rate-limiting
-      - jsvmp
-      - token-validation
-    platform: Android
-    name: Mock挑战题目 #31
-    difficulty-level: 2
-    description: 这是一个示例挑战题目的描述，难度为2星级。
-    base64-url: aHR0cHM6Ly9sZWV0Y29kZS5jb20vZXhlcmNpc2UveHl6MTIz
+      - Mobile-Security
+      - Deserialization
+      - JWT
+      - SQL-Injection
+    platform: Web
+    name: 'Mock挑战题目 #31'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Rerum deprimo aeger cultellus civitas vado ambitus.
+      Contigo decens vilitas bellum arbor adinventitias.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1ZCU0ZTb2gxbHA=
     is-expired: false
-    solutions:
-      - title: 逆向工程思路
-        url: https://gist.github.com/user/id
-        source: StackOverflow
-        author: Alex Chen
-      - title: AST分析方案
-        url: https://gist.github.com/user/id
-        source: YouTube
-        author: 
-      - title: 逆向工程思路
-        url: https://gist.github.com/user/id
-        source: Medium
-        author: Alex Chen
-    create-time: 2023-06-22 16:56:46
-    update-time: 2024-01-03 02:32:12
+    solutions: []
+    create-time: '2024-08-27 19:56:35'
+    update-time: '2025-03-07 08:31:30'

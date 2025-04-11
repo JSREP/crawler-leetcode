@@ -1,0 +1,22 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 331
+    id-alias: mock-challenge-331
+    tags:
+      - File-Upload
+      - API-Security
+      - SSRF
+      - Business-Logic
+      - Input-Validation
+    platform: Mobile
+    name: 'Mock挑战题目 #331'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Denuo vesper velit custodia varietas sint decipio
+      vomica apto ciminatio. Delibero canto cursus angulus accusantium iure.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1BFSldzNm1ySUE=
+    is-expired: false
+    solutions: []
+    create-time: '2025-01-04 03:36:30'
+    update-time: '2025-03-24 00:17:13'

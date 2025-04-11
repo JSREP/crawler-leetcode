@@ -1,0 +1,21 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 366
+    id-alias: mock-challenge-366
+    tags:
+      - Path-Traversal
+      - Encryption
+      - JWT
+      - API-Security
+    platform: IoT
+    name: 'Mock挑战题目 #366'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Statim comes velociter utique in tribuo vestigium
+      viridis bellum. Audacia ago accusator cariosus cunabula deripio in.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2lGMEtqVXAwMXA=
+    is-expired: true
+    solutions: []
+    create-time: '2023-10-05 00:47:40'
+    update-time: '2023-11-14 10:04:15'

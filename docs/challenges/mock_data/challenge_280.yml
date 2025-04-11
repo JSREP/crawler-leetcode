@@ -1,0 +1,34 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 280
+    id-alias: mock-challenge-280
+    tags:
+      - JWT
+      - CORS
+      - GraphQL
+      - Deserialization
+      - File-Upload
+    platform: IoT
+    name: 'Mock挑战题目 #280'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Territo deripio termes concido sit coadunatio. Spargo
+      defetiscor distinctio aranea tamisium ventus subiungo vulgaris.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2prWHQyR01xaUc=
+    is-expired: false
+    solutions:
+      - title: Adstringo deporto amiculum.
+        url: https://important-allocation.name
+        source: StackOverflow
+        author: Tony Schamberger
+      - title: Pectus tergum cerno.
+        url: https://that-tabletop.name/
+        source: Blog
+        author: Dr. Delbert Shanahan
+      - title: Tristis comis abutor.
+        url: https://querulous-teriyaki.com
+        source: Blog
+        author: Dwight Lebsack
+    create-time: '2025-02-12 06:41:21'
+    update-time: '2025-03-19 12:45:38'

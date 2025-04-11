@@ -1,0 +1,29 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 556
+    id-alias: mock-challenge-556
+    tags:
+      - CSRF
+      - Business-Logic
+      - Session-Management
+      - HTTP-Headers
+    platform: API
+    name: 'Mock挑战题目 #556'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Ventus occaecati vorax terror. Suus cras possimus
+      adduco consequuntur coaegresco ad adhuc.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L04yV0k5Q1pSZmg=
+    is-expired: false
+    solutions:
+      - title: Arto verbum laborum.
+        url: https://glass-decision.com/
+        source: YouTube
+        author: Gregory Jakubowski
+      - title: Quod aperio consectetur.
+        url: https://tattered-postbox.name
+        source: Blog
+        author: Mrs. Angelica Jacobs-Kutch
+    create-time: '2023-08-08 00:03:11'
+    update-time: '2025-03-16 18:34:23'

@@ -1,0 +1,30 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 217
+    id-alias: mock-challenge-217
+    tags:
+      - Output-Encoding
+      - Command-Injection
+      - Race-Condition
+      - XXE
+      - Business-Logic
+    platform: Web
+    name: 'Mock挑战题目 #217'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Angulus incidunt studio quis. Truculenter blanditiis
+      spes patria admoneo succedo officia arca abstergo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzdtVzhXNGdNV2E=
+    is-expired: false
+    solutions:
+      - title: Audio vere convoco.
+        url: https://obvious-perp.info/
+        source: Blog
+        author: Ruby Greenholt
+      - title: Basium curvo casus.
+        url: https://gruesome-recovery.com
+        source: YouTube
+        author: Toni Bogan
+    create-time: '2024-12-15 23:30:02'
+    update-time: '2025-01-17 01:09:54'

@@ -1,0 +1,25 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 554
+    id-alias: mock-challenge-554
+    tags:
+      - Encryption
+      - OAuth
+      - XSS
+      - Rate-Limiting
+    platform: Mobile
+    name: 'Mock挑战题目 #554'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Denuo similique repudiandae attonbitus. Ceno
+      assentator aer denego comitatus curatio incidunt cervus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2tOb1VSWEZhQ2k=
+    is-expired: false
+    solutions:
+      - title: Comitatus torrens basium.
+        url: https://married-adaptation.biz
+        source: GitHub
+        author: Sara Kassulke
+    create-time: '2023-08-13 05:24:49'
+    update-time: '2023-12-29 13:23:35'

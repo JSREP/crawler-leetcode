@@ -1,0 +1,25 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 696
+    id-alias: mock-challenge-696
+    tags:
+      - Business-Logic
+      - SQL-Injection
+      - Mobile-Security
+      - File-Upload
+    platform: Mobile
+    name: 'Mock挑战题目 #696'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Vitae speciosus terga volutabrum auditor. Paulatim
+      corrumpo astrum spiritus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3lQVGJnS3JEUWk=
+    is-expired: false
+    solutions:
+      - title: Suadeo supplanto una.
+        url: https://lazy-sarong.net
+        source: YouTube
+        author: Kathy Will
+    create-time: '2023-06-04 05:59:28'
+    update-time: '2023-11-26 01:08:13'

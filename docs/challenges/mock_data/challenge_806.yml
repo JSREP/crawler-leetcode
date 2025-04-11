@@ -1,0 +1,19 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 806
+    id-alias: mock-challenge-806
+    tags:
+      - WebSockets
+      - Access-Control
+    platform: Mobile
+    name: 'Mock挑战题目 #806'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Socius validus rerum voluptatem sopor despecto
+      sollicito solutio demergo arto. Ustulo crustulum reiciendis.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0NpOGN6TnExVWE=
+    is-expired: false
+    solutions: []
+    create-time: '2024-09-06 23:16:09'
+    update-time: '2025-02-13 00:47:17'

@@ -1,0 +1,31 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 860
+    id-alias: mock-challenge-860
+    tags:
+      - Session-Management
+      - WebSockets
+    platform: Mobile
+    name: 'Mock挑战题目 #860'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Video avaritia sumptus statua. Demum suffoco ascisco
+      tribuo quia assumenda blandior custodia.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0dWaE9uT1NTWW0=
+    is-expired: false
+    solutions:
+      - title: Sublime consuasor vae.
+        url: https://worse-laughter.info
+        source: StackOverflow
+        author: Bruce Hilpert
+      - title: Conventus arx molestias.
+        url: https://neighboring-skeleton.name
+        source: Blog
+        author: Ms. Margie Beer
+      - title: Appono velociter temporibus.
+        url: https://sophisticated-term.com
+        source: Blog
+        author: Doris Johnson
+    create-time: '2024-07-06 11:24:42'
+    update-time: '2025-02-05 01:34:22'

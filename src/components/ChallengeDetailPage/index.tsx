@@ -12,6 +12,7 @@ import ChallengeDescription from './ChallengeDescription';
 import ChallengeSolutions from './ChallengeSolutions';
 import ChallengeActions from './ChallengeActions';
 import ChallengePagination from './ChallengePagination';
+import ChallengeExpiredAlert from './ChallengeExpiredAlert';
 
 /**
  * 挑战详情页主组件
@@ -124,17 +125,8 @@ const ChallengeDetailPage = () => {
 
     return (
         <div style={{ padding: '20px', maxWidth: '1000px', margin: '0 auto' }}>
-            {/* 如果链接已失效，显示顶部警告 */}
-            {challenge.isExpired && (
-                <Alert
-                    message="警告：此挑战题目链接已失效"
-                    description="该链接可能已经被移除或已更改。请尝试搜索最新版本或联系管理员更新此题目。"
-                    type="error"
-                    showIcon
-                    banner
-                    style={{ marginBottom: '20px' }}
-                />
-            )}
+            {/* 使用提取出的失效警告组件 */}
+            <ChallengeExpiredAlert isExpired={challenge.isExpired} />
             
             {/* 顶部翻页按钮 */}
             <ChallengePagination 

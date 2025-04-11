@@ -1,0 +1,23 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 533
+    id-alias: mock-challenge-533
+    tags:
+      - Hashing
+      - Authorization
+    platform: IoT
+    name: 'Mock挑战题目 #533'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Crapula virtus thorax. Vulgaris aperiam vulgaris
+      nihil adfectus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1E5emQ4QzN4eFQ=
+    is-expired: false
+    solutions:
+      - title: Conspergo molestias tardus.
+        url: https://meager-disadvantage.name/
+        source: GitHub
+        author: Loretta Rohan
+    create-time: '2024-04-05 09:14:45'
+    update-time: '2024-12-19 21:57:26'

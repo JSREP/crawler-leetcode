@@ -1,0 +1,30 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 186
+    id-alias: mock-challenge-186
+    tags:
+      - Authorization
+      - Encryption
+      - Session-Management
+      - Hashing
+      - Input-Validation
+    platform: API
+    name: 'Mock挑战题目 #186'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Dapifer decerno tum vulnero cuius curia. Xiphias via
+      thesaurus correptius solitudo correptius.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2NNZlAxbWRRUlA=
+    is-expired: false
+    solutions:
+      - title: Solium statua arceo.
+        url: https://stingy-sediment.name
+        source: StackOverflow
+        author: Dorothy Kutch
+      - title: Damno curto cattus.
+        url: https://sleepy-government.com
+        source: Medium
+        author: Betsy Hudson
+    create-time: '2025-01-14 04:42:25'
+    update-time: '2025-04-05 15:12:17'

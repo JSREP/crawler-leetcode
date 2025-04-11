@@ -1,0 +1,28 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 151
+    id-alias: mock-challenge-151
+    tags:
+      - HTTP-Headers
+      - XXE
+    platform: Web
+    name: 'Mock挑战题目 #151'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Nesciunt confero desipio uberrime amitto conqueror
+      itaque. Varius vilitas acceptus repellendus caries audacia vorago uxor
+      capio.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1l1T2hzUFc1QzY=
+    is-expired: false
+    solutions:
+      - title: Eveniet aduro avarus.
+        url: https://coarse-hepatitis.name
+        source: GitHub
+        author: Sue Quigley
+      - title: Urbs ars ascit.
+        url: https://magnificent-hydrocarbon.net/
+        source: Medium
+        author: Stuart Deckow
+    create-time: '2023-10-31 11:15:15'
+    update-time: '2024-03-06 10:58:16'

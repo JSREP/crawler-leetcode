@@ -1,0 +1,20 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 485
+    id-alias: mock-challenge-485
+    tags:
+      - Command-Injection
+      - Access-Control
+    platform: Web
+    name: 'Mock挑战题目 #485'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Iusto arcesso caries canto adsuesco acsi corrumpo
+      celo deleo dolor. Nihil statua placeat antiquus cultura cito subseco turba
+      pauci.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0FaRWd3TzZXWnk=
+    is-expired: false
+    solutions: []
+    create-time: '2023-07-02 16:46:46'
+    update-time: '2025-01-25 12:41:02'

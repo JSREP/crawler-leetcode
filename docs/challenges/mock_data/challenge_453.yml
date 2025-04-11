@@ -1,0 +1,30 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 453
+    id-alias: mock-challenge-453
+    tags:
+      - XXE
+      - CORS
+      - API-Security
+      - Authorization
+      - GraphQL
+    platform: Web
+    name: 'Mock挑战题目 #453'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Theatrum terror undique adsum cultura. Votum delinquo
+      cura quasi.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L05NaHpCaDFocnE=
+    is-expired: false
+    solutions:
+      - title: Vilicus adeptio theatrum.
+        url: https://coordinated-chap.info/
+        source: Medium
+        author: ''
+      - title: Arguo confero acerbitas.
+        url: https://guilty-feather.net
+        source: GitHub
+        author: Darla Rosenbaum
+    create-time: '2023-12-03 05:33:11'
+    update-time: '2024-05-10 20:52:49'

@@ -1,0 +1,34 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 653
+    id-alias: mock-challenge-653
+    tags:
+      - Access-Control
+      - Deserialization
+      - Command-Injection
+      - API-Security
+      - JWT
+    platform: Web
+    name: 'Mock挑战题目 #653'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Cras statua admiratio cimentarius sonitus. Vos curso
+      arx sono.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3RrSVRlVTVockY=
+    is-expired: false
+    solutions:
+      - title: Capio capillus adflicto.
+        url: https://whopping-airline.biz
+        source: YouTube
+        author: Kari Breitenberg
+      - title: Catena ratione angustus.
+        url: https://surprised-bookend.org/
+        source: GitHub
+        author: Elaine Durgan
+      - title: Convoco ver ancilla.
+        url: https://fruitful-eyeliner.com
+        source: Blog
+        author: Oliver Ernser
+    create-time: '2023-10-29 22:33:09'
+    update-time: '2024-06-20 05:21:26'

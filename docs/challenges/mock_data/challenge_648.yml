@@ -1,0 +1,29 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 648
+    id-alias: mock-challenge-648
+    tags:
+      - Mobile-Security
+      - API-Security
+      - Authentication
+      - Session-Management
+    platform: Mobile
+    name: 'Mock挑战题目 #648'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Vacuus acidus summa validus. Aggredior animi cernuus
+      sunt defessus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1djZXlkQnhpdjE=
+    is-expired: false
+    solutions:
+      - title: Corrupti molestias amicitia.
+        url: https://short-term-minor.org/
+        source: GitHub
+        author: Mr. Salvador Bradtke
+      - title: Occaecati crux caelestis.
+        url: https://jealous-contractor.biz
+        source: YouTube
+        author: Kim Mayer
+    create-time: '2024-07-31 05:13:16'
+    update-time: '2024-10-06 23:38:49'

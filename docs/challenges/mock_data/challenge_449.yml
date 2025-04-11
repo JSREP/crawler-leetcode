@@ -1,0 +1,25 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 449
+    id-alias: mock-challenge-449
+    tags:
+      - CSP
+      - Encryption
+      - Hashing
+      - GraphQL
+    platform: Desktop
+    name: 'Mock挑战题目 #449'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Somniculosus supra synagoga causa amicitia cogo
+      blanditiis est adeptio. Tremo usque vomer cubitum dedico umerus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0x4ZDlKdEI1dFA=
+    is-expired: false
+    solutions:
+      - title: Terror solus porro.
+        url: https://rusty-disadvantage.name
+        source: YouTube
+        author: Hope Corkery I
+    create-time: '2023-04-13 01:25:43'
+    update-time: '2024-05-30 17:03:14'

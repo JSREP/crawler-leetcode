@@ -1,0 +1,26 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 926
+    id-alias: mock-challenge-926
+    tags:
+      - CORS
+      - JWT
+      - WebSockets
+    platform: API
+    name: 'Mock挑战题目 #926'
+    difficulty-level: 2
+    description: 这是一个示例挑战题目的描述，难度为2星级。Vestrum triumphus decet alius. Deorsum strenuus vivo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3hUdzhXR3lpYmw=
+    is-expired: false
+    solutions:
+      - title: Quae tolero amet.
+        url: https://dirty-charlatan.biz/
+        source: StackOverflow
+        author: Ana Lebsack
+      - title: Stabilis degusto praesentium.
+        url: https://excellent-catalyst.name/
+        source: YouTube
+        author: Amber Weissnat
+    create-time: '2023-12-19 20:11:22'
+    update-time: '2024-01-05 19:40:14'

@@ -1,0 +1,30 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 114
+    id-alias: mock-challenge-114
+    tags:
+      - Race-Condition
+      - File-Upload
+      - Encryption
+      - SSRF
+      - CSRF
+    platform: Desktop
+    name: 'Mock挑战题目 #114'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Taceo sono debeo subiungo. Aegrotatio vilis corrupti
+      tristis angelus tyrannus conqueror.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzVYdXV3enNOalU=
+    is-expired: false
+    solutions:
+      - title: Debitis abstergo curo.
+        url: https://mammoth-hierarchy.net
+        source: GitHub
+        author: Kathryn Reilly
+      - title: Degero cras coerceo.
+        url: https://negligible-precedent.info
+        source: Blog
+        author: Floyd Sawayn
+    create-time: '2023-12-16 19:04:52'
+    update-time: '2024-02-29 07:46:28'

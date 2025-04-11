@@ -1,0 +1,31 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 643
+    id-alias: mock-challenge-643
+    tags:
+      - CORS
+      - HTTP-Headers
+      - CSRF
+      - CSP
+      - SSRF
+    platform: IoT
+    name: 'Mock挑战题目 #643'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Volup admoveo taedium temporibus cribro veritatis
+      verumtamen corrumpo tonsor. Volva timor dapifer tres quibusdam cauda
+      contigo adimpleo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3YydUJ2REhXbDA=
+    is-expired: false
+    solutions:
+      - title: Cunctatio teneo cetera.
+        url: https://prudent-cow.com
+        source: GitHub
+        author: Terry Skiles
+      - title: Tandem defleo surculus.
+        url: https://pleasant-substitution.com/
+        source: Blog
+        author: Kayla Grant
+    create-time: '2023-09-17 15:58:54'
+    update-time: '2024-01-11 21:46:53'

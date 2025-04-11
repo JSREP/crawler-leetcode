@@ -1,0 +1,28 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 501
+    id-alias: mock-challenge-501
+    tags:
+      - Session-Management
+      - JWT
+      - Authorization
+    platform: API
+    name: 'Mock挑战题目 #501'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Solium sumo venio deleniti. Credo vulnero substantia
+      cura correptius candidus ipsa amissio.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3ROVlRzR01pc0Y=
+    is-expired: false
+    solutions:
+      - title: Consequatur cohaero utor.
+        url: https://joyful-discourse.org/
+        source: YouTube
+        author: Jennifer Zieme
+      - title: Adnuo quisquam vapulus.
+        url: https://enchanting-discourse.info/
+        source: Blog
+        author: Miriam Cummings
+    create-time: '2023-12-25 11:39:50'
+    update-time: '2024-06-03 00:21:24'

@@ -1,0 +1,23 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 173
+    id-alias: mock-challenge-173
+    tags:
+      - Rate-Limiting
+      - Browser-Extensions
+    platform: API
+    name: 'Mock挑战题目 #173'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Comburo viscus defendo campana. Cedo vicinus tactus
+      torqueo aetas apostolus beatus cilicium.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3BZanJUTVVjWTA=
+    is-expired: false
+    solutions:
+      - title: Capto comedo vesica.
+        url: https://common-season.info/
+        source: StackOverflow
+        author: Earnest Langosh
+    create-time: '2025-01-31 05:30:20'
+    update-time: '2025-04-04 10:26:55'

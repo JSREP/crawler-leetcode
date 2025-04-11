@@ -1,0 +1,20 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 695
+    id-alias: mock-challenge-695
+    tags:
+      - Browser-Extensions
+      - Authorization
+      - CSP
+    platform: Mobile
+    name: 'Mock挑战题目 #695'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Quos ascit tremo via tergiversatio adopto decet.
+      Vestrum varietas tempore fugit optio comis.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzlLYlA0d1BiZ0I=
+    is-expired: false
+    solutions: []
+    create-time: '2023-05-16 14:19:58'
+    update-time: '2023-06-07 21:11:16'

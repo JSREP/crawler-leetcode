@@ -1,0 +1,21 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 161
+    id-alias: mock-challenge-161
+    tags:
+      - CSRF
+      - WebSockets
+      - Access-Control
+      - Race-Condition
+    platform: API
+    name: 'Mock挑战题目 #161'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Tepesco velit conicio ab talis acceptus vorax.
+      Varietas cupiditate annus atqui amo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0p1ZlJId1JVUVY=
+    is-expired: false
+    solutions: []
+    create-time: '2024-08-25 08:30:28'
+    update-time: '2024-11-17 19:40:11'

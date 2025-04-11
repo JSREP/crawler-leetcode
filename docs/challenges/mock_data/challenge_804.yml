@@ -1,0 +1,22 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 804
+    id-alias: mock-challenge-804
+    tags:
+      - Output-Encoding
+      - Access-Control
+      - Command-Injection
+      - XSS
+      - Authentication
+    platform: Web
+    name: 'Mock挑战题目 #804'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Comes creptio conitor ceno. Testimonium subito
+      beatae.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2xYRDZnTkJFaWc=
+    is-expired: false
+    solutions: []
+    create-time: '2025-01-16 06:36:24'
+    update-time: '2025-02-12 07:33:02'

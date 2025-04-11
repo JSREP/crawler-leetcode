@@ -1,29 +1,19 @@
 # 挑战题目文件
 version: 1
-
 challenges:
-  - id: mock-challenge-74
+  - id: 74
+    id-alias: mock-challenge-74
     tags:
-      - encryption
-      - token-validation
-    platform: Android
-    name: Mock挑战题目 #74
-    difficulty-level: 3
-    description: 这是一个示例挑战题目的描述，难度为3星级。
-    base64-url: aHR0cHM6Ly9sZWV0Y29kZS5jb20vZXhlcmNpc2UvMTIzNDU=
+      - CORS
+      - Authentication
+    platform: API
+    name: 'Mock挑战题目 #74'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Vorax defungo surgo combibo venustas suadeo defero.
+      Colligo tenus decretum quaerat quas tepesco contigo tremo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2xhN2pVdTNQSUE=
     is-expired: false
-    solutions:
-      - title: Hook方法绕过
-        url: https://medium.com/@user/article
-        source: StackOverflow
-        author: Alex Chen
-      - title: AST分析方案
-        url: https://gist.github.com/user/id
-        source: Medium
-        author: John Doe
-      - title: 逆向工程思路
-        url: https://gist.github.com/user/id
-        source: Personal Blog
-        author: Alex Chen
-    create-time: 2024-05-13 07:19:59
-    update-time: 2025-03-24 03:28:51
+    solutions: []
+    create-time: '2024-12-11 15:02:08'
+    update-time: '2025-01-07 15:29:49'

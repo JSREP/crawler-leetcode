@@ -1,0 +1,35 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 536
+    id-alias: mock-challenge-536
+    tags:
+      - Browser-Extensions
+      - GraphQL
+      - XSS
+      - Path-Traversal
+      - CSRF
+    platform: Desktop
+    name: 'Mock挑战题目 #536'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Denuo defessus voluptatibus assumenda ab acerbitas
+      damno clarus denique terreo. Vehemens recusandae dicta subito cupiditas
+      clibanus cena somnus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2ZhNXpCSzE3ZW4=
+    is-expired: false
+    solutions:
+      - title: Cubo caelestis cedo.
+        url: https://exhausted-draft.name
+        source: GitHub
+        author: Marc Toy
+      - title: Capto derideo vinco.
+        url: https://minor-platypus.org
+        source: GitHub
+        author: Willis Daugherty
+      - title: Sequi uterque via.
+        url: https://unfinished-sauerkraut.info
+        source: StackOverflow
+        author: Angela Corkery
+    create-time: '2024-05-22 06:24:16'
+    update-time: '2024-11-03 12:21:37'

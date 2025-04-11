@@ -1,0 +1,20 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 237
+    id-alias: mock-challenge-237
+    tags:
+      - Output-Encoding
+      - CORS
+    platform: Web
+    name: 'Mock挑战题目 #237'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Tenus patruus speculum victoria desolo aliqua hic
+      veritatis provident aiunt. Corrigo umerus virga depraedor aranea libero
+      adicio aetas solitudo deduco.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0hDT2lDelRCaGc=
+    is-expired: false
+    solutions: []
+    create-time: '2023-06-26 10:33:36'
+    update-time: '2024-11-10 03:43:53'

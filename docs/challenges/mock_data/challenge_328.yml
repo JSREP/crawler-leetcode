@@ -1,0 +1,30 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 328
+    id-alias: mock-challenge-328
+    tags:
+      - Browser-Extensions
+      - Path-Traversal
+      - XXE
+      - Authorization
+      - Business-Logic
+    platform: Web
+    name: 'Mock挑战题目 #328'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Crux voluptatem sapiente iusto testimonium arx
+      laboriosam comedo clarus. Ultio coepi annus vulnero vergo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0RNUkp0d2pXNzY=
+    is-expired: false
+    solutions:
+      - title: Tunc bonus officia.
+        url: https://altruistic-step-mother.net/
+        source: Blog
+        author: Stewart Kassulke
+      - title: Thema velociter nostrum.
+        url: https://graceful-pick.net/
+        source: StackOverflow
+        author: Jane Schuster
+    create-time: '2024-07-05 11:43:34'
+    update-time: '2025-02-18 11:52:35'

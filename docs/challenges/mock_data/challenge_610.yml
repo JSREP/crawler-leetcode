@@ -1,0 +1,24 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 610
+    id-alias: mock-challenge-610
+    tags:
+      - OAuth
+      - CSP
+      - Input-Validation
+    platform: API
+    name: 'Mock挑战题目 #610'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Optio ante amiculum. Celo civis sublime antiquus
+      triduana utrum tredecim.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1pNVDNKY2oyWms=
+    is-expired: false
+    solutions:
+      - title: Stipes confido quasi.
+        url: https://jaunty-jacket.net/
+        source: GitHub
+        author: Darryl Conn II
+    create-time: '2023-07-15 18:59:43'
+    update-time: '2024-01-27 09:03:33'

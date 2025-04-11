@@ -1,0 +1,19 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 822
+    id-alias: mock-challenge-822
+    tags:
+      - Access-Control
+      - Mobile-Security
+    platform: IoT
+    name: 'Mock挑战题目 #822'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Sum suppono valens vis doloribus omnis caries votum.
+      Teres cervus aptus ademptio culpo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1cwcDZCV2psT2w=
+    is-expired: false
+    solutions: []
+    create-time: '2023-09-26 18:01:46'
+    update-time: '2024-03-12 18:05:45'

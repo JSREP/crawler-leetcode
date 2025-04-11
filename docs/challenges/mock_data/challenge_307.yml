@@ -1,0 +1,23 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 307
+    id-alias: mock-challenge-307
+    tags:
+      - CSRF
+      - XSS
+    platform: API
+    name: 'Mock挑战题目 #307'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Deinde tamdiu agnosco cenaculum. Canis alias
+      amplitudo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzBMaThTNGJJN2w=
+    is-expired: false
+    solutions:
+      - title: Cognomen delectatio vilitas.
+        url: https://decent-decongestant.net/
+        source: YouTube
+        author: Donald Block
+    create-time: '2024-09-01 07:54:17'
+    update-time: '2025-02-22 06:10:34'

@@ -1,0 +1,27 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 972
+    id-alias: mock-challenge-972
+    tags:
+      - File-Upload
+      - OAuth
+    platform: API
+    name: 'Mock挑战题目 #972'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Commodo consequuntur unus. Vinum annus aegre umerus
+      verto contigo aggero adduco solio.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0xoWjA2aGhDMkk=
+    is-expired: false
+    solutions:
+      - title: Pax timor complectus.
+        url: https://skeletal-rubric.biz
+        source: StackOverflow
+        author: Pearl Considine DVM
+      - title: Ager tantum quos.
+        url: https://buzzing-mathematics.biz/
+        source: Blog
+        author: Gina Feeney-Hodkiewicz
+    create-time: '2024-02-11 09:06:35'
+    update-time: '2025-03-22 21:21:19'

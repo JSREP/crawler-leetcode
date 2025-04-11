@@ -1,0 +1,32 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 828
+    id-alias: mock-challenge-828
+    tags:
+      - File-Upload
+      - WebSockets
+      - CSRF
+    platform: IoT
+    name: 'Mock挑战题目 #828'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Coadunatio aperte uter cotidie vado congregatio
+      vestrum voluptatem demulceo. Valens concido utroque.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzN6cUg0SmZoSXM=
+    is-expired: false
+    solutions:
+      - title: Conservo patruus cursus.
+        url: https://willing-coin.biz
+        source: Medium
+        author: Mr. Clint Frami
+      - title: Deserunt velociter vulgivagus.
+        url: https://upbeat-shipper.com
+        source: YouTube
+        author: ''
+      - title: Centum derideo triumphus.
+        url: https://profitable-requirement.biz
+        source: GitHub
+        author: ''
+    create-time: '2024-11-18 07:47:42'
+    update-time: '2025-03-28 13:40:59'

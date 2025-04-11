@@ -1,0 +1,20 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 773
+    id-alias: mock-challenge-773
+    tags:
+      - CSRF
+      - Output-Encoding
+    platform: Mobile
+    name: 'Mock挑战题目 #773'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Velociter bellicus maxime sordeo comparo altus
+      aliqua. Tolero censura ustulo verecundia vacuus somnus sumo exercitationem
+      demens deleo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2FPOExuVGJkODU=
+    is-expired: false
+    solutions: []
+    create-time: '2024-08-03 10:41:21'
+    update-time: '2025-01-26 01:55:48'

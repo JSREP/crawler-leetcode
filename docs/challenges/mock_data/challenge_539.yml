@@ -1,0 +1,33 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 539
+    id-alias: mock-challenge-539
+    tags:
+      - JWT
+      - Command-Injection
+      - GraphQL
+    platform: Web
+    name: 'Mock挑战题目 #539'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Attero tamquam urbs teres subiungo cras spargo
+      conduco consequuntur balbus. Deputo atqui cursim vere damnatio contabesco
+      nihil alienus deserunt cum.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3R2OGc5TnNlQ3o=
+    is-expired: true
+    solutions:
+      - title: Correptius compono tristis.
+        url: https://bright-warming.info/
+        source: Medium
+        author: Tricia Reinger
+      - title: Admitto amissio cito.
+        url: https://filthy-hawk.net/
+        source: StackOverflow
+        author: Denise Runte
+      - title: Est subvenio officia.
+        url: https://neat-pasta.info/
+        source: Medium
+        author: Miss Vicky Mann
+    create-time: '2024-11-13 00:43:11'
+    update-time: '2025-02-09 07:27:53'

@@ -1,0 +1,18 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 495
+    id-alias: mock-challenge-495
+    tags:
+      - XSS
+      - Output-Encoding
+      - CSRF
+    platform: Desktop
+    name: 'Mock挑战题目 #495'
+    difficulty-level: 1
+    description: 这是一个示例挑战题目的描述，难度为1星级。Strues conitor tumultus. Verus usus cruentus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3YwMzhud2twM3Y=
+    is-expired: false
+    solutions: []
+    create-time: '2024-05-01 05:46:43'
+    update-time: '2024-09-28 07:02:57'

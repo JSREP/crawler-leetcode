@@ -1,0 +1,21 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 383
+    id-alias: mock-challenge-383
+    tags:
+      - SSRF
+      - SQL-Injection
+      - GraphQL
+    platform: Desktop
+    name: 'Mock挑战题目 #383'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Dicta confido repellendus appello cupio assentator
+      curo ascit. Caecus ambulo concido demens stipes taceo absens viscus
+      temeritas.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3pUQkl2TGY4bXo=
+    is-expired: false
+    solutions: []
+    create-time: '2023-07-16 05:19:29'
+    update-time: '2024-12-21 06:08:21'

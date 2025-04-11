@@ -1,0 +1,27 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 881
+    id-alias: mock-challenge-881
+    tags:
+      - WebSockets
+      - Business-Logic
+    platform: Mobile
+    name: 'Mock挑战题目 #881'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Torqueo crinis occaecati utpote curto dedico. Avarus
+      antea aliquam curriculum acceptus volubilis.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3lLSEFrZkxNV0g=
+    is-expired: false
+    solutions:
+      - title: Creo uterque arto.
+        url: https://crowded-doorpost.org/
+        source: Blog
+        author: Glenn Schmitt
+      - title: Aro adsuesco laborum.
+        url: https://experienced-account.org
+        source: GitHub
+        author: ''
+    create-time: '2024-09-29 00:31:15'
+    update-time: '2025-03-25 11:58:50'

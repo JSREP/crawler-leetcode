@@ -1,0 +1,32 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 359
+    id-alias: mock-challenge-359
+    tags:
+      - Authorization
+      - HTTP-Headers
+      - File-Upload
+    platform: Mobile
+    name: 'Mock挑战题目 #359'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Caste cetera vorax complectus constans xiphias harum
+      statua. Sto sodalitas compello apostolus tristis benevolentia tam magni.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2VaTWliRzlUUE0=
+    is-expired: false
+    solutions:
+      - title: Voluntarius suspendo cribro.
+        url: https://practical-deck.org
+        source: GitHub
+        author: Merle Torphy-Waelchi
+      - title: Corrupti cruentus sint.
+        url: https://bowed-zen.org
+        source: StackOverflow
+        author: Stacey Kerluke
+      - title: Sodalitas vere clarus.
+        url: https://outgoing-taro.net/
+        source: Blog
+        author: Charlene Daniel
+    create-time: '2025-03-05 19:22:07'
+    update-time: '2025-04-10 22:41:40'

@@ -1,0 +1,33 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 139
+    id-alias: mock-challenge-139
+    tags:
+      - HTTP-Headers
+      - Session-Management
+      - XXE
+      - Input-Validation
+    platform: IoT
+    name: 'Mock挑战题目 #139'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Conspergo speculum claustrum ambulo denuo curto.
+      Ademptio vinculum thymum.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0NrcE05ZmRzb2g=
+    is-expired: false
+    solutions:
+      - title: Clam decimus videlicet.
+        url: https://well-to-do-hydrocarbon.org/
+        source: Blog
+        author: Neil Quigley MD
+      - title: Paulatim cervus laboriosam.
+        url: https://thrifty-disk.biz
+        source: Blog
+        author: Floyd Collier
+      - title: Acies audeo aer.
+        url: https://necessary-behest.net
+        source: Blog
+        author: Dr. Bradley Nikolaus
+    create-time: '2024-09-17 23:35:59'
+    update-time: '2024-09-23 16:34:40'

@@ -1,0 +1,25 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 517
+    id-alias: mock-challenge-517
+    tags:
+      - Business-Logic
+      - Access-Control
+      - HTTP-Headers
+      - Output-Encoding
+    platform: Mobile
+    name: 'Mock挑战题目 #517'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Correptius celebrer porro virtus tamisium. Demum
+      video amissio caritas averto una copia abstergo corpus surculus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1M3cjROaEhkR0k=
+    is-expired: false
+    solutions:
+      - title: Demonstro pariatur cinis.
+        url: https://small-bin.biz
+        source: Medium
+        author: Jo Rogahn
+    create-time: '2023-04-24 18:37:17'
+    update-time: '2023-09-01 23:12:03'

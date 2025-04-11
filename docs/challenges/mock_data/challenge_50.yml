@@ -1,20 +1,23 @@
 # 挑战题目文件
 version: 1
-
 challenges:
-  - id: mock-challenge-50
+  - id: 50
+    id-alias: mock-challenge-50
     tags:
-      - jsvmp
-    platform: Web
-    name: Mock挑战题目 #50
-    difficulty-level: 1
-    description: 这是一个示例挑战题目的描述，难度为1星级。
-    base64-url: aHR0cHM6Ly93d3cuZXhhbXBsZS5jb20vZXhlcmNpc2UveHl6MTIz
+      - Authentication
+      - HTTP-Headers
+      - OAuth
+      - XXE
+      - Command-Injection
+    platform: Desktop
+    name: 'Mock挑战题目 #50'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Sui coniecto bene cruciamentum quae aer alioqui cito
+      convoco cum. Usitas conduco considero aer textor arx solitudo amplitudo
+      adflicto.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2xNWTFpcU1GYVE=
     is-expired: false
-    solutions:
-      - title: 逆向工程思路
-        url: https://gist.github.com/user/id
-        source: StackOverflow
-        author: 
-    create-time: 2023-12-01 11:45:41
-    update-time: 2024-04-24 12:29:14
+    solutions: []
+    create-time: '2024-08-15 20:31:46'
+    update-time: '2024-11-22 03:20:35'

@@ -1,0 +1,24 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 917
+    id-alias: mock-challenge-917
+    tags:
+      - CSRF
+      - JWT
+    platform: Web
+    name: 'Mock挑战题目 #917'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Vilitas velum ipsam vinum denique thesis varietas
+      conturbo concido. Necessitatibus verecundia auctor deinde vinco supplanto
+      soleo cicuta cedo aurum.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2JDTTl1cmRJSjQ=
+    is-expired: false
+    solutions:
+      - title: Harum sit aperio.
+        url: https://shimmering-monasticism.net/
+        source: Blog
+        author: Nicholas Hand
+    create-time: '2024-03-19 15:57:39'
+    update-time: '2024-09-10 23:52:46'

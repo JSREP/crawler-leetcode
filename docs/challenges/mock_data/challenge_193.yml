@@ -1,0 +1,24 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 193
+    id-alias: mock-challenge-193
+    tags:
+      - Deserialization
+      - XSS
+    platform: API
+    name: 'Mock挑战题目 #193'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Ademptio fugit abduco venustas reiciendis tyrannus.
+      Abundans reprehenderit tenetur soluta curso suppellex apud tricesimus
+      bellum ademptio.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0MxQVc3WFVsQzc=
+    is-expired: false
+    solutions:
+      - title: Culpa minima venia.
+        url: https://unfit-alert.org/
+        source: Medium
+        author: Martin Hayes
+    create-time: '2024-02-20 14:29:37'
+    update-time: '2024-08-14 20:52:51'

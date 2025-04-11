@@ -1,0 +1,32 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 581
+    id-alias: mock-challenge-581
+    tags:
+      - JWT
+      - Command-Injection
+      - WebSockets
+    platform: Web
+    name: 'Mock挑战题目 #581'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Similique debeo comburo cruciamentum commemoro auctor
+      accendo nisi. Canonicus claro crustulum adulescens comes theologus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzVqUHgzTWNVcG8=
+    is-expired: false
+    solutions:
+      - title: Tyrannus defessus vorax.
+        url: https://able-bonnet.name
+        source: YouTube
+        author: Pearl Marks
+      - title: A expedita studio.
+        url: https://pure-mathematics.info/
+        source: YouTube
+        author: Ruby Rice
+      - title: Optio varietas eaque.
+        url: https://immaculate-digit.info
+        source: Blog
+        author: Roy Homenick
+    create-time: '2024-03-21 11:59:44'
+    update-time: '2024-06-25 21:04:10'

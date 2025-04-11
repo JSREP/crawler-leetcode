@@ -1,0 +1,33 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 619
+    id-alias: mock-challenge-619
+    tags:
+      - CSRF
+      - Business-Logic
+      - File-Upload
+      - Authentication
+    platform: API
+    name: 'Mock挑战题目 #619'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Corrigo versus absconditus utilis dolores titulus
+      ancilla supra baiulus cedo. Ad defleo civis.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0tzQmJJSnhGRFY=
+    is-expired: false
+    solutions:
+      - title: Cognomen cras natus.
+        url: https://expensive-dash.net
+        source: Medium
+        author: Jeannie Reynolds IV
+      - title: Tabula id asperiores.
+        url: https://some-punctuation.org
+        source: GitHub
+        author: Leroy Johnston MD
+      - title: Pecco damnatio consuasor.
+        url: https://dead-custom.info/
+        source: StackOverflow
+        author: Tyrone Miller III
+    create-time: '2023-06-17 19:05:29'
+    update-time: '2024-09-20 21:46:12'

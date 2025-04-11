@@ -1,7 +1,10 @@
-import { Button, Card, Space, Tag, Typography } from 'antd';
+import { Button, Card, Space, Typography } from 'antd';
 import * as React from 'react';
 import { Challenge } from '../../types/challenge';
 import StarRating from '../StarRating';
+import IdTag from '../IdTag';
+import PlatformTag from '../PlatformTag';
+import TopicTag from '../TopicTag';
 
 const { Text } = Typography;
 
@@ -48,6 +51,9 @@ const ChallengeListItem: React.FC<ChallengeListItemProps> = ({
     onDifficultyClick,
     onPlatformClick
 }) => {
+    // 确保id是一个有效值
+    const displayId = challenge.id !== undefined ? challenge.id : '?';
+    
     return (
         <Card
             hoverable
@@ -56,7 +62,7 @@ const ChallengeListItem: React.FC<ChallengeListItemProps> = ({
         >
             <Space direction="vertical" style={{ width: '100%' }}>
                 <Space>
-                    <Tag color="#42b983">#{challenge.id}</Tag>
+                    <IdTag id={displayId} />
                     <Text strong style={{ fontSize: 16 }}>{challenge.title}</Text>
                 </Space>
 
@@ -65,39 +71,29 @@ const ChallengeListItem: React.FC<ChallengeListItemProps> = ({
                 <Space wrap>
                     <StarRating
                         difficulty={challenge.difficulty}
-                        onClick={(difficulty) => {
-                            onDifficultyClick(difficulty);
-                        }}
+                        onClick={onDifficultyClick}
+                        stopPropagation={true}
                     />
                     
                     {/* 添加平台标签 */}
-                    {challenge.platform && (
-                        <Tag 
-                            color={challenge.platform === 'LeetCode' ? 'orange' : 'purple'}
-                            style={{ cursor: 'pointer' }}
-                            onClick={(e: React.MouseEvent) => {
-                                e.stopPropagation();
-                                if (challenge.platform && onPlatformClick) {
-                                    onPlatformClick(challenge.platform);
-                                }
-                            }}
-                        >
-                            {challenge.platform}
-                        </Tag>
+                    {challenge.platform && onPlatformClick && (
+                        <PlatformTag 
+                            platform={challenge.platform}
+                            clickable
+                            onClick={onPlatformClick}
+                            stopPropagation={true}
+                        />
                     )}
                     
                     {challenge.tags.map(tag => (
-                        <Tag
+                        <TopicTag
                             key={tag}
-                            color={selectedTags.includes(tag) ? 'geekblue' : 'blue'}
-                            onClick={(e: React.MouseEvent) => {
-                                e.stopPropagation();
-                                onTagClick(tag);
-                            }}
-                            style={{ cursor: 'pointer' }}
-                        >
-                            {tag}
-                        </Tag>
+                            text={tag}
+                            selected={selectedTags.includes(tag)}
+                            clickable
+                            onClick={onTagClick}
+                            stopPropagation={true}
+                        />
                     ))}
                     <Text type="secondary">
                         创建时间: {challenge.createTime.toLocaleDateString()}

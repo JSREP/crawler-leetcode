@@ -1,0 +1,23 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 890
+    id-alias: mock-challenge-890
+    tags:
+      - Session-Management
+      - Authentication
+    platform: Mobile
+    name: 'Mock挑战题目 #890'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Vetus vir denuncio pecus delectatio virga desparatus
+      curtus. Altus arx studio.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2IyYjVJWUpteXQ=
+    is-expired: false
+    solutions:
+      - title: Viduo terminatio comis.
+        url: https://stupendous-larva.biz/
+        source: StackOverflow
+        author: Earnest Reynolds-Dickinson
+    create-time: '2025-01-29 11:43:01'
+    update-time: '2025-02-05 21:04:56'

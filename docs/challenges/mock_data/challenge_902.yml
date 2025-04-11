@@ -1,0 +1,25 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 902
+    id-alias: mock-challenge-902
+    tags:
+      - WebSockets
+      - Command-Injection
+      - API-Security
+      - SSRF
+    platform: API
+    name: 'Mock挑战题目 #902'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Aperio comprehendo theologus pectus et non decens
+      bellum umbra. Quidem thalassinus volva suadeo tabgo uberrime ambitus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3JteDJJWG9rbzU=
+    is-expired: false
+    solutions:
+      - title: Voluptates aspicio ipsam.
+        url: https://clear-junior.name/
+        source: StackOverflow
+        author: Tony Harvey
+    create-time: '2024-04-15 07:05:16'
+    update-time: '2024-04-20 19:33:34'

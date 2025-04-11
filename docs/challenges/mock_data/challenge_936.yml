@@ -1,0 +1,27 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 936
+    id-alias: mock-challenge-936
+    tags:
+      - Browser-Extensions
+      - Deserialization
+    platform: Web
+    name: 'Mock挑战题目 #936'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Angelus solio voluptate. Id super demulceo animi
+      alias commemoro claro.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0dBUm9mNERnOHQ=
+    is-expired: false
+    solutions:
+      - title: Tredecim odit natus.
+        url: https://ideal-forager.org/
+        source: Blog
+        author: Dr. Brian Johnston
+      - title: Coniecto crastinus ex.
+        url: https://cuddly-programme.org
+        source: StackOverflow
+        author: ''
+    create-time: '2023-04-19 04:22:36'
+    update-time: '2024-12-13 20:59:46'

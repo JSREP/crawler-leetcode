@@ -1,0 +1,27 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 198
+    id-alias: mock-challenge-198
+    tags:
+      - Rate-Limiting
+      - API-Security
+    platform: API
+    name: 'Mock挑战题目 #198'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Succurro confido desipio. Censura conforto compono
+      pauper culpa patrocinor derideo ciminatio.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3NacUF0ZE9xRkw=
+    is-expired: false
+    solutions:
+      - title: Tactus repudiandae correptius.
+        url: https://young-ecliptic.net
+        source: GitHub
+        author: Ian Runolfsdottir
+      - title: Terminatio altus vitiosus.
+        url: https://grim-contrail.name/
+        source: Medium
+        author: Kerry Wilkinson-Kessler
+    create-time: '2024-08-08 14:10:13'
+    update-time: '2025-01-18 12:47:20'

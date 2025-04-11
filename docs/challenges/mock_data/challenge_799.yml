@@ -1,0 +1,25 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 799
+    id-alias: mock-challenge-799
+    tags:
+      - Mobile-Security
+      - WebSockets
+      - Browser-Extensions
+      - Path-Traversal
+    platform: IoT
+    name: 'Mock挑战题目 #799'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Comburo adinventitias ulciscor depereo amplitudo
+      crustulum. Bellicus spoliatio deficio triduana angustus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1BQR0drU0Exb08=
+    is-expired: false
+    solutions:
+      - title: Spiritus adficio denuncio.
+        url: https://defensive-surface.biz
+        source: Medium
+        author: Erin Cummings
+    create-time: '2024-07-21 10:44:32'
+    update-time: '2024-10-09 15:55:40'

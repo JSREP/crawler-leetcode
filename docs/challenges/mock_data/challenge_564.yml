@@ -1,0 +1,25 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 564
+    id-alias: mock-challenge-564
+    tags:
+      - Session-Management
+      - Output-Encoding
+      - Rate-Limiting
+      - API-Security
+    platform: Web
+    name: 'Mock挑战题目 #564'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Compello vel aliqua torqueo. Commodo clam stipes
+      assentator ago timor contego viscus arx aureus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2drM3oxdG5QWHc=
+    is-expired: false
+    solutions:
+      - title: Pecco nisi ubi.
+        url: https://grimy-barge.net/
+        source: GitHub
+        author: Jody Bernier
+    create-time: '2023-08-03 06:54:18'
+    update-time: '2024-06-18 03:29:57'

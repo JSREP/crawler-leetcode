@@ -1,0 +1,34 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 922
+    id-alias: mock-challenge-922
+    tags:
+      - Input-Validation
+      - Race-Condition
+      - Authorization
+      - Business-Logic
+      - File-Upload
+    platform: Desktop
+    name: 'Mock挑战题目 #922'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Denique curatio auxilium cibo aureus deduco
+      benevolentia sortitus. Aranea coruscus aveho tertius beneficium deludo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzVuRWV0QWpwMUg=
+    is-expired: false
+    solutions:
+      - title: Carpo textor clementia.
+        url: https://good-mentor.info
+        source: StackOverflow
+        author: Mr. Jacob Lueilwitz DDS
+      - title: Creo curtus calculus.
+        url: https://merry-best-seller.name
+        source: Blog
+        author: Charles Stoltenberg-Ferry
+      - title: Paulatim tricesimus assentator.
+        url: https://flashy-retention.biz
+        source: StackOverflow
+        author: Hugh Boehm
+    create-time: '2024-01-30 23:36:15'
+    update-time: '2024-05-07 02:14:11'

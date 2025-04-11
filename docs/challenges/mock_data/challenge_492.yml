@@ -1,0 +1,30 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 492
+    id-alias: mock-challenge-492
+    tags:
+      - JWT
+      - Browser-Extensions
+      - CSP
+      - CSRF
+      - Mobile-Security
+    platform: Web
+    name: 'Mock挑战题目 #492'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Debeo taceo ambitus. Bonus calamitas asporto defendo
+      una audacia at complectus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2JsN1VSTGFpQnc=
+    is-expired: false
+    solutions:
+      - title: Carcer strenuus tepidus.
+        url: https://cuddly-fedora.info
+        source: StackOverflow
+        author: ''
+      - title: Quaerat vulgus adflicto.
+        url: https://known-role.org
+        source: YouTube
+        author: Darryl Hintz PhD
+    create-time: '2023-08-28 15:09:09'
+    update-time: '2024-01-21 05:34:45'

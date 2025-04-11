@@ -1,0 +1,22 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 851
+    id-alias: mock-challenge-851
+    tags:
+      - Input-Validation
+      - XXE
+      - Access-Control
+      - GraphQL
+      - Command-Injection
+    platform: Desktop
+    name: 'Mock挑战题目 #851'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Defluo confido ancilla creber ventosus color sapiente
+      crux aeternus. Cernuus curatio defluo solio cuius talio thorax crux vaco.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzI0bEJ0Y3E5d0Q=
+    is-expired: false
+    solutions: []
+    create-time: '2023-11-17 00:30:44'
+    update-time: '2024-09-21 14:28:45'

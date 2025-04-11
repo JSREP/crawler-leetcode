@@ -1,0 +1,29 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 624
+    id-alias: mock-challenge-624
+    tags:
+      - Race-Condition
+      - SQL-Injection
+      - Browser-Extensions
+      - Path-Traversal
+    platform: IoT
+    name: 'Mock挑战题目 #624'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Curatio adipisci cibus careo tempus cumque undique.
+      Asperiores tabula amplitudo valens est.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzVoRkRqZk43cUo=
+    is-expired: false
+    solutions:
+      - title: Asperiores alo sufficio.
+        url: https://giving-drug.com/
+        source: YouTube
+        author: Jeanne Effertz
+      - title: Possimus denuncio eaque.
+        url: https://steep-premium.org
+        source: Medium
+        author: Latoya Graham DVM
+    create-time: '2023-08-18 18:01:47'
+    update-time: '2024-04-21 21:28:51'

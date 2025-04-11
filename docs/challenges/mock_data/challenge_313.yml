@@ -1,0 +1,24 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 313
+    id-alias: mock-challenge-313
+    tags:
+      - Session-Management
+      - Input-Validation
+    platform: IoT
+    name: 'Mock挑战题目 #313'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Tempus vito calculus cena subseco consectetur vicinus
+      cometes thema vulgo. Eligendi caterva curto atrox certe cerno vester ceno
+      vindico careo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2hvTXJNSzdlZks=
+    is-expired: false
+    solutions:
+      - title: Vaco praesentium varietas.
+        url: https://accomplished-lender.info/
+        source: StackOverflow
+        author: Miss Frances Lindgren
+    create-time: '2024-12-04 18:51:32'
+    update-time: '2025-03-11 06:47:43'

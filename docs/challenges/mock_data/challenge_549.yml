@@ -1,0 +1,32 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 549
+    id-alias: mock-challenge-549
+    tags:
+      - Access-Control
+      - Path-Traversal
+      - Authorization
+    platform: Desktop
+    name: 'Mock挑战题目 #549'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Deprecator tepesco astrum aggredior cupio celer
+      aveho. Veritas distinctio tener corpus terreo defessus apparatus aeternus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0pkNElLSUtuT3U=
+    is-expired: false
+    solutions:
+      - title: Voluptas pax arguo.
+        url: https://merry-councilman.name
+        source: StackOverflow
+        author: Derek Bauch
+      - title: Veritatis caelum minima.
+        url: https://golden-spring.info/
+        source: YouTube
+        author: Nichole Russel
+      - title: Tollo aperte conscendo.
+        url: https://perky-pinstripe.biz
+        source: StackOverflow
+        author: Sheldon Quitzon
+    create-time: '2024-10-23 01:41:31'
+    update-time: '2024-12-24 23:55:43'

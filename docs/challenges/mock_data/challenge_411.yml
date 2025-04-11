@@ -1,0 +1,33 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 411
+    id-alias: mock-challenge-411
+    tags:
+      - CSRF
+      - Command-Injection
+      - WebSockets
+      - Access-Control
+    platform: API
+    name: 'Mock挑战题目 #411'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Concedo velut tertius facilis. Aeneus communis sed
+      decumbo confido aggredior titulus cotidie amet.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1AxNVhualNnUEI=
+    is-expired: true
+    solutions:
+      - title: Solum defleo nam.
+        url: https://deafening-possession.info/
+        source: GitHub
+        author: Bryant Hilll DDS
+      - title: Infit cavus adimpleo.
+        url: https://understated-prohibition.com/
+        source: Medium
+        author: Dr. Darnell Jacobson MD
+      - title: Praesentium torrens nisi.
+        url: https://crowded-airline.biz/
+        source: YouTube
+        author: Sheila Weimann II
+    create-time: '2024-12-28 00:50:50'
+    update-time: '2025-03-26 14:06:22'

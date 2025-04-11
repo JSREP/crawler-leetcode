@@ -1,21 +1,19 @@
 # 挑战题目文件
 version: 1
-
 challenges:
-  - id: mock-challenge-97
+  - id: 97
+    id-alias: mock-challenge-97
     tags:
-      - browser-check
-      - api-protection
-    platform: Android
-    name: Mock挑战题目 #97
-    difficulty-level: 4
-    description: 这是一个示例挑战题目的描述，难度为4星级。
-    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9leGVyY2lzZS9hYmNkZWY=
-    is-expired: true
-    solutions:
-      - title: 静态分析方法
-        url: https://gist.github.com/user/id
-        source: Personal Blog
-        author: 
-    create-time: 2023-09-13 18:08:35
-    update-time: 2023-01-07 03:37:13
+      - Deserialization
+      - Hashing
+    platform: Web
+    name: 'Mock挑战题目 #97'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Video comparo asperiores libero appono. Uredo balbus
+      aurum cibus comes utroque taedium deficio acquiro.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1RROEtNaGpLSUM=
+    is-expired: false
+    solutions: []
+    create-time: '2024-05-14 19:00:55'
+    update-time: '2024-07-03 09:25:27'

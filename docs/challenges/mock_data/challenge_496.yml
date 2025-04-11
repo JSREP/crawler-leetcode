@@ -1,0 +1,31 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 496
+    id-alias: mock-challenge-496
+    tags:
+      - XXE
+      - Rate-Limiting
+    platform: Desktop
+    name: 'Mock挑战题目 #496'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Tredecim defluo tabernus truculenter. Uberrime
+      audentia consectetur verto appositus brevis textus sortitus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1hlTE91eTV0S20=
+    is-expired: false
+    solutions:
+      - title: Crastinus comparo cilicium.
+        url: https://heavenly-barracks.com/
+        source: Medium
+        author: Bennie Osinski
+      - title: Tametsi attero utrum.
+        url: https://neglected-fellow.com/
+        source: StackOverflow
+        author: Arthur Kuhlman Sr.
+      - title: Autem thesaurus communis.
+        url: https://pessimistic-tarragon.name/
+        source: YouTube
+        author: ''
+    create-time: '2025-02-13 11:25:54'
+    update-time: '2025-02-23 16:16:21'

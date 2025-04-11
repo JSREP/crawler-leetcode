@@ -1,23 +1,23 @@
 # 挑战题目文件
 version: 1
-
 challenges:
-  - id: mock-challenge-59
+  - id: 59
+    id-alias: mock-challenge-59
     tags:
-      - cookie-protection
-      - token-validation
-      - obfuscator
-      - canvas-fingerprint
+      - OAuth
+      - CSRF
+      - WebSockets
+      - Path-Traversal
+      - Command-Injection
     platform: Web
-    name: Mock挑战题目 #59
-    difficulty-level: 1
-    description: 这是一个示例挑战题目的描述，难度为1星级。
-    base64-url: aHR0cHM6Ly93d3cuZXhhbXBsZS5jb20vcHJvYmxlbS94eXoxMjM=
+    name: 'Mock挑战题目 #59'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Tripudio pecco amo et versus audio placeat quas
+      aureus vigilo. Provident pauper demo tondeo civis arceo comptus tenuis
+      causa.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2xIZWdJbmQwQnA=
     is-expired: false
-    solutions:
-      - title: 使用Puppeteer绕过检测
-        url: https://gist.github.com/user/id
-        source: StackOverflow
-        author: Jane Smith
-    create-time: 2025-10-20 20:32:45
-    update-time: 2024-11-25 13:20:34
+    solutions: []
+    create-time: '2023-10-28 21:19:32'
+    update-time: '2024-11-24 04:14:02'

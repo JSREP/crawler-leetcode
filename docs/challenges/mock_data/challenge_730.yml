@@ -1,0 +1,34 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 730
+    id-alias: mock-challenge-730
+    tags:
+      - Output-Encoding
+      - OAuth
+      - Race-Condition
+      - Input-Validation
+      - CORS
+    platform: API
+    name: 'Mock挑战题目 #730'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Adflicto alter beatae delibero spargo tener terebro.
+      Statua decimus antiquus conor.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L000QnlXSXkydkg=
+    is-expired: false
+    solutions:
+      - title: Vita videlicet tutamen.
+        url: https://enchanted-nun.name
+        source: StackOverflow
+        author: ''
+      - title: Arbustum hic abscido.
+        url: https://fragrant-gray.org/
+        source: Medium
+        author: Darryl Daniel IV
+      - title: Vinum vicissitudo vigor.
+        url: https://tense-summary.com/
+        source: StackOverflow
+        author: Brooke Bergstrom
+    create-time: '2024-06-06 03:25:02'
+    update-time: '2025-01-29 01:03:18'

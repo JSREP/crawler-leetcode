@@ -1,0 +1,31 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 494
+    id-alias: mock-challenge-494
+    tags:
+      - Browser-Extensions
+      - Path-Traversal
+    platform: API
+    name: 'Mock挑战题目 #494'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Vulgivagus voluptatum neque tabula suffoco summopere
+      adeptio. Caterva vulpes voluptatem repellendus triumphus adamo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0VQaHhUTnM0elQ=
+    is-expired: false
+    solutions:
+      - title: Tamisium chirographum arbor.
+        url: https://present-casket.name/
+        source: YouTube
+        author: Katie McLaughlin
+      - title: Viriliter curtus civis.
+        url: https://mushy-boyfriend.net
+        source: Blog
+        author: ''
+      - title: Minima abscido quo.
+        url: https://actual-packaging.biz/
+        source: StackOverflow
+        author: Celia Bins
+    create-time: '2023-12-28 03:37:07'
+    update-time: '2024-06-03 01:55:56'

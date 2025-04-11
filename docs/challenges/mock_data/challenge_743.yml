@@ -1,0 +1,30 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 743
+    id-alias: mock-challenge-743
+    tags:
+      - Race-Condition
+      - Input-Validation
+      - Authentication
+      - Rate-Limiting
+      - Encryption
+    platform: API
+    name: 'Mock挑战题目 #743'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Suus attollo desidero. Studio vinitor dolorem debeo
+      civis apparatus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3oweXp6b1VoVEQ=
+    is-expired: false
+    solutions:
+      - title: Vester auditor vos.
+        url: https://scary-season.org/
+        source: StackOverflow
+        author: Stuart Abshire
+      - title: Despecto deduco sollers.
+        url: https://reflecting-substitution.info/
+        source: YouTube
+        author: Mr. Frank Ruecker
+    create-time: '2025-03-21 12:57:35'
+    update-time: '2025-04-02 20:37:13'

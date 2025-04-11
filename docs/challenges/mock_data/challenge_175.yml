@@ -1,0 +1,33 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 175
+    id-alias: mock-challenge-175
+    tags:
+      - Browser-Extensions
+      - SQL-Injection
+      - CSRF
+      - SSRF
+    platform: Desktop
+    name: 'Mock挑战题目 #175'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Corroboro tepesco surgo conspergo tandem. Odit
+      commodo thalassinus arbor ducimus spectaculum.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3VhVFFHeW9mYkw=
+    is-expired: false
+    solutions:
+      - title: Auctor sublime audio.
+        url: https://infatuated-tackle.name/
+        source: Medium
+        author: Frances Crona-O'Kon
+      - title: Delego rem defendo.
+        url: https://wiggly-contrail.info/
+        source: StackOverflow
+        author: ''
+      - title: Calamitas stabilis aegre.
+        url: https://some-thigh.org/
+        source: StackOverflow
+        author: Glenda Hartmann Jr.
+    create-time: '2023-08-12 05:23:09'
+    update-time: '2025-01-28 21:43:49'

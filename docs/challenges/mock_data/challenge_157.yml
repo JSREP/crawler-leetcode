@@ -1,0 +1,19 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 157
+    id-alias: mock-challenge-157
+    tags:
+      - WebSockets
+      - File-Upload
+    platform: API
+    name: 'Mock挑战题目 #157'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Clementia sumo volaticus aeneus summisse acervus.
+      Tantillus modi tempore adversus amoveo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2ExTHNkMkJSZmk=
+    is-expired: false
+    solutions: []
+    create-time: '2024-05-04 10:58:21'
+    update-time: '2024-10-13 11:40:59'

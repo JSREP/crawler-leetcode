@@ -1,0 +1,34 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 718
+    id-alias: mock-challenge-718
+    tags:
+      - GraphQL
+      - Output-Encoding
+      - Input-Validation
+      - File-Upload
+      - JWT
+    platform: Desktop
+    name: 'Mock挑战题目 #718'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Magni curso statua tergo arbor tutamen vestigium
+      coadunatio. Aro vulnus testimonium arx beatae vulpes amita creo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1lmbVV1aE5hMVY=
+    is-expired: false
+    solutions:
+      - title: Cattus curvo veniam.
+        url: https://wide-eyed-lounge.net
+        source: Blog
+        author: Tracey Gerhold
+      - title: Tergo desparatus caelum.
+        url: https://trivial-cod.name
+        source: Medium
+        author: Lori Ward
+      - title: Tollo vulnus conitor.
+        url: https://tiny-pillow.name
+        source: GitHub
+        author: Frederick Balistreri
+    create-time: '2023-12-29 23:13:06'
+    update-time: '2024-02-13 07:06:25'

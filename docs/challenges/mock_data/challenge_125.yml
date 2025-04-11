@@ -1,0 +1,30 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 125
+    id-alias: mock-challenge-125
+    tags:
+      - Access-Control
+      - Command-Injection
+      - Output-Encoding
+      - XXE
+    platform: Web
+    name: 'Mock挑战题目 #125'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Cervus asperiores considero subnecto antepono neque
+      animus fugit sollers. Patruus deleo recusandae patrocinor cariosus
+      praesentium adamo voluptatibus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3J0MmFRdXRpdjg=
+    is-expired: false
+    solutions:
+      - title: Dolore altus aedificium.
+        url: https://clean-slipper.biz
+        source: YouTube
+        author: Virginia Baumbach
+      - title: Credo ipsum ocer.
+        url: https://appropriate-pilot.biz/
+        source: Medium
+        author: Faith Reilly
+    create-time: '2023-11-22 14:38:30'
+    update-time: '2024-08-03 19:32:31'

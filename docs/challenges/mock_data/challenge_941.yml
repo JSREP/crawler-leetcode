@@ -1,0 +1,21 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 941
+    id-alias: mock-challenge-941
+    tags:
+      - XSS
+      - OAuth
+      - XXE
+      - Command-Injection
+    platform: IoT
+    name: 'Mock挑战题目 #941'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Voluntarius causa tricesimus. Vestrum terreo
+      velociter.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0ltRWVDMEpPZzM=
+    is-expired: true
+    solutions: []
+    create-time: '2023-09-06 16:45:05'
+    update-time: '2025-02-13 19:23:22'

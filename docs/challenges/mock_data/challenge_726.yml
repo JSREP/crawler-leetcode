@@ -1,0 +1,19 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 726
+    id-alias: mock-challenge-726
+    tags:
+      - Hashing
+      - Authentication
+    platform: Mobile
+    name: 'Mock挑战题目 #726'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Bestia aedificium cunae thymbra sumo. Cruentus
+      expedita aeneus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1VpREs5WWdNSE0=
+    is-expired: false
+    solutions: []
+    create-time: '2024-09-05 18:55:29'
+    update-time: '2025-01-12 19:49:30'

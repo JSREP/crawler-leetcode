@@ -1,21 +1,30 @@
 # 挑战题目文件
 version: 1
-
 challenges:
-  - id: mock-challenge-32
+  - id: 32
+    id-alias: mock-challenge-32
     tags:
-      - wasm
-      - webpack
-    platform: iOS
-    name: Mock挑战题目 #32
-    difficulty-level: 4
-    description: 这是一个示例挑战题目的描述，难度为4星级。
-    base64-url: aHR0cHM6Ly93d3cuZXhhbXBsZS5jb20vcHJvYmxlbS82Nzg5MA==
+      - Authentication
+      - Command-Injection
+      - Race-Condition
+      - Session-Management
+      - WebSockets
+    platform: Desktop
+    name: 'Mock挑战题目 #32'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Volo thema ars candidus aegrus. Vulgivagus sub
+      vehemens quaerat cattus vere minima.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzE4MzhhMGFJUmI=
     is-expired: false
     solutions:
-      - title: Hook方法绕过
-        url: https://gist.github.com/user/id
+      - title: Curatio verumtamen verto.
+        url: https://whopping-formation.name
         source: Medium
-        author: Web Security Expert
-    create-time: 2023-04-24 16:26:36
-    update-time: 2024-03-10 00:47:37
+        author: Sheldon Hermann
+      - title: Cogo tolero supellex.
+        url: https://cool-gown.biz
+        source: Blog
+        author: Homer Becker
+    create-time: '2023-06-24 01:00:11'
+    update-time: '2024-04-27 06:56:01'

@@ -1,0 +1,33 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 899
+    id-alias: mock-challenge-899
+    tags:
+      - Authorization
+      - XSS
+      - CORS
+      - Output-Encoding
+    platform: Web
+    name: 'Mock挑战题目 #899'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Vergo centum textus. Aperiam delectus tabella tollo
+      quibusdam cunae alioqui vitiosus vorago deleo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2FNb0c5Ylpnd2Y=
+    is-expired: false
+    solutions:
+      - title: Custodia earum supra.
+        url: https://wonderful-skyline.info/
+        source: YouTube
+        author: ''
+      - title: Ad repellat suppellex.
+        url: https://taut-section.info
+        source: GitHub
+        author: Ian Stoltenberg
+      - title: Stabilis teres spiritus.
+        url: https://doting-place.name/
+        source: YouTube
+        author: Carla Emmerich-Legros DVM
+    create-time: '2023-04-26 19:58:39'
+    update-time: '2023-07-27 21:48:48'

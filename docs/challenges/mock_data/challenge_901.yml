@@ -1,0 +1,32 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 901
+    id-alias: mock-challenge-901
+    tags:
+      - Authentication
+      - Deserialization
+      - HTTP-Headers
+    platform: API
+    name: 'Mock挑战题目 #901'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Brevis dolor tutis. Corpus bibo arceo similique
+      titulus territo ratione.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2xEdXBDQ2V4SXQ=
+    is-expired: false
+    solutions:
+      - title: Basium crapula strues.
+        url: https://that-farm.name
+        source: YouTube
+        author: ''
+      - title: Est sustineo temporibus.
+        url: https://fatal-hawk.name
+        source: StackOverflow
+        author: Angelina Stracke
+      - title: Carpo bis tego.
+        url: https://apt-yin.org
+        source: StackOverflow
+        author: Lynne Waters
+    create-time: '2024-08-31 17:29:35'
+    update-time: '2024-11-30 02:07:50'

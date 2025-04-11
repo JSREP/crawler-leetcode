@@ -1,0 +1,29 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 227
+    id-alias: mock-challenge-227
+    tags:
+      - JWT
+      - Rate-Limiting
+      - Output-Encoding
+      - Browser-Extensions
+    platform: Desktop
+    name: 'Mock挑战题目 #227'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Tui complectus vigor astrum tactus cursus tempus
+      reiciendis utor. Vitae tabgo viscus tondeo utique velum universe.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1JMZ3gwUDczMTk=
+    is-expired: false
+    solutions:
+      - title: Canis volva ambitus.
+        url: https://upset-coast.org/
+        source: Medium
+        author: Katrina Hansen PhD
+      - title: Alter neque adficio.
+        url: https://grimy-wilderness.org
+        source: YouTube
+        author: Garrett Konopelski
+    create-time: '2024-04-16 20:26:07'
+    update-time: '2024-12-09 04:37:13'

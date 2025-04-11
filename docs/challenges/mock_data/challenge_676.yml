@@ -1,0 +1,30 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 676
+    id-alias: mock-challenge-676
+    tags:
+      - JWT
+      - XXE
+      - SSRF
+      - Output-Encoding
+      - SQL-Injection
+    platform: Mobile
+    name: 'Mock挑战题目 #676'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Defluo bibo circumvenio alo. Quae reiciendis labore
+      tener animus autem avaritia libero coma umquam.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2lwdjNKYmhxd1E=
+    is-expired: false
+    solutions:
+      - title: Correptius vacuus acies.
+        url: https://dutiful-decongestant.com/
+        source: YouTube
+        author: Dr. Chad Towne
+      - title: Reprehenderit tricesimus tumultus.
+        url: https://simple-someplace.biz/
+        source: YouTube
+        author: Damon Carroll
+    create-time: '2024-12-06 19:13:29'
+    update-time: '2025-03-18 02:40:25'

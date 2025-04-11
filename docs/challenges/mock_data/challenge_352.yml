@@ -1,0 +1,29 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 352
+    id-alias: mock-challenge-352
+    tags:
+      - CORS
+      - XXE
+      - Output-Encoding
+      - Command-Injection
+    platform: Web
+    name: 'Mock挑战题目 #352'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Corpus nostrum tabella vereor umquam. Creber crinis
+      desidero socius sophismata absque itaque.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2hNZmlYZ0o5akg=
+    is-expired: false
+    solutions:
+      - title: Iure sumptus consequatur.
+        url: https://sure-footed-wilderness.biz
+        source: GitHub
+        author: Pablo Mueller
+      - title: Vulgaris ullam aetas.
+        url: https://insecure-minister.info
+        source: Medium
+        author: Chester Predovic
+    create-time: '2024-04-20 22:02:17'
+    update-time: '2024-12-31 17:44:48'

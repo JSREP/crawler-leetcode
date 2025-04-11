@@ -1,0 +1,29 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 511
+    id-alias: mock-challenge-511
+    tags:
+      - Authorization
+      - JWT
+      - Path-Traversal
+      - HTTP-Headers
+    platform: Mobile
+    name: 'Mock挑战题目 #511'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Vulpes tepesco quas subnecto desipio. Dicta caelum
+      pax anser ventus minima tergeo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3phdmlkME5kWjA=
+    is-expired: false
+    solutions:
+      - title: Tardus utrimque defungo.
+        url: https://somber-cutlet.org/
+        source: GitHub
+        author: Leo Doyle
+      - title: Suffoco civitas unde.
+        url: https://milky-scarification.info/
+        source: YouTube
+        author: Jay Kessler
+    create-time: '2025-04-11 05:33:41'
+    update-time: '2025-04-11 16:38:33'

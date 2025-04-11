@@ -1,0 +1,26 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 188
+    id-alias: mock-challenge-188
+    tags:
+      - Authentication
+      - CORS
+      - Output-Encoding
+      - Business-Logic
+      - File-Upload
+    platform: Desktop
+    name: 'Mock挑战题目 #188'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Praesentium canto natus amo ascit defaeco causa
+      auctus. Corpus apto patrocinor solus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3dxN3Y2MFNmZlQ=
+    is-expired: false
+    solutions:
+      - title: Officia tui consequatur.
+        url: https://short-fen.com/
+        source: StackOverflow
+        author: Geneva Koepp
+    create-time: '2023-08-16 09:34:58'
+    update-time: '2024-04-04 15:18:46'

@@ -1,0 +1,32 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 751
+    id-alias: mock-challenge-751
+    tags:
+      - CORS
+      - GraphQL
+      - Output-Encoding
+    platform: Mobile
+    name: 'Mock挑战题目 #751'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Ver alter doloribus collum deleo ager tabula ea.
+      Confido vorax alioqui vicinus tollo qui undique cogo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0g3Q3h4NWV5Z2U=
+    is-expired: false
+    solutions:
+      - title: Antepono quae vobis.
+        url: https://taut-gift.org
+        source: YouTube
+        author: Clark Abbott II
+      - title: Cumque balbus aureus.
+        url: https://self-assured-vision.net/
+        source: GitHub
+        author: Ray Kovacek
+      - title: Blandior spiritus ager.
+        url: https://severe-councilman.biz
+        source: YouTube
+        author: David Reichert
+    create-time: '2023-09-02 19:05:45'
+    update-time: '2023-11-29 05:46:32'

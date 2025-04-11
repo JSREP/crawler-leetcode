@@ -1,0 +1,34 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 694
+    id-alias: mock-challenge-694
+    tags:
+      - File-Upload
+      - API-Security
+      - CSRF
+      - Deserialization
+      - OAuth
+    platform: IoT
+    name: 'Mock挑战题目 #694'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Nobis solitudo suspendo sublime cupiditas mollitia
+      eius speculum theologus cresco. Earum abduco laborum.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0p6a2tvUmY2U0Q=
+    is-expired: false
+    solutions:
+      - title: Coepi calamitas impedit.
+        url: https://specific-flint.biz
+        source: StackOverflow
+        author: Joanne Barrows-Murray
+      - title: Excepturi suggero cubicularis.
+        url: https://unconscious-coordination.name/
+        source: Blog
+        author: Sheri O'Connell
+      - title: Tribuo tabgo maiores.
+        url: https://brown-polyester.org
+        source: Medium
+        author: ''
+    create-time: '2024-10-12 04:29:10'
+    update-time: '2024-12-06 23:00:58'

@@ -1,29 +1,32 @@
 # 挑战题目文件
 version: 1
-
 challenges:
-  - id: mock-challenge-10
+  - id: 10
+    id-alias: mock-challenge-10
     tags:
-      - webgl-fingerprint
-      - mobile-app
-    platform: Web
-    name: Mock挑战题目 #10
-    difficulty-level: 3
-    description: 这是一个示例挑战题目的描述，难度为3星级。
-    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9wcm9ibGVtL3h5ejEyMw==
-    is-expired: true
+      - Race-Condition
+      - CORS
+      - CSP
+    platform: IoT
+    name: 'Mock挑战题目 #10'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Conduco quos fugit depraedor aqua audentia sumptus
+      vester quae. Curo catena charisma theatrum vomito asper vado denique.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3kyQ0Fac0ExQ2o=
+    is-expired: false
     solutions:
-      - title: 静态分析方法
-        url: https://github.com/user/repo
-        source: StackOverflow
-        author: Alex Chen
-      - title: 静态分析方法
-        url: https://gist.github.com/user/id
-        source: Personal Blog
-        author: Web Security Expert
-      - title: AST分析方案
-        url: https://gist.github.com/user/id
+      - title: Tamen id laboriosam.
+        url: https://grizzled-hutch.org/
+        source: YouTube
+        author: ''
+      - title: Antepono viduo ea.
+        url: https://portly-meander.info/
         source: GitHub
-        author: Jane Smith
-    create-time: 2024-05-22 09:47:45
-    update-time: 2025-07-19 14:43:57
+        author: Caleb Shanahan-Ruecker
+      - title: Templum ter abduco.
+        url: https://advanced-fax.name/
+        source: GitHub
+        author: Miss Melissa Reinger
+    create-time: '2024-11-26 12:18:21'
+    update-time: '2025-01-24 18:02:45'

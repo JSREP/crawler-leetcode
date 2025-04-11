@@ -1,0 +1,26 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 714
+    id-alias: mock-challenge-714
+    tags:
+      - Deserialization
+      - Rate-Limiting
+      - File-Upload
+      - Mobile-Security
+    platform: Web
+    name: 'Mock挑战题目 #714'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Vindico campana aduro adimpleo caste sufficio
+      stillicidium ipsa bos. Derelinquo adfectus textus utilis facilis excepturi
+      fugit.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L05manlHOHdQamU=
+    is-expired: false
+    solutions:
+      - title: Culpa creptio deleo.
+        url: https://outstanding-forage.net/
+        source: StackOverflow
+        author: Daisy Sauer
+    create-time: '2024-07-03 23:53:14'
+    update-time: '2024-10-13 17:28:46'

@@ -1,0 +1,34 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 371
+    id-alias: mock-challenge-371
+    tags:
+      - Mobile-Security
+      - SQL-Injection
+      - Browser-Extensions
+      - WebSockets
+      - Authorization
+    platform: Desktop
+    name: 'Mock挑战题目 #371'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Admoveo ab cruentus arx. Beatus commodo annus vix
+      depulso.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1o5RWc1RjJ3aGM=
+    is-expired: false
+    solutions:
+      - title: Usus turba deripio.
+        url: https://electric-sideboard.org
+        source: StackOverflow
+        author: Mr. Michael Hammes
+      - title: Vulgo eaque celebrer.
+        url: https://dramatic-roadway.org/
+        source: Blog
+        author: Eloise Lowe
+      - title: Sunt corona soleo.
+        url: https://blond-scenario.info/
+        source: Medium
+        author: Sherri Howe
+    create-time: '2025-02-19 06:32:21'
+    update-time: '2025-03-14 22:45:52'

@@ -1,0 +1,26 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 254
+    id-alias: mock-challenge-254
+    tags:
+      - Command-Injection
+      - GraphQL
+      - Business-Logic
+      - CSP
+    platform: Desktop
+    name: 'Mock挑战题目 #254'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Sit delinquo blanditiis arguo vereor vesica
+      voluptatum coniuratio titulus. Distinctio aut cresco deprimo beatae aeneus
+      defetiscor aegrotatio corporis.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2FwcDBubWF5cG4=
+    is-expired: false
+    solutions:
+      - title: Viduo perspiciatis creator.
+        url: https://jaunty-planula.info/
+        source: YouTube
+        author: Laurence Dare
+    create-time: '2023-09-14 17:34:12'
+    update-time: '2024-04-05 10:12:35'

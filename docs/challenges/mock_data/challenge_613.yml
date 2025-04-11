@@ -1,0 +1,25 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 613
+    id-alias: mock-challenge-613
+    tags:
+      - Rate-Limiting
+      - Session-Management
+      - SQL-Injection
+      - XSS
+    platform: API
+    name: 'Mock挑战题目 #613'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Compello cornu amaritudo consequuntur uxor aureus
+      amor confido infit. Somniculosus attollo aspernatur facere nemo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0xUTERXSVJFVTg=
+    is-expired: false
+    solutions:
+      - title: Bonus votum utor.
+        url: https://fortunate-nephew.net/
+        source: Medium
+        author: Leslie Mayert
+    create-time: '2024-05-14 20:41:59'
+    update-time: '2024-06-16 04:13:58'

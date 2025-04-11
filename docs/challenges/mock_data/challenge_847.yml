@@ -1,0 +1,26 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 847
+    id-alias: mock-challenge-847
+    tags:
+      - File-Upload
+      - Browser-Extensions
+      - OAuth
+      - SQL-Injection
+      - Session-Management
+    platform: Mobile
+    name: 'Mock挑战题目 #847'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Fuga ater demoror iste defungo. Demens sollicito
+      coepi astrum cruentus thesis deporto.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2dQR1VKNDdqZE0=
+    is-expired: false
+    solutions:
+      - title: Exercitationem audio vulgo.
+        url: https://rubbery-stock.name
+        source: GitHub
+        author: ''
+    create-time: '2024-03-20 00:25:50'
+    update-time: '2024-10-03 19:30:59'

@@ -1,0 +1,31 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 786
+    id-alias: mock-challenge-786
+    tags:
+      - JWT
+      - XSS
+    platform: Desktop
+    name: 'Mock挑战题目 #786'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Demens arbor caritas capio. Minima conturbo teneo
+      tactus teneo creator.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0pWUG1uYWFMSWg=
+    is-expired: false
+    solutions:
+      - title: Cogo abscido sint.
+        url: https://faint-gripper.org/
+        source: StackOverflow
+        author: ''
+      - title: Strenuus deputo cerno.
+        url: https://discrete-tuba.com/
+        source: Medium
+        author: Grace Schultz
+      - title: Arcus absens sophismata.
+        url: https://hot-seal.name/
+        source: Medium
+        author: Freddie Deckow
+    create-time: '2023-05-28 04:51:51'
+    update-time: '2023-08-03 06:24:34'

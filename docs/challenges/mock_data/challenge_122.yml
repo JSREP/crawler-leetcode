@@ -1,0 +1,30 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 122
+    id-alias: mock-challenge-122
+    tags:
+      - Session-Management
+      - SSRF
+      - WebSockets
+      - SQL-Injection
+      - Encryption
+    platform: Web
+    name: 'Mock挑战题目 #122'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Tardus deleo vilitas atque contabesco assentator
+      centum deinde aduro congregatio. Arbor hic trepide tamquam thalassinus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L282eUkzdWNTUkw=
+    is-expired: false
+    solutions:
+      - title: Cariosus arbitro umbra.
+        url: https://hasty-meatloaf.biz
+        source: Blog
+        author: Lucy Little
+      - title: Nemo amplexus celebrer.
+        url: https://grubby-tarragon.biz/
+        source: Blog
+        author: ''
+    create-time: '2023-08-22 00:32:38'
+    update-time: '2024-10-30 09:32:06'

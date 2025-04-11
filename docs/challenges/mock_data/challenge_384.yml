@@ -1,0 +1,33 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 384
+    id-alias: mock-challenge-384
+    tags:
+      - Command-Injection
+      - SQL-Injection
+      - Access-Control
+      - WebSockets
+    platform: IoT
+    name: 'Mock挑战题目 #384'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Conduco conitor ait illo vivo. Accusamus turbo soleo
+      carbo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1E4R1dsNzlySGE=
+    is-expired: true
+    solutions:
+      - title: Deporto conicio tersus.
+        url: https://competent-cinder.name/
+        source: Medium
+        author: Joey Mante-Dicki
+      - title: Voluptas repudiandae voco.
+        url: https://glum-hovercraft.com/
+        source: StackOverflow
+        author: Margarita Ortiz
+      - title: Ducimus voluptas acidus.
+        url: https://dependable-punctuation.biz/
+        source: GitHub
+        author: April Reichel
+    create-time: '2025-03-28 09:07:48'
+    update-time: '2025-03-30 01:37:10'

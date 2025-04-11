@@ -1,0 +1,35 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 373
+    id-alias: mock-challenge-373
+    tags:
+      - Authorization
+      - Access-Control
+      - GraphQL
+      - API-Security
+      - XSS
+    platform: API
+    name: 'Mock挑战题目 #373'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Quasi similique cursim cariosus acer tot solium
+      utique civis velociter. Utilis taceo urbs verbum spes conatus attollo
+      advoco.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1Rad21OYWFHYjQ=
+    is-expired: false
+    solutions:
+      - title: Aequus terra corrigo.
+        url: https://unripe-affect.org/
+        source: YouTube
+        author: Beatrice Keebler
+      - title: Spiculum vesica crur.
+        url: https://blond-boulevard.info/
+        source: GitHub
+        author: Lucia Rempel
+      - title: Quo conitor caries.
+        url: https://deadly-volleyball.net/
+        source: GitHub
+        author: Dennis Williamson-Ebert
+    create-time: '2023-09-01 20:57:29'
+    update-time: '2024-09-16 14:14:50'

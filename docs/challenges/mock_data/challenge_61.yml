@@ -1,21 +1,24 @@
 # 挑战题目文件
 version: 1
-
 challenges:
-  - id: mock-challenge-61
+  - id: 61
+    id-alias: mock-challenge-61
     tags:
-      - webgl-fingerprint
-      - canvas-fingerprint
-    platform: Android
-    name: Mock挑战题目 #61
-    difficulty-level: 5
-    description: 这是一个示例挑战题目的描述，难度为5星级。
-    base64-url: aHR0cHM6Ly9sZWV0Y29kZS5jb20vcHJvYmxlbS9hYmNkZWY=
+      - Access-Control
+      - SSRF
+      - CSP
+    platform: IoT
+    name: 'Mock挑战题目 #61'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Claro suscipio teneo caste contigo. Corrumpo utpote
+      coerceo aureus ratione vomica cattus capillus ciminatio auxilium.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L01YREhXSWtsSTQ=
     is-expired: false
     solutions:
-      - title: AST分析方案
-        url: https://github.com/user/repo
-        source: StackOverflow
-        author: Jane Smith
-    create-time: 2024-01-22 18:10:26
-    update-time: 2024-06-19 12:43:59
+      - title: Cur auctor sponte.
+        url: https://warlike-suv.net/
+        source: Medium
+        author: Doug Hackett
+    create-time: '2024-05-03 16:18:41'
+    update-time: '2024-07-12 18:26:14'

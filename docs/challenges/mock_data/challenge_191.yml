@@ -1,0 +1,27 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 191
+    id-alias: mock-challenge-191
+    tags:
+      - API-Security
+      - Mobile-Security
+    platform: IoT
+    name: 'Mock挑战题目 #191'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Tondeo mollitia cognomen. Nisi minus tener volubilis
+      ait.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0l0ZkZneTh5dFg=
+    is-expired: false
+    solutions:
+      - title: Trado suus vorax.
+        url: https://frilly-vista.org/
+        source: GitHub
+        author: Sonya Weber
+      - title: Adsuesco catena tum.
+        url: https://affectionate-overheard.net
+        source: StackOverflow
+        author: Mr. Otis Bode V
+    create-time: '2025-01-05 13:44:07'
+    update-time: '2025-01-30 13:42:08'

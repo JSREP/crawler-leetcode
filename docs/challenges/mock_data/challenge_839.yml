@@ -1,0 +1,28 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 839
+    id-alias: mock-challenge-839
+    tags:
+      - Mobile-Security
+      - SQL-Injection
+      - GraphQL
+    platform: Desktop
+    name: 'Mock挑战题目 #839'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Apud cornu brevis corpus depopulo cur via considero.
+      Amicitia condico taceo cibus argumentum at sit similique.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2xjZWR4WU5GV1U=
+    is-expired: false
+    solutions:
+      - title: Amor ait angelus.
+        url: https://noted-populist.org
+        source: Medium
+        author: Jeannie Medhurst
+      - title: Cedo adduco stella.
+        url: https://soupy-pronoun.net
+        source: YouTube
+        author: ''
+    create-time: '2024-02-10 00:24:36'
+    update-time: '2024-08-05 22:15:42'

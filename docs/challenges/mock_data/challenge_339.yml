@@ -1,0 +1,24 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 339
+    id-alias: mock-challenge-339
+    tags:
+      - Authorization
+      - CSRF
+      - CSP
+    platform: API
+    name: 'Mock挑战题目 #339'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Verecundia voluptatibus tripudio volaticus cumque.
+      Talio aperio aegre eum consequuntur.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1FFQzhkdVdZRmQ=
+    is-expired: false
+    solutions:
+      - title: Utor suscipio utrum.
+        url: https://uncommon-wallaby.name
+        source: Blog
+        author: Myron Hilpert
+    create-time: '2024-02-01 20:05:03'
+    update-time: '2025-01-24 10:43:00'

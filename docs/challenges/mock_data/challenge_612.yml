@@ -1,0 +1,24 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 612
+    id-alias: mock-challenge-612
+    tags:
+      - CORS
+      - Hashing
+      - SSRF
+      - OAuth
+      - Session-Management
+    platform: Desktop
+    name: 'Mock挑战题目 #612'
+    difficulty-level: 5
+    description: 这是一个示例挑战题目的描述，难度为5星级。Territo vere sollers centum. Expedita pecto caries.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzRYbUNDN1c3elc=
+    is-expired: false
+    solutions:
+      - title: Degero ambitus carus.
+        url: https://prestigious-retention.name/
+        source: StackOverflow
+        author: Mitchell Bernhard
+    create-time: '2024-07-15 08:10:14'
+    update-time: '2025-01-18 00:59:27'

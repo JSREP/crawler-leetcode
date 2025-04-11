@@ -1,0 +1,24 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 719
+    id-alias: mock-challenge-719
+    tags:
+      - File-Upload
+      - API-Security
+      - CSP
+    platform: IoT
+    name: 'Mock挑战题目 #719'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Armarium contabesco conor. Porro subiungo torrens
+      arbitro conitor urbanus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2I4b2hXVXo5Qmo=
+    is-expired: true
+    solutions:
+      - title: Virgo incidunt crepusculum.
+        url: https://worst-lid.info
+        source: GitHub
+        author: Ella Walsh
+    create-time: '2024-07-01 16:50:07'
+    update-time: '2024-10-19 02:01:45'

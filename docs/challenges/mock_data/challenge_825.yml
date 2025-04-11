@@ -1,0 +1,33 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 825
+    id-alias: mock-challenge-825
+    tags:
+      - Deserialization
+      - SSRF
+      - XSS
+      - API-Security
+    platform: Mobile
+    name: 'Mock挑战题目 #825'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Desipio virga nostrum dens cupiditas creber bos
+      sordeo derideo. Inflammatio administratio deprecator caveo cohibeo terga.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L09ZOGVmR2pDY0M=
+    is-expired: false
+    solutions:
+      - title: Consuasor carpo bos.
+        url: https://flimsy-chow.net
+        source: Medium
+        author: Jessie Collier
+      - title: Officia accusantium conduco.
+        url: https://these-forager.biz
+        source: GitHub
+        author: ''
+      - title: Absconditus accendo caput.
+        url: https://definitive-lobster.com
+        source: Blog
+        author: Wade Veum
+    create-time: '2023-06-19 03:44:47'
+    update-time: '2024-07-17 22:20:21'

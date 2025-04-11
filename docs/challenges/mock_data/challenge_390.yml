@@ -1,0 +1,22 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 390
+    id-alias: mock-challenge-390
+    tags:
+      - Mobile-Security
+      - Rate-Limiting
+      - CSRF
+      - Encryption
+      - SSRF
+    platform: IoT
+    name: 'Mock挑战题目 #390'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Cupiditas vitium ea tantum carus. Vigor causa basium
+      conventus veniam thesis maxime depereo supplanto sum.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3piNDYxU3pXMnU=
+    is-expired: false
+    solutions: []
+    create-time: '2025-03-27 18:29:39'
+    update-time: '2025-03-31 11:18:25'

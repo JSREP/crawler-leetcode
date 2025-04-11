@@ -1,0 +1,26 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 483
+    id-alias: mock-challenge-483
+    tags:
+      - Path-Traversal
+      - Access-Control
+      - HTTP-Headers
+      - Encryption
+      - Deserialization
+    platform: Web
+    name: 'Mock挑战题目 #483'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Uterque absconditus verus corpus earum. Solio amissio
+      aranea spes hic.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2pKdTR3U2tRTnE=
+    is-expired: false
+    solutions:
+      - title: Adhaero aestivus cetera.
+        url: https://expensive-fen.org
+        source: Blog
+        author: Lynette Powlowski
+    create-time: '2023-07-29 22:49:51'
+    update-time: '2024-01-10 20:15:44'

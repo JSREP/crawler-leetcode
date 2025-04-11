@@ -1,0 +1,30 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 367
+    id-alias: mock-challenge-367
+    tags:
+      - SQL-Injection
+      - Rate-Limiting
+      - API-Security
+    platform: Desktop
+    name: 'Mock挑战题目 #367'
+    difficulty-level: 3
+    description: 这是一个示例挑战题目的描述，难度为3星级。Vobis suscipio verbum. Aegrotatio dens vergo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3hvRTlTdmk4dW4=
+    is-expired: false
+    solutions:
+      - title: Adipisci armarium at.
+        url: https://unwieldy-guard.name
+        source: GitHub
+        author: Alyssa Balistreri
+      - title: Caritas ater cur.
+        url: https://grounded-affiliate.biz/
+        source: Blog
+        author: Margarita Hyatt
+      - title: Cumque pel taceo.
+        url: https://good-natured-sushi.com/
+        source: GitHub
+        author: Mr. Kevin Feeney
+    create-time: '2024-02-25 05:15:29'
+    update-time: '2024-08-29 14:17:34'

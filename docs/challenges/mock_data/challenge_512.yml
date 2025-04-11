@@ -1,0 +1,24 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 512
+    id-alias: mock-challenge-512
+    tags:
+      - Race-Condition
+      - CSP
+      - Deserialization
+    platform: API
+    name: 'Mock挑战题目 #512'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Comitatus callide aufero spero voco umbra defetiscor
+      tamdiu. Collum tredecim solitudo depulso utor alias contabesco.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L25QTnVIeWg2bG4=
+    is-expired: false
+    solutions:
+      - title: Totidem depulso peccatus.
+        url: https://lost-tool.biz/
+        source: Blog
+        author: Lori Rowe
+    create-time: '2024-07-08 16:16:38'
+    update-time: '2024-12-17 02:41:23'

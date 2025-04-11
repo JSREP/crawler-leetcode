@@ -1,0 +1,23 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 248
+    id-alias: mock-challenge-248
+    tags:
+      - CORS
+      - Rate-Limiting
+    platform: Desktop
+    name: 'Mock挑战题目 #248'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Pauper theologus desparatus pauper acidus.
+      Repellendus cras voluptates correptius vetus tollo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L01iOU1uQUZ2UUg=
+    is-expired: false
+    solutions:
+      - title: Truculenter error magnam.
+        url: https://heavy-tabletop.net
+        source: Medium
+        author: Betty Bernhard
+    create-time: '2024-09-15 15:06:14'
+    update-time: '2025-04-07 12:07:25'

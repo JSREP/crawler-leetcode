@@ -1,30 +1,25 @@
 # 挑战题目文件
 version: 1
-
 challenges:
-  - id: mock-challenge-71
+  - id: 71
+    id-alias: mock-challenge-71
     tags:
-      - device-motion
-      - anti-crawler
-      - mobile-app
-    platform: Android
-    name: Mock挑战题目 #71
+      - GraphQL
+      - Output-Encoding
+      - Rate-Limiting
+      - XXE
+    platform: Web
+    name: 'Mock挑战题目 #71'
     difficulty-level: 1
-    description: 这是一个示例挑战题目的描述，难度为1星级。
-    base64-url: aHR0cHM6Ly93d3cuZXhhbXBsZS5jb20vcHJvYmxlbS8xMjM0NQ==
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Terminatio cruciamentum thema deserunt stips
+      desparatus dolore consequuntur nulla. Admiratio fuga taceo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzE1bEQ3VEg5SWE=
     is-expired: false
     solutions:
-      - title: 使用Puppeteer绕过检测
-        url: https://github.com/user/repo
-        source: StackOverflow
-        author: Jane Smith
-      - title: 静态分析方法
-        url: https://gist.github.com/user/id
+      - title: Calamitas valeo voro.
+        url: https://sizzling-nightlife.biz/
         source: GitHub
-        author: Jane Smith
-      - title: 逆向工程思路
-        url: https://github.com/user/repo
-        source: YouTube
-        author: Alex Chen
-    create-time: 2025-02-10 04:52:58
-    update-time: 2025-12-21 02:09:52
+        author: Abel Toy
+    create-time: '2024-04-09 13:16:50'
+    update-time: '2025-03-06 18:06:25'

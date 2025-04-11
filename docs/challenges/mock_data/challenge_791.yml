@@ -1,0 +1,25 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 791
+    id-alias: mock-challenge-791
+    tags:
+      - Path-Traversal
+      - CORS
+      - Command-Injection
+      - Rate-Limiting
+    platform: Desktop
+    name: 'Mock挑战题目 #791'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Quidem degusto stips antea. Accommodo tergum thorax
+      in abutor canto.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3g0ZUhLYzNid3M=
+    is-expired: false
+    solutions:
+      - title: Careo administratio conturbo.
+        url: https://sniveling-underneath.org
+        source: YouTube
+        author: Bobby Jacobs
+    create-time: '2023-11-17 23:43:54'
+    update-time: '2024-03-28 21:10:18'

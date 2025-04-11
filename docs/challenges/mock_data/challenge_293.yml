@@ -1,0 +1,24 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 293
+    id-alias: mock-challenge-293
+    tags:
+      - CSRF
+      - XXE
+      - HTTP-Headers
+    platform: Web
+    name: 'Mock挑战题目 #293'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Dignissimos magni perspiciatis ipsum facilis. Unus
+      vulgivagus patruus ambitus maiores tenus solum.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1VLTm05cXJqMkc=
+    is-expired: false
+    solutions:
+      - title: Bellum coniuratio tego.
+        url: https://grounded-analogy.net/
+        source: Blog
+        author: Kenneth Bosco
+    create-time: '2024-07-17 12:47:19'
+    update-time: '2024-12-26 00:20:26'

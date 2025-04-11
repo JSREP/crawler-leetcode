@@ -1,0 +1,32 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 561
+    id-alias: mock-challenge-561
+    tags:
+      - Browser-Extensions
+      - CSRF
+      - Path-Traversal
+      - Deserialization
+      - WebSockets
+    platform: Desktop
+    name: 'Mock挑战题目 #561'
+    difficulty-level: 2
+    description: 这是一个示例挑战题目的描述，难度为2星级。Vir volo cavus. Super aspicio tepidus depereo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzBQeG9qSkVQS04=
+    is-expired: false
+    solutions:
+      - title: Ipsa impedit arceo.
+        url: https://stingy-heroine.com
+        source: YouTube
+        author: Dr. Ervin Greenholt
+      - title: Abeo attero consequatur.
+        url: https://square-ethyl.biz/
+        source: StackOverflow
+        author: Marion Denesik
+      - title: Admoneo tabula cogo.
+        url: https://heartfelt-derby.net/
+        source: YouTube
+        author: Juan Renner
+    create-time: '2023-07-25 15:57:15'
+    update-time: '2024-03-17 02:44:18'

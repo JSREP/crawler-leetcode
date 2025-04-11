@@ -1,0 +1,22 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 212
+    id-alias: mock-challenge-212
+    tags:
+      - Command-Injection
+      - Input-Validation
+      - JWT
+      - Browser-Extensions
+      - XXE
+    platform: Mobile
+    name: 'Mock挑战题目 #212'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Sumptus usitas copiose terebro cedo molestias caries
+      uberrime. Defessus alias vester.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzZBRTNCYVUzZHA=
+    is-expired: false
+    solutions: []
+    create-time: '2024-01-01 18:54:26'
+    update-time: '2025-03-29 03:49:49'

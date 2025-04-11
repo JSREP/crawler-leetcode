@@ -1,0 +1,28 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 538
+    id-alias: mock-challenge-538
+    tags:
+      - API-Security
+      - CSP
+      - Encryption
+    platform: API
+    name: 'Mock挑战题目 #538'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Damno cum creta vomer ut. Vix clibanus candidus vobis
+      decor derideo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6Lzh1dnJOODQ0WXI=
+    is-expired: false
+    solutions:
+      - title: Creo quisquam infit.
+        url: https://candid-quinoa.com
+        source: YouTube
+        author: Ms. Miriam Morar
+      - title: Truculenter aperio summa.
+        url: https://lazy-defendant.com/
+        source: Medium
+        author: Shirley Pollich
+    create-time: '2023-12-17 07:17:01'
+    update-time: '2025-02-19 18:45:18'

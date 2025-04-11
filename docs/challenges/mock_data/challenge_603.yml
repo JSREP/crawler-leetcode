@@ -1,0 +1,23 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 603
+    id-alias: mock-challenge-603
+    tags:
+      - Browser-Extensions
+      - Output-Encoding
+      - Race-Condition
+      - Authorization
+      - Authentication
+    platform: API
+    name: 'Mock挑战题目 #603'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Circumvenio thesaurus alveus ancilla cilicium sperno
+      voro caecus. Trucido adficio apto excepturi corporis cilicium advenio
+      aequitas armarium.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1VseXc0U1RYTms=
+    is-expired: false
+    solutions: []
+    create-time: '2023-07-16 22:10:33'
+    update-time: '2024-08-21 02:09:56'

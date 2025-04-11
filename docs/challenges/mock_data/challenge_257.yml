@@ -1,0 +1,23 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 257
+    id-alias: mock-challenge-257
+    tags:
+      - CSRF
+      - Hashing
+      - API-Security
+      - File-Upload
+      - Rate-Limiting
+    platform: Mobile
+    name: 'Mock挑战题目 #257'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Uberrime comptus aiunt crux quibusdam contego virgo
+      accommodo sumo thorax. Solvo sollers decor conicio cultellus casus volup
+      deporto tribuo deleniti.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1dLeE5oM1FBbWk=
+    is-expired: false
+    solutions: []
+    create-time: '2024-12-10 08:09:52'
+    update-time: '2025-03-28 01:57:19'

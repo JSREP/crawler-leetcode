@@ -1,0 +1,30 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 260
+    id-alias: mock-challenge-260
+    tags:
+      - Output-Encoding
+      - Authorization
+      - File-Upload
+      - XXE
+      - JWT
+    platform: API
+    name: 'Mock挑战题目 #260'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Titulus tametsi custodia cruciamentum. Terreo volo
+      articulus alius aufero angelus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1RwRld5UjAxcGc=
+    is-expired: false
+    solutions:
+      - title: Uberrime sufficio apostolus.
+        url: https://productive-silk.com
+        source: Blog
+        author: Monique Hickle
+      - title: Aufero curis nostrum.
+        url: https://curly-conservation.org
+        source: StackOverflow
+        author: Michele Feeney
+    create-time: '2024-03-06 09:33:52'
+    update-time: '2024-10-29 18:04:48'

@@ -1,0 +1,19 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 671
+    id-alias: mock-challenge-671
+    tags:
+      - Access-Control
+      - WebSockets
+      - CSRF
+      - Browser-Extensions
+    platform: Web
+    name: 'Mock挑战题目 #671'
+    difficulty-level: 3
+    description: 这是一个示例挑战题目的描述，难度为3星级。Calco dignissimos eius. Coruscus articulus summisse.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0ZwOHlacGVUU1U=
+    is-expired: false
+    solutions: []
+    create-time: '2024-01-17 08:42:58'
+    update-time: '2025-02-09 13:18:40'

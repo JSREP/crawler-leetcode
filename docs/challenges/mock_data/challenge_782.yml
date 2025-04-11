@@ -1,0 +1,30 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 782
+    id-alias: mock-challenge-782
+    tags:
+      - XSS
+      - Race-Condition
+      - HTTP-Headers
+      - Deserialization
+      - SQL-Injection
+    platform: API
+    name: 'Mock挑战题目 #782'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Cinis veritas audio adulatio sublime vomito. Usitas
+      solitudo civis tego.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzcwQmJXSVFDS0U=
+    is-expired: false
+    solutions:
+      - title: Rem assentator convoco.
+        url: https://quarrelsome-zebra.org/
+        source: Blog
+        author: Erica Hickle
+      - title: Conitor torrens sol.
+        url: https://dutiful-newsstand.net/
+        source: Medium
+        author: Meghan Mann
+    create-time: '2023-11-29 16:30:42'
+    update-time: '2024-06-20 11:43:45'

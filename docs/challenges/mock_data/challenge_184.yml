@@ -1,0 +1,33 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 184
+    id-alias: mock-challenge-184
+    tags:
+      - API-Security
+      - SSRF
+      - Session-Management
+      - Hashing
+    platform: Desktop
+    name: 'Mock挑战题目 #184'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Texo decumbo velociter versus antea stultus. Degero
+      tutis nesciunt est cui voluptatem aedificium conculco damno.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzdNZ1hvWEw4cHg=
+    is-expired: false
+    solutions:
+      - title: Creptio debitis blanditiis.
+        url: https://well-worn-emergent.name
+        source: StackOverflow
+        author: Lynda Borer
+      - title: Adversus laboriosam ascisco.
+        url: https://dependable-discourse.info/
+        source: Blog
+        author: Emilio Shanahan
+      - title: Cursus cursim triumphus.
+        url: https://qualified-reboot.net/
+        source: Blog
+        author: Mrs. Jessie Torphy
+    create-time: '2024-02-16 11:24:32'
+    update-time: '2024-02-25 05:05:30'

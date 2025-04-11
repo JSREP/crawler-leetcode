@@ -1,0 +1,30 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 233
+    id-alias: mock-challenge-233
+    tags:
+      - Command-Injection
+      - Input-Validation
+      - OAuth
+      - Encryption
+    platform: Mobile
+    name: 'Mock挑战题目 #233'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Tandem audax amaritudo delectus video tendo tripudio
+      artificiose. Allatus atavus despecto theologus amplus vociferor est modi
+      careo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0kySWNMTnR2SXE=
+    is-expired: false
+    solutions:
+      - title: Ustilo cometes ars.
+        url: https://strict-validity.net/
+        source: YouTube
+        author: Daisy McDermott
+      - title: Cubo volubilis eius.
+        url: https://tough-swing.com
+        source: Blog
+        author: Brent Mann
+    create-time: '2023-07-17 05:23:17'
+    update-time: '2025-01-01 21:35:15'

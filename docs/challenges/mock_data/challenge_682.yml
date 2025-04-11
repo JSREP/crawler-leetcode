@@ -1,0 +1,27 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 682
+    id-alias: mock-challenge-682
+    tags:
+      - API-Security
+      - XSS
+    platform: IoT
+    name: 'Mock挑战题目 #682'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Commodi vere desipio volutabrum cupiditas
+      perspiciatis. Varius cubicularis tribuo aro venio volo aranea.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1laaWVYTkhNVWs=
+    is-expired: false
+    solutions:
+      - title: Acerbitas condico expedita.
+        url: https://best-design.biz
+        source: GitHub
+        author: Jim Schumm
+      - title: Amiculum adicio ventus.
+        url: https://junior-honesty.net/
+        source: Blog
+        author: Tabitha Conn
+    create-time: '2024-06-13 12:13:50'
+    update-time: '2024-07-15 10:52:44'

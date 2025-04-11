@@ -1,0 +1,34 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 659
+    id-alias: mock-challenge-659
+    tags:
+      - SQL-Injection
+      - Authorization
+      - Output-Encoding
+      - Encryption
+    platform: IoT
+    name: 'Mock挑战题目 #659'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Tonsor ascit eius deludo comes stella vomito
+      summopere amitto totam. Sequi officiis conor velum vulnus dolore curia
+      termes antea.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0x6RTBuVzNSaFc=
+    is-expired: false
+    solutions:
+      - title: Dens antea tempore.
+        url: https://twin-community.com/
+        source: Medium
+        author: Johnnie O'Conner
+      - title: Statua amplexus illum.
+        url: https://well-lit-sport.name/
+        source: GitHub
+        author: Franklin McCullough Jr.
+      - title: Centum aetas arguo.
+        url: https://damaged-allocation.info
+        source: YouTube
+        author: Loretta Huels
+    create-time: '2023-11-14 11:29:06'
+    update-time: '2024-05-12 01:07:53'

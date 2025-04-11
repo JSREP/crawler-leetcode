@@ -1,0 +1,29 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 407
+    id-alias: mock-challenge-407
+    tags:
+      - Input-Validation
+      - Session-Management
+      - Command-Injection
+      - Encryption
+    platform: Desktop
+    name: 'Mock挑战题目 #407'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Conturbo uterque delego deorsum natus eligendi
+      utilis. Maxime vulgus sequi supplanto.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0RIYnBCcGJwWnE=
+    is-expired: false
+    solutions:
+      - title: Provident suscipit teres.
+        url: https://flickering-nerve.name
+        source: Blog
+        author: Rex Little
+      - title: Aro tunc arbor.
+        url: https://mean-eyebrow.biz/
+        source: Medium
+        author: Bonnie Bode
+    create-time: '2024-11-15 17:36:13'
+    update-time: '2025-04-10 13:38:48'

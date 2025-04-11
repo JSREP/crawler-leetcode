@@ -1,0 +1,23 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 489
+    id-alias: mock-challenge-489
+    tags:
+      - Deserialization
+      - Path-Traversal
+      - XXE
+      - OAuth
+      - GraphQL
+    platform: IoT
+    name: 'Mock挑战题目 #489'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Terra admoveo ascit derideo fuga deputo doloremque
+      alter degenero arto. Accendo urbanus una abeo crastinus acceptus ara
+      creber capio.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3p2T0c2THJhR2c=
+    is-expired: false
+    solutions: []
+    create-time: '2024-06-28 05:46:32'
+    update-time: '2025-01-06 14:34:54'

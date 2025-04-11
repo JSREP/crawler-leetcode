@@ -1,0 +1,22 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 595
+    id-alias: mock-challenge-595
+    tags:
+      - Race-Condition
+      - HTTP-Headers
+      - Command-Injection
+      - XXE
+      - Path-Traversal
+    platform: API
+    name: 'Mock挑战题目 #595'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Tabernus termes vetus absorbeo. Magnam volaticus
+      creta ter atavus ulciscor barba corrigo caste apto.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1U5cTZmM0VPT0s=
+    is-expired: false
+    solutions: []
+    create-time: '2024-03-20 04:42:14'
+    update-time: '2024-05-28 01:59:59'

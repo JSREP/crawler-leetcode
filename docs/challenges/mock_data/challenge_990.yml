@@ -1,0 +1,27 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 990
+    id-alias: mock-challenge-990
+    tags:
+      - CSRF
+      - Authorization
+    platform: IoT
+    name: 'Mock挑战题目 #990'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Virtus tui terror ab. Validus uberrime utrimque
+      laudantium.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzZiOFlHdkdnUlk=
+    is-expired: false
+    solutions:
+      - title: Non amplitudo benevolentia.
+        url: https://spotless-cappelletti.org
+        source: Blog
+        author: Gertrude Hodkiewicz
+      - title: Aliquam colo calco.
+        url: https://filthy-shore.org
+        source: Blog
+        author: Judith Walker
+    create-time: '2023-09-30 21:00:48'
+    update-time: '2025-02-23 16:27:42'

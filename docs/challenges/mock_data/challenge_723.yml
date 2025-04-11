@@ -1,0 +1,29 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 723
+    id-alias: mock-challenge-723
+    tags:
+      - CORS
+      - Authorization
+      - Path-Traversal
+      - Authentication
+    platform: Desktop
+    name: 'Mock挑战题目 #723'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Comitatus auctus certe amita utpote delectus
+      vestigium artificiose aequitas conor. Suus cohors est.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2FvRzhpSVd2RXU=
+    is-expired: false
+    solutions:
+      - title: Spectaculum amet casus.
+        url: https://windy-typeface.name/
+        source: Blog
+        author: Dr. Bruce Kassulke
+      - title: Addo bene carpo.
+        url: https://jagged-gray.org
+        source: YouTube
+        author: Amelia Weissnat
+    create-time: '2024-04-05 03:21:21'
+    update-time: '2024-11-18 09:24:38'

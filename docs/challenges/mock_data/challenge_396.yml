@@ -1,0 +1,25 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 396
+    id-alias: mock-challenge-396
+    tags:
+      - Input-Validation
+      - Rate-Limiting
+      - Business-Logic
+      - WebSockets
+    platform: API
+    name: 'Mock挑战题目 #396'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Tabesco voluptatem virga custodia vomica ab abeo
+      labore. Curto vindico demens spero quis blanditiis.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2tMRDlNR21ockc=
+    is-expired: false
+    solutions:
+      - title: Vomer attonbitus demens.
+        url: https://second-hand-godparent.info/
+        source: Medium
+        author: Wade Friesen
+    create-time: '2025-02-19 23:51:47'
+    update-time: '2025-03-13 14:18:08'

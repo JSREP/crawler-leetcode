@@ -1,0 +1,22 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 662
+    id-alias: mock-challenge-662
+    tags:
+      - Authentication
+      - SSRF
+      - Rate-Limiting
+      - CSRF
+      - Race-Condition
+    platform: Web
+    name: 'Mock挑战题目 #662'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Summa appono ubi. Assentator vere verbum tepidus
+      conor.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2JNSzlrZ3d0eXU=
+    is-expired: false
+    solutions: []
+    create-time: '2024-10-03 04:32:59'
+    update-time: '2025-03-24 01:59:51'

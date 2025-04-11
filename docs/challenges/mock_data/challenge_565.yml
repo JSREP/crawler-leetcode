@@ -1,0 +1,31 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 565
+    id-alias: mock-challenge-565
+    tags:
+      - Command-Injection
+      - Authorization
+    platform: Mobile
+    name: 'Mock挑战题目 #565'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Absconditus antiquus pectus tamdiu venia subiungo
+      minima. Cubo commemoro xiphias tam degusto suppellex defero tergum spargo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2QxZ0tXcEFFYTU=
+    is-expired: false
+    solutions:
+      - title: Tergo tempore inflammatio.
+        url: https://ill-rationale.com
+        source: YouTube
+        author: Meredith Bruen-Dicki
+      - title: Volva tepidus adduco.
+        url: https://known-barge.com/
+        source: Medium
+        author: Ora Kunze
+      - title: Debeo quidem defetiscor.
+        url: https://slow-lava.com
+        source: GitHub
+        author: ''
+    create-time: '2024-05-03 01:55:27'
+    update-time: '2024-08-16 07:18:00'

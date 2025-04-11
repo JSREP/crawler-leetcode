@@ -1,0 +1,22 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 413
+    id-alias: mock-challenge-413
+    tags:
+      - Command-Injection
+      - GraphQL
+      - CSP
+      - Business-Logic
+      - XXE
+    platform: Desktop
+    name: 'Mock挑战题目 #413'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Peior deficio claudeo id tenus aperte placeat
+      sollicito. Acquiro turba via sophismata agnosco creber quas.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzUwQUJzN01jYlg=
+    is-expired: false
+    solutions: []
+    create-time: '2024-05-08 01:42:04'
+    update-time: '2024-08-14 19:25:55'

@@ -1,0 +1,23 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 106
+    id-alias: mock-challenge-106
+    tags:
+      - HTTP-Headers
+      - Rate-Limiting
+    platform: Desktop
+    name: 'Mock挑战题目 #106'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Autem careo confugo. Amplus audacia totidem eaque
+      adhaero appono cibus cometes.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0ZYR0lhdUtPQ1Q=
+    is-expired: false
+    solutions:
+      - title: Casso celebrer spectaculum.
+        url: https://far-flung-castanet.com/
+        source: Blog
+        author: Dr. Grant Christiansen
+    create-time: '2024-12-02 15:53:16'
+    update-time: '2025-04-02 11:47:48'

@@ -1,0 +1,29 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 823
+    id-alias: mock-challenge-823
+    tags:
+      - Browser-Extensions
+      - JWT
+      - GraphQL
+      - SQL-Injection
+    platform: API
+    name: 'Mock挑战题目 #823'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Adhaero veritatis valde toties aedificium demulceo.
+      Creptio uberrime temptatio depereo delicate sursum.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzdLRm1yTXlOQXU=
+    is-expired: false
+    solutions:
+      - title: Praesentium beatus contra.
+        url: https://whopping-husband.net
+        source: StackOverflow
+        author: Danny Balistreri
+      - title: Condico aufero adfectus.
+        url: https://runny-excess.net/
+        source: Blog
+        author: Gary Senger DVM
+    create-time: '2023-09-13 11:46:13'
+    update-time: '2024-02-12 02:39:39'

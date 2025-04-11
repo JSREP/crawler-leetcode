@@ -1,0 +1,24 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 421
+    id-alias: mock-challenge-421
+    tags:
+      - HTTP-Headers
+      - Path-Traversal
+    platform: Mobile
+    name: 'Mock挑战题目 #421'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Calculus depereo cunabula degero casus aro officia
+      communis subseco amet. Tutis creator terminatio delectus asper corpus
+      synagoga harum.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0ZZNEQ1aW1BRjE=
+    is-expired: false
+    solutions:
+      - title: Accedo comptus vicissitudo.
+        url: https://worst-masterpiece.org
+        source: YouTube
+        author: Trevor Goldner
+    create-time: '2023-07-21 19:10:24'
+    update-time: '2024-03-20 02:03:10'

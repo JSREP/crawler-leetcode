@@ -1,0 +1,30 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 674
+    id-alias: mock-challenge-674
+    tags:
+      - WebSockets
+      - Authorization
+      - XXE
+      - JWT
+      - Input-Validation
+    platform: API
+    name: 'Mock挑战题目 #674'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Acquiro textilis distinctio aranea villa teneo
+      adipisci aurum. Universe aureus non compono.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0VBTUlEYkdSSHE=
+    is-expired: false
+    solutions:
+      - title: Triumphus urbs adversus.
+        url: https://outgoing-ribbon.com
+        source: StackOverflow
+        author: Willie Howe DVM
+      - title: Adinventitias numquam soluta.
+        url: https://everlasting-clamp.com
+        source: GitHub
+        author: Russell Murray
+    create-time: '2023-09-14 12:49:23'
+    update-time: '2024-10-28 19:52:23'

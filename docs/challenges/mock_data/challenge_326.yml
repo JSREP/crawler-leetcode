@@ -1,0 +1,26 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 326
+    id-alias: mock-challenge-326
+    tags:
+      - CSP
+      - XXE
+      - Path-Traversal
+      - CORS
+    platform: Mobile
+    name: 'Mock挑战题目 #326'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Pariatur vel deleniti adeo carcer tripudio eos
+      avaritia confido. Cohibeo fugiat claudeo collum libero vulnero terebro
+      speciosus cribro deprimo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1ZCVGs3azFmbmE=
+    is-expired: true
+    solutions:
+      - title: Tero vacuus aestas.
+        url: https://sick-polyester.name/
+        source: StackOverflow
+        author: Marty Denesik
+    create-time: '2024-03-14 04:51:38'
+    update-time: '2024-04-22 10:20:47'

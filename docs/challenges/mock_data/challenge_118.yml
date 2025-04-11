@@ -1,0 +1,28 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 118
+    id-alias: mock-challenge-118
+    tags:
+      - SSRF
+      - Business-Logic
+      - WebSockets
+    platform: IoT
+    name: 'Mock挑战题目 #118'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Eaque aestas caritas. Custodia culpo territo succurro
+      nesciunt.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1h5enlGM2Z0QWY=
+    is-expired: false
+    solutions:
+      - title: Curriculum inventore arguo.
+        url: https://ornate-clavicle.name/
+        source: GitHub
+        author: ''
+      - title: Amitto vir studio.
+        url: https://political-fen.biz/
+        source: Medium
+        author: Lorene Borer
+    create-time: '2024-06-04 02:49:41'
+    update-time: '2025-02-06 11:21:50'

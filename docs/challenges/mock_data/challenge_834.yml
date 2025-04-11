@@ -1,0 +1,34 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 834
+    id-alias: mock-challenge-834
+    tags:
+      - HTTP-Headers
+      - Race-Condition
+      - WebSockets
+      - Business-Logic
+      - GraphQL
+    platform: Desktop
+    name: 'Mock挑战题目 #834'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Amplexus stella theatrum. Velociter decet sortitus
+      arceo crapula corona virtus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0FaMEdCSUpvZG0=
+    is-expired: false
+    solutions:
+      - title: Sed demitto veritatis.
+        url: https://frizzy-integer.info/
+        source: GitHub
+        author: Martin Morissette
+      - title: Alii suppellex veritatis.
+        url: https://humiliating-publicity.net/
+        source: Blog
+        author: Mack Krajcik
+      - title: Comis socius caveo.
+        url: https://massive-molasses.com/
+        source: YouTube
+        author: Bobby Schamberger-Bogisich
+    create-time: '2023-11-09 14:12:44'
+    update-time: '2024-02-29 23:24:16'

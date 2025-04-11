@@ -1,0 +1,21 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 675
+    id-alias: mock-challenge-675
+    tags:
+      - CORS
+      - HTTP-Headers
+      - GraphQL
+      - Session-Management
+    platform: Mobile
+    name: 'Mock挑战题目 #675'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Ab coma tremo enim vinco vis articulus. Adflicto
+      tubineus sustineo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzY3bktxRURkZ3k=
+    is-expired: false
+    solutions: []
+    create-time: '2023-07-23 04:41:18'
+    update-time: '2024-09-25 16:04:58'

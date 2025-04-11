@@ -1,0 +1,34 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 545
+    id-alias: mock-challenge-545
+    tags:
+      - CORS
+      - OAuth
+      - CSP
+      - Output-Encoding
+      - API-Security
+    platform: Web
+    name: 'Mock挑战题目 #545'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Calamitas compono consuasor concedo. Cum clam aduro
+      absque comminor suscipit consuasor annus atqui.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1VFVldwR3ZhOXk=
+    is-expired: false
+    solutions:
+      - title: Argentum velut conscendo.
+        url: https://pointless-exploration.info/
+        source: GitHub
+        author: Sadie McLaughlin
+      - title: Animadverto tutamen defero.
+        url: https://mammoth-stool.org/
+        source: Blog
+        author: ''
+      - title: Vester usus adulescens.
+        url: https://colorful-ignorance.org/
+        source: YouTube
+        author: ''
+    create-time: '2024-10-01 14:02:05'
+    update-time: '2025-03-19 17:37:03'

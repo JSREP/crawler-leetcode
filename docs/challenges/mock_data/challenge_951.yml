@@ -1,0 +1,33 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 951
+    id-alias: mock-challenge-951
+    tags:
+      - Hashing
+      - OAuth
+      - Path-Traversal
+      - SSRF
+    platform: Web
+    name: 'Mock挑战题目 #951'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Dicta tollo pecto pecco. Solutio attonbitus colligo
+      porro vix aranea adsuesco capillus ubi confero.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1p4cEV6QXduNHE=
+    is-expired: false
+    solutions:
+      - title: Tabgo surculus amplus.
+        url: https://our-giggle.biz/
+        source: Medium
+        author: Bradley Ankunding
+      - title: Veritatis apud pariatur.
+        url: https://muted-bourgeoisie.org
+        source: StackOverflow
+        author: Wilbert Reynolds
+      - title: Astrum crastinus aliqua.
+        url: https://serene-creator.info/
+        source: Medium
+        author: Molly Ziemann
+    create-time: '2024-08-20 11:53:39'
+    update-time: '2025-01-23 02:21:22'

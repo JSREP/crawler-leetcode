@@ -1,0 +1,34 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 620
+    id-alias: mock-challenge-620
+    tags:
+      - XXE
+      - Path-Traversal
+      - File-Upload
+      - Session-Management
+      - GraphQL
+    platform: IoT
+    name: 'Mock挑战题目 #620'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Xiphias decor vomica tepidus bestia confero. Viscus
+      combibo nam abutor.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0xhcTlFcml3U1M=
+    is-expired: true
+    solutions:
+      - title: Usitas placeat altus.
+        url: https://tense-rubric.biz
+        source: YouTube
+        author: Emma Anderson
+      - title: Eligendi quae aestus.
+        url: https://actual-rust.net/
+        source: Medium
+        author: Kirk Stracke
+      - title: Asper conspergo tenuis.
+        url: https://imaginary-safe.info/
+        source: GitHub
+        author: Donnie Mann
+    create-time: '2024-06-29 03:07:46'
+    update-time: '2025-02-06 14:10:23'

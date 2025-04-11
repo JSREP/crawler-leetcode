@@ -1,0 +1,35 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 513
+    id-alias: mock-challenge-513
+    tags:
+      - OAuth
+      - WebSockets
+      - GraphQL
+      - XSS
+      - SQL-Injection
+    platform: Desktop
+    name: 'Mock挑战题目 #513'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Odit ratione depraedor vester demo cedo vorax soleo
+      voveo. Sumptus stillicidium tego crur earum debilito consequatur ver canis
+      odio.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0l4V2VKakZIVmI=
+    is-expired: false
+    solutions:
+      - title: Uxor sub non.
+        url: https://polite-individual.info/
+        source: YouTube
+        author: Ms. Elaine Schmeler
+      - title: Cruentus vere doloremque.
+        url: https://descriptive-populist.biz
+        source: GitHub
+        author: Mr. Mario Hahn
+      - title: Voluptatem thalassinus facere.
+        url: https://shiny-switchboard.net
+        source: Medium
+        author: Cecil Wolff
+    create-time: '2024-04-23 21:23:46'
+    update-time: '2024-10-30 05:47:43'

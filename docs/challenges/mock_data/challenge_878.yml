@@ -1,0 +1,19 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 878
+    id-alias: mock-challenge-878
+    tags:
+      - Business-Logic
+      - Path-Traversal
+    platform: Web
+    name: 'Mock挑战题目 #878'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Cubitum solium tempora. Corrupti averto
+      exercitationem teres centum delicate teres approbo conicio argumentum.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3RoTVdwbEc3OFY=
+    is-expired: true
+    solutions: []
+    create-time: '2023-10-20 22:58:38'
+    update-time: '2024-06-19 09:22:45'

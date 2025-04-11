@@ -1,0 +1,25 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 601
+    id-alias: mock-challenge-601
+    tags:
+      - XXE
+      - Authentication
+      - SQL-Injection
+      - HTTP-Headers
+    platform: Desktop
+    name: 'Mock挑战题目 #601'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Stella arma cumque capitulus. Vito coadunatio asporto
+      versus volutabrum coepi chirographum talis.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1hlQldOUjJjMGM=
+    is-expired: true
+    solutions:
+      - title: Crepusculum votum theca.
+        url: https://cluttered-baseboard.com/
+        source: StackOverflow
+        author: Lynne Klein
+    create-time: '2023-10-17 20:21:01'
+    update-time: '2024-12-18 00:38:54'

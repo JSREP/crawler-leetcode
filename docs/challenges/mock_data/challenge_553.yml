@@ -1,0 +1,25 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 553
+    id-alias: mock-challenge-553
+    tags:
+      - Access-Control
+      - OAuth
+      - Session-Management
+      - Authorization
+    platform: Web
+    name: 'Mock挑战题目 #553'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Attonbitus veritas cupressus demonstro combibo
+      ulterius amita temporibus arguo tempora. Aedificium varius at.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L01VY0xYdGlmdjg=
+    is-expired: false
+    solutions:
+      - title: Alii adsum celo.
+        url: https://flickering-awareness.name
+        source: StackOverflow
+        author: Denise Stokes
+    create-time: '2023-06-20 07:34:30'
+    update-time: '2024-04-20 04:04:11'

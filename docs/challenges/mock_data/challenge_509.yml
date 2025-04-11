@@ -1,0 +1,34 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 509
+    id-alias: mock-challenge-509
+    tags:
+      - WebSockets
+      - Mobile-Security
+      - OAuth
+      - CSP
+      - Authentication
+    platform: Mobile
+    name: 'Mock挑战题目 #509'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Atrox dedico cohibeo cimentarius commemoro thymbra.
+      Suus coaegresco decretum necessitatibus tristis desipio.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2xvYm9Xdlc1Qm0=
+    is-expired: false
+    solutions:
+      - title: Charisma claudeo aegrotatio.
+        url: https://prestigious-scholarship.info/
+        source: GitHub
+        author: Ellis Smith-Ward
+      - title: Tamquam supplanto arguo.
+        url: https://pale-printer.info
+        source: Blog
+        author: Dr. Irvin Koelpin
+      - title: Comparo aegrotatio nesciunt.
+        url: https://portly-handful.name/
+        source: GitHub
+        author: Dora Crona
+    create-time: '2024-07-27 18:36:52'
+    update-time: '2025-02-06 16:26:41'

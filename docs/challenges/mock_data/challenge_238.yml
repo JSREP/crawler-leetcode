@@ -1,0 +1,20 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 238
+    id-alias: mock-challenge-238
+    tags:
+      - Path-Traversal
+      - Business-Logic
+    platform: IoT
+    name: 'Mock挑战题目 #238'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Temptatio quidem occaecati voluptate dedecor dedecor
+      officiis crux vestrum tabernus. Considero paens taedium atque nihil
+      copiose.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0JQSlRxUnZXbUQ=
+    is-expired: false
+    solutions: []
+    create-time: '2025-03-28 19:06:39'
+    update-time: '2025-04-04 15:58:40'

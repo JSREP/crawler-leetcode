@@ -1,0 +1,25 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 442
+    id-alias: mock-challenge-442
+    tags:
+      - Race-Condition
+      - Input-Validation
+      - Output-Encoding
+    platform: Desktop
+    name: 'Mock挑战题目 #442'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Tamdiu animadverto suasoria crastinus derelinquo
+      vitiosus suggero aeneus auxilium veritas. Cultura vespillo stillicidium
+      verbum molestias deleniti vomer.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2pKWlRYZUJ2MW0=
+    is-expired: false
+    solutions:
+      - title: Ara socius temporibus.
+        url: https://pointed-joy.name/
+        source: YouTube
+        author: Chester Swift
+    create-time: '2023-10-18 12:38:28'
+    update-time: '2025-02-18 01:14:35'

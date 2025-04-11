@@ -1,0 +1,34 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 887
+    id-alias: mock-challenge-887
+    tags:
+      - Input-Validation
+      - Deserialization
+      - JWT
+      - OAuth
+    platform: API
+    name: 'Mock挑战题目 #887'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Desino absum bonus atque fuga amissio curo apparatus
+      bene spero. Ambitus caput cinis fugit vehemens doloribus vis victus alias
+      aurum.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2ZWdkdocHFpeDI=
+    is-expired: false
+    solutions:
+      - title: Curia facere tertius.
+        url: https://quick-witted-affect.com/
+        source: Blog
+        author: Kyle Russel
+      - title: Comburo summopere utrimque.
+        url: https://boring-plumber.net
+        source: YouTube
+        author: Marcus Pouros
+      - title: Absconditus claro bene.
+        url: https://swift-mathematics.name/
+        source: YouTube
+        author: Eric Hamill-Hessel
+    create-time: '2023-08-12 21:40:44'
+    update-time: '2024-02-21 15:39:48'

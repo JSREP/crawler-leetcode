@@ -1,0 +1,26 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 984
+    id-alias: mock-challenge-984
+    tags:
+      - XXE
+      - Path-Traversal
+      - Authentication
+      - Output-Encoding
+      - Hashing
+    platform: Desktop
+    name: 'Mock挑战题目 #984'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Paulatim balbus beneficium casus facere colo curo
+      turpis ambulo. Cur apostolus degero adficio ventus civis.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3dONUp5N1VrSXM=
+    is-expired: false
+    solutions:
+      - title: Tremo ventosus tertius.
+        url: https://comfortable-deer.biz/
+        source: GitHub
+        author: Dr. Karl Grimes
+    create-time: '2023-07-15 05:39:20'
+    update-time: '2024-04-23 18:08:40'

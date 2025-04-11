@@ -1,0 +1,26 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 241
+    id-alias: mock-challenge-241
+    tags:
+      - Encryption
+      - XSS
+      - SQL-Injection
+      - Hashing
+      - Authentication
+    platform: IoT
+    name: 'Mock挑战题目 #241'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Adipiscor cur arca annus cohaero ancilla. Comburo
+      coerceo consuasor aptus vetus defungo aveho comparo taedium quisquam.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2hNTkp0MHRDWjg=
+    is-expired: false
+    solutions:
+      - title: Cras concido utrum.
+        url: https://dental-minister.net
+        source: Medium
+        author: Gloria Morar
+    create-time: '2025-03-22 20:29:37'
+    update-time: '2025-04-11 00:53:32'

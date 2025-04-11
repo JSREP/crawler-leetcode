@@ -1,0 +1,29 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 144
+    id-alias: mock-challenge-144
+    tags:
+      - SSRF
+      - Race-Condition
+      - WebSockets
+      - Browser-Extensions
+    platform: Web
+    name: 'Mock挑战题目 #144'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Odio timidus sophismata denique vicinus amplitudo
+      depereo. Turba apud paens.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0hqUmhOMXdONVI=
+    is-expired: false
+    solutions:
+      - title: At tondeo nulla.
+        url: https://easy-chap.name/
+        source: YouTube
+        author: Pauline Kunde-Herman
+      - title: Aegrus suus accendo.
+        url: https://unwilling-viability.net/
+        source: Blog
+        author: Erika Ratke
+    create-time: '2025-01-22 15:42:20'
+    update-time: '2025-02-28 12:41:31'

@@ -1,0 +1,29 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 303
+    id-alias: mock-challenge-303
+    tags:
+      - Encryption
+      - JWT
+      - XSS
+      - Input-Validation
+    platform: IoT
+    name: 'Mock挑战题目 #303'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Tergo molestias conor depereo adhaero antea commodi
+      tristis ustilo. Sunt admiratio stips tunc curia.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzAyeGVzOWlXMDI=
+    is-expired: false
+    solutions:
+      - title: Bibo cumque timor.
+        url: https://trained-louse.net/
+        source: GitHub
+        author: Austin Erdman DVM
+      - title: Beatus clementia cunae.
+        url: https://rowdy-status.name/
+        source: Blog
+        author: Raul Bins
+    create-time: '2025-03-23 02:44:53'
+    update-time: '2025-04-09 17:02:21'

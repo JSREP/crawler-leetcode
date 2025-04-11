@@ -1,0 +1,22 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 124
+    id-alias: mock-challenge-124
+    tags:
+      - GraphQL
+      - Path-Traversal
+      - Session-Management
+      - Rate-Limiting
+      - Hashing
+    platform: Desktop
+    name: 'Mock挑战题目 #124'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Dignissimos decumbo triumphus surgo tutamen advenio.
+      Tristis sequi turpis varietas acceptus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2t2Rno0R2pVbnk=
+    is-expired: false
+    solutions: []
+    create-time: '2023-05-05 06:25:37'
+    update-time: '2024-05-29 14:03:03'

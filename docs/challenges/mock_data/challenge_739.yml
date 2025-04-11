@@ -1,0 +1,34 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 739
+    id-alias: mock-challenge-739
+    tags:
+      - WebSockets
+      - Deserialization
+      - Output-Encoding
+      - API-Security
+      - SQL-Injection
+    platform: IoT
+    name: 'Mock挑战题目 #739'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Tondeo vox abutor. Teres audentia tersus capto
+      armarium assentator unde et.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0tiT0ptNGJWVk4=
+    is-expired: false
+    solutions:
+      - title: Conservo supra adstringo.
+        url: https://major-coordination.info/
+        source: Medium
+        author: Alan Gutkowski
+      - title: Nostrum usque decipio.
+        url: https://ultimate-cruelty.biz
+        source: YouTube
+        author: Monica Mills
+      - title: Ager summisse curriculum.
+        url: https://male-statue.org
+        source: Blog
+        author: Jonathon Boyer
+    create-time: '2023-06-10 11:31:33'
+    update-time: '2024-12-09 14:17:29'

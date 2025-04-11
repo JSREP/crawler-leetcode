@@ -1,0 +1,33 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 181
+    id-alias: mock-challenge-181
+    tags:
+      - Encryption
+      - API-Security
+      - JWT
+      - HTTP-Headers
+    platform: IoT
+    name: 'Mock挑战题目 #181'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Vulnus arcesso temporibus. Trepide atque suffragium
+      comes agnosco adeo desino.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzBwSmVzMnM5VXc=
+    is-expired: false
+    solutions:
+      - title: Vindico acceptus coaegresco.
+        url: https://knowledgeable-archaeology.org
+        source: StackOverflow
+        author: Reginald Quigley
+      - title: Ago id amitto.
+        url: https://athletic-configuration.com
+        source: StackOverflow
+        author: Geoffrey Crist
+      - title: Defessus debilito comedo.
+        url: https://only-allocation.biz
+        source: Blog
+        author: Stanley Johnson
+    create-time: '2023-11-27 22:03:31'
+    update-time: '2024-04-29 20:01:34'

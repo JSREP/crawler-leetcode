@@ -1,0 +1,31 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 605
+    id-alias: mock-challenge-605
+    tags:
+      - OAuth
+      - CSRF
+    platform: Desktop
+    name: 'Mock挑战题目 #605'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Colo calco bellicus nam harum conculco tabella. Talio
+      admiratio speculum.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0hoNGpTRFJ0cno=
+    is-expired: false
+    solutions:
+      - title: Vacuus amitto vinco.
+        url: https://magnificent-flu.info/
+        source: Blog
+        author: Kellie Pagac
+      - title: Est tempora tyrannus.
+        url: https://monthly-approach.com/
+        source: YouTube
+        author: Mr. Jordan Goodwin
+      - title: Aut velit vitae.
+        url: https://grim-schnitzel.info
+        source: YouTube
+        author: ''
+    create-time: '2025-04-04 10:16:47'
+    update-time: '2025-04-04 14:13:29'

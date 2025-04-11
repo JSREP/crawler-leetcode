@@ -1,0 +1,32 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 482
+    id-alias: mock-challenge-482
+    tags:
+      - CSRF
+      - SQL-Injection
+      - CSP
+    platform: API
+    name: 'Mock挑战题目 #482'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Terreo volubilis civitas via. Canonicus vesco
+      apostolus approbo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1NkZE5rR2JaSUM=
+    is-expired: false
+    solutions:
+      - title: Adduco virgo aureus.
+        url: https://obedient-wombat.info
+        source: GitHub
+        author: Willie Stokes
+      - title: Perferendis cattus comparo.
+        url: https://subtle-baseboard.net
+        source: StackOverflow
+        author: Juan Fritsch PhD
+      - title: Antiquus creo consequuntur.
+        url: https://shoddy-testing.info/
+        source: StackOverflow
+        author: ''
+    create-time: '2024-03-17 08:18:34'
+    update-time: '2024-07-08 21:43:07'

@@ -1,0 +1,20 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 297
+    id-alias: mock-challenge-297
+    tags:
+      - API-Security
+      - CSRF
+      - OAuth
+    platform: IoT
+    name: 'Mock挑战题目 #297'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Virgo defungo varietas dedecor vulgaris theologus
+      viridis excepturi numquam cubo. Annus subseco varius valens.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1g4bGVPUGg2RUw=
+    is-expired: false
+    solutions: []
+    create-time: '2023-09-27 01:36:18'
+    update-time: '2024-04-04 04:57:26'

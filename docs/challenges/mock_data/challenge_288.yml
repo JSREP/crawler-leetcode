@@ -1,0 +1,26 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 288
+    id-alias: mock-challenge-288
+    tags:
+      - Hashing
+      - Deserialization
+      - Command-Injection
+      - OAuth
+      - CSRF
+    platform: Desktop
+    name: 'Mock挑战题目 #288'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Cognomen administratio tricesimus summa cruentus.
+      Compono voluptatem torrens amaritudo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1dIemxNSVozNWE=
+    is-expired: false
+    solutions:
+      - title: Basium tricesimus conventus.
+        url: https://respectful-flood.net
+        source: Blog
+        author: Rodolfo Hansen
+    create-time: '2025-01-29 18:41:04'
+    update-time: '2025-03-29 13:15:32'

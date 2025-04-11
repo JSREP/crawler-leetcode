@@ -1,0 +1,22 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 429
+    id-alias: mock-challenge-429
+    tags:
+      - Business-Logic
+      - Race-Condition
+      - API-Security
+      - Authorization
+    platform: Web
+    name: 'Mock挑战题目 #429'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Demonstro tersus conservo ascit sol conservo. Ambitus
+      vestigium tricesimus atrocitas vicissitudo suadeo vinculum temeritas
+      veritas.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2J3eWFKejRxZmw=
+    is-expired: true
+    solutions: []
+    create-time: '2023-11-05 03:20:40'
+    update-time: '2024-05-05 01:58:26'

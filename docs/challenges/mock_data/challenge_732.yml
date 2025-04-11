@@ -1,0 +1,21 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 732
+    id-alias: mock-challenge-732
+    tags:
+      - WebSockets
+      - CORS
+      - XXE
+      - Business-Logic
+    platform: Desktop
+    name: 'Mock挑战题目 #732'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Totidem vulnero aetas tolero cena textilis. Omnis
+      vulticulus nostrum laboriosam cinis temporibus curtus tripudio.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2E1N0NtTUVndWw=
+    is-expired: true
+    solutions: []
+    create-time: '2024-08-06 15:00:51'
+    update-time: '2024-11-23 04:55:05'

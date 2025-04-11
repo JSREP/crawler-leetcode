@@ -1,0 +1,31 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 480
+    id-alias: mock-challenge-480
+    tags:
+      - Session-Management
+      - Command-Injection
+    platform: Mobile
+    name: 'Mock挑战题目 #480'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Taedium deleniti asper crux tonsor tumultus contego.
+      Deporto vulgivagus bibo vigor demens corporis caecus paulatim.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzFZQlJhUTc5VDE=
+    is-expired: false
+    solutions:
+      - title: Audax carmen surgo.
+        url: https://considerate-granny.org
+        source: StackOverflow
+        author: Sabrina Hansen
+      - title: Conduco condico caterva.
+        url: https://monumental-interchange.net/
+        source: YouTube
+        author: Jerald Wehner V
+      - title: Vilicus comparo caelestis.
+        url: https://deadly-mouser.org
+        source: StackOverflow
+        author: Doreen Kutch
+    create-time: '2023-06-20 20:16:59'
+    update-time: '2024-07-04 11:20:43'

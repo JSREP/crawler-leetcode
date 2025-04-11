@@ -1,0 +1,28 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 298
+    id-alias: mock-challenge-298
+    tags:
+      - XXE
+      - Browser-Extensions
+    platform: IoT
+    name: 'Mock挑战题目 #298'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Temperantia ambitus vulgivagus stabilis tempus termes
+      ustulo illum eius. Sollicito subvenio thorax patrocinor denuncio uterque
+      decretum.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzkyMVNVWm1uMVM=
+    is-expired: false
+    solutions:
+      - title: Tripudio acsi adipisci.
+        url: https://infinite-vanadyl.info
+        source: YouTube
+        author: Priscilla Aufderhar
+      - title: Commemoro cunabula comitatus.
+        url: https://remarkable-traffic.org/
+        source: Medium
+        author: Cynthia Braun
+    create-time: '2025-03-05 19:23:25'
+    update-time: '2025-03-11 22:06:33'

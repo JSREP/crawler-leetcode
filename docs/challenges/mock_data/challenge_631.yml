@@ -1,0 +1,24 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 631
+    id-alias: mock-challenge-631
+    tags:
+      - Output-Encoding
+      - Path-Traversal
+      - SQL-Injection
+    platform: Mobile
+    name: 'Mock挑战题目 #631'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Absorbeo adstringo quisquam maiores adsum. Sperno
+      convoco bis deorsum.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzBZY3NIWGZ4dGQ=
+    is-expired: false
+    solutions:
+      - title: Carpo vorago verbera.
+        url: https://rewarding-parade.info
+        source: StackOverflow
+        author: Lorena Bechtelar
+    create-time: '2023-11-20 06:31:46'
+    update-time: '2023-11-29 02:55:09'

@@ -1,0 +1,25 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 857
+    id-alias: mock-challenge-857
+    tags:
+      - Input-Validation
+      - GraphQL
+      - JWT
+      - CSP
+    platform: Desktop
+    name: 'Mock挑战题目 #857'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Bene vulgivagus comis benigne sum curis non cohaero
+      atque clamo. Conscendo viscus tero sono.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3h3YU1iSUdLeEI=
+    is-expired: false
+    solutions:
+      - title: Cupressus recusandae vitium.
+        url: https://voluminous-poppy.net
+        source: Blog
+        author: Rebecca Rice
+    create-time: '2024-07-16 13:51:22'
+    update-time: '2024-08-03 18:24:16'

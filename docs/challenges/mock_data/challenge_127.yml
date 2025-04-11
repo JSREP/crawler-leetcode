@@ -1,0 +1,22 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 127
+    id-alias: mock-challenge-127
+    tags:
+      - WebSockets
+      - Path-Traversal
+      - HTTP-Headers
+      - Deserialization
+      - Rate-Limiting
+    platform: Desktop
+    name: 'Mock挑战题目 #127'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Abscido id commodi pauci ago trado repellat. Arx
+      viscus adficio voluptas cunctatio.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0Vndlg2VGFwMzM=
+    is-expired: false
+    solutions: []
+    create-time: '2023-07-28 15:18:48'
+    update-time: '2025-01-27 08:49:49'

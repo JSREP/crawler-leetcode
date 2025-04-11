@@ -1,0 +1,31 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 627
+    id-alias: mock-challenge-627
+    tags:
+      - Deserialization
+      - Output-Encoding
+    platform: API
+    name: 'Mock挑战题目 #627'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Volutabrum toties tribuo triumphus totidem triduana
+      sonitus decipio. Tertius bestia sufficio enim.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzlNZkxSOTd4am4=
+    is-expired: false
+    solutions:
+      - title: Patruus adiuvo exercitationem.
+        url: https://swift-eggplant.biz
+        source: StackOverflow
+        author: Maggie Hammes
+      - title: Tenuis admitto cultura.
+        url: https://important-ghost.org
+        source: YouTube
+        author: Peggy Morar
+      - title: Catena creator provident.
+        url: https://reasonable-encouragement.net/
+        source: GitHub
+        author: Benjamin Schmeler
+    create-time: '2023-08-02 18:43:14'
+    update-time: '2024-02-09 21:38:28'

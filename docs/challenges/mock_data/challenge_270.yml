@@ -1,0 +1,29 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 270
+    id-alias: mock-challenge-270
+    tags:
+      - SQL-Injection
+      - WebSockets
+      - XSS
+      - JWT
+    platform: Mobile
+    name: 'Mock挑战题目 #270'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Tendo assumenda peccatus averto carus adulatio
+      calculus. Talis conculco vulgaris umquam.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1RJUVNacHpCdlk=
+    is-expired: false
+    solutions:
+      - title: Xiphias laboriosam vehemens.
+        url: https://worse-hunt.net/
+        source: Medium
+        author: Don Kertzmann
+      - title: Thesis basium acceptus.
+        url: https://trim-tentacle.net/
+        source: StackOverflow
+        author: Dr. Lois Marks
+    create-time: '2023-07-04 17:28:57'
+    update-time: '2024-04-11 18:15:56'

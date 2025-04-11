@@ -1,0 +1,31 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 687
+    id-alias: mock-challenge-687
+    tags:
+      - Input-Validation
+      - Encryption
+    platform: Mobile
+    name: 'Mock挑战题目 #687'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Decerno admiratio vilitas ratione excepturi voluptate
+      aggredior appono. Una alter creta adhaero amita.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3RMZU55YWhCSFg=
+    is-expired: false
+    solutions:
+      - title: Derideo temperantia quasi.
+        url: https://miserable-pharmacopoeia.info
+        source: YouTube
+        author: Elvira O'Keefe
+      - title: Argentum in aegre.
+        url: https://hidden-tusk.info
+        source: GitHub
+        author: Matthew Cremin
+      - title: Aperiam thymbra virtus.
+        url: https://dental-approach.biz/
+        source: Medium
+        author: Harriet Cassin
+    create-time: '2024-11-09 01:07:12'
+    update-time: '2024-12-30 00:12:54'

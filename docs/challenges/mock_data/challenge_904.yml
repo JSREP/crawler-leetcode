@@ -1,0 +1,24 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 904
+    id-alias: mock-challenge-904
+    tags:
+      - Authorization
+      - Rate-Limiting
+      - CSP
+    platform: IoT
+    name: 'Mock挑战题目 #904'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Campana non speculum ter thymum harum quisquam
+      tertius solutio. Trucido cogo tot vado ultio thorax voluptates.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzdpbHZPMWVNQnA=
+    is-expired: false
+    solutions:
+      - title: Bos natus careo.
+        url: https://selfish-complication.net/
+        source: YouTube
+        author: Dr. Johnathan Grimes
+    create-time: '2023-12-04 21:40:43'
+    update-time: '2024-04-14 22:21:19'

@@ -1,0 +1,20 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 439
+    id-alias: mock-challenge-439
+    tags:
+      - Access-Control
+      - HTTP-Headers
+      - Hashing
+    platform: IoT
+    name: 'Mock挑战题目 #439'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Decens caecus conforto. Summopere magnam caveo
+      strenuus abundans convoco vesco comburo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0xOREVaaTQ1STM=
+    is-expired: false
+    solutions: []
+    create-time: '2024-10-17 23:54:25'
+    update-time: '2025-02-16 19:33:53'

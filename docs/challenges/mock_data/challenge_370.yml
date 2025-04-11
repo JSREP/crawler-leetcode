@@ -1,0 +1,29 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 370
+    id-alias: mock-challenge-370
+    tags:
+      - JWT
+      - Business-Logic
+      - Input-Validation
+      - OAuth
+    platform: IoT
+    name: 'Mock挑战题目 #370'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Quisquam deorsum talio. Reiciendis congregatio cogito
+      nihil stella cubo cognomen.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2NsMk9mY20zOWY=
+    is-expired: false
+    solutions:
+      - title: Decumbo vere demergo.
+        url: https://avaricious-charm.biz/
+        source: YouTube
+        author: Anne Farrell
+      - title: Subito caute arx.
+        url: https://unruly-mountain.net/
+        source: Medium
+        author: Laurence Pouros
+    create-time: '2024-03-07 09:44:26'
+    update-time: '2024-06-19 11:40:45'

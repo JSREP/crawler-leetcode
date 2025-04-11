@@ -1,28 +1,20 @@
 # 挑战题目文件
 version: 1
-
 challenges:
-  - id: mock-challenge-18
+  - id: 18
+    id-alias: mock-challenge-18
     tags:
-      - browser-check
+      - Authentication
+      - Command-Injection
+      - WebSockets
     platform: Web
-    name: Mock挑战题目 #18
-    difficulty-level: 4
-    description: 这是一个示例挑战题目的描述，难度为4星级。
-    base64-url: aHR0cHM6Ly9sZWV0Y29kZS5jb20vY2hhbGxlbmdlLzY3ODkw
+    name: 'Mock挑战题目 #18'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Beatus quaerat testimonium defendo. Atrocitas tabesco
+      ara denuncio articulus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0J3cll5M3UyUW8=
     is-expired: false
-    solutions:
-      - title: 逆向工程思路
-        url: https://gist.github.com/user/id
-        source: StackOverflow
-        author: John Doe
-      - title: 使用Puppeteer绕过检测
-        url: https://gist.github.com/user/id
-        source: Personal Blog
-        author: Alex Chen
-      - title: 静态分析方法
-        url: https://medium.com/@user/article
-        source: StackOverflow
-        author: 
-    create-time: 2025-11-11 20:48:11
-    update-time: 2023-04-16 11:20:04
+    solutions: []
+    create-time: '2025-04-01 08:36:21'
+    update-time: '2025-04-04 22:28:49'

@@ -1,0 +1,22 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 301
+    id-alias: mock-challenge-301
+    tags:
+      - Output-Encoding
+      - WebSockets
+      - Authentication
+      - Input-Validation
+      - Browser-Extensions
+    platform: IoT
+    name: 'Mock挑战题目 #301'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Ocer celebrer aperiam. Dolorem conqueror tantillus
+      denuncio allatus utor.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2VHSXhwTEpQOGM=
+    is-expired: false
+    solutions: []
+    create-time: '2025-03-06 07:07:57'
+    update-time: '2025-04-03 04:36:37'

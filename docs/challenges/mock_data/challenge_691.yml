@@ -1,0 +1,29 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 691
+    id-alias: mock-challenge-691
+    tags:
+      - JWT
+      - Session-Management
+      - Input-Validation
+      - CSP
+    platform: Desktop
+    name: 'Mock挑战题目 #691'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Victus careo calco tamdiu civitas beatus. Abstergo
+      valetudo cattus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0RtdnNiSWxMWE0=
+    is-expired: false
+    solutions:
+      - title: Cohibeo crastinus arceo.
+        url: https://stark-eternity.biz/
+        source: Medium
+        author: Irene Mueller
+      - title: Vesco vitiosus amitto.
+        url: https://scaly-gastropod.com/
+        source: Blog
+        author: Tracy Langworth
+    create-time: '2024-10-15 03:55:16'
+    update-time: '2025-03-29 05:20:23'

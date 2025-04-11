@@ -1,0 +1,27 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 934
+    id-alias: mock-challenge-934
+    tags:
+      - Session-Management
+      - Access-Control
+    platform: API
+    name: 'Mock挑战题目 #934'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Curso volva nostrum molestias. Adiuvo abbas degero
+      apostolus vere facere.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzdDd283RXlVVU0=
+    is-expired: false
+    solutions:
+      - title: Calculus antea creber.
+        url: https://flawed-pick.name/
+        source: GitHub
+        author: Darlene Kshlerin
+      - title: Arto asperiores veritatis.
+        url: https://beloved-soliloquy.biz
+        source: Medium
+        author: Ervin Ernser
+    create-time: '2024-02-05 23:41:21'
+    update-time: '2025-03-15 00:28:57'

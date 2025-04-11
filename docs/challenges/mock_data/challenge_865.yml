@@ -1,0 +1,27 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 865
+    id-alias: mock-challenge-865
+    tags:
+      - CORS
+      - Authorization
+      - JWT
+      - SQL-Injection
+      - Mobile-Security
+    platform: Mobile
+    name: 'Mock挑战题目 #865'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Votum occaecati suus solus tibi attonbitus stipes
+      texo subiungo dapifer. Capto animi caries velociter tergeo creber urbanus
+      quam quas.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0lrUGQ5SHhwa2I=
+    is-expired: false
+    solutions:
+      - title: At umbra villa.
+        url: https://celebrated-shipper.name/
+        source: StackOverflow
+        author: Gretchen Schoen DDS
+    create-time: '2023-05-30 04:02:45'
+    update-time: '2024-09-10 23:24:36'

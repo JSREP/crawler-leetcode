@@ -1,0 +1,26 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 863
+    id-alias: mock-challenge-863
+    tags:
+      - OAuth
+      - Input-Validation
+      - GraphQL
+      - CSRF
+      - Deserialization
+    platform: Mobile
+    name: 'Mock挑战题目 #863'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Suffragium vitae creo earum asporto damnatio amor
+      accusantium aveho advenio. Cerno volva alter tertius sopor.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3YzcGlSeHhqcFQ=
+    is-expired: false
+    solutions:
+      - title: Praesentium venia nam.
+        url: https://wealthy-goat.name/
+        source: YouTube
+        author: Manuel Renner
+    create-time: '2024-09-18 00:14:53'
+    update-time: '2024-11-16 02:29:42'

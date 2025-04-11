@@ -1,0 +1,30 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 500
+    id-alias: mock-challenge-500
+    tags:
+      - Mobile-Security
+      - SQL-Injection
+      - Session-Management
+      - CSRF
+      - Command-Injection
+    platform: Mobile
+    name: 'Mock挑战题目 #500'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Conicio barba validus collum comburo. Aedificium
+      audax volup correptius catena admitto strues unus atrox antiquus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0JNMDFDaTcyd3U=
+    is-expired: false
+    solutions:
+      - title: Victus trans tollo.
+        url: https://honorable-longboat.org
+        source: Blog
+        author: Conrad Schmitt
+      - title: Adversus vorago creator.
+        url: https://cavernous-gown.org/
+        source: YouTube
+        author: Earl Grady
+    create-time: '2025-03-19 10:23:15'
+    update-time: '2025-03-26 17:03:48'

@@ -1,0 +1,28 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 548
+    id-alias: mock-challenge-548
+    tags:
+      - Browser-Extensions
+      - Encryption
+    platform: IoT
+    name: 'Mock挑战题目 #548'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Decet debeo vesica solitudo aegrotatio stipes cometes
+      ancilla coma defendo. Aptus civis incidunt atavus abutor vetus voluptates
+      utique.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1ZlNGg2WWx2Umc=
+    is-expired: true
+    solutions:
+      - title: Taedium solio canonicus.
+        url: https://putrid-backbone.biz
+        source: StackOverflow
+        author: Laurence Auer V
+      - title: Vilis talio asperiores.
+        url: https://best-longboat.net/
+        source: StackOverflow
+        author: ''
+    create-time: '2023-07-18 18:03:47'
+    update-time: '2023-11-08 11:23:05'

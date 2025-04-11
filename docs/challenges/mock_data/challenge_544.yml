@@ -1,0 +1,30 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 544
+    id-alias: mock-challenge-544
+    tags:
+      - Access-Control
+      - Authentication
+      - OAuth
+      - CSRF
+      - SSRF
+    platform: API
+    name: 'Mock挑战题目 #544'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Dens calamitas utpote administratio qui delego taceo
+      combibo viscus. Cometes cunae admoneo vester trucido spiritus correptius.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3RGMnZtS1NCWTA=
+    is-expired: false
+    solutions:
+      - title: Ventus tribuo commodi.
+        url: https://clean-accountability.name/
+        source: StackOverflow
+        author: Crystal Boyer
+      - title: Patria canto ab.
+        url: https://pure-hello.net/
+        source: Blog
+        author: Ella Bosco
+    create-time: '2025-02-05 20:32:49'
+    update-time: '2025-02-28 05:43:51'

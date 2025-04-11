@@ -1,0 +1,20 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 635
+    id-alias: mock-challenge-635
+    tags:
+      - CORS
+      - Path-Traversal
+      - OAuth
+    platform: Desktop
+    name: 'Mock挑战题目 #635'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Crur vos voluptatum talus pauper vergo aqua studio
+      viriliter atrocitas. Confido advoco deorsum advenio theca.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzJqZFZnRWthSmE=
+    is-expired: false
+    solutions: []
+    create-time: '2023-09-14 14:26:51'
+    update-time: '2024-04-08 13:02:05'

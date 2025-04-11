@@ -1,0 +1,27 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 256
+    id-alias: mock-challenge-256
+    tags:
+      - Race-Condition
+      - Rate-Limiting
+    platform: Mobile
+    name: 'Mock挑战题目 #256'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Vis vix coaegresco decumbo. Demoror clam civitas
+      astrum.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3FqVUZ5dHlkNWs=
+    is-expired: false
+    solutions:
+      - title: Tabula virgo fuga.
+        url: https://humiliating-straw.biz/
+        source: GitHub
+        author: Kent Kertzmann
+      - title: Toties vivo delinquo.
+        url: https://tinted-carnival.info
+        source: Medium
+        author: Juan Strosin
+    create-time: '2025-03-18 17:03:44'
+    update-time: '2025-04-11 09:51:48'

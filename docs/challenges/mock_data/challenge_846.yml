@@ -1,0 +1,24 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 846
+    id-alias: mock-challenge-846
+    tags:
+      - Authentication
+      - CSRF
+    platform: Web
+    name: 'Mock挑战题目 #846'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Desparatus basium delibero asperiores averto
+      cultellus crepusculum quasi thymbra minima. Trucido urbanus substantia
+      vulgaris terga vitium caritas timidus cometes spero.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0U2U0s0SUd2a0E=
+    is-expired: false
+    solutions:
+      - title: Ratione claustrum attero.
+        url: https://frozen-knuckle.com/
+        source: Blog
+        author: Thomas Heller
+    create-time: '2023-06-22 01:37:49'
+    update-time: '2024-12-23 10:15:27'

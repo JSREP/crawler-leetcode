@@ -1,0 +1,24 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 741
+    id-alias: mock-challenge-741
+    tags:
+      - Deserialization
+      - HTTP-Headers
+      - Access-Control
+    platform: Mobile
+    name: 'Mock挑战题目 #741'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Textus baiulus animadverto coerceo constans. Natus
+      tredecim vitae textilis virgo facere.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1BCc0wzMllIT08=
+    is-expired: false
+    solutions:
+      - title: Delectus tempore votum.
+        url: https://entire-corral.biz/
+        source: GitHub
+        author: Dominick Williamson
+    create-time: '2024-02-07 20:55:05'
+    update-time: '2024-11-26 00:47:28'

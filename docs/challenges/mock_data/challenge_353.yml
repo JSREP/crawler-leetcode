@@ -1,0 +1,27 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 353
+    id-alias: mock-challenge-353
+    tags:
+      - Authorization
+      - Mobile-Security
+    platform: Web
+    name: 'Mock挑战题目 #353'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Textus considero verecundia victoria creta currus.
+      Tricesimus condico degusto tempora pauci torrens.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3V4ekpVcmpNc1g=
+    is-expired: false
+    solutions:
+      - title: Tempora paens calcar.
+        url: https://flickering-suspension.org
+        source: YouTube
+        author: Brittany Krajcik
+      - title: Exercitationem talus apparatus.
+        url: https://hot-platypus.net
+        source: GitHub
+        author: Nelson Rempel
+    create-time: '2023-06-15 10:18:03'
+    update-time: '2024-02-26 03:22:32'

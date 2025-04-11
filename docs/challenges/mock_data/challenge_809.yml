@@ -1,0 +1,34 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 809
+    id-alias: mock-challenge-809
+    tags:
+      - Command-Injection
+      - Access-Control
+      - XXE
+      - OAuth
+      - Session-Management
+    platform: Mobile
+    name: 'Mock挑战题目 #809'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Venia vapulus avaritia. Adflicto coma tamisium
+      vulgaris patior.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2ZEbEp1MU5YclI=
+    is-expired: false
+    solutions:
+      - title: Thymum confugo dolorem.
+        url: https://broken-taxicab.net/
+        source: Blog
+        author: Catherine Stokes
+      - title: Contra depopulo utique.
+        url: https://selfish-formamide.biz
+        source: YouTube
+        author: Ms. Marguerite Emmerich
+      - title: Undique vulnero pauper.
+        url: https://pushy-stranger.info
+        source: Medium
+        author: Elizabeth Legros
+    create-time: '2023-04-16 02:17:41'
+    update-time: '2023-12-24 19:27:56'

@@ -1,0 +1,23 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 478
+    id-alias: mock-challenge-478
+    tags:
+      - Input-Validation
+      - XXE
+    platform: API
+    name: 'Mock挑战题目 #478'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Adficio vivo occaecati terror. Campana paens aro
+      peccatus culpa.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0ljcWtVWWVTVmo=
+    is-expired: false
+    solutions:
+      - title: Pecco dens laboriosam.
+        url: https://chilly-recommendation.net/
+        source: YouTube
+        author: Matt Satterfield V
+    create-time: '2023-11-02 08:35:12'
+    update-time: '2023-11-19 16:24:27'

@@ -1,0 +1,24 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 116
+    id-alias: mock-challenge-116
+    tags:
+      - GraphQL
+      - File-Upload
+      - CORS
+    platform: Mobile
+    name: 'Mock挑战题目 #116'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Defetiscor comprehendo aurum cupio tantum cultellus
+      ubi. Adstringo tabernus quasi natus approbo saepe.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0dnM0sxRzdPVUk=
+    is-expired: false
+    solutions:
+      - title: Universe cibo abundans.
+        url: https://fine-teammate.info/
+        source: GitHub
+        author: Carmen Orn
+    create-time: '2024-09-03 20:52:56'
+    update-time: '2024-11-01 02:14:28'

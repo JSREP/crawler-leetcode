@@ -1,0 +1,20 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 394
+    id-alias: mock-challenge-394
+    tags:
+      - Command-Injection
+      - SSRF
+      - Browser-Extensions
+    platform: Web
+    name: 'Mock挑战题目 #394'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Desidero eos taceo conscendo magnam. Alienus defleo
+      celer succedo angulus capio aureus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0t5dlVZY3JZZjk=
+    is-expired: false
+    solutions: []
+    create-time: '2024-08-01 18:05:10'
+    update-time: '2025-02-06 09:43:23'

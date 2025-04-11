@@ -1,0 +1,25 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 705
+    id-alias: mock-challenge-705
+    tags:
+      - Output-Encoding
+      - JWT
+      - OAuth
+      - Session-Management
+    platform: Desktop
+    name: 'Mock挑战题目 #705'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Sodalitas ocer pauci velociter ipsa validus decerno.
+      Alo adamo ultra patruus supellex sperno deserunt cubicularis vinco cursim.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzFMSlZ6MG8zelg=
+    is-expired: false
+    solutions:
+      - title: Cito vergo absens.
+        url: https://tall-rationale.org
+        source: Medium
+        author: Barbara Batz-Zulauf
+    create-time: '2024-11-27 22:57:15'
+    update-time: '2025-04-07 22:37:53'

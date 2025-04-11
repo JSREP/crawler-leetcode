@@ -1,0 +1,34 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 679
+    id-alias: mock-challenge-679
+    tags:
+      - Hashing
+      - OAuth
+      - Business-Logic
+      - CSP
+      - Command-Injection
+    platform: IoT
+    name: 'Mock挑战题目 #679'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Veritas ultio avaritia. Adversus denego demens vesper
+      curtus surgo distinctio uberrime.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2Q3UUpEQnBPTkQ=
+    is-expired: false
+    solutions:
+      - title: Voluptates careo caelestis.
+        url: https://busy-fort.info/
+        source: StackOverflow
+        author: Claude Reichert
+      - title: Pariatur coaegresco veritas.
+        url: https://messy-starboard.biz/
+        source: GitHub
+        author: Jan Schinner
+      - title: Video rem vetus.
+        url: https://heavy-marathon.net
+        source: GitHub
+        author: Vickie Zulauf
+    create-time: '2023-09-17 16:41:50'
+    update-time: '2024-01-06 23:00:38'

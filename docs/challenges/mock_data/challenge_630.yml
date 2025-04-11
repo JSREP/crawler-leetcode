@@ -1,0 +1,22 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 630
+    id-alias: mock-challenge-630
+    tags:
+      - Deserialization
+      - JWT
+      - Input-Validation
+      - CORS
+      - Mobile-Security
+    platform: Web
+    name: 'Mock挑战题目 #630'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Summopere ait vereor creber paulatim tantum.
+      Volaticus aegrus animi iusto dolorum consuasor utroque.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzdFc2hPMHY0ZDU=
+    is-expired: true
+    solutions: []
+    create-time: '2025-01-15 05:56:44'
+    update-time: '2025-03-28 16:34:24'

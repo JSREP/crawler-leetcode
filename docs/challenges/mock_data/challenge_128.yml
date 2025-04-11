@@ -1,0 +1,33 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 128
+    id-alias: mock-challenge-128
+    tags:
+      - API-Security
+      - JWT
+      - Authorization
+      - OAuth
+    platform: API
+    name: 'Mock挑战题目 #128'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Auctus damnatio adflicto decens ambitus tamen. Usus
+      totidem tenuis sufficio suffragium aureus ulciscor carpo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0Y0OEtSWWZZZFU=
+    is-expired: false
+    solutions:
+      - title: Occaecati strues conspergo.
+        url: https://spiffy-milestone.name
+        source: GitHub
+        author: Sonja Rogahn
+      - title: Trucido ipsum voro.
+        url: https://right-kinase.name/
+        source: Medium
+        author: Leroy Lesch
+      - title: Solio despecto adulatio.
+        url: https://shiny-advancement.biz
+        source: GitHub
+        author: ''
+    create-time: '2025-01-29 02:45:14'
+    update-time: '2025-01-30 00:34:59'

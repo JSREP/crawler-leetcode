@@ -1,0 +1,27 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 117
+    id-alias: mock-challenge-117
+    tags:
+      - Input-Validation
+      - SSRF
+    platform: Desktop
+    name: 'Mock挑战题目 #117'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Repellendus paens adeo conforto perferendis. Aeneus
+      volaticus baiulus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0hVZ3lLWTlFd08=
+    is-expired: false
+    solutions:
+      - title: Vero creber tunc.
+        url: https://far-vision.info/
+        source: Blog
+        author: Whitney Strosin
+      - title: Deprecator vorago caput.
+        url: https://distant-lace.info
+        source: GitHub
+        author: Betty Mayer
+    create-time: '2023-09-01 12:54:37'
+    update-time: '2025-02-07 11:48:53'

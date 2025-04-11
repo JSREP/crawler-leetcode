@@ -1,0 +1,28 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 611
+    id-alias: mock-challenge-611
+    tags:
+      - Encryption
+      - Deserialization
+      - Input-Validation
+    platform: Mobile
+    name: 'Mock挑战题目 #611'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Defendo uterque socius conspergo ait. Perspiciatis
+      ipsam tricesimus expedita summopere votum decens.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzBoRXZEUFdwcnQ=
+    is-expired: false
+    solutions:
+      - title: Vere tepidus agnitio.
+        url: https://frizzy-clavicle.name
+        source: StackOverflow
+        author: Valerie Cartwright
+      - title: Cicuta cunae conventus.
+        url: https://wicked-encouragement.com
+        source: YouTube
+        author: Katie Quigley
+    create-time: '2024-04-13 20:28:09'
+    update-time: '2025-02-23 11:13:37'

@@ -1,0 +1,24 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 689
+    id-alias: mock-challenge-689
+    tags:
+      - JWT
+      - Mobile-Security
+      - Race-Condition
+    platform: Web
+    name: 'Mock挑战题目 #689'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Excepturi conturbo patruus creta paulatim vapulus
+      voco decor. Turba comptus illum aestas compono audentia vere caelestis.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L25hV2oyazdOOG8=
+    is-expired: false
+    solutions:
+      - title: Aperiam angelus natus.
+        url: https://faint-mathematics.biz/
+        source: YouTube
+        author: Jenny Legros
+    create-time: '2023-08-19 16:42:29'
+    update-time: '2023-08-22 09:27:30'

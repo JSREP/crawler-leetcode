@@ -12,10 +12,16 @@ import '../styles/star-rating.css'; // 正确的路径
  * @interface StarRatingProps
  * @property {number} difficulty - 难度等级/评分值(1-5)
  * @property {Function} [onClick] - 可选的点击事件处理函数，点击时会传入当前难度值
+ * @property {string} [tooltip] - 提示文本
+ * @property {boolean} [stopPropagation] - 是否阻止点击事件冒泡
+ * @property {React.CSSProperties} [style] - 组件样式
  */
 interface StarRatingProps {
     difficulty: number;
     onClick?: (difficulty: number) => void;
+    tooltip?: string;
+    stopPropagation?: boolean;
+    style?: React.CSSProperties;
 }
 
 /**
@@ -38,47 +44,69 @@ interface StarRatingProps {
  *   onClick={(newDifficulty) => console.log('选择了难度:', newDifficulty)} 
  * />
  */
-const StarRating = ({ difficulty, onClick }: StarRatingProps) => {
-    const tooltipText = onClick ? '点击可按此难度筛选题目' : undefined;
+const StarRating = ({ 
+    difficulty, 
+    onClick, 
+    tooltip = "点击可按此难度筛选题目", 
+    stopPropagation = false,
+    style 
+}: StarRatingProps) => {
     const isClickable = !!onClick;
 
-    return (
-        <Tooltip title={tooltipText} placement="top">
-            <Tag
-                className={isClickable ? 'star-rating-clickable' : ''}
-                color="transparent"
-                onClick={() => onClick?.(difficulty)} // 点击时触发onClick回调
-                style={{
-                    cursor: isClickable ? 'pointer' : 'default', // 有点击事件时显示指针样式
-                    display: 'inline-flex', // 使用flex布局排列星星
-                    alignItems: 'center',
-                    gap: 0,
-                    padding: '2px 6px',
-                    border: 'none',
-                    background: 'transparent',
-                    margin: 0,
-                    transition: 'transform 0.2s' // 添加过渡效果
-                }}
-            >
-                {/* 生成5个星星，根据difficulty值决定显示实心还是空心 */}
-                {[...Array(5)].map((_, index) => {
-                    const StarComponent = index < difficulty ? StarFilled : StarOutlined; // 根据索引和难度选择星星类型
-                    return (
-                        <StarComponent
-                            key={index}
-                            className={isClickable ? 'star-icon-clickable' : ''}
-                            style={{
-                                color: '#ffc53d', // 星星颜色 - 金黄色
-                                fontSize: '16px',
-                                transition: 'color 0.2s, transform 0.1s', // 平滑颜色过渡效果
-                                flexShrink: 0 // 防止星星被压缩
-                            }}
-                        />
-                    );
-                })}
-            </Tag>
-        </Tooltip>
+    const handleClick = (e: React.MouseEvent) => {
+        // 根据需要阻止事件冒泡
+        if (stopPropagation) {
+            e.stopPropagation();
+        }
+        
+        // 调用外部传入的onClick回调
+        if (onClick) {
+            onClick(difficulty);
+        }
+    };
+
+    const starTag = (
+        <Tag
+            className={isClickable ? 'star-rating-clickable' : ''}
+            color="transparent"
+            onClick={isClickable ? handleClick : undefined}
+            style={{
+                cursor: isClickable ? 'pointer' : 'default',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 0,
+                padding: '2px 6px',
+                border: 'none',
+                background: 'transparent',
+                margin: 0,
+                transition: 'transform 0.2s',
+                ...style
+            }}
+        >
+            {/* 生成5个星星，根据difficulty值决定显示实心还是空心 */}
+            {[...Array(5)].map((_, index) => {
+                const StarComponent = index < difficulty ? StarFilled : StarOutlined; // 根据索引和难度选择星星类型
+                return (
+                    <StarComponent
+                        key={index}
+                        className={isClickable ? 'star-icon-clickable' : ''}
+                        style={{
+                            color: '#ffc53d', // 星星颜色 - 金黄色
+                            fontSize: '16px',
+                            transition: 'color 0.2s, transform 0.1s', // 平滑颜色过渡效果
+                            flexShrink: 0 // 防止星星被压缩
+                        }}
+                    />
+                );
+            })}
+        </Tag>
     );
+    
+    return tooltip && isClickable ? (
+        <Tooltip title={tooltip} placement="top">
+            {starTag}
+        </Tooltip>
+    ) : starTag;
 };
 
 export default StarRating;

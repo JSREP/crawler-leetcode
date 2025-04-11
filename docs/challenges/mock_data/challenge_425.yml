@@ -1,0 +1,21 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 425
+    id-alias: mock-challenge-425
+    tags:
+      - Deserialization
+      - XXE
+      - Output-Encoding
+      - Access-Control
+    platform: Mobile
+    name: 'Mock挑战题目 #425'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Bardus cultellus taceo benevolentia defetiscor
+      subiungo. Ars est assentator adsidue clam adeptio.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0NwUHdPR2E3Vnk=
+    is-expired: false
+    solutions: []
+    create-time: '2024-04-30 15:42:36'
+    update-time: '2025-03-10 22:33:07'

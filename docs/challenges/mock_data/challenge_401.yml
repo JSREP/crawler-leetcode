@@ -1,0 +1,33 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 401
+    id-alias: mock-challenge-401
+    tags:
+      - Hashing
+      - Authentication
+      - Authorization
+    platform: IoT
+    name: 'Mock挑战题目 #401'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Artificiose adipiscor aggredior amplitudo cedo
+      voluptatem usque volva cariosus vito. Paens itaque caritas tantum
+      crastinus sed.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2ZwOTZyaVBZT28=
+    is-expired: false
+    solutions:
+      - title: Apto atrox caelum.
+        url: https://self-assured-swordfish.info
+        source: YouTube
+        author: Felix Satterfield
+      - title: Caelum sortitus suus.
+        url: https://outgoing-step-mother.com
+        source: Blog
+        author: Jody Hoeger
+      - title: Comprehendo clam conventus.
+        url: https://smart-heartbeat.biz
+        source: StackOverflow
+        author: Mrs. Michele Medhurst
+    create-time: '2024-04-17 15:45:57'
+    update-time: '2025-02-06 07:20:57'

@@ -1,0 +1,34 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 274
+    id-alias: mock-challenge-274
+    tags:
+      - Session-Management
+      - Authentication
+      - Deserialization
+      - SQL-Injection
+      - Command-Injection
+    platform: Desktop
+    name: 'Mock挑战题目 #274'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Ultra tertius deludo brevis curo crur. Civis abutor
+      allatus volup una acer canto calcar vilicus corrumpo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2lqS2JCTEtkRGM=
+    is-expired: false
+    solutions:
+      - title: Amoveo toties comes.
+        url: https://worldly-milestone.net/
+        source: GitHub
+        author: Suzanne Deckow DDS
+      - title: Admiratio triduana at.
+        url: https://svelte-roundabout.info/
+        source: StackOverflow
+        author: Austin Lakin
+      - title: Triduana apud qui.
+        url: https://snappy-soliloquy.com
+        source: Medium
+        author: Theresa Baumbach
+    create-time: '2025-02-12 11:58:00'
+    update-time: '2025-03-28 12:38:56'

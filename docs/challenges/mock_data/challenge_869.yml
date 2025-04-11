@@ -1,0 +1,25 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 869
+    id-alias: mock-challenge-869
+    tags:
+      - Command-Injection
+      - Mobile-Security
+      - XXE
+      - XSS
+    platform: API
+    name: 'Mock挑战题目 #869'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Abbas facilis vomica tabula damnatio tener adopto
+      curo. Tepidus alioqui apparatus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0s2RkMxTEJWS2I=
+    is-expired: true
+    solutions:
+      - title: Valeo stultus ventus.
+        url: https://worse-commercial.info/
+        source: Blog
+        author: Roger Bednar-Okuneva
+    create-time: '2023-12-25 14:52:51'
+    update-time: '2025-03-15 08:50:37'

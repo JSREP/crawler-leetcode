@@ -1,0 +1,30 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 296
+    id-alias: mock-challenge-296
+    tags:
+      - CSRF
+      - Command-Injection
+      - Input-Validation
+      - XSS
+      - Race-Condition
+    platform: API
+    name: 'Mock挑战题目 #296'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Trucido valens quisquam. Harum tyrannus abundans
+      repudiandae.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzZUSGhMcUwzOGY=
+    is-expired: false
+    solutions:
+      - title: Debilito demulceo sodalitas.
+        url: https://dim-conservative.net
+        source: Medium
+        author: Ben Vandervort
+      - title: Thorax cedo cunae.
+        url: https://productive-validity.org
+        source: GitHub
+        author: Margaret Tremblay
+    create-time: '2024-02-17 09:37:29'
+    update-time: '2024-06-23 00:31:28'

@@ -1,0 +1,24 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 526
+    id-alias: mock-challenge-526
+    tags:
+      - CORS
+      - CSRF
+      - SQL-Injection
+    platform: Desktop
+    name: 'Mock挑战题目 #526'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Congregatio triumphus adimpleo cognomen basium. Ver
+      optio infit tutamen volo dignissimos totus corpus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1ZOODhyREpUZmo=
+    is-expired: false
+    solutions:
+      - title: Capto depono corrigo.
+        url: https://heartfelt-solution.info
+        source: YouTube
+        author: Joanne Turner
+    create-time: '2024-06-30 19:30:14'
+    update-time: '2024-08-26 02:24:54'

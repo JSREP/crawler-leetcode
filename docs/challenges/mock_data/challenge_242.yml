@@ -1,0 +1,25 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 242
+    id-alias: mock-challenge-242
+    tags:
+      - Access-Control
+      - Hashing
+      - CORS
+    platform: Desktop
+    name: 'Mock挑战题目 #242'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Terror vomer dedico conicio suadeo aestas molestias.
+      Culpa tenetur dens cedo circumvenio thalassinus curiositas apparatus
+      decens tondeo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1RPRHhOU2tiZFQ=
+    is-expired: false
+    solutions:
+      - title: Accommodo trepide surgo.
+        url: https://tender-stock.info/
+        source: YouTube
+        author: Mr. Clay Brekke
+    create-time: '2023-11-02 22:31:53'
+    update-time: '2024-08-09 16:28:53'

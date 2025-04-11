@@ -1,0 +1,22 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 811
+    id-alias: mock-challenge-811
+    tags:
+      - Race-Condition
+      - Browser-Extensions
+      - CSP
+      - Encryption
+      - CORS
+    platform: Web
+    name: 'Mock挑战题目 #811'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Contigo sortitus nostrum cibus. Patrocinor depereo
+      templum viduo debilito valetudo ascisco perferendis utrimque.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3VGUnZTbGxHcGw=
+    is-expired: false
+    solutions: []
+    create-time: '2024-10-21 14:54:28'
+    update-time: '2024-11-11 12:58:56'

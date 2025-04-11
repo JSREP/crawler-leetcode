@@ -1,0 +1,31 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 758
+    id-alias: mock-challenge-758
+    tags:
+      - Command-Injection
+      - SSRF
+    platform: API
+    name: 'Mock挑战题目 #758'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Suppellex curis conventus tutamen curtus deludo
+      adsidue tum balbus. Curriculum ustilo provident.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0Z0WjdiUjhXQWw=
+    is-expired: false
+    solutions:
+      - title: Autem delego in.
+        url: https://tedious-step.name
+        source: Medium
+        author: ''
+      - title: Comis defero temporibus.
+        url: https://grim-morning.net/
+        source: YouTube
+        author: ''
+      - title: Utpote fuga advoco.
+        url: https://first-remark.biz
+        source: StackOverflow
+        author: Ramona Gutkowski
+    create-time: '2023-09-15 00:43:02'
+    update-time: '2024-05-08 23:24:05'

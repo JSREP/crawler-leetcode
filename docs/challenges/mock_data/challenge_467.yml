@@ -1,0 +1,28 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 467
+    id-alias: mock-challenge-467
+    tags:
+      - HTTP-Headers
+      - Path-Traversal
+      - OAuth
+    platform: API
+    name: 'Mock挑战题目 #467'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Denuncio defungo adeptio aliqua viduo. Depromo
+      adstringo cicuta.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1RWVHlmekowSkM=
+    is-expired: false
+    solutions:
+      - title: Vilicus suspendo cognatus.
+        url: https://other-ectoderm.org/
+        source: GitHub
+        author: Guy Ryan
+      - title: Ars tantum vespillo.
+        url: https://physical-lashes.biz/
+        source: GitHub
+        author: Manuel Fisher DVM
+    create-time: '2024-03-30 00:30:31'
+    update-time: '2024-12-29 23:27:32'

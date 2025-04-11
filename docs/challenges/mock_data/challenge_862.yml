@@ -1,0 +1,27 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 862
+    id-alias: mock-challenge-862
+    tags:
+      - OAuth
+      - Authentication
+      - CSP
+      - JWT
+    platform: IoT
+    name: 'Mock挑战题目 #862'
+    difficulty-level: 5
+    description: 这是一个示例挑战题目的描述，难度为5星级。Deorsum super demulceo timor. Benigne benigne iusto.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1h3UkwwN1hIUnI=
+    is-expired: false
+    solutions:
+      - title: Vis quibusdam curiositas.
+        url: https://bulky-republican.net
+        source: Medium
+        author: Guillermo Murray
+      - title: Explicabo arx arca.
+        url: https://rural-petticoat.com
+        source: Medium
+        author: Salvatore Bogan
+    create-time: '2023-10-11 12:43:03'
+    update-time: '2025-04-07 03:40:41'

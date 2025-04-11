@@ -1,0 +1,30 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 906
+    id-alias: mock-challenge-906
+    tags:
+      - SQL-Injection
+      - Browser-Extensions
+      - Rate-Limiting
+      - API-Security
+    platform: API
+    name: 'Mock挑战题目 #906'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Statim vinum similique suppono amiculum fuga surculus
+      depromo ullus. Perspiciatis degenero ex ocer contego cibus quo caput colo
+      deprecator.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3A1WFRkejFHa0U=
+    is-expired: false
+    solutions:
+      - title: Territo apto alo.
+        url: https://lonely-cheetah.org/
+        source: StackOverflow
+        author: Rick Zemlak I
+      - title: Ocer abduco callide.
+        url: https://fatherly-handful.name
+        source: Blog
+        author: Victor Reichert
+    create-time: '2024-12-12 05:13:58'
+    update-time: '2025-03-23 17:30:03'

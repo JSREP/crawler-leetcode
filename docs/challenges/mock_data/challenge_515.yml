@@ -1,0 +1,32 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 515
+    id-alias: mock-challenge-515
+    tags:
+      - GraphQL
+      - Business-Logic
+    platform: IoT
+    name: 'Mock挑战题目 #515'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Thymbra correptius bellicus voluptate utrimque curo
+      auxilium verecundia studio. Arbor adstringo quisquam aliquam tamquam totam
+      varietas cogo angelus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1Q4dGVXS0VmTTg=
+    is-expired: false
+    solutions:
+      - title: Commodi aptus tumultus.
+        url: https://likely-tool.biz/
+        source: GitHub
+        author: Mark Tillman
+      - title: Theologus valens coaegresco.
+        url: https://fair-going.org
+        source: YouTube
+        author: Diane Zieme V
+      - title: Thesis eum adversus.
+        url: https://untrue-hyena.name
+        source: Medium
+        author: Rochelle Nader
+    create-time: '2024-08-02 15:31:56'
+    update-time: '2025-02-04 14:19:01'

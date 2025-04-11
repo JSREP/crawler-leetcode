@@ -1,0 +1,30 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 753
+    id-alias: mock-challenge-753
+    tags:
+      - Deserialization
+      - CSRF
+      - JWT
+    platform: Desktop
+    name: 'Mock挑战题目 #753'
+    difficulty-level: 3
+    description: 这是一个示例挑战题目的描述，难度为3星级。Amor explicabo acceptus. Spargo aer appono audio.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3A4Y3FweTBLTk8=
+    is-expired: false
+    solutions:
+      - title: Audio tribuo vesper.
+        url: https://stable-worth.com/
+        source: StackOverflow
+        author: Sheryl Pfannerstill
+      - title: Utrum somniculosus cumque.
+        url: https://made-up-academics.net
+        source: GitHub
+        author: Marlon Walsh
+      - title: Deporto sumptus certus.
+        url: https://delicious-ownership.net
+        source: Medium
+        author: ''
+    create-time: '2025-02-02 11:44:43'
+    update-time: '2025-02-18 15:21:45'

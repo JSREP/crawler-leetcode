@@ -1,0 +1,30 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 664
+    id-alias: mock-challenge-664
+    tags:
+      - Command-Injection
+      - Path-Traversal
+      - OAuth
+      - Access-Control
+      - HTTP-Headers
+    platform: Mobile
+    name: 'Mock挑战题目 #664'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Aufero truculenter tristis cito atqui tamdiu deorsum.
+      Adficio dolores color peior adficio sumptus abstergo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3JVVGdCWlVoRXc=
+    is-expired: false
+    solutions:
+      - title: Degusto amiculum vel.
+        url: https://reasonable-utilization.org
+        source: Medium
+        author: Boyd Tremblay PhD
+      - title: Vado creptio terga.
+        url: https://caring-airman.biz/
+        source: GitHub
+        author: Diana Powlowski DDS
+    create-time: '2023-10-21 02:53:58'
+    update-time: '2024-09-20 13:49:48'

@@ -1,0 +1,27 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 129
+    id-alias: mock-challenge-129
+    tags:
+      - Browser-Extensions
+      - Session-Management
+    platform: API
+    name: 'Mock挑战题目 #129'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Maiores vae depopulo vesica. Amita beatae pecco taceo
+      auditor unde territo absorbeo absconditus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1pwTW56cWp4VlI=
+    is-expired: false
+    solutions:
+      - title: Animi sumptus alii.
+        url: https://practical-rationale.name/
+        source: YouTube
+        author: Marty Hammes-Schinner
+      - title: Usitas angelus alioqui.
+        url: https://inexperienced-anticodon.net/
+        source: Medium
+        author: Ms. Dolores Robel
+    create-time: '2023-09-25 07:51:31'
+    update-time: '2024-04-19 05:25:31'

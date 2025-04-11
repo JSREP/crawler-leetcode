@@ -1,0 +1,21 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 459
+    id-alias: mock-challenge-459
+    tags:
+      - Deserialization
+      - Rate-Limiting
+      - JWT
+    platform: Mobile
+    name: 'Mock挑战题目 #459'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Crapula valetudo benigne avaritia volo rem debitis
+      peior accedo solutio. Bardus quis virgo speculum spes desolo corrupti
+      demoror.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2pSNUJxd3BHZHM=
+    is-expired: false
+    solutions: []
+    create-time: '2023-12-18 22:28:56'
+    update-time: '2024-04-02 14:08:39'

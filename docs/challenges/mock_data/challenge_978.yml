@@ -1,0 +1,25 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 978
+    id-alias: mock-challenge-978
+    tags:
+      - HTTP-Headers
+      - JWT
+    platform: Mobile
+    name: 'Mock挑战题目 #978'
+    difficulty-level: 1
+    description: 这是一个示例挑战题目的描述，难度为1星级。Eos studio altus. Aqua substantia spes accusator.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L25QaGVZSHhKVXo=
+    is-expired: false
+    solutions:
+      - title: Caput pauci vespillo.
+        url: https://untried-restaurant.info
+        source: StackOverflow
+        author: Kenny Streich
+      - title: Cum capillus cubo.
+        url: https://arid-bracelet.info/
+        source: YouTube
+        author: Marion Daniel
+    create-time: '2023-07-31 08:36:53'
+    update-time: '2024-03-08 02:25:48'

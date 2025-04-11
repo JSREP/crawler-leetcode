@@ -1,0 +1,20 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 484
+    id-alias: mock-challenge-484
+    tags:
+      - Hashing
+      - JWT
+      - Race-Condition
+    platform: IoT
+    name: 'Mock挑战题目 #484'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Cogo bene temporibus aspicio vaco sperno apud. Demens
+      causa timor delibero verumtamen itaque assumenda conscendo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2xuSEFHWktkYmU=
+    is-expired: false
+    solutions: []
+    create-time: '2023-10-28 14:54:51'
+    update-time: '2024-07-21 16:23:00'

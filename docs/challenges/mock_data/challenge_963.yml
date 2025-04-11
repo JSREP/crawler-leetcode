@@ -1,0 +1,32 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 963
+    id-alias: mock-challenge-963
+    tags:
+      - Command-Injection
+      - Authorization
+      - Business-Logic
+    platform: Mobile
+    name: 'Mock挑战题目 #963'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Sponte vigilo nobis. Taedium adinventitias deprimo
+      patrocinor adhuc supellex.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzRUNGRtZDFYalk=
+    is-expired: false
+    solutions:
+      - title: Ait ait uter.
+        url: https://huge-vibration.com
+        source: StackOverflow
+        author: Earnest Gutkowski
+      - title: Adstringo quos xiphias.
+        url: https://authentic-tectonics.info
+        source: StackOverflow
+        author: Heather Rodriguez
+      - title: Commodi autus cernuus.
+        url: https://foolhardy-armoire.com/
+        source: YouTube
+        author: Vicky Romaguera I
+    create-time: '2024-08-15 05:30:04'
+    update-time: '2025-03-21 19:29:52'

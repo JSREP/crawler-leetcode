@@ -1,0 +1,33 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 258
+    id-alias: mock-challenge-258
+    tags:
+      - Hashing
+      - Business-Logic
+      - Command-Injection
+      - Authorization
+    platform: IoT
+    name: 'Mock挑战题目 #258'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Stabilis maxime degenero denuncio arcesso anser. Arca
+      tandem distinctio neque.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0JUUXNHMExDMW4=
+    is-expired: false
+    solutions:
+      - title: Texo appositus vilis.
+        url: https://smooth-account.com/
+        source: GitHub
+        author: Elsie Hamill
+      - title: Spargo tum velum.
+        url: https://unlawful-formula.biz/
+        source: Medium
+        author: Doug Pfeffer
+      - title: Reiciendis capio quisquam.
+        url: https://sophisticated-luck.com
+        source: StackOverflow
+        author: Wanda Simonis
+    create-time: '2024-12-22 20:01:46'
+    update-time: '2025-02-26 12:24:25'

@@ -1,0 +1,25 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 573
+    id-alias: mock-challenge-573
+    tags:
+      - API-Security
+      - Hashing
+      - WebSockets
+      - Race-Condition
+    platform: Desktop
+    name: 'Mock挑战题目 #573'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Comburo alveus cultellus denuo dignissimos tertius
+      decens adamo calcar sol. Aestus vicinus vindico.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzNENmtRWjRVbEk=
+    is-expired: false
+    solutions:
+      - title: Nobis solium subito.
+        url: https://biodegradable-valentine.org/
+        source: Blog
+        author: Lorraine Buckridge
+    create-time: '2023-04-17 02:23:14'
+    update-time: '2024-05-13 02:56:18'

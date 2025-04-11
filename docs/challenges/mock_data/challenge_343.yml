@@ -1,0 +1,31 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 343
+    id-alias: mock-challenge-343
+    tags:
+      - CSP
+      - Session-Management
+    platform: IoT
+    name: 'Mock挑战题目 #343'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Vulgo tabgo adsuesco. Itaque ab celo coruscus defero
+      demitto tenax ocer.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3ZxVTdhWlhPSW8=
+    is-expired: false
+    solutions:
+      - title: Constans ars clarus.
+        url: https://sentimental-epic.name
+        source: StackOverflow
+        author: ''
+      - title: Comprehendo molestias confero.
+        url: https://cluttered-finer.name/
+        source: Medium
+        author: Ellis Fadel V
+      - title: Tametsi amo appositus.
+        url: https://negligible-councilman.name
+        source: StackOverflow
+        author: Rodney Daugherty
+    create-time: '2024-06-15 22:08:12'
+    update-time: '2025-02-23 21:57:59'

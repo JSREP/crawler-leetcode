@@ -1,0 +1,34 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 285
+    id-alias: mock-challenge-285
+    tags:
+      - SQL-Injection
+      - CORS
+      - Path-Traversal
+      - SSRF
+    platform: IoT
+    name: 'Mock挑战题目 #285'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Cupiditate aegre stipes alveus aliquid tepidus
+      vehemens administratio causa beatae. Ullus toties acsi distinctio
+      appositus sufficio.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1RralJvZXpaV2s=
+    is-expired: false
+    solutions:
+      - title: Curso alias deduco.
+        url: https://subtle-hospitalization.org
+        source: Blog
+        author: Clint Hoeger
+      - title: Valetudo apud textor.
+        url: https://ashamed-cinema.net/
+        source: StackOverflow
+        author: Alyssa Keebler
+      - title: Convoco communis creator.
+        url: https://unrealistic-complication.net
+        source: Medium
+        author: Lindsey Lebsack
+    create-time: '2024-06-30 03:17:10'
+    update-time: '2024-07-21 04:25:00'

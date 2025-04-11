@@ -1,0 +1,30 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 131
+    id-alias: mock-challenge-131
+    tags:
+      - Hashing
+      - Mobile-Security
+      - SQL-Injection
+      - XSS
+    platform: Desktop
+    name: 'Mock挑战题目 #131'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Cavus assentator dedico denuncio terebro adipisci
+      constans assumenda amicitia suppellex. Tot astrum sordeo contra quas
+      cruentus defluo canonicus molestias ars.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0E2M2pnMklQY3M=
+    is-expired: false
+    solutions:
+      - title: Expedita validus autus.
+        url: https://mindless-marten.biz
+        source: YouTube
+        author: Mrs. Florence Gulgowski
+      - title: Contigo suspendo conicio.
+        url: https://precious-popularity.biz/
+        source: StackOverflow
+        author: Peter Rosenbaum
+    create-time: '2024-09-27 19:34:27'
+    update-time: '2025-03-25 08:54:58'

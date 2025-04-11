@@ -1,0 +1,23 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 560
+    id-alias: mock-challenge-560
+    tags:
+      - WebSockets
+      - GraphQL
+      - Authorization
+      - OAuth
+      - Encryption
+    platform: Web
+    name: 'Mock挑战题目 #560'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Comptus abstergo ait valde combibo defessus canis
+      tabella totam cicuta. Viscus ventosus cras tam nesciunt beatae ver
+      considero deserunt adeptio.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3hubm4xeUVVTHQ=
+    is-expired: true
+    solutions: []
+    create-time: '2023-05-28 23:39:35'
+    update-time: '2025-03-08 08:24:07'

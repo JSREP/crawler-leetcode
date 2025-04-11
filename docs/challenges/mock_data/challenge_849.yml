@@ -1,0 +1,22 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 849
+    id-alias: mock-challenge-849
+    tags:
+      - CSP
+      - XSS
+      - Authorization
+      - Command-Injection
+      - Authentication
+    platform: Mobile
+    name: 'Mock挑战题目 #849'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Benevolentia ascisco tam vitiosus velociter tergeo.
+      Careo triduana turba appono carus vesper solium amplexus crinis.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0RlQldhckFmWFk=
+    is-expired: false
+    solutions: []
+    create-time: '2024-11-04 17:59:15'
+    update-time: '2024-11-08 23:57:08'

@@ -1,0 +1,23 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 980
+    id-alias: mock-challenge-980
+    tags:
+      - Session-Management
+      - XSS
+    platform: Mobile
+    name: 'Mock挑战题目 #980'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Strues capitulus attonbitus. Uterque agnosco
+      supplanto vapulus admitto arguo sponte vulgus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1JkcGZZT0ExRjA=
+    is-expired: false
+    solutions:
+      - title: Comburo adficio casus.
+        url: https://exalted-cheese.org
+        source: YouTube
+        author: Courtney Bechtelar
+    create-time: '2024-02-22 15:41:35'
+    update-time: '2024-08-22 06:13:27'

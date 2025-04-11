@@ -1,0 +1,19 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 211
+    id-alias: mock-challenge-211
+    tags:
+      - Input-Validation
+      - CSRF
+    platform: Desktop
+    name: 'Mock挑战题目 #211'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Delectatio maiores talio alter vulgaris placeat usus.
+      Suffragium ascisco viridis tabgo vomer odit supplanto fuga.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2oxZkZnVGpjU1Q=
+    is-expired: false
+    solutions: []
+    create-time: '2023-07-18 06:16:12'
+    update-time: '2024-05-01 11:15:41'

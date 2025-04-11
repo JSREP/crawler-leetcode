@@ -1,0 +1,31 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 702
+    id-alias: mock-challenge-702
+    tags:
+      - JWT
+      - Input-Validation
+    platform: IoT
+    name: 'Mock挑战题目 #702'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Versus urbanus cilicium valens volo. Saepe tenuis sub
+      alii alo esse absorbeo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2pkNFc5UHZwaE4=
+    is-expired: true
+    solutions:
+      - title: Comminor appono circumvenio.
+        url: https://brilliant-annual.biz
+        source: Blog
+        author: Archie Zieme IV
+      - title: Verus capto dolor.
+        url: https://reasonable-widow.name
+        source: Medium
+        author: Kristi Greenholt-Cronin
+      - title: Conscendo adfectus solum.
+        url: https://stunning-plumber.name/
+        source: Medium
+        author: Alfredo Goldner
+    create-time: '2024-07-01 10:43:33'
+    update-time: '2024-09-10 00:43:39'

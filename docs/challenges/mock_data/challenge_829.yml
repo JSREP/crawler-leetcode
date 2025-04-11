@@ -1,0 +1,34 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 829
+    id-alias: mock-challenge-829
+    tags:
+      - HTTP-Headers
+      - CORS
+      - OAuth
+      - Authentication
+      - XSS
+    platform: API
+    name: 'Mock挑战题目 #829'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Caput cresco comprehendo illo asper desidero eligendi
+      a vereor sub. Tego corrumpo degero ocer vulariter vere ipsam.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2pwWnlaRThrV2s=
+    is-expired: false
+    solutions:
+      - title: Spes audio curatio.
+        url: https://mealy-alert.net/
+        source: GitHub
+        author: Lynn Conn
+      - title: Depulso contabesco avaritia.
+        url: https://austere-bidet.org
+        source: GitHub
+        author: Cheryl Fadel
+      - title: Necessitatibus acerbitas defendo.
+        url: https://ripe-chairperson.com/
+        source: YouTube
+        author: Phillip Effertz
+    create-time: '2025-01-19 01:11:42'
+    update-time: '2025-02-19 19:48:30'

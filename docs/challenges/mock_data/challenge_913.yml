@@ -1,0 +1,22 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 913
+    id-alias: mock-challenge-913
+    tags:
+      - Hashing
+      - Mobile-Security
+      - GraphQL
+      - XSS
+      - API-Security
+    platform: Mobile
+    name: 'Mock挑战题目 #913'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Nesciunt venia coniecto sublime vitium appello ocer
+      vehemens denique angulus. Consequuntur curis natus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2ZFS3poZmpWWmw=
+    is-expired: false
+    solutions: []
+    create-time: '2024-09-17 22:58:41'
+    update-time: '2025-04-06 04:08:09'

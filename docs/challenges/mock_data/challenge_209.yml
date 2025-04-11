@@ -1,0 +1,25 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 209
+    id-alias: mock-challenge-209
+    tags:
+      - Encryption
+      - Business-Logic
+    platform: Desktop
+    name: 'Mock挑战题目 #209'
+    difficulty-level: 1
+    description: 这是一个示例挑战题目的描述，难度为1星级。Aut creber usitas culpo. Astrum appositus attero.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzFaRndac1E1d3g=
+    is-expired: false
+    solutions:
+      - title: Terminatio suppellex demoror.
+        url: https://brisk-trick.com/
+        source: GitHub
+        author: Dwight MacGyver I
+      - title: Bestia solutio aestus.
+        url: https://smug-mathematics.name
+        source: YouTube
+        author: Rodney Runolfsson
+    create-time: '2025-03-17 10:17:07'
+    update-time: '2025-03-20 15:49:41'

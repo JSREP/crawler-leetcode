@@ -1,0 +1,31 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 749
+    id-alias: mock-challenge-749
+    tags:
+      - CSRF
+      - JWT
+    platform: Web
+    name: 'Mock挑战题目 #749'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Timor tristis in iure sit. Ceno esse cruentus tenus
+      spiculum totidem victoria quasi clibanus tandem.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1BMWXpLaElSVks=
+    is-expired: false
+    solutions:
+      - title: Urbanus crustulum bellicus.
+        url: https://remorseful-heartache.biz/
+        source: Blog
+        author: Yvonne DuBuque
+      - title: Maiores vapulus cognomen.
+        url: https://fine-derby.biz
+        source: StackOverflow
+        author: ''
+      - title: Arto vetus surgo.
+        url: https://passionate-swine.biz
+        source: GitHub
+        author: Elias Considine-Wilderman
+    create-time: '2025-02-16 06:24:29'
+    update-time: '2025-03-19 18:19:04'

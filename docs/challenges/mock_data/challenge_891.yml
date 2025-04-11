@@ -1,0 +1,23 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 891
+    id-alias: mock-challenge-891
+    tags:
+      - Access-Control
+      - CORS
+    platform: Mobile
+    name: 'Mock挑战题目 #891'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Demergo curis vitae cognatus tribuo contego. Tabernus
+      vestrum absum aspicio iste crepusculum.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3lYblViYVFyV1g=
+    is-expired: false
+    solutions:
+      - title: Laboriosam aduro rem.
+        url: https://colorful-honesty.org
+        source: Blog
+        author: Dr. Rosemarie Turner
+    create-time: '2023-12-24 11:07:46'
+    update-time: '2025-03-07 01:44:19'

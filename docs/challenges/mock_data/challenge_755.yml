@@ -1,0 +1,30 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 755
+    id-alias: mock-challenge-755
+    tags:
+      - SQL-Injection
+      - CORS
+      - API-Security
+      - XXE
+      - Encryption
+    platform: IoT
+    name: 'Mock挑战题目 #755'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Venia fugiat optio deduco adulatio rerum decor. Nemo
+      delibero adamo.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1JPZXVKUlQ0M3c=
+    is-expired: false
+    solutions:
+      - title: Versus arbor desparatus.
+        url: https://new-ravioli.name/
+        source: Medium
+        author: Elvira Fritsch-Berge
+      - title: Alii vulariter caries.
+        url: https://crazy-guide.com/
+        source: Blog
+        author: Brenda O'Hara IV
+    create-time: '2024-03-07 05:56:52'
+    update-time: '2024-06-24 23:30:54'

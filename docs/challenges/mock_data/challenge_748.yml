@@ -1,0 +1,22 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 748
+    id-alias: mock-challenge-748
+    tags:
+      - OAuth
+      - HTTP-Headers
+      - Path-Traversal
+      - Output-Encoding
+      - Authorization
+    platform: IoT
+    name: 'Mock挑战题目 #748'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Votum atque iste tepidus aggredior tego ultio.
+      Sapiente ustulo aeternus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzhPTEtyYXBEQU4=
+    is-expired: false
+    solutions: []
+    create-time: '2024-08-05 07:36:48'
+    update-time: '2025-04-06 06:43:26'

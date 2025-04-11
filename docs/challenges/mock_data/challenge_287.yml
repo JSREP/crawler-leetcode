@@ -1,0 +1,35 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 287
+    id-alias: mock-challenge-287
+    tags:
+      - Authentication
+      - CORS
+      - SSRF
+      - Deserialization
+      - Session-Management
+    platform: Web
+    name: 'Mock挑战题目 #287'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Video denego tenuis bestia vitiosus delibero nam
+      circumvenio statua cunctatio. Succedo turpis dapifer civitas vitiosus
+      sapiente audio vulgus tyrannus volup.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6Lzh2REIwWnVvUzc=
+    is-expired: false
+    solutions:
+      - title: Careo basium antiquus.
+        url: https://palatable-aftermath.org/
+        source: GitHub
+        author: Jeanne Sanford
+      - title: Quod inventore decipio.
+        url: https://numb-hexagon.org
+        source: YouTube
+        author: ''
+      - title: Exercitationem clam synagoga.
+        url: https://gleaming-minor.org/
+        source: StackOverflow
+        author: Barbara O'Keefe
+    create-time: '2023-10-27 10:14:30'
+    update-time: '2025-02-04 11:04:42'

@@ -1,0 +1,24 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 602
+    id-alias: mock-challenge-602
+    tags:
+      - CORS
+      - Mobile-Security
+      - Authentication
+    platform: Web
+    name: 'Mock挑战题目 #602'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Cunae fugiat cena solutio caritas iusto. Thermae
+      deleniti confero tabgo usitas.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0tLdnFDVmdlZk8=
+    is-expired: false
+    solutions:
+      - title: Supellex adinventitias sunt.
+        url: https://beloved-ghost.org
+        source: YouTube
+        author: Jonathan Turner IV
+    create-time: '2023-09-13 00:10:14'
+    update-time: '2024-02-11 21:22:14'

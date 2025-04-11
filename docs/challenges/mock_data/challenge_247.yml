@@ -1,0 +1,21 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 247
+    id-alias: mock-challenge-247
+    tags:
+      - Race-Condition
+      - SQL-Injection
+      - Access-Control
+      - CSRF
+    platform: Mobile
+    name: 'Mock挑战题目 #247'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Adamo coaegresco quis demoror cultura vivo ago
+      ventosus possimus tracto. Nemo comparo nam spargo carcer supra.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0p3amc5WEpRVlA=
+    is-expired: false
+    solutions: []
+    create-time: '2024-04-17 14:20:26'
+    update-time: '2024-07-10 23:08:18'

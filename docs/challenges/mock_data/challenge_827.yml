@@ -1,0 +1,20 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 827
+    id-alias: mock-challenge-827
+    tags:
+      - WebSockets
+      - Access-Control
+    platform: Desktop
+    name: 'Mock挑战题目 #827'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Verbera constans capillus accusamus pectus valens
+      cruentus sperno debitis acervus. Commemoro ustilo illo copia certus
+      deserunt harum.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2t3RHZLWXd5OVk=
+    is-expired: false
+    solutions: []
+    create-time: '2023-07-19 05:00:56'
+    update-time: '2023-10-01 14:41:53'

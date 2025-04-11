@@ -1,0 +1,32 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 428
+    id-alias: mock-challenge-428
+    tags:
+      - Output-Encoding
+      - GraphQL
+      - Mobile-Security
+    platform: Desktop
+    name: 'Mock挑战题目 #428'
+    difficulty-level: 2
+    description: >-
+      这是一个示例挑战题目的描述，难度为2星级。Confido strenuus cornu. Avaritia solio suffoco vulpes
+      aut vere aspicio thymbra abbas.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2xVZTJYNEpMdEE=
+    is-expired: false
+    solutions:
+      - title: Vitae cogo culpa.
+        url: https://plump-solution.com
+        source: GitHub
+        author: Dr. Courtney Sawayn
+      - title: Summisse arbitro placeat.
+        url: https://competent-fowl.net/
+        source: GitHub
+        author: Dr. Lois Brown
+      - title: Peccatus clamo maxime.
+        url: https://trusting-spirit.net/
+        source: Medium
+        author: Dr. Abraham Shanahan
+    create-time: '2025-02-20 14:57:42'
+    update-time: '2025-03-31 18:17:57'

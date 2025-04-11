@@ -1,0 +1,29 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 166
+    id-alias: mock-challenge-166
+    tags:
+      - Browser-Extensions
+      - XXE
+      - Race-Condition
+      - OAuth
+    platform: API
+    name: 'Mock挑战题目 #166'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Abutor taedium tribuo. Sodalitas aqua subito bestia
+      pauper crinis cognomen tergo esse aqua.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2tQblpseDhtR04=
+    is-expired: false
+    solutions:
+      - title: Totidem minus catena.
+        url: https://damaged-hospitalization.com
+        source: GitHub
+        author: Keith Lind-Aufderhar
+      - title: Despecto apostolus speculum.
+        url: https://glum-redesign.com/
+        source: YouTube
+        author: Miss Miriam Champlin
+    create-time: '2023-05-27 09:11:57'
+    update-time: '2024-09-30 19:37:45'

@@ -1,0 +1,30 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 499
+    id-alias: mock-challenge-499
+    tags:
+      - WebSockets
+      - Access-Control
+      - Authentication
+      - SQL-Injection
+      - Input-Validation
+    platform: IoT
+    name: 'Mock挑战题目 #499'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Villa acerbitas basium uredo constans admitto
+      antiquus. Aspicio absconditus canis.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2VFNGZJbGJPWXI=
+    is-expired: false
+    solutions:
+      - title: Vulnero civitas agnitio.
+        url: https://bleak-carboxyl.com
+        source: Blog
+        author: Sarah Blanda
+      - title: Tribuo curvo pecco.
+        url: https://ruddy-typewriter.name/
+        source: Blog
+        author: Ana Gerhold MD
+    create-time: '2024-02-15 05:07:03'
+    update-time: '2025-02-23 00:59:42'

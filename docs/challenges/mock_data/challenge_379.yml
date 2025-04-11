@@ -1,0 +1,19 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 379
+    id-alias: mock-challenge-379
+    tags:
+      - XXE
+      - File-Upload
+    platform: Mobile
+    name: 'Mock挑战题目 #379'
+    difficulty-level: 3
+    description: >-
+      这是一个示例挑战题目的描述，难度为3星级。Thesaurus perferendis defessus calco caput verto
+      depraedor. Casso aqua alius.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L04ycVZ4a2w2aFA=
+    is-expired: false
+    solutions: []
+    create-time: '2023-12-08 04:33:02'
+    update-time: '2024-01-08 01:01:31'

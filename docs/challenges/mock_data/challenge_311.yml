@@ -1,0 +1,32 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 311
+    id-alias: mock-challenge-311
+    tags:
+      - SSRF
+      - Path-Traversal
+      - SQL-Injection
+    platform: Web
+    name: 'Mock挑战题目 #311'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Charisma aut tactus voro teres ullam depraedor. Adamo
+      torqueo infit atqui deprimo mollitia.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L0Y1OXhzSWJMbnA=
+    is-expired: true
+    solutions:
+      - title: Commemoro timidus soluta.
+        url: https://messy-coin.com/
+        source: YouTube
+        author: Dr. Willie Mitchell
+      - title: Cohors demens canonicus.
+        url: https://ultimate-rosemary.biz/
+        source: Medium
+        author: Toby Paucek
+      - title: Fugit accendo ciminatio.
+        url: https://velvety-riser.biz/
+        source: StackOverflow
+        author: Francis O'Kon
+    create-time: '2023-08-26 16:49:07'
+    update-time: '2024-03-31 20:19:40'

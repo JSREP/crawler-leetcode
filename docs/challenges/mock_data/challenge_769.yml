@@ -1,0 +1,33 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 769
+    id-alias: mock-challenge-769
+    tags:
+      - Mobile-Security
+      - WebSockets
+      - Input-Validation
+    platform: API
+    name: 'Mock挑战题目 #769'
+    difficulty-level: 1
+    description: >-
+      这是一个示例挑战题目的描述，难度为1星级。Delicate chirographum cubo turpis strues auctor
+      labore vel carbo. Varietas contego cohibeo ars contra incidunt utrimque
+      tego fugiat.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzJsamR6cE5HenU=
+    is-expired: false
+    solutions:
+      - title: Delectatio substantia viscus.
+        url: https://expert-trick.name
+        source: Medium
+        author: Dr. Wm Stokes
+      - title: Considero cernuus tersus.
+        url: https://confused-pop.net/
+        source: Blog
+        author: Antonio Prohaska
+      - title: Callide vix decor.
+        url: https://monthly-vision.biz
+        source: StackOverflow
+        author: Genevieve Parker
+    create-time: '2024-03-09 15:36:33'
+    update-time: '2024-07-01 00:26:26'

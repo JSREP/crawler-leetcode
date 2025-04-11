@@ -1,0 +1,23 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 423
+    id-alias: mock-challenge-423
+    tags:
+      - Input-Validation
+      - File-Upload
+      - WebSockets
+      - CORS
+      - HTTP-Headers
+    platform: IoT
+    name: 'Mock挑战题目 #423'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Cupiditas voluptatibus ante desolo surculus qui
+      possimus theologus pecco. Tenus deduco claustrum combibo assentator
+      adeptio volo cetera aer aegre.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1AwRkFwNmdBUE0=
+    is-expired: false
+    solutions: []
+    create-time: '2025-04-06 23:48:39'
+    update-time: '2025-04-09 07:55:09'

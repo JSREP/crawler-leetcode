@@ -1,0 +1,32 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 162
+    id-alias: mock-challenge-162
+    tags:
+      - Session-Management
+      - SSRF
+      - XXE
+      - OAuth
+      - Browser-Extensions
+    platform: Desktop
+    name: 'Mock挑战题目 #162'
+    difficulty-level: 2
+    description: 这是一个示例挑战题目的描述，难度为2星级。Volva communis collum. Custodia vigor ipsam.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L2ZKN0poeExmeU4=
+    is-expired: false
+    solutions:
+      - title: Aestivus umerus angelus.
+        url: https://curly-prohibition.net/
+        source: GitHub
+        author: Annie Schinner
+      - title: Vel certe velum.
+        url: https://subdued-cemetery.com/
+        source: Medium
+        author: Nellie Towne
+      - title: Decimus clibanus brevis.
+        url: https://short-term-settler.net
+        source: GitHub
+        author: Dianna Huel
+    create-time: '2024-03-04 16:08:40'
+    update-time: '2024-11-24 20:01:32'

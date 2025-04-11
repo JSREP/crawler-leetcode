@@ -1,0 +1,31 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 415
+    id-alias: mock-challenge-415
+    tags:
+      - Command-Injection
+      - Output-Encoding
+    platform: Mobile
+    name: 'Mock挑战题目 #415'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Neque tamen utpote defessus alioqui. Trado traho
+      supellex alii chirographum.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzdXZGFaWTNHYm8=
+    is-expired: false
+    solutions:
+      - title: Cruentus coniuratio speculum.
+        url: https://uncomfortable-passport.com/
+        source: Medium
+        author: Marcus Feil
+      - title: Casus admiratio tergo.
+        url: https://stylish-help.org
+        source: Medium
+        author: Pearl Fahey
+      - title: Tenetur umbra curiositas.
+        url: https://short-godfather.net/
+        source: GitHub
+        author: Lynne Mertz
+    create-time: '2024-11-09 02:48:45'
+    update-time: '2025-02-06 10:46:10'

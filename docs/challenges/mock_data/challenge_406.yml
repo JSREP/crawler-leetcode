@@ -1,0 +1,35 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 406
+    id-alias: mock-challenge-406
+    tags:
+      - XSS
+      - JWT
+      - Rate-Limiting
+      - Command-Injection
+      - Business-Logic
+    platform: Desktop
+    name: 'Mock挑战题目 #406'
+    difficulty-level: 4
+    description: >-
+      这是一个示例挑战题目的描述，难度为4星级。Cariosus aperio valetudo caecus adeo balbus consuasor
+      trans curis collum. Crapula derideo tamquam neque averto solitudo abeo
+      angustus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1o3WDJINjNxSzY=
+    is-expired: false
+    solutions:
+      - title: Tum tot arcus.
+        url: https://broken-range.net
+        source: Blog
+        author: Ruth Batz
+      - title: Avaritia argentum clibanus.
+        url: https://sturdy-tabletop.com/
+        source: YouTube
+        author: Helen Spinka
+      - title: Tutamen copia caste.
+        url: https://murky-tool.net
+        source: YouTube
+        author: Leah Fritsch
+    create-time: '2024-09-07 11:18:34'
+    update-time: '2024-10-19 14:24:45'

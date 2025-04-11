@@ -1,6 +1,7 @@
-import { Tag, Typography } from 'antd';
+import { Typography } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import { Challenge } from '../../types/challenge';
+import TopicTag from '../TopicTag';
 
 const { Text } = Typography;
 
@@ -24,14 +25,13 @@ const ChallengeTags: React.FC<ChallengeTagsProps> = ({ challenge }) => {
             <Text type="secondary">标签:</Text>
             <div style={{ marginTop: '8px' }}>
                 {challenge.tags.map((tag, index) => (
-                    <Tag 
-                        key={index} 
-                        color="green" 
-                        style={{ marginRight: '8px', cursor: 'pointer' }}
-                        onClick={() => handleTagClick(tag)}
-                    >
-                        {tag}
-                    </Tag>
+                    <TopicTag
+                        key={index}
+                        text={tag}
+                        clickable
+                        onClick={handleTagClick}
+                        style={{ marginRight: '8px' }}
+                    />
                 ))}
             </div>
         </div>

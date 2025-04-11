@@ -1,0 +1,28 @@
+# 挑战题目文件
+version: 1
+challenges:
+  - id: 974
+    id-alias: mock-challenge-974
+    tags:
+      - Authentication
+      - API-Security
+      - Path-Traversal
+    platform: IoT
+    name: 'Mock挑战题目 #974'
+    difficulty-level: 5
+    description: >-
+      这是一个示例挑战题目的描述，难度为5星级。Amitto atavus carbo abutor desolo viduo. Ocer cui
+      somniculosus aliqua avaritia tunc cohaero coerceo nisi cernuus.
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L1dEUXY1UGtaekc=
+    is-expired: false
+    solutions:
+      - title: Ager sto aeneus.
+        url: https://witty-detective.net/
+        source: Medium
+        author: Lyle Stamm
+      - title: Tutis stipes tricesimus.
+        url: https://fine-suitcase.com
+        source: Medium
+        author: ''
+    create-time: '2023-05-27 20:51:24'
+    update-time: '2024-07-27 10:58:28'
