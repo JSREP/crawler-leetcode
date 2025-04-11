@@ -74,16 +74,16 @@ interface ChallengeFiltersProps {
  * 搜索提示信息
  */
 const SEARCH_TOOLTIP = (
-    <div style={{ maxWidth: 300 }}>
-        <Text strong>高级搜索提示：</Text>
-        <ul style={{ paddingLeft: 20, marginTop: 5, marginBottom: 5 }}>
-            <li>搜索题目标题、描述、标签等所有字段</li>
-            <li>支持模糊搜索和拼写容错</li>
-            <li>多关键词: "动态规划 数组"</li>
-            <li>精确匹配: "=动态规划"</li>
-            <li>排除词: "!二叉树"</li>
-            <li>前缀匹配: "链^"</li>
-            <li>直接输入题号进行搜索</li>
+    <div style={{ maxWidth: 320, padding: '8px 4px' }}>
+        <Text strong style={{ fontSize: '14px', color: '#1890ff' }}>高级搜索提示：</Text>
+        <ul style={{ paddingLeft: 20, marginTop: 8, marginBottom: 5 }}>
+            <li><Text style={{ fontSize: '13px' }}>搜索题目标题、描述、标签等所有字段</Text></li>
+            <li><Text style={{ fontSize: '13px' }}>支持模糊搜索和拼写容错</Text></li>
+            <li><Text style={{ fontSize: '13px' }}>多关键词: "<Text code>动态规划 数组</Text>"</Text></li>
+            <li><Text style={{ fontSize: '13px' }}>精确匹配: "<Text code>=动态规划</Text>"</Text></li>
+            <li><Text style={{ fontSize: '13px' }}>排除词: "<Text code>!二叉树</Text>"</Text></li>
+            <li><Text style={{ fontSize: '13px' }}>前缀匹配: "<Text code>链^</Text>"</Text></li>
+            <li><Text style={{ fontSize: '13px' }}>直接输入题号进行搜索</Text></li>
         </ul>
     </div>
 );
@@ -145,30 +145,43 @@ const ChallengeFilters: React.FC<ChallengeFiltersProps> = ({
     return (
         <div>
             {/* 搜索框，占满整行 */}
-            <div style={{ position: 'relative' }}>
+            <div style={{ position: 'relative', marginBottom: 16 }}>
                 <Search
                     placeholder="搜索题目、标签、编号..."
                     allowClear
                     enterButton={<SearchOutlined />}
                     size="large"
                     style={{ 
-                        width: '100%', 
-                        marginBottom: 16,
-                        boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
+                        width: '100%',
+                        boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+                        borderRadius: '6px'
                     }}
                     value={inputValue}
                     onChange={handleInputChange}
                     onSearch={(value: string) => debouncedSearch(value)}
                 />
-                <Tooltip title={SEARCH_TOOLTIP} placement="bottomRight">
-                    <InfoCircleOutlined 
+                
+                <Tooltip 
+                    title={SEARCH_TOOLTIP} 
+                    placement="bottomRight"
+                    color="white"
+                    overlayInnerStyle={{ 
+                        boxShadow: '0 3px 10px rgba(0,0,0,0.2)',
+                        borderRadius: '8px'
+                    }}
+                >
+                    <Button
+                        type="text"
+                        icon={<InfoCircleOutlined />} 
                         style={{ 
-                            position: 'absolute', 
-                            right: 60, 
-                            top: '50%', 
+                            position: 'absolute',
+                            right: 50,
+                            top: '50%',
                             transform: 'translateY(-50%)',
-                            color: 'rgba(0,0,0,0.45)',
-                            cursor: 'pointer'
+                            color: '#1890ff',
+                            padding: '0 8px',
+                            border: 'none',
+                            background: 'transparent'
                         }} 
                     />
                 </Tooltip>
