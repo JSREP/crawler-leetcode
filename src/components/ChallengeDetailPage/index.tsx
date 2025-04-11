@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Card, Space, Divider } from 'antd';
+import { Card, Space, Divider, Alert } from 'antd';
 import { Challenge } from '../../types/challenge';
 import { challenges } from '../ChallengeListPage/exports';
 
@@ -61,6 +61,18 @@ const ChallengeDetailPage = () => {
 
     return (
         <div style={{ padding: '20px', maxWidth: '1000px', margin: '0 auto' }}>
+            {/* 如果链接已失效，显示顶部警告 */}
+            {challenge.isExpired && (
+                <Alert
+                    message="警告：此挑战题目链接已失效"
+                    description="该链接可能已经被移除或已更改。请尝试搜索最新版本或联系管理员更新此题目。"
+                    type="error"
+                    showIcon
+                    banner
+                    style={{ marginBottom: '20px' }}
+                />
+            )}
+            
             <Card bordered={false} style={{ marginBottom: '20px' }}>
                 <Space direction="vertical" size="large" style={{ width: '100%' }}>
                     {/* 标题区域 */}
