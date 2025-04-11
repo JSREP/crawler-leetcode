@@ -1,0 +1,21 @@
+# 挑战题目文件
+version: 1
+
+challenges:
+  - id: mock-challenge-44
+    tags:
+      - encryption
+      - webpack
+    platform: iOS
+    name: Mock挑战题目 #44
+    difficulty-level: 1
+    description: 这是一个示例挑战题目的描述，难度为1星级。
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3h5ejEyMw==
+    is-expired: false
+    solutions:
+      - title: Hook方法绕过
+        url: https://github.com/user/repo
+        source: YouTube
+        author: Alex Chen
+    create-time: 2024-04-10 10:46:46
+    update-time: 2024-05-08 06:26:32

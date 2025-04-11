@@ -1,0 +1,30 @@
+# 挑战题目文件
+version: 1
+
+challenges:
+  - id: mock-challenge-35
+    tags:
+      - browser-check
+      - fingerprint
+      - encryption
+    platform: Android
+    name: Mock挑战题目 #35
+    difficulty-level: 2
+    description: 这是一个示例挑战题目的描述，难度为2星级。
+    base64-url: aHR0cHM6Ly93d3cuZXhhbXBsZS5jb20vZXhlcmNpc2UvNjc4OTA=
+    is-expired: false
+    solutions:
+      - title: 静态分析方法
+        url: https://medium.com/@user/article
+        source: StackOverflow
+        author: Web Security Expert
+      - title: 逆向工程思路
+        url: https://medium.com/@user/article
+        source: StackOverflow
+        author: Web Security Expert
+      - title: 逆向工程思路
+        url: https://github.com/user/repo
+        source: Personal Blog
+        author: Alex Chen
+    create-time: 2024-11-04 15:27:53
+    update-time: 2023-07-17 16:40:47

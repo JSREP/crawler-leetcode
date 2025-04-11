@@ -1,0 +1,26 @@
+# 挑战题目文件
+version: 1
+
+challenges:
+  - id: mock-challenge-77
+    tags:
+      - encryption
+      - webgl-fingerprint
+      - obfuscator
+    platform: Android
+    name: Mock挑战题目 #77
+    difficulty-level: 4
+    description: 这是一个示例挑战题目的描述，难度为4星级。
+    base64-url: aHR0cHM6Ly93d3cuZXhhbXBsZS5jb20vcXVpei94eXoxMjM=
+    is-expired: false
+    solutions:
+      - title: AST分析方案
+        url: https://gist.github.com/user/id
+        source: Medium
+        author: 
+      - title: 使用Puppeteer绕过检测
+        url: https://github.com/user/repo
+        source: GitHub
+        author: 
+    create-time: 2024-01-16 00:49:43
+    update-time: 2025-10-23 09:09:54

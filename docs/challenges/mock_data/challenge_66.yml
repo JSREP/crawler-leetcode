@@ -1,0 +1,27 @@
+# 挑战题目文件
+version: 1
+
+challenges:
+  - id: mock-challenge-66
+    tags:
+      - mobile-app
+      - anti-crawler
+      - fingerprint
+      - browser-check
+    platform: Web
+    name: Mock挑战题目 #66
+    difficulty-level: 4
+    description: 这是一个示例挑战题目的描述，难度为4星级。
+    base64-url: aHR0cHM6Ly93d3cuZXhhbXBsZS5jb20vZXhlcmNpc2UveHl6MTIz
+    is-expired: false
+    solutions:
+      - title: AST分析方案
+        url: https://github.com/user/repo
+        source: YouTube
+        author: 
+      - title: 使用Puppeteer绕过检测
+        url: https://medium.com/@user/article
+        source: YouTube
+        author: Web Security Expert
+    create-time: 2024-06-06 20:30:54
+    update-time: 2023-06-25 08:12:25

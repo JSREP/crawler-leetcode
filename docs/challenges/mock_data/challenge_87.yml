@@ -1,0 +1,23 @@
+# 挑战题目文件
+version: 1
+
+challenges:
+  - id: mock-challenge-87
+    tags:
+      - obfuscator
+      - canvas-fingerprint
+      - mobile-app
+      - js-reverse
+    platform: Android
+    name: Mock挑战题目 #87
+    difficulty-level: 3
+    description: 这是一个示例挑战题目的描述，难度为3星级。
+    base64-url: aHR0cHM6Ly9sZWV0Y29kZS5jb20vZXhlcmNpc2UvMTIzNDU=
+    is-expired: true
+    solutions:
+      - title: 逆向工程思路
+        url: https://github.com/user/repo
+        source: Medium
+        author: Jane Smith
+    create-time: 2023-12-02 02:50:50
+    update-time: 2023-07-07 10:50:12

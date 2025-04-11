@@ -1,0 +1,28 @@
+# 挑战题目文件
+version: 1
+
+challenges:
+  - id: mock-challenge-67
+    tags:
+      - canvas-fingerprint
+    platform: Android
+    name: Mock挑战题目 #67
+    difficulty-level: 2
+    description: 这是一个示例挑战题目的描述，难度为2星级。
+    base64-url: aHR0cHM6Ly9sZWV0Y29kZS5jb20vcHJvYmxlbS82Nzg5MA==
+    is-expired: false
+    solutions:
+      - title: Hook方法绕过
+        url: https://gist.github.com/user/id
+        source: StackOverflow
+        author: 
+      - title: AST分析方案
+        url: https://gist.github.com/user/id
+        source: GitHub
+        author: Jane Smith
+      - title: 静态分析方法
+        url: https://medium.com/@user/article
+        source: StackOverflow
+        author: John Doe
+    create-time: 2023-08-13 02:40:35
+    update-time: 2023-05-27 16:50:55

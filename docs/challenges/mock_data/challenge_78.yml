@@ -1,0 +1,28 @@
+# 挑战题目文件
+version: 1
+
+challenges:
+  - id: mock-challenge-78
+    tags:
+      - browser-check
+    platform: iOS
+    name: Mock挑战题目 #78
+    difficulty-level: 1
+    description: 这是一个示例挑战题目的描述，难度为1星级。
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6L3h5ejEyMw==
+    is-expired: false
+    solutions:
+      - title: 逆向工程思路
+        url: https://medium.com/@user/article
+        source: Medium
+        author: Web Security Expert
+      - title: 静态分析方法
+        url: https://gist.github.com/user/id
+        source: Personal Blog
+        author: John Doe
+      - title: 静态分析方法
+        url: https://github.com/user/repo
+        source: Medium
+        author: 
+    create-time: 2024-08-08 23:41:50
+    update-time: 2023-04-07 02:50:59

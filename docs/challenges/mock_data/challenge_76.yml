@@ -1,0 +1,21 @@
+# 挑战题目文件
+version: 1
+
+challenges:
+  - id: mock-challenge-76
+    tags:
+      - cookie-protection
+      - anti-crawler
+    platform: Android
+    name: Mock挑战题目 #76
+    difficulty-level: 1
+    description: 这是一个示例挑战题目的描述，难度为1星级。
+    base64-url: aHR0cHM6Ly9sZWV0Y29kZS5jb20vZXhlcmNpc2UvMTIzNDU=
+    is-expired: false
+    solutions:
+      - title: AST分析方案
+        url: https://gist.github.com/user/id
+        source: Personal Blog
+        author: Web Security Expert
+    create-time: 2024-09-08 17:39:02
+    update-time: 2024-06-26 13:40:03

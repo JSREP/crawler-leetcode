@@ -1,0 +1,26 @@
+# 挑战题目文件
+version: 1
+
+challenges:
+  - id: mock-challenge-1
+    tags:
+      - token-validation
+      - signature
+      - rate-limiting
+    platform: Web
+    name: Mock挑战题目 #1
+    difficulty-level: 5
+    description: 这是一个示例挑战题目的描述，难度为5星级。
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzEyMzQ1
+    is-expired: false
+    solutions:
+      - title: 逆向工程思路
+        url: https://medium.com/@user/article
+        source: GitHub
+        author: Alex Chen
+      - title: 静态分析方法
+        url: https://gist.github.com/user/id
+        source: StackOverflow
+        author: 
+    create-time: 2025-06-18 07:38:13
+    update-time: 2025-08-17 09:36:03

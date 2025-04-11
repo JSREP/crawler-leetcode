@@ -1,0 +1,30 @@
+# 挑战题目文件
+version: 1
+
+challenges:
+  - id: mock-challenge-68
+    tags:
+      - obfuscator
+      - encryption
+      - api-protection
+    platform: iOS
+    name: Mock挑战题目 #68
+    difficulty-level: 4
+    description: 这是一个示例挑战题目的描述，难度为4星级。
+    base64-url: aHR0cHM6Ly93d3cuZXhhbXBsZS5jb20vY2hhbGxlbmdlL2FiY2RlZg==
+    is-expired: false
+    solutions:
+      - title: 静态分析方法
+        url: https://github.com/user/repo
+        source: Personal Blog
+        author: John Doe
+      - title: Hook方法绕过
+        url: https://medium.com/@user/article
+        source: Medium
+        author: John Doe
+      - title: AST分析方案
+        url: https://gist.github.com/user/id
+        source: Personal Blog
+        author: Jane Smith
+    create-time: 2025-12-20 12:16:35
+    update-time: 2023-08-02 12:40:16

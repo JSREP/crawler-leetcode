@@ -1,0 +1,24 @@
+# 挑战题目文件
+version: 1
+
+challenges:
+  - id: mock-challenge-96
+    tags:
+      - device-motion
+    platform: Android
+    name: Mock挑战题目 #96
+    difficulty-level: 2
+    description: 这是一个示例挑战题目的描述，难度为2星级。
+    base64-url: aHR0cHM6Ly93d3cuZXhhbXBsZS5jb20vcHJvYmxlbS94eXoxMjM=
+    is-expired: true
+    solutions:
+      - title: 静态分析方法
+        url: https://gist.github.com/user/id
+        source: Personal Blog
+        author: Jane Smith
+      - title: AST分析方案
+        url: https://gist.github.com/user/id
+        source: StackOverflow
+        author: Jane Smith
+    create-time: 2024-01-13 23:55:32
+    update-time: 2023-06-09 15:16:02

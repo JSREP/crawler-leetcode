@@ -1,0 +1,31 @@
+# 挑战题目文件
+version: 1
+
+challenges:
+  - id: mock-challenge-95
+    tags:
+      - webgl-fingerprint
+      - browser-check
+      - anti-debug
+      - jsvmp
+    platform: Web
+    name: Mock挑战题目 #95
+    difficulty-level: 1
+    description: 这是一个示例挑战题目的描述，难度为1星级。
+    base64-url: aHR0cHM6Ly9sZWV0Y29kZS5jb20vcXVpei9hYmNkZWY=
+    is-expired: false
+    solutions:
+      - title: 静态分析方法
+        url: https://medium.com/@user/article
+        source: Medium
+        author: Web Security Expert
+      - title: 逆向工程思路
+        url: https://medium.com/@user/article
+        source: YouTube
+        author: Jane Smith
+      - title: AST分析方案
+        url: https://medium.com/@user/article
+        source: StackOverflow
+        author: Alex Chen
+    create-time: 2023-09-27 04:21:11
+    update-time: 2023-09-17 09:23:51

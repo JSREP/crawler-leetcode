@@ -1,0 +1,23 @@
+# 挑战题目文件
+version: 1
+
+challenges:
+  - id: mock-challenge-24
+    tags:
+      - browser-check
+      - wasm
+      - cookie-protection
+      - webpack
+    platform: iOS
+    name: Mock挑战题目 #24
+    difficulty-level: 3
+    description: 这是一个示例挑战题目的描述，难度为3星级。
+    base64-url: aHR0cHM6Ly93d3cuZXhhbXBsZS5jb20vZXhlcmNpc2UveHl6MTIz
+    is-expired: false
+    solutions:
+      - title: AST分析方案
+        url: https://gist.github.com/user/id
+        source: Personal Blog
+        author: John Doe
+    create-time: 2023-10-22 01:24:27
+    update-time: 2025-01-06 14:56:01

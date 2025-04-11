@@ -1,0 +1,26 @@
+# 挑战题目文件
+version: 1
+
+challenges:
+  - id: mock-challenge-81
+    tags:
+      - signature
+      - js-reverse
+      - token-validation
+    platform: Web
+    name: Mock挑战题目 #81
+    difficulty-level: 2
+    description: 这是一个示例挑战题目的描述，难度为2星级。
+    base64-url: aHR0cHM6Ly9sZWV0Y29kZS5jb20vY2hhbGxlbmdlLzEyMzQ1
+    is-expired: false
+    solutions:
+      - title: 逆向工程思路
+        url: https://github.com/user/repo
+        source: Personal Blog
+        author: John Doe
+      - title: 逆向工程思路
+        url: https://gist.github.com/user/id
+        source: GitHub
+        author: Web Security Expert
+    create-time: 2024-07-23 23:10:56
+    update-time: 2024-05-26 23:15:06

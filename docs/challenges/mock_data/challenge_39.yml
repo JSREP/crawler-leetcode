@@ -1,0 +1,28 @@
+# 挑战题目文件
+version: 1
+
+challenges:
+  - id: mock-challenge-39
+    tags:
+      - device-motion
+    platform: Web
+    name: Mock挑战题目 #39
+    difficulty-level: 3
+    description: 这是一个示例挑战题目的描述，难度为3星级。
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9leGVyY2lzZS9hYmNkZWY=
+    is-expired: false
+    solutions:
+      - title: AST分析方案
+        url: https://github.com/user/repo
+        source: Personal Blog
+        author: 
+      - title: AST分析方案
+        url: https://medium.com/@user/article
+        source: Personal Blog
+        author: Alex Chen
+      - title: AST分析方案
+        url: https://gist.github.com/user/id
+        source: GitHub
+        author: Web Security Expert
+    create-time: 2025-03-20 07:25:01
+    update-time: 2023-04-18 11:31:10

@@ -1,0 +1,20 @@
+# 挑战题目文件
+version: 1
+
+challenges:
+  - id: mock-challenge-42
+    tags:
+      - mobile-app
+    platform: Web
+    name: Mock挑战题目 #42
+    difficulty-level: 1
+    description: 这是一个示例挑战题目的描述，难度为1星级。
+    base64-url: aHR0cHM6Ly93d3cuZXhhbXBsZS5jb20vY2hhbGxlbmdlL3h5ejEyMw==
+    is-expired: false
+    solutions:
+      - title: Hook方法绕过
+        url: https://gist.github.com/user/id
+        source: GitHub
+        author: Jane Smith
+    create-time: 2024-02-23 15:19:40
+    update-time: 2023-01-28 07:05:25
