@@ -3,6 +3,8 @@ import type { PluginOption } from 'vite';
 import * as fs from 'fs';
 import * as path from 'path';
 import * as YAML from 'yaml';
+import { Challenge } from '../types/challenge';
+import { parseChallenges } from '../types/challenge';
 
 interface VirtualFileSystemPluginOptions {
     directory: string;
@@ -16,102 +18,121 @@ interface Solution {
     author: string;
 }
 
-interface Challenge {
-    id: number;
-    number: string;
-    title: string;
-    name: string;
-    'description-markdown': string;
-    difficulty: string;
-    'difficulty-level': string;
-    tags: string[];
-    solutions: Solution[];
-    'create-time': string;
-    'update-time': string;
-    'base64-url': string;
-    externalLink: string;
-    platform: string;
-    'is-expired': boolean;
-    'id-alias': string;
-    descriptionMarkdown: string; // 统一的Markdown内容字段
+interface ImageProcessResult {
+    success: boolean;
+    data: string;
+    mimeType: string;
+    fullPath: string;
 }
 
 // 处理相对路径的图片链接，转换为绝对路径或Base64
 function processMarkdownImages(markdown: string, basePath: string, isBuild = false): string {
-    // 匹配Markdown图片链接: ![alt](path) 和 <img src="path"> 两种格式
-    // 支持./开头的相对路径、../开头的上级目录路径以及/开头的根路径
+    // 匹配Markdown和HTML格式的图片链接
     const mdImgRegex = /!\[(.*?)\]\(((?:\.\/|\.\.|\/)[^)]+)\)/g;
     const htmlImgRegex = /<img.*?src=["']((?:\.\/|\.\.|\/)[^"']+)["'].*?>/g;
     
-    // 解析图片路径，转换为绝对路径
-    const resolveImgPath = (imgPath: string): string => {
-        // 如果是绝对路径（以/开头）
-        if (imgPath.startsWith('/')) {
-            return path.join(process.cwd(), imgPath);
-        }
-        // 否则作为相对路径处理
-        return path.resolve(basePath, imgPath);
-    };
-    
     // 获取图片在md-assets目录下的路径（用于生产环境）
     const getMdAssetsPath = (imgPath: string): string => {
-        // 如果是assets目录下的文件
+        console.log(`[DEBUG] 处理图片路径: ${imgPath}`);
         if (imgPath.includes('/assets/')) {
-            // 提取相对于contents目录的路径
             const contentsDirIndex = imgPath.indexOf('/contents/');
             if (contentsDirIndex !== -1) {
-                // 从/contents/后面开始截取
-                const relativePath = imgPath.substring(contentsDirIndex + 10); // +10是跳过'/contents/'
-                return `/md-assets${relativePath}`;
+                const relativePath = imgPath.substring(contentsDirIndex + 10);
+                const newPath = `/md-assets${relativePath}`;
+                console.log(`[DEBUG] 构建时图片路径转换: ${imgPath} -> ${newPath}`);
+                return newPath;
             }
         }
-        return imgPath; // 默认返回原路径
+        console.log(`[DEBUG] 未处理的图片路径: ${imgPath}`);
+        return imgPath;
     };
     
     // 处理图片转base64的函数
-    const convertImgToBase64 = (imgPath: string): { success: boolean; data: string; mimeType: string; fullPath: string } => {
-        const fullImgPath = resolveImgPath(imgPath);
+    const convertImgToBase64 = (imgPath: string): ImageProcessResult => {
+        console.log(`[DEBUG] 准备处理图片: ${imgPath}`);
+        const result: ImageProcessResult = {
+            success: false,
+            data: '',
+            mimeType: '',
+            fullPath: ''
+        };
         
-        if (fs.existsSync(fullImgPath)) {
-            try {
-                // 获取文件扩展名和MIME类型
-                const ext = path.extname(fullImgPath).toLowerCase();
-                let mimeType = 'image/png'; // 默认MIME类型
+        try {
+            // 处理相对路径图片
+            const fullImgPath = path.isAbsolute(imgPath) 
+                ? imgPath 
+                : path.resolve(basePath, imgPath.startsWith('./') ? imgPath.substring(2) : imgPath);
+            
+            console.log(`[DEBUG] 图片完整路径: ${fullImgPath}`);
+            
+            if (!fs.existsSync(fullImgPath)) {
+                console.warn(`[WARN] 图片文件不存在: ${fullImgPath}`);
+                return result;
+            }
+            
+            // 获取文件扩展名和MIME类型
+            const ext = path.extname(fullImgPath).toLowerCase();
+            let mimeType = 'image/png'; // 默认MIME类型
+            
+            switch (ext) {
+                case '.jpg':
+                case '.jpeg':
+                    mimeType = 'image/jpeg';
+                    break;
+                case '.png':
+                    mimeType = 'image/png';
+                    break;
+                case '.gif':
+                    mimeType = 'image/gif';
+                    break;
+                case '.svg':
+                    mimeType = 'image/svg+xml';
+                    break;
+                case '.webp':
+                    mimeType = 'image/webp';
+                    break;
+            }
+            
+            // 构建模式下，复制图片到打包目录
+            if (isBuild) {
+                const buildAssetsDir = path.join(path.resolve(process.cwd(), 'dist'), 'md-assets');
                 
-                // 根据扩展名设置MIME类型
-                if (ext === '.jpg' || ext === '.jpeg') mimeType = 'image/jpeg';
-                else if (ext === '.png') mimeType = 'image/png';
-                else if (ext === '.gif') mimeType = 'image/gif';
-                else if (ext === '.svg') mimeType = 'image/svg+xml';
-                else if (ext === '.webp') mimeType = 'image/webp';
-                
-                // 如果是构建模式，不转换为Base64，而是使用相对路径
-                if (isBuild) {
-                    return { 
-                        success: true, 
-                        data: '', // 在构建模式下不使用Base64数据
-                        mimeType,
-                        fullPath: fullImgPath
-                    };
+                // 创建打包目录结构
+                if (!fs.existsSync(buildAssetsDir)) {
+                    fs.mkdirSync(buildAssetsDir, { recursive: true });
                 }
                 
-                // 开发模式下，读取图片文件并转换为Base64
-                const imgBuffer = fs.readFileSync(fullImgPath);
-                const base64Img = imgBuffer.toString('base64');
+                // 获取目标路径
+                const destPath = path.join(buildAssetsDir, path.basename(fullImgPath));
+                try {
+                    fs.copyFileSync(fullImgPath, destPath);
+                    console.log(`Copied: ${fullImgPath} -> ${destPath}`);
+                } catch (copyErr) {
+                    console.error(`Failed to copy image: ${copyErr}`);
+                }
                 
-                return { 
-                    success: true, 
-                    data: base64Img,
+                // 构建模式下返回路径信息
+                return {
+                    success: true,
+                    data: '', // 在构建模式下不使用Base64数据
                     mimeType,
                     fullPath: fullImgPath
                 };
-            } catch (error) {
-                console.error(`Error processing image ${fullImgPath}:`, error);
-                return { success: false, data: '', mimeType: '', fullPath: fullImgPath };
             }
-        } else {
-            console.warn(`Image file not found: ${fullImgPath}`);
-            return { success: false, data: '', mimeType: '', fullPath: fullImgPath };
+            
+            // 开发模式下，读取图片文件并转换为Base64
+            const imgBuffer = fs.readFileSync(fullImgPath);
+            const base64Img = imgBuffer.toString('base64');
+            
+            return {
+                success: true,
+                data: base64Img,
+                mimeType,
+                fullPath: fullImgPath
+            };
+        } catch (error) {
+            console.error(`Error processing image:`, error);
+            return result;
         }
     };
     
@@ -167,78 +188,17 @@ function collectYAMLChallenges(dirPath: string, rootDir: string, isBuild = false
 
                 // 处理挑战数据
                 if (parsed.challenges && Array.isArray(parsed.challenges)) {
+                    // 处理多个挑战的数组格式
+                    console.log(`解析包含挑战数组的YAML文件: ${fullPath}`);
                     parsed.challenges.forEach((challenge: any) => {
-                        // 处理Markdown内容
-                        let markdownContent = '';
-                        
-                        // 如果有description-markdown-path，读取对应文件内容
-                        if (challenge['description-markdown-path']) {
-                            const mdPath = path.resolve(rootDir, challenge['description-markdown-path']);
-                            console.log(`解析Markdown路径: ${challenge['description-markdown-path']} -> ${mdPath}`);
-                            
-                            if (fs.existsSync(mdPath)) {
-                                try {
-                                    // 读取Markdown文件内容
-                                    const rawMd = fs.readFileSync(mdPath, 'utf8');
-                                    // 处理Markdown中的图片路径，根据环境决定如何处理图片
-                                    markdownContent = processMarkdownImages(rawMd, path.dirname(mdPath), isBuild);
-                                } catch (err) {
-                                    console.error(`Error reading Markdown file ${mdPath}:`, err);
-                                }
-                            } else {
-                                console.warn(`Markdown file not found: ${mdPath}`);
-                                // 尝试在docs目录查找
-                                const altPath = path.resolve(rootDir, 'docs/challenges', challenge['description-markdown-path']);
-                                console.log(`尝试替代路径: ${altPath}`);
-                                if (fs.existsSync(altPath)) {
-                                    try {
-                                        const rawMd = fs.readFileSync(altPath, 'utf8');
-                                        markdownContent = processMarkdownImages(rawMd, path.dirname(altPath), isBuild);
-                                        console.log(`成功使用替代路径读取Markdown: ${altPath}`);
-                                    } catch (err) {
-                                        console.error(`Error reading alternate Markdown file ${altPath}:`, err);
-                                    }
-                                } else {
-                                    console.warn(`Alternate Markdown file not found: ${altPath}`);
-                                }
-                            }
-                        } 
-                        // 否则使用内联的description-markdown
-                        else if (challenge['description-markdown']) {
-                            markdownContent = challenge['description-markdown'];
-                        }
-
-                        const transformed: Challenge = {
-                            id: parseInt(challenge.id || '0', 10),
-                            number: challenge.number || '0',
-                            title: challenge.name || '',
-                            name: challenge.name || '',
-                            'description-markdown': challenge['description-markdown'] || '',
-                            difficulty: challenge.difficulty || '1',
-                            'difficulty-level': challenge['difficulty-level'] || '1',
-                            tags: challenge.tags || [],
-                            solutions: (challenge.solutions || []).map((sol: any) => ({
-                                title: sol.title || '',
-                                url: sol.url || '',
-                                source: sol.source || '',
-                                author: sol.author || ''
-                            })),
-                            'create-time': challenge['create-time'] || new Date().toISOString(),
-                            'update-time': challenge['update-time'] || new Date().toISOString(),
-                            'base64-url': challenge['base64-url'] || '',
-                            // 从base64-url解码得到外部链接
-                            externalLink: challenge['base64-url'] 
-                                ? Buffer.from(challenge['base64-url'], 'base64').toString('utf-8')
-                                : '',
-                            platform: challenge.platform || 'Web',
-                            'is-expired': challenge['is-expired'] || false,
-                            'id-alias': challenge['id-alias'] || challenge.id?.toString() || '',
-                            descriptionMarkdown: markdownContent // 构建时将Markdown内容统一赋值给descriptionMarkdown字段
-                        };
-                        challenges.push(transformed);
+                        challenges.push(processChallengeData(challenge, rootDir, isBuild));
                     });
+                } else if (parsed.id) {
+                    // 处理单个挑战格式
+                    console.log(`解析单个挑战YAML文件: ${fullPath}`);
+                    challenges.push(processChallengeData(parsed, rootDir, isBuild));
                 } else {
-                    console.warn(`No challenges array found in ${fullPath}`);
+                    console.warn(`无法识别的YAML格式，没有找到challenges数组或id字段: ${fullPath}`);
                 }
             } catch (e: any) {
                 console.error(`Error processing ${fullPath}: ${e.message}`);
@@ -246,6 +206,76 @@ function collectYAMLChallenges(dirPath: string, rootDir: string, isBuild = false
         }
     }
     return challenges;
+}
+
+// 处理单个挑战数据
+function processChallengeData(challenge: any, rootDir: string, isBuild: boolean): any {
+    // 处理Markdown内容
+    let markdownContent = '';
+    
+    // 如果有description-markdown-path，读取对应文件内容
+    if (challenge['description-markdown-path']) {
+        const mdPath = path.resolve(rootDir, challenge['description-markdown-path']);
+        console.log(`解析Markdown路径: ${challenge['description-markdown-path']} -> ${mdPath}`);
+        
+        if (fs.existsSync(mdPath)) {
+            try {
+                // 读取Markdown文件内容
+                const rawMd = fs.readFileSync(mdPath, 'utf8');
+                // 处理Markdown中的图片路径，根据环境决定如何处理图片
+                markdownContent = processMarkdownImages(rawMd, path.dirname(mdPath), isBuild);
+            } catch (err) {
+                console.error(`Error reading Markdown file ${mdPath}:`, err);
+            }
+        } else {
+            console.warn(`Markdown file not found: ${mdPath}`);
+            // 尝试在docs目录查找
+            const altPath = path.resolve(rootDir, 'docs/challenges', challenge['description-markdown-path']);
+            console.log(`尝试替代路径: ${altPath}`);
+            if (fs.existsSync(altPath)) {
+                try {
+                    const rawMd = fs.readFileSync(altPath, 'utf8');
+                    markdownContent = processMarkdownImages(rawMd, path.dirname(altPath), isBuild);
+                    console.log(`成功使用替代路径读取Markdown: ${altPath}`);
+                } catch (err) {
+                    console.error(`Error reading alternate Markdown file ${altPath}:`, err);
+                }
+            } else {
+                console.warn(`Alternate Markdown file not found: ${altPath}`);
+            }
+        }
+    } 
+    // 否则使用内联的description-markdown
+    else if (challenge['description-markdown']) {
+        markdownContent = challenge['description-markdown'];
+    }
+
+    // 返回原始挑战数据，不进行类型转换
+    // 稍后会在parseChallenges中处理
+    return {
+        id: challenge.id || '0',
+        'id-alias': challenge['id-alias'] || challenge.id?.toString() || '',
+        number: challenge.number || '0',
+        title: challenge.title || '',
+        name: challenge.title || '',
+        difficulty: challenge.difficulty || 1,
+        'difficulty-level': challenge.difficulty || 1,
+        tags: challenge.tags || [],
+        solutions: (challenge.solutions || []).map((sol: any) => ({
+            title: sol.title || '',
+            url: sol.url || '',
+            source: sol.source || '',
+            author: sol.author || ''
+        })),
+        'create-time': challenge['create-time'] || new Date().toISOString(),
+        'update-time': challenge['update-time'] || new Date().toISOString(),
+        'base64-url': challenge['base64-url'] || '',
+        externalLink: challenge['external-link'] || '',
+        platform: challenge.platform || 'Web',
+        'is-expired': challenge['is-expired'] || false,
+        'description-markdown': challenge['description-markdown'] || '',
+        descriptionMarkdown: markdownContent // 构建时将Markdown内容统一赋值给descriptionMarkdown字段
+    };
 }
 
 export default function virtualFileSystemPlugin(
@@ -292,7 +322,9 @@ export default function virtualFileSystemPlugin(
                     console.log(`VirtualFileSystemPlugin: Running in ${isBuild ? 'build' : 'development'} mode`);
 
                     // 收集并处理YAML挑战和Markdown内容
-                    const challenges = collectYAMLChallenges(directory, process.cwd(), isBuild);
+                    const rawChallenges = collectYAMLChallenges(directory, process.cwd(), isBuild);
+                    // 使用parseChallenges函数处理成正确的Challenge类型
+                    const challenges = parseChallenges(rawChallenges);
                     return `export default ${JSON.stringify(challenges, null, 2)};`;
                 } catch (error: any) {
                     console.error('Error generating virtual file:', error);
