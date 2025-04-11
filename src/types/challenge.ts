@@ -19,7 +19,7 @@ export type Challenge = {
     externalLink: string;
     platform?: string;  // 添加平台字段
     isExpired?: boolean;  // 添加链接失效状态字段
-    descriptionMarkdown?: string;  // 添加Markdown描述字段
+    descriptionMarkdown?: string;  // Markdown描述字段，优先使用
 };
 
 export const parseChallenges = (raw: any[]): Challenge[] => {
@@ -46,6 +46,7 @@ export const parseChallenges = (raw: any[]): Challenge[] => {
         externalLink: c.externalLink || "",
         platform: c.platform || "",
         isExpired: c['is-expired'] || false,
-        descriptionMarkdown: c['description-markdown'] || "",
+        // 优先使用统一处理后的descriptionMarkdown字段，然后是原始的description-markdown
+        descriptionMarkdown: c.descriptionMarkdown || c['description-markdown'] || "",
     }));
 }; 
