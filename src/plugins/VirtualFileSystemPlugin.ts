@@ -33,9 +33,17 @@ function processMarkdownImages(markdown: string, basePath: string, isBuild = fal
     
     console.log(`[DEBUG] 处理Markdown内容: ${markdown.substring(0, 100)}...`);
     
-    // 处理图片路径，保持相对路径结构
+    // 确保路径正确，对于以assets开头的路径，保持不变
     const processImgPath = (imgPath: string): string => {
         console.log(`[DEBUG] 处理图片路径: ${imgPath}`);
+        
+        // 如果是以assets/开头的相对路径，确保正确处理
+        if (imgPath.startsWith('assets/')) {
+            // 在开发模式下，保持assets路径不变
+            // 图片将从public目录或相对于Markdown文件的目录正确加载
+            return imgPath;
+        }
+        
         return imgPath;
     };
     
@@ -52,21 +60,22 @@ function processMarkdownImages(markdown: string, basePath: string, isBuild = fal
         // 检查是否已经是Base64格式，如果是则直接返回
         if (imgPath.startsWith('data:image/')) {
             console.log(`[DEBUG] 检测到Base64图片，跳过处理`);
-            // 从data:image/png;base64,xxx提取mimeType和data部分
-            const matches = imgPath.match(/^data:([^;]+);base64,(.+)$/);
-            if (matches && matches.length === 3) {
-                return {
-                    success: true,
-                    data: matches[2],
-                    mimeType: matches[1],
-                    fullPath: imgPath
-                };
-            }
             return {
                 success: true,
                 data: '',
                 mimeType: '',
                 fullPath: imgPath // 保持原始Base64
+            };
+        }
+        
+        // 如果是assets/开头的路径，保持路径不变，不转为Base64
+        if (imgPath.startsWith('assets/')) {
+            console.log(`[DEBUG] 检测到assets路径，保持原样: ${imgPath}`);
+            return {
+                success: true,
+                data: '',
+                mimeType: '',
+                fullPath: imgPath // 保持assets路径
             };
         }
         
@@ -106,7 +115,7 @@ function processMarkdownImages(markdown: string, basePath: string, isBuild = fal
                     break;
             }
             
-            // 如果是构建模式，保持相对路径
+            // 构建模式下，保持相对路径
             if (isBuild) {
                 return {
                     success: true,
@@ -116,7 +125,7 @@ function processMarkdownImages(markdown: string, basePath: string, isBuild = fal
                 };
             }
             
-            // 开发模式下，读取图片文件并转换为Base64
+            // 开发模式下，对于非assets的图片可以转换为Base64
             try {
                 // 读取图片文件并直接转换为Base64字符串
                 const imgBuffer = fs.readFileSync(fullImgPath);
@@ -150,6 +159,12 @@ function processMarkdownImages(markdown: string, basePath: string, isBuild = fal
             return match;
         }
         
+        // 如果是assets路径，保持不变
+        if (imgPath.startsWith('assets/')) {
+            console.log(`[DEBUG] 保持assets路径不变: ${imgPath}`);
+            return `![${alt}](${imgPath})`;
+        }
+        
         const result = convertImgToBase64(imgPath);
         if (result.success) {
             if (isBuild) {
@@ -177,6 +192,15 @@ function processMarkdownImages(markdown: string, basePath: string, isBuild = fal
         // 如果已经是Base64格式，直接保留
         if (imgPath.startsWith('data:image/')) {
             return match;
+        }
+        
+        // 如果是assets路径，保持不变
+        if (imgPath.startsWith('assets/')) {
+            console.log(`[DEBUG] 保持assets路径不变: ${imgPath}`);
+            // 从原始标签中提取属性
+            const altMatch = match.match(/alt=["'](.*?)["']/);
+            const alt = altMatch ? altMatch[1] : '';
+            return `<img src="${imgPath}" alt="${alt}" />`;
         }
         
         const result = convertImgToBase64(imgPath);
