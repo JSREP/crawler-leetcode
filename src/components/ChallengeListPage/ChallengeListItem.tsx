@@ -56,7 +56,7 @@ const ChallengeListItem: React.FC<ChallengeListItemProps> = ({
         >
             <Space direction="vertical" style={{ width: '100%' }}>
                 <Space>
-                    <Tag color="#42b983">{challenge.number}</Tag>
+                    <Tag color="#42b983">#{challenge.id}</Tag>
                     <Text strong style={{ fontSize: 16 }}>{challenge.title}</Text>
                 </Space>
 

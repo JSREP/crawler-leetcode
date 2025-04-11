@@ -13,7 +13,7 @@ interface ChallengeHeaderProps {
 const ChallengeHeader: React.FC<ChallengeHeaderProps> = ({ challenge }) => {
     return (
         <Space align="center">
-            <Tag color="#108ee9">#{challenge.number}</Tag>
+            <Tag color="#108ee9">#{challenge.id}</Tag>
             <Title level={2} style={{ margin: 0 }}>{challenge.title}</Title>
             {challenge.isExpired && (
                 <Badge status="error" text="链接已失效" />
