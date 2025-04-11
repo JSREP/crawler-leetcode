@@ -177,7 +177,7 @@ function generateRandomMarkdown(id) {
     sections.push('');
     sections.push('以下是该应用中发现的安全漏洞分布情况:');
     sections.push('');
-    sections.push('![漏洞分布图](./images/vulnerability_chart.png)');
+    sections.push('![漏洞分布图](./assets/vulnerability-chart.png)');
     sections.push('');
   }
   
@@ -268,7 +268,7 @@ public class Vulnerability {
     if (Math.random() > 0.5) {
       sections.push('参考以下代码结构:');
       sections.push('');
-      sections.push('![代码示例](./images/code_example.png)');
+      sections.push('![代码示例](./assets/code-example.png)');
       sections.push('');
     }
   }
@@ -278,7 +278,7 @@ public class Vulnerability {
 
 // 为特定的挑战创建样例图片
 function createSampleImages(id) {
-  const imagesDir = path.join(mockMarkdownDir, `challenge_${id}`, 'images');
+  const imagesDir = path.join(mockMarkdownDir, `mock_${id}`, 'assets');
   
   // 确保图片目录存在
   if (!fs.existsSync(imagesDir)) {
@@ -286,12 +286,12 @@ function createSampleImages(id) {
   }
   
   // 生成漏洞分布图表
-  const vulnChartPath = path.join(imagesDir, 'vulnerability_chart.png');
+  const vulnChartPath = path.join(imagesDir, 'vulnerability-chart.png');
   fs.writeFileSync(vulnChartPath, Buffer.from(imageBase64.split(',')[1], 'base64'));
   
   // 随机决定是否创建额外的截图
   if (Math.random() > 0.5) {
-    const screenshotPath = path.join(imagesDir, 'code_example.png');
+    const screenshotPath = path.join(imagesDir, 'code-example.png');
     fs.writeFileSync(screenshotPath, Buffer.from(imageBase64.split(',')[1], 'base64'));
   }
   
@@ -311,10 +311,10 @@ function generateYamlFile(id) {
   
   if (useMarkdownPath) {
     markdownContent = generateRandomMarkdown(id);
-    markdownPath = `challenges/markdown/challenge_${id}/description.md`;
+    markdownPath = `contents/mock_${id}/description.md`;
     
     // 创建markdown文件
-    const fullMarkdownDir = path.join(mockMarkdownDir, `challenge_${id}`);
+    const fullMarkdownDir = path.join(mockMarkdownDir, `mock_${id}`);
     if (!fs.existsSync(fullMarkdownDir)) {
       fs.mkdirSync(fullMarkdownDir, { recursive: true });
     }
