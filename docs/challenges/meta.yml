@@ -39,7 +39,7 @@ challenges:
     # 指向包含完整描述的Markdown文件，支持图片等复杂内容
     # 路径应为相对于项目根目录的相对路径
     # 与description-markdown字段二选一使用
-    description-markdown-path: docs/challenges/contents/example/description.md
+    description-markdown-path: contents/example/description.md
 
     # 题目所在页面的URL地址的ase64
     base64-url: aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8=
