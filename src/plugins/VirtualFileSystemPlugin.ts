@@ -38,11 +38,25 @@ interface Challenge {
 
 // 处理相对路径的图片链接，转换为绝对路径或Base64
 function processMarkdownImages(markdown: string, basePath: string): string {
-    // 匹配Markdown图片链接: ![alt](path)
-    const imgRegex = /!\[(.*?)\]\((\.\/.*?)\)/g;
+    // 匹配Markdown图片链接: ![alt](path) 和 <img src="path"> 两种格式
+    // 支持./开头的相对路径、../开头的上级目录路径以及/开头的根路径
+    const mdImgRegex = /!\[(.*?)\]\(((?:\.\/|\.\.|\/)[^)]+)\)/g;
+    const htmlImgRegex = /<img.*?src=["']((?:\.\/|\.\.|\/)[^"']+)["'].*?>/g;
     
-    return markdown.replace(imgRegex, (match, alt, imgPath) => {
-        const fullImgPath = path.resolve(basePath, imgPath);
+    // 解析图片路径，转换为绝对路径
+    const resolveImgPath = (imgPath: string): string => {
+        // 如果是绝对路径（以/开头）
+        if (imgPath.startsWith('/')) {
+            return path.join(process.cwd(), imgPath);
+        }
+        // 否则作为相对路径处理
+        return path.resolve(basePath, imgPath);
+    };
+    
+    // 处理图片转base64的函数
+    const convertImgToBase64 = (imgPath: string): { success: boolean; data: string; mimeType: string } => {
+        const fullImgPath = resolveImgPath(imgPath);
+        
         if (fs.existsSync(fullImgPath)) {
             try {
                 // 获取文件扩展名和MIME类型
@@ -60,17 +74,44 @@ function processMarkdownImages(markdown: string, basePath: string): string {
                 const imgBuffer = fs.readFileSync(fullImgPath);
                 const base64Img = imgBuffer.toString('base64');
                 
-                // 返回转换后的图片链接
-                return `![${alt}](data:${mimeType};base64,${base64Img})`;
+                return { 
+                    success: true, 
+                    data: base64Img,
+                    mimeType
+                };
             } catch (error) {
                 console.error(`Error processing image ${fullImgPath}:`, error);
-                return match; // 出错时保留原始链接
+                return { success: false, data: '', mimeType: '' };
             }
         } else {
             console.warn(`Image file not found: ${fullImgPath}`);
-            return match; // 文件不存在时保留原始链接
+            return { success: false, data: '', mimeType: '' };
         }
+    };
+    
+    // 处理Markdown格式的图片
+    let processedMd = markdown.replace(mdImgRegex, (match, alt, imgPath) => {
+        const result = convertImgToBase64(imgPath);
+        if (result.success) {
+            return `![${alt}](data:${result.mimeType};base64,${result.data})`;
+        }
+        return match; // 出错时保留原始链接
     });
+    
+    // 处理HTML格式的图片
+    processedMd = processedMd.replace(htmlImgRegex, (match, imgPath) => {
+        const result = convertImgToBase64(imgPath);
+        if (result.success) {
+            // 从原始标签中提取属性
+            const altMatch = match.match(/alt=["'](.*?)["']/);
+            const alt = altMatch ? altMatch[1] : '';
+            
+            return `<img src="data:${result.mimeType};base64,${result.data}" alt="${alt}" />`;
+        }
+        return match; // 出错时保留原始链接
+    });
+    
+    return processedMd;
 }
 
 function collectYAMLChallenges(dirPath: string, rootDir: string): Challenge[] {
