@@ -3,6 +3,7 @@ import { ArrowUpOutlined, ArrowDownOutlined } from '@ant-design/icons';
 import StarRating from '../StarRating';
 import { useMemo } from 'react';
 import { Col } from 'antd';
+import '../../styles/dropdown.css';
 
 const { Search } = Input;
 const { Option } = Select;
@@ -117,10 +118,19 @@ const ChallengeControls: React.FC<ChallengeControlsProps> = ({
                 style={{ width: 140 }}
                 value={selectedDifficulty}
                 onChange={onDifficultyChange}
+                dropdownStyle={{ 
+                    zIndex: 1050,
+                    minWidth: '160px'
+                }}
+                getPopupContainer={triggerNode => triggerNode.parentNode as HTMLElement}
             >
                 <Option value="all">全部难度</Option>
                 {[1, 2, 3, 4, 5].map(n => (
-                    <Option key={n} value={String(n)}>
+                    <Option 
+                        key={n} 
+                        value={String(n)} 
+                        className="difficulty-option"
+                    >
                         <StarRating difficulty={n} />
                     </Option>
                 ))}

@@ -7,4 +7,17 @@
 /* 可点击的星星图标悬停效果 */
 .star-icon-clickable:hover {
     transform: scale(1.1);
+}
+
+/* 下拉选项中的星级样式 */
+.difficulty-option .ant-tag {
+    cursor: pointer !important;
+}
+
+/* 确保下拉项中的星级正确显示 */
+.ant-select-item-option-content .ant-tag {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: flex-start;
 } 
