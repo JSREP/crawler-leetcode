@@ -6,7 +6,8 @@ export type Solution = {
 };
 
 export type Challenge = {
-    id: string;
+    id: string;       // 唯一整数ID，保持string类型兼容现有代码
+    idAlias?: string; // 唯一字符串别名，用于友好URL和显示
     number: number;
     title: string;
     description: string;
@@ -28,6 +29,7 @@ export const parseChallenges = (raw: any[]): Challenge[] => {
     }
     return raw.map(c => ({
         id: c.id || "",
+        idAlias: c['id-alias'] || c.id || "", // 获取id-alias或使用id作为备选
         number: parseInt(c.number || "0", 10),
         title: c.title || c.name || "",
         description: c.description || "",
