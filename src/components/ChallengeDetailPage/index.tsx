@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { Card, Space, Divider, Alert } from 'antd';
+import { useParams, useNavigate } from 'react-router-dom';
+import { Card, Space, Divider, Alert, Button } from 'antd';
 import { Challenge } from '../../types/challenge';
 import { challenges } from '../ChallengeListPage/exports';
+import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 
 // 导入各个子组件
 import ChallengeHeader from './ChallengeHeader';
@@ -18,30 +19,86 @@ import ChallengeActions from './ChallengeActions';
  */
 const ChallengeDetailPage = () => {
     const { id } = useParams<{ id: string }>();
+    const navigate = useNavigate();
     const [challenge, setChallenge] = useState<Challenge | null>(null);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
+    const [prevChallenge, setPrevChallenge] = useState<Challenge | null>(null);
+    const [nextChallenge, setNextChallenge] = useState<Challenge | null>(null);
 
+    // 查找当前挑战以及前后挑战
     useEffect(() => {
         if (id) {
             try {
-                // 直接使用字符串ID查找挑战
-                const foundChallenge = challenges.find(c => c.id === id);
+                // 获取所有挑战的索引
+                const currentIndex = challenges.findIndex(c => c.id === id);
                 
-                if (foundChallenge) {
-                    setChallenge(foundChallenge);
+                if (currentIndex !== -1) {
+                    // 设置当前挑战
+                    setChallenge(challenges[currentIndex]);
                     setError(null);
+                    
+                    // 设置前一个挑战（如果存在）
+                    if (currentIndex > 0) {
+                        setPrevChallenge(challenges[currentIndex - 1]);
+                    } else {
+                        setPrevChallenge(null);
+                    }
+                    
+                    // 设置后一个挑战（如果存在）
+                    if (currentIndex < challenges.length - 1) {
+                        setNextChallenge(challenges[currentIndex + 1]);
+                    } else {
+                        setNextChallenge(null);
+                    }
                 } else {
                     throw new Error(`未找到ID为${id}的挑战`);
                 }
             } catch (err) {
                 setError(err instanceof Error ? err.message : '加载挑战失败');
                 setChallenge(null);
+                setPrevChallenge(null);
+                setNextChallenge(null);
             } finally {
                 setLoading(false);
             }
         }
     }, [id]);
+
+    // 处理键盘事件
+    useEffect(() => {
+        const handleKeyDown = (e: KeyboardEvent) => {
+            // 左方向键 - 上一个挑战
+            if (e.key === 'ArrowLeft' && prevChallenge) {
+                navigate(`/challenge/${prevChallenge.id}`);
+            }
+            // 右方向键 - 下一个挑战
+            else if (e.key === 'ArrowRight' && nextChallenge) {
+                navigate(`/challenge/${nextChallenge.id}`);
+            }
+        };
+
+        window.addEventListener('keydown', handleKeyDown);
+        
+        // 清理事件监听器
+        return () => {
+            window.removeEventListener('keydown', handleKeyDown);
+        };
+    }, [prevChallenge, nextChallenge, navigate]);
+
+    // 导航到前一个挑战
+    const goToPrevChallenge = () => {
+        if (prevChallenge) {
+            navigate(`/challenge/${prevChallenge.id}`);
+        }
+    };
+
+    // 导航到后一个挑战
+    const goToNextChallenge = () => {
+        if (nextChallenge) {
+            navigate(`/challenge/${nextChallenge.id}`);
+        }
+    };
 
     if (loading) {
         return <div className="text-center py-8">加载中...</div>;
@@ -73,6 +130,26 @@ const ChallengeDetailPage = () => {
                 />
             )}
             
+            {/* 添加翻页按钮 */}
+            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '20px' }}>
+                <Button 
+                    type="default" 
+                    icon={<LeftOutlined />} 
+                    onClick={goToPrevChallenge} 
+                    disabled={!prevChallenge}
+                >
+                    上一题
+                </Button>
+                <Button 
+                    type="default" 
+                    icon={<RightOutlined />} 
+                    onClick={goToNextChallenge} 
+                    disabled={!nextChallenge}
+                >
+                    下一题
+                </Button>
+            </div>
+            
             <Card bordered={false} style={{ marginBottom: '20px' }}>
                 <Space direction="vertical" size="large" style={{ width: '100%' }}>
                     {/* 标题区域 */}
@@ -101,6 +178,26 @@ const ChallengeDetailPage = () => {
                     <ChallengeActions challenge={challenge} />
                 </Space>
             </Card>
+            
+            {/* 底部翻页按钮 */}
+            <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '20px' }}>
+                <Button 
+                    type="default" 
+                    icon={<LeftOutlined />} 
+                    onClick={goToPrevChallenge} 
+                    disabled={!prevChallenge}
+                >
+                    上一题
+                </Button>
+                <Button 
+                    type="default" 
+                    icon={<RightOutlined />} 
+                    onClick={goToNextChallenge} 
+                    disabled={!nextChallenge}
+                >
+                    下一题
+                </Button>
+            </div>
         </div>
     );
 };
