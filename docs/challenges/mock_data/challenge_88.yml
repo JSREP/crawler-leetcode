@@ -1,0 +1,24 @@
+# 挑战题目文件
+version: 1
+
+challenges:
+  - id: mock-challenge-88
+    tags:
+      - webgl-fingerprint
+    platform: Web
+    name: Mock挑战题目 #88
+    difficulty-level: 2
+    description: 这是一个示例挑战题目的描述，难度为2星级。
+    base64-url: aHR0cHM6Ly9sZWV0Y29kZS5jb20vcHJvYmxlbS9hYmNkZWY=
+    is-expired: false
+    solutions:
+      - title: 逆向工程思路
+        url: https://github.com/user/repo
+        source: Personal Blog
+        author: 
+      - title: Hook方法绕过
+        url: https://gist.github.com/user/id
+        source: GitHub
+        author: John Doe
+    create-time: 2024-12-17 15:05:12
+    update-time: 2023-08-18 12:48:52

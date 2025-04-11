@@ -1,0 +1,23 @@
+# 挑战题目文件
+version: 1
+
+challenges:
+  - id: mock-challenge-60
+    tags:
+      - token-validation
+      - canvas-fingerprint
+      - rate-limiting
+      - device-motion
+    platform: Web
+    name: Mock挑战题目 #60
+    difficulty-level: 5
+    description: 这是一个示例挑战题目的描述，难度为5星级。
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9jaGFsbGVuZ2UvMTIzNDU=
+    is-expired: true
+    solutions:
+      - title: 逆向工程思路
+        url: https://medium.com/@user/article
+        source: Medium
+        author: Alex Chen
+    create-time: 2025-02-19 05:17:21
+    update-time: 2023-02-15 10:48:08

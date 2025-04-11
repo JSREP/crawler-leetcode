@@ -1,0 +1,25 @@
+# 挑战题目文件
+version: 1
+
+challenges:
+  - id: mock-challenge-83
+    tags:
+      - anti-debug
+      - canvas-fingerprint
+    platform: Web
+    name: Mock挑战题目 #83
+    difficulty-level: 4
+    description: 这是一个示例挑战题目的描述，难度为4星级。
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzY3ODkw
+    is-expired: false
+    solutions:
+      - title: 使用Puppeteer绕过检测
+        url: https://medium.com/@user/article
+        source: Medium
+        author: John Doe
+      - title: Hook方法绕过
+        url: https://github.com/user/repo
+        source: YouTube
+        author: John Doe
+    create-time: 2023-02-26 23:15:34
+    update-time: 2024-01-09 07:58:16

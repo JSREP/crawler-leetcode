@@ -1,0 +1,24 @@
+# 挑战题目文件
+version: 1
+
+challenges:
+  - id: mock-challenge-86
+    tags:
+      - js-reverse
+    platform: iOS
+    name: Mock挑战题目 #86
+    difficulty-level: 3
+    description: 这是一个示例挑战题目的描述，难度为3星级。
+    base64-url: aHR0cHM6Ly9sZWV0Y29kZS5jb20vY2hhbGxlbmdlLzY3ODkw
+    is-expired: false
+    solutions:
+      - title: AST分析方案
+        url: https://github.com/user/repo
+        source: GitHub
+        author: Alex Chen
+      - title: 静态分析方法
+        url: https://medium.com/@user/article
+        source: YouTube
+        author: Jane Smith
+    create-time: 2023-11-19 17:48:54
+    update-time: 2023-09-10 12:10:15

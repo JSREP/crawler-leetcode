@@ -1,0 +1,21 @@
+# 挑战题目文件
+version: 1
+
+challenges:
+  - id: mock-challenge-91
+    tags:
+      - token-validation
+      - cookie-protection
+    platform: Android
+    name: Mock挑战题目 #91
+    difficulty-level: 4
+    description: 这是一个示例挑战题目的描述，难度为4星级。
+    base64-url: aHR0cHM6Ly9sZWV0Y29kZS5jb20vZXhlcmNpc2UvMTIzNDU=
+    is-expired: false
+    solutions:
+      - title: 使用Puppeteer绕过检测
+        url: https://github.com/user/repo
+        source: Medium
+        author: 
+    create-time: 2023-04-28 01:25:04
+    update-time: 2025-11-23 20:08:54

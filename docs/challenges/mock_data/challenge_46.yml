@@ -1,0 +1,30 @@
+# 挑战题目文件
+version: 1
+
+challenges:
+  - id: mock-challenge-46
+    tags:
+      - rate-limiting
+      - obfuscator
+      - webgl-fingerprint
+    platform: iOS
+    name: Mock挑战题目 #46
+    difficulty-level: 3
+    description: 这是一个示例挑战题目的描述，难度为3星级。
+    base64-url: aHR0cHM6Ly9sZWV0Y29kZS5jb20vZXhlcmNpc2UvNjc4OTA=
+    is-expired: false
+    solutions:
+      - title: 静态分析方法
+        url: https://github.com/user/repo
+        source: StackOverflow
+        author: Web Security Expert
+      - title: 静态分析方法
+        url: https://gist.github.com/user/id
+        source: Medium
+        author: Jane Smith
+      - title: 使用Puppeteer绕过检测
+        url: https://medium.com/@user/article
+        source: GitHub
+        author: 
+    create-time: 2025-11-22 06:59:04
+    update-time: 2025-11-09 10:54:51

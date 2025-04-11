@@ -1,0 +1,25 @@
+# 挑战题目文件
+version: 1
+
+challenges:
+  - id: mock-challenge-100
+    tags:
+      - anti-crawler
+      - api-protection
+    platform: Android
+    name: Mock挑战题目 #100
+    difficulty-level: 5
+    description: 这是一个示例挑战题目的描述，难度为5星级。
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9leGVyY2lzZS94eXoxMjM=
+    is-expired: false
+    solutions:
+      - title: 使用Puppeteer绕过检测
+        url: https://medium.com/@user/article
+        source: Medium
+        author: Web Security Expert
+      - title: 使用Puppeteer绕过检测
+        url: https://gist.github.com/user/id
+        source: Medium
+        author: Alex Chen
+    create-time: 2023-01-27 21:00:22
+    update-time: 2024-04-19 12:58:50

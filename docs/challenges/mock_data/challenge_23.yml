@@ -1,0 +1,27 @@
+# 挑战题目文件
+version: 1
+
+challenges:
+  - id: mock-challenge-23
+    tags:
+      - canvas-fingerprint
+      - anti-debug
+      - cookie-protection
+      - fingerprint
+    platform: iOS
+    name: Mock挑战题目 #23
+    difficulty-level: 3
+    description: 这是一个示例挑战题目的描述，难度为3星级。
+    base64-url: aHR0cHM6Ly93d3cuZXhhbXBsZS5jb20vY2hhbGxlbmdlL3h5ejEyMw==
+    is-expired: false
+    solutions:
+      - title: Hook方法绕过
+        url: https://github.com/user/repo
+        source: YouTube
+        author: Web Security Expert
+      - title: 静态分析方法
+        url: https://medium.com/@user/article
+        source: GitHub
+        author: Alex Chen
+    create-time: 2025-05-13 07:50:59
+    update-time: 2025-05-07 00:37:21

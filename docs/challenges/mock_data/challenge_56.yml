@@ -1,0 +1,28 @@
+# 挑战题目文件
+version: 1
+
+challenges:
+  - id: mock-challenge-56
+    tags:
+      - js-reverse
+    platform: iOS
+    name: Mock挑战题目 #56
+    difficulty-level: 4
+    description: 这是一个示例挑战题目的描述，难度为4星级。
+    base64-url: aHR0cHM6Ly93d3cuZXhhbXBsZS5jb20vcXVpei8xMjM0NQ==
+    is-expired: false
+    solutions:
+      - title: AST分析方案
+        url: https://gist.github.com/user/id
+        source: Personal Blog
+        author: 
+      - title: 使用Puppeteer绕过检测
+        url: https://medium.com/@user/article
+        source: YouTube
+        author: John Doe
+      - title: 静态分析方法
+        url: https://gist.github.com/user/id
+        source: Medium
+        author: Alex Chen
+    create-time: 2024-02-14 01:11:55
+    update-time: 2025-10-05 03:00:15

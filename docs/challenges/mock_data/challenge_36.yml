@@ -1,0 +1,23 @@
+# 挑战题目文件
+version: 1
+
+challenges:
+  - id: mock-challenge-36
+    tags:
+      - mobile-app
+      - device-motion
+      - webpack
+      - token-validation
+    platform: iOS
+    name: Mock挑战题目 #36
+    difficulty-level: 3
+    description: 这是一个示例挑战题目的描述，难度为3星级。
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9xdWl6LzY3ODkw
+    is-expired: false
+    solutions:
+      - title: Hook方法绕过
+        url: https://gist.github.com/user/id
+        source: Personal Blog
+        author: John Doe
+    create-time: 2025-07-10 14:03:44
+    update-time: 2024-09-15 06:54:30

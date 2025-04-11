@@ -1,0 +1,27 @@
+# 挑战题目文件
+version: 1
+
+challenges:
+  - id: mock-challenge-12
+    tags:
+      - signature
+      - webgl-fingerprint
+      - api-protection
+      - browser-check
+    platform: Android
+    name: Mock挑战题目 #12
+    difficulty-level: 1
+    description: 这是一个示例挑战题目的描述，难度为1星级。
+    base64-url: aHR0cHM6Ly93d3cuZXhhbXBsZS5jb20vcHJvYmxlbS8xMjM0NQ==
+    is-expired: false
+    solutions:
+      - title: 静态分析方法
+        url: https://github.com/user/repo
+        source: YouTube
+        author: Web Security Expert
+      - title: 静态分析方法
+        url: https://github.com/user/repo
+        source: StackOverflow
+        author: John Doe
+    create-time: 2025-06-18 04:42:20
+    update-time: 2025-05-06 20:23:37

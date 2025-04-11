@@ -1,0 +1,20 @@
+# 挑战题目文件
+version: 1
+
+challenges:
+  - id: mock-challenge-63
+    tags:
+      - rate-limiting
+    platform: Android
+    name: Mock挑战题目 #63
+    difficulty-level: 2
+    description: 这是一个示例挑战题目的描述，难度为2星级。
+    base64-url: aHR0cHM6Ly9sZWV0Y29kZS5jb20vcXVpei94eXoxMjM=
+    is-expired: false
+    solutions:
+      - title: Hook方法绕过
+        url: https://medium.com/@user/article
+        source: StackOverflow
+        author: John Doe
+    create-time: 2024-10-22 21:46:40
+    update-time: 2023-02-03 16:32:47

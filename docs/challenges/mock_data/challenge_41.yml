@@ -1,0 +1,29 @@
+# 挑战题目文件
+version: 1
+
+challenges:
+  - id: mock-challenge-41
+    tags:
+      - fingerprint
+      - wasm
+    platform: Android
+    name: Mock挑战题目 #41
+    difficulty-level: 2
+    description: 这是一个示例挑战题目的描述，难度为2星级。
+    base64-url: aHR0cHM6Ly9sZWV0Y29kZS5jb20vcHJvYmxlbS8xMjM0NQ==
+    is-expired: false
+    solutions:
+      - title: Hook方法绕过
+        url: https://github.com/user/repo
+        source: GitHub
+        author: 
+      - title: 逆向工程思路
+        url: https://gist.github.com/user/id
+        source: GitHub
+        author: Jane Smith
+      - title: 使用Puppeteer绕过检测
+        url: https://gist.github.com/user/id
+        source: YouTube
+        author: John Doe
+    create-time: 2024-05-20 10:24:59
+    update-time: 2024-12-16 09:06:37

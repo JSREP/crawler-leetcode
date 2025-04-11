@@ -1,0 +1,22 @@
+# 挑战题目文件
+version: 1
+
+challenges:
+  - id: mock-challenge-54
+    tags:
+      - rate-limiting
+      - encryption
+      - js-reverse
+    platform: Web
+    name: Mock挑战题目 #54
+    difficulty-level: 1
+    description: 这是一个示例挑战题目的描述，难度为1星级。
+    base64-url: aHR0cHM6Ly93d3cuZXhhbXBsZS5jb20vY2hhbGxlbmdlLzEyMzQ1
+    is-expired: false
+    solutions:
+      - title: 逆向工程思路
+        url: https://medium.com/@user/article
+        source: GitHub
+        author: 
+    create-time: 2024-10-05 02:31:44
+    update-time: 2023-06-27 19:11:44

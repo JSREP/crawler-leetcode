@@ -1,0 +1,29 @@
+# 挑战题目文件
+version: 1
+
+challenges:
+  - id: mock-challenge-10
+    tags:
+      - webgl-fingerprint
+      - mobile-app
+    platform: Web
+    name: Mock挑战题目 #10
+    difficulty-level: 3
+    description: 这是一个示例挑战题目的描述，难度为3星级。
+    base64-url: aHR0cHM6Ly9jaGFsbGVuZ2UuZG9tYWluLmNvbS9wcm9ibGVtL3h5ejEyMw==
+    is-expired: true
+    solutions:
+      - title: 静态分析方法
+        url: https://github.com/user/repo
+        source: StackOverflow
+        author: Alex Chen
+      - title: 静态分析方法
+        url: https://gist.github.com/user/id
+        source: Personal Blog
+        author: Web Security Expert
+      - title: AST分析方案
+        url: https://gist.github.com/user/id
+        source: GitHub
+        author: Jane Smith
+    create-time: 2024-05-22 09:47:45
+    update-time: 2025-07-19 14:43:57
