@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react';
 import {useParams, Link} from 'react-router-dom';
 import { Challenge } from '../types/challenge';
-import { challenges } from './ChallengeList';
+import { challenges } from './ChallengeListPage';
 import {Tag, Typography, Badge, Divider, Alert, Card, Space} from 'antd';
 
 const {Text, Title, Paragraph} = Typography;
