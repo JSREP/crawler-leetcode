@@ -37,7 +37,7 @@ interface Challenge {
 }
 
 // 处理相对路径的图片链接，转换为绝对路径或Base64
-function processMarkdownImages(markdown: string, basePath: string): string {
+function processMarkdownImages(markdown: string, basePath: string, isBuild = false): string {
     // 匹配Markdown图片链接: ![alt](path) 和 <img src="path"> 两种格式
     // 支持./开头的相对路径、../开头的上级目录路径以及/开头的根路径
     const mdImgRegex = /!\[(.*?)\]\(((?:\.\/|\.\.|\/)[^)]+)\)/g;
@@ -53,8 +53,23 @@ function processMarkdownImages(markdown: string, basePath: string): string {
         return path.resolve(basePath, imgPath);
     };
     
+    // 获取图片在md-assets目录下的路径（用于生产环境）
+    const getMdAssetsPath = (imgPath: string): string => {
+        // 如果是assets目录下的文件
+        if (imgPath.includes('/assets/')) {
+            // 提取相对于contents目录的路径
+            const contentsDirIndex = imgPath.indexOf('/contents/');
+            if (contentsDirIndex !== -1) {
+                // 从/contents/后面开始截取
+                const relativePath = imgPath.substring(contentsDirIndex + 10); // +10是跳过'/contents/'
+                return `/md-assets${relativePath}`;
+            }
+        }
+        return imgPath; // 默认返回原路径
+    };
+    
     // 处理图片转base64的函数
-    const convertImgToBase64 = (imgPath: string): { success: boolean; data: string; mimeType: string } => {
+    const convertImgToBase64 = (imgPath: string): { success: boolean; data: string; mimeType: string; fullPath: string } => {
         const fullImgPath = resolveImgPath(imgPath);
         
         if (fs.existsSync(fullImgPath)) {
@@ -70,22 +85,33 @@ function processMarkdownImages(markdown: string, basePath: string): string {
                 else if (ext === '.svg') mimeType = 'image/svg+xml';
                 else if (ext === '.webp') mimeType = 'image/webp';
                 
-                // 读取图片文件并转换为Base64
+                // 如果是构建模式，不转换为Base64，而是使用相对路径
+                if (isBuild) {
+                    return { 
+                        success: true, 
+                        data: '', // 在构建模式下不使用Base64数据
+                        mimeType,
+                        fullPath: fullImgPath
+                    };
+                }
+                
+                // 开发模式下，读取图片文件并转换为Base64
                 const imgBuffer = fs.readFileSync(fullImgPath);
                 const base64Img = imgBuffer.toString('base64');
                 
                 return { 
                     success: true, 
                     data: base64Img,
-                    mimeType
+                    mimeType,
+                    fullPath: fullImgPath
                 };
             } catch (error) {
                 console.error(`Error processing image ${fullImgPath}:`, error);
-                return { success: false, data: '', mimeType: '' };
+                return { success: false, data: '', mimeType: '', fullPath: fullImgPath };
             }
         } else {
             console.warn(`Image file not found: ${fullImgPath}`);
-            return { success: false, data: '', mimeType: '' };
+            return { success: false, data: '', mimeType: '', fullPath: fullImgPath };
         }
     };
     
@@ -93,6 +119,12 @@ function processMarkdownImages(markdown: string, basePath: string): string {
     let processedMd = markdown.replace(mdImgRegex, (match, alt, imgPath) => {
         const result = convertImgToBase64(imgPath);
         if (result.success) {
+            if (isBuild) {
+                // 构建模式下使用相对路径
+                const buildPath = getMdAssetsPath(result.fullPath);
+                return `![${alt}](${buildPath})`;
+            }
+            // 开发模式下使用Base64
             return `![${alt}](data:${result.mimeType};base64,${result.data})`;
         }
         return match; // 出错时保留原始链接
@@ -106,6 +138,12 @@ function processMarkdownImages(markdown: string, basePath: string): string {
             const altMatch = match.match(/alt=["'](.*?)["']/);
             const alt = altMatch ? altMatch[1] : '';
             
+            if (isBuild) {
+                // 构建模式下使用相对路径
+                const buildPath = getMdAssetsPath(result.fullPath);
+                return `<img src="${buildPath}" alt="${alt}" />`;
+            }
+            // 开发模式下使用Base64
             return `<img src="data:${result.mimeType};base64,${result.data}" alt="${alt}" />`;
         }
         return match; // 出错时保留原始链接
@@ -114,14 +152,14 @@ function processMarkdownImages(markdown: string, basePath: string): string {
     return processedMd;
 }
 
-function collectYAMLChallenges(dirPath: string, rootDir: string): Challenge[] {
+function collectYAMLChallenges(dirPath: string, rootDir: string, isBuild = false): Challenge[] {
     const entries = fs.readdirSync(dirPath, { withFileTypes: true });
     let challenges: Challenge[] = [];
 
     for (const entry of entries) {
         const fullPath = path.join(dirPath, entry.name);
         if (entry.isDirectory()) {
-            challenges = challenges.concat(collectYAMLChallenges(fullPath, rootDir));
+            challenges = challenges.concat(collectYAMLChallenges(fullPath, rootDir, isBuild));
         } else if (entry.isFile() && path.extname(entry.name) === '.yml') {
             try {
                 const content = fs.readFileSync(fullPath, 'utf8');
@@ -141,8 +179,8 @@ function collectYAMLChallenges(dirPath: string, rootDir: string): Challenge[] {
                                 try {
                                     // 读取Markdown文件内容
                                     const rawMd = fs.readFileSync(mdPath, 'utf8');
-                                    // 处理Markdown中的图片路径
-                                    markdownContent = processMarkdownImages(rawMd, path.dirname(mdPath));
+                                    // 处理Markdown中的图片路径，根据环境决定如何处理图片
+                                    markdownContent = processMarkdownImages(rawMd, path.dirname(mdPath), isBuild);
                                 } catch (err) {
                                     console.error(`Error reading Markdown file ${mdPath}:`, err);
                                 }
@@ -234,8 +272,12 @@ export default function virtualFileSystemPlugin(
                         return 'export default [];';
                     }
 
+                    // 检测是否在构建模式
+                    const isBuild = process.env.NODE_ENV === 'production' || this.meta?.watchMode === false;
+                    console.log(`VirtualFileSystemPlugin: Running in ${isBuild ? 'build' : 'development'} mode`);
+
                     // 收集并处理YAML挑战和Markdown内容
-                    const challenges = collectYAMLChallenges(directory, process.cwd());
+                    const challenges = collectYAMLChallenges(directory, process.cwd(), isBuild);
                     return `export default ${JSON.stringify(challenges, null, 2)};`;
                 } catch (error: any) {
                     console.error('Error generating virtual file:', error);
