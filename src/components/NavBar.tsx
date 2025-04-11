@@ -5,7 +5,7 @@ import {Layout, Menu, Space, Typography, Select} from 'antd';
 import { useTranslation } from 'react-i18next';
 import { changeLanguage } from '../i18n';
 // @ts-ignore
-import logo from '../assets/logo.jpeg';
+import faviconLogo from '../assets/favicon.png';
 
 const {Header} = Layout;
 const {Title} = Typography;
@@ -48,11 +48,26 @@ const NavBar = () => {
                 justifyContent: 'space-between',
                 position: 'relative'  // 为徽标提供定位上下文
             }}>
-                <Space size="middle">
-                    <img src={logo} alt="logo" style={{height: 40}}/>
-                    <Title level={3} style={{margin: 0, color: '#2c3e50'}}>
-                        LeetCode Crawler
-                    </Title>
+                <Space size="middle" align="center">
+                    <div style={{ 
+                        display: 'flex', 
+                        alignItems: 'center',
+                        height: '100%'
+                    }}>
+                        <img 
+                            src={faviconLogo} 
+                            alt="LeetCode Crawler" 
+                            style={{
+                                height: '80%', // 自适应导航栏高度
+                                maxHeight: '50px',
+                                width: 'auto',
+                                marginRight: '12px'
+                            }}
+                        />
+                        <Title level={3} style={{margin: 0, color: '#2c3e50'}}>
+                            LeetCode Crawler
+                        </Title>
+                    </div>
                 </Space>
 
                 <div style={{
