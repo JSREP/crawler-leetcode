@@ -25,25 +25,16 @@ interface ImageProcessResult {
     fullPath: string;
 }
 
-// 处理相对路径的图片链接，转换为绝对路径或Base64
+// 处理相对路径的图片链接，转换为Base64或保持相对路径
 function processMarkdownImages(markdown: string, basePath: string, isBuild = false): string {
     // 匹配Markdown和HTML格式的图片链接
     const mdImgRegex = /!\[(.*?)\]\(((?:\.\/|\.\.|\/)[^)]+)\)/g;
     const htmlImgRegex = /<img.*?src=["']((?:\.\/|\.\.|\/)[^"']+)["'].*?>/g;
     
-    // 获取图片在md-assets目录下的路径（用于生产环境）
-    const getMdAssetsPath = (imgPath: string): string => {
+    // 处理图片路径，保持相对路径结构
+    const processImgPath = (imgPath: string): string => {
         console.log(`[DEBUG] 处理图片路径: ${imgPath}`);
-        if (imgPath.includes('/assets/')) {
-            const contentsDirIndex = imgPath.indexOf('/contents/');
-            if (contentsDirIndex !== -1) {
-                const relativePath = imgPath.substring(contentsDirIndex + 10);
-                const newPath = `/md-assets${relativePath}`;
-                console.log(`[DEBUG] 构建时图片路径转换: ${imgPath} -> ${newPath}`);
-                return newPath;
-            }
-        }
-        console.log(`[DEBUG] 未处理的图片路径: ${imgPath}`);
+        // 保持相对路径不变
         return imgPath;
     };
     
@@ -54,14 +45,14 @@ function processMarkdownImages(markdown: string, basePath: string, isBuild = fal
             success: false,
             data: '',
             mimeType: '',
-            fullPath: ''
+            fullPath: imgPath
         };
         
         try {
-            // 处理相对路径图片
+            // 获取图片的完整路径，用于读取文件
             const fullImgPath = path.isAbsolute(imgPath) 
                 ? imgPath 
-                : path.resolve(basePath, imgPath.startsWith('./') ? imgPath.substring(2) : imgPath);
+                : path.join(basePath, imgPath);
             
             console.log(`[DEBUG] 图片完整路径: ${fullImgPath}`);
             
@@ -93,30 +84,13 @@ function processMarkdownImages(markdown: string, basePath: string, isBuild = fal
                     break;
             }
             
-            // 构建模式下，复制图片到打包目录
+            // 如果是构建模式，保持相对路径
             if (isBuild) {
-                const buildAssetsDir = path.join(path.resolve(process.cwd(), 'dist'), 'md-assets');
-                
-                // 创建打包目录结构
-                if (!fs.existsSync(buildAssetsDir)) {
-                    fs.mkdirSync(buildAssetsDir, { recursive: true });
-                }
-                
-                // 获取目标路径
-                const destPath = path.join(buildAssetsDir, path.basename(fullImgPath));
-                try {
-                    fs.copyFileSync(fullImgPath, destPath);
-                    console.log(`Copied: ${fullImgPath} -> ${destPath}`);
-                } catch (copyErr) {
-                    console.error(`Failed to copy image: ${copyErr}`);
-                }
-                
-                // 构建模式下返回路径信息
                 return {
                     success: true,
-                    data: '', // 在构建模式下不使用Base64数据
+                    data: '',
                     mimeType,
-                    fullPath: fullImgPath
+                    fullPath: imgPath // 保持原始相对路径
                 };
             }
             
@@ -128,10 +102,10 @@ function processMarkdownImages(markdown: string, basePath: string, isBuild = fal
                 success: true,
                 data: base64Img,
                 mimeType,
-                fullPath: fullImgPath
+                fullPath: imgPath // 保持原始相对路径
             };
         } catch (error) {
-            console.error(`Error processing image:`, error);
+            console.error(`读取图片文件出错:`, error);
             return result;
         }
     };
@@ -142,7 +116,7 @@ function processMarkdownImages(markdown: string, basePath: string, isBuild = fal
         if (result.success) {
             if (isBuild) {
                 // 构建模式下使用相对路径
-                const buildPath = getMdAssetsPath(result.fullPath);
+                const buildPath = processImgPath(result.fullPath);
                 return `![${alt}](${buildPath})`;
             }
             // 开发模式下使用Base64
@@ -161,7 +135,7 @@ function processMarkdownImages(markdown: string, basePath: string, isBuild = fal
             
             if (isBuild) {
                 // 构建模式下使用相对路径
-                const buildPath = getMdAssetsPath(result.fullPath);
+                const buildPath = processImgPath(result.fullPath);
                 return `<img src="${buildPath}" alt="${alt}" />`;
             }
             // 开发模式下使用Base64
@@ -215,45 +189,26 @@ function processChallengeData(challenge: any, rootDir: string, isBuild: boolean)
     
     // 如果有description-markdown-path，读取对应文件内容
     if (challenge['description-markdown-path']) {
-        // 获取原始路径
-        const origPath = challenge['description-markdown-path'];
-        console.log(`处理Markdown路径: ${origPath}`);
+        // 获取原始路径，保持为相对路径
+        const mdPath = challenge['description-markdown-path'];
+        console.log(`处理Markdown路径: ${mdPath}`);
         
-        // 直接尝试解析原始路径
-        let mdPath = path.resolve(rootDir, origPath);
-        console.log(`解析为绝对路径: ${mdPath}`);
+        // 仅为了读取内容，构建完整路径
+        const fullMdPath = path.join(process.cwd(), mdPath);
+        console.log(`读取文件的完整路径: ${fullMdPath}`);
         
-        if (fs.existsSync(mdPath)) {
+        if (fs.existsSync(fullMdPath)) {
             try {
                 // 读取Markdown文件内容
-                const rawMd = fs.readFileSync(mdPath, 'utf8');
-                // 处理Markdown中的图片路径，根据环境决定如何处理图片
-                markdownContent = processMarkdownImages(rawMd, path.dirname(mdPath), isBuild);
+                const rawMd = fs.readFileSync(fullMdPath, 'utf8');
+                // 处理Markdown中的图片路径，传入文件所在目录作为基础路径
+                markdownContent = processMarkdownImages(rawMd, path.dirname(fullMdPath), isBuild);
                 console.log(`成功读取Markdown文件: ${mdPath}`);
             } catch (err) {
                 console.error(`读取Markdown文件出错: ${mdPath}`, err);
             }
         } else {
-            console.warn(`Markdown文件不存在: ${mdPath}`);
-            
-            // 检查路径是否已包含docs/challenges前缀
-            if (!origPath.startsWith('docs/challenges/')) {
-                // 尝试添加docs/challenges前缀
-                const altPath = path.resolve(rootDir, 'docs/challenges', origPath);
-                console.log(`尝试添加前缀后路径: ${altPath}`);
-                
-                if (fs.existsSync(altPath)) {
-                    try {
-                        const rawMd = fs.readFileSync(altPath, 'utf8');
-                        markdownContent = processMarkdownImages(rawMd, path.dirname(altPath), isBuild);
-                        console.log(`成功使用添加前缀后路径读取Markdown: ${altPath}`);
-                    } catch (err) {
-                        console.error(`读取添加前缀后Markdown文件出错: ${altPath}`, err);
-                    }
-                } else {
-                    console.warn(`添加前缀后Markdown文件仍不存在: ${altPath}`);
-                }
-            }
+            console.warn(`Markdown文件不存在: ${fullMdPath}`);
         }
     } 
     // 否则使用内联的description-markdown
