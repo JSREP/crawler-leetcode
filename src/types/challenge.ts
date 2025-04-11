@@ -33,8 +33,8 @@ export const parseChallenges = (raw: any[]): Challenge[] => {
         // 解析ID，确保它是一个数字
         const id = parseInt(c.id || "0", 10);
         
-        // 确保title有值
-        const title = c.title || c.name || "未命名挑战";
+        // 确保title有值，优先使用name字段
+        const title = c.name || c.title || "未命名挑战";
         
         console.log(`解析挑战: ID=${id}, Title=${title}`);
         
