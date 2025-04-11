@@ -77,7 +77,7 @@ const ChallengeFilters: React.FC<ChallengeFiltersProps> = ({
                 <Tag
                     closable
                     onClose={onRemovePlatform}
-                    style={{ background: '#e6f7ff', borderColor: '#91d5ff' }}
+                    color={selectedPlatform === 'LeetCode' ? 'orange' : 'purple'}
                 >
                     平台: {selectedPlatform}
                 </Tag>

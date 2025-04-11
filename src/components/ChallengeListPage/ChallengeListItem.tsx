@@ -30,6 +30,11 @@ interface ChallengeListItemProps {
      * 点击难度回调
      */
     onDifficultyClick: (difficulty: number) => void;
+    
+    /**
+     * 点击平台回调
+     */
+    onPlatformClick?: (platform: string) => void;
 }
 
 /**
@@ -40,7 +45,8 @@ const ChallengeListItem: React.FC<ChallengeListItemProps> = ({
     selectedTags,
     onClick,
     onTagClick,
-    onDifficultyClick
+    onDifficultyClick,
+    onPlatformClick
 }) => {
     return (
         <Card
@@ -63,6 +69,23 @@ const ChallengeListItem: React.FC<ChallengeListItemProps> = ({
                             onDifficultyClick(difficulty);
                         }}
                     />
+                    
+                    {/* 添加平台标签 */}
+                    {challenge.platform && (
+                        <Tag 
+                            color={challenge.platform === 'LeetCode' ? 'orange' : 'purple'}
+                            style={{ cursor: 'pointer' }}
+                            onClick={(e: React.MouseEvent) => {
+                                e.stopPropagation();
+                                if (challenge.platform && onPlatformClick) {
+                                    onPlatformClick(challenge.platform);
+                                }
+                            }}
+                        >
+                            {challenge.platform}
+                        </Tag>
+                    )}
+                    
                     {challenge.tags.map(tag => (
                         <Tag
                             key={tag}
