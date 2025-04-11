@@ -54,7 +54,7 @@ create-time: 创建时间
 update-time: 更新时间
 # 以下两者二选一
 description-markdown: 内联Markdown内容
-description-markdown-path: docs/challenges/contents/mock_1/description.md
+description-markdown-path: contents/mock_1/description.md
 ```
 
 ### Markdown内容结构
@@ -73,8 +73,8 @@ description-markdown-path: docs/challenges/contents/mock_1/description.md
 生成的文件将保存在以下位置：
 
 - YAML文件：`docs/challenges/mock_data/`
-- Markdown文件：`docs/challenges/markdown/challenge_[id]/description.md`
-- 图片资源：`docs/challenges/markdown/challenge_[id]/images/`
+- Markdown文件：`docs/challenges/contents/mock_[id]/description.md`
+- 图片资源：`docs/challenges/contents/mock_[id]/assets/`
 
 ## 自定义配置
 
