@@ -28,11 +28,30 @@ const GitHubRibbon: React.FC<GitHubRibbonProps> = ({
 }) => {
   return (
     <div className={`github-fork-ribbon-wrapper ${position}`}>
-      <div className="github-fork-ribbon" data-ribbon={text}>
+      <div 
+        className="github-fork-ribbon" 
+        data-ribbon={text}
+        style={{ 
+          cursor: 'pointer',
+          pointerEvents: 'auto' // 覆盖CSS中的pointer-events: none
+        }}
+      >
         <a 
           href={repositoryUrl} 
           target="_blank" 
           rel="noopener noreferrer"
+          style={{ 
+            display: 'block', 
+            width: '100%', 
+            height: '100%', 
+            textDecoration: 'none',
+            zIndex: 9999,
+            pointerEvents: 'auto' // 确保链接可点击
+          }}
+          onClick={(e) => {
+            // 防止事件冒泡，确保链接被点击
+            e.stopPropagation();
+          }}
         >
           {text}
         </a>

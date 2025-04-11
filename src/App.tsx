@@ -7,6 +7,7 @@ import ChallengeDetailPage from './components/ChallengeDetailPage'
 import AboutPage from './components/AboutPage'
 import GitHubRibbon from './components/GitHubRibbon'
 import './gh-fork-ribbon.css';
+import './styles/github-ribbon-fix.css';
 
 const App = () => {
     return (

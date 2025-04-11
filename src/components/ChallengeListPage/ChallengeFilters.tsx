@@ -14,6 +14,11 @@ interface ChallengeFiltersProps {
     selectedDifficulty: string;
     
     /**
+     * 选中的平台
+     */
+    selectedPlatform: string;
+    
+    /**
      * 是否有过滤器被应用
      */
     hasFilters: boolean;
@@ -29,6 +34,11 @@ interface ChallengeFiltersProps {
     onRemoveDifficulty: () => void;
     
     /**
+     * 移除平台过滤的回调
+     */
+    onRemovePlatform: () => void;
+    
+    /**
      * 清除所有过滤器的回调
      */
     onClearAll: () => void;
@@ -40,9 +50,11 @@ interface ChallengeFiltersProps {
 const ChallengeFilters: React.FC<ChallengeFiltersProps> = ({
     selectedTags,
     selectedDifficulty,
+    selectedPlatform,
     hasFilters,
     onRemoveTag,
     onRemoveDifficulty,
+    onRemovePlatform,
     onClearAll
 }) => {
     if (!hasFilters) {
@@ -58,6 +70,16 @@ const ChallengeFilters: React.FC<ChallengeFiltersProps> = ({
                     style={{ background: '#f0f5ff', borderColor: '#adc6ff' }}
                 >
                     难度: <StarRating difficulty={parseInt(selectedDifficulty)} />
+                </Tag>
+            )}
+            
+            {selectedPlatform !== 'all' && (
+                <Tag
+                    closable
+                    onClose={onRemovePlatform}
+                    style={{ background: '#e6f7ff', borderColor: '#91d5ff' }}
+                >
+                    平台: {selectedPlatform}
                 </Tag>
             )}
             

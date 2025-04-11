@@ -17,6 +17,7 @@ const ChallengeListPage = () => {
     const [filters, setFilters] = useState({
         difficulty: 'all',
         tags: [] as string[],
+        platform: 'all'
     });
     const [sortBy, setSortBy] = useState('number');
     const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
@@ -45,11 +46,19 @@ const ChallengeListPage = () => {
         navigate(`/challenges?${newSearchParams.toString()}`);
     };
 
+    // 处理平台筛选
+    const handlePlatformChange = (platform: string) => {
+        const newSearchParams = new URLSearchParams(searchParams);
+        newSearchParams.set('platform', platform);
+        navigate(`/challenges?${newSearchParams.toString()}`);
+    };
+
     // 从URL同步过滤器状态
     useEffect(() => {
         const tags = searchParams.getAll('tags');
         const difficulty = searchParams.get('difficulty') || 'all';
-        setFilters(prev => ({ ...prev, tags, difficulty }));
+        const platform = searchParams.get('platform') || 'all';
+        setFilters(prev => ({ ...prev, tags, difficulty, platform }));
     }, [searchParams]);
 
     // 获取所有可用标签
@@ -57,6 +66,17 @@ const ChallengeListPage = () => {
         const tags = new Set<string>();
         challenges.forEach((challenge: Challenge) => challenge.tags.forEach(tag => tags.add(tag)));
         return Array.from(tags);
+    }, []);
+
+    // 获取所有可用平台
+    const allPlatforms = useMemo(() => {
+        const platforms = new Set<string>();
+        challenges.forEach((challenge: Challenge) => {
+            if (challenge.platform) {
+                platforms.add(challenge.platform);
+            }
+        });
+        return Array.from(platforms);
     }, []);
 
     // 过滤和排序挑战
@@ -71,8 +91,11 @@ const ChallengeListPage = () => {
 
                 const matchesTags = filters.tags.length === 0 ||
                     filters.tags.every(tag => challenge.tags.includes(tag));
+                    
+                const matchesPlatform = filters.platform === 'all' ||
+                    challenge.platform === filters.platform;
 
-                return matchesSearch && matchesDifficulty && matchesTags;
+                return matchesSearch && matchesDifficulty && matchesTags && matchesPlatform;
             })
             .sort((a: Challenge, b: Challenge) => {
                 const orderModifier = sortOrder === 'asc' ? 1 : -1;
@@ -98,7 +121,7 @@ const ChallengeListPage = () => {
     }, [filteredChallenges, pagination]);
 
     // 移除过滤器
-    const handleFilterRemove = (type: 'tag' | 'difficulty', value?: string) => {
+    const handleFilterRemove = (type: 'tag' | 'difficulty' | 'platform', value?: string) => {
         const newSearchParams = new URLSearchParams(searchParams);
 
         if (type === 'tag' && value) {
@@ -107,6 +130,8 @@ const ChallengeListPage = () => {
             newTags.forEach(t => newSearchParams.append('tags', t));
         } else if (type === 'difficulty') {
             newSearchParams.delete('difficulty');
+        } else if (type === 'platform') {
+            newSearchParams.delete('platform');
         }
 
         navigate(`/challenges?${newSearchParams.toString()}`);
@@ -117,6 +142,7 @@ const ChallengeListPage = () => {
         const newSearchParams = new URLSearchParams(searchParams);
         newSearchParams.delete('tags');
         newSearchParams.delete('difficulty');
+        newSearchParams.delete('platform');
         navigate(`/challenges?${newSearchParams.toString()}`);
     };
 
@@ -140,21 +166,26 @@ const ChallengeListPage = () => {
                 <ChallengeFilters
                     selectedTags={filters.tags}
                     selectedDifficulty={filters.difficulty}
-                    hasFilters={filters.tags.length > 0 || filters.difficulty !== 'all'}
+                    selectedPlatform={filters.platform}
+                    hasFilters={filters.tags.length > 0 || filters.difficulty !== 'all' || filters.platform !== 'all'}
                     onRemoveTag={(tag) => handleFilterRemove('tag', tag)}
                     onRemoveDifficulty={() => handleFilterRemove('difficulty')}
+                    onRemovePlatform={() => handleFilterRemove('platform')}
                     onClearAll={handleClearAllFilters}
                 />
 
                 {/* 搜索和控制项 */}
                 <ChallengeControls
                     allTags={allTags}
+                    allPlatforms={allPlatforms}
                     selectedTags={filters.tags}
                     selectedDifficulty={filters.difficulty}
+                    selectedPlatform={filters.platform}
                     sortBy={sortBy}
                     sortOrder={sortOrder}
                     onTagsChange={handleTagsChange}
                     onDifficultyChange={handleDifficultyClick}
+                    onPlatformChange={handlePlatformChange}
                     onSortByChange={setSortBy}
                     onSortOrderChange={() => setSortOrder(prev => prev === 'asc' ? 'desc' : 'asc')}
                     onSearch={setSearchQuery}
