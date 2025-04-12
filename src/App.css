@@ -43,12 +43,23 @@
 }
 
 /* 内容区域与导航栏对齐 */
-.navbar-container,
+.navbar-container {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
 .ChallengeListPage,
 .HomePage {
   max-width: 80%;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 16px; /* 统一内边距 */
+}
+
+/* 搜索框和内容区域左对齐 */
+.search-box-container,
+.filter-controls-container,
+.challenge-list-container {
+  padding-left: 16px; /* 确保内容区域的左内边距一致 */
 }
 
 /* 防止菜单项显示为省略号 */
