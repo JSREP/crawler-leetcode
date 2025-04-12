@@ -46,9 +46,15 @@
 .navbar-container,
 .ChallengeListPage,
 .HomePage {
-  max-width: 60%;
+  max-width: 80%;
   margin: 0 auto;
   padding: 0 24px;
+}
+
+/* 防止菜单项显示为省略号 */
+.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item,
+.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu {
+  padding: 0 20px;
 }
 
 .ant-card {

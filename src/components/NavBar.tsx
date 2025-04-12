@@ -49,7 +49,7 @@ const NavBar = () => {
                 alignItems: 'center',
                 height: '100%',
                 justifyContent: 'space-between',
-                maxWidth: '60%',
+                maxWidth: '80%', // 增加导航栏宽度以容纳英文菜单
                 width: '100%',
                 margin: '0 auto',
                 padding: '0 24px'
@@ -57,13 +57,15 @@ const NavBar = () => {
                 <div style={{
                     display: 'flex',
                     alignItems: 'center',
+                    flexWrap: 'nowrap', // 防止菜单项换行
                 }}>
                     {/* Logo */}
                     <div style={{ 
                         display: 'flex', 
                         alignItems: 'center',
                         height: '100%',
-                        marginRight: '40px'
+                        marginRight: '40px',
+                        flexShrink: 0 // 防止Logo区域被压缩
                     }}>
                         <Link to="/" style={{ display: 'flex', alignItems: 'center' }}>
                             <img 
@@ -92,8 +94,11 @@ const NavBar = () => {
                             fontSize: '16px',
                             fontWeight: 500,
                             lineHeight: '70px',
-                            height: '70px'
+                            height: '70px',
+                            minWidth: '300px', // 确保菜单有最小宽度
+                            overflow: 'visible' // 确保菜单不会被截断
                         }}
+                        disabledOverflow={true} // 禁用溢出处理，防止菜单项变为省略号
                     />
                 </div>
 
@@ -103,7 +108,8 @@ const NavBar = () => {
                     style={{
                         width: 120,
                         background: 'transparent',
-                        fontSize: '14px'
+                        fontSize: '14px',
+                        flexShrink: 0 // 防止语言选择器被压缩
                     }}
                     variant="borderless"
                     onChange={handleLanguageChange}
