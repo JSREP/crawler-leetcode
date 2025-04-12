@@ -40,8 +40,6 @@ const NavBar = () => {
             background: '#fff',
             boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)',
             overflow: 'visible',  // 修复溢出裁剪问题
-            display: 'flex',
-            justifyContent: 'center',
             padding: '0'
         }}>
             <div style={{
@@ -49,16 +47,21 @@ const NavBar = () => {
                 alignItems: 'center',
                 height: '100%',
                 justifyContent: 'space-between',
-                position: 'relative',  // 为徽标提供定位上下文
                 maxWidth: '1200px',
                 width: '100%',
+                margin: '0 auto',
                 padding: '0 24px'
             }}>
-                <Space size="middle" align="center">
+                <div style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                }}>
+                    {/* Logo */}
                     <div style={{ 
                         display: 'flex', 
                         alignItems: 'center',
-                        height: '100%'
+                        height: '100%',
+                        marginRight: '32px'
                     }}>
                         <img 
                             src={faviconLogo} 
@@ -74,46 +77,34 @@ const NavBar = () => {
                             LeetCode Crawler
                         </Title>
                     </div>
-                </Space>
 
-                <div style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    flex: '1',
-                    marginLeft: '24px'
-                }}>
+                    {/* 导航菜单 */}
                     <Menu
                         mode="horizontal"
                         selectedKeys={[location.pathname]}
                         items={items}
                         style={{
                             borderBottom: 'none',
-                            justifyContent: 'center', // 菜单项居中
                             flex: 'none',
-                            minWidth: '300px' // 防止菜单挤压
                         }}
                     />
                 </div>
 
-                <Space size="middle">
-                    {/* 语言选择器 */}
-                    <Select
-                        defaultValue={localStorage.getItem('language') || 'en'}
-                        style={{
-                            width: 120,
-                            background: 'transparent',
-                            border: '1px solid #e8e8e8',
-                            borderRadius: '4px',
-                            marginRight: '16px' // 减少右侧间距
-                        }}
-                        variant="borderless"
-                        onChange={handleLanguageChange}
-                    >
-                        <Option value="zh">简体中文</Option>
-                        <Option value="en">English</Option>
-                    </Select>
-                </Space>
+                {/* 语言选择器 */}
+                <Select
+                    defaultValue={localStorage.getItem('language') || 'en'}
+                    style={{
+                        width: 120,
+                        background: 'transparent',
+                        border: '1px solid #e8e8e8',
+                        borderRadius: '4px'
+                    }}
+                    variant="borderless"
+                    onChange={handleLanguageChange}
+                >
+                    <Option value="zh">简体中文</Option>
+                    <Option value="en">English</Option>
+                </Select>
             </div>
         </Header>
     );
