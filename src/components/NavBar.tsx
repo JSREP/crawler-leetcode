@@ -76,15 +76,31 @@ const NavBar = () => {
                     {/* Logo区域，确保与内容区域左边缘对齐 */}
                     <Col className="logo-container" style={{ paddingLeft: '0px' }}>
                         <Link to="/" style={{ display: 'flex', alignItems: 'center', height: '70px' }}>
-                            <img 
-                                src={logoPng} 
-                                alt="Web Crawler Challenge Platform" 
-                                style={{
-                                    height: '46px',
-                                    width: 'auto',
-                                    marginRight: '12px'
-                                }}
-                            />
+                            <div style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                padding: 0,
+                                marginRight: '12px',
+                                position: 'relative',
+                                overflow: 'hidden',
+                                borderRadius: '8px',
+                                height: '46px',
+                                width: '46px',
+                                background: 'linear-gradient(145deg, #ffffff 60%, rgba(255,255,255,0))'
+                            }}>
+                                <img 
+                                    src={logoPng} 
+                                    alt="Web Crawler Challenge Platform" 
+                                    style={{
+                                        height: '46px',
+                                        width: '46px',
+                                        objectFit: 'contain',
+                                        padding: 0,
+                                        margin: 0
+                                    }}
+                                />
+                            </div>
                             <Title level={3} style={{margin: 0, color: '#2c3e50', whiteSpace: 'nowrap'}}>
                                 Crawler LeetCode
                             </Title>
