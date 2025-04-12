@@ -7,6 +7,8 @@ import { useTranslation } from 'react-i18next';
 import { changeLanguage } from '../i18n';
 // @ts-ignore
 import faviconLogo from '../assets/favicon.png';
+// @ts-ignore
+import logoPng from '../assets/logo.png';
 
 const {Header} = Layout;
 const {Title} = Typography;
@@ -73,7 +75,7 @@ const NavBar = () => {
                     <Col className="logo-container" style={{ paddingLeft: '0px' }}>
                         <Link to="/" style={{ display: 'flex', alignItems: 'center', height: '70px' }}>
                             <img 
-                                src={faviconLogo} 
+                                src={logoPng} 
                                 alt="Crawler LeetCode" 
                                 style={{
                                     height: '46px',
