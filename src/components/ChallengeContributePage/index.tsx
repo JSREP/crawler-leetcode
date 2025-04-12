@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
-import { Form, Switch, message, Alert, Input } from 'antd';
+import { Form, Switch, message, Alert, Input, Button } from 'antd';
 import * as YAML from 'yaml';
 import { challenges } from '../ChallengeListPage/ChallengeData';
 
@@ -23,6 +23,9 @@ import FormSubmitSection from './components/FormSubmitSection';
 
 // 导入样式
 import { styles } from './styles';
+
+// localStorage键名
+const STORAGE_KEY = 'challenge_contribute_form_data';
 
 /**
  * 挑战贡献页面组件
@@ -52,11 +55,29 @@ const ChallengeContributePage: React.FC = () => {
     isExpired: false,
   });
 
+  // 从localStorage加载保存的表单数据
+  useEffect(() => {
+    try {
+      const savedData = localStorage.getItem(STORAGE_KEY);
+      if (savedData) {
+        const parsedData = JSON.parse(savedData) as ChallengeFormData;
+        setInitialFormValues(parsedData);
+        form.setFieldsValue(parsedData);
+        console.log('已从本地存储恢复表单数据');
+      }
+    } catch (error) {
+      console.error('从本地存储恢复数据失败:', error);
+    }
+  }, [form]);
+
   // 初始化下一个可用的ID
   useEffect(() => {
-    const nextId = calculateNextId();
-    form.setFieldsValue({ id: nextId });
-  }, [form]);
+    // 只有当localStorage中没有保存的ID时，才使用自动计算的ID
+    if (!initialFormValues.id) {
+      const nextId = calculateNextId();
+      form.setFieldsValue({ id: nextId });
+    }
+  }, [form, initialFormValues.id]);
 
   // 计算下一个可用ID
   const calculateNextId = (): number => {
@@ -68,8 +89,16 @@ const ChallengeContributePage: React.FC = () => {
   };
 
   // 表单值变更处理
-  const handleFormValueChange = () => {
+  const handleFormValueChange = (changedValues: any, allValues: any) => {
     setIsFormDirty(true);
+    
+    // 将表单数据保存到localStorage
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(allValues));
+      console.log('表单数据已保存到本地存储');
+    } catch (error) {
+      console.error('保存数据到本地存储失败:', error);
+    }
   };
 
   // 生成YAML数据
@@ -96,6 +125,26 @@ const ChallengeContributePage: React.FC = () => {
         .catch(() => {
           message.error('复制失败，请手动复制');
         });
+    }
+  };
+
+  // 清除保存的表单数据
+  const clearSavedData = () => {
+    try {
+      localStorage.removeItem(STORAGE_KEY);
+      message.success('已清除本地存储的表单数据');
+      // 重置表单
+      form.resetFields();
+      const nextId = calculateNextId();
+      form.setFieldsValue({ 
+        id: nextId,
+        platform: 'Web',
+        isExpired: false
+      });
+      setIsFormDirty(false);
+    } catch (error) {
+      console.error('清除本地存储的表单数据失败:', error);
+      message.error('清除数据失败');
     }
   };
 
@@ -133,6 +182,9 @@ const ChallengeContributePage: React.FC = () => {
         // 显示成功消息
         message.success('挑战已成功提交！');
         
+        // 清除本地存储的表单数据
+        localStorage.removeItem(STORAGE_KEY);
+        
         // 3秒后重置成功状态
         setTimeout(() => {
           setIsSubmitSuccess(false);
@@ -149,7 +201,17 @@ const ChallengeContributePage: React.FC = () => {
     <div style={styles.container}>
       <Alert
         message="注意事项"
-        description="请填写完整的挑战信息，以便其他用户理解和解决此挑战。所有标记为必填的字段都必须填写。"
+        description={
+          <div>
+            <p>请填写完整的挑战信息，以便其他用户理解和解决此挑战。所有标记为必填的字段都必须填写。</p>
+            <p>表单数据会自动保存到浏览器本地存储，刷新页面后可以继续编辑。</p>
+            <div style={{ marginTop: 8 }}>
+              <Button size="small" danger onClick={clearSavedData}>
+                清除已保存的数据
+              </Button>
+            </div>
+          </div>
+        }
         type="info"
         showIcon
         style={styles.alert}
