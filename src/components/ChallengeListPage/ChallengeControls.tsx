@@ -132,7 +132,16 @@ const ChallengeControls: React.FC<ChallengeControlsProps> = ({
     
     // 标签选择菜单
     const tagMenu = (
-        <div style={{ padding: '8px', maxHeight: '400px', overflowY: 'auto', minWidth: '200px' }}>
+        <div style={{ 
+            padding: '12px', 
+            maxHeight: '400px', 
+            overflowY: 'auto', 
+            minWidth: '200px',
+            backgroundColor: '#fff',
+            boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)',
+            borderRadius: '4px',
+            border: '1px solid #f0f0f0'
+        }}>
             <Checkbox.Group 
                 options={allTags.map(tag => ({ label: tag, value: tag }))} 
                 value={selectedTags}
