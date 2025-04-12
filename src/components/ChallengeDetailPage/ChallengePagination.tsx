@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Button, Tooltip } from 'antd';
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
+import { useTranslation } from 'react-i18next';
 import { Challenge } from '../../types/challenge';
 
 interface ChallengePaginationProps {
@@ -35,27 +36,29 @@ const ChallengePagination: React.FC<ChallengePaginationProps> = ({
     onPrevClick,
     onNextClick
 }) => {
+    const { t } = useTranslation();
+    
     return (
         <div style={{ display: 'flex', justifyContent: 'space-between', margin: '20px 0' }}>
-            <Tooltip title="键盘左方向键 ←">
+            <Tooltip title={t('challenge.pagination.leftKeyHint')}>
                 <Button 
                     type="default" 
                     icon={<LeftOutlined />} 
                     onClick={onPrevClick} 
                     disabled={!prevChallenge}
                 >
-                    上一题 <span style={{ fontSize: '12px', opacity: 0.8 }}>(←)</span>
+                    {t('challenge.pagination.previous')} <span style={{ fontSize: '12px', opacity: 0.8 }}>(←)</span>
                 </Button>
             </Tooltip>
             
-            <Tooltip title="键盘右方向键 →">
+            <Tooltip title={t('challenge.pagination.rightKeyHint')}>
                 <Button 
                     type="default" 
                     icon={<RightOutlined />} 
                     onClick={onNextClick} 
                     disabled={!nextChallenge}
                 >
-                    下一题 <span style={{ fontSize: '12px', opacity: 0.8 }}>(→)</span>
+                    {t('challenge.pagination.next')} <span style={{ fontSize: '12px', opacity: 0.8 }}>(→)</span>
                 </Button>
             </Tooltip>
         </div>

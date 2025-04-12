@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Alert } from 'antd';
+import { useTranslation } from 'react-i18next';
 
 interface ChallengeExpiredAlertProps {
     /**
@@ -13,14 +14,16 @@ interface ChallengeExpiredAlertProps {
  * 当题目链接已失效时显示警告横幅
  */
 const ChallengeExpiredAlert: React.FC<ChallengeExpiredAlertProps> = ({ isExpired = false }) => {
+    const { t } = useTranslation();
+    
     if (!isExpired) {
         return null;
     }
     
     return (
         <Alert
-            message="警告：此挑战题目链接已失效"
-            description="该链接可能已经被移除或已更改。请尝试搜索最新版本或联系管理员更新此题目。"
+            message={t('challenge.expired.title')}
+            description={t('challenge.expired.description')}
             type="error"
             showIcon
             banner
