@@ -2,21 +2,21 @@
 
 ## 中文提示词
 
-创建一个现代科技风格的网站横幅，主题为"爬虫技术挑战平台"。画面中心展示一个网络蜘蛛形象，正在网络结构上爬行采集数据。背景包含代码片段、数据流和多样化的网站界面元素。配色方案以深蓝色和科技感紫色为主，辅以明亮的数据流光效。整体效果需要专业、动感且富有技术感，传达数据采集与反爬突破的概念。图像分辨率为1200x400像素，适合网站顶部横幅使用。
+创建一个简洁现代的网站导航横幅，主题为"爬虫技术挑战平台"。设计一个扁平化、最小化的几何蜘蛛图标，位于左侧。使用简单的网络线条和数据流元素作为背景装饰，但保持整体简洁。配色方案为深蓝色到紫色渐变，辅以少量亮点。要确保视觉元素简单明了，适合在导航栏有限空间中展示。图像比例为3:1，推荐尺寸为300x100像素。
 
 ## 英文提示词
 
-Create a modern tech-style website banner for a "Web Crawler Challenge Platform". The center features a digital spider figure crawling on network structures and collecting data. The background includes code snippets, data streams, and diverse website interface elements. Use a color scheme dominated by deep blue and tech-inspired purple, complemented by bright data flow light effects. The overall look should be professional, dynamic, and technically sophisticated, conveying the concept of data collection and anti-crawler breakthrough. Image resolution: 1200x400 pixels, suitable for website header banner use.
+Create a clean, modern navigation banner for a "Web Crawler Challenge Platform". Design a flat, minimalist geometric spider icon positioned on the left side. Use simple network lines and data flow elements as background decoration while maintaining overall simplicity. Color scheme should be a gradient from deep blue to purple with minimal bright accents. Ensure visual elements are simple and clear, suitable for display in the limited space of a navigation bar. Image ratio 3:1, recommended size 300x100 pixels.
 
 ## 风格参考关键词
 
-- 数字科技
-- 网络爬虫
-- 代码可视化
-- 数据流
-- 网格结构
-- 未来感
-- 高清晰度
-- 专业UI设计
-- 网络安全
-- 算法可视化
+- 极简设计
+- 导航栏横幅
+- 扁平化图标
+- 简洁线条
+- 蓝紫渐变
+- 低密度元素
+- 几何图形
+- 清晰易辨
+- 小尺寸优化
+- 水平布局
