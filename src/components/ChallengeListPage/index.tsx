@@ -24,8 +24,8 @@ const ChallengeListPage = () => {
         tags: [] as string[],
         platform: 'all'
     });
-    const [sortBy, setSortBy] = useState('number');
-    const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
+    const [sortBy, setSortBy] = useState('updateTime');
+    const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc');
     const [searchQuery, setSearchQuery] = useState('');
     const [pagination, setPagination] = useState({ current: 1, pageSize: 10 });
     const navigate = useNavigate();
