@@ -271,6 +271,7 @@ const HomePage = () => {
                 onDifficultyClick={handleDifficultyClick}
                 onPlatformClick={handlePlatformClick}
                 onChallengeClick={(id) => navigate(`/challenge/${id}`)}
+                hidePagination={true}
               />
               <div style={{ textAlign: 'center', marginTop: '24px' }}>
                 <Button 
@@ -302,6 +303,7 @@ const HomePage = () => {
                 onDifficultyClick={handleDifficultyClick}
                 onPlatformClick={handlePlatformClick}
                 onChallengeClick={(id) => navigate(`/challenge/${id}`)}
+                hidePagination={true}
               />
               <div style={{ textAlign: 'center', marginTop: '24px' }}>
                 <Button 

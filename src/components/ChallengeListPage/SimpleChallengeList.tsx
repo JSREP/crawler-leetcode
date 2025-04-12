@@ -18,6 +18,7 @@ interface SimpleChallengeListProps {
   onDifficultyClick: (difficulty: string) => void;
   onPlatformClick: (platform: string) => void;
   onChallengeClick: (id: string) => void;
+  hidePagination?: boolean;
 }
 
 const SimpleChallengeList: FC<SimpleChallengeListProps> = ({
@@ -29,7 +30,8 @@ const SimpleChallengeList: FC<SimpleChallengeListProps> = ({
   onTagClick,
   onDifficultyClick,
   onPlatformClick,
-  onChallengeClick
+  onChallengeClick,
+  hidePagination = false
 }) => {
   // 从本地存储加载上次使用的分页大小
   useEffect(() => {
@@ -71,15 +73,17 @@ const SimpleChallengeList: FC<SimpleChallengeListProps> = ({
         )}
       />
 
-      {/* 分页 */}
-      <Pagination
-        current={pagination.current}
-        pageSize={pagination.pageSize}
-        total={total}
-        showSizeChanger
-        onChange={handlePaginationChange}
-        style={{ marginTop: 24, textAlign: 'center' }}
-      />
+      {/* 分页 - 仅在hidePagination为false时显示 */}
+      {!hidePagination && (
+        <Pagination
+          current={pagination.current}
+          pageSize={pagination.pageSize}
+          total={total}
+          showSizeChanger
+          onChange={handlePaginationChange}
+          style={{ marginTop: 24, textAlign: 'center' }}
+        />
+      )}
     </>
   );
 };
