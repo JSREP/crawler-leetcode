@@ -242,17 +242,21 @@ function collectYAMLChallenges(dirPath: string, rootDir: string, isBuild = false
                 const content = fs.readFileSync(fullPath, 'utf8');
                 const parsed = YAML.parse(content);
 
+                // 计算YAML文件相对于根目录的路径
+                const yamlRelativePath = path.relative(rootDir, fullPath);
+                
                 // 处理挑战数据
                 if (parsed.challenges && Array.isArray(parsed.challenges)) {
                     // 处理多个挑战的数组格式
                     console.log(`解析包含挑战数组的YAML文件: ${fullPath}`);
                     parsed.challenges.forEach((challenge: any) => {
-                        challenges.push(processChallengeData(challenge, rootDir, isBuild));
+                        // 传递YAML文件路径
+                        challenges.push(processChallengeData(challenge, rootDir, isBuild, yamlRelativePath));
                     });
                 } else if (parsed.id) {
                     // 处理单个挑战格式
                     console.log(`解析单个挑战YAML文件: ${fullPath}`);
-                    challenges.push(processChallengeData(parsed, rootDir, isBuild));
+                    challenges.push(processChallengeData(parsed, rootDir, isBuild, yamlRelativePath));
                 } else {
                     console.warn(`无法识别的YAML格式，没有找到challenges数组或id字段: ${fullPath}`);
                 }
@@ -265,7 +269,7 @@ function collectYAMLChallenges(dirPath: string, rootDir: string, isBuild = false
 }
 
 // 处理单个挑战数据
-function processChallengeData(challenge: any, rootDir: string, isBuild: boolean): any {
+function processChallengeData(challenge: any, rootDir: string, isBuild: boolean, yamlPath: string = ''): any {
     // 处理Markdown内容
     let markdownContent = '';
     let markdownContentEN = '';
@@ -369,9 +373,16 @@ function processChallengeData(challenge: any, rootDir: string, isBuild: boolean)
     // 确保id是字符串或数字，并确保title有一个有效值
     const challengeId = challenge.id || challenge.number || '0';
     const challengeTitle = challenge.name || challenge.title || '未命名挑战';
-    const challengeTitleEN = challenge.name_en || '';
+    const challengeTitleEN = challenge.name_en || challenge['name_en'] || '';
     
     console.log(`处理挑战: ID=${challengeId}, Title=${challengeTitle}, EN Title=${challengeTitleEN}`);
+    console.log('YAML原始数据:', {
+        'challenge.id': challenge.id,
+        'challenge.name': challenge.name,
+        'challenge.name_en': challenge.name_en,
+        'challenge["name_en"]': challenge['name_en'],
+        'challenge.title': challenge.title
+    });
 
     // 返回原始挑战数据，不进行类型转换
     // 稍后会在parseChallenges中处理
@@ -382,6 +393,7 @@ function processChallengeData(challenge: any, rootDir: string, isBuild: boolean)
         title: challengeTitle,
         name: challengeTitle,
         name_en: challengeTitleEN,
+        titleEN: challengeTitleEN, // 直接添加titleEN字段方便后续处理
         difficulty: challenge.difficulty || 1,
         'difficulty-level': challenge.difficulty || 1,
         tags: challenge.tags || [],
@@ -400,7 +412,8 @@ function processChallengeData(challenge: any, rootDir: string, isBuild: boolean)
         'description-markdown': challenge['description-markdown'] || '',
         'description-markdown_en': challenge['description-markdown_en'] || '',
         descriptionMarkdown: markdownContent, // 构建时将Markdown内容统一赋值给descriptionMarkdown字段
-        descriptionMarkdownEN: markdownContentEN // 英文Markdown内容
+        descriptionMarkdownEN: markdownContentEN, // 英文Markdown内容
+        sourceFile: yamlPath // 添加源文件路径
     };
 }
 
