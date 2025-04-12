@@ -15,7 +15,7 @@ interface ChallengeHeaderProps {
  */
 const ChallengeHeader: React.FC<ChallengeHeaderProps> = ({ challenge }) => {
     const navigate = useNavigate();
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
     
     // 处理ID点击，可以跳转到列表页
     const handleIdClick = () => {
@@ -25,6 +25,9 @@ const ChallengeHeader: React.FC<ChallengeHeaderProps> = ({ challenge }) => {
     // 确保id是一个有效值
     const displayId = challenge.id !== undefined ? challenge.id : '?';
     
+    // 根据当前语言选择显示标题
+    const displayTitle = i18n.language === 'en' && challenge.titleEN ? challenge.titleEN : challenge.title;
+    
     return (
         <Space align="center">
             <IdTag 
@@ -32,7 +35,7 @@ const ChallengeHeader: React.FC<ChallengeHeaderProps> = ({ challenge }) => {
                 clickable
                 onClick={handleIdClick}
             />
-            <Title level={2} style={{ margin: 0 }}>{challenge.title}</Title>
+            <Title level={2} style={{ margin: 0 }}>{displayTitle}</Title>
             {challenge.isExpired && (
                 <Badge status="error" text={t('challenge.expired.linkStatus')} />
             )}
