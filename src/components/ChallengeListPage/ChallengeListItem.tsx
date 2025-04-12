@@ -1,5 +1,6 @@
 import { Button, Card, Space, Typography } from 'antd';
 import * as React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Challenge } from '../../types/challenge';
 import StarRating from '../StarRating';
 import IdTag from '../IdTag';
@@ -51,6 +52,8 @@ const ChallengeListItem: React.FC<ChallengeListItemProps> = ({
     onDifficultyClick,
     onPlatformClick
 }) => {
+    const { t } = useTranslation();
+    
     // 确保id是一个有效值
     const displayId = challenge.id !== undefined ? challenge.id : '?';
     
@@ -96,10 +99,10 @@ const ChallengeListItem: React.FC<ChallengeListItemProps> = ({
                         />
                     ))}
                     <Text type="secondary">
-                        创建时间: {challenge.createTime.toLocaleDateString()}
+                        {t('challenges.dates.created')}: {challenge.createTime.toLocaleDateString()}
                     </Text>
                     <Text type="secondary">
-                        更新时间: {challenge.updateTime.toLocaleDateString()}
+                        {t('challenges.dates.updated')}: {challenge.updateTime.toLocaleDateString()}
                     </Text>
                 </Space>
 
@@ -110,7 +113,7 @@ const ChallengeListItem: React.FC<ChallengeListItemProps> = ({
                         target="_blank"
                         onClick={(e: React.MouseEvent) => e.stopPropagation()}
                     >
-                        去试试 ➔
+                        {t('challenge.detail.startChallenge')} ➔
                     </Button>
                 </div>
             </Space>
