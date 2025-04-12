@@ -21,6 +21,7 @@ export type Challenge = {
     externalLink: string;
     platform?: string;  // 添加平台字段
     isExpired?: boolean;  // 添加链接失效状态字段
+    ignored?: boolean;  // 添加忽略标记字段
     descriptionMarkdown: string;  // 默认中文Markdown描述
     descriptionMarkdownEN?: string; // 英文Markdown描述
     sourceFile?: string;  // 源YAML文件路径
@@ -63,6 +64,23 @@ export const parseChallenges = (raw: any[]): Challenge[] => {
         // 获取英文描述内容，优先使用直接内容，其次是文件路径内容
         const descriptionMarkdownEN = c.descriptionMarkdownEN || c['description-markdown_en'] || "";
         
+        // 解析difficulty字段，确保是一个1-5之间的数字
+        let difficulty = 1; // 默认值
+        if (c['difficulty-level'] !== undefined) {
+            difficulty = parseInt(String(c['difficulty-level']), 10);
+        } else if (c.difficulty !== undefined) {
+            difficulty = parseInt(String(c.difficulty), 10);
+        }
+        
+        // 确保值在1-5之间
+        difficulty = Math.max(1, Math.min(5, difficulty));
+        
+        console.log(`解析难度: ID=${id}, difficulty=${difficulty}, 原始数据:`, {
+            'c.difficulty': c.difficulty,
+            'c["difficulty-level"]': c['difficulty-level'],
+            '解析后difficulty': difficulty
+        });
+        
         return {
             id,
             idAlias: c['id-alias'] || c.id?.toString() || "", 
@@ -71,7 +89,7 @@ export const parseChallenges = (raw: any[]): Challenge[] => {
             name,
             titleEN,
             name_en,
-            difficulty: parseInt(c.difficulty || c['difficulty-level'] || "1", 10),
+            difficulty: difficulty, // 使用正确解析的难度值
             tags: c.tags || [],
             solutions: (c.solutions || []).map((s: any) => ({
                 title: s.title || "",
@@ -84,6 +102,7 @@ export const parseChallenges = (raw: any[]): Challenge[] => {
             externalLink: c.externalLink || "",
             platform: c.platform || "",
             isExpired: c['is-expired'] || false,
+            ignored: c.ignored || false,
             descriptionMarkdown,
             descriptionMarkdownEN,
             sourceFile: c.sourceFile || ""

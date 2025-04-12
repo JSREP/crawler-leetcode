@@ -31,10 +31,15 @@ const ChallengeListPage = () => {
     const navigate = useNavigate();
     const [searchParams, setSearchParams] = useSearchParams();
 
+    // 过滤掉被标记为忽略的挑战
+    const visibleChallenges = useMemo(() => {
+        return challenges.filter(challenge => !challenge.ignored);
+    }, [challenges]);
+
     // 初始化搜索服务
     useEffect(() => {
-        searchService.initialize(challenges);
-    }, []);
+        searchService.initialize(visibleChallenges);
+    }, [visibleChallenges]);
 
     // 从本地存储加载筛选和排序选项
     useEffect(() => {
@@ -174,25 +179,25 @@ const ChallengeListPage = () => {
     // 获取所有可用标签
     const allTags = useMemo(() => {
         const tags = new Set<string>();
-        challenges.forEach((challenge: Challenge) => challenge.tags.forEach(tag => tags.add(tag)));
+        visibleChallenges.forEach((challenge: Challenge) => challenge.tags.forEach(tag => tags.add(tag)));
         return Array.from(tags);
-    }, []);
+    }, [visibleChallenges]);
 
     // 获取所有可用平台
     const allPlatforms = useMemo(() => {
         const platforms = new Set<string>();
-        challenges.forEach((challenge: Challenge) => {
+        visibleChallenges.forEach((challenge: Challenge) => {
             if (challenge.platform) {
                 platforms.add(challenge.platform);
             }
         });
         return Array.from(platforms);
-    }, []);
+    }, [visibleChallenges]);
 
     // 使用Fuse.js过滤和排序挑战
     const filteredChallenges = useMemo(() => {
         // 使用搜索服务过滤
-        const filtered = searchService.filterChallenges(challenges, {
+        const filtered = searchService.filterChallenges(visibleChallenges, {
             tags: filters.tags,
             difficulty: filters.difficulty,
             platform: filters.platform,
@@ -215,7 +220,7 @@ const ChallengeListPage = () => {
                     return 0;
             }
         });
-    }, [filters, searchQuery, sortBy, sortOrder]);
+    }, [filters, searchQuery, sortBy, sortOrder, visibleChallenges]);
 
     // 分页数据
     const paginatedData = useMemo(() => {

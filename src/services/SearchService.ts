@@ -80,9 +80,12 @@ class SearchService {
   ): Challenge[] {
     let filteredList = challenges;
 
+    // 确保已忽略的挑战不会包含在结果中
+    filteredList = filteredList.filter(challenge => !challenge.ignored);
+
     // 如果有搜索查询，先进行搜索
     if (filters.query && filters.query.trim()) {
-      this.initialize(challenges);
+      this.initialize(filteredList);
       filteredList = this.search(filters.query);
     }
 

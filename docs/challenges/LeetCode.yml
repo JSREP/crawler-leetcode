@@ -1,0 +1,50 @@
+version: 1
+challenges:
+  - id: 101
+    id-alias: leetcode-crawler
+    tags:
+      - js-reverse
+      - graphql
+      - rate-limit
+      - anti-crawler
+    platform: Web
+    name: LeetCode抓取挑战
+    name_en: LeetCode Crawler Challenge
+    difficulty-level: 3
+    description-markdown: |
+      LeetCode是一个广受欢迎的在线编程学习平台，提供了大量的编程题目和讨论区。抓取LeetCode的题目、提交、讨论等内容面临多种反爬机制。
+
+      ## 特点
+
+      - **GraphQL API**：LeetCode使用GraphQL API作为主要数据接口，需要构造正确的查询语句
+      - **登录验证**：部分内容需要登录才能访问，包括完整的题目描述、提交记录等
+      - **速率限制**：对请求频率有严格限制，过快的请求会被临时封禁
+      - **防盗链**：图片等资源有referer检查，直接请求可能会被拒绝
+      - **Cookie验证**：依赖多个Cookie字段进行会话验证和CSRF防护
+
+      ## 破解难点
+
+      - 需要正确分析和构造GraphQL查询参数
+      - 登录流程包含多重验证，需要模拟浏览器行为
+      - 需要实现有效的请求频率控制和错误重试机制
+      - 一些题目内容通过JavaScript动态加载和渲染
+      - 接口返回格式可能随时变化，需要及时调整抓取策略
+
+      ## 典型抓取场景
+
+      1. 抓取题目列表和题目详情
+      2. 获取用户提交历史和代码
+      3. 爬取题目讨论和解答
+      4. 提取题目标签和分类信息
+      5. 获取竞赛历史和排名数据
+
+      需要注意的是，LeetCode的API可能会定期更新，抓取策略也需要相应调整。建议在抓取时遵循平台的robots.txt规则和使用条款。
+    base64-url: aHR0cHM6Ly9sZWV0Y29kZS5jb20v
+    is-expired: false
+    solutions:
+      - title: 使用Python和requests-html抓取LeetCode
+        url: https://github.com/yourusername/leetcode-crawler
+        source: GitHub
+        author: Anonymous
+    create-time: 2023-11-15 08:30:00
+    update-time: 2023-11-15 08:30:00 
