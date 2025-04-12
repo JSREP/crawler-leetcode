@@ -154,6 +154,32 @@ const zhTranslations = {
             loadFailed: '加载挑战失败'
         }
     },
+    search: {
+        recentSearches: '最近搜索',
+        clear: '清除',
+        tooltip: {
+            title: '高级搜索提示：',
+            allFields: '搜索题目标题、描述、标签等所有字段',
+            fuzzySearch: '支持模糊搜索和拼写容错',
+            multiKeywords: {
+                text: '多关键词',
+                example: '动态规划 数组'
+            },
+            exactMatch: {
+                text: '精确匹配',
+                example: '=动态规划'
+            },
+            exclude: {
+                text: '排除词',
+                example: '!二叉树'
+            },
+            prefix: {
+                text: '前缀匹配',
+                example: '链^'
+            },
+            idSearch: '直接输入题号进行搜索'
+        }
+    },
     common: {
         loading: '加载中...'
     }
