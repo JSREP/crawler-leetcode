@@ -49,10 +49,10 @@ const NavBar = () => {
                 alignItems: 'center',
                 height: '100%',
                 justifyContent: 'space-between',
-                maxWidth: '1200px',
+                maxWidth: '60%',
                 width: '100%',
                 margin: '0 auto',
-                padding: '0 16px'
+                padding: '0 24px'
             }}>
                 <div style={{
                     display: 'flex',
