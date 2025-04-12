@@ -1,12 +1,16 @@
 import * as React from 'react';
-import { Button, Modal } from 'antd';
-import { CopyOutlined } from '@ant-design/icons';
+import { Button, Modal, Space, message } from 'antd';
+import { CopyOutlined, GithubOutlined, BugOutlined } from '@ant-design/icons';
 import { Light as SyntaxHighlighter } from 'react-syntax-highlighter';
 import yaml from 'react-syntax-highlighter/dist/esm/languages/hljs/yaml';
 import { vs } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 // 注册YAML语言
 SyntaxHighlighter.registerLanguage('yaml', yaml);
+
+// GitHub仓库信息
+const GITHUB_REPO = 'JSREP/crawler-leetcode';
+const GITHUB_BASE_URL = `https://github.com/${GITHUB_REPO}`;
 
 // 自定义高亮主题
 const highlightTheme = {
@@ -48,16 +52,98 @@ const YamlPreviewSection: React.FC<YamlPreviewSectionProps> = ({
     setIsModalVisible(false);
   };
 
+  // 提取挑战名称，用于PR和Issue标题
+  const extractChallengeName = (): string => {
+    try {
+      // 尝试从YAML中提取name字段
+      const match = yamlOutput.match(/name:\s*(.+)/);
+      if (match && match[1]) {
+        return match[1].trim();
+      }
+    } catch (e) {
+      console.error('无法提取挑战名称', e);
+    }
+    return '新挑战';
+  };
+
+  // 创建Pull Request
+  const createPullRequest = () => {
+    if (!yamlOutput) {
+      message.error('请先预览YAML生成内容');
+      return;
+    }
+
+    const challengeName = extractChallengeName();
+    
+    // 准备PR内容
+    const title = encodeURIComponent(`新增题目: ${challengeName}`);
+    const body = encodeURIComponent(
+      `## 新增题目\n\n` +
+      `提交一个新的挑战题目。\n\n` +
+      `### YAML代码\n\n` +
+      `\`\`\`yaml\n${yamlOutput}\n\`\`\``
+    );
+    
+    // 构建PR创建URL
+    const prUrl = `${GITHUB_BASE_URL}/compare/main...?quick_pull=1&title=${title}&body=${body}`;
+    
+    // 在新标签页中打开
+    window.open(prUrl, '_blank');
+  };
+
+  // 创建Issue
+  const createIssue = () => {
+    if (!yamlOutput) {
+      message.error('请先预览YAML生成内容');
+      return;
+    }
+
+    const challengeName = extractChallengeName();
+    
+    // 准备Issue内容
+    const title = encodeURIComponent(`题目请求: ${challengeName}`);
+    const body = encodeURIComponent(
+      `## 题目请求\n\n` +
+      `请求添加以下挑战题目。\n\n` +
+      `### YAML代码\n\n` +
+      `\`\`\`yaml\n${yamlOutput}\n\`\`\``
+    );
+    
+    // 构建Issue创建URL
+    const issueUrl = `${GITHUB_BASE_URL}/issues/new?title=${title}&body=${body}`;
+    
+    // 在新标签页中打开
+    window.open(issueUrl, '_blank');
+  };
+
   return (
     <>
       <div style={{ marginBottom: 16, marginTop: 24 }}>
-        <Button 
-          type="primary" 
-          onClick={showModal}
-          icon={<CopyOutlined />}
-        >
-          预览YAML
-        </Button>
+        <Space size="middle">
+          <Button 
+            type="primary" 
+            onClick={showModal}
+            icon={<CopyOutlined />}
+          >
+            预览YAML
+          </Button>
+          
+          <Button
+            type="default"
+            onClick={createPullRequest}
+            icon={<GithubOutlined />}
+          >
+            Pull Request
+          </Button>
+          
+          <Button
+            type="default"
+            onClick={createIssue}
+            icon={<BugOutlined />}
+          >
+            New Issue
+          </Button>
+        </Space>
       </div>
       
       <Modal
