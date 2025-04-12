@@ -188,5 +188,10 @@ export default {
     },
     common: {
         loading: 'Loading...'
+    },
+    tagTooltips: {
+        filterByTag: 'Click to filter challenges by this tag',
+        filterByDifficulty: 'Click to filter challenges by this difficulty level',
+        filterByPlatform: 'Click to filter challenges by this platform'
     }
 }

@@ -5,6 +5,7 @@
 import { Tag, Tooltip } from 'antd';
 import { StarFilled, StarOutlined } from '@ant-design/icons';
 import '../styles/star-rating.css'; // 正确的路径
+import { useTranslation } from 'react-i18next';
 
 /**
  * 星级评分组件的属性接口
@@ -47,11 +48,15 @@ interface StarRatingProps {
 const StarRating = ({ 
     difficulty, 
     onClick, 
-    tooltip = "点击可按此难度筛选题目", 
+    tooltip,
     stopPropagation = false,
     style 
 }: StarRatingProps) => {
+    const { t } = useTranslation();
     const isClickable = !!onClick;
+    
+    // 使用传入的tooltip或默认的i18n文本
+    const tooltipText = tooltip || t('tagTooltips.filterByDifficulty');
 
     const handleClick = (e: React.MouseEvent) => {
         // 根据需要阻止事件冒泡
@@ -102,8 +107,8 @@ const StarRating = ({
         </Tag>
     );
     
-    return tooltip && isClickable ? (
-        <Tooltip title={tooltip} placement="top">
+    return tooltipText && isClickable ? (
+        <Tooltip title={tooltipText} placement="top">
             {starTag}
         </Tooltip>
     ) : starTag;

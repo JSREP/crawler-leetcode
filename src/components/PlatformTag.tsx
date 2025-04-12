@@ -1,5 +1,6 @@
 import { Tag, Tooltip } from 'antd';
 import * as React from 'react';
+import { useTranslation } from 'react-i18next';
 
 interface PlatformTagProps {
     /**
@@ -43,10 +44,15 @@ const PlatformTag: React.FC<PlatformTagProps> = ({
     platform,
     clickable = false,
     onClick,
-    tooltip = "点击可按此平台筛选题目",
+    tooltip,
     style,
     stopPropagation = false
 }) => {
+    const { t } = useTranslation();
+    
+    // 使用传入的tooltip或默认的i18n文本
+    const tooltipText = tooltip || t('tagTooltips.filterByPlatform');
+    
     const getColor = () => {
         if (platform === 'LeetCode') {
             return 'orange';
@@ -79,8 +85,8 @@ const PlatformTag: React.FC<PlatformTagProps> = ({
         </Tag>
     );
     
-    return tooltip && clickable ? (
-        <Tooltip title={tooltip} placement="top">
+    return tooltipText && clickable ? (
+        <Tooltip title={tooltipText} placement="top">
             {tag}
         </Tooltip>
     ) : tag;

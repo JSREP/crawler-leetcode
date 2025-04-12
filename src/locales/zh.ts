@@ -188,6 +188,11 @@ const zhTranslations = {
     },
     common: {
         loading: '加载中...'
+    },
+    tagTooltips: {
+        filterByTag: '点击可按此标签筛选题目',
+        filterByDifficulty: '点击可按此难度筛选题目',
+        filterByPlatform: '点击可按此平台筛选题目'
     }
 };
 
