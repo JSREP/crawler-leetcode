@@ -1,7 +1,8 @@
 // src/components/NavBar.tsx
 import { useState, useEffect } from 'react';
-import {Link, useLocation} from 'react-router-dom';
-import {Layout, Menu, Typography, Select, Row, Col} from 'antd';
+import {Link, useLocation, useNavigate} from 'react-router-dom';
+import {Layout, Menu, Typography, Select, Row, Col, Button} from 'antd';
+import { PlusOutlined } from '@ant-design/icons';
 import { useTranslation } from 'react-i18next';
 import { changeLanguage } from '../i18n';
 // @ts-ignore
@@ -18,6 +19,7 @@ const { Option } = Select;
 const NavBar = () => {
     const { t, i18n } = useTranslation();
     const location = useLocation();
+    const navigate = useNavigate();
     const [currentLanguage, setCurrentLanguage] = useState(i18n.language);
 
     // 监听语言变化
@@ -45,6 +47,11 @@ const NavBar = () => {
     // 处理语言变更
     const handleLanguageChange = (value: string) => {
         changeLanguage(value);
+    };
+
+    // 跳转到题目编辑页面
+    const goToContributePage = () => {
+        navigate('/challenge/contribute');
     };
 
     return (
@@ -97,8 +104,25 @@ const NavBar = () => {
                             disabledOverflow={true}
                         />
                         
-                        {/* 语言选择器 */}
-                        <div style={{ paddingRight: '0px' }}>
+                        {/* 右侧工具栏 */}
+                        <div style={{ 
+                            paddingRight: '0px', 
+                            display: 'flex', 
+                            alignItems: 'center',
+                            gap: '8px'
+                        }}>
+                            {/* 贡献题目按钮 */}
+                            <Button 
+                                type="primary" 
+                                size="small" 
+                                icon={<PlusOutlined />}
+                                onClick={goToContributePage}
+                                style={{ fontSize: '12px', height: '28px' }}
+                            >
+                                {t('nav.contribute')}
+                            </Button>
+                            
+                            {/* 语言选择器 */}
                             <Select
                                 value={currentLanguage}
                                 style={{

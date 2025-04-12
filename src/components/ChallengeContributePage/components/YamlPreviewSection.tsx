@@ -36,11 +36,32 @@ interface YamlPreviewSectionProps {
 const YamlPreviewSection: React.FC<YamlPreviewSectionProps> = ({
   yamlOutput,
   onGenerateYaml,
-  onCopyYaml
+  onCopyYaml,
 }) => {
   const [isModalVisible, setIsModalVisible] = React.useState<boolean>(false);
   const [isLengthWarningVisible, setIsLengthWarningVisible] = React.useState<boolean>(false);
   const [currentAction, setCurrentAction] = React.useState<'PR' | 'Issue' | null>(null);
+  const [pendingAction, setPendingAction] = React.useState<'PR' | 'Issue' | null>(null);
+  
+  // 监听yamlOutput的变化，当有新的YAML生成时，继续执行之前的操作
+  React.useEffect(() => {
+    if (yamlOutput && pendingAction) {
+      const action = pendingAction;
+      setPendingAction(null);
+      
+      // 检查YAML长度
+      if (yamlOutput.length > YAML_LENGTH_LIMIT) {
+        setCurrentAction(action);
+        setIsLengthWarningVisible(true);
+      } else {
+        if (action === 'PR') {
+          proceedToPullRequest();
+        } else {
+          proceedToIssue();
+        }
+      }
+    }
+  }, [yamlOutput]);
 
   const showModal = () => {
     onGenerateYaml(); // 先生成YAML
@@ -78,25 +99,23 @@ const YamlPreviewSection: React.FC<YamlPreviewSectionProps> = ({
 
   // 检查YAML长度并决定是否显示警告
   const checkYamlLengthAndProceed = (action: 'PR' | 'Issue') => {
-    // 如果还没有YAML，先生成
+    // 如果还没有YAML，先生成并设置待处理操作
     if (!yamlOutput) {
+      setPendingAction(action);
       onGenerateYaml();
-    }
-
-    // 检查生成后的YAML长度
-    if (yamlOutput.length > YAML_LENGTH_LIMIT) {
-      // 设置当前操作类型
-      setCurrentAction(action);
-      // 显示长度警告弹窗
-      setIsLengthWarningVisible(true);
       return;
     }
 
-    // 长度在限制内，继续正常流程
-    if (action === 'PR') {
-      proceedToPullRequest();
+    // 如果已有YAML，直接检查长度并处理
+    if (yamlOutput.length > YAML_LENGTH_LIMIT) {
+      setCurrentAction(action);
+      setIsLengthWarningVisible(true);
     } else {
-      proceedToIssue();
+      if (action === 'PR') {
+        proceedToPullRequest();
+      } else {
+        proceedToIssue();
+      }
     }
   };
 
@@ -142,7 +161,7 @@ const YamlPreviewSection: React.FC<YamlPreviewSectionProps> = ({
           `## 新增题目\n\n` +
           `提交一个新的挑战题目。\n\n` +
           `### YAML代码\n\n` +
-          `<!-- 请在此处粘贴YAML代码 -->`
+          `\`\`\`yaml\n${yamlOutput}\n\`\`\``
         );
         
         // 构建PR创建URL
@@ -174,7 +193,7 @@ const YamlPreviewSection: React.FC<YamlPreviewSectionProps> = ({
           `## 题目请求\n\n` +
           `请求添加以下挑战题目。\n\n` +
           `### YAML代码\n\n` +
-          `<!-- 请在此处粘贴YAML代码 -->`
+          `\`\`\`yaml\n${yamlOutput}\n\`\`\``
         );
         
         // 构建Issue创建URL (使用简短参数)
@@ -201,10 +220,10 @@ const YamlPreviewSection: React.FC<YamlPreviewSectionProps> = ({
 
   return (
     <>
-      <div style={{ marginBottom: 16, marginTop: 24 }}>
+      {/* 显示操作按钮 */}
+      <div style={{ margin: '24px 0' }}>
         <Space size="middle">
           <Button 
-            type="primary" 
             onClick={showModal}
             icon={<CopyOutlined />}
           >
@@ -212,7 +231,6 @@ const YamlPreviewSection: React.FC<YamlPreviewSectionProps> = ({
           </Button>
           
           <Button
-            type="default"
             onClick={createPullRequest}
             icon={<GithubOutlined />}
           >
@@ -220,7 +238,6 @@ const YamlPreviewSection: React.FC<YamlPreviewSectionProps> = ({
           </Button>
           
           <Button
-            type="default"
             onClick={createIssue}
             icon={<GithubOutlined />}
           >

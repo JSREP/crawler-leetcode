@@ -154,6 +154,51 @@ const DescriptionFields: React.FC<SectionProps> = ({ form }) => {
     };
   }, [form]);
   
+  // 监听description-updated事件
+  useEffect(() => {
+    const handleDescriptionUpdate = (event: any) => {
+      if (event.detail) {
+        try {
+          const { description, descriptionEn } = event.detail;
+          
+          // 安全转换为字符串
+          const chineseText = safeToString(description);
+          const englishText = safeToString(descriptionEn);
+          
+          console.log('接收到description更新事件:', { chineseText, englishText });
+          
+          // 使用setTimeout确保在DOM更新后再更新编辑器内容
+          setTimeout(() => {
+            // 更新编辑器内容
+            if (editorChineseRef.current?.getMdElement) {
+              editorChineseRef.current.setText(chineseText);
+              // 确保表单中也保存了正确的字符串
+              form.setFieldsValue({ 
+                description: chineseText,
+                descriptionMarkdown: chineseText 
+              });
+            }
+            
+            if (editorEnglishRef.current?.getMdElement) {
+              editorEnglishRef.current.setText(englishText);
+              form.setFieldsValue({ 
+                descriptionEn: englishText,
+                descriptionMarkdownEn: englishText 
+              });
+            }
+          }, 100);
+        } catch (err) {
+          console.error('处理description更新事件时出错:', err);
+        }
+      }
+    };
+    
+    window.addEventListener('description-updated', handleDescriptionUpdate);
+    return () => {
+      window.removeEventListener('description-updated', handleDescriptionUpdate);
+    };
+  }, [form]);
+  
   // 初始化编辑器内容
   useEffect(() => {
     if (hasInitializedRef.current) return;

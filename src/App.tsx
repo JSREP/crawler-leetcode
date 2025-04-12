@@ -4,6 +4,7 @@ import NavBar from './components/NavBar'
 import HomePage from './components/HomePage'
 import ChallengeListPage from './components/ChallengeListPage'
 import ChallengeDetailPage from './components/ChallengeDetailPage'
+import ChallengeContributePage from './components/ChallengeContributePage'
 import AboutPage from './components/AboutPage'
 import GitHubRibbon from './components/GitHubRibbon'
 import './gh-fork-ribbon.css';
@@ -20,6 +21,7 @@ const App = () => {
                         <Route path="/" element={<HomePage/>}/>
                         <Route path="/challenges" element={<ChallengeListPage/>}/>
                         <Route path="/challenge/:id" element={<ChallengeDetailPage/>}/>
+                        <Route path="/challenge/contribute" element={<ChallengeContributePage />}/>
                         <Route path="/about" element={<AboutPage/>}/>
                         <Route path="*" element={<HomePage/>}/>
                     </Routes>

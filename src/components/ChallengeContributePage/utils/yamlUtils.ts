@@ -73,7 +73,7 @@ export const parseYamlToFormData = (yamlString: string): ChallengeFormData | nul
     const challengeData = YAML.parse(yamlString) as ChallengeData;
     
     // 转换解决方案
-    const solutions: Solution[] = challengeData.solutions?.map(solution => {
+    const solutions = challengeData.solutions?.map(solution => {
       return {
         title: solution.title || '',
         url: solution.url || '',
@@ -82,20 +82,23 @@ export const parseYamlToFormData = (yamlString: string): ChallengeFormData | nul
       };
     }) || [];
     
-    // 创建表单数据
+    // 创建表单数据，确保类型一致
     const formData: ChallengeFormData = {
-      id: challengeData.id,
+      id: challengeData.id || null,
       idAlias: challengeData['id-alias'] || '',
-      platform: challengeData.platform,
-      name: challengeData.name,
+      platform: (challengeData.platform || 'Web') as 'Web' | 'Android' | 'iOS',
+      name: challengeData.name || '',
       nameEn: challengeData.name_en || '',
-      difficultyLevel: challengeData['difficulty-level'],
-      descriptionMarkdown: challengeData['description-markdown'],
-      descriptionMarkdownEn: challengeData['description-markdown_en'] || '',
-      base64Url: challengeData['base64-url'],
-      isExpired: challengeData['is-expired'],
+      difficultyLevel: challengeData['difficulty-level'] || 1,
+      // 映射Markdown内容到表单字段
+      description: challengeData['description-markdown'] || '',
+      descriptionEn: challengeData['description-markdown_en'] || '',
       tags: challengeData.tags || [],
-      solutions: solutions
+      solutions: solutions,
+      // 添加额外字段到表单数据中，让其可以在生成时使用
+      example: '',
+      testCases: [],
+      comments: []
     };
     
     return formData;
