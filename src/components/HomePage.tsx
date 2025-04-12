@@ -114,7 +114,7 @@ const HomePage = () => {
           <Col xs={24} md={16} lg={12}>
             <div style={{ animation: 'fadeIn 1s ease-out' }}>
               <Title level={1} style={{ color: 'white', fontSize: '2.5rem', marginBottom: '16px' }}>
-                爬虫技术挑战平台
+                爬虫技术挑战合集
               </Title>
               <Paragraph style={{ color: 'rgba(255,255,255,0.8)', fontSize: '1.1rem', marginBottom: '24px' }}>
                 突破各种网站反爬机制，掌握先进爬虫技术，提升数据采集能力，成为爬虫工程师的不二之选
@@ -132,7 +132,7 @@ const HomePage = () => {
                     padding: '0 28px'
                   }}
                 >
-                  开始爬取 <ArrowRightOutlined />
+                  开始挑战 <ArrowRightOutlined />
                 </Button>
                 <Button 
                   size="large"
