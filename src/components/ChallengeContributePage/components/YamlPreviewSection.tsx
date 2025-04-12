@@ -1,8 +1,21 @@
 import * as React from 'react';
-import { Typography, Button, Modal, Space } from 'antd';
+import { Button, Modal } from 'antd';
 import { CopyOutlined } from '@ant-design/icons';
+import { Light as SyntaxHighlighter } from 'react-syntax-highlighter';
+import yaml from 'react-syntax-highlighter/dist/esm/languages/hljs/yaml';
+import { vs } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
-const { Paragraph } = Typography;
+// 注册YAML语言
+SyntaxHighlighter.registerLanguage('yaml', yaml);
+
+// 自定义高亮主题
+const highlightTheme = {
+  ...vs,
+  hljs: {
+    ...vs.hljs,
+    background: '#f8f8f8'
+  }
+};
 
 interface YamlPreviewSectionProps {
   yamlOutput: string;
@@ -29,19 +42,10 @@ const YamlPreviewSection: React.FC<YamlPreviewSectionProps> = ({
     setIsModalVisible(false);
   };
 
-  // 代码块样式
-  const codeBlockStyle = {
-    backgroundColor: '#f5f5f5',
-    border: '1px solid #ddd',
-    borderRadius: '4px',
-    padding: '16px',
-    fontFamily: 'monospace',
-    fontSize: '14px',
-    lineHeight: '1.6',
-    overflow: 'auto',
-    maxHeight: '60vh',
-    whiteSpace: 'pre-wrap' as const,
-    wordBreak: 'break-word' as const
+  // 复制并关闭Modal
+  const handleCopyAndClose = () => {
+    onCopyYaml();
+    setIsModalVisible(false);
   };
 
   return (
@@ -65,16 +69,30 @@ const YamlPreviewSection: React.FC<YamlPreviewSectionProps> = ({
           <Button key="cancel" onClick={handleCancel}>
             关闭
           </Button>,
-          <Button key="copy" type="primary" icon={<CopyOutlined />} onClick={onCopyYaml}>
+          <Button key="copy" type="primary" icon={<CopyOutlined />} onClick={handleCopyAndClose}>
             复制YAML
           </Button>
         ]}
       >
-        <Paragraph>
-          <div style={codeBlockStyle}>
+        <div style={{ padding: '8px 0' }}>
+          <SyntaxHighlighter 
+            language="yaml" 
+            style={highlightTheme}
+            customStyle={{
+              borderRadius: '4px',
+              fontSize: '14px',
+              lineHeight: '1.5',
+              maxHeight: '60vh',
+              overflow: 'auto',
+              padding: '16px',
+              border: '1px solid #eaeaea'
+            }}
+            showLineNumbers={true}
+            wrapLongLines={true}
+          >
             {yamlOutput}
-          </div>
-        </Paragraph>
+          </SyntaxHighlighter>
+        </div>
       </Modal>
     </>
   );
