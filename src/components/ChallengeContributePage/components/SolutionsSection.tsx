@@ -62,6 +62,29 @@ const SolutionsSection: React.FC<SectionProps> = ({ form }) => {
     ));
     setAuthors(uniqueAuthors);
   }, [solutions]);
+  
+  // 初始化solutions
+  useEffect(() => {
+    const formSolutions = form.getFieldValue('solutions');
+    if (formSolutions && Array.isArray(formSolutions) && formSolutions.length > 0) {
+      setSolutions(formSolutions);
+    }
+  }, [form]);
+  
+  // 监听solutions-updated事件
+  useEffect(() => {
+    const handleSolutionsUpdated = (event: any) => {
+      if (event.detail && event.detail.solutions && Array.isArray(event.detail.solutions)) {
+        setSolutions(event.detail.solutions);
+      }
+    };
+    
+    window.addEventListener('solutions-updated', handleSolutionsUpdated);
+    
+    return () => {
+      window.removeEventListener('solutions-updated', handleSolutionsUpdated);
+    };
+  }, []);
 
   // 根据URL自动判断来源
   const getSourceFromUrl = (url: string): string => {
@@ -194,58 +217,87 @@ const SolutionsSection: React.FC<SectionProps> = ({ form }) => {
         </div>
       ))}
 
-      <Form layout="vertical">
-        <Form.Item 
-          label="标题" 
-          required
-          help="请输入参考资料的标题"
+      <div className="solutions-form-wrapper" style={{ marginTop: 16 }}>
+        <div 
+          className="form-item"
+          style={{ marginBottom: 24 }}
         >
-          <Input 
-            value={newSolution.title}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleSolutionChange('title', e.target.value)}
-            placeholder="如: 使用正则表达式解析URL"
-          />
-        </Form.Item>
+          <div className="form-item-label" style={{ marginBottom: 8 }}>
+            <label className="ant-form-item-required">标题</label>
+          </div>
+          <div className="form-item-control">
+            <Input 
+              value={newSolution.title}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleSolutionChange('title', e.target.value)}
+              placeholder="如: 使用正则表达式解析URL"
+            />
+            <div className="form-item-help" style={{ fontSize: 12, color: '#999', marginTop: 4 }}>
+              请输入参考资料的标题
+            </div>
+          </div>
+        </div>
 
-        <Form.Item 
-          label="URL" 
-          required
-          help={urlError || "请输入参考资料的链接地址"}
-          validateStatus={urlError ? "error" : undefined}
+        <div 
+          className="form-item"
+          style={{ marginBottom: 24 }}
         >
-          <Input 
-            value={newSolution.url}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleSolutionChange('url', e.target.value)}
-            placeholder="如: https://github.com/your-repo"
-            status={urlError ? "error" : undefined}
-          />
-        </Form.Item>
+          <div className="form-item-label" style={{ marginBottom: 8 }}>
+            <label className="ant-form-item-required">URL</label>
+          </div>
+          <div className="form-item-control">
+            <Input 
+              value={newSolution.url}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleSolutionChange('url', e.target.value)}
+              placeholder="如: https://github.com/your-repo"
+              status={urlError ? "error" : undefined}
+            />
+            <div className="form-item-help" style={{ fontSize: 12, color: urlError ? '#ff4d4f' : '#999', marginTop: 4 }}>
+              {urlError || "请输入参考资料的链接地址"}
+            </div>
+          </div>
+        </div>
 
-        <Form.Item 
-          label="来源"
-          help="可选，会根据URL自动填充"
+        <div 
+          className="form-item"
+          style={{ marginBottom: 24 }}
         >
-          <Input 
-            value={newSolution.source}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleSolutionChange('source', e.target.value)}
-            placeholder="如: GitHub"
-          />
-        </Form.Item>
+          <div className="form-item-label" style={{ marginBottom: 8 }}>
+            <label>来源</label>
+          </div>
+          <div className="form-item-control">
+            <Input 
+              value={newSolution.source}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleSolutionChange('source', e.target.value)}
+              placeholder="如: GitHub"
+            />
+            <div className="form-item-help" style={{ fontSize: 12, color: '#999', marginTop: 4 }}>
+              可选，会根据URL自动填充
+            </div>
+          </div>
+        </div>
 
-        <Form.Item 
-          label="作者"
-          help="可选，支持自动补全已有作者"
+        <div 
+          className="form-item"
+          style={{ marginBottom: 24 }}
         >
-          <AutoComplete
-            value={newSolution.author}
-            onChange={(value) => handleSolutionChange('author', value)}
-            options={authors.map(author => ({ value: author }))}
-            placeholder="请输入作者名称"
-            filterOption={(inputValue, option) =>
-              option!.value.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1
-            }
-          />
-        </Form.Item>
+          <div className="form-item-label" style={{ marginBottom: 8 }}>
+            <label>作者</label>
+          </div>
+          <div className="form-item-control">
+            <AutoComplete
+              value={newSolution.author}
+              onChange={(value) => handleSolutionChange('author', value)}
+              options={authors.map(author => ({ value: author }))}
+              placeholder="请输入作者名称"
+              filterOption={(inputValue, option) =>
+                option!.value.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1
+              }
+            />
+            <div className="form-item-help" style={{ fontSize: 12, color: '#999', marginTop: 4 }}>
+              可选，支持自动补全已有作者
+            </div>
+          </div>
+        </div>
 
         <Button 
           type="dashed" 
@@ -272,7 +324,7 @@ const SolutionsSection: React.FC<SectionProps> = ({ form }) => {
             取消编辑
           </Button>
         )}
-      </Form>
+      </div>
       
       {/* 隐藏的表单字段，用于提交参考资料数据 */}
       <Form.Item name="solutions" hidden>
