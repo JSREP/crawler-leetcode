@@ -9,6 +9,8 @@ import { changeLanguage } from '../i18n';
 import faviconLogo from '../assets/favicon.png';
 // @ts-ignore
 import logoPng from '../assets/logo.png';
+// @ts-ignore
+import bannerPng from '../assets/banner.png';
 
 const {Header} = Layout;
 const {Title} = Typography;
@@ -75,17 +77,16 @@ const NavBar = () => {
                     <Col className="logo-container" style={{ paddingLeft: '0px' }}>
                         <Link to="/" style={{ display: 'flex', alignItems: 'center', height: '70px' }}>
                             <img 
-                                src={logoPng} 
-                                alt="Crawler LeetCode" 
+                                src={bannerPng} 
+                                alt="Web Crawler Challenge Platform" 
                                 style={{
-                                    height: '46px',
+                                    height: '40px',
                                     width: 'auto',
+                                    maxWidth: '300px',
+                                    objectFit: 'contain',
                                     marginRight: '12px'
                                 }}
                             />
-                            <Title level={3} style={{margin: 0, color: '#2c3e50', whiteSpace: 'nowrap'}}>
-                                Crawler LeetCode
-                            </Title>
                         </Link>
                     </Col>
 
