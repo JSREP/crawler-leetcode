@@ -7,6 +7,14 @@ const zhTranslations = {
         system: '系统',
         contribute: '贡献题目'
     },
+    titles: {
+        home: '首页 - 爬虫技术挑战平台',
+        challenges: '挑战列表 - 爬虫技术挑战平台',
+        about: '关于 - 爬虫技术挑战平台',
+        contribute: '贡献题目 - 爬虫技术挑战平台',
+        challenge: '挑战详情 - 爬虫技术挑战平台',
+        default: '爬虫技术挑战平台'
+    },
     home: {
         hero: {
             title: '爬虫技术挑战合集',

@@ -7,6 +7,14 @@ export default {
         system: 'System',
         contribute: 'Contribute'
     },
+    titles: {
+        home: 'Home - Crawler LeetCode',
+        challenges: 'Challenges - Crawler LeetCode',
+        about: 'About - Crawler LeetCode',
+        contribute: 'Contribute - Crawler LeetCode',
+        challenge: 'Challenge - Crawler LeetCode',
+        default: 'Crawler LeetCode'
+    },
     home: {
         hero: {
             title: 'Web Crawler Challenge Collection',
