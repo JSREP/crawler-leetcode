@@ -139,7 +139,11 @@ export default {
             solutions: 'Reference Solutions',
             viewSolutionLink: 'View Solution',
             source: 'Source',
-            author: 'Author'
+            author: 'Author',
+            correction: 'Correction',
+            correctionTooltip: 'Think the content could be improved or has errors? Don\'t hesitate to submit a PR on GitHub',
+            reportIssue: 'Report Issue',
+            issueTooltip: 'Having a problem? Click to submit a GitHub Issue'
         },
         actions: {
             backToList: 'Back to Challenge List'

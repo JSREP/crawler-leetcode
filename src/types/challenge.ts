@@ -10,7 +10,9 @@ export type Challenge = {
     idAlias?: string; // 唯一字符串别名，用于友好URL和显示
     number: number;
     title: string;    // 默认中文标题
+    name?: string;    // 默认中文标题（YAML中的标准字段）
     titleEN?: string; // 英文标题
+    name_en?: string; // 英文标题（YAML中的标准字段）
     difficulty: number;
     tags: string[];
     solutions: Solution[];
@@ -21,6 +23,7 @@ export type Challenge = {
     isExpired?: boolean;  // 添加链接失效状态字段
     descriptionMarkdown: string;  // 默认中文Markdown描述
     descriptionMarkdownEN?: string; // 英文Markdown描述
+    sourceFile?: string;  // 源YAML文件路径
 };
 
 export const parseChallenges = (raw: any[]): Challenge[] => {
@@ -35,25 +38,39 @@ export const parseChallenges = (raw: any[]): Challenge[] => {
         // 解析ID，确保它是一个数字
         const id = parseInt(c.id || "0", 10);
         
-        // 确保title有值，优先使用name字段
-        const title = c.name || c.title || "未命名挑战";
-        // 获取英文标题
-        const titleEN = c.name_en || "";
+        // 确保title和name有值
+        const name = c.name || c.title || "未命名挑战";
+        const title = name; // 保持一致性
         
-        console.log(`解析挑战: ID=${id}, Title=${title}`);
+        // 获取英文标题
+        const name_en = c.name_en || c['name_en'] || "";
+        const titleEN = name_en; // 保持一致性
+        
+        console.log(`解析挑战: ID=${id}, 原始数据:`, {
+            'c.name': c.name,
+            'c.title': c.title,
+            'c.name_en': c.name_en,
+            'c["name_en"]': c['name_en'],
+            '解析后name': name,
+            '解析后title': title,
+            '解析后name_en': name_en,
+            '解析后titleEN': titleEN
+        });
         
         // 获取描述内容，优先使用直接内容，其次是文件路径内容
         const descriptionMarkdown = c.descriptionMarkdown || c['description-markdown'] || "";
         
         // 获取英文描述内容，优先使用直接内容，其次是文件路径内容
-        const descriptionMarkdownEN = c['description-markdown_en'] || "";
+        const descriptionMarkdownEN = c.descriptionMarkdownEN || c['description-markdown_en'] || "";
         
         return {
             id,
             idAlias: c['id-alias'] || c.id?.toString() || "", 
             number: parseInt(c.number || "0", 10),
             title,
+            name,
             titleEN,
+            name_en,
             difficulty: parseInt(c.difficulty || c['difficulty-level'] || "1", 10),
             tags: c.tags || [],
             solutions: (c.solutions || []).map((s: any) => ({
@@ -69,6 +86,7 @@ export const parseChallenges = (raw: any[]): Challenge[] => {
             isExpired: c['is-expired'] || false,
             descriptionMarkdown,
             descriptionMarkdownEN,
+            sourceFile: c.sourceFile || ""
         };
     });
 }; 

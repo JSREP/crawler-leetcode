@@ -139,7 +139,11 @@ const zhTranslations = {
             solutions: '参考解答',
             viewSolutionLink: '查看解答',
             source: '来源',
-            author: '作者'
+            author: '作者',
+            correction: '纠错',
+            correctionTooltip: '感觉内容可以优化甚至有错误？别犹豫点此去GitHub提PR',
+            reportIssue: '反馈问题',
+            issueTooltip: '遇到问题？点此提交GitHub Issue'
         },
         actions: {
             backToList: '返回挑战列表'

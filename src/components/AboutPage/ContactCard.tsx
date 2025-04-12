@@ -25,7 +25,7 @@ const ContactCard: React.FC<ContactCardProps> = ({ repoStars }) => {
     >
       <Space direction="vertical" size={16}>
         <Text style={textStyle}>
-          {t('about.contact.email')}：<Link href="mailto:contact@leetcode-crawler.com">contact@leetcode-crawler.com</Link>
+          {t('about.contact.email')}：<Link href="mailto:CC11001100@qq.com">CC11001100@qq.com</Link>
         </Text>
 
         <Space align="center">

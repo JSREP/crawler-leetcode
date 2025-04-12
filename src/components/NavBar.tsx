@@ -102,7 +102,7 @@ const NavBar = () => {
                             <Select
                                 value={currentLanguage}
                                 style={{
-                                    width: 100,
+                                    width: 95,
                                     background: 'transparent',
                                     fontSize: '14px'
                                 }}
