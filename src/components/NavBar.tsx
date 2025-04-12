@@ -1,5 +1,5 @@
 // src/components/NavBar.tsx
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {Link, useLocation} from 'react-router-dom';
 import {Layout, Menu, Typography, Select, Row, Col} from 'antd';
 import { useTranslation } from 'react-i18next';
@@ -16,8 +16,24 @@ const { Option } = Select;
  * 包含网站Logo、导航菜单和语言切换
  */
 const NavBar = () => {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
     const location = useLocation();
+    const [currentLanguage, setCurrentLanguage] = useState(i18n.language);
+
+    // 监听语言变化
+    useEffect(() => {
+        const handleLanguageChanged = () => {
+            setCurrentLanguage(i18n.language);
+        };
+        
+        // 添加语言变化监听器
+        i18n.on('languageChanged', handleLanguageChanged);
+        
+        // 清理函数
+        return () => {
+            i18n.off('languageChanged', handleLanguageChanged);
+        };
+    }, [i18n]);
 
     // 导航菜单项
     const items = [
@@ -84,7 +100,7 @@ const NavBar = () => {
                         {/* 语言选择器 */}
                         <div style={{ paddingRight: '0px' }}>
                             <Select
-                                defaultValue={localStorage.getItem('language') || 'en'}
+                                value={currentLanguage}
                                 style={{
                                     width: 120,
                                     background: 'transparent',
