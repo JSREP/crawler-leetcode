@@ -14,7 +14,9 @@ export default {
                 totalChallenges: 'Total Challenges',
                 easy: 'Basic',
                 medium: 'Intermediate',
-                hard: 'Advanced'
+                hard: 'Advanced',
+                difficultyDistribution: 'Difficulty Distribution',
+                ofTotal: 'of total challenges'
             }
         },
         features: {
@@ -30,7 +32,7 @@ export default {
                 },
                 {
                     title: 'Solution Approaches',
-                    content: 'Access detailed implementation ideas, code examples, and common anti-crawler bypass techniques'
+                    content: 'View detailed crawler implementation ideas, code examples, and common anti-crawler bypass techniques'
                 }
             ]
         },
@@ -47,14 +49,18 @@ export default {
     },
     about: {
         title: 'About Crawler LeetCode',
-        description: 'Crawler LeetCode is a learning platform focused on web crawling technology challenges. We provide web scraping challenges from basic to advanced levels, helping developers overcome various website anti-crawler mechanisms, master advanced crawling techniques, and enhance data collection capabilities. Whether you are a beginner in web crawling or an engineer looking to advance your skills, our platform offers targeted technical challenges and solutions to help you become an expert in the field of web scraping.',
+        description: 'Crawler LeetCode is a platform dedicated to helping developers master web crawling techniques through practical challenges.',
+        mission: {
+            title: 'Our Mission',
+            content: 'To provide structured learning resources for web crawling techniques and anti-crawler mechanism breakthroughs, helping developers improve their data collection capabilities.'
+        },
         features: {
-            title: 'Features',
-            list: [
-                'Complete collection of LeetCode problems with detailed descriptions and difficulty levels',
-                'Various filtering and sorting functions to help you find suitable problems',
-                'Collection of high-quality solutions and reference materials to improve solving efficiency',
-                'Regular updates to ensure content timeliness'
+            title: 'Key Features',
+            items: [
+                'Diverse crawling challenges for different skill levels',
+                'Detailed solutions and implementation ideas',
+                'Community discussions and knowledge sharing',
+                'Regular updates with new challenges and techniques'
             ]
         },
         techStack: {
@@ -69,7 +75,8 @@ export default {
         contact: {
             title: 'Contact Us',
             email: 'Email',
-            loading: 'Loading...'
+            github: 'GitHub',
+            twitter: 'Twitter'
         }
     },
     challenges: {
@@ -88,6 +95,33 @@ export default {
         dates: {
             created: 'Created',
             updated: 'Updated'
+        }
+    },
+    challenge: {
+        difficulty: {
+            easy: 'Basic',
+            medium: 'Intermediate',
+            hard: 'Advanced'
+        },
+        status: {
+            completed: 'Completed',
+            inProgress: 'In Progress',
+            notStarted: 'Not Started'
+        },
+        detail: {
+            overview: 'Overview',
+            requirements: 'Requirements',
+            hints: 'Hints',
+            solution: 'Solution',
+            discussions: 'Discussions',
+            relatedChallenges: 'Related Challenges',
+            technicalTags: 'Technical Tags',
+            targetWebsite: 'Target Website',
+            difficulty: 'Difficulty',
+            created: 'Created',
+            updated: 'Updated',
+            startChallenge: 'Start Challenge',
+            viewSolution: 'View Solution'
         }
     }
 }
