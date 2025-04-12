@@ -39,10 +39,12 @@ const NavBar = () => {
             zIndex: 1000,
             background: '#fff',
             boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)',
-            overflow: 'visible',  // 修复溢出裁剪问题
-            padding: '0'
+            overflow: 'visible',
+            padding: '0',
+            height: '70px', // 增加导航栏高度
+            lineHeight: '70px' // 匹配行高
         }}>
-            <div style={{
+            <div className="navbar-container" style={{
                 display: 'flex',
                 alignItems: 'center',
                 height: '100%',
@@ -50,7 +52,7 @@ const NavBar = () => {
                 maxWidth: '1200px',
                 width: '100%',
                 margin: '0 auto',
-                padding: '0 24px'
+                padding: '0 16px'
             }}>
                 <div style={{
                     display: 'flex',
@@ -61,21 +63,22 @@ const NavBar = () => {
                         display: 'flex', 
                         alignItems: 'center',
                         height: '100%',
-                        marginRight: '32px'
+                        marginRight: '40px'
                     }}>
-                        <img 
-                            src={faviconLogo} 
-                            alt="LeetCode Crawler" 
-                            style={{
-                                height: '80%', // 自适应导航栏高度
-                                maxHeight: '50px',
-                                width: 'auto',
-                                marginRight: '12px'
-                            }}
-                        />
-                        <Title level={3} style={{margin: 0, color: '#2c3e50'}}>
-                            LeetCode Crawler
-                        </Title>
+                        <Link to="/" style={{ display: 'flex', alignItems: 'center' }}>
+                            <img 
+                                src={faviconLogo} 
+                                alt="LeetCode Crawler" 
+                                style={{
+                                    height: '46px',
+                                    width: 'auto',
+                                    marginRight: '12px'
+                                }}
+                            />
+                            <Title level={3} style={{margin: 0, color: '#2c3e50', whiteSpace: 'nowrap'}}>
+                                LeetCode Crawler
+                            </Title>
+                        </Link>
                     </div>
 
                     {/* 导航菜单 */}
@@ -86,6 +89,10 @@ const NavBar = () => {
                         style={{
                             borderBottom: 'none',
                             flex: 'none',
+                            fontSize: '16px',
+                            fontWeight: 500,
+                            lineHeight: '70px',
+                            height: '70px'
                         }}
                     />
                 </div>
@@ -96,8 +103,7 @@ const NavBar = () => {
                     style={{
                         width: 120,
                         background: 'transparent',
-                        border: '1px solid #e8e8e8',
-                        borderRadius: '4px'
+                        fontSize: '14px'
                     }}
                     variant="borderless"
                     onChange={handleLanguageChange}
