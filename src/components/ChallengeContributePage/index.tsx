@@ -32,7 +32,6 @@ const ChallengeContributePage: React.FC = () => {
   const [form] = Form.useForm();
   
   // 状态
-  const [isPreviewMode, setIsPreviewMode] = useState<boolean>(false);
   const [yamlOutput, setYamlOutput] = useState<string>('');
   const [isFormDirty, setIsFormDirty] = useState<boolean>(false);
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
@@ -71,9 +70,6 @@ const ChallengeContributePage: React.FC = () => {
   // 表单值变更处理
   const handleFormValueChange = () => {
     setIsFormDirty(true);
-    if (isPreviewMode) {
-      generateYaml();
-    }
   };
 
   // 生成YAML数据
@@ -88,14 +84,6 @@ const ChallengeContributePage: React.FC = () => {
     
     const yamlString = generateYamlFromFormData(values);
     setYamlOutput(yamlString);
-  };
-
-  // 处理预览模式切换
-  const handleTogglePreview = (checked: boolean) => {
-    setIsPreviewMode(checked);
-    if (checked) {
-      generateYaml();
-    }
   };
 
   // 复制YAML到剪贴板
@@ -201,11 +189,10 @@ const ChallengeContributePage: React.FC = () => {
           <input type="hidden" />
         </Form.Item>
         
-        {/* YAML预览部分 */}
+        {/* YAML生成部分 */}
         <YamlPreviewSection
           yamlOutput={yamlOutput}
-          isPreviewMode={isPreviewMode}
-          onTogglePreview={handleTogglePreview}
+          onGenerateYaml={generateYaml}
           onCopyYaml={handleCopyYaml}
         />
         
