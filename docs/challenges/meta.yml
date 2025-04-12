@@ -1,15 +1,15 @@
-# 元数据配置文件格式版本号
+# 爬虫挑战合集元数据配置文件
 # 用于在数据结构变更时进行版本兼容性校验，必须为整数
 # 当数据结构发生不兼容变更时需递增版本号
 version: 1
 
-# 挑战题目集合定义
+# 爬虫挑战合集定义
 challenges:
-  # 单个挑战题目定义，每个题目都有一个唯一的id标识，id是必须的，ID必须是一个整数，并且全局唯一
+  # 单个爬虫挑战定义，每个挑战都有一个唯一的id标识，id是必须的，ID必须是一个整数，并且全局唯一
   - id: 0
     # 可以给ID设置一个别名，用于在列表中显示，ID别名也可以用于访问详情页
     id-alias: example
-    # 题目标签系统（数组格式，选填）
+    # 挑战标签系统（数组格式，选填）
     # 用于分类和筛选，支持多个标签
     # 示例: ["js-reverse", "wasm", "jsvmp"]
     tags:
@@ -17,15 +17,15 @@ challenges:
       - wasm
       - jsvmp
 
-    # 题目适用平台（枚举值，必填）
+    # 挑战目标网站类型（枚举值，必填）
     # 允许值: Web / Android / iOS
     platform: Web
 
-    # 题目显示名称（必填）
+    # 挑战名称（必填）
     # 作为列表和详情页的标题，建议控制在30个字符以内
-    name: 样例题目，展示如何
+    name: 测试挑战
 
-    # 难度评级（整数类型，必填）
+    # 挑战难度评级（整数类型，必填）
     # 取值范围: 1-5，1表示最简单，5表示最难
     # 前端展示时会转换为星级显示
     difficulty-level: 1
@@ -33,104 +33,40 @@ challenges:
     # Markdown格式详细描述（必选）
     # 当需要复杂排版时使用
     # 与description-markdown-path字段二选一使用，必须选其中一种方式提供描述
-    # description-markdown: uuuuuu
+    description-markdown: 测试挑战：突破JavaScript反爬机制的示例挑战
     
     # Markdown文件路径（推荐）
-    # 指向包含完整描述的Markdown文件，支持图片等复杂内容
+    # 指向包含完整挑战描述的Markdown文件，支持图片等复杂内容
     # 路径应为相对于项目根目录的相对路径
     # 与description-markdown字段二选一使用
-    description-markdown-path: contents/example/description.md
+    # description-markdown-path: contents/example/description.md
 
-    # 题目所在页面的URL地址的ase64
+    # 挑战目标网站URL的base64编码
     base64-url: aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8=
 
     # 链接有效性状态（布尔值）
-    # 标记题目链接是否失效，true表示已失效
-    # 失效题目会在前端显示警告标志
+    # 标记挑战链接是否失效，true表示已失效
+    # 失效挑战会在前端显示警告标志
     is-expired: false
 
     # 解决方案集合（数组）
     # 每个解决方案应包含以下字段:
     #   title: 解决方案标题（必填）
     #   url: 解决方案链接（完整URL）
-    #   source: 来源平台（如GitHub、LeetCode等）
-    #   author: 提交者名称（可选）
+    #   source: 来源平台（如GitHub、博客等）
+    #   author: 贡献者名称（可选）
     solutions:
-      - title: xxx
-        url: xxx
-        source: xx
-        author: xxx
+      - title: JS逆向解决方案
+        url: http://fake.com
+        source: fake
+        author: fake
 
     # 创建时间（ISO 8601格式）
-    # 记录题目首次创建时间，格式: YYYY-MM-DD HH:mm:ss
+    # 记录挑战首次添加时间，格式: YYYY-MM-DD HH:mm:ss
     # 时区默认为UTC+8
     create-time: 2025-03-01 20:42:17
 
     # 最后更新时间（ISO 8601格式）
-    # 记录题目最后修改时间，格式与create-time相同
+    # 记录挑战最后修改时间，格式与create-time相同
     # 当任何字段变更时需同步更新此时间
     update-time: 2025-03-01 20:42:17
-
-  # Web应用API安全分析挑战
-  - id: 1
-    id-alias: api-security
-    tags:
-      - web-security
-      - api-testing
-      - penetration-testing
-    platform: Web
-    name: Web应用API安全分析
-    difficulty-level: 3
-    description-markdown-path: contents/example1/description.md
-    base64-url: aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8=
-    is-expired: false
-    solutions:
-      - title: API安全测试方法
-        url: https://example.com/api-security
-        source: GitHub
-        author: 安全研究员
-    create-time: 2025-03-10 14:30:00
-    update-time: 2025-03-10 14:30:00
-
-  # Android应用逆向分析挑战
-  - id: 2
-    id-alias: android-reverse
-    tags:
-      - android
-      - reverse-engineering
-      - mobile-security
-    platform: Android
-    name: Android应用逆向分析
-    difficulty-level: 4
-    description-markdown-path: contents/example2/description.md
-    base64-url: aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8=
-    is-expired: false
-    solutions:
-      - title: Android逆向工程指南
-        url: https://example.com/android-reverse
-        source: GitHub
-        author: 移动安全专家
-    create-time: 2025-03-15 09:45:00
-    update-time: 2025-03-15 09:45:00
-
-  # 区块链智能合约安全审计挑战
-  - id: 3
-    id-alias: smart-contract-audit
-    tags:
-      - blockchain
-      - smart-contract
-      - security-audit
-      - solidity
-    platform: Web
-    name: 区块链智能合约安全审计
-    difficulty-level: 5
-    description-markdown-path: contents/example3/description.md
-    base64-url: aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8=
-    is-expired: false
-    solutions:
-      - title: 智能合约安全最佳实践
-        url: https://example.com/smart-contract-security
-        source: GitHub
-        author: 区块链安全审计师
-    create-time: 2025-03-20 16:20:00
-    update-time: 2025-03-20 16:20:00
