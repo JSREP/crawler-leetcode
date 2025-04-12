@@ -87,7 +87,7 @@ const NavBar = () => {
                                 borderRadius: '8px',
                                 height: '46px',
                                 width: '46px',
-                                background: 'linear-gradient(145deg, #ffffff 60%, rgba(255,255,255,0))'
+                                background: 'transparent'
                             }}>
                                 <img 
                                     src={logoPng} 
