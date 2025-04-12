@@ -75,20 +75,30 @@ const YamlPreviewSection: React.FC<YamlPreviewSectionProps> = ({
 
     const challengeName = extractChallengeName();
     
-    // 准备PR内容
-    const title = encodeURIComponent(`新增题目: ${challengeName}`);
-    const body = encodeURIComponent(
-      `## 新增题目\n\n` +
-      `提交一个新的挑战题目。\n\n` +
-      `### YAML代码\n\n` +
-      `\`\`\`yaml\n${yamlOutput}\n\`\`\``
-    );
-    
-    // 构建PR创建URL
-    const prUrl = `${GITHUB_BASE_URL}/compare/main...?quick_pull=1&title=${title}&body=${body}`;
-    
-    // 在新标签页中打开
-    window.open(prUrl, '_blank');
+    // 使用navigator.clipboard API复制YAML到剪贴板
+    navigator.clipboard.writeText(yamlOutput)
+      .then(() => {
+        message.success('YAML已复制到剪贴板，请在GitHub中粘贴');
+        
+        // 准备PR标题和基本说明
+        const title = encodeURIComponent(`新增题目: ${challengeName}`);
+        const body = encodeURIComponent(
+          `## 新增题目\n\n` +
+          `提交一个新的挑战题目。\n\n` +
+          `### YAML代码\n\n` +
+          `<!-- 请在此处粘贴YAML代码 -->`
+        );
+        
+        // 构建PR创建URL
+        const prUrl = `${GITHUB_BASE_URL}/compare/main...?quick_pull=1&title=${title}&body=${body}`;
+        
+        // 在新标签页中打开
+        window.open(prUrl, '_blank');
+      })
+      .catch((error) => {
+        console.error('复制YAML失败:', error);
+        message.error('复制YAML失败，请手动复制后提交');
+      });
   };
 
   // 创建Issue
@@ -100,20 +110,30 @@ const YamlPreviewSection: React.FC<YamlPreviewSectionProps> = ({
 
     const challengeName = extractChallengeName();
     
-    // 准备Issue内容
-    const title = encodeURIComponent(`题目请求: ${challengeName}`);
-    const body = encodeURIComponent(
-      `## 题目请求\n\n` +
-      `请求添加以下挑战题目。\n\n` +
-      `### YAML代码\n\n` +
-      `\`\`\`yaml\n${yamlOutput}\n\`\`\``
-    );
-    
-    // 构建Issue创建URL
-    const issueUrl = `${GITHUB_BASE_URL}/issues/new?title=${title}&body=${body}`;
-    
-    // 在新标签页中打开
-    window.open(issueUrl, '_blank');
+    // 使用navigator.clipboard API复制YAML到剪贴板
+    navigator.clipboard.writeText(yamlOutput)
+      .then(() => {
+        message.success('YAML已复制到剪贴板，请在GitHub中粘贴');
+        
+        // 准备Issue标题和基本说明
+        const title = encodeURIComponent(`题目请求: ${challengeName}`);
+        const body = encodeURIComponent(
+          `## 题目请求\n\n` +
+          `请求添加以下挑战题目。\n\n` +
+          `### YAML代码\n\n` +
+          `<!-- 请在此处粘贴YAML代码 -->`
+        );
+        
+        // 构建Issue创建URL (使用简短参数)
+        const issueUrl = `${GITHUB_BASE_URL}/issues/new?title=${title}&body=${body}`;
+        
+        // 在新标签页中打开
+        window.open(issueUrl, '_blank');
+      })
+      .catch((error) => {
+        console.error('复制YAML失败:', error);
+        message.error('复制YAML失败，请手动复制后提交');
+      });
   };
 
   return (
