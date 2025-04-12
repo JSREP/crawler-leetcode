@@ -5,8 +5,8 @@ export default {
         about: 'About'
     },
     about: {
-        title: 'About LeetCode Crawler',
-        description: 'LeetCode Crawler is a platform that helps programmers organize and manage LeetCode programming challenges. Our goal is to make problem-solving more efficient and organized.',
+        title: 'About Crawler LeetCode',
+        description: 'Crawler LeetCode is a platform that helps programmers organize and manage LeetCode programming challenges. Our goal is to make problem-solving more efficient and organized.',
         features: {
             title: 'Features',
             list: [

@@ -5,8 +5,8 @@ export default {
         about: '关于'
     },
     about: {
-        title: '关于 LeetCode 爬虫工具',
-        description: 'LeetCode 爬虫工具是一个帮助程序员整理和管理 LeetCode 编程挑战的平台。我们的目标是让刷题更加高效和有组织。',
+        title: '关于 爬虫 LeetCode',
+        description: '爬虫 LeetCode 是一个帮助程序员整理和管理 LeetCode 编程挑战的平台。我们的目标是让刷题更加高效和有组织。',
         features: {
             title: '项目特点',
             list: [
