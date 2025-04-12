@@ -19,7 +19,6 @@ import TagsSelector from './components/TagsSelector';
 import SolutionsSection from './components/SolutionsSection';
 import UrlInput from './components/UrlInput';
 import YamlPreviewSection from './components/YamlPreviewSection';
-import FormSubmitSection from './components/FormSubmitSection';
 
 // 导入样式
 import { styles } from './styles';
@@ -37,9 +36,6 @@ const ChallengeContributePage: React.FC = () => {
   // 状态
   const [yamlOutput, setYamlOutput] = useState<string>('');
   const [isFormDirty, setIsFormDirty] = useState<boolean>(false);
-  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
-  const [isSubmitSuccess, setIsSubmitSuccess] = useState<boolean>(false);
-  const [submitErrorMessage, setSubmitErrorMessage] = useState<string | null>(null);
   const [initialFormValues, setInitialFormValues] = useState<ChallengeFormData>({
     id: null,
     platform: 'Web',
@@ -148,55 +144,6 @@ const ChallengeContributePage: React.FC = () => {
     }
   };
 
-  // 表单提交
-  const handleFinish = async () => {
-    try {
-      // 验证表单
-      await form.validateFields();
-      
-      // 获取表单数据
-      const values = form.getFieldsValue() as ChallengeFormData;
-      
-      // 确保URL是Base64编码
-      if (values.base64Url) {
-        values.base64Url = ensureBase64Encoded(values.base64Url);
-      }
-      
-      // 生成YAML
-      const yamlString = generateYamlFromFormData(values);
-      
-      // 标记提交中
-      setIsSubmitting(true);
-      setSubmitErrorMessage(null);
-      
-      // 模拟提交操作
-      setTimeout(() => {
-        console.log('提交的表单数据:', values);
-        console.log('生成的YAML:', yamlString);
-        
-        // 提交成功
-        setIsSubmitting(false);
-        setIsSubmitSuccess(true);
-        setIsFormDirty(false);
-        
-        // 显示成功消息
-        message.success('挑战已成功提交！');
-        
-        // 清除本地存储的表单数据
-        localStorage.removeItem(STORAGE_KEY);
-        
-        // 3秒后重置成功状态
-        setTimeout(() => {
-          setIsSubmitSuccess(false);
-        }, 3000);
-      }, 1000);
-    } catch (error) {
-      console.error('表单验证失败:', error);
-      setSubmitErrorMessage('表单验证失败，请检查填写的内容。');
-      setIsSubmitting(false);
-    }
-  };
-
   return (
     <div style={styles.container}>
       <Alert
@@ -256,16 +203,6 @@ const ChallengeContributePage: React.FC = () => {
           yamlOutput={yamlOutput}
           onGenerateYaml={generateYaml}
           onCopyYaml={handleCopyYaml}
-        />
-        
-        {/* 表单提交部分 */}
-        <FormSubmitSection
-          onFinish={handleFinish}
-          onGenerateYaml={generateYaml}
-          isFormDirty={isFormDirty}
-          isSubmitting={isSubmitting}
-          isSubmitSuccess={isSubmitSuccess}
-          submitErrorMessage={submitErrorMessage}
         />
       </Form>
     </div>
