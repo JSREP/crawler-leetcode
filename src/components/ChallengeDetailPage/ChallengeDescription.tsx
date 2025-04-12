@@ -45,14 +45,19 @@ const MarkdownImage = (props: any) => {
  * 挑战描述组件，显示问题的Markdown描述
  */
 const ChallengeDescription: React.FC<ChallengeDescriptionProps> = ({ challenge }) => {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
+    
+    // 根据当前语言选择显示描述
+    const displayDescription = i18n.language === 'en' && challenge.descriptionMarkdownEN 
+        ? challenge.descriptionMarkdownEN 
+        : challenge.descriptionMarkdown;
     
     return (
         <div>
             <Title level={3}>{t('challenge.detail.description')}</Title>
             
             {/* 实际挑战描述 */}
-            {challenge.descriptionMarkdown ? (
+            {displayDescription ? (
                 <Card bordered={false} style={{ marginBottom: 24 }}>
                     <div className="markdown-content">
                         <ReactMarkdown 
@@ -61,13 +66,13 @@ const ChallengeDescription: React.FC<ChallengeDescriptionProps> = ({ challenge }
                                 img: MarkdownImage
                             }}
                         >
-                            {challenge.descriptionMarkdown}
+                            {displayDescription}
                         </ReactMarkdown>
                     </div>
                 </Card>
             ) : (
                 <Empty 
-                    description="暂无详细描述" 
+                    description={t('challenge.detail.noDescription', '暂无详细描述')} 
                     style={{ marginTop: 24, marginBottom: 24 }}
                 />
             )}

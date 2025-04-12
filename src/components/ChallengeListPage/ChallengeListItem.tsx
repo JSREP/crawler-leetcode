@@ -52,10 +52,13 @@ const ChallengeListItem: React.FC<ChallengeListItemProps> = ({
     onDifficultyClick,
     onPlatformClick
 }) => {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
     
     // 确保id是一个有效值
     const displayId = challenge.id !== undefined ? challenge.id : '?';
+    
+    // 根据当前语言选择显示标题
+    const displayTitle = i18n.language === 'en' && challenge.titleEN ? challenge.titleEN : challenge.title;
     
     return (
         <Card
@@ -66,10 +69,8 @@ const ChallengeListItem: React.FC<ChallengeListItemProps> = ({
             <Space direction="vertical" style={{ width: '100%' }}>
                 <Space>
                     <IdTag id={displayId} />
-                    <Text strong style={{ fontSize: 16 }}>{challenge.title}</Text>
+                    <Text strong style={{ fontSize: 16 }}>{displayTitle}</Text>
                 </Space>
-
-                <Text type="secondary">{challenge.description}</Text>
 
                 <Space wrap>
                     <StarRating
