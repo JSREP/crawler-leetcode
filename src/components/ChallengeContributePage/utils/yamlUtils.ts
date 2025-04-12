@@ -1,0 +1,96 @@
+import * as YAML from 'yaml';
+import { ChallengeFormData, ChallengeData, Solution } from '../types';
+
+/**
+ * 将表单数据转换为YAML格式数据
+ * @param formData 表单数据
+ * @returns YAML格式的字符串
+ */
+export const generateYamlFromFormData = (formData: ChallengeFormData): string => {
+  if (!formData) {
+    return '';
+  }
+  
+  // 转换解决方案数组为对象格式
+  const solutionsArray = formData.solutions?.map(solution => {
+    // 确保解决方案有标题和URL
+    if (solution.title && solution.url) {
+      return {
+        title: solution.title,
+        url: solution.url,
+        source: solution.source || undefined,
+        author: solution.author || undefined
+      };
+    }
+    return null;
+  }).filter(Boolean) || [];
+  
+  // 创建符合YAML要求的数据结构
+  const challengeData: ChallengeData = {
+    id: formData.id,
+    'id-alias': formData.idAlias || undefined,
+    platform: formData.platform,
+    name: formData.name,
+    name_en: formData.nameEn || undefined,
+    'difficulty-level': formData.difficultyLevel,
+    'description-markdown': formData.descriptionMarkdown,
+    'description-markdown_en': formData.descriptionMarkdownEn || undefined,
+    'base64-url': formData.base64Url,
+    'is-expired': formData.isExpired,
+    tags: formData.tags || [],
+    solutions: solutionsArray,
+    'create-time': new Date().toISOString(),
+    'update-time': new Date().toISOString()
+  };
+  
+  // 转换为YAML字符串
+  const yamlString = YAML.stringify(challengeData);
+  return yamlString;
+};
+
+/**
+ * 解析YAML字符串为表单数据
+ * @param yamlString YAML格式的字符串
+ * @returns 表单数据对象
+ */
+export const parseYamlToFormData = (yamlString: string): ChallengeFormData | null => {
+  if (!yamlString) {
+    return null;
+  }
+  
+  try {
+    // 解析YAML字符串
+    const challengeData = YAML.parse(yamlString) as ChallengeData;
+    
+    // 转换解决方案
+    const solutions: Solution[] = challengeData.solutions?.map(solution => {
+      return {
+        title: solution.title || '',
+        url: solution.url || '',
+        source: solution.source,
+        author: solution.author
+      };
+    }) || [];
+    
+    // 创建表单数据
+    const formData: ChallengeFormData = {
+      id: challengeData.id,
+      idAlias: challengeData['id-alias'] || '',
+      platform: challengeData.platform,
+      name: challengeData.name,
+      nameEn: challengeData.name_en || '',
+      difficultyLevel: challengeData['difficulty-level'],
+      descriptionMarkdown: challengeData['description-markdown'],
+      descriptionMarkdownEn: challengeData['description-markdown_en'] || '',
+      base64Url: challengeData['base64-url'],
+      isExpired: challengeData['is-expired'],
+      tags: challengeData.tags || [],
+      solutions: solutions
+    };
+    
+    return formData;
+  } catch (error) {
+    console.error('解析YAML失败:', error);
+    return null;
+  }
+}; 
