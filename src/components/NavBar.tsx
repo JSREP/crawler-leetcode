@@ -43,12 +43,7 @@ const NavBar = () => {
             lineHeight: '70px'
         }}>
             {/* 固定宽度的外层容器 */}
-            <div style={{
-                maxWidth: '80%',
-                margin: '0 auto',
-                width: '100%',
-                height: '100%'
-            }}>
+            <div className="navbar-container">
                 {/* 网格布局，确保精确对齐 */}
                 <Row style={{ height: '100%' }}>
                     {/* Logo区域，确保与内容区域左边缘对齐 */}
