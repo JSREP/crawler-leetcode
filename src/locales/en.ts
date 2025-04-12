@@ -3,6 +3,8 @@ export default {
         home: 'Home',
         challenges: 'Challenges',
         about: 'About',
+        user: 'User',
+        system: 'System',
         contribute: 'Contribute'
     },
     home: {
@@ -198,17 +200,5 @@ export default {
         filterByTag: 'Click to filter challenges by this tag',
         filterByDifficulty: 'Click to filter challenges by this difficulty level',
         filterByPlatform: 'Click to filter challenges by this platform'
-    },
-    contribute: {
-        title: 'Contribute Challenge',
-        inDevelopment: {
-            title: 'Feature in Development',
-            description: 'The challenge contribution feature is under development. Stay tuned!'
-        },
-        instructions: {
-            intro: 'You can contribute challenges through the following methods:',
-            method1: 'Submit a Pull Request on GitHub to add a challenge YAML file',
-            method2: 'Submit a challenge suggestion through GitHub Issues'
-        }
     }
 }

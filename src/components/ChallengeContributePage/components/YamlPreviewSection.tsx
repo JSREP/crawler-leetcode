@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { Button, Modal, Space, message } from 'antd';
-import { CopyOutlined, GithubOutlined } from '@ant-design/icons';
+import { Button, Modal, Space, message, Typography } from 'antd';
+import { CopyOutlined, GithubOutlined, QuestionCircleOutlined } from '@ant-design/icons';
 import { Light as SyntaxHighlighter } from 'react-syntax-highlighter';
 import yaml from 'react-syntax-highlighter/dist/esm/languages/hljs/yaml';
 import { vs } from 'react-syntax-highlighter/dist/esm/styles/hljs';
@@ -13,7 +13,7 @@ const GITHUB_REPO = 'JSREP/crawler-leetcode';
 const GITHUB_BASE_URL = `https://github.com/${GITHUB_REPO}`;
 
 // YAML长度限制（超过此长度需要手动提交）
-const YAML_LENGTH_LIMIT = 1000;
+const YAML_LENGTH_LIMIT = 10000;
 
 // 自定义高亮主题
 const highlightTheme = {
@@ -40,6 +40,7 @@ const YamlPreviewSection: React.FC<YamlPreviewSectionProps> = ({
 }) => {
   const [isModalVisible, setIsModalVisible] = React.useState<boolean>(false);
   const [isLengthWarningVisible, setIsLengthWarningVisible] = React.useState<boolean>(false);
+  const [isPrGuideVisible, setIsPrGuideVisible] = React.useState<boolean>(false);
   const [currentAction, setCurrentAction] = React.useState<'PR' | 'Issue' | null>(null);
   const [pendingAction, setPendingAction] = React.useState<'PR' | 'Issue' | null>(null);
   
@@ -153,22 +154,10 @@ const YamlPreviewSection: React.FC<YamlPreviewSectionProps> = ({
     // 使用navigator.clipboard API复制YAML到剪贴板
     navigator.clipboard.writeText(yamlOutput)
       .then(() => {
-        message.success('YAML已复制到剪贴板，请在GitHub中粘贴');
+        message.success('YAML已复制到剪贴板');
         
-        // 准备PR标题和基本说明
-        const title = encodeURIComponent(`新增题目: ${challengeName}`);
-        const body = encodeURIComponent(
-          `## 新增题目\n\n` +
-          `提交一个新的挑战题目。\n\n` +
-          `### YAML代码\n\n` +
-          `\`\`\`yaml\n${yamlOutput}\n\`\`\``
-        );
-        
-        // 构建PR创建URL
-        const prUrl = `${GITHUB_BASE_URL}/compare/main...?quick_pull=1&title=${title}&body=${body}`;
-        
-        // 在新标签页中打开
-        window.open(prUrl, '_blank');
+        // 显示PR引导弹窗
+        setIsPrGuideVisible(true);
       })
       .catch((error) => {
         console.error('复制YAML失败:', error);
@@ -216,6 +205,11 @@ const YamlPreviewSection: React.FC<YamlPreviewSectionProps> = ({
   // 创建Issue的触发函数
   const createIssue = () => {
     checkYamlLengthAndProceed('Issue');
+  };
+
+  // 关闭PR引导弹窗
+  const handlePrGuideCancel = () => {
+    setIsPrGuideVisible(false);
   };
 
   return (
@@ -306,6 +300,38 @@ const YamlPreviewSection: React.FC<YamlPreviewSectionProps> = ({
             <li>将YAML内容粘贴到描述区域中的合适位置</li>
             <li>提交{currentAction === 'PR' ? 'Pull Request' : 'Issue'}</li>
           </ol>
+        </div>
+      </Modal>
+      
+      {/* PR引导对话框 */}
+      <Modal
+        title="如何提交Pull Request"
+        open={isPrGuideVisible}
+        onCancel={handlePrGuideCancel}
+        footer={[
+          <Button key="close" onClick={handlePrGuideCancel}>
+            关闭
+          </Button>,
+        ]}
+      >
+        <div style={{ padding: '16px 0' }}>
+          <Typography.Title level={5}>提交Pull Request的步骤</Typography.Title>
+          <ol style={{ paddingLeft: '20px' }}>
+            <li>访问项目仓库：<Typography.Link href={GITHUB_BASE_URL} target="_blank">{GITHUB_BASE_URL}</Typography.Link></li>
+            <li>点击仓库页面右上角的"Fork"按钮创建自己的分支</li>
+            <li>在Fork后的仓库中，创建一个新的分支</li>
+            <li>在新分支中，导航到challenges文件夹</li>
+            <li>点击"Add file" &gt; "Create new file"</li>
+            <li>为文件命名，格式为：challenges/[题目ID].yaml</li>
+            <li>将已复制的YAML内容粘贴到文件编辑器中</li>
+            <li>点击"Commit new file"提交更改</li>
+            <li>回到仓库主页，点击"Pull requests" &gt; "New pull request"</li>
+            <li>确认更改并点击"Create pull request"</li>
+            <li>填写PR标题和描述，然后点击"Create pull request"完成提交</li>
+          </ol>
+          <Typography.Paragraph>
+            <QuestionCircleOutlined /> 提示：YAML内容已自动复制到剪贴板，您可以直接粘贴。
+          </Typography.Paragraph>
         </div>
       </Modal>
     </>

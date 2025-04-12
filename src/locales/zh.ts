@@ -3,6 +3,8 @@ const zhTranslations = {
         home: '首页',
         challenges: '挑战列表',
         about: '关于',
+        user: '用户',
+        system: '系统',
         contribute: '贡献题目'
     },
     home: {
@@ -199,18 +201,9 @@ const zhTranslations = {
         filterByDifficulty: '点击可按此难度筛选题目',
         filterByPlatform: '点击可按此平台筛选题目'
     },
-    contribute: {
-        title: '题目贡献',
-        inDevelopment: {
-            title: '功能开发中',
-            description: '题目贡献功能正在开发中，敬请期待！'
-        },
-        instructions: {
-            intro: '您可以通过以下方式贡献题目：',
-            method1: '在GitHub上提交Pull Request添加题目YAML文件',
-            method2: '通过GitHub Issues提交题目建议'
-        }
-    }
+    user: '用户',
+    system: '系统',
+    contribute: '贡献题目'
 };
 
 export default zhTranslations;
