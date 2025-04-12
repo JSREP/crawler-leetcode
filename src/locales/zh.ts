@@ -97,7 +97,8 @@ const zhTranslations = {
             allDifficulties: '所有难度',
             allPlatforms: '所有平台',
             search: '搜索挑战...',
-            clearAll: '清空所有'
+            clearAll: '清空所有',
+            searchTags: '搜索标签...'
         },
         sort: {
             number: '题号',
