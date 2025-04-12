@@ -10,7 +10,10 @@ import {
   FireOutlined,
   TrophyOutlined,
   RocketOutlined,
-  ArrowRightOutlined
+  ArrowRightOutlined,
+  BugOutlined,
+  CloudSyncOutlined,
+  ApiOutlined
 } from '@ant-design/icons';
 
 const { Title, Text, Paragraph } = Typography;
@@ -28,22 +31,22 @@ const getDifficultyCounts = () => {
 
 const features = [
   {
-    title: '挑战列表',
-    content: '浏览完整的 LeetCode 挑战列表，包含详细信息和难度分级',
+    title: '爬虫挑战',
+    content: '探索各类爬虫技术难题，从基础数据提取到复杂反爬机制突破',
     color: '#42b983',
-    icon: <CodeOutlined />
+    icon: <BugOutlined />
   },
   {
-    title: '筛选与排序',
-    content: '根据难度、创建时间等多种条件筛选和排序挑战',
+    title: '技术分类',
+    content: '按照爬虫技术、目标网站和难度等多维度分类，快速定位学习重点',
     color: '#1890ff',
     icon: <FilterOutlined />
   },
   {
-    title: '题解链接',
-    content: '获取挑战的参考资料和题解链接，提高解题效率',
+    title: '解决方案',
+    content: '查看详细的爬虫实现思路、代码示例和常见反爬绕过技巧',
     color: '#722ed1',
-    icon: <FileSearchOutlined />
+    icon: <CodeOutlined />
   }
 ];
 
@@ -111,10 +114,10 @@ const HomePage = () => {
           <Col xs={24} md={16} lg={12}>
             <div style={{ animation: 'fadeIn 1s ease-out' }}>
               <Title level={1} style={{ color: 'white', fontSize: '2.5rem', marginBottom: '16px' }}>
-                刷题从未如此简单
+                爬虫技术挑战平台
               </Title>
               <Paragraph style={{ color: 'rgba(255,255,255,0.8)', fontSize: '1.1rem', marginBottom: '24px' }}>
-                探索精选的 LeetCode 挑战，提升您的算法与编程技能，为技术面试做好充分准备
+                突破各种网站反爬机制，掌握先进爬虫技术，提升数据采集能力，成为爬虫工程师的不二之选
               </Paragraph>
               <Space size="middle">
                 <Button 
@@ -129,7 +132,7 @@ const HomePage = () => {
                     padding: '0 28px'
                   }}
                 >
-                  开始刷题 <ArrowRightOutlined />
+                  开始爬取 <ArrowRightOutlined />
                 </Button>
                 <Button 
                   size="large"
@@ -161,22 +164,22 @@ const HomePage = () => {
             }}>
               <Space direction="vertical" size="large" style={{ width: '100%' }}>
                 <Statistic 
-                  title={<Text style={{ color: 'rgba(255,255,255,0.8)' }}>总题目数</Text>} 
+                  title={<Text style={{ color: 'rgba(255,255,255,0.8)' }}>总挑战数</Text>} 
                   value={challenges.length} 
                   valueStyle={{ color: 'white' }}
                   prefix={<TrophyOutlined />}
                 />
                 <Row gutter={16}>
                   <Col span={8}>
-                    <Badge color="#52c41a" text={<Text style={{ color: 'rgba(255,255,255,0.8)' }}>简单</Text>} />
+                    <Badge color="#52c41a" text={<Text style={{ color: 'rgba(255,255,255,0.8)' }}>初级</Text>} />
                     <div style={{ color: 'white', fontSize: '1.5rem', fontWeight: 'bold' }}>{difficultyCounts.easy}</div>
                   </Col>
                   <Col span={8}>
-                    <Badge color="#faad14" text={<Text style={{ color: 'rgba(255,255,255,0.8)' }}>中等</Text>} />
+                    <Badge color="#faad14" text={<Text style={{ color: 'rgba(255,255,255,0.8)' }}>中级</Text>} />
                     <div style={{ color: 'white', fontSize: '1.5rem', fontWeight: 'bold' }}>{difficultyCounts.medium}</div>
                   </Col>
                   <Col span={8}>
-                    <Badge color="#f5222d" text={<Text style={{ color: 'rgba(255,255,255,0.8)' }}>困难</Text>} />
+                    <Badge color="#f5222d" text={<Text style={{ color: 'rgba(255,255,255,0.8)' }}>高级</Text>} />
                     <div style={{ color: 'white', fontSize: '1.5rem', fontWeight: 'bold' }}>{difficultyCounts.hard}</div>
                   </Col>
                 </Row>
