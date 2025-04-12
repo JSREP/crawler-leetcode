@@ -106,13 +106,19 @@ const ChallengeControls: React.FC<ChallengeControlsProps> = ({
         >
             <Menu.Item key="all">{t('challenges.filters.allDifficulties')}</Menu.Item>
             <Menu.Item key="1">
-                <StarRating difficulty={1} />
+                <StarRating difficulty={1} onClick={() => {}} style={{ cursor: 'pointer' }} />
             </Menu.Item>
             <Menu.Item key="2">
-                <StarRating difficulty={2} />
+                <StarRating difficulty={2} onClick={() => {}} style={{ cursor: 'pointer' }} />
             </Menu.Item>
             <Menu.Item key="3">
-                <StarRating difficulty={3} />
+                <StarRating difficulty={3} onClick={() => {}} style={{ cursor: 'pointer' }} />
+            </Menu.Item>
+            <Menu.Item key="4">
+                <StarRating difficulty={4} onClick={() => {}} style={{ cursor: 'pointer' }} />
+            </Menu.Item>
+            <Menu.Item key="5">
+                <StarRating difficulty={5} onClick={() => {}} style={{ cursor: 'pointer' }} />
             </Menu.Item>
         </Menu>
     );
