@@ -6,16 +6,14 @@ version: 1
 # 爬虫挑战合集定义
 challenges:
   # 单个爬虫挑战定义，每个挑战都有一个唯一的id标识，id是必须的，ID必须是一个整数，并且全局唯一
-  - id: 0
+  - id: 12
     # 可以给ID设置一个别名，用于在列表中显示，ID别名也可以用于访问详情页
-    id-alias: example
+    id-alias: river
     # 挑战标签系统（数组格式，选填）
     # 用于分类和筛选，支持多个标签
-    # 建议使用有意义的标签，例如防护机制类型、技术特点等
+    # 示例: ["js-reverse", "wasm", "jsvmp"]
     tags:
       - js-reverse
-      - wasm
-      - jsvmp
 
     # 挑战目标网站类型（枚举值，必填）
     # 允许值: Web / Android / iOS
@@ -23,39 +21,33 @@ challenges:
 
     # 挑战名称（必填）
     # 作为列表和详情页的标题，建议控制在30个字符以内
-    name: 示例挑战
+    name: 瑞数动态安全（River Security）
     
     # 挑战英文名称（选填）
     # 当用户选择英文语言时显示，不提供时将使用中文名称
-    name_en: Example Challenge
+    name_en: Test Challenge
 
     # 挑战难度评级（整数类型，必填）
     # 取值范围: 1-5，1表示最简单，5表示最难
     # 前端展示时会转换为星级显示
-    difficulty-level: 1
+    difficulty-level: 3
 
     # Markdown格式详细描述（必选）
     # 当需要复杂排版时使用
     # 与description-markdown-path字段二选一使用，必须选其中一种方式提供描述
-    # 建议包含：简介、特点、破解难点等内容
-    description-markdown: |
-      这是一个示例挑战，用于演示YAML格式的正确写法。
+    description-markdown: | 
+      瑞数动态安全（River Security）
       
-      特点：包含了JavaScript混淆、WebAssembly和JS虚拟机保护技术。
-      
-      破解难点：需要分析混淆的JS代码，理解WebAssembly运行机制，处理JS虚拟机保护。
+      特点：基于行为分析和轨迹检测，要求用户手动滑动滑块，结合AI识别是否为自动化工具8。
+
+      破解难点：检测鼠标轨迹、加速度、浏览器指纹等，普通模拟滑动难以通过。
     
     # 英文版Markdown格式详细描述（选填）
     # 当用户选择英文语言时显示，与description-markdown-path_en字段二选一使用
     # 不提供英文描述时将使用中文描述
-    description-markdown_en: |
-      This is an example challenge to demonstrate the correct YAML format.
-      
-      Features: Includes JavaScript obfuscation, WebAssembly and JS virtual machine protection.
-      
-      Challenges: Requires analyzing obfuscated JS code, understanding WebAssembly mechanisms, and handling JS virtual machine protection.
+    description-markdown_en: "Test Challenge: A sample challenge for breaking through JavaScript anti-crawling mechanisms"
     
-    # Markdown文件路径（推荐，但与上面的字段二选一）
+    # Markdown文件路径（推荐）
     # 指向包含完整挑战描述的Markdown文件，支持图片等复杂内容
     # 路径应为相对于项目根目录的相对路径
     # 与description-markdown字段二选一使用
@@ -67,34 +59,32 @@ challenges:
     # 当用户选择英文语言时显示此内容
     # description-markdown-path_en: contents/example/description_en.md
 
-    # 挑战目标网站URL的base64编码（必填）
-    # 使用base64编码是为了避免直接暴露URL
-    # 可以使用在线工具将URL转换为base64格式
-    base64-url: aHR0cHM6Ly9leGFtcGxlLmNvbS8=
+    # 挑战目标网站URL的base64编码
+    base64-url: aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8=
 
-    # 链接有效性状态（布尔值，必填）
+    # 链接有效性状态（布尔值）
     # 标记挑战链接是否失效，true表示已失效
     # 失效挑战会在前端显示警告标志
     is-expired: false
 
-    # 解决方案集合（数组，选填）
+    # 解决方案集合（数组）
     # 每个解决方案应包含以下字段:
     #   title: 解决方案标题（必填）
     #   url: 解决方案链接（完整URL）
     #   source: 来源平台（如GitHub、博客等）
     #   author: 贡献者名称（可选）
     solutions:
-      - title: 示例解决方案
-        url: https://example.com/solution
-        source: GitHub
-        author: 贡献者
+      - title: JS逆向解决方案
+        url: http://fake.com
+        source: fake
+        author: fake
 
-    # 创建时间（ISO 8601格式，必填）
+    # 创建时间（ISO 8601格式）
     # 记录挑战首次添加时间，格式: YYYY-MM-DD HH:mm:ss
     # 时区默认为UTC+8
     create-time: 2025-03-01 20:42:17
 
-    # 最后更新时间（ISO 8601格式，必填）
+    # 最后更新时间（ISO 8601格式）
     # 记录挑战最后修改时间，格式与create-time相同
     # 当任何字段变更时需同步更新此时间
     update-time: 2025-03-01 20:42:17

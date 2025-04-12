@@ -1,0 +1,38 @@
+name: 部署GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # 或者是master，取决于你的主分支名称
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v3
+        with:
+          persist-credentials: false # token将用于部署，因此我们不持久化凭证
+
+      - name: 设置Node.js环境
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18' # 使用更新的Node.js版本
+          cache: 'npm'
+
+      - name: 安装依赖
+        run: npm ci
+
+      - name: 构建网站
+        run: npm run build # 在package.json中定义为tsc && vite build
+
+      - name: 部署到GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages  # 部署到的分支
+          folder: dist      # Vite构建输出目录
+          clean: true       # 清理gh-pages分支上的旧文件
+          token: ${{ secrets.GITHUB_TOKEN }}  # GitHub自动提供的访问令牌
+
+      - name: 部署完成通知
+        run: echo "✅ 网站已成功部署到GitHub Pages！访问地址: https://jsrep.github.io/crawler-leetcode/" 

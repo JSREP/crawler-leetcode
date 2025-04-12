@@ -250,13 +250,23 @@ function collectYAMLChallenges(dirPath: string, rootDir: string, isBuild = false
                     // 处理多个挑战的数组格式
                     console.log(`解析包含挑战数组的YAML文件: ${fullPath}`);
                     parsed.challenges.forEach((challenge: any) => {
+                        // 跳过标记为ignored的挑战
+                        if (challenge.ignored === true) {
+                            console.log(`跳过忽略的挑战: ID=${challenge.id || 'unknown'}, 文件: ${yamlRelativePath}`);
+                            return;
+                        }
                         // 传递YAML文件路径
                         challenges.push(processChallengeData(challenge, rootDir, isBuild, yamlRelativePath));
                     });
                 } else if (parsed.id) {
                     // 处理单个挑战格式
                     console.log(`解析单个挑战YAML文件: ${fullPath}`);
-                    challenges.push(processChallengeData(parsed, rootDir, isBuild, yamlRelativePath));
+                    // 跳过标记为ignored的挑战
+                    if (parsed.ignored !== true) {
+                        challenges.push(processChallengeData(parsed, rootDir, isBuild, yamlRelativePath));
+                    } else {
+                        console.log(`跳过忽略的挑战文件: ${yamlRelativePath}`);
+                    }
                 } else {
                     console.warn(`无法识别的YAML格式，没有找到challenges数组或id字段: ${fullPath}`);
                 }
@@ -394,8 +404,8 @@ function processChallengeData(challenge: any, rootDir: string, isBuild: boolean,
         name: challengeTitle,
         name_en: challengeTitleEN,
         titleEN: challengeTitleEN, // 直接添加titleEN字段方便后续处理
-        difficulty: challenge.difficulty || 1,
-        'difficulty-level': challenge.difficulty || 1,
+        difficulty: parseInt(String(challenge.difficulty || challenge['difficulty-level'] || '1'), 10),
+        'difficulty-level': parseInt(String(challenge.difficulty || challenge['difficulty-level'] || '1'), 10),
         tags: challenge.tags || [],
         solutions: (challenge.solutions || []).map((sol: any) => ({
             title: sol.title || '',
@@ -409,6 +419,7 @@ function processChallengeData(challenge: any, rootDir: string, isBuild: boolean,
         externalLink: challenge['external-link'] || '',
         platform: challenge.platform || 'Web',
         'is-expired': challenge['is-expired'] || false,
+        ignored: challenge.ignored || false, // 添加ignored属性
         'description-markdown': challenge['description-markdown'] || '',
         'description-markdown_en': challenge['description-markdown_en'] || '',
         descriptionMarkdown: markdownContent, // 构建时将Markdown内容统一赋值给descriptionMarkdown字段

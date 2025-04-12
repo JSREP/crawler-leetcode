@@ -151,6 +151,7 @@ function getContentType(filePath: string): string {
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/crawler-leetcode/',
   plugins: [
     react(),
     virtualFileSystemPlugin({
