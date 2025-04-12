@@ -5,6 +5,7 @@ import {
   FilterOutlined, 
   BugOutlined 
 } from '@ant-design/icons';
+import { useTranslation } from 'react-i18next';
 import { 
   featureSectionStyle, 
   sectionTitleStyle, 
@@ -15,36 +16,38 @@ import {
 
 const { Title, Text } = Typography;
 
-// 功能特性数据
-const features = [
-  {
-    title: '爬虫挑战',
-    content: '探索各类爬虫技术难题，从基础数据提取到复杂反爬机制突破',
-    color: '#42b983',
-    icon: <BugOutlined />
-  },
-  {
-    title: '技术分类',
-    content: '按照爬虫技术、目标网站和难度等多维度分类，快速定位学习重点',
-    color: '#1890ff',
-    icon: <FilterOutlined />
-  },
-  {
-    title: '解决方案',
-    content: '查看详细的爬虫实现思路、代码示例和常见反爬绕过技巧',
-    color: '#722ed1',
-    icon: <CodeOutlined />
-  }
-];
-
 /**
  * 功能介绍区域组件
  */
 const FeatureSection: React.FC = () => {
+  const { t } = useTranslation();
+
+  // 从i18n获取功能特性数据
+  const features = [
+    {
+      title: t('home.features.items.0.title'),
+      content: t('home.features.items.0.content'),
+      color: '#42b983',
+      icon: <BugOutlined />
+    },
+    {
+      title: t('home.features.items.1.title'),
+      content: t('home.features.items.1.content'),
+      color: '#1890ff',
+      icon: <FilterOutlined />
+    },
+    {
+      title: t('home.features.items.2.title'),
+      content: t('home.features.items.2.content'),
+      color: '#722ed1',
+      icon: <CodeOutlined />
+    }
+  ];
+
   return (
     <div style={featureSectionStyle}>
       <Title level={2} style={sectionTitleStyle}>
-        平台特色
+        {t('home.features.title')}
         <div style={sectionTitleDividerStyle}></div>
       </Title>
       
