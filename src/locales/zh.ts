@@ -1,7 +1,7 @@
 export default {
     nav: {
         home: '首页',
-        challenges: '挑战',
+        challenges: '挑战列表',
         about: '关于'
     },
     about: {
