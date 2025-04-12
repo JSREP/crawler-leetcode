@@ -133,7 +133,11 @@ const zhTranslations = {
             created: '创建时间',
             updated: '更新时间',
             startChallenge: '去试试',
-            viewSolution: '查看解决方案'
+            viewSolution: '查看解决方案',
+            tags: '标签',
+            description: '问题描述',
+            solutions: '参考解答',
+            viewSolutionLink: '查看解答'
         },
         actions: {
             backToList: '返回挑战列表'

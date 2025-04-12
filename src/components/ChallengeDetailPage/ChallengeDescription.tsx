@@ -3,6 +3,7 @@ import { Challenge } from '../../types/challenge';
 import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
 import '../../styles/markdown.css';
+import { useTranslation } from 'react-i18next';
 
 const { Title } = Typography;
 
@@ -44,9 +45,11 @@ const MarkdownImage = (props: any) => {
  * 挑战描述组件，显示问题的Markdown描述
  */
 const ChallengeDescription: React.FC<ChallengeDescriptionProps> = ({ challenge }) => {
+    const { t } = useTranslation();
+    
     return (
         <div>
-            <Title level={3}>问题描述</Title>
+            <Title level={3}>{t('challenge.detail.description')}</Title>
             
             {/* 实际挑战描述 */}
             {challenge.descriptionMarkdown ? (

@@ -2,6 +2,7 @@ import { Typography } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import { Challenge } from '../../types/challenge';
 import TopicTag from '../TopicTag';
+import { useTranslation } from 'react-i18next';
 
 const { Text } = Typography;
 
@@ -14,6 +15,7 @@ interface ChallengeTagsProps {
  */
 const ChallengeTags: React.FC<ChallengeTagsProps> = ({ challenge }) => {
     const navigate = useNavigate();
+    const { t } = useTranslation();
     
     // 处理标签点击，跳转到列表页并应用过滤
     const handleTagClick = (tag: string) => {
@@ -22,7 +24,7 @@ const ChallengeTags: React.FC<ChallengeTagsProps> = ({ challenge }) => {
     
     return (
         <div>
-            <Text type="secondary">标签:</Text>
+            <Text type="secondary">{t('challenge.detail.tags')}:</Text>
             <div style={{ marginTop: '8px' }}>
                 {challenge.tags.map((tag, index) => (
                     <TopicTag
