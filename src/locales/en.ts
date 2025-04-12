@@ -137,7 +137,9 @@ export default {
             tags: 'Tags',
             description: 'Problem Description',
             solutions: 'Reference Solutions',
-            viewSolutionLink: 'View Solution'
+            viewSolutionLink: 'View Solution',
+            source: 'Source',
+            author: 'Author'
         },
         actions: {
             backToList: 'Back to Challenge List'

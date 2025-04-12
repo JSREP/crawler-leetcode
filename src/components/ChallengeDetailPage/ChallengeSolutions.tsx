@@ -28,10 +28,10 @@ const ChallengeSolutions: React.FC<ChallengeSolutionsProps> = ({ challenge }) =>
                             <div>
                                 <Text strong>{solution.title}</Text>
                                 <div style={{ marginTop: '4px' }}>
-                                    <Text type="secondary">来源: {solution.source}</Text>
+                                    <Text type="secondary">{t('challenge.detail.source')}: {solution.source}</Text>
                                     {solution.author && (
                                         <Text type="secondary" style={{ marginLeft: '12px' }}>
-                                            作者: {solution.author}
+                                            {t('challenge.detail.author')}: {solution.author}
                                         </Text>
                                     )}
                                 </div>

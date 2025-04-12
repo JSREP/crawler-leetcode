@@ -137,7 +137,9 @@ const zhTranslations = {
             tags: '标签',
             description: '问题描述',
             solutions: '参考解答',
-            viewSolutionLink: '查看解答'
+            viewSolutionLink: '查看解答',
+            source: '来源',
+            author: '作者'
         },
         actions: {
             backToList: '返回挑战列表'
