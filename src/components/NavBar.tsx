@@ -1,7 +1,7 @@
 // src/components/NavBar.tsx
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import {Link, useLocation} from 'react-router-dom';
-import {Layout, Menu, Space, Typography, Select} from 'antd';
+import {Layout, Menu, Typography, Select} from 'antd';
 import { useTranslation } from 'react-i18next';
 import { changeLanguage } from '../i18n';
 // @ts-ignore
@@ -18,7 +18,8 @@ const { Option } = Select;
 const NavBar = () => {
     const { t } = useTranslation();
     const location = useLocation();
-    const [ribbonHovered, setRibbonHovered] = useState(false);
+    const contentRef = useRef<HTMLDivElement>(null);
+    const [contentPadding, setContentPadding] = useState(24); // 默认内容区域左内边距
 
     // 导航菜单项
     const items = [
@@ -32,6 +33,33 @@ const NavBar = () => {
         changeLanguage(value);
     };
 
+    // 在组件挂载和窗口大小改变时，获取内容区域的实际左边距
+    useEffect(() => {
+        const updateContentPadding = () => {
+            // 延迟获取，确保DOM已经更新
+            setTimeout(() => {
+                // 查找搜索框元素作为参考
+                const searchBox = document.querySelector('input[placeholder*="搜索"]') || 
+                                 document.querySelector('input[placeholder*="Search"]');
+                if (searchBox) {
+                    const rect = searchBox.getBoundingClientRect();
+                    const padding = rect.left;
+                    if (padding > 0) {
+                        setContentPadding(padding);
+                    }
+                }
+            }, 100);
+        };
+
+        // 初始化时和窗口大小改变时更新
+        updateContentPadding();
+        window.addEventListener('resize', updateContentPadding);
+        
+        return () => {
+            window.removeEventListener('resize', updateContentPadding);
+        };
+    }, []);
+
     return (
         <Header style={{
             position: 'sticky',
@@ -41,26 +69,23 @@ const NavBar = () => {
             boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)',
             overflow: 'visible',
             padding: '0',
-            height: '70px', // 增加导航栏高度
-            lineHeight: '70px' // 匹配行高
+            height: '70px',
+            lineHeight: '70px'
         }}>
             <div className="navbar-container" style={{
                 display: 'flex',
                 alignItems: 'center',
                 height: '100%',
-                justifyContent: 'space-between',
-                maxWidth: '80%', // 增加导航栏宽度以容纳英文菜单
+                maxWidth: '80%',
                 width: '100%',
                 margin: '0 auto',
-                padding: '0'
+                position: 'relative'
             }}>
                 {/* Logo区域 */}
                 <div style={{ 
                     display: 'flex', 
                     alignItems: 'center',
                     height: '100%',
-                    marginRight: '24px',
-                    flexShrink: 0, // 防止Logo区域被压缩
                     paddingLeft: '24px'
                 }}>
                     <Link to="/" style={{ display: 'flex', alignItems: 'center' }}>
@@ -79,11 +104,14 @@ const NavBar = () => {
                     </Link>
                 </div>
 
-                {/* 导航菜单 - 放在单独的容器中，确保其位置与内容区域对齐 */}
+                {/* 导航菜单 - 绝对定位，与内容区域精确对齐 */}
                 <div style={{
+                    position: 'absolute',
+                    left: `${contentPadding}px`, // 精确对齐内容区域左边距
+                    top: 0,
                     display: 'flex',
-                    flex: 1,
                     justifyContent: 'space-between',
+                    width: 'calc(100% - 48px)', // 两侧总边距24px
                     alignItems: 'center'
                 }}>
                     <Menu
@@ -97,22 +125,27 @@ const NavBar = () => {
                             fontWeight: 500,
                             lineHeight: '70px',
                             height: '70px',
-                            minWidth: '300px', // 确保菜单有最小宽度
-                            overflow: 'visible', // 确保菜单不会被截断
-                            paddingLeft: '0' // 移除左内边距，确保与内容区域左对齐
+                            overflow: 'visible'
                         }}
-                        disabledOverflow={true} // 禁用溢出处理，防止菜单项变为省略号
+                        disabledOverflow={true}
                     />
-                    
-                    {/* 语言选择器 */}
+                </div>
+                
+                {/* 语言选择器 - 绝对定位，靠右对齐 */}
+                <div style={{
+                    position: 'absolute',
+                    right: '24px',
+                    top: 0,
+                    height: '100%',
+                    display: 'flex',
+                    alignItems: 'center'
+                }}>
                     <Select
                         defaultValue={localStorage.getItem('language') || 'en'}
                         style={{
                             width: 120,
                             background: 'transparent',
-                            fontSize: '14px',
-                            flexShrink: 0, // 防止语言选择器被压缩
-                            paddingRight: '24px'
+                            fontSize: '14px'
                         }}
                         variant="borderless"
                         onChange={handleLanguageChange}
