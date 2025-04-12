@@ -77,16 +77,17 @@ const NavBar = () => {
                     <Col className="logo-container" style={{ paddingLeft: '0px' }}>
                         <Link to="/" style={{ display: 'flex', alignItems: 'center', height: '70px' }}>
                             <img 
-                                src={bannerPng} 
+                                src={logoPng} 
                                 alt="Web Crawler Challenge Platform" 
                                 style={{
-                                    height: '40px',
+                                    height: '46px',
                                     width: 'auto',
-                                    maxWidth: '300px',
-                                    objectFit: 'contain',
                                     marginRight: '12px'
                                 }}
                             />
+                            <Title level={3} style={{margin: 0, color: '#2c3e50', whiteSpace: 'nowrap'}}>
+                                Crawler LeetCode
+                            </Title>
                         </Link>
                     </Col>
 
