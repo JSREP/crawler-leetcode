@@ -15,7 +15,7 @@ const App = () => {
             <div className="App">
                 <GitHubRibbon repositoryUrl="https://github.com/JSREP/crawler-leetcode" />
                 <NavBar/>
-                <div style={{ padding: '20px' }}>
+                <div className="content-wrapper" style={{ padding: '20px 0' }}>
                     <Routes>
                         <Route path="/" element={<HomePage/>}/>
                         <Route path="/challenges" element={<ChallengeListPage/>}/>

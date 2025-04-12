@@ -26,6 +26,31 @@
   line-height: 64px;
 }
 
+/* 导航菜单项样式 */
+.ant-menu-item {
+  font-size: 16px;
+  font-weight: 500;
+  padding: 0 16px !important;
+}
+
+.ant-menu-item-selected {
+  color: #42b983 !important;
+}
+
+.ant-menu-item-selected::after {
+  background-color: #42b983 !important;
+  height: 3px !important;
+}
+
+/* 内容区域与导航栏对齐 */
+.navbar-container,
+.ChallengeListPage,
+.HomePage {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
 .ant-card {
   margin-bottom: 1rem;
 }
