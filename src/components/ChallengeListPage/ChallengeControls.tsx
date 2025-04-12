@@ -143,20 +143,6 @@ const ChallengeControls: React.FC<ChallengeControlsProps> = ({
     
     return (
         <Space split={<Divider type="vertical" />} style={{ marginBottom: 20 }}>
-            {/* 排序控制 */}
-            <Space>
-                <Dropdown overlay={sortMenu} trigger={['click']}>
-                    <Button>
-                        {t('challenges.controls.sortBy')}: {t(`challenges.sort.${sortBy}`)} <DownOutlined />
-                    </Button>
-                </Dropdown>
-                <Button 
-                    icon={sortOrder === 'asc' ? <SortAscendingOutlined /> : <SortDescendingOutlined />}
-                    onClick={onSortOrderChange}
-                    title={sortOrder === 'asc' ? t('challenges.controls.ascending') : t('challenges.controls.descending')}
-                />
-            </Space>
-            
             {/* 标签过滤 */}
             <Dropdown overlay={tagMenu} trigger={['click']}>
                 <Button icon={<TagOutlined />}>
@@ -177,6 +163,20 @@ const ChallengeControls: React.FC<ChallengeControlsProps> = ({
                     {t('challenges.controls.platform')} <DownOutlined />
                 </Button>
             </Dropdown>
+            
+            {/* 排序控制 - 移到最后 */}
+            <Space>
+                <Dropdown overlay={sortMenu} trigger={['click']}>
+                    <Button>
+                        {t('challenges.controls.sortBy')}: {t(`challenges.sort.${sortBy}`)} <DownOutlined />
+                    </Button>
+                </Dropdown>
+                <Button 
+                    icon={sortOrder === 'asc' ? <SortAscendingOutlined /> : <SortDescendingOutlined />}
+                    onClick={onSortOrderChange}
+                    title={sortOrder === 'asc' ? t('challenges.controls.ascending') : t('challenges.controls.descending')}
+                />
+            </Space>
         </Space>
     );
 };
