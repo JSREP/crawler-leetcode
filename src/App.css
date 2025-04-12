@@ -41,17 +41,10 @@
   height: 3px !important;
 }
 
-/* 内容区域与导航栏对齐 - 所有区域保持一致宽度和居中，但不设置内边距 */
-.navbar-container,
-.ChallengeListPage,
-.HomePage {
-  max-width: 80%;
+/* 导航栏容器宽度 */
+.navbar-container {
+  max-width: 1000px;
   margin: 0 auto;
-}
-
-/* 添加内边距到实际内容容器 */
-.ChallengeListPage .ant-space {
-  padding: 0;
 }
 
 /* 防止菜单项显示为省略号 */
