@@ -56,12 +56,12 @@ const YamlPreviewSection: React.FC<YamlPreviewSectionProps> = ({
           onClick={showModal}
           icon={<CopyOutlined />}
         >
-          生成YAML
+          预览YAML
         </Button>
       </div>
       
       <Modal
-        title="生成的YAML代码"
+        title="预览YAML代码"
         open={isModalVisible}
         onCancel={handleCancel}
         width={800}
