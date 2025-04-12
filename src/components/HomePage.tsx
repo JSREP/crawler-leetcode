@@ -141,7 +141,10 @@ const HomePage = () => {
                     color: 'white',
                     height: '46px',
                     borderRadius: '23px',
-                    padding: '0 28px'
+                    padding: '0 28px',
+                    background: 'rgba(255,255,255,0.15)',
+                    fontWeight: 500,
+                    boxShadow: '0 2px 8px rgba(0,0,0,0.2)'
                   }}
                   onClick={() => navigate('/about')}
                 >
