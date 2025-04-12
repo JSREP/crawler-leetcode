@@ -74,6 +74,16 @@ a:hover {
   background-color: #3eaf7c;
   border-color: #3eaf7c;
 }
+
+/* 调整Select组件的文本和下拉图标间距 */
+.ant-select-selection-item {
+  padding-right: 5px !important;
+}
+
+.ant-select-arrow {
+  inset-inline-end: 5px !important;
+}
+
 button:hover {
   border-color: #646cff;
 }

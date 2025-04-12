@@ -1,5 +1,6 @@
 import { Tag, Tooltip } from 'antd';
 import * as React from 'react';
+import { useTranslation } from 'react-i18next';
 
 interface TopicTagProps {
     /**
@@ -48,11 +49,16 @@ const TopicTag: React.FC<TopicTagProps> = ({
     text,
     clickable = false,
     onClick,
-    tooltip = "点击可按此标签筛选题目",
+    tooltip,
     selected = false,
     style,
     stopPropagation = false
 }) => {
+    const { t } = useTranslation();
+    
+    // 使用传入的tooltip或默认的i18n文本
+    const tooltipText = tooltip || t('tagTooltips.filterByTag');
+    
     // 根据是否被选中设置颜色 - 固定颜色方案
     // 未选中时使用蓝色，选中时使用深蓝色
     const tagColor = selected ? 'geekblue' : 'blue';
@@ -80,8 +86,8 @@ const TopicTag: React.FC<TopicTagProps> = ({
         </Tag>
     );
     
-    return tooltip && clickable ? (
-        <Tooltip title={tooltip} placement="top">
+    return tooltipText && clickable ? (
+        <Tooltip title={tooltipText} placement="top">
             {tag}
         </Tooltip>
     ) : tag;
