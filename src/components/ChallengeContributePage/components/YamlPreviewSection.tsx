@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Button, Modal, Space, message } from 'antd';
-import { CopyOutlined, GithubOutlined, BugOutlined } from '@ant-design/icons';
+import { CopyOutlined, GithubOutlined } from '@ant-design/icons';
 import { Light as SyntaxHighlighter } from 'react-syntax-highlighter';
 import yaml from 'react-syntax-highlighter/dist/esm/languages/hljs/yaml';
 import { vs } from 'react-syntax-highlighter/dist/esm/styles/hljs';
@@ -11,6 +11,9 @@ SyntaxHighlighter.registerLanguage('yaml', yaml);
 // GitHub仓库信息
 const GITHUB_REPO = 'JSREP/crawler-leetcode';
 const GITHUB_BASE_URL = `https://github.com/${GITHUB_REPO}`;
+
+// YAML长度限制（超过此长度需要手动提交）
+const YAML_LENGTH_LIMIT = 1000;
 
 // 自定义高亮主题
 const highlightTheme = {
@@ -36,6 +39,8 @@ const YamlPreviewSection: React.FC<YamlPreviewSectionProps> = ({
   onCopyYaml
 }) => {
   const [isModalVisible, setIsModalVisible] = React.useState<boolean>(false);
+  const [isLengthWarningVisible, setIsLengthWarningVisible] = React.useState<boolean>(false);
+  const [currentAction, setCurrentAction] = React.useState<'PR' | 'Issue' | null>(null);
 
   const showModal = () => {
     onGenerateYaml(); // 先生成YAML
@@ -44,6 +49,11 @@ const YamlPreviewSection: React.FC<YamlPreviewSectionProps> = ({
 
   const handleCancel = () => {
     setIsModalVisible(false);
+  };
+
+  const handleLengthWarningCancel = () => {
+    setIsLengthWarningVisible(false);
+    setCurrentAction(null);
   };
 
   // 复制并关闭Modal
@@ -66,12 +76,58 @@ const YamlPreviewSection: React.FC<YamlPreviewSectionProps> = ({
     return '新挑战';
   };
 
-  // 创建Pull Request
-  const createPullRequest = () => {
+  // 检查YAML长度并决定是否显示警告
+  const checkYamlLengthAndProceed = (action: 'PR' | 'Issue') => {
+    // 如果还没有YAML，先生成
     if (!yamlOutput) {
-      message.error('请先预览YAML生成内容');
+      onGenerateYaml();
+    }
+
+    // 检查生成后的YAML长度
+    if (yamlOutput.length > YAML_LENGTH_LIMIT) {
+      // 设置当前操作类型
+      setCurrentAction(action);
+      // 显示长度警告弹窗
+      setIsLengthWarningVisible(true);
       return;
     }
+
+    // 长度在限制内，继续正常流程
+    if (action === 'PR') {
+      proceedToPullRequest();
+    } else {
+      proceedToIssue();
+    }
+  };
+
+  // 手动复制YAML，用于超长情况
+  const handleManualCopyYaml = () => {
+    navigator.clipboard.writeText(yamlOutput)
+      .then(() => {
+        message.success('YAML已复制到剪贴板，请在GitHub中粘贴');
+        
+        // 打开相应的GitHub页面
+        if (currentAction === 'PR') {
+          const prUrl = `${GITHUB_BASE_URL}/compare/main...`;
+          window.open(prUrl, '_blank');
+        } else {
+          const issueUrl = `${GITHUB_BASE_URL}/issues/new`;
+          window.open(issueUrl, '_blank');
+        }
+        
+        // 关闭警告弹窗
+        setIsLengthWarningVisible(false);
+        setCurrentAction(null);
+      })
+      .catch((error) => {
+        console.error('复制YAML失败:', error);
+        message.error('复制YAML失败，请手动复制后提交');
+      });
+  };
+
+  // 创建Pull Request的实际实现
+  const proceedToPullRequest = () => {
+    if (!yamlOutput) return;
 
     const challengeName = extractChallengeName();
     
@@ -101,12 +157,9 @@ const YamlPreviewSection: React.FC<YamlPreviewSectionProps> = ({
       });
   };
 
-  // 创建Issue
-  const createIssue = () => {
-    if (!yamlOutput) {
-      message.error('请先预览YAML生成内容');
-      return;
-    }
+  // 创建Issue的实际实现
+  const proceedToIssue = () => {
+    if (!yamlOutput) return;
 
     const challengeName = extractChallengeName();
     
@@ -136,6 +189,16 @@ const YamlPreviewSection: React.FC<YamlPreviewSectionProps> = ({
       });
   };
 
+  // 创建Pull Request的触发函数
+  const createPullRequest = () => {
+    checkYamlLengthAndProceed('PR');
+  };
+
+  // 创建Issue的触发函数
+  const createIssue = () => {
+    checkYamlLengthAndProceed('Issue');
+  };
+
   return (
     <>
       <div style={{ marginBottom: 16, marginTop: 24 }}>
@@ -159,13 +222,14 @@ const YamlPreviewSection: React.FC<YamlPreviewSectionProps> = ({
           <Button
             type="default"
             onClick={createIssue}
-            icon={<BugOutlined />}
+            icon={<GithubOutlined />}
           >
             New Issue
           </Button>
         </Space>
       </div>
       
+      {/* YAML预览对话框 */}
       <Modal
         title="预览YAML代码"
         open={isModalVisible}
@@ -198,6 +262,33 @@ const YamlPreviewSection: React.FC<YamlPreviewSectionProps> = ({
           >
             {yamlOutput}
           </SyntaxHighlighter>
+        </div>
+      </Modal>
+      
+      {/* YAML长度警告对话框 */}
+      <Modal
+        title="YAML内容过长"
+        open={isLengthWarningVisible}
+        onCancel={handleLengthWarningCancel}
+        footer={[
+          <Button key="cancel" onClick={handleLengthWarningCancel}>
+            取消
+          </Button>,
+          <Button key="copy" type="primary" icon={<CopyOutlined />} onClick={handleManualCopyYaml}>
+            复制YAML并继续
+          </Button>
+        ]}
+      >
+        <div style={{ padding: '16px 0' }}>
+          <p>生成的YAML内容超过了{YAML_LENGTH_LIMIT}个字符，无法通过URL参数直接传递。</p>
+          <p>请使用以下步骤手动提交:</p>
+          <ol>
+            <li>点击下方的"复制YAML并继续"按钮将YAML内容复制到剪贴板</li>
+            <li>然后会自动跳转到GitHub {currentAction === 'PR' ? 'Pull Request' : 'Issue'} 创建页面</li>
+            <li>在GitHub页面上，填写标题和描述</li>
+            <li>将YAML内容粘贴到描述区域中的合适位置</li>
+            <li>提交{currentAction === 'PR' ? 'Pull Request' : 'Issue'}</li>
+          </ol>
         </div>
       </Modal>
     </>
