@@ -84,7 +84,9 @@ export default {
             tags: 'Filter by tags',
             difficulty: 'Filter by difficulty',
             allDifficulties: 'All difficulties',
-            search: 'Search challenges...'
+            allPlatforms: 'All platforms',
+            search: 'Search challenges...',
+            clearAll: 'Clear all'
         },
         sort: {
             number: 'Problem No.',
@@ -95,6 +97,16 @@ export default {
         dates: {
             created: 'Created',
             updated: 'Updated'
+        },
+        controls: {
+            sortBy: 'Sort by',
+            ascending: 'Ascending order',
+            descending: 'Descending order',
+            platform: 'Platform'
+        },
+        empty: {
+            title: 'No challenges found',
+            description: 'Try adjusting your search or filter criteria'
         }
     },
     challenge: {

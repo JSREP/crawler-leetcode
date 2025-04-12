@@ -84,7 +84,9 @@ const zhTranslations = {
             tags: '标签筛选',
             difficulty: '难度筛选',
             allDifficulties: '所有难度',
-            search: '搜索挑战...'
+            allPlatforms: '所有平台',
+            search: '搜索挑战...',
+            clearAll: '清空所有'
         },
         sort: {
             number: '题号',
@@ -95,6 +97,16 @@ const zhTranslations = {
         dates: {
             created: '创建',
             updated: '更新'
+        },
+        controls: {
+            sortBy: '排序方式',
+            ascending: '升序',
+            descending: '降序',
+            platform: '平台筛选'
+        },
+        empty: {
+            title: '未找到挑战',
+            description: '请尝试调整搜索或筛选条件'
         }
     },
     challenge: {

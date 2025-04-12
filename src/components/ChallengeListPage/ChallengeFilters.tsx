@@ -1,5 +1,6 @@
 import { Space, Tag, Button } from 'antd';
 import { CloseOutlined } from '@ant-design/icons';
+import { useTranslation } from 'react-i18next';
 import SearchBox from '../SearchBox';
 import StarRating from '../StarRating';
 
@@ -70,13 +71,15 @@ const ChallengeFilters: React.FC<ChallengeFiltersProps> = ({
     onSearch,
     searchValue = ''
 }) => {
+    const { t } = useTranslation();
+    
     return (
         <div>
             {/* 搜索框组件 */}
             <SearchBox 
                 onSearch={onSearch}
                 value={searchValue}
-                placeholder="搜索题目、标签、编号..."
+                placeholder={t('challenges.filters.search')}
                 historyStorageKey="challenge-search-history"
             />
             
@@ -89,7 +92,7 @@ const ChallengeFilters: React.FC<ChallengeFiltersProps> = ({
                             onClose={onRemoveDifficulty}
                             style={{ background: '#f0f5ff', borderColor: '#adc6ff' }}
                         >
-                            难度: <StarRating difficulty={parseInt(selectedDifficulty)} />
+                            {t('challenges.sort.difficulty')}: <StarRating difficulty={parseInt(selectedDifficulty)} />
                         </Tag>
                     )}
                     
@@ -99,7 +102,7 @@ const ChallengeFilters: React.FC<ChallengeFiltersProps> = ({
                             onClose={onRemovePlatform}
                             color={selectedPlatform === 'LeetCode' ? 'orange' : 'purple'}
                         >
-                            平台: {selectedPlatform}
+                            {t('challenge.detail.targetWebsite')}: {selectedPlatform}
                         </Tag>
                     )}
                     
@@ -120,7 +123,7 @@ const ChallengeFilters: React.FC<ChallengeFiltersProps> = ({
                         onClick={onClearAll}
                         style={{ color: '#ff4d4f' }}
                     >
-                        清空所有
+                        {t('challenges.filters.clearAll')}
                     </Button>
                 </Space>
             )}

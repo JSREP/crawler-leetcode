@@ -1,35 +1,31 @@
-import { Space, Select, Button } from 'antd';
-import { ArrowUpOutlined, ArrowDownOutlined } from '@ant-design/icons';
+import { Select, Divider, Space, Dropdown, Button, Menu, Checkbox } from 'antd';
+import { SortAscendingOutlined, SortDescendingOutlined, TagOutlined, FilterOutlined, DownOutlined } from '@ant-design/icons';
+import { useTranslation } from 'react-i18next';
 import StarRating from '../StarRating';
-import { useMemo } from 'react';
-import { Col } from 'antd';
-import '../../styles/dropdown.css';
-
-const { Option } = Select;
 
 interface ChallengeControlsProps {
     /**
-     * 所有可选标签
+     * 所有可用的标签
      */
     allTags: string[];
     
     /**
-     * 所有可选平台
+     * 所有可用的平台
      */
     allPlatforms: string[];
     
     /**
-     * 当前选中的标签
+     * 选中的标签
      */
     selectedTags: string[];
     
     /**
-     * 当前选中的难度
+     * 选中的难度
      */
     selectedDifficulty: string;
     
     /**
-     * 当前选中的平台
+     * 选中的平台
      */
     selectedPlatform: string;
     
@@ -61,7 +57,7 @@ interface ChallengeControlsProps {
     /**
      * 排序字段变更回调
      */
-    onSortByChange: (field: string) => void;
+    onSortByChange: (sortBy: string) => void;
     
     /**
      * 排序顺序变更回调
@@ -70,7 +66,8 @@ interface ChallengeControlsProps {
 }
 
 /**
- * 挑战列表的搜索和控制组件
+ * 挑战列表的控制面板组件
+ * 包含排序、过滤等操作
  */
 const ChallengeControls: React.FC<ChallengeControlsProps> = ({
     allTags,
@@ -86,71 +83,100 @@ const ChallengeControls: React.FC<ChallengeControlsProps> = ({
     onSortByChange,
     onSortOrderChange
 }) => {
-    // 确保LeetCode平台在平台列表中
-    const platformOptions = useMemo(() => {
-        const platforms = [...new Set([...allPlatforms, 'LeetCode'])];
-        return [
-            { value: 'all', label: '所有平台' },
-            ...platforms.map(platform => ({ value: platform, label: platform }))
-        ];
-    }, [allPlatforms]);
-
-    return (
-        <Space wrap>
-            <Select
-                mode="multiple"
-                placeholder="筛选标签"
-                style={{ width: 200 }}
+    const { t } = useTranslation();
+    
+    // 排序功能菜单
+    const sortMenu = (
+        <Menu 
+            selectedKeys={[sortBy]}
+            onClick={({ key }) => onSortByChange(key)}
+        >
+            <Menu.Item key="number">{t('challenges.sort.number')}</Menu.Item>
+            <Menu.Item key="difficulty">{t('challenges.sort.difficulty')}</Menu.Item>
+            <Menu.Item key="createTime">{t('challenges.sort.createTime')}</Menu.Item>
+            <Menu.Item key="updateTime">{t('challenges.sort.updateTime')}</Menu.Item>
+        </Menu>
+    );
+    
+    // 难度过滤菜单
+    const difficultyMenu = (
+        <Menu
+            selectedKeys={[selectedDifficulty]}
+            onClick={({ key }) => onDifficultyChange(key)}
+        >
+            <Menu.Item key="all">{t('challenges.filters.allDifficulties')}</Menu.Item>
+            <Menu.Item key="1">
+                <StarRating difficulty={1} />
+            </Menu.Item>
+            <Menu.Item key="2">
+                <StarRating difficulty={2} />
+            </Menu.Item>
+            <Menu.Item key="3">
+                <StarRating difficulty={3} />
+            </Menu.Item>
+        </Menu>
+    );
+    
+    // 平台过滤菜单
+    const platformMenu = (
+        <Menu
+            selectedKeys={[selectedPlatform]}
+            onClick={({ key }) => onPlatformChange(key)}
+        >
+            <Menu.Item key="all">{t('challenges.filters.allPlatforms')}</Menu.Item>
+            {allPlatforms.map(platform => (
+                <Menu.Item key={platform}>{platform}</Menu.Item>
+            ))}
+        </Menu>
+    );
+    
+    // 标签选择菜单
+    const tagMenu = (
+        <div style={{ padding: '8px', maxHeight: '400px', overflowY: 'auto', minWidth: '200px' }}>
+            <Checkbox.Group 
+                options={allTags.map(tag => ({ label: tag, value: tag }))} 
                 value={selectedTags}
-                onChange={onTagsChange}
-                options={allTags.map(tag => ({ label: tag, value: tag }))}
+                onChange={tags => onTagsChange(tags as string[])}
             />
-
-            <Select
-                placeholder="选择难度"
-                style={{ width: 140 }}
-                value={selectedDifficulty}
-                onChange={onDifficultyChange}
-                dropdownStyle={{ 
-                    zIndex: 1050,
-                    minWidth: '160px'
-                }}
-                getPopupContainer={triggerNode => triggerNode.parentNode as HTMLElement}
-            >
-                <Option value="all">全部难度</Option>
-                {[1, 2, 3, 4, 5].map(n => (
-                    <Option 
-                        key={n} 
-                        value={String(n)} 
-                        className="difficulty-option"
-                    >
-                        <StarRating difficulty={n} />
-                    </Option>
-                ))}
-            </Select>
-
-            <Select
-                style={{ width: 140 }}
-                value={selectedPlatform}
-                onChange={onPlatformChange}
-                options={platformOptions}
-            />
-
-            <Select
-                value={sortBy}
-                style={{ width: 120 }}
-                onChange={onSortByChange}
-            >
-                <Option value="number">编号排序</Option>
-                <Option value="difficulty">难度排序</Option>
-                <Option value="createTime">创建时间</Option>
-                <Option value="updateTime">更新时间</Option>
-            </Select>
-
-            <Button
-                icon={sortOrder === 'asc' ? <ArrowUpOutlined /> : <ArrowDownOutlined />}
-                onClick={onSortOrderChange}
-            />
+        </div>
+    );
+    
+    return (
+        <Space split={<Divider type="vertical" />} style={{ marginBottom: 20 }}>
+            {/* 排序控制 */}
+            <Space>
+                <Dropdown overlay={sortMenu} trigger={['click']}>
+                    <Button>
+                        {t('challenges.controls.sortBy')}: {t(`challenges.sort.${sortBy}`)} <DownOutlined />
+                    </Button>
+                </Dropdown>
+                <Button 
+                    icon={sortOrder === 'asc' ? <SortAscendingOutlined /> : <SortDescendingOutlined />}
+                    onClick={onSortOrderChange}
+                    title={sortOrder === 'asc' ? t('challenges.controls.ascending') : t('challenges.controls.descending')}
+                />
+            </Space>
+            
+            {/* 标签过滤 */}
+            <Dropdown overlay={tagMenu} trigger={['click']}>
+                <Button icon={<TagOutlined />}>
+                    {t('challenges.filters.tags')} {selectedTags.length > 0 && `(${selectedTags.length})`} <DownOutlined />
+                </Button>
+            </Dropdown>
+            
+            {/* 难度过滤 */}
+            <Dropdown overlay={difficultyMenu} trigger={['click']}>
+                <Button icon={<FilterOutlined />}>
+                    {t('challenges.filters.difficulty')} <DownOutlined />
+                </Button>
+            </Dropdown>
+            
+            {/* 平台过滤 */}
+            <Dropdown overlay={platformMenu} trigger={['click']}>
+                <Button icon={<FilterOutlined />}>
+                    {t('challenges.controls.platform')} <DownOutlined />
+                </Button>
+            </Dropdown>
         </Space>
     );
 };
