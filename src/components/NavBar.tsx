@@ -68,7 +68,7 @@ const NavBar = () => {
                         <Link to="/" style={{ display: 'flex', alignItems: 'center' }}>
                             <img 
                                 src={faviconLogo} 
-                                alt="LeetCode Crawler" 
+                                alt="Crawler LeetCode" 
                                 style={{
                                     height: '46px',
                                     width: 'auto',
@@ -76,7 +76,7 @@ const NavBar = () => {
                                 }}
                             />
                             <Title level={3} style={{margin: 0, color: '#2c3e50', whiteSpace: 'nowrap'}}>
-                                LeetCode Crawler
+                                Crawler LeetCode
                             </Title>
                         </Link>
                     </div>
