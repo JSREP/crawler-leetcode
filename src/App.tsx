@@ -1,4 +1,4 @@
-import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
+import {HashRouter as Router, Route, Routes} from 'react-router-dom'
 import './App.css'
 import NavBar from './components/NavBar'
 import HomePage from './components/HomePage'
@@ -7,6 +7,7 @@ import ChallengeDetailPage from './components/ChallengeDetailPage'
 import ChallengeContributePage from './components/ChallengeContributePage'
 import AboutPage from './components/AboutPage'
 import GitHubRibbon from './components/GitHubRibbon'
+import PageTitle from './components/PageTitle'
 import './gh-fork-ribbon.css';
 import './styles/github-ribbon-fix.css';
 
@@ -14,6 +15,7 @@ const App = () => {
     return (
         <Router>
             <div className="App">
+                <PageTitle />
                 <GitHubRibbon repositoryUrl="https://github.com/JSREP/crawler-leetcode" />
                 <NavBar/>
                 <div className="content-wrapper" style={{ padding: '20px 0' }}>
