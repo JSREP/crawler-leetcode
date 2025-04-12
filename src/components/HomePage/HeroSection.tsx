@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Button, Col, Row, Space, Typography, Statistic, Badge } from 'antd';
 import { ArrowRightOutlined, TrophyOutlined } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { 
   heroSectionStyle, 
   heroTitleStyle, 
@@ -28,6 +29,7 @@ interface HeroSectionProps {
  */
 const HeroSection: React.FC<HeroSectionProps> = ({ challenges, difficultyCounts, animatedStats }) => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   return (
     <div style={heroSectionStyle}>
@@ -35,10 +37,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({ challenges, difficultyCounts,
         <Col xs={24} md={16} lg={12}>
           <div style={{ animation: 'fadeIn 1s ease-out' }}>
             <Title level={1} style={heroTitleStyle}>
-              爬虫技术挑战合集
+              {t('home.hero.title')}
             </Title>
             <Paragraph style={heroSubtitleStyle}>
-              突破各种网站反爬机制，掌握先进爬虫技术，提升数据采集能力，成为爬虫工程师的不二之选
+              {t('home.hero.subtitle')}
             </Paragraph>
             <Space size="middle">
               <Button 
@@ -47,14 +49,14 @@ const HeroSection: React.FC<HeroSectionProps> = ({ challenges, difficultyCounts,
                 onClick={() => navigate('/challenges')}
                 style={primaryButtonStyle}
               >
-                开始挑战 <ArrowRightOutlined />
+                {t('home.hero.startButton')} <ArrowRightOutlined />
               </Button>
               <Button 
                 size="large"
                 style={secondaryButtonStyle}
                 onClick={() => navigate('/about')}
               >
-                了解更多
+                {t('home.hero.learnMoreButton')}
               </Button>
             </Space>
           </div>
@@ -68,22 +70,22 @@ const HeroSection: React.FC<HeroSectionProps> = ({ challenges, difficultyCounts,
           }}>
             <Space direction="vertical" size="large" style={{ width: '100%' }}>
               <Statistic 
-                title={<Text style={{ color: 'rgba(255,255,255,0.8)' }}>总挑战数</Text>} 
+                title={<Text style={{ color: 'rgba(255,255,255,0.8)' }}>{t('home.hero.stats.totalChallenges')}</Text>} 
                 value={challenges} 
                 valueStyle={{ color: 'white' }}
                 prefix={<TrophyOutlined />}
               />
               <Row gutter={16}>
                 <Col span={8}>
-                  <Badge color="#52c41a" text={<Text style={{ color: 'rgba(255,255,255,0.8)' }}>初级</Text>} />
+                  <Badge color="#52c41a" text={<Text style={{ color: 'rgba(255,255,255,0.8)' }}>{t('home.hero.stats.easy')}</Text>} />
                   <div style={{ color: 'white', fontSize: '1.5rem', fontWeight: 'bold' }}>{difficultyCounts.easy}</div>
                 </Col>
                 <Col span={8}>
-                  <Badge color="#faad14" text={<Text style={{ color: 'rgba(255,255,255,0.8)' }}>中级</Text>} />
+                  <Badge color="#faad14" text={<Text style={{ color: 'rgba(255,255,255,0.8)' }}>{t('home.hero.stats.medium')}</Text>} />
                   <div style={{ color: 'white', fontSize: '1.5rem', fontWeight: 'bold' }}>{difficultyCounts.medium}</div>
                 </Col>
                 <Col span={8}>
-                  <Badge color="#f5222d" text={<Text style={{ color: 'rgba(255,255,255,0.8)' }}>高级</Text>} />
+                  <Badge color="#f5222d" text={<Text style={{ color: 'rgba(255,255,255,0.8)' }}>{t('home.hero.stats.hard')}</Text>} />
                   <div style={{ color: 'white', fontSize: '1.5rem', fontWeight: 'bold' }}>{difficultyCounts.hard}</div>
                 </Col>
               </Row>
