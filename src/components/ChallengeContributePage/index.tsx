@@ -196,15 +196,6 @@ const ChallengeContributePage: React.FC = () => {
         {/* 解决方案部分 */}
         <SolutionsSection form={form} />
         
-        {/* 更新时间 */}
-        <Form.Item
-          name="updateTime"
-          label="更新时间"
-          tooltip="挑战的更新时间，通常是最近一次题目变更的时间"
-        >
-          <Input placeholder="YYYY-MM-DD" />
-        </Form.Item>
-        
         {/* 隐藏的isExpired字段 */}
         <Form.Item name="isExpired" hidden initialValue={false}>
           <input type="hidden" />

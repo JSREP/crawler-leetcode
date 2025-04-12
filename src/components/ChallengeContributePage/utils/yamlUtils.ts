@@ -12,18 +12,28 @@ export const generateYamlFromFormData = (formData: ChallengeFormData): string =>
   }
   
   // 转换解决方案数组为对象格式
-  const solutionsArray = formData.solutions?.map(solution => {
-    // 确保解决方案有标题和URL
-    if (solution.title && solution.url) {
-      return {
-        title: solution.title,
-        url: solution.url,
-        source: solution.source || undefined,
-        author: solution.author || undefined
-      };
-    }
-    return null;
-  }).filter(Boolean) || [];
+  const solutionsArray = formData.solutions
+    ?.map(solution => {
+      // 确保解决方案有标题和URL
+      if (solution.title && solution.url) {
+        return {
+          title: solution.title,
+          url: solution.url,
+          source: solution.source || undefined,
+          author: solution.author || undefined
+        };
+      }
+      return null;
+    })
+    .filter((solution): solution is { 
+      title: string; 
+      url: string; 
+      source?: string; 
+      author?: string; 
+    } => solution !== null) || [];
+  
+  // 创建当前时间戳
+  const currentTime = new Date().toISOString();
   
   // 创建符合YAML要求的数据结构
   const challengeData: ChallengeData = {
@@ -39,8 +49,8 @@ export const generateYamlFromFormData = (formData: ChallengeFormData): string =>
     'is-expired': formData.isExpired,
     tags: formData.tags || [],
     solutions: solutionsArray,
-    'create-time': new Date().toISOString(),
-    'update-time': new Date().toISOString()
+    'create-time': currentTime,
+    'update-time': currentTime // 始终使用当前时间作为更新时间
   };
   
   // 转换为YAML字符串
