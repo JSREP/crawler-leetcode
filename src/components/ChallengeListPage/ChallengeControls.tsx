@@ -1,7 +1,11 @@
-import { Select, Divider, Space, Dropdown, Button, Menu, Checkbox } from 'antd';
-import { SortAscendingOutlined, SortDescendingOutlined, TagOutlined, FilterOutlined, DownOutlined } from '@ant-design/icons';
+import { Select, Divider, Space, Dropdown, Button, Menu, Checkbox, Input } from 'antd';
+import { SortAscendingOutlined, SortDescendingOutlined, TagOutlined, FilterOutlined, DownOutlined, SearchOutlined } from '@ant-design/icons';
 import { useTranslation } from 'react-i18next';
+import { useState, ChangeEvent } from 'react';
 import StarRating from '../StarRating';
+
+// 定义平台枚举值
+const PLATFORM_TYPES = ['Web', 'Android', 'iOS'];
 
 interface ChallengeControlsProps {
     /**
@@ -85,6 +89,9 @@ const ChallengeControls: React.FC<ChallengeControlsProps> = ({
 }) => {
     const { t } = useTranslation();
     
+    // 在组件的开头部分添加状态
+    const [tagSearchText, setTagSearchText] = useState('');
+    
     // 排序功能菜单
     const sortMenu = (
         <Menu 
@@ -130,7 +137,8 @@ const ChallengeControls: React.FC<ChallengeControlsProps> = ({
             onClick={({ key }) => onPlatformChange(key)}
         >
             <Menu.Item key="all">{t('challenges.filters.allPlatforms')}</Menu.Item>
-            {allPlatforms.map(platform => (
+            {/* 使用固定的平台枚举列表，而不是从挑战中提取的 */}
+            {PLATFORM_TYPES.map(platform => (
                 <Menu.Item key={platform}>{platform}</Menu.Item>
             ))}
         </Menu>
@@ -142,17 +150,55 @@ const ChallengeControls: React.FC<ChallengeControlsProps> = ({
             padding: '12px', 
             maxHeight: '400px', 
             overflowY: 'auto', 
-            minWidth: '200px',
+            minWidth: '300px',
             backgroundColor: '#fff',
             boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)',
             borderRadius: '4px',
             border: '1px solid #f0f0f0'
         }}>
-            <Checkbox.Group 
-                options={allTags.map(tag => ({ label: tag, value: tag }))} 
-                value={selectedTags}
-                onChange={tags => onTagsChange(tags as string[])}
+            {/* 添加标签搜索框 */}
+            <Input 
+                prefix={<SearchOutlined />}
+                placeholder={t('challenges.filters.searchTags')}
+                style={{ marginBottom: '12px' }}
+                onChange={(e: ChangeEvent<HTMLInputElement>) => {
+                    setTagSearchText(e.target.value);
+                }}
+                allowClear
             />
+            
+            {/* 标签列表，使用Grid布局优化显示 */}
+            <div>
+                <Checkbox.Group 
+                    value={selectedTags}
+                    onChange={tags => onTagsChange(tags as string[])}
+                    style={{ 
+                        display: 'flex', 
+                        flexWrap: 'wrap',
+                        width: '100%'
+                    }}
+                >
+                    {allTags
+                        .filter(tag => tag.toLowerCase().includes(tagSearchText.toLowerCase()))
+                        .map(tag => (
+                            <Checkbox 
+                                key={tag} 
+                                value={tag} 
+                                style={{ 
+                                    marginRight: '12px',
+                                    marginBottom: '6px',
+                                    width: 'auto',
+                                    display: 'inline-flex',
+                                    alignItems: 'center',
+                                    fontSize: '13px'
+                                }}
+                            >
+                                {tag}
+                            </Checkbox>
+                        ))
+                    }
+                </Checkbox.Group>
+            </div>
         </div>
     );
     

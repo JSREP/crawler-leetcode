@@ -35,4 +35,4 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}  # GitHub自动提供的访问令牌
 
       - name: 部署完成通知
-        run: echo "✅ 网站已成功部署到GitHub Pages！访问地址: https://jsrep.github.io/crawler-leetcode/" 
+        run: 'echo "✅ 网站已成功部署到GitHub Pages！访问地址: https://jsrep.github.io/crawler-leetcode/"' 

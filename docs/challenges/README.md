@@ -66,8 +66,8 @@ challenges:
 ```yaml
 version: 1
 challenges:
-  - id: 12
-    id-alias: akamai-bot
+  - id: 999
+    id-alias: example-akamai
     tags:
       - browser-fingerprint
       - behavior-analysis

@@ -97,7 +97,8 @@ export default {
             allDifficulties: 'All difficulties',
             allPlatforms: 'All platforms',
             search: 'Search challenges...',
-            clearAll: 'Clear all'
+            clearAll: 'Clear all',
+            searchTags: 'Search tags...'
         },
         sort: {
             number: 'Problem No.',
