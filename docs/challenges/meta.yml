@@ -24,6 +24,10 @@ challenges:
     # 挑战名称（必填）
     # 作为列表和详情页的标题，建议控制在30个字符以内
     name: 测试挑战
+    
+    # 挑战英文名称（选填）
+    # 当用户选择英文语言时显示，不提供时将使用中文名称
+    name_en: Test Challenge
 
     # 挑战难度评级（整数类型，必填）
     # 取值范围: 1-5，1表示最简单，5表示最难
@@ -35,11 +39,22 @@ challenges:
     # 与description-markdown-path字段二选一使用，必须选其中一种方式提供描述
     description-markdown: 测试挑战：突破JavaScript反爬机制的示例挑战
     
+    # 英文版Markdown格式详细描述（选填）
+    # 当用户选择英文语言时显示，与description-markdown-path_en字段二选一使用
+    # 不提供英文描述时将使用中文描述
+    description-markdown_en: "Test Challenge: A sample challenge for breaking through JavaScript anti-crawling mechanisms"
+    
     # Markdown文件路径（推荐）
     # 指向包含完整挑战描述的Markdown文件，支持图片等复杂内容
     # 路径应为相对于项目根目录的相对路径
     # 与description-markdown字段二选一使用
     # description-markdown-path: contents/example/description.md
+    
+    # 英文版Markdown文件路径（选填）
+    # 指向包含英文版完整挑战描述的Markdown文件
+    # 与description-markdown_en字段二选一使用
+    # 当用户选择英文语言时显示此内容
+    # description-markdown-path_en: contents/example/description_en.md
 
     # 挑战目标网站URL的base64编码
     base64-url: aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8=
