@@ -6,7 +6,7 @@ export default {
     },
     about: {
         title: 'About Crawler LeetCode',
-        description: 'Crawler LeetCode is a platform that helps programmers organize and manage LeetCode programming challenges. Our goal is to make problem-solving more efficient and organized.',
+        description: 'Crawler LeetCode is a learning platform focused on web crawling technology challenges. We provide web scraping challenges from basic to advanced levels, helping developers overcome various website anti-crawler mechanisms, master advanced crawling techniques, and enhance data collection capabilities. Whether you are a beginner in web crawling or an engineer looking to advance your skills, our platform offers targeted technical challenges and solutions to help you become an expert in the field of web scraping.',
         features: {
             title: 'Features',
             list: [

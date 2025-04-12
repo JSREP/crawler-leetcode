@@ -6,7 +6,7 @@ export default {
     },
     about: {
         title: '关于 爬虫 LeetCode',
-        description: '爬虫 LeetCode 是一个帮助程序员整理和管理 LeetCode 编程挑战的平台。我们的目标是让刷题更加高效和有组织。',
+        description: '爬虫 LeetCode 是一个专注于爬虫技术挑战的学习平台。我们提供从基础到高级的网络爬虫挑战，帮助开发者突破各种网站反爬机制，掌握先进爬虫技术，提升数据采集能力。无论您是爬虫新手，还是希望进阶的工程师，我们的平台都能为您提供有针对性的技术挑战和解决方案，助您成为爬虫领域的专家。',
         features: {
             title: '项目特点',
             list: [
