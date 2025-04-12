@@ -1,5 +1,6 @@
 import { Typography, Card } from 'antd';
 import { Challenge } from '../../types/challenge';
+import { useTranslation } from 'react-i18next';
 
 const { Title, Text } = Typography;
 
@@ -11,13 +12,15 @@ interface ChallengeSolutionsProps {
  * 挑战解决方案组件，显示解决方案列表
  */
 const ChallengeSolutions: React.FC<ChallengeSolutionsProps> = ({ challenge }) => {
+    const { t } = useTranslation();
+    
     if (!challenge.solutions || challenge.solutions.length === 0) {
         return null;
     }
 
     return (
         <div>
-            <Title level={3}>参考解答</Title>
+            <Title level={3}>{t('challenge.detail.solutions')}</Title>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                 {challenge.solutions.map((solution, index) => (
                     <Card key={index} size="small" hoverable>
@@ -38,7 +41,7 @@ const ChallengeSolutions: React.FC<ChallengeSolutionsProps> = ({ challenge }) =>
                                 target="_blank" 
                                 rel="noopener noreferrer"
                             >
-                                查看解答
+                                {t('challenge.detail.viewSolutionLink')}
                             </a>
                         </div>
                     </Card>

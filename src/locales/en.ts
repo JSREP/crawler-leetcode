@@ -133,7 +133,11 @@ export default {
             created: 'Created',
             updated: 'Updated',
             startChallenge: 'Try It',
-            viewSolution: 'View Solution'
+            viewSolution: 'View Solution',
+            tags: 'Tags',
+            description: 'Problem Description',
+            solutions: 'Reference Solutions',
+            viewSolutionLink: 'View Solution'
         },
         actions: {
             backToList: 'Back to Challenge List'
