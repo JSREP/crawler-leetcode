@@ -88,6 +88,30 @@ const DescriptionFields: React.FC<SectionProps> = ({ form }) => {
     render: (text: string) => text
   });
   const styleRef = useRef<HTMLStyleElement | null>(null);
+  const isInitializedRef = useRef<boolean>(false);
+  
+  // 安全地将表单值转换为字符串
+  const ensureString = (value: any): string => {
+    if (value === null || value === undefined) {
+      return '';
+    }
+    if (typeof value === 'string') {
+      return value;
+    }
+    if (typeof value === 'object') {
+      try {
+        // 尝试从对象中提取text属性或转换为JSON字符串
+        if (value.text && typeof value.text === 'string') {
+          return value.text;
+        }
+        return JSON.stringify(value);
+      } catch (e) {
+        console.error('无法将对象转换为字符串', e);
+        return '';
+      }
+    }
+    return String(value);
+  };
   
   // 处理图片上传
   const handleImageUpload = (file: File): Promise<string> => {
@@ -170,11 +194,31 @@ const DescriptionFields: React.FC<SectionProps> = ({ form }) => {
     }
   `;
 
+  // 同步初始值到state
   useEffect(() => {
-    // 设置初始值
-    setChineseMarkdown(form.getFieldValue('descriptionMarkdown') || '');
-    setEnglishMarkdown(form.getFieldValue('descriptionMarkdownEn') || '');
+    if (isInitializedRef.current) return;
+
+    // 获取表单中的值并确保是字符串类型
+    const chnDesc = ensureString(form.getFieldValue('descriptionMarkdown'));
+    const engDesc = ensureString(form.getFieldValue('descriptionMarkdownEn'));
     
+    // 设置到state中
+    setChineseMarkdown(chnDesc);
+    setEnglishMarkdown(engDesc);
+    
+    // 如果恢复的值不是字符串类型，纠正表单中的值
+    if (typeof form.getFieldValue('descriptionMarkdown') !== 'string') {
+      form.setFieldsValue({ descriptionMarkdown: chnDesc });
+    }
+    
+    if (typeof form.getFieldValue('descriptionMarkdownEn') !== 'string') {
+      form.setFieldsValue({ descriptionMarkdownEn: engDesc });
+    }
+    
+    isInitializedRef.current = true;
+  }, [form]);
+
+  useEffect(() => {
     // 动态加载markdown-it库
     const script = document.createElement('script');
     script.src = 'https://cdn.jsdelivr.net/npm/markdown-it@12.0.4/dist/markdown-it.min.js';
@@ -206,7 +250,7 @@ const DescriptionFields: React.FC<SectionProps> = ({ form }) => {
         document.head.removeChild(script);
       }
     };
-  }, [form]);
+  }, []);
   
   return (
     <>
