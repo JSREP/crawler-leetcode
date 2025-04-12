@@ -275,10 +275,8 @@ const ChallengeListPage = () => {
     };
 
     return (
-        <div style={{
-            padding: 24,
-            maxWidth: '60%',
-            margin: '0 auto',
+        <div className="ChallengeListPage" style={{
+            padding: '24px 0', // 移除左右内边距，只保留上下内边距
             transition: 'all 0.3s ease'
         }}>
             <Space direction="vertical" style={{ width: '100%' }}>
