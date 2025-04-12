@@ -268,6 +268,7 @@ function collectYAMLChallenges(dirPath: string, rootDir: string, isBuild = false
 function processChallengeData(challenge: any, rootDir: string, isBuild: boolean): any {
     // 处理Markdown内容
     let markdownContent = '';
+    let markdownContentEN = '';
     
     // 如果有description-markdown-path，读取对应文件内容
     if (challenge['description-markdown-path']) {
@@ -316,12 +317,61 @@ function processChallengeData(challenge: any, rootDir: string, isBuild: boolean)
     else if (challenge['description-markdown']) {
         markdownContent = challenge['description-markdown'];
     }
+    
+    // 处理英文Markdown文件
+    if (challenge['description-markdown-path_en']) {
+        // 获取原始路径，保持为相对路径
+        const mdPathEN = challenge['description-markdown-path_en'];
+        console.log(`处理英文Markdown路径: ${mdPathEN}`);
+        
+        // 尝试多种可能的路径
+        // 1. 直接从项目根目录读取
+        let fullMdPathEN = path.join(process.cwd(), mdPathEN);
+        console.log(`尝试英文路径1(项目根目录): ${fullMdPathEN}`);
+        
+        // 2. 从docs/challenges目录读取
+        let fullMdPathWithDocsEN = path.join(process.cwd(), 'docs/challenges', mdPathEN);
+        console.log(`尝试英文路径2(docs/challenges/): ${fullMdPathWithDocsEN}`);
+        
+        // 先检查路径1
+        if (fs.existsSync(fullMdPathEN)) {
+            try {
+                // 读取Markdown文件内容
+                const rawMdEN = fs.readFileSync(fullMdPathEN, 'utf8');
+                // 处理Markdown中的图片路径，传入文件所在目录作为基础路径
+                markdownContentEN = processMarkdownImages(rawMdEN, path.dirname(fullMdPathEN), isBuild);
+                console.log(`成功从路径1读取英文Markdown文件: ${mdPathEN}`);
+            } catch (err) {
+                console.error(`读取路径1 英文Markdown文件出错: ${mdPathEN}`, err);
+            }
+        } 
+        // 再检查路径2
+        else if (fs.existsSync(fullMdPathWithDocsEN)) {
+            try {
+                // 读取Markdown文件内容
+                const rawMdEN = fs.readFileSync(fullMdPathWithDocsEN, 'utf8');
+                // 处理Markdown中的图片路径，传入文件所在目录作为基础路径
+                markdownContentEN = processMarkdownImages(rawMdEN, path.dirname(fullMdPathWithDocsEN), isBuild);
+                console.log(`成功从路径2读取英文Markdown文件: ${mdPathEN}`);
+            } catch (err) {
+                console.error(`读取路径2 英文Markdown文件出错: ${mdPathEN}`, err);
+            }
+        }
+        else {
+            console.warn(`所有尝试的路径都不存在英文Markdown文件，最后尝试路径: ${fullMdPathWithDocsEN}`);
+        }
+    }
+    // 否则使用内联的description-markdown_en
+    else if (challenge['description-markdown_en']) {
+        markdownContentEN = challenge['description-markdown_en'];
+    }
 
     // 确保id是字符串或数字，并确保title有一个有效值
     const challengeId = challenge.id || challenge.number || '0';
     const challengeTitle = challenge.name || challenge.title || '未命名挑战';
+    const challengeTitleEN = challenge.name_en || '';
     
-    console.log(`处理挑战: ID=${challengeId}, Title=${challengeTitle}`);
+    console.log(`处理挑战: ID=${challengeId}, Title=${challengeTitle}, EN Title=${challengeTitleEN}`);
 
     // 返回原始挑战数据，不进行类型转换
     // 稍后会在parseChallenges中处理
@@ -331,6 +381,7 @@ function processChallengeData(challenge: any, rootDir: string, isBuild: boolean)
         number: challenge.number || '0',
         title: challengeTitle,
         name: challengeTitle,
+        name_en: challengeTitleEN,
         difficulty: challenge.difficulty || 1,
         'difficulty-level': challenge.difficulty || 1,
         tags: challenge.tags || [],
@@ -347,7 +398,9 @@ function processChallengeData(challenge: any, rootDir: string, isBuild: boolean)
         platform: challenge.platform || 'Web',
         'is-expired': challenge['is-expired'] || false,
         'description-markdown': challenge['description-markdown'] || '',
-        descriptionMarkdown: markdownContent // 构建时将Markdown内容统一赋值给descriptionMarkdown字段
+        'description-markdown_en': challenge['description-markdown_en'] || '',
+        descriptionMarkdown: markdownContent, // 构建时将Markdown内容统一赋值给descriptionMarkdown字段
+        descriptionMarkdownEN: markdownContentEN // 英文Markdown内容
     };
 }
 
