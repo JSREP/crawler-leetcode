@@ -2,6 +2,7 @@ import * as React from 'react';
 import { useState, useEffect, useCallback } from 'react';
 import { Input, Space, Tag, Button, Tooltip, Typography } from 'antd';
 import { SearchOutlined, InfoCircleOutlined } from '@ant-design/icons';
+import { useTranslation } from 'react-i18next';
 
 const { Search } = Input;
 const { Text } = Typography;
@@ -19,22 +20,26 @@ const debounce = (fn: Function, delay: number) => {
 };
 
 /**
- * 搜索提示信息
+ * 搜索提示信息组件
  */
-const SEARCH_TOOLTIP = (
-    <div style={{ maxWidth: 320, padding: '8px 4px' }}>
-        <Text strong style={{ fontSize: '14px', color: '#1890ff' }}>高级搜索提示：</Text>
-        <ul style={{ paddingLeft: 20, marginTop: 8, marginBottom: 5 }}>
-            <li><Text style={{ fontSize: '13px' }}>搜索题目标题、描述、标签等所有字段</Text></li>
-            <li><Text style={{ fontSize: '13px' }}>支持模糊搜索和拼写容错</Text></li>
-            <li><Text style={{ fontSize: '13px' }}>多关键词: "<Text code>动态规划 数组</Text>"</Text></li>
-            <li><Text style={{ fontSize: '13px' }}>精确匹配: "<Text code>=动态规划</Text>"</Text></li>
-            <li><Text style={{ fontSize: '13px' }}>排除词: "<Text code>!二叉树</Text>"</Text></li>
-            <li><Text style={{ fontSize: '13px' }}>前缀匹配: "<Text code>链^</Text>"</Text></li>
-            <li><Text style={{ fontSize: '13px' }}>直接输入题号进行搜索</Text></li>
-        </ul>
-    </div>
-);
+const SearchTooltip: React.FC = () => {
+    const { t } = useTranslation();
+
+    return (
+        <div style={{ maxWidth: 320, padding: '8px 4px' }}>
+            <Text strong style={{ fontSize: '14px', color: '#1890ff' }}>{t('search.tooltip.title')}</Text>
+            <ul style={{ paddingLeft: 20, marginTop: 8, marginBottom: 5 }}>
+                <li><Text style={{ fontSize: '13px' }}>{t('search.tooltip.allFields')}</Text></li>
+                <li><Text style={{ fontSize: '13px' }}>{t('search.tooltip.fuzzySearch')}</Text></li>
+                <li><Text style={{ fontSize: '13px' }}>{t('search.tooltip.multiKeywords.text')} "<Text code>{t('search.tooltip.multiKeywords.example')}</Text>"</Text></li>
+                <li><Text style={{ fontSize: '13px' }}>{t('search.tooltip.exactMatch.text')} "<Text code>{t('search.tooltip.exactMatch.example')}</Text>"</Text></li>
+                <li><Text style={{ fontSize: '13px' }}>{t('search.tooltip.exclude.text')} "<Text code>{t('search.tooltip.exclude.example')}</Text>"</Text></li>
+                <li><Text style={{ fontSize: '13px' }}>{t('search.tooltip.prefix.text')} "<Text code>{t('search.tooltip.prefix.example')}</Text>"</Text></li>
+                <li><Text style={{ fontSize: '13px' }}>{t('search.tooltip.idSearch')}</Text></li>
+            </ul>
+        </div>
+    );
+};
 
 interface SearchBoxProps {
     /**
@@ -80,6 +85,8 @@ const SearchBox: React.FC<SearchBoxProps> = ({
     historyStorageKey = 'recent-searches',
     debounceDelay = 300
 }) => {
+    const { t } = useTranslation();
+    
     // 内部搜索文本状态
     const [inputValue, setInputValue] = useState(value);
     
@@ -141,7 +148,7 @@ const SearchBox: React.FC<SearchBoxProps> = ({
                 />
                 
                 <Tooltip 
-                    title={SEARCH_TOOLTIP} 
+                    title={<SearchTooltip />} 
                     placement="bottomRight"
                     color="white"
                     overlayInnerStyle={{ 
@@ -169,7 +176,7 @@ const SearchBox: React.FC<SearchBoxProps> = ({
             {/* 最近搜索记录 */}
             {showHistory && recentSearches.length > 0 && (
                 <div style={{ marginBottom: 16 }}>
-                    <Text type="secondary" style={{ marginRight: 8 }}>最近搜索:</Text>
+                    <Text type="secondary" style={{ marginRight: 8 }}>{t('search.recentSearches')}:</Text>
                     <Space>
                         {recentSearches.map((search, index) => (
                             <Tag 
@@ -191,7 +198,7 @@ const SearchBox: React.FC<SearchBoxProps> = ({
                                 setRecentSearches([]);
                             }}
                         >
-                            清除
+                            {t('search.clear')}
                         </Button>
                     </Space>
                 </div>

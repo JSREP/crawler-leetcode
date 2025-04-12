@@ -154,6 +154,32 @@ export default {
             loadFailed: 'Failed to load challenge'
         }
     },
+    search: {
+        recentSearches: 'Recent searches',
+        clear: 'Clear',
+        tooltip: {
+            title: 'Advanced Search Tips:',
+            allFields: 'Search challenge title, description, tags and all fields',
+            fuzzySearch: 'Supports fuzzy search and spelling tolerance',
+            multiKeywords: {
+                text: 'Multiple keywords',
+                example: 'dynamic array'
+            },
+            exactMatch: {
+                text: 'Exact match',
+                example: '=dynamic'
+            },
+            exclude: {
+                text: 'Exclude words',
+                example: '!binary tree'
+            },
+            prefix: {
+                text: 'Prefix match',
+                example: 'link^'
+            },
+            idSearch: 'Directly enter challenge ID to search'
+        }
+    },
     common: {
         loading: 'Loading...'
     }
