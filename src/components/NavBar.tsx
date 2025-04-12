@@ -1,7 +1,7 @@
 // src/components/NavBar.tsx
-import { useState, useEffect, useRef } from 'react';
+import { useState } from 'react';
 import {Link, useLocation} from 'react-router-dom';
-import {Layout, Menu, Typography, Select} from 'antd';
+import {Layout, Menu, Typography, Select, Row, Col} from 'antd';
 import { useTranslation } from 'react-i18next';
 import { changeLanguage } from '../i18n';
 // @ts-ignore
@@ -18,7 +18,6 @@ const { Option } = Select;
 const NavBar = () => {
     const { t } = useTranslation();
     const location = useLocation();
-    const [contentPadding, setContentPadding] = useState(16); // 与CSS中定义的内边距一致
 
     // 导航菜单项
     const items = [
@@ -39,82 +38,72 @@ const NavBar = () => {
             zIndex: 1000,
             background: '#fff',
             boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)',
-            overflow: 'visible',
-            padding: '0',
+            padding: 0,
             height: '70px',
             lineHeight: '70px'
         }}>
-            <div className="navbar-container" style={{
-                display: 'flex',
-                alignItems: 'center',
-                height: '100%',
+            {/* 固定宽度的外层容器 */}
+            <div style={{
                 maxWidth: '80%',
-                width: '100%',
                 margin: '0 auto',
-                position: 'relative',
-                paddingLeft: '16px', // 与挑战列表使用相同的左内边距
-                paddingRight: '16px'
+                width: '100%',
+                height: '100%'
             }}>
-                {/* Logo区域 */}
-                <div style={{ 
-                    display: 'flex', 
-                    alignItems: 'center',
-                    height: '100%'
-                }}>
-                    <Link to="/" style={{ display: 'flex', alignItems: 'center' }}>
-                        <img 
-                            src={faviconLogo} 
-                            alt="Crawler LeetCode" 
-                            style={{
-                                height: '46px',
-                                width: 'auto',
-                                marginRight: '12px'
-                            }}
-                        />
-                        <Title level={3} style={{margin: 0, color: '#2c3e50', whiteSpace: 'nowrap'}}>
-                            Crawler LeetCode
-                        </Title>
-                    </Link>
-                </div>
+                {/* 网格布局，确保精确对齐 */}
+                <Row style={{ height: '100%' }}>
+                    {/* Logo区域，确保与内容区域左边缘对齐 */}
+                    <Col className="logo-container" style={{ paddingLeft: '0px' }}>
+                        <Link to="/" style={{ display: 'flex', alignItems: 'center', height: '70px' }}>
+                            <img 
+                                src={faviconLogo} 
+                                alt="Crawler LeetCode" 
+                                style={{
+                                    height: '46px',
+                                    width: 'auto',
+                                    marginRight: '12px'
+                                }}
+                            />
+                            <Title level={3} style={{margin: 0, color: '#2c3e50', whiteSpace: 'nowrap'}}>
+                                Crawler LeetCode
+                            </Title>
+                        </Link>
+                    </Col>
 
-                {/* 导航菜单和语言选择器容器 */}
-                <div style={{
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    alignItems: 'center',
-                    flex: 1,
-                    marginLeft: '40px'
-                }}>
-                    <Menu
-                        mode="horizontal"
-                        selectedKeys={[location.pathname]}
-                        items={items}
-                        style={{
-                            borderBottom: 'none',
-                            fontSize: '16px',
-                            fontWeight: 500,
-                            lineHeight: '70px',
-                            height: '70px',
-                            overflow: 'visible'
-                        }}
-                        disabledOverflow={true}
-                    />
-                    
-                    {/* 语言选择器 */}
-                    <Select
-                        defaultValue={localStorage.getItem('language') || 'en'}
-                        style={{
-                            width: 120,
-                            background: 'transparent',
-                            fontSize: '14px'
-                        }}
-                        variant="borderless"
-                        onChange={handleLanguageChange}
-                    >
-                        <Option value="zh">简体中文</Option>
-                        <Option value="en">English</Option>
-                    </Select>
-                </div>
+                    {/* 弹性布局的菜单区域 */}
+                    <Col flex="auto" style={{ display: 'flex', justifyContent: 'space-between' }}>
+                        <Menu
+                            mode="horizontal"
+                            selectedKeys={[location.pathname]}
+                            items={items}
+                            style={{
+                                borderBottom: 'none',
+                                fontSize: '16px',
+                                fontWeight: 500,
+                                lineHeight: '70px',
+                                height: '70px',
+                                marginLeft: '40px'
+                            }}
+                            disabledOverflow={true}
+                        />
+                        
+                        {/* 语言选择器 */}
+                        <div style={{ paddingRight: '0px' }}>
+                            <Select
+                                defaultValue={localStorage.getItem('language') || 'en'}
+                                style={{
+                                    width: 120,
+                                    background: 'transparent',
+                                    fontSize: '14px'
+                                }}
+                                variant="borderless"
+                                onChange={handleLanguageChange}
+                            >
+                                <Option value="zh">简体中文</Option>
+                                <Option value="en">English</Option>
+                            </Select>
+                        </div>
+                    </Col>
+                </Row>
             </div>
         </Header>
     );
