@@ -78,40 +78,115 @@ const markdownEditorStyles = `
   }
 `;
 
+// 安全地将任何类型的值转换为字符串
+const safeToString = (value: any): string => {
+  if (value === null || value === undefined) {
+    return '';
+  }
+  if (typeof value === 'string') {
+    return value;
+  }
+  if (typeof value === 'object') {
+    try {
+      // 尝试从对象中提取text属性或转换为JSON字符串
+      if (value.text && typeof value.text === 'string') {
+        return value.text;
+      }
+      if (value.toString && value.toString() !== '[object Object]') {
+        return value.toString();
+      }
+      return JSON.stringify(value);
+    } catch (e) {
+      console.error('无法将对象转换为字符串', e);
+      return '';
+    }
+  }
+  return String(value);
+};
+
 /**
  * 描述字段组件
  */
 const DescriptionFields: React.FC<SectionProps> = ({ form }) => {
-  const [chineseMarkdown, setChineseMarkdown] = useState<string>('');
-  const [englishMarkdown, setEnglishMarkdown] = useState<string>('');
+  // 状态
   const [markdownRenderer, setMarkdownRenderer] = useState<any>({
     render: (text: string) => text
   });
-  const styleRef = useRef<HTMLStyleElement | null>(null);
-  const isInitializedRef = useRef<boolean>(false);
   
-  // 安全地将表单值转换为字符串
-  const ensureString = (value: any): string => {
-    if (value === null || value === undefined) {
-      return '';
-    }
-    if (typeof value === 'string') {
-      return value;
-    }
-    if (typeof value === 'object') {
+  // refs
+  const styleRef = useRef<HTMLStyleElement | null>(null);
+  const editorChineseRef = useRef<MdEditor | null>(null);
+  const editorEnglishRef = useRef<MdEditor | null>(null);
+  const hasInitializedRef = useRef<boolean>(false);
+  
+  // 当本地存储里的值变化时，重新初始化编辑器内容
+  useEffect(() => {
+    // 监听存储变化
+    const handleStorageChange = () => {
       try {
-        // 尝试从对象中提取text属性或转换为JSON字符串
-        if (value.text && typeof value.text === 'string') {
-          return value.text;
-        }
-        return JSON.stringify(value);
-      } catch (e) {
-        console.error('无法将对象转换为字符串', e);
-        return '';
+        // 等待一个周期让React首先更新Form
+        setTimeout(() => {
+          // 从表单直接获取最新状态
+          const chineseValue = form.getFieldValue('descriptionMarkdown');
+          const englishValue = form.getFieldValue('descriptionMarkdownEn');
+          
+          // 安全转换为字符串
+          const chineseText = safeToString(chineseValue);
+          const englishText = safeToString(englishValue);
+          
+          // 直接更新编辑器内容
+          if (editorChineseRef.current?.getMdElement) {
+            editorChineseRef.current.setText(chineseText);
+          }
+          
+          if (editorEnglishRef.current?.getMdElement) {
+            editorEnglishRef.current.setText(englishText);
+          }
+        }, 0);
+      } catch (err) {
+        console.error('处理存储变化时出错:', err);
       }
-    }
-    return String(value);
-  };
+    };
+    
+    window.addEventListener('storage', handleStorageChange);
+    return () => {
+      window.removeEventListener('storage', handleStorageChange);
+    };
+  }, [form]);
+  
+  // 初始化编辑器内容
+  useEffect(() => {
+    if (hasInitializedRef.current) return;
+    
+    // 等待编辑器加载完成
+    setTimeout(() => {
+      try {
+        // 获取表单中的字段值
+        const chineseValue = form.getFieldValue('descriptionMarkdown');
+        const englishValue = form.getFieldValue('descriptionMarkdownEn');
+        
+        // 安全转换为字符串
+        const chineseText = safeToString(chineseValue);
+        const englishText = safeToString(englishValue);
+        
+        // 更新编辑器内容
+        if (editorChineseRef.current?.getMdElement) {
+          editorChineseRef.current.setText(chineseText);
+          // 确保表单中也保存了正确的字符串
+          form.setFieldsValue({ descriptionMarkdown: chineseText });
+        }
+        
+        if (editorEnglishRef.current?.getMdElement) {
+          editorEnglishRef.current.setText(englishText);
+          form.setFieldsValue({ descriptionMarkdownEn: englishText });
+        }
+        
+        hasInitializedRef.current = true;
+      } catch (err) {
+        console.error('设置初始编辑器内容时出错:', err);
+      }
+    }, 300); // 延迟更久以确保编辑器已完全初始化
+  }, [form]);
   
   // 处理图片上传
   const handleImageUpload = (file: File): Promise<string> => {
@@ -130,13 +205,12 @@ const DescriptionFields: React.FC<SectionProps> = ({ form }) => {
 
   // 处理中文描述变化
   const handleChineseEditorChange = ({ text }: { text: string }) => {
-    setChineseMarkdown(text);
+    // 确保更新的是字符串值
     form.setFieldsValue({ descriptionMarkdown: text });
   };
   
   // 处理英文描述变化
   const handleEnglishEditorChange = ({ text }: { text: string }) => {
-    setEnglishMarkdown(text);
     form.setFieldsValue({ descriptionMarkdownEn: text });
   };
 
@@ -194,30 +268,7 @@ const DescriptionFields: React.FC<SectionProps> = ({ form }) => {
     }
   `;
 
-  // 同步初始值到state
-  useEffect(() => {
-    if (isInitializedRef.current) return;
-
-    // 获取表单中的值并确保是字符串类型
-    const chnDesc = ensureString(form.getFieldValue('descriptionMarkdown'));
-    const engDesc = ensureString(form.getFieldValue('descriptionMarkdownEn'));
-    
-    // 设置到state中
-    setChineseMarkdown(chnDesc);
-    setEnglishMarkdown(engDesc);
-    
-    // 如果恢复的值不是字符串类型，纠正表单中的值
-    if (typeof form.getFieldValue('descriptionMarkdown') !== 'string') {
-      form.setFieldsValue({ descriptionMarkdown: chnDesc });
-    }
-    
-    if (typeof form.getFieldValue('descriptionMarkdownEn') !== 'string') {
-      form.setFieldsValue({ descriptionMarkdownEn: engDesc });
-    }
-    
-    isInitializedRef.current = true;
-  }, [form]);
-
+  // 初始化markdown-it和样式
   useEffect(() => {
     // 动态加载markdown-it库
     const script = document.createElement('script');
@@ -260,10 +311,10 @@ const DescriptionFields: React.FC<SectionProps> = ({ form }) => {
         rules={[{ required: true, message: '请输入中文描述' }]}
       >
         <MdEditor
+          ref={editorChineseRef}
           style={{ height: '300px' }}
           renderHTML={text => markdownRenderer.render(text)}
           onChange={handleChineseEditorChange}
-          value={chineseMarkdown}
           placeholder="请使用Markdown格式输入题目描述，支持图片、代码块等。可以直接粘贴图片！"
           config={editorConfig}
           onImageUpload={handleImageUpload}
@@ -275,10 +326,10 @@ const DescriptionFields: React.FC<SectionProps> = ({ form }) => {
         label="英文描述 (Markdown)"
       >
         <MdEditor
+          ref={editorEnglishRef}
           style={{ height: '300px' }}
           renderHTML={text => markdownRenderer.render(text)}
           onChange={handleEnglishEditorChange}
-          value={englishMarkdown}
           placeholder="请使用Markdown格式输入英文题目描述（可选），英文版将在用户切换语言时显示。可以直接粘贴图片！"
           config={editorConfig}
           onImageUpload={handleImageUpload}
