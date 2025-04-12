@@ -52,38 +52,40 @@ const NavBar = () => {
                 maxWidth: '80%', // 增加导航栏宽度以容纳英文菜单
                 width: '100%',
                 margin: '0 auto',
-                padding: '0 24px'
+                padding: '0'
             }}>
+                {/* Logo区域 */}
+                <div style={{ 
+                    display: 'flex', 
+                    alignItems: 'center',
+                    height: '100%',
+                    marginRight: '24px',
+                    flexShrink: 0, // 防止Logo区域被压缩
+                    paddingLeft: '24px'
+                }}>
+                    <Link to="/" style={{ display: 'flex', alignItems: 'center' }}>
+                        <img 
+                            src={faviconLogo} 
+                            alt="Crawler LeetCode" 
+                            style={{
+                                height: '46px',
+                                width: 'auto',
+                                marginRight: '12px'
+                            }}
+                        />
+                        <Title level={3} style={{margin: 0, color: '#2c3e50', whiteSpace: 'nowrap'}}>
+                            Crawler LeetCode
+                        </Title>
+                    </Link>
+                </div>
+
+                {/* 导航菜单 - 放在单独的容器中，确保其位置与内容区域对齐 */}
                 <div style={{
                     display: 'flex',
-                    alignItems: 'center',
-                    flexWrap: 'nowrap', // 防止菜单项换行
+                    flex: 1,
+                    justifyContent: 'space-between',
+                    alignItems: 'center'
                 }}>
-                    {/* Logo */}
-                    <div style={{ 
-                        display: 'flex', 
-                        alignItems: 'center',
-                        height: '100%',
-                        marginRight: '40px',
-                        flexShrink: 0 // 防止Logo区域被压缩
-                    }}>
-                        <Link to="/" style={{ display: 'flex', alignItems: 'center' }}>
-                            <img 
-                                src={faviconLogo} 
-                                alt="Crawler LeetCode" 
-                                style={{
-                                    height: '46px',
-                                    width: 'auto',
-                                    marginRight: '12px'
-                                }}
-                            />
-                            <Title level={3} style={{margin: 0, color: '#2c3e50', whiteSpace: 'nowrap'}}>
-                                Crawler LeetCode
-                            </Title>
-                        </Link>
-                    </div>
-
-                    {/* 导航菜单 */}
                     <Menu
                         mode="horizontal"
                         selectedKeys={[location.pathname]}
@@ -96,27 +98,29 @@ const NavBar = () => {
                             lineHeight: '70px',
                             height: '70px',
                             minWidth: '300px', // 确保菜单有最小宽度
-                            overflow: 'visible' // 确保菜单不会被截断
+                            overflow: 'visible', // 确保菜单不会被截断
+                            paddingLeft: '0' // 移除左内边距，确保与内容区域左对齐
                         }}
                         disabledOverflow={true} // 禁用溢出处理，防止菜单项变为省略号
                     />
+                    
+                    {/* 语言选择器 */}
+                    <Select
+                        defaultValue={localStorage.getItem('language') || 'en'}
+                        style={{
+                            width: 120,
+                            background: 'transparent',
+                            fontSize: '14px',
+                            flexShrink: 0, // 防止语言选择器被压缩
+                            paddingRight: '24px'
+                        }}
+                        variant="borderless"
+                        onChange={handleLanguageChange}
+                    >
+                        <Option value="zh">简体中文</Option>
+                        <Option value="en">English</Option>
+                    </Select>
                 </div>
-
-                {/* 语言选择器 */}
-                <Select
-                    defaultValue={localStorage.getItem('language') || 'en'}
-                    style={{
-                        width: 120,
-                        background: 'transparent',
-                        fontSize: '14px',
-                        flexShrink: 0 // 防止语言选择器被压缩
-                    }}
-                    variant="borderless"
-                    onChange={handleLanguageChange}
-                >
-                    <Option value="zh">简体中文</Option>
-                    <Option value="en">English</Option>
-                </Select>
             </div>
         </Header>
     );
