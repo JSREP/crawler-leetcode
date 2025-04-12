@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Card, Space, Divider, Alert } from 'antd';
+import { useTranslation } from 'react-i18next';
 import { Challenge } from '../../types/challenge';
 import { challenges } from '../ChallengeListPage/exports';
 
@@ -21,6 +22,7 @@ import ChallengeExpiredAlert from './ChallengeExpiredAlert';
 const ChallengeDetailPage = () => {
     const { id } = useParams<{ id: string }>();
     const navigate = useNavigate();
+    const { t } = useTranslation();
     const [challenge, setChallenge] = useState<Challenge | null>(null);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
@@ -59,10 +61,10 @@ const ChallengeDetailPage = () => {
                         setNextChallenge(null);
                     }
                 } else {
-                    throw new Error(`未找到ID或别名为"${id}"的挑战`);
+                    throw new Error(t('challenge.error.notFound', { id }));
                 }
             } catch (err) {
-                setError(err instanceof Error ? err.message : '加载挑战失败');
+                setError(err instanceof Error ? err.message : t('challenge.error.loadFailed'));
                 setChallenge(null);
                 setPrevChallenge(null);
                 setNextChallenge(null);
@@ -70,7 +72,7 @@ const ChallengeDetailPage = () => {
                 setLoading(false);
             }
         }
-    }, [id]);
+    }, [id, t]);
 
     // 处理键盘事件
     useEffect(() => {
@@ -108,7 +110,7 @@ const ChallengeDetailPage = () => {
     };
 
     if (loading) {
-        return <div className="text-center py-8">加载中...</div>;
+        return <div className="text-center py-8">{t('common.loading')}</div>;
     }
 
     if (error) {
@@ -120,7 +122,7 @@ const ChallengeDetailPage = () => {
     }
 
     if (!challenge) {
-        return <div className="text-center py-8">未找到挑战</div>;
+        return <div className="text-center py-8">{t('challenge.error.notFound')}</div>;
     }
 
     return (

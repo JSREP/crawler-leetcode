@@ -120,8 +120,29 @@ export default {
             difficulty: 'Difficulty',
             created: 'Created',
             updated: 'Updated',
-            startChallenge: 'Start Challenge',
+            startChallenge: 'Try It',
             viewSolution: 'View Solution'
+        },
+        actions: {
+            backToList: 'Back to Challenge List'
+        },
+        pagination: {
+            previous: 'Previous',
+            next: 'Next',
+            leftKeyHint: 'Left Arrow Key ←',
+            rightKeyHint: 'Right Arrow Key →'
+        },
+        expired: {
+            title: 'Warning: This challenge link has expired',
+            description: 'The link may have been removed or changed. Please try searching for the latest version or contact the administrator to update this challenge.',
+            linkStatus: 'Link expired'
+        },
+        error: {
+            notFound: 'Challenge not found',
+            loadFailed: 'Failed to load challenge'
         }
+    },
+    common: {
+        loading: 'Loading...'
     }
 }

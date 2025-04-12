@@ -2,6 +2,7 @@ import { Typography } from 'antd';
 import { Challenge } from '../../types/challenge';
 import StarRating from '../StarRating';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import PlatformTag from '../PlatformTag';
 
 const { Text } = Typography;
@@ -15,6 +16,7 @@ interface ChallengeMetadataProps {
  */
 const ChallengeMetadata: React.FC<ChallengeMetadataProps> = ({ challenge }) => {
     const navigate = useNavigate();
+    const { t } = useTranslation();
     
     // 点击难度星级时跳转到列表页并按难度筛选
     const handleDifficultyClick = (difficulty: number) => {
@@ -29,7 +31,7 @@ const ChallengeMetadata: React.FC<ChallengeMetadataProps> = ({ challenge }) => {
     return (
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px' }}>
             <div>
-                <Text type="secondary">难度级别:</Text>
+                <Text type="secondary">{t('challenge.detail.difficulty')}:</Text>
                 <span style={{ marginLeft: '8px', display: 'inline-flex', alignItems: 'center' }}>
                     <StarRating 
                         difficulty={challenge.difficulty} 
@@ -39,7 +41,7 @@ const ChallengeMetadata: React.FC<ChallengeMetadataProps> = ({ challenge }) => {
             </div>
 
             <div>
-                <Text type="secondary">适用平台:</Text>
+                <Text type="secondary">{t('challenge.detail.targetWebsite')}:</Text>
                 <span style={{ marginLeft: '8px' }}>
                     <PlatformTag 
                         platform={challenge.platform || ''} 
@@ -50,12 +52,12 @@ const ChallengeMetadata: React.FC<ChallengeMetadataProps> = ({ challenge }) => {
             </div>
 
             <div>
-                <Text type="secondary">创建时间:</Text>
+                <Text type="secondary">{t('challenge.detail.created')}:</Text>
                 <Text style={{ marginLeft: '8px' }}>{challenge.createTime.toLocaleString()}</Text>
             </div>
 
             <div>
-                <Text type="secondary">更新时间:</Text>
+                <Text type="secondary">{t('challenge.detail.updated')}:</Text>
                 <Text style={{ marginLeft: '8px' }}>{challenge.updateTime.toLocaleString()}</Text>
             </div>
         </div>

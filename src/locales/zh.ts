@@ -117,12 +117,33 @@ const zhTranslations = {
             relatedChallenges: '相关挑战',
             technicalTags: '技术标签',
             targetWebsite: '目标网站',
-            difficulty: '难度',
+            difficulty: '难度级别',
             created: '创建时间',
             updated: '更新时间',
-            startChallenge: '开始挑战',
+            startChallenge: '去试试',
             viewSolution: '查看解决方案'
+        },
+        actions: {
+            backToList: '返回挑战列表'
+        },
+        pagination: {
+            previous: '上一题',
+            next: '下一题',
+            leftKeyHint: '键盘左方向键 ←',
+            rightKeyHint: '键盘右方向键 →'
+        },
+        expired: {
+            title: '警告：此挑战题目链接已失效',
+            description: '该链接可能已经被移除或已更改。请尝试搜索最新版本或联系管理员更新此题目。',
+            linkStatus: '链接已失效'
+        },
+        error: {
+            notFound: '未找到挑战',
+            loadFailed: '加载挑战失败'
         }
+    },
+    common: {
+        loading: '加载中...'
     }
 };
 

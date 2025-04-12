@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Challenge } from '../../types/challenge';
 
 interface ChallengeActionsProps {
@@ -9,6 +10,8 @@ interface ChallengeActionsProps {
  * 挑战操作区组件，包含外部链接和返回按钮
  */
 const ChallengeActions: React.FC<ChallengeActionsProps> = ({ challenge }) => {
+    const { t } = useTranslation();
+    
     return (
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <div>
@@ -24,11 +27,11 @@ const ChallengeActions: React.FC<ChallengeActionsProps> = ({ challenge }) => {
                         textDecoration: 'none'
                     }}
                 >
-                    去试试 ➔
+                    {t('challenge.detail.startChallenge')} ➔
                 </a>
             </div>
             <Link to="/challenges" style={{ color: '#1890ff' }}>
-                返回挑战列表
+                {t('challenge.actions.backToList')}
             </Link>
         </div>
     );
