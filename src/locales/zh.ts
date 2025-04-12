@@ -1,4 +1,4 @@
-export default {
+const zhTranslations = {
     nav: {
         home: '首页',
         challenges: '挑战列表',
@@ -14,7 +14,9 @@ export default {
                 totalChallenges: '总挑战数',
                 easy: '初级',
                 medium: '中级',
-                hard: '高级'
+                hard: '高级',
+                difficultyDistribution: '难度分布',
+                ofTotal: '占总数'
             }
         },
         features: {
@@ -46,15 +48,19 @@ export default {
         }
     },
     about: {
-        title: '关于 爬虫 LeetCode',
-        description: '爬虫 LeetCode 是一个专注于爬虫技术挑战的学习平台。我们提供从基础到高级的网络爬虫挑战，帮助开发者突破各种网站反爬机制，掌握先进爬虫技术，提升数据采集能力。无论您是爬虫新手，还是希望进阶的工程师，我们的平台都能为您提供有针对性的技术挑战和解决方案，助您成为爬虫领域的专家。',
+        title: '关于爬虫挑战平台',
+        description: '爬虫挑战平台致力于通过实际挑战帮助开发者掌握网络爬虫技术。',
+        mission: {
+            title: '我们的使命',
+            content: '提供结构化的网络爬虫技术和反爬机制突破学习资源，帮助开发者提高数据采集能力。'
+        },
         features: {
-            title: '项目特点',
-            list: [
-                '完整收录 LeetCode 题库，包含详细的题目描述和难度分级',
-                '提供多种筛选和排序功能，帮助您找到适合的题目',
-                '收集优质题解和参考资料，提高解题效率',
-                '定期更新题库，确保内容的时效性'
+            title: '核心特点',
+            items: [
+                '适合不同技能水平的多样化爬虫挑战',
+                '详细的解决方案和实现思路',
+                '社区讨论和知识分享',
+                '定期更新新的挑战和技术'
             ]
         },
         techStack: {
@@ -69,7 +75,8 @@ export default {
         contact: {
             title: '联系我们',
             email: '邮箱',
-            loading: '加载中...'
+            github: 'GitHub',
+            twitter: '推特'
         }
     },
     challenges: {
@@ -89,5 +96,34 @@ export default {
             created: '创建',
             updated: '更新'
         }
+    },
+    challenge: {
+        difficulty: {
+            easy: '初级',
+            medium: '中级',
+            hard: '高级'
+        },
+        status: {
+            completed: '已完成',
+            inProgress: '进行中',
+            notStarted: '未开始'
+        },
+        detail: {
+            overview: '概述',
+            requirements: '需求',
+            hints: '提示',
+            solution: '解决方案',
+            discussions: '讨论',
+            relatedChallenges: '相关挑战',
+            technicalTags: '技术标签',
+            targetWebsite: '目标网站',
+            difficulty: '难度',
+            created: '创建时间',
+            updated: '更新时间',
+            startChallenge: '开始挑战',
+            viewSolution: '查看解决方案'
+        }
     }
-}
+};
+
+export default zhTranslations;
