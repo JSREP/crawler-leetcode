@@ -156,7 +156,7 @@ const YamlPreviewSection: React.FC<YamlPreviewSectionProps> = ({
             关闭
           </Button>,
           <Button key="copy" type="primary" icon={<CopyOutlined />} onClick={handleCopyAndClose}>
-            复制YAML
+            复制
           </Button>
         ]}
       >
