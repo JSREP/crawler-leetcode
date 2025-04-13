@@ -75,68 +75,71 @@ const ChallengeListItem: React.FC<ChallengeListItemProps> = ({
             }}
         >
             <Space direction="vertical" style={{ width: '100%' }} size={isMobile ? 'small' : 'middle'}>
+                {/* 第一行：题号和标题 */}
                 <div style={{ 
                     display: 'flex', 
-                    alignItems: 'flex-start', 
-                    flexDirection: isMobile ? 'column' : 'row', 
-                    gap: isMobile ? '8px' : '0'
+                    width: '100%',
+                    alignItems: 'center',
+                    gap: '8px'
                 }}>
-                    <div style={{ 
-                        display: 'flex', 
-                        alignItems: 'center', 
-                        gap: '8px',
-                        marginRight: isMobile ? '0' : '12px'
-                    }}>
-                        <IdTag id={displayId} />
-                        <StarRating
-                            difficulty={challenge.difficulty}
-                            onClick={onDifficultyClick}
-                            stopPropagation={true}
-                        />
-                    </div>
+                    <IdTag id={displayId} />
                     <Text 
                         strong 
                         style={{ 
                             fontSize: isMobile ? 14 : 16,
                             lineHeight: 1.4,
                             flex: 1,
-                            marginBottom: isMobile ? '4px' : '0'
                         }}
                     >
                         {displayTitle}
                     </Text>
                 </div>
-
-                <Space wrap size={isMobile ? 4 : 'small'} style={{ marginTop: isMobile ? '4px' : '8px' }}>
-                    {/* 添加平台标签 */}
-                    {challenge.platform && onPlatformClick && (
-                        <PlatformTag 
-                            platform={challenge.platform}
-                            clickable
-                            onClick={onPlatformClick}
-                            stopPropagation={true}
-                        />
-                    )}
+                
+                {/* 第二行：星级、平台和标签 */}
+                <div style={{ 
+                    display: 'flex', 
+                    alignItems: 'center',
+                    flexWrap: 'wrap',
+                    gap: '8px'
+                }}>
+                    <StarRating
+                        difficulty={challenge.difficulty}
+                        onClick={onDifficultyClick}
+                        stopPropagation={true}
+                    />
                     
-                    {/* 限制在移动设备上显示的标签数量 */}
-                    {(isMobile ? challenge.tags.slice(0, 2) : challenge.tags).map(tag => (
-                        <TopicTag
-                            key={tag}
-                            text={tag}
-                            selected={selectedTags.includes(tag)}
-                            clickable
-                            onClick={onTagClick}
-                            stopPropagation={true}
-                        />
-                    ))}
-                    
-                    {isMobile && challenge.tags.length > 2 && (
-                        <Text type="secondary" style={{ fontSize: '12px' }}>
-                            +{challenge.tags.length - 2}
-                        </Text>
-                    )}
-                </Space>
+                    <Space wrap size={isMobile ? 4 : 'small'}>
+                        {/* 添加平台标签 */}
+                        {challenge.platform && onPlatformClick && (
+                            <PlatformTag 
+                                platform={challenge.platform}
+                                clickable
+                                onClick={onPlatformClick}
+                                stopPropagation={true}
+                            />
+                        )}
+                        
+                        {/* 限制在移动设备上显示的标签数量 */}
+                        {(isMobile ? challenge.tags.slice(0, 2) : challenge.tags).map(tag => (
+                            <TopicTag
+                                key={tag}
+                                text={tag}
+                                selected={selectedTags.includes(tag)}
+                                clickable
+                                onClick={onTagClick}
+                                stopPropagation={true}
+                            />
+                        ))}
+                        
+                        {isMobile && challenge.tags.length > 2 && (
+                            <Text type="secondary" style={{ fontSize: '12px' }}>
+                                +{challenge.tags.length - 2}
+                            </Text>
+                        )}
+                    </Space>
+                </div>
 
+                {/* 第三行：创建日期、更新日期和按钮 */}
                 <div style={{ 
                     display: 'flex',
                     justifyContent: 'space-between',
