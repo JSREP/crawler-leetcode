@@ -101,4 +101,4 @@ challenges:
 
     # 是否忽略该挑战
     # 设置为true时，该挑战不会在列表中显示，并且编译构建时也会忽略不会被打包 
-    ignored: true
+    ignored: false

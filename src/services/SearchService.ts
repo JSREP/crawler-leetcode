@@ -108,7 +108,7 @@ class SearchService {
       }
 
       // 平台过滤
-      const matchesPlatform = !filters.platform || filters.platform === 'all' ||
+      const matchesPlatform = !filters.platform || filters.platform === 'all' || 
         challenge.platform === filters.platform;
 
       return matchesTags && matchesDifficulty && matchesPlatform;
