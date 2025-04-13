@@ -43,7 +43,7 @@ challenges:
       破解难点：需要模拟真实用户的多维度行为特征，避免被机器学习模型识别为异常。
     
     # 挑战目标网站URL的base64编码
-    base64-url: aHR0cHM6Ly93d3cucWluZ3RlbmcuY29tLw==
+    base64-url: aHR0cHM6Ly93d3cucWluZ3RlbmcuY29tL3Byb2R1Y3Qvd2Fm
 
     # 链接有效性状态（布尔值）
     # 标记挑战链接是否失效，true表示已失效

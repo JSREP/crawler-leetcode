@@ -43,7 +43,7 @@ challenges:
       破解难点：需要绕过特征检测，同时解决JS挑战获取有效会话凭证。
     
     # 挑战目标网站URL的base64编码
-    base64-url: aHR0cHM6Ly93d3cuYWR3LmNvbS8=
+    base64-url: aHR0cHM6Ly93d3cucmFkd2FyZS5jb20vcHJvZHVjdHMvYm90LW1hbmFnZXI=
 
     # 链接有效性状态（布尔值）
     # 标记挑战链接是否失效，true表示已失效

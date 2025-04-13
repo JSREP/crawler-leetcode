@@ -43,7 +43,7 @@ challenges:
       破解难点：需要处理IP限制与UA识别，模拟正常浏览器特征。
     
     # 挑战目标网站URL的base64编码
-    base64-url: aHR0cHM6Ly91bnRpbGUuYmFpZHUuY29tLw==
+    base64-url: aHR0cHM6Ly9jbG91ZC5iYWlkdS5jb20vcHJvZHVjdC93YWY=
 
     # 链接有效性状态（布尔值）
     # 标记挑战链接是否失效，true表示已失效

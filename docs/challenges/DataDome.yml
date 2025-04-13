@@ -43,7 +43,7 @@ challenges:
       破解难点：需要解决JS混淆与实时检测，模拟人类行为特征。
     
     # 挑战目标网站URL的base64编码
-    base64-url: aHR0cHM6Ly9kYXRhZG9tZS5jb20v
+    base64-url: aHR0cHM6Ly9kYXRhZG9tZS5jby9wcm9kdWN0L2JvdC1tYW5hZ2VtZW50Lw==
 
     # 链接有效性状态（布尔值）
     # 标记挑战链接是否失效，true表示已失效

@@ -44,7 +44,7 @@ challenges:
       破解难点：JS代码经过混淆，每次请求动态生成，需要正确执行JS计算才能获取有效Cookie。
     
     # 挑战目标网站URL的base64编码
-    base64-url: aHR0cHM6Ly93d3cuY2xvdWRmbGFyZS5jb20v
+    base64-url: aHR0cHM6Ly93d3cuY2xvdWRmbGFyZS5jb20vd2Vic2l0ZS1zZWN1cml0eS9ib3QtbWFuYWdlbWVudC8=
 
     # 链接有效性状态（布尔值）
     # 标记挑战链接是否失效，true表示已失效

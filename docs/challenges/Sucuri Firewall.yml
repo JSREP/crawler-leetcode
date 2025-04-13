@@ -43,7 +43,7 @@ challenges:
       破解难点：需要绕过DNS级防护和虚拟补丁防护机制，处理动态更新的安全规则。
     
     # 挑战目标网站URL的base64编码
-    base64-url: aHR0cHM6Ly9zdWN1cmkubmV0Lw==
+    base64-url: aHR0cHM6Ly9zdWN1cmkubmV0L3dlYnNpdGUtZmlyZXdhbGw=
 
     # 链接有效性状态（布尔值）
     # 标记挑战链接是否失效，true表示已失效

@@ -43,7 +43,7 @@ challenges:
       破解难点：需要控制请求频率，模拟人类的访问节奏，处理动态IP封禁策略。
     
     # 挑战目标网站URL的base64编码
-    base64-url: aHR0cHM6Ly93d3cud2FuZ3N1LmNvbS8=
+    base64-url: aHR0cHM6Ly93d3cuY2hpbmFjYWNoZS5jb20vcHJvZHVjdC93YWY=
 
     # 链接有效性状态（布尔值）
     # 标记挑战链接是否失效，true表示已失效
