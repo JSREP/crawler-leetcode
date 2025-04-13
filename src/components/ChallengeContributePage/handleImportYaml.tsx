@@ -306,6 +306,17 @@ export function updateChallengeInCollection(
             updatedLines.push(`${indent}  - ${solution}`);
           });
         }
+      } else {
+        // 处理所有其他普通字段
+        if (typeof fieldValue === 'string' || typeof fieldValue === 'number' || typeof fieldValue === 'boolean') {
+          updatedLines.push(`${indent}  ${fieldName}: ${fieldValue}`);
+        } else if (fieldValue === null || fieldValue === undefined) {
+          // 跳过空值
+          return;
+        } else {
+          // 对于复杂对象，使用YAML.stringify
+          updatedLines.push(`${indent}  ${fieldName}: ${YAML.stringify(fieldValue)}`);
+        }
       }
     });
     
