@@ -6,6 +6,7 @@ import { PlusOutlined, MenuOutlined } from '@ant-design/icons';
 import { useTranslation } from 'react-i18next';
 import { changeLanguage } from '../i18n';
 import { useMediaQuery } from 'react-responsive';
+import GitHubStarCounter from './GitHubStarCounter';
 // @ts-ignore
 import faviconLogo from '../assets/favicon.png';
 // @ts-ignore
@@ -169,6 +170,9 @@ const NavBar = () => {
                                 alignItems: 'center',
                                 gap: '8px'
                             }}>
+                                {/* GitHub Star计数 */}
+                                <GitHubStarCounter owner="JSREP" repo="crawler-leetcode" />
+                                
                                 {/* 贡献题目按钮 */}
                                 <Button 
                                     type="primary" 
@@ -216,6 +220,11 @@ const NavBar = () => {
                     style={{ border: 'none' }}
                 />
                 <div style={{ marginTop: 24, padding: '0 16px' }}>
+                    {/* 移动端GitHub Star计数 */}
+                    <div style={{ marginBottom: 16, display: 'flex', justifyContent: 'center' }}>
+                        <GitHubStarCounter owner="JSREP" repo="crawler-leetcode" />
+                    </div>
+
                     <Button 
                         type="primary" 
                         icon={<PlusOutlined />}
