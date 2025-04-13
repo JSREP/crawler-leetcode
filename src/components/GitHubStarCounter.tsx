@@ -28,6 +28,7 @@ const GitHubStarCounter: React.FC<GitHubStarCounterProps> = ({
 }) => {
   const [starCount, setStarCount] = useState<number | null>(null);
   const [loading, setLoading] = useState(true);
+  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     const fetchStarCount = async () => {
@@ -99,83 +100,120 @@ const GitHubStarCounter: React.FC<GitHubStarCounterProps> = ({
     return count.toString();
   };
 
-  // 美化后的容器样式
-  const containerStyle = {
-    display: 'inline-flex',
+  // 精美的按钮容器
+  const buttonStyles = {
+    display: 'flex',
     alignItems: 'center',
-    justifyContent: 'center',
-    fontSize: '13px',
-    color: '#24292e',
-    cursor: 'pointer',
-    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
     height: '28px',
-    borderRadius: '15px',
-    textDecoration: 'none',
     padding: '0 12px',
-    fontWeight: 500,
-    border: '1px solid rgba(36, 41, 46, 0.1)',
-    background: 'linear-gradient(to bottom, #fafbfc, #f6f8fa)',
-    boxShadow: '0 1px 2px rgba(0, 0, 0, 0.05)',
+    background: isHovered 
+      ? 'linear-gradient(135deg, #2b3137 0%, #373e47 100%)' 
+      : 'linear-gradient(135deg, #24292e 0%, #2c3036 100%)',
+    color: 'white',
+    border: 'none',
+    borderRadius: '14px',
+    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica',
+    fontSize: '12px',
+    fontWeight: 600,
+    letterSpacing: '0.2px',
+    transition: 'all 0.2s ease',
+    boxShadow: isHovered 
+      ? '0 4px 8px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.06)' 
+      : '0 2px 5px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.04)',
+    cursor: 'pointer',
+    position: 'relative',
+    overflow: 'hidden',
+    transform: isHovered ? 'translateY(-1px)' : 'none',
+    textDecoration: 'none'
   };
 
-  // 悬停样式
-  const hoverStyle = {
-    background: 'linear-gradient(to bottom, #f6f8fa, #e1e4e8)',
-    boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)',
-    transform: 'translateY(-1px)',
-    borderColor: 'rgba(36, 41, 46, 0.2)',
-  };
-
-  // GitHub图标样式
-  const githubIconStyle = {
-    fontSize: '16px',
-    color: '#24292e',
-    marginRight: '4px',
-  };
-
-  // Star图标样式
-  const starIconStyle = {
+  // GitHub 图标样式
+  const githubIconStyles = {
     fontSize: '14px',
-    color: '#f1c40f',
     marginRight: '4px',
-    filter: 'drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.1))',
+    color: 'white',
+    transition: 'transform 0.2s ease',
+    transform: isHovered ? 'scale(1.1)' : 'scale(1)',
+  };
+
+  // 星星图标样式
+  const starIconStyles = {
+    color: isHovered ? '#ffdd57' : '#f9d361',
+    fontSize: '12px',
+    marginRight: '5px',
+    marginLeft: '3px',
+    transition: 'transform 0.3s ease, color 0.3s ease',
+    transform: isHovered ? 'scale(1.2) rotate(5deg)' : 'scale(1)',
+    filter: isHovered 
+      ? 'drop-shadow(0 0 3px rgba(255, 221, 87, 0.6))' 
+      : 'drop-shadow(0 0 1px rgba(255, 221, 87, 0.3))',
   };
 
   // 数字样式
-  const countStyle = {
+  const countStyles = {
     fontWeight: 600,
-    color: '#24292e',
+    color: 'white',
+    fontSize: '12px',
+    textShadow: '0px 1px 2px rgba(0, 0, 0, 0.2)',
   };
 
-  // 加载动画样式
-  const spinnerStyle = {
-    margin: '0 5px',
+  // 加载动画容器样式
+  const loadingContainerStyles = {
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginLeft: '4px',
+    width: '20px',
+    height: '16px',
   };
+
+  // 发光动画样式
+  const glowStyles = {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    height: '100%',
+    background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent)',
+    transform: isHovered ? 'translateX(100%)' : 'translateX(-100%)',
+    transition: 'transform 0.6s ease',
+  } as React.CSSProperties;
+
+  // 按钮文本内容
+  const buttonText = loading ? (
+    <div style={loadingContainerStyles}>
+      <Spin size="small" style={{ transform: 'scale(0.7)' }} />
+    </div>
+  ) : (
+    <span style={countStyles}>
+      {starCount !== null ? formatStarCount(starCount) : '0'}
+    </span>
+  );
 
   return (
-    <Tooltip title="Star us on GitHub" placement="bottom">
-      <a 
+    <Tooltip 
+      title="Star us on GitHub!" 
+      placement="bottom"
+      color="#1a1e22"
+      overlayInnerStyle={{
+        padding: '8px 10px',
+        fontSize: '12px',
+        fontWeight: 500,
+        borderRadius: '6px'
+      }}
+    >
+      <a
         href={`https://github.com/${owner}/${repo}`}
         target="_blank"
         rel="noopener noreferrer"
-        style={containerStyle}
-        onMouseOver={(e) => {
-          Object.assign(e.currentTarget.style, hoverStyle);
-        }}
-        onMouseOut={(e) => {
-          // 重置为原始样式
-          Object.assign(e.currentTarget.style, containerStyle);
-        }}
+        style={buttonStyles as React.CSSProperties}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
       >
-        <GithubOutlined style={githubIconStyle} />
-        <StarFilled style={starIconStyle} />
-        {loading ? (
-          <Spin size="small" style={spinnerStyle} />
-        ) : (
-          <span style={countStyle}>
-            {starCount !== null ? formatStarCount(starCount) : '0'}
-          </span>
-        )}
+        <div style={glowStyles} />
+        <GithubOutlined style={githubIconStyles} />
+        <StarFilled style={starIconStyles} />
+        {buttonText}
       </a>
     </Tooltip>
   );
