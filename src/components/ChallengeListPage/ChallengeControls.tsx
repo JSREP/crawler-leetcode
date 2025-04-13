@@ -156,7 +156,8 @@ const ChallengeControls: React.FC<ChallengeControlsProps> = ({
     const platformMenu = (
         <Menu
             selectedKeys={[selectedPlatform]}
-            onClick={({ key }) => onPlatformChange(key)}
+            onClick={({ key }) => onPlatformChange(key.toString())}
+            multiple={false}
         >
             <Menu.Item key="all">{t('challenges.filters.allPlatforms')}</Menu.Item>
             {/* 使用固定的平台枚举列表，而不是从挑战中提取的 */}
