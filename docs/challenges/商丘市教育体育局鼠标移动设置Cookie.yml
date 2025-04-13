@@ -1,0 +1,21 @@
+id: 106
+id-alias: ""
+platform: Web
+name: 商丘市教育体育局鼠标移动设置Cookie
+name_en: ""
+difficulty-level: 1
+description-markdown: |+
+  
+  第一次访问网站的时候，让移动鼠标，移动鼠标的时候会设置cookie。
+
+  如果不是第一次访问，隐身模式访问即可。
+
+
+
+base64-url: aHR0cHM6Ly9qeXR5ai5zaGFuZ3FpdS5nb3YuY24vendnay9mZHpkZ2tuci96ZmNnMzFzcXNqeXR5ai96YmdnMzFzcXNqeXR5ag==
+is-expired: false
+tags:
+  - js-reverse
+solutions: []
+create-time: 2025-04-13 07:29:54
+update-time: 2025-04-13 07:29:54

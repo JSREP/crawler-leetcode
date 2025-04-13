@@ -6,6 +6,7 @@ import StarRating from '../StarRating';
 import IdTag from '../IdTag';
 import PlatformTag from '../PlatformTag';
 import TopicTag from '../TopicTag';
+import { useMediaQuery } from 'react-responsive';
 
 const { Text } = Typography;
 
@@ -53,6 +54,7 @@ const ChallengeListItem: React.FC<ChallengeListItemProps> = ({
     onPlatformClick
 }) => {
     const { t, i18n } = useTranslation();
+    const isMobile = useMediaQuery({ maxWidth: 768 });
     
     // 确保id是一个有效值
     const displayId = challenge.id !== undefined ? challenge.id : '?';
@@ -64,57 +66,109 @@ const ChallengeListItem: React.FC<ChallengeListItemProps> = ({
         <Card
             hoverable
             onClick={onClick}
-            style={{ cursor: 'pointer' }}
+            style={{ 
+                cursor: 'pointer',
+                borderRadius: '8px'
+            }}
+            bodyStyle={{ 
+                padding: isMobile ? '12px' : '24px'
+            }}
         >
-            <Space direction="vertical" style={{ width: '100%' }}>
-                <Space>
+            <Space direction="vertical" style={{ width: '100%' }} size={isMobile ? 'small' : 'middle'}>
+                {/* 第一行：题号和标题 */}
+                <div style={{ 
+                    display: 'flex', 
+                    width: '100%',
+                    alignItems: 'center',
+                    gap: '8px'
+                }}>
                     <IdTag id={displayId} />
-                    <Text strong style={{ fontSize: 16 }}>{displayTitle}</Text>
-                </Space>
-
-                <Space wrap>
+                    <Text 
+                        strong 
+                        style={{ 
+                            fontSize: isMobile ? 14 : 16,
+                            lineHeight: 1.4,
+                            flex: 1,
+                        }}
+                    >
+                        {displayTitle}
+                    </Text>
+                </div>
+                
+                {/* 第二行：星级、平台和标签 */}
+                <div style={{ 
+                    display: 'flex', 
+                    alignItems: 'center',
+                    flexWrap: 'wrap',
+                    gap: '8px'
+                }}>
                     <StarRating
                         difficulty={challenge.difficulty}
                         onClick={onDifficultyClick}
                         stopPropagation={true}
                     />
                     
-                    {/* 添加平台标签 */}
-                    {challenge.platform && onPlatformClick && (
-                        <PlatformTag 
-                            platform={challenge.platform}
-                            clickable
-                            onClick={onPlatformClick}
-                            stopPropagation={true}
-                        />
-                    )}
-                    
-                    {challenge.tags.map(tag => (
-                        <TopicTag
-                            key={tag}
-                            text={tag}
-                            selected={selectedTags.includes(tag)}
-                            clickable
-                            onClick={onTagClick}
-                            stopPropagation={true}
-                        />
-                    ))}
-                    <Text type="secondary">
-                        {t('challenges.dates.created')}: {challenge.createTime.toLocaleDateString()}
-                    </Text>
-                    <Text type="secondary">
-                        {t('challenges.dates.updated')}: {challenge.updateTime.toLocaleDateString()}
-                    </Text>
-                </Space>
+                    <Space wrap size={isMobile ? 4 : 'small'}>
+                        {/* 添加平台标签 */}
+                        {challenge.platform && onPlatformClick && (
+                            <PlatformTag 
+                                platform={challenge.platform}
+                                clickable
+                                onClick={onPlatformClick}
+                                stopPropagation={true}
+                            />
+                        )}
+                        
+                        {/* 限制在移动设备上显示的标签数量 */}
+                        {(isMobile ? challenge.tags.slice(0, 2) : challenge.tags).map(tag => (
+                            <TopicTag
+                                key={tag}
+                                text={tag}
+                                selected={selectedTags.includes(tag)}
+                                clickable
+                                onClick={onTagClick}
+                                stopPropagation={true}
+                            />
+                        ))}
+                        
+                        {isMobile && challenge.tags.length > 2 && (
+                            <Text type="secondary" style={{ fontSize: '12px' }}>
+                                +{challenge.tags.length - 2}
+                            </Text>
+                        )}
+                    </Space>
+                </div>
 
-                <div style={{ marginTop: 12 }}>
+                {/* 第三行：创建日期、更新日期和按钮 */}
+                <div style={{ 
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    flexWrap: 'wrap',
+                    fontSize: isMobile ? '12px' : '14px',
+                    marginTop: isMobile ? '4px' : '8px'
+                }}>
+                    <Space size={isMobile ? 4 : 8} wrap>
+                        <Text type="secondary" style={{ fontSize: isMobile ? '12px' : '14px' }}>
+                            {isMobile ? t('challenges.dates.createdShort') : t('challenges.dates.created')}: {challenge.createTime.toLocaleDateString()}
+                        </Text>
+                        <Text type="secondary" style={{ fontSize: isMobile ? '12px' : '14px' }}>
+                            {isMobile ? t('challenges.dates.updatedShort') : t('challenges.dates.updated')}: {challenge.updateTime.toLocaleDateString()}
+                        </Text>
+                    </Space>
+
                     <Button
                         type="link"
                         href={challenge.externalLink}
                         target="_blank"
                         onClick={(e: React.MouseEvent) => e.stopPropagation()}
+                        style={{ 
+                            padding: isMobile ? '0 4px' : '0 8px',
+                            height: 'auto',
+                            fontSize: isMobile ? '12px' : '14px'
+                        }}
                     >
-                        {t('challenge.detail.startChallenge')} ➔
+                        {isMobile ? t('challenge.detail.startChallengeShort') : t('challenge.detail.startChallenge')} ➔
                     </Button>
                 </div>
             </Space>

@@ -16,11 +16,24 @@ export const heroSectionStyle: CSSProperties = {
   boxShadow: '0 10px 25px rgba(0,0,0,0.1)'
 };
 
+// 移动端英雄区域样式
+export const heroSectionMobileStyle: CSSProperties = {
+  padding: '40px 16px',
+  borderRadius: '0 0 30px 30px',
+  marginBottom: '30px',
+};
+
 // 标题样式
 export const heroTitleStyle: CSSProperties = {
   color: 'white',
   fontSize: '2.5rem',
   marginBottom: '16px'
+};
+
+// 移动端标题样式
+export const heroTitleMobileStyle: CSSProperties = {
+  fontSize: '2rem',
+  marginBottom: '12px'
 };
 
 // 副标题样式
@@ -30,6 +43,12 @@ export const heroSubtitleStyle: CSSProperties = {
   marginBottom: '24px'
 };
 
+// 移动端副标题样式
+export const heroSubtitleMobileStyle: CSSProperties = {
+  fontSize: '1rem',
+  marginBottom: '20px'
+};
+
 // 主按钮样式
 export const primaryButtonStyle: CSSProperties = {
   background: '#42b983',
@@ -37,6 +56,13 @@ export const primaryButtonStyle: CSSProperties = {
   height: '46px',
   borderRadius: '23px',
   padding: '0 28px'
+};
+
+// 移动端主按钮样式
+export const primaryButtonMobileStyle: CSSProperties = {
+  height: '40px',
+  padding: '0 20px',
+  fontSize: '14px'
 };
 
 // 次要按钮样式
@@ -51,6 +77,13 @@ export const secondaryButtonStyle: CSSProperties = {
   boxShadow: '0 2px 8px rgba(0,0,0,0.2)'
 };
 
+// 移动端次要按钮样式
+export const secondaryButtonMobileStyle: CSSProperties = {
+  height: '40px',
+  padding: '0 20px',
+  fontSize: '14px'
+};
+
 // 统计卡片样式
 export const statsCardStyle: CSSProperties = {
   background: 'rgba(255,255,255,0.1)',
@@ -60,6 +93,13 @@ export const statsCardStyle: CSSProperties = {
   boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)'
 };
 
+// 移动端统计卡片样式
+export const statsCardMobileStyle: CSSProperties = {
+  padding: '20px',
+  borderRadius: '16px',
+  marginTop: '20px'
+};
+
 // 特性部分容器样式
 export const featureSectionStyle: CSSProperties = {
   maxWidth: '1200px',
@@ -67,10 +107,22 @@ export const featureSectionStyle: CSSProperties = {
   padding: '0 24px'
 };
 
+// 移动端特性部分容器样式
+export const featureSectionMobileStyle: CSSProperties = {
+  padding: '0 16px',
+  margin: '0 auto 36px'
+};
+
 // 标题样式
 export const sectionTitleStyle: CSSProperties = {
   textAlign: 'center',
   marginBottom: '48px'
+};
+
+// 移动端标题样式
+export const sectionTitleMobileStyle: CSSProperties = {
+  marginBottom: '36px',
+  fontSize: '1.5rem'
 };
 
 // 标题下方的装饰线样式
@@ -105,6 +157,12 @@ export const challengeSectionStyle: CSSProperties = {
   borderRadius: '40px 40px 0 0'
 };
 
+// 移动端挑战部分容器样式
+export const challengeSectionMobileStyle: CSSProperties = {
+  padding: '36px 16px',
+  borderRadius: '30px 30px 0 0'
+};
+
 // 挑战内容容器样式
 export const challengeContainerStyle: CSSProperties = {
   maxWidth: '1200px',
@@ -116,6 +174,11 @@ export const challengeTitleContainerStyle: CSSProperties = {
   marginBottom: '32px'
 };
 
+// 移动端挑战列表标题容器样式
+export const challengeTitleMobileStyle: CSSProperties = {
+  marginBottom: '24px'
+};
+
 // 查看更多按钮容器样式
 export const viewMoreButtonContainerStyle: CSSProperties = {
   textAlign: 'center',
@@ -125,6 +188,11 @@ export const viewMoreButtonContainerStyle: CSSProperties = {
 // 查看更多按钮样式
 export const viewMoreButtonStyle: CSSProperties = {
   borderRadius: '20px'
+};
+
+// 移动端查看更多按钮样式
+export const viewMoreButtonMobileStyle: CSSProperties = {
+  marginBottom: '30px'
 };
 
 // CSS 动画样式
@@ -146,5 +214,41 @@ export const animationStyles = `
   .ant-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1) !important;
+  }
+
+  /* 响应式布局媒体查询 */
+  @media screen and (max-width: 768px) {
+    .hero-title {
+      font-size: 2rem !important;
+      margin-bottom: 12px !important;
+    }
+    
+    .hero-subtitle {
+      font-size: 1rem !important;
+      margin-bottom: 20px !important;
+    }
+    
+    .hero-buttons button {
+      height: 40px !important;
+      padding: 0 20px !important;
+      font-size: 14px !important;
+    }
+    
+    .stats-card {
+      margin-top: 20px !important;
+      padding: 20px !important;
+    }
+    
+    .feature-title {
+      font-size: 1.5rem !important;
+    }
+    
+    .challenge-section-title h3 {
+      font-size: 1.3rem !important;
+    }
+    
+    .challenge-more-button {
+      margin-bottom: 30px !important;
+    }
   }
 `; 

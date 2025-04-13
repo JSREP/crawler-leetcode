@@ -1,8 +1,9 @@
-import { Space, Tag, Button } from 'antd';
+import { Space, Tag, Button, Row, Col } from 'antd';
 import { CloseOutlined } from '@ant-design/icons';
 import { useTranslation } from 'react-i18next';
 import SearchBox from '../SearchBox';
 import StarRating from '../StarRating';
+import { useMediaQuery } from 'react-responsive';
 
 interface ChallengeFiltersProps {
     /**
@@ -72,60 +73,90 @@ const ChallengeFilters: React.FC<ChallengeFiltersProps> = ({
     searchValue = ''
 }) => {
     const { t } = useTranslation();
+    const isMobile = useMediaQuery({ maxWidth: 768 });
     
     return (
         <div>
-            {/* 搜索框组件 */}
-            <SearchBox 
-                onSearch={onSearch}
-                value={searchValue}
-                placeholder={t('challenges.filters.search')}
-                historyStorageKey="challenge-search-history"
-            />
+            {/* 搜索框组件 - 移除style属性，使用div包装处理边距 */}
+            <div style={{ marginBottom: isMobile ? '8px' : '16px' }}>
+                <SearchBox 
+                    onSearch={onSearch}
+                    value={searchValue}
+                    placeholder={t('challenges.filters.search')}
+                    historyStorageKey="challenge-search-history"
+                />
+            </div>
             
             {/* 已应用的过滤器 */}
             {hasFilters && (
-                <Space wrap style={{ marginBottom: 16 }}>
-                    {selectedDifficulty !== 'all' && (
-                        <Tag
-                            closable
-                            onClose={onRemoveDifficulty}
-                            style={{ background: '#f0f5ff', borderColor: '#adc6ff' }}
-                        >
-                            {t('challenges.sort.difficulty')}: <StarRating difficulty={parseInt(selectedDifficulty)} />
-                        </Tag>
-                    )}
-                    
-                    {selectedPlatform !== 'all' && (
-                        <Tag
-                            closable
-                            onClose={onRemovePlatform}
-                            color={selectedPlatform === 'LeetCode' ? 'orange' : 'purple'}
-                        >
-                            {t('challenge.detail.targetWebsite')}: {selectedPlatform}
-                        </Tag>
-                    )}
-                    
-                    {selectedTags.map(tag => (
-                        <Tag
-                            key={tag}
-                            closable
-                            onClose={() => onRemoveTag(tag)}
-                            style={{ background: '#f6ffed', borderColor: '#b7eb8f' }}
-                        >
-                            {tag}
-                        </Tag>
-                    ))}
-                    
-                    <Button
-                        type="text"
-                        icon={<CloseOutlined />}
-                        onClick={onClearAll}
-                        style={{ color: '#ff4d4f' }}
-                    >
-                        {t('challenges.filters.clearAll')}
-                    </Button>
-                </Space>
+                <Row gutter={[8, 8]} style={{ marginBottom: isMobile ? '8px' : '16px' }}>
+                    <Col span={24}>
+                        <Space wrap size={isMobile ? 4 : 8} style={{ width: '100%' }}>
+                            {selectedDifficulty !== 'all' && (
+                                <Tag
+                                    closable
+                                    onClose={onRemoveDifficulty}
+                                    style={{ 
+                                        background: '#f0f5ff',
+                                        borderColor: '#adc6ff',
+                                        fontSize: isMobile ? '12px' : '14px',
+                                        padding: isMobile ? '0 4px' : '0 7px',
+                                        margin: isMobile ? '0 4px 4px 0' : '0 8px 8px 0'
+                                    }}
+                                >
+                                    {isMobile ? '' : `${t('challenges.sort.difficulty')}: `}
+                                    <StarRating difficulty={parseInt(selectedDifficulty)} />
+                                </Tag>
+                            )}
+                            
+                            {selectedPlatform !== 'all' && (
+                                <Tag
+                                    closable
+                                    onClose={onRemovePlatform}
+                                    color={selectedPlatform === 'LeetCode' ? 'orange' : 'purple'}
+                                    style={{ 
+                                        fontSize: isMobile ? '12px' : '14px',
+                                        padding: isMobile ? '0 4px' : '0 7px',
+                                        margin: isMobile ? '0 4px 4px 0' : '0 8px 8px 0'
+                                    }}
+                                >
+                                    {isMobile ? selectedPlatform : `${t('challenge.detail.targetWebsite')}: ${selectedPlatform}`}
+                                </Tag>
+                            )}
+                            
+                            {selectedTags.map(tag => (
+                                <Tag
+                                    key={tag}
+                                    closable
+                                    onClose={() => onRemoveTag(tag)}
+                                    style={{ 
+                                        background: '#f6ffed',
+                                        borderColor: '#b7eb8f',
+                                        fontSize: isMobile ? '12px' : '14px',
+                                        padding: isMobile ? '0 4px' : '0 7px',
+                                        margin: isMobile ? '0 4px 4px 0' : '0 8px 8px 0'
+                                    }}
+                                >
+                                    {tag}
+                                </Tag>
+                            ))}
+                            
+                            <Button
+                                type="text"
+                                icon={<CloseOutlined />}
+                                onClick={onClearAll}
+                                style={{ 
+                                    color: '#ff4d4f',
+                                    fontSize: isMobile ? '12px' : '14px',
+                                    height: isMobile ? '22px' : '28px',
+                                    padding: isMobile ? '0 4px' : '0 8px'
+                                }}
+                            >
+                                {isMobile ? t('challenges.filters.clearAllShort') : t('challenges.filters.clearAll')}
+                            </Button>
+                        </Space>
+                    </Col>
+                </Row>
             )}
         </div>
     );

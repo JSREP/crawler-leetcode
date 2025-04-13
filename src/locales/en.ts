@@ -8,18 +8,18 @@ export default {
         contribute: 'Contribute'
     },
     titles: {
-        home: 'Home - Crawler LeetCode',
-        challenges: 'Challenges - Crawler LeetCode',
-        about: 'About - Crawler LeetCode',
-        contribute: 'Contribute - Crawler LeetCode',
-        challenge: 'Challenge - Crawler LeetCode',
-        default: 'Crawler LeetCode'
+        home: 'Home - Web Crawler Challenge Platform',
+        challenges: 'Challenges - Web Crawler Challenge Platform',
+        about: 'About - Web Crawler Challenge Platform',
+        challenge: 'Challenge - Web Crawler Challenge Platform',
+        contribute: 'Contribute - Web Crawler Challenge Platform',
+        default: 'Web Crawler Challenge Platform'
     },
     home: {
         hero: {
-            title: 'Web Crawler Challenge Collection',
-            subtitle: 'Break through various website anti-crawler mechanisms, master advanced crawling techniques, enhance data collection capabilities, and become the go-to crawler engineer',
-            startButton: 'Start Challenge',
+            title: 'Web Crawler Challenges',
+            subtitle: 'Master web crawling techniques, overcome anti-bot mechanisms, and develop your data extraction skills with our curated challenges',
+            startButton: 'Start Challenges',
             learnMoreButton: 'Learn More',
             stats: {
                 totalChallenges: 'Total Challenges',
@@ -27,7 +27,7 @@ export default {
                 medium: 'Intermediate',
                 hard: 'Advanced',
                 difficultyDistribution: 'Difficulty Distribution',
-                ofTotal: 'of total challenges'
+                ofTotal: 'of total'
             }
         },
         features: {
@@ -35,15 +35,15 @@ export default {
             items: [
                 {
                     title: 'Crawler Challenges',
-                    content: 'Explore various web crawling technical problems, from basic data extraction to complex anti-crawler mechanism breakthroughs'
+                    content: 'Explore diverse crawling techniques from basic data extraction to complex anti-bot bypassing'
                 },
                 {
-                    title: 'Technical Categories',
-                    content: 'Categorized by crawling techniques, target websites, and difficulty levels for quick learning focus'
+                    title: 'Classified By Technique',
+                    content: 'Find challenges organized by crawling technique, target website, and difficulty level'
                 },
                 {
-                    title: 'Solution Approaches',
-                    content: 'View detailed crawler implementation ideas, code examples, and common anti-crawler bypass techniques'
+                    title: 'Solution Guidance',
+                    content: 'Access detailed implementation strategies, code examples, and anti-detection techniques'
                 }
             ]
         },
@@ -59,17 +59,17 @@ export default {
         }
     },
     about: {
-        title: 'About Crawler LeetCode',
-        description: 'Crawler LeetCode is a platform dedicated to helping developers master web crawling techniques through practical challenges.',
+        title: 'About the Web Crawler Challenge Platform',
+        description: 'The Web Crawler Challenge Platform is dedicated to helping developers master web crawling techniques through practical challenges.',
         mission: {
             title: 'Our Mission',
-            content: 'To provide structured learning resources for web crawling techniques and anti-crawler mechanism breakthroughs, helping developers improve their data collection capabilities.'
+            content: 'To provide structured learning resources for web crawling techniques and anti-bot bypassing strategies, helping developers improve their data collection capabilities.'
         },
         features: {
-            title: 'Key Features',
+            title: 'Core Features',
             items: [
-                'Diverse crawling challenges for different skill levels',
-                'Detailed solutions and implementation ideas',
+                'Diverse crawler challenges suitable for different skill levels',
+                'Detailed solutions and implementation strategies',
                 'Community discussions and knowledge sharing',
                 'Regular updates with new challenges and techniques'
             ]
@@ -77,8 +77,8 @@ export default {
         techStack: {
             title: 'Tech Stack',
             list: [
-                'Frontend Framework: React + TypeScript',
-                'UI Component Library: Ant Design',
+                'Frontend: React + TypeScript',
+                'UI Components: Ant Design',
                 'State Management: React Hooks',
                 'Data Fetching: REST API + Axios'
             ]
@@ -91,13 +91,15 @@ export default {
         }
     },
     challenges: {
+        title: 'Challenge List',
         filters: {
-            tags: 'Filter by tags',
-            difficulty: 'Filter by difficulty',
-            allDifficulties: 'All difficulties',
-            allPlatforms: 'All platforms',
+            tags: 'Filter by Tags',
+            difficulty: 'Filter by Difficulty',
+            allDifficulties: 'All Difficulties',
+            allPlatforms: 'All Platforms',
             search: 'Search challenges...',
-            clearAll: 'Clear all',
+            clearAll: 'Clear All',
+            clearAllShort: 'Clear',
             searchTags: 'Search tags...'
         },
         sort: {
@@ -108,13 +110,17 @@ export default {
         },
         dates: {
             created: 'Created',
-            updated: 'Updated'
+            updated: 'Updated',
+            createdShort: 'Created',
+            updatedShort: 'Updated'
         },
         controls: {
             sortBy: 'Sort by',
             ascending: 'Ascending order',
             descending: 'Descending order',
-            platform: 'Platform'
+            platform: 'Platform',
+            filter: 'Filter',
+            filterAndSort: 'Filter & Sort'
         },
         empty: {
             title: 'No challenges found',
@@ -141,10 +147,13 @@ export default {
             relatedChallenges: 'Related Challenges',
             technicalTags: 'Technical Tags',
             targetWebsite: 'Target Website',
+            platform: 'Platform',
             difficulty: 'Difficulty',
             created: 'Created',
             updated: 'Updated',
+            originalLink: 'Original Link',
             startChallenge: 'Try It',
+            startChallengeShort: 'Try',
             viewSolution: 'View Solution',
             tags: 'Tags',
             description: 'Problem Description',
@@ -158,7 +167,9 @@ export default {
             correction: 'Correction',
             correctionTooltip: 'Think the content could be improved or has errors? Don\'t hesitate to submit a PR on GitHub',
             reportIssue: 'Report Issue',
-            issueTooltip: 'Having a problem? Click to submit a GitHub Issue'
+            issueTooltip: 'Having a problem? Click to submit a GitHub Issue',
+            backToList: 'Back to Challenge List',
+            unspecified: 'Unspecified'
         },
         actions: {
             backToList: 'Back to Challenge List'

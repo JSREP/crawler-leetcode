@@ -11,8 +11,11 @@ import {
   sectionTitleStyle, 
   sectionTitleDividerStyle,
   featureCardStyle,
-  featureCardContentStyle
+  featureCardContentStyle,
+  featureSectionMobileStyle,
+  sectionTitleMobileStyle
 } from './styles';
+import { useMediaQuery } from 'react-responsive';
 
 const { Title, Text } = Typography;
 
@@ -21,6 +24,7 @@ const { Title, Text } = Typography;
  */
 const FeatureSection: React.FC = () => {
   const { t } = useTranslation();
+  const isMobile = useMediaQuery({ maxWidth: 768 });
 
   // 从i18n获取功能特性数据
   const features = [
@@ -45,8 +49,12 @@ const FeatureSection: React.FC = () => {
   ];
 
   return (
-    <div style={featureSectionStyle}>
-      <Title level={2} style={sectionTitleStyle}>
+    <div style={{ ...featureSectionStyle, ...(isMobile ? featureSectionMobileStyle : {}) }}>
+      <Title 
+        level={2} 
+        style={{ ...sectionTitleStyle, ...(isMobile ? sectionTitleMobileStyle : {}) }}
+        className="feature-title"
+      >
         {t('home.features.title')}
         <div style={sectionTitleDividerStyle}></div>
       </Title>
@@ -60,23 +68,23 @@ const FeatureSection: React.FC = () => {
             >
               <div style={featureCardContentStyle}>
                 <div style={{ 
-                  fontSize: '36px', 
+                  fontSize: isMobile ? '32px' : '36px', 
                   color: feature.color, 
                   marginBottom: '16px',
                   background: `rgba(${feature.color.replace('#', '').match(/.{2}/g)?.map(c => parseInt(c, 16)).join(',')}, 0.1)`,
-                  width: '80px',
-                  height: '80px',
+                  width: isMobile ? '70px' : '80px',
+                  height: isMobile ? '70px' : '80px',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  borderRadius: '40px'
+                  borderRadius: isMobile ? '35px' : '40px'
                 }}>
                   {feature.icon}
                 </div>
-                <Title level={4} style={{ color: feature.color, marginBottom: '8px' }}>
+                <Title level={4} style={{ color: feature.color, marginBottom: '8px', fontSize: isMobile ? '18px' : '20px' }}>
                   {feature.title}
                 </Title>
-                <Text type="secondary" style={{ fontSize: '16px' }}>
+                <Text type="secondary" style={{ fontSize: isMobile ? '14px' : '16px' }}>
                   {feature.content}
                 </Text>
               </div>

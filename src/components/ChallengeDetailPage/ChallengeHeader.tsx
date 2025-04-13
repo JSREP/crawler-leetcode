@@ -9,12 +9,16 @@ const { Title } = Typography;
 
 interface ChallengeHeaderProps {
     challenge: Challenge;
+    /**
+     * 是否为移动端视图
+     */
+    isMobile?: boolean;
 }
 
 /**
  * 挑战详情页的标题头部组件
  */
-const ChallengeHeader: React.FC<ChallengeHeaderProps> = ({ challenge }) => {
+const ChallengeHeader: React.FC<ChallengeHeaderProps> = ({ challenge, isMobile = false }) => {
     const navigate = useNavigate();
     const { t, i18n } = useTranslation();
     
@@ -76,17 +80,71 @@ const ChallengeHeader: React.FC<ChallengeHeaderProps> = ({ challenge }) => {
         ? (challenge.titleEN || challenge.name_en) 
         : (challenge.title || challenge.name);
     
-    // 添加调试信息
-    console.log('ChallengeHeader - 当前语言:', i18n.language);
-    console.log('ChallengeHeader - 挑战对象:', challenge);
-    console.log('ChallengeHeader - 标题字段:', {
-        title: challenge.title,
-        name: challenge.name,
-        titleEN: challenge.titleEN,
-        name_en: challenge.name_en,
-        finalDisplayTitle: displayTitle
-    });
+    // 移动端布局
+    if (isMobile) {
+        return (
+            <div style={{ 
+                display: 'flex', 
+                flexDirection: 'column',
+                justifyContent: 'space-between', 
+                alignItems: 'flex-start',
+                width: '100%', 
+                gap: '12px'
+            }}>
+                <Space align="center" wrap style={{ marginBottom: '8px' }}>
+                    <IdTag 
+                        id={displayId}
+                        clickable
+                        onClick={handleIdClick}
+                    />
+                    <Title 
+                        level={3} 
+                        style={{ 
+                            margin: 0,
+                            fontSize: '18px',
+                            lineHeight: '24px',
+                            wordBreak: 'break-word'
+                        }}
+                    >
+                        {displayTitle}
+                    </Title>
+                    {challenge.isExpired && (
+                        <Badge status="error" text={t('challenge.expired.linkStatus')} />
+                    )}
+                </Space>
+                
+                <Space size="small">
+                    {challenge.sourceFile && (
+                        <Tooltip title={t('challenge.detail.correctionTooltip')}>
+                            <Button 
+                                type="link" 
+                                icon={<GithubOutlined />} 
+                                onClick={handleCorrectClick}
+                                size="small"
+                                style={{ padding: '0 4px' }}
+                            >
+                                {t('challenge.detail.correction')}
+                            </Button>
+                        </Tooltip>
+                    )}
+                    
+                    <Tooltip title={t('challenge.detail.issueTooltip')}>
+                        <Button
+                            type="link"
+                            icon={<QuestionCircleOutlined />}
+                            onClick={handleIssueClick}
+                            size="small"
+                            style={{ padding: '0 4px' }}
+                        >
+                            {t('challenge.detail.reportIssue')}
+                        </Button>
+                    </Tooltip>
+                </Space>
+            </div>
+        );
+    }
     
+    // PC端布局
     return (
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', width: '100%' }}>
             <Space align="center">

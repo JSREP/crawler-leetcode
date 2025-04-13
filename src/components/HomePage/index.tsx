@@ -5,6 +5,7 @@ import HeroSection from './HeroSection';
 import FeatureSection from './FeatureSection';
 import ChallengeSection from './ChallengeSection';
 import { pageContainerStyle, animationStyles } from './styles';
+import { useMediaQuery } from 'react-responsive';
 
 // 获取不同难度的挑战数量
 const getDifficultyCounts = () => {
@@ -25,6 +26,7 @@ const HomePage = () => {
   const [animatedStats, setAnimatedStats] = useState(false);
   const navigate = useNavigate();
   const difficultyCounts = getDifficultyCounts();
+  const isMobile = useMediaQuery({ maxWidth: 768 });
   
   // 获取最新的3个挑战
   const recentChallenges = [...challenges]
@@ -67,7 +69,7 @@ const HomePage = () => {
   };
 
   return (
-    <div style={pageContainerStyle}>
+    <div style={pageContainerStyle} className={isMobile ? 'mobile-container' : ''}>
       {/* 英雄区域 */}
       <HeroSection 
         challenges={challenges.length}
