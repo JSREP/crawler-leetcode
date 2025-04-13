@@ -80,59 +80,95 @@ const ChallengeHeader: React.FC<ChallengeHeaderProps> = ({ challenge, isMobile =
         ? (challenge.titleEN || challenge.name_en) 
         : (challenge.title || challenge.name);
     
-    // 添加调试信息
-    console.log('ChallengeHeader - 当前语言:', i18n.language);
-    console.log('ChallengeHeader - 挑战对象:', challenge);
-    console.log('ChallengeHeader - 标题字段:', {
-        title: challenge.title,
-        name: challenge.name,
-        titleEN: challenge.titleEN,
-        name_en: challenge.name_en,
-        finalDisplayTitle: displayTitle
-    });
+    // 移动端布局
+    if (isMobile) {
+        return (
+            <div style={{ 
+                display: 'flex', 
+                flexDirection: 'column',
+                justifyContent: 'space-between', 
+                alignItems: 'flex-start',
+                width: '100%', 
+                gap: '12px'
+            }}>
+                <Space align="center" wrap style={{ marginBottom: '8px' }}>
+                    <IdTag 
+                        id={displayId}
+                        clickable
+                        onClick={handleIdClick}
+                    />
+                    <Title 
+                        level={3} 
+                        style={{ 
+                            margin: 0,
+                            fontSize: '18px',
+                            lineHeight: '24px',
+                            wordBreak: 'break-word'
+                        }}
+                    >
+                        {displayTitle}
+                    </Title>
+                    {challenge.isExpired && (
+                        <Badge status="error" text={t('challenge.expired.linkStatus')} />
+                    )}
+                </Space>
+                
+                <Space size="small">
+                    {challenge.sourceFile && (
+                        <Tooltip title={t('challenge.detail.correctionTooltip')}>
+                            <Button 
+                                type="link" 
+                                icon={<GithubOutlined />} 
+                                onClick={handleCorrectClick}
+                                size="small"
+                                style={{ padding: '0 4px' }}
+                            >
+                                {t('challenge.detail.correction')}
+                            </Button>
+                        </Tooltip>
+                    )}
+                    
+                    <Tooltip title={t('challenge.detail.issueTooltip')}>
+                        <Button
+                            type="link"
+                            icon={<QuestionCircleOutlined />}
+                            onClick={handleIssueClick}
+                            size="small"
+                            style={{ padding: '0 4px' }}
+                        >
+                            {t('challenge.detail.reportIssue')}
+                        </Button>
+                    </Tooltip>
+                </Space>
+            </div>
+        );
+    }
     
+    // PC端布局
     return (
-        <div style={{ 
-            display: 'flex', 
-            flexDirection: isMobile ? 'column' : 'row',
-            justifyContent: 'space-between', 
-            alignItems: isMobile ? 'flex-start' : 'center',
-            width: '100%', 
-            gap: isMobile ? '12px' : '0'
-        }}>
-            <Space align="center" wrap style={{ marginBottom: isMobile ? '8px' : 0 }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', width: '100%' }}>
+            <Space align="center">
                 <IdTag 
                     id={displayId}
                     clickable
                     onClick={handleIdClick}
                 />
-                <Title 
-                    level={isMobile ? 3 : 2} 
-                    style={{ 
-                        margin: 0,
-                        fontSize: isMobile ? '18px' : '24px',
-                        lineHeight: isMobile ? '24px' : '32px',
-                        wordBreak: 'break-word'
-                    }}
-                >
-                    {displayTitle}
-                </Title>
+                <Title level={2} style={{ margin: 0 }}>{displayTitle}</Title>
                 {challenge.isExpired && (
                     <Badge status="error" text={t('challenge.expired.linkStatus')} />
                 )}
             </Space>
             
-            <Space size={isMobile ? 'small' : 'middle'}>
+            <Space>
                 {challenge.sourceFile && (
                     <Tooltip title={t('challenge.detail.correctionTooltip')}>
                         <Button 
                             type="link" 
                             icon={<GithubOutlined />} 
                             onClick={handleCorrectClick}
-                            size={isMobile ? "small" : "small"}
-                            style={{ padding: isMobile ? '0 4px' : '0 8px' }}
+                            size="small"
                         >
-                            {isMobile ? '' : t('challenge.detail.correction')}
+                            {t('challenge.detail.correction')}
                         </Button>
                     </Tooltip>
                 )}
@@ -142,10 +178,9 @@ const ChallengeHeader: React.FC<ChallengeHeaderProps> = ({ challenge, isMobile =
                         type="link"
                         icon={<QuestionCircleOutlined />}
                         onClick={handleIssueClick}
-                        size={isMobile ? "small" : "small"}
-                        style={{ padding: isMobile ? '0 4px' : '0 8px' }}
+                        size="small"
                     >
-                        {isMobile ? '' : t('challenge.detail.reportIssue')}
+                        {t('challenge.detail.reportIssue')}
                     </Button>
                 </Tooltip>
             </Space>
