@@ -38,11 +38,6 @@ const BasicInfo: React.FC<BasicInfoProps> = ({ form }) => {
           <Radio.Button value="Web">Web</Radio.Button>
           <Radio.Button value="Android">Android</Radio.Button>
           <Radio.Button value="iOS">iOS</Radio.Button>
-          <Radio.Button value="WeChat-MiniProgram">微信小程序</Radio.Button>
-          <Radio.Button value="Electron">Electron</Radio.Button>
-          <Radio.Button value="Windows-Native">Windows</Radio.Button>
-          <Radio.Button value="Mac-Native">Mac</Radio.Button>
-          <Radio.Button value="Linux-Native">Linux</Radio.Button>
         </Radio.Group>
       </Form.Item>
 
