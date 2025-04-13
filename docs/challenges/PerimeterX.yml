@@ -43,7 +43,7 @@ challenges:
       破解难点：需要全方位模拟人类行为特征，同时处理复杂的设备指纹识别挑战。
     
     # 挑战目标网站URL的base64编码
-    base64-url: aHR0cHM6Ly93d3cucGVyaW1ldGVyeC5jb20v
+    base64-url: aHR0cHM6Ly93d3cucGVyaW1ldGVyeC5pby8=
 
     # 链接有效性状态（布尔值）
     # 标记挑战链接是否失效，true表示已失效

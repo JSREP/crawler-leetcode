@@ -43,7 +43,7 @@ challenges:
       破解难点：需要模拟真实用户的访问模式和行为特征，绕过AI检测系统。
     
     # 挑战目标网站URL的base64编码
-    base64-url: aHR0cHM6Ly93d3cuaW1wZXJ2YS5jb20v
+    base64-url: aHR0cHM6Ly93d3cuaW1wZXJ2YS5jb20vcHJvZHVjdHMvYm90LW1hbmFnZW1lbnQv
 
     # 链接有效性状态（布尔值）
     # 标记挑战链接是否失效，true表示已失效
