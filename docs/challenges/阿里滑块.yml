@@ -38,13 +38,20 @@ challenges:
     # 与description-markdown-path字段二选一使用，必须选其中一种方式提供描述
     description-markdown: |
       特点：基于行为分析和轨迹检测，要求用户手动滑动滑块，结合AI识别是否为自动化工具8。
-
+      
       破解难点：检测鼠标轨迹、加速度、浏览器指纹等，普通模拟滑动难以通过。
-    
-    # 英文版Markdown格式详细描述（选填）
-    # 当用户选择英文语言时显示，与description-markdown-path_en字段二选一使用
-    # 不提供英文描述时将使用中文描述
-    description-markdown_en: "Ali Slider"
+      
+      ### 案例网站
+      - [https://login.taobao.com/havanaone/login/login.htm](https://login.taobao.com/havanaone/login/login.htm)
+      - [https://home.51cto.com/index/?from_service=icv&reback=https://www.51cto.com/](https://home.51cto.com/index/?from_service=icv&reback=https://www.51cto.com/)
+      - [https://wf.pub/reader?ft=https%3A%2F%2Fkjzl.wfpub.cn%2Fap%2FgetPdf%3Fid%3D75%26type%3Dperio%26title%3D%E7%A7%91%E6%8A%80%E7%BA%B5%E8%A7%88%202022%E5%B9%B4-122%E6%9C%9F&pageNeed=2&rangeNeed=0%20https://36kr.com/%20%20%E7%99%BB%E5%BD%95](https://wf.pub/reader?ft=https%3A%2F%2Fkjzl.wfpub.cn%2Fap%2FgetPdf%3Fid%3D75%26type%3Dperio%26title%3D%E7%A7%91%E6%8A%80%E7%BA%B5%E8%A7%88%202022%E5%B9%B4-122%E6%9C%9F&pageNeed=2&rangeNeed=0%20https://36kr.com/%20%20%E7%99%BB%E5%BD%95)
+      - [https://newrank.cn/user/login](https://newrank.cn/user/login)
+      - [https://www.xiachufang.com/auth/login/](https://www.xiachufang.com/auth/login/)
+      - [https://www.alizhaopin.com/login_personal.htm](https://www.alizhaopin.com/login_personal.htm)
+      - [https://account.wps.cn/](https://account.wps.cn/)
+      - [https://sspai.com/](https://sspai.com/)
+      - [https://data.xiguaji.com/](https://data.xiguaji.com/)
+    description-markdown_en: Ali Slider
     
     # Markdown文件路径（推荐）
     # 指向包含完整挑战描述的Markdown文件，支持图片等复杂内容
