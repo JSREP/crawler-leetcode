@@ -8,16 +8,22 @@ import { pageContainerStyle, animationStyles } from './styles';
 import { useMediaQuery } from 'react-responsive';
 
 // 获取不同难度的挑战数量
-const getDifficultyCounts = () => {
-  const counts = { easy: 0, medium: 0, hard: 0 };
-  challenges.forEach(challenge => {
-    // 匹配新的难度分类:
-    // easy: 1星, medium: 2-3星, hard: 4-5星
-    if (challenge.difficulty === 1) counts.easy++;
-    else if (challenge.difficulty === 2 || challenge.difficulty === 3) counts.medium++;
-    else if (challenge.difficulty >= 4) counts.hard++;
-  });
-  return counts;
+const getDifficultyCounts = (challenges: Challenge[]) => {
+    let beginner = 0;
+    let intermediate = 0;
+    let advanced = 0;
+
+    challenges.forEach(challenge => {
+        if (challenge.difficulty === 1) {
+            beginner++;
+        } else if (challenge.difficulty >= 2 && challenge.difficulty <= 3) {
+            intermediate++;
+        } else if (challenge.difficulty >= 4) {
+            advanced++;
+        }
+    });
+
+    return { beginner, intermediate, advanced };
 };
 
 /**
@@ -27,7 +33,7 @@ const getDifficultyCounts = () => {
 const HomePage = () => {
   const [animatedStats, setAnimatedStats] = useState(false);
   const navigate = useNavigate();
-  const difficultyCounts = getDifficultyCounts();
+  const difficultyCounts = getDifficultyCounts(challenges);
   const isMobile = useMediaQuery({ maxWidth: 768 });
   
   // 获取最新的3个挑战
