@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { GithubOutlined } from '@ant-design/icons';
-import { Tooltip } from 'antd';
+import { GithubOutlined, StarFilled } from '@ant-design/icons';
+import { Tooltip, Badge } from 'antd';
 
 interface GitHubStarCounterProps {
   owner: string;
@@ -87,45 +87,70 @@ const GitHubStarCounter: React.FC<GitHubStarCounterProps> = ({
     fetchStarCount();
   }, [owner, repo, cacheTime]);
 
-  // 样式
+  // 容器样式
   const containerStyle = {
     display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center',
-    fontWeight: 500,
-    fontSize: '14px',
-    padding: '4px 8px',
-    border: '1px solid #e1e4e8',
-    borderRadius: '6px',
-    color: '#24292e',
-    backgroundColor: '#f6f8fa',
+    fontSize: '13px',
+    color: '#333',
     cursor: 'pointer',
-    transition: 'all 0.2s ease',
-    height: '28px',
-    lineHeight: '20px'
+    transition: 'transform 0.2s ease, color 0.2s ease',
+    height: '100%',
+    borderRadius: '4px',
+    textDecoration: 'none',
+    padding: '0 8px',
+    fontWeight: 600,
   };
 
-  // 当鼠标悬停时的样式
-  const hoverStyle = {
-    backgroundColor: '#e1e4e8'
+  // GitHub图标样式
+  const githubIconStyle = {
+    fontSize: '22px',
+    color: '#24292e',
+    marginRight: '2px',
+    verticalAlign: 'middle'
+  };
+
+  // Star图标样式
+  const starIconStyle = {
+    fontSize: '14px',
+    color: '#ff9800',
+    marginRight: '3px',
+  };
+
+  // 徽章样式
+  const badgeStyle = {
+    backgroundColor: '#24292e',
+    color: 'white',
+    fontSize: '12px',
+    padding: '1px 6px',
+    borderRadius: '10px',
+    fontWeight: 'bold',
+    marginLeft: '4px',
+    display: 'inline-block',
   };
 
   return (
-    <Tooltip title="Star us on GitHub">
+    <Tooltip title="Star us on GitHub" placement="bottom">
       <a 
         href={`https://github.com/${owner}/${repo}`}
         target="_blank"
         rel="noopener noreferrer"
         style={containerStyle}
         onMouseOver={(e) => {
-          Object.assign(e.currentTarget.style, hoverStyle);
+          e.currentTarget.style.color = '#1890ff';
+          e.currentTarget.style.transform = 'scale(1.05)';
         }}
         onMouseOut={(e) => {
-          Object.assign(e.currentTarget.style, containerStyle);
+          e.currentTarget.style.color = '#333';
+          e.currentTarget.style.transform = 'scale(1)';
         }}
       >
-        <GithubOutlined style={{ marginRight: '6px' }} />
-        {loading ? '...' : `${starCount || 0}`}
+        <GithubOutlined style={githubIconStyle} />
+        <div style={{ display: 'flex', alignItems: 'center', marginLeft: '5px' }}>
+          <StarFilled style={starIconStyle} />
+          <span>{loading ? '...' : starCount}</span>
+        </div>
       </a>
     </Tooltip>
   );
