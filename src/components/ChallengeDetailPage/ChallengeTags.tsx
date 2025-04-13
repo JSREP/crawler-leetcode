@@ -1,40 +1,65 @@
-import { Typography } from 'antd';
-import { useNavigate } from 'react-router-dom';
+import { Tag, Typography, Space } from 'antd';
+import { TagOutlined } from '@ant-design/icons';
 import { Challenge } from '../../types/challenge';
-import TopicTag from '../TopicTag';
 import { useTranslation } from 'react-i18next';
 
-const { Text } = Typography;
+const { Title } = Typography;
 
 interface ChallengeTagsProps {
     challenge: Challenge;
+    /**
+     * 是否为移动端视图
+     */
+    isMobile?: boolean;
 }
 
 /**
- * 挑战标签组件，显示所有标签
+ * 挑战的标签组件
  */
-const ChallengeTags: React.FC<ChallengeTagsProps> = ({ challenge }) => {
-    const navigate = useNavigate();
+const ChallengeTags: React.FC<ChallengeTagsProps> = ({ challenge, isMobile = false }) => {
     const { t } = useTranslation();
     
-    // 处理标签点击，跳转到列表页并应用过滤
-    const handleTagClick = (tag: string) => {
-        navigate(`/challenges?tags=${encodeURIComponent(tag)}`);
-    };
+    // 如果没有标签，不显示
+    if (!challenge.tags || challenge.tags.length === 0) {
+        return null;
+    }
     
     return (
         <div>
-            <Text type="secondary">{t('challenge.detail.tags')}:</Text>
-            <div style={{ marginTop: '8px' }}>
-                {challenge.tags.map((tag, index) => (
-                    <TopicTag
-                        key={index}
-                        text={tag}
-                        clickable
-                        onClick={handleTagClick}
-                        style={{ marginRight: '8px' }}
-                    />
-                ))}
+            <Title 
+                level={isMobile ? 5 : 4} 
+                style={{ 
+                    marginBottom: isMobile ? '8px' : '16px',
+                    fontSize: isMobile ? '16px' : '18px'
+                }}
+            >
+                <TagOutlined style={{ marginRight: '8px' }} />
+                {t('challenge.detail.tags')}
+            </Title>
+            
+            <div>
+                {/* 使用Space组件，允许标签换行 */}
+                <Space 
+                    size={[isMobile ? 4 : 8, isMobile ? 4 : 8]} 
+                    wrap
+                    style={{ 
+                        display: 'flex', 
+                        flexWrap: 'wrap',
+                    }}
+                >
+                    {challenge.tags.map((tag, index) => (
+                        <Tag
+                            key={index}
+                            style={{ 
+                                margin: '0',
+                                fontSize: isMobile ? '12px' : '14px',
+                                padding: isMobile ? '0 6px' : '0 8px',
+                            }}
+                        >
+                            {tag}
+                        </Tag>
+                    ))}
+                </Space>
             </div>
         </div>
     );
