@@ -10,34 +10,26 @@ const { Title } = Typography;
 
 interface ChallengeDescriptionProps {
     challenge: Challenge;
+    /**
+     * 是否为移动端视图
+     */
+    isMobile?: boolean;
 }
 
 // 测试图片 - 1x1像素透明PNG
 const FALLBACK_IMAGE = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=';
 
-// 图片组件
-const MarkdownImage = ({ node }: { node: any }) => {
+// 图片组件 - 修复props类型问题
+const MarkdownImage = (props: any) => {
+    const { src, alt } = props;
     // 使用传入的src或回退到默认图片
-    const imageSrc = node.properties?.src || FALLBACK_IMAGE;
-    
-    // 如果是data:image类型的图片，直接使用原始src
-    const isDataImage = typeof imageSrc === 'string' && imageSrc.startsWith('data:image');
-    
-    // 检查图片源是否完整 (data:image格式但很短，可能被截断)
-    const isTruncatedBase64 = isDataImage && imageSrc.length < 100;
-    
-    // 解决方案：如果检测到是被截断的data:image，尝试从node属性中提取完整的图片数据
-    // 这是处理React-Markdown可能截断长字符串的情况
-    let fullImageSrc = imageSrc;
-    if (isTruncatedBase64 && node && node.properties && node.properties.src) {
-        fullImageSrc = node.properties.src;
-    }
+    const imageSrc = src || FALLBACK_IMAGE;
     
     // 使用Ant Design的Image组件，支持点击预览
     return (
         <Image
-            src={fullImageSrc}
-            alt={node.properties?.alt || '图片'}
+            src={imageSrc}
+            alt={alt || '图片'}
             style={{
                 maxWidth: '100%',
                 borderRadius: '4px',
@@ -54,6 +46,7 @@ const MarkdownImage = ({ node }: { node: any }) => {
                     </div>
                 )
             }}
+            fallback={FALLBACK_IMAGE}
         />
     );
 };
@@ -82,7 +75,7 @@ const MarkdownLink = (props: any) => {
 /**
  * 挑战描述组件，显示问题的Markdown描述
  */
-const ChallengeDescription: React.FC<ChallengeDescriptionProps> = ({ challenge }) => {
+const ChallengeDescription: React.FC<ChallengeDescriptionProps> = ({ challenge, isMobile = false }) => {
     const { t, i18n } = useTranslation();
     
     // 根据当前语言选择显示描述
@@ -215,6 +208,61 @@ const ChallengeDescription: React.FC<ChallengeDescriptionProps> = ({ challenge }
         
         // 如果成功提取了图片URL，使用Ant Design的Image组件显示
         if (extractedImageUrl) {
+            if (isMobile) {
+                return (
+                    <div>
+                        <Title 
+                            level={4}
+                            style={{ 
+                                marginBottom: '12px',
+                                fontSize: '18px'
+                            }}
+                        >
+                            {t('challenge.detail.description')}
+                        </Title>
+                        
+                        <Card 
+                            bordered={false} 
+                            style={{ 
+                                marginBottom: 16,
+                                wordWrap: 'break-word',
+                                overflowWrap: 'break-word'
+                            }}
+                            bodyStyle={{ 
+                                padding: '12px'
+                            }}
+                        >
+                            <div className="markdown-content">
+                                {htmlContent && (
+                                    <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+                                )}
+                                <Image
+                                    src={extractedImageUrl}
+                                    alt="挑战图片"
+                                    style={{
+                                        maxWidth: '100%',
+                                        borderRadius: '4px',
+                                        margin: '8px 0',
+                                        display: 'block'
+                                    }}
+                                    preview={{
+                                        mask: '点击查看大图',
+                                        maskClassName: 'image-preview-mask',
+                                        toolbarRender: () => (
+                                            <div className="image-preview-tip">
+                                                点击图片外区域关闭 | 滚轮缩放 | 左键拖动
+                                            </div>
+                                        ),
+                                    }}
+                                    fallback={FALLBACK_IMAGE}
+                                />
+                            </div>
+                        </Card>
+                    </div>
+                );
+            }
+            
+            // PC端布局
             return (
                 <div>
                     <Title level={3}>{t('challenge.detail.description')}</Title>
@@ -241,14 +289,14 @@ const ChallengeDescription: React.FC<ChallengeDescriptionProps> = ({ challenge }
                                     display: 'block'
                                 }}
                                 preview={{
-                                    mask: '点击查看大图',
-                                    maskClassName: 'image-preview-mask',
+                                    mask: <div className="image-preview-mask">点击查看大图</div>,
+                                    maskClassName: "image-preview-mask",
+                                    rootClassName: "custom-image-preview",
                                     toolbarRender: () => (
                                         <div className="image-preview-tip">
                                             点击图片外区域关闭 | 滚轮缩放 | 左键拖动
                                         </div>
-                                    ),
-                                    rootClassName: 'custom-image-preview'
+                                    )
                                 }}
                                 fallback={FALLBACK_IMAGE}
                             />
@@ -259,7 +307,52 @@ const ChallengeDescription: React.FC<ChallengeDescriptionProps> = ({ challenge }
         }
     }
     
-    // 默认渲染方式 - 使用ReactMarkdown
+    // 针对移动端的Markdown内容处理
+    if (isMobile) {
+        return (
+            <div>
+                <Title 
+                    level={4}
+                    style={{ 
+                        marginBottom: '12px',
+                        fontSize: '18px'
+                    }}
+                >
+                    {t('challenge.detail.description')}
+                </Title>
+                
+                <Card 
+                    bordered={false} 
+                    style={{ 
+                        marginBottom: 16,
+                        wordWrap: 'break-word',
+                        overflowWrap: 'break-word'
+                    }}
+                    bodyStyle={{ 
+                        padding: '12px'
+                    }}
+                >
+                    {displayDescription ? (
+                        <div className="markdown-content" style={{ fontSize: '14px' }}>
+                            <ReactMarkdown
+                                rehypePlugins={[rehypeRaw]}
+                                components={{
+                                    a: MarkdownLink,
+                                    img: MarkdownImage,
+                                }}
+                            >
+                                {displayDescription}
+                            </ReactMarkdown>
+                        </div>
+                    ) : (
+                        <Empty description={t('challenge.detail.noDescription')} />
+                    )}
+                </Card>
+            </div>
+        );
+    }
+
+    // PC端默认渲染方式 - 使用ReactMarkdown
     return (
         <div>
             <Title level={3}>{t('challenge.detail.description')}</Title>

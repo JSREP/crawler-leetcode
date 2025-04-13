@@ -1,20 +1,116 @@
-import { Typography, Card, Empty, Button } from 'antd';
-import { Challenge } from '../../types/challenge';
+import { List, Typography, Empty, Tag, Card, Space, Button } from 'antd';
+import { GithubOutlined, LinkOutlined } from '@ant-design/icons';
 import { useTranslation } from 'react-i18next';
-import { GithubOutlined } from '@ant-design/icons';
+import { Challenge, Solution } from '../../types/challenge';
 
 const { Title, Text } = Typography;
 
 interface ChallengeSolutionsProps {
     challenge: Challenge;
+    /**
+     * 是否为移动端视图
+     */
+    isMobile?: boolean;
 }
 
 /**
- * 挑战解决方案组件，显示解决方案列表
+ * 挑战解决方案列表
  */
-const ChallengeSolutions: React.FC<ChallengeSolutionsProps> = ({ challenge }) => {
+const ChallengeSolutions: React.FC<ChallengeSolutionsProps> = ({ challenge, isMobile = false }) => {
     const { t } = useTranslation();
     
+    // 移动端布局
+    if (isMobile) {
+        // 如果没有解决方案，显示空状态
+        if (!challenge.solutions || challenge.solutions.length === 0) {
+            return (
+                <div>
+                    <Title 
+                        level={4}
+                        style={{ 
+                            marginBottom: '12px',
+                            fontSize: '18px'
+                        }}
+                    >
+                        {t('challenge.detail.solutions')}
+                    </Title>
+                    <Empty description={t('challenge.detail.noSolutions')} />
+                </div>
+            );
+        }
+        
+        return (
+            <div>
+                <Title 
+                    level={4}
+                    style={{ 
+                        marginBottom: '12px',
+                        fontSize: '18px'
+                    }}
+                >
+                    {t('challenge.detail.solutions')}
+                </Title>
+                
+                <List
+                    itemLayout="vertical"
+                    dataSource={challenge.solutions}
+                    renderItem={(solution: Solution) => (
+                        <List.Item>
+                            <Card 
+                                style={{ width: '100%' }}
+                                bodyStyle={{ padding: '12px' }}
+                            >
+                                <Space direction="vertical" size="small" style={{ width: '100%' }}>
+                                    <Space wrap align="center">
+                                        <Title 
+                                            level={5} 
+                                            style={{ 
+                                                margin: 0,
+                                                fontSize: '16px' 
+                                            }}
+                                        >
+                                            {solution.title}
+                                        </Title>
+                                        
+                                        <Tag color="blue">
+                                            {solution.source}
+                                        </Tag>
+                                        
+                                        {solution.author && (
+                                            <Tag>
+                                                {solution.author}
+                                            </Tag>
+                                        )}
+                                    </Space>
+                                    
+                                    <a 
+                                        href={solution.url} 
+                                        target="_blank" 
+                                        rel="noopener noreferrer"
+                                        style={{ 
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            fontSize: '14px',
+                                            wordBreak: 'break-all'
+                                        }}
+                                    >
+                                        {solution.source === 'GitHub' ? (
+                                            <GithubOutlined style={{ marginRight: '8px' }} />
+                                        ) : (
+                                            <LinkOutlined style={{ marginRight: '8px' }} />
+                                        )}
+                                        {solution.url}
+                                    </a>
+                                </Space>
+                            </Card>
+                        </List.Item>
+                    )}
+                />
+            </div>
+        );
+    }
+    
+    // PC端布局
     return (
         <div>
             <Title level={3}>{t('challenge.detail.solutions')}</Title>

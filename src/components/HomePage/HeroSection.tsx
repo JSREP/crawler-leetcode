@@ -9,8 +9,15 @@ import {
   heroSubtitleStyle, 
   primaryButtonStyle, 
   secondaryButtonStyle,
-  statsCardStyle
+  statsCardStyle,
+  heroSectionMobileStyle,
+  heroTitleMobileStyle,
+  heroSubtitleMobileStyle,
+  primaryButtonMobileStyle,
+  secondaryButtonMobileStyle,
+  statsCardMobileStyle
 } from './styles';
+import { useMediaQuery } from 'react-responsive';
 
 const { Title, Text, Paragraph } = Typography;
 
@@ -30,6 +37,7 @@ interface HeroSectionProps {
 const HeroSection: React.FC<HeroSectionProps> = ({ challenges, difficultyCounts, animatedStats }) => {
   const navigate = useNavigate();
   const { t } = useTranslation();
+  const isMobile = useMediaQuery({ maxWidth: 768 });
 
   // 计算每个难度级别的百分比
   const total = difficultyCounts.easy + difficultyCounts.medium + difficultyCounts.hard || 1;
@@ -48,28 +56,35 @@ const HeroSection: React.FC<HeroSectionProps> = ({ challenges, difficultyCounts,
   };
 
   return (
-    <div style={heroSectionStyle}>
+    <div style={{ ...heroSectionStyle, ...(isMobile ? heroSectionMobileStyle : {}) }}>
       <Row justify="center" align="middle" gutter={[32, 32]}>
         <Col xs={24} md={16} lg={12}>
           <div style={{ animation: 'fadeIn 1s ease-out' }}>
-            <Title level={1} style={heroTitleStyle}>
+            <Title 
+              level={1} 
+              style={{ ...heroTitleStyle, ...(isMobile ? heroTitleMobileStyle : {}) }}
+              className="hero-title"
+            >
               {t('home.hero.title')}
             </Title>
-            <Paragraph style={heroSubtitleStyle}>
+            <Paragraph 
+              style={{ ...heroSubtitleStyle, ...(isMobile ? heroSubtitleMobileStyle : {}) }}
+              className="hero-subtitle"
+            >
               {t('home.hero.subtitle')}
             </Paragraph>
-            <Space size="middle">
+            <Space size="middle" className="hero-buttons">
               <Button 
                 type="primary" 
                 size="large" 
                 onClick={() => navigate('/challenges')}
-                style={primaryButtonStyle}
+                style={{ ...primaryButtonStyle, ...(isMobile ? primaryButtonMobileStyle : {}) }}
               >
                 {t('home.hero.startButton')} <ArrowRightOutlined />
               </Button>
               <Button 
                 size="large"
-                style={secondaryButtonStyle}
+                style={{ ...secondaryButtonStyle, ...(isMobile ? secondaryButtonMobileStyle : {}) }}
                 onClick={() => navigate('/about')}
               >
                 {t('home.hero.learnMoreButton')}
@@ -80,6 +95,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ challenges, difficultyCounts,
         <Col xs={24} md={8} lg={8} style={{ display: 'flex', justifyContent: 'center' }}>
           <div style={{ 
             ...statsCardStyle,
+            ...(isMobile ? statsCardMobileStyle : {}),
             transform: animatedStats ? 'translateY(0)' : 'translateY(20px)',
             opacity: animatedStats ? 1 : 0,
             transition: 'transform 0.8s ease-out, opacity 0.8s ease-out',
@@ -88,7 +104,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({ challenges, difficultyCounts,
             background: 'linear-gradient(135deg, rgba(30,60,110,0.7) 0%, rgba(40,80,140,0.7) 100%)',
             boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.1) inset',
             border: '1px solid rgba(255, 255, 255, 0.1)',
-          }}>
+          }}
+          className="stats-card"
+          >
             <Space direction="vertical" size="large" style={{ width: '100%' }}>
               {/* 总挑战数统计 */}
               <div style={{ 
@@ -99,7 +117,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ challenges, difficultyCounts,
               }}>
                 <Text style={{ 
                   color: 'rgba(255,255,255,0.9)', 
-                  fontSize: '18px',
+                  fontSize: isMobile ? '16px' : '18px',
                   fontWeight: 500,
                   textTransform: 'uppercase',
                   letterSpacing: '1px',
@@ -115,8 +133,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({ challenges, difficultyCounts,
                 }}>
                   <div style={{ 
                     background: 'rgba(255,255,255,0.15)',
-                    width: '64px',
-                    height: '64px',
+                    width: isMobile ? '56px' : '64px',
+                    height: isMobile ? '56px' : '64px',
                     borderRadius: '50%',
                     display: 'flex',
                     alignItems: 'center',
@@ -125,13 +143,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({ challenges, difficultyCounts,
                     boxShadow: '0 0 20px rgba(255, 215, 0, 0.3)'
                   }}>
                     <TrophyOutlined style={{ 
-                      fontSize: '32px', 
+                      fontSize: isMobile ? '28px' : '32px', 
                       color: '#FFD700',
                       filter: 'drop-shadow(0 0 8px rgba(255, 215, 0, 0.6))'
                     }} />
                   </div>
                   <span style={{ 
-                    fontSize: '40px',
+                    fontSize: isMobile ? '36px' : '40px',
                     fontWeight: 'bold',
                     color: 'white',
                     textShadow: '0 0 10px rgba(255,255,255,0.4)'
@@ -145,15 +163,15 @@ const HeroSection: React.FC<HeroSectionProps> = ({ challenges, difficultyCounts,
               <div>
                 <Text style={{ 
                   color: 'rgba(255,255,255,0.9)', 
-                  fontSize: '16px',
+                  fontSize: isMobile ? '14px' : '16px',
                   fontWeight: 500,
                   display: 'block',
-                  marginBottom: '16px'
+                  marginBottom: isMobile ? '12px' : '16px'
                 }}>
                   {t('home.hero.stats.difficultyDistribution')}
                 </Text>
                 
-                <Row gutter={[16, 16]}>
+                <Row gutter={[isMobile ? 8 : 16, isMobile ? 8 : 16]}>
                   {/* 初级难度 */}
                   <Col span={24} sm={8}>
                     <Tooltip title={`${easyPercent}% ${t('home.hero.stats.ofTotal')}`}>
@@ -176,7 +194,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ challenges, difficultyCounts,
                           </Text>
                         </div>
                         <div style={{ 
-                          fontSize: '24px', 
+                          fontSize: isMobile ? '22px' : '24px', 
                           fontWeight: 'bold', 
                           color: 'white',
                           marginBottom: '8px',
@@ -217,7 +235,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ challenges, difficultyCounts,
                           </Text>
                         </div>
                         <div style={{ 
-                          fontSize: '24px', 
+                          fontSize: isMobile ? '22px' : '24px', 
                           fontWeight: 'bold', 
                           color: 'white',
                           marginBottom: '8px',
@@ -258,7 +276,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ challenges, difficultyCounts,
                           </Text>
                         </div>
                         <div style={{ 
-                          fontSize: '24px', 
+                          fontSize: isMobile ? '22px' : '24px', 
                           fontWeight: 'bold', 
                           color: 'white',
                           marginBottom: '8px',

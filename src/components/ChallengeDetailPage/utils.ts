@@ -32,4 +32,18 @@ export const getDifficultyText = (difficulty: number): string => {
         default:
             return '未知';
     }
+};
+
+/**
+ * 格式化日期时间为本地字符串
+ */
+export const formatDateTime = (date: Date | string | number | undefined): string => {
+    if (!date) return '未知';
+    
+    try {
+        const dateObj = typeof date === 'object' ? date : new Date(date);
+        return dateObj.toLocaleString();
+    } catch (e) {
+        return String(date);
+    }
 }; 

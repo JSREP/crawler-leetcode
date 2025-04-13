@@ -10,8 +10,12 @@ import {
   challengeContainerStyle,
   challengeTitleContainerStyle,
   viewMoreButtonContainerStyle,
-  viewMoreButtonStyle
+  viewMoreButtonStyle,
+  challengeSectionMobileStyle,
+  challengeTitleMobileStyle,
+  viewMoreButtonMobileStyle
 } from './styles';
+import { useMediaQuery } from 'react-responsive';
 
 const { Title } = Typography;
 
@@ -39,17 +43,23 @@ const ChallengeSection: React.FC<ChallengeSectionProps> = ({
 }) => {
   const navigate = useNavigate();
   const { t } = useTranslation();
+  const isMobile = useMediaQuery({ maxWidth: 768 });
 
   return (
-    <div style={challengeSectionStyle}>
+    <div style={{ ...challengeSectionStyle, ...(isMobile ? challengeSectionMobileStyle : {}) }}>
       <div style={challengeContainerStyle}>
         <Row gutter={[48, 48]}>
           {/* 最新挑战 */}
           <Col xs={24} lg={12}>
-            <div style={challengeTitleContainerStyle}>
+            <div 
+              style={{ ...challengeTitleContainerStyle, ...(isMobile ? challengeTitleMobileStyle : {}) }}
+              className="challenge-section-title"
+            >
               <Space align="center">
-                <RocketOutlined style={{ fontSize: '24px', color: '#1890ff' }} />
-                <Title level={3} style={{ margin: 0 }}>{t('home.challenges.recent.title')}</Title>
+                <RocketOutlined style={{ fontSize: isMobile ? '20px' : '24px', color: '#1890ff' }} />
+                <Title level={3} style={{ margin: 0, fontSize: isMobile ? '1.3rem' : '1.5rem' }}>
+                  {t('home.challenges.recent.title')}
+                </Title>
               </Space>
             </div>
             <SimpleChallengeList 
@@ -69,7 +79,8 @@ const ChallengeSection: React.FC<ChallengeSectionProps> = ({
                 type="primary" 
                 ghost
                 onClick={() => navigate('/challenges')}
-                style={viewMoreButtonStyle}
+                style={{ ...viewMoreButtonStyle, ...(isMobile ? viewMoreButtonMobileStyle : {}) }}
+                className="challenge-more-button"
               >
                 {t('home.challenges.recent.viewMore')} <ArrowRightOutlined />
               </Button>
@@ -78,10 +89,15 @@ const ChallengeSection: React.FC<ChallengeSectionProps> = ({
           
           {/* 热门挑战 */}
           <Col xs={24} lg={12}>
-            <div style={challengeTitleContainerStyle}>
+            <div 
+              style={{ ...challengeTitleContainerStyle, ...(isMobile ? challengeTitleMobileStyle : {}) }}
+              className="challenge-section-title"
+            >
               <Space align="center">
-                <FireOutlined style={{ fontSize: '24px', color: '#f5222d' }} />
-                <Title level={3} style={{ margin: 0 }}>{t('home.challenges.popular.title')}</Title>
+                <FireOutlined style={{ fontSize: isMobile ? '20px' : '24px', color: '#f5222d' }} />
+                <Title level={3} style={{ margin: 0, fontSize: isMobile ? '1.3rem' : '1.5rem' }}>
+                  {t('home.challenges.popular.title')}
+                </Title>
               </Space>
             </div>
             <SimpleChallengeList 
@@ -101,7 +117,8 @@ const ChallengeSection: React.FC<ChallengeSectionProps> = ({
                 type="primary" 
                 ghost
                 onClick={() => navigate('/challenges')}
-                style={viewMoreButtonStyle}
+                style={{ ...viewMoreButtonStyle, ...(isMobile ? viewMoreButtonMobileStyle : {}) }}
+                className="challenge-more-button"
               >
                 {t('home.challenges.popular.viewMore')} <ArrowRightOutlined />
               </Button>
