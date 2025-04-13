@@ -188,8 +188,16 @@ export function updateChallengeInCollection(
           currentField = fieldName;
         } else {
           // 不是字段开始，可能是复杂字段的一部分
-          // 我们不处理这些嵌套字段内的注释
-          commentBuffer = [];
+          // 我们保留这些注释，可能是块级注释或值的一部分
+          if (commentBuffer.length > 0 && currentField) {
+            // 如果已经有这个字段的注释，添加到现有注释中
+            if (challengeWithComments[currentField]) {
+              challengeWithComments[currentField].push(...commentBuffer);
+            } else {
+              challengeWithComments[currentField] = [...commentBuffer];
+            }
+            commentBuffer = [];
+          }
         }
       }
     }
