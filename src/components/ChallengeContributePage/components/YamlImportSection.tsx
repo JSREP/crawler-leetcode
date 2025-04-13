@@ -117,11 +117,50 @@ const YamlImportSection: React.FC<YamlImportSectionProps> = ({
       return;
     }
 
-    if (validateYaml(yamlText)) {
-      onImportYaml(yamlText);
-      message.success('粘贴的YAML导入成功');
-      setIsModalVisible(false);
+    setIsLoading(true);
+    try {
+      if (validateYaml(yamlText)) {
+        onImportYaml(yamlText);
+        message.success('粘贴的YAML导入成功');
+        setIsModalVisible(false);
+      }
+    } finally {
+      setIsLoading(false);
     }
+  };
+
+  // 根据当前标签页渲染底部按钮
+  const renderFooterButtons = () => {
+    const cancelButton = (
+      <Button key="cancel" onClick={handleCancel}>
+        取消
+      </Button>
+    );
+
+    // 不同标签页的确认按钮
+    const actionButton = activeTab === 'text' ? (
+      <Button 
+        key="text-import" 
+        type="primary" 
+        onClick={handleTextImport}
+        loading={isLoading}
+        disabled={!yamlText.trim()}
+      >
+        粘贴导入
+      </Button>
+    ) : (
+      <Button 
+        key="import" 
+        type="primary" 
+        onClick={handleImport}
+        loading={isLoading}
+        disabled={activeTab === 'file'}
+      >
+        导入
+      </Button>
+    );
+
+    return [cancelButton, actionButton];
   };
 
   // 选择当前活动的导入方式
@@ -156,22 +195,7 @@ const YamlImportSection: React.FC<YamlImportSectionProps> = ({
         title="导入YAML"
         open={isModalVisible}
         onCancel={handleCancel}
-        footer={[
-          <Button key="cancel" onClick={handleCancel}>
-            取消
-          </Button>,
-          activeTab !== 'text' ? (
-            <Button 
-              key="import" 
-              type="primary" 
-              onClick={handleImport}
-              loading={isLoading}
-              disabled={activeTab === 'file'}
-            >
-              导入
-            </Button>
-          ) : null
-        ].filter(Boolean)}
+        footer={renderFooterButtons()}
         width={600}
       >
         <Tabs activeKey={activeTab} onChange={setActiveTab}>
@@ -196,9 +220,14 @@ const YamlImportSection: React.FC<YamlImportSectionProps> = ({
                 </p>
                 <p className="ant-upload-text">点击或拖拽文件到此区域上传</p>
                 <p className="ant-upload-hint">
-                  支持 .yml 或 .yaml 格式文件，包括单个挑战或包含多个挑战的集合文件（将导入第一个挑战）
+                  支持 .yml 或 .yaml 格式文件
                 </p>
               </Upload.Dragger>
+              <div style={{ display: 'flex', alignItems: 'center', marginTop: 16 }}>
+                <p style={{ color: '#999', margin: 0, flex: 1 }}>
+                  点击或拖拽YAML文件到上方区域。支持单个挑战或包含多个挑战的集合文件（将导入第一个挑战）。
+                </p>
+              </div>
             </div>
           </TabPane>
           
@@ -220,9 +249,9 @@ const YamlImportSection: React.FC<YamlImportSectionProps> = ({
                   prefix={<LinkOutlined />}
                   allowClear
                 />
-                <div>
-                  <p style={{ color: '#999', marginTop: 8 }}>
-                    输入包含YAML内容的文件URL，点击导入按钮获取并解析内容。
+                <div style={{ display: 'flex', alignItems: 'center', marginTop: 8 }}>
+                  <p style={{ color: '#999', margin: 0, flex: 1 }}>
+                    输入包含YAML内容的文件URL，点击底部的【导入】按钮获取并解析内容。
                     支持单个挑战或包含多个挑战的集合文件（将导入第一个挑战）。
                   </p>
                 </div>
@@ -245,23 +274,23 @@ const YamlImportSection: React.FC<YamlImportSectionProps> = ({
                   placeholder="粘贴YAML内容到此处"
                   value={yamlText}
                   onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setYamlText(e.target.value)}
-                  autoSize={{ minRows: 6, maxRows: 12 }}
+                  autoSize={{ minRows: 8, maxRows: 16 }}
+                  style={{ 
+                    resize: 'none',
+                    backgroundColor: '#fafafa',
+                    border: '1px dashed #d9d9d9',
+                    borderRadius: '4px',
+                    padding: '12px'
+                  }}
                   onPaste={(e: React.ClipboardEvent<HTMLTextAreaElement>) => {
                     console.log('粘贴事件触发');
                   }}
                 />
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <p style={{ color: '#999', margin: '8px 0 0 0' }}>
-                    将YAML内容复制粘贴到文本框中，点击导入按钮解析内容。
+                <div style={{ display: 'flex', alignItems: 'center', marginTop: 16 }}>
+                  <p style={{ color: '#999', margin: 0, flex: 1 }}>
+                    将YAML内容复制粘贴到文本框中，点击底部的【粘贴导入】按钮解析内容。
                     支持单个挑战或包含多个挑战的集合文件（将导入第一个挑战）。
                   </p>
-                  <Button 
-                    type="primary" 
-                    onClick={handleTextImport}
-                    disabled={!yamlText.trim()}
-                  >
-                    粘贴导入
-                  </Button>
                 </div>
               </Space>
             </div>
