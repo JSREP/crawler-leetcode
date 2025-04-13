@@ -170,9 +170,6 @@ const NavBar = () => {
                                 alignItems: 'center',
                                 gap: '8px'
                             }}>
-                                {/* GitHub Star计数 */}
-                                <GitHubStarCounter owner="JSREP" repo="crawler-leetcode" />
-                                
                                 {/* 贡献题目按钮 */}
                                 <Button 
                                     type="primary" 
@@ -198,6 +195,9 @@ const NavBar = () => {
                                     <Option value="zh">简体中文</Option>
                                     <Option value="en">English</Option>
                                 </Select>
+
+                                {/* GitHub Star计数 */}
+                                <GitHubStarCounter owner="JSREP" repo="crawler-leetcode" />
                             </div>
                         </Col>
                     )}
@@ -220,11 +220,6 @@ const NavBar = () => {
                     style={{ border: 'none' }}
                 />
                 <div style={{ marginTop: 24, padding: '0 16px' }}>
-                    {/* 移动端GitHub Star计数 */}
-                    <div style={{ marginBottom: 16, display: 'flex', justifyContent: 'center' }}>
-                        <GitHubStarCounter owner="JSREP" repo="crawler-leetcode" />
-                    </div>
-
                     <Button 
                         type="primary" 
                         icon={<PlusOutlined />}
@@ -244,6 +239,11 @@ const NavBar = () => {
                             <Option value="zh">简体中文</Option>
                             <Option value="en">English</Option>
                         </Select>
+                    </div>
+
+                    {/* 移动端GitHub Star计数 */}
+                    <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 16 }}>
+                        <GitHubStarCounter owner="JSREP" repo="crawler-leetcode" />
                     </div>
                 </div>
             </Drawer>
