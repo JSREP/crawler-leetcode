@@ -336,7 +336,7 @@ const ChallengeListPage = () => {
     );
 
     return (
-        <div className="challenge-list-page" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 16px' }}>
+        <div className="challenge-list-page" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 16px' }}>
             <Row gutter={[16, 16]}>
                 <Col span={24}>
                     <h1 style={{ fontSize: isMobile ? '1.5rem' : '2rem', marginBottom: '1rem' }}>
