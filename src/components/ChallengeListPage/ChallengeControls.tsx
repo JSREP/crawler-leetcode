@@ -1,7 +1,7 @@
 import { Select, Divider, Space, Dropdown, Button, Menu, Checkbox, Input } from 'antd';
 import { SortAscendingOutlined, SortDescendingOutlined, TagOutlined, FilterOutlined, DownOutlined, SearchOutlined } from '@ant-design/icons';
 import { useTranslation } from 'react-i18next';
-import { useState, ChangeEvent } from 'react';
+import { useState, ChangeEvent, useRef, useEffect } from 'react';
 import StarRating from '../StarRating';
 import { useMediaQuery } from 'react-responsive';
 
@@ -90,9 +90,19 @@ const ChallengeControls: React.FC<ChallengeControlsProps> = ({
 }) => {
     const { t } = useTranslation();
     const isMobile = useMediaQuery({ maxWidth: 768 });
+    const containerRef = useRef<HTMLDivElement>(null);
     
     // 在组件的开头部分添加状态
     const [tagSearchText, setTagSearchText] = useState('');
+    
+    // 确保containerRef挂载后才渲染Dropdown
+    const [isContainerMounted, setIsContainerMounted] = useState(false);
+    
+    useEffect(() => {
+        if (containerRef.current) {
+            setIsContainerMounted(true);
+        }
+    }, []);
     
     // 排序功能菜单
     const sortMenu = (
@@ -154,13 +164,14 @@ const ChallengeControls: React.FC<ChallengeControlsProps> = ({
             maxHeight: isMobile ? '300px' : '400px', 
             overflowY: 'auto', 
             minWidth: isMobile ? '250px' : '300px',
-            maxWidth: isMobile ? '80vw' : 'none',
+            maxWidth: isMobile ? '80vw' : '400px',
             backgroundColor: '#fff',
             boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)',
             borderRadius: '4px',
             border: '1px solid #f0f0f0',
-            position: 'relative',
-            zIndex: 1050
+            zIndex: 1050,
+            transform: 'translateZ(0)', // 开启硬件加速
+            willChange: 'transform, opacity' // 提示浏览器优化渲染
         }}>
             {/* 添加标签搜索框 */}
             <Input 
@@ -171,6 +182,7 @@ const ChallengeControls: React.FC<ChallengeControlsProps> = ({
                     setTagSearchText(e.target.value);
                 }}
                 allowClear
+                autoFocus={false} // 防止自动聚焦导致的布局计算问题
             />
             
             {/* 标签列表，使用Grid布局优化显示 */}
@@ -179,9 +191,10 @@ const ChallengeControls: React.FC<ChallengeControlsProps> = ({
                     value={selectedTags}
                     onChange={tags => onTagsChange(tags as string[])}
                     style={{ 
-                        display: 'flex', 
-                        flexWrap: 'wrap',
-                        width: '100%'
+                        display: 'grid',
+                        gridTemplateColumns: 'repeat(auto-fill, minmax(120px, 1fr))',
+                        width: '100%',
+                        gap: '6px'
                     }}
                 >
                     {allTags
@@ -191,8 +204,8 @@ const ChallengeControls: React.FC<ChallengeControlsProps> = ({
                                 key={tag} 
                                 value={tag} 
                                 style={{ 
-                                    marginRight: '12px',
-                                    marginBottom: '6px',
+                                    marginRight: 0,
+                                    marginBottom: 0,
                                     width: 'auto',
                                     display: 'inline-flex',
                                     alignItems: 'center',
@@ -209,90 +222,109 @@ const ChallengeControls: React.FC<ChallengeControlsProps> = ({
     );
     
     return (
-        <Space 
-            split={isMobile ? null : <Divider type="vertical" />} 
-            style={{ marginBottom: isMobile ? 12 : 20 }}
-            direction={isMobile ? "vertical" : "horizontal"}
-            size={isMobile ? 8 : "middle"}
-            wrap={!isMobile}
-        >
-            {/* 标签过滤 */}
-            <Dropdown 
-                overlay={tagMenu} 
-                trigger={['click']} 
-                placement={isMobile ? "bottomCenter" : "bottomLeft"}
-                overlayStyle={{ 
-                    position: 'fixed',
-                    marginTop: '8px',
-                    zIndex: 1050
-                }}
+        <div ref={containerRef} className="challenge-controls-container" style={{ position: 'relative' }}>
+            <Space 
+                split={isMobile ? null : <Divider type="vertical" />} 
+                style={{ marginBottom: isMobile ? 12 : 20 }}
+                direction={isMobile ? "vertical" : "horizontal"}
+                size={isMobile ? 8 : "middle"}
+                wrap={!isMobile}
             >
-                <Button 
-                    icon={<TagOutlined />}
-                    size={isMobile ? "middle" : "default"}
-                    style={{ width: isMobile ? '100%' : 'auto', justifyContent: 'space-between', display: 'flex', alignItems: 'center' }}
-                >
-                    {t('challenges.filters.tags')} {selectedTags.length > 0 && `(${selectedTags.length})`} <DownOutlined />
-                </Button>
-            </Dropdown>
-            
-            {/* 难度过滤 */}
-            <Dropdown 
-                overlay={difficultyMenu} 
-                trigger={['click']}
-                placement={isMobile ? "bottomCenter" : "bottomLeft"}
-            >
-                <Button 
-                    icon={<FilterOutlined />}
-                    size={isMobile ? "middle" : "default"}
-                    style={{ width: isMobile ? '100%' : 'auto', justifyContent: 'space-between', display: 'flex', alignItems: 'center' }}
-                >
-                    {t('challenges.filters.difficulty')} <DownOutlined />
-                </Button>
-            </Dropdown>
-            
-            {/* 平台过滤 */}
-            <Dropdown 
-                overlay={platformMenu} 
-                trigger={['click']}
-                placement={isMobile ? "bottomCenter" : "bottomLeft"}
-            >
-                <Button 
-                    icon={<FilterOutlined />}
-                    size={isMobile ? "middle" : "default"}
-                    style={{ width: isMobile ? '100%' : 'auto', justifyContent: 'space-between', display: 'flex', alignItems: 'center' }}
-                >
-                    {t('challenges.controls.platform')} <DownOutlined />
-                </Button>
-            </Dropdown>
-            
-            {/* 排序控制 - 移到最后 */}
-            <Space style={{ width: isMobile ? '100%' : 'auto' }}>
-                <Dropdown 
-                    overlay={sortMenu} 
-                    trigger={['click']}
-                    placement={isMobile ? "bottomCenter" : "bottomLeft"}
-                >
-                    <Button
-                        size={isMobile ? "middle" : "default"}
-                        style={{ 
-                            width: isMobile ? 'calc(100% - 32px)' : 'auto', 
-                            justifyContent: 'space-between', 
-                            display: 'flex', 
-                            alignItems: 'center'
+                {/* 标签过滤 */}
+                {isContainerMounted && (
+                    <Dropdown 
+                        overlay={tagMenu} 
+                        trigger={['click']} 
+                        placement={isMobile ? "bottomCenter" : "bottomLeft"}
+                        overlayStyle={{ 
+                            marginTop: '8px',
+                            zIndex: 1050
                         }}
+                        getPopupContainer={() => containerRef.current || document.body}
+                        destroyPopupOnHide={true}
+                        mouseEnterDelay={0.1}
+                        mouseLeaveDelay={0.1}
                     >
-                        {isMobile ? t(`challenges.sort.${sortBy}`) : `${t('challenges.controls.sortBy')}: ${t(`challenges.sort.${sortBy}`)}`} <DownOutlined />
-                    </Button>
-                </Dropdown>
-                <Button 
-                    icon={sortOrder === 'asc' ? <SortAscendingOutlined /> : <SortDescendingOutlined />}
-                    onClick={onSortOrderChange}
-                    title={sortOrder === 'asc' ? t('challenges.controls.ascending') : t('challenges.controls.descending')}
-                    size={isMobile ? "middle" : "default"}
-                />
+                        <Button 
+                            icon={<TagOutlined />}
+                            size={isMobile ? "middle" : "default"}
+                            style={{ width: isMobile ? '100%' : 'auto', justifyContent: 'space-between', display: 'flex', alignItems: 'center' }}
+                        >
+                            {t('challenges.filters.tags')} {selectedTags.length > 0 && `(${selectedTags.length})`} <DownOutlined />
+                        </Button>
+                    </Dropdown>
+                )}
+                
+                {/* 难度过滤 */}
+                {isContainerMounted && (
+                    <Dropdown 
+                        overlay={difficultyMenu} 
+                        trigger={['click']}
+                        placement={isMobile ? "bottomCenter" : "bottomLeft"}
+                        getPopupContainer={() => containerRef.current || document.body}
+                        destroyPopupOnHide={true}
+                    >
+                        <Button 
+                            icon={<FilterOutlined />}
+                            size={isMobile ? "middle" : "default"}
+                            style={{ width: isMobile ? '100%' : 'auto', justifyContent: 'space-between', display: 'flex', alignItems: 'center' }}
+                        >
+                            {t('challenges.filters.difficulty')} <DownOutlined />
+                        </Button>
+                    </Dropdown>
+                )}
+                
+                {/* 平台过滤 */}
+                {isContainerMounted && (
+                    <Dropdown 
+                        overlay={platformMenu} 
+                        trigger={['click']}
+                        placement={isMobile ? "bottomCenter" : "bottomLeft"}
+                        getPopupContainer={() => containerRef.current || document.body}
+                        destroyPopupOnHide={true}
+                    >
+                        <Button 
+                            icon={<FilterOutlined />}
+                            size={isMobile ? "middle" : "default"}
+                            style={{ width: isMobile ? '100%' : 'auto', justifyContent: 'space-between', display: 'flex', alignItems: 'center' }}
+                        >
+                            {t('challenges.controls.platform')} <DownOutlined />
+                        </Button>
+                    </Dropdown>
+                )}
+                
+                {/* 排序控制 - 移到最后 */}
+                <Space style={{ width: isMobile ? '100%' : 'auto' }}>
+                    {isContainerMounted && (
+                        <Dropdown 
+                            overlay={sortMenu} 
+                            trigger={['click']}
+                            placement={isMobile ? "bottomCenter" : "bottomLeft"}
+                            getPopupContainer={() => containerRef.current || document.body}
+                            destroyPopupOnHide={true}
+                        >
+                            <Button
+                                size={isMobile ? "middle" : "default"}
+                                style={{ 
+                                    width: isMobile ? 'calc(100% - 32px)' : 'auto', 
+                                    justifyContent: 'space-between', 
+                                    display: 'flex', 
+                                    alignItems: 'center'
+                                }}
+                            >
+                                {isMobile ? t(`challenges.sort.${sortBy}`) : `${t('challenges.controls.sortBy')}: ${t(`challenges.sort.${sortBy}`)}`} <DownOutlined />
+                            </Button>
+                        </Dropdown>
+                    )}
+                    <Button 
+                        icon={sortOrder === 'asc' ? <SortAscendingOutlined /> : <SortDescendingOutlined />}
+                        onClick={onSortOrderChange}
+                        title={sortOrder === 'asc' ? t('challenges.controls.ascending') : t('challenges.controls.descending')}
+                        size={isMobile ? "middle" : "default"}
+                    />
+                </Space>
             </Space>
-        </Space>
+        </div>
     );
 };
 
