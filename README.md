@@ -1,10 +1,13 @@
 # LeetCode 爬虫挑战
 
 [![部署GitHub Pages](https://github.com/JSREP/crawler-leetcode/actions/workflows/deploy-github-pages.yml/badge.svg)](https://github.com/JSREP/crawler-leetcode/actions/workflows/deploy-github-pages.yml)
+[![部署Vercel](https://vercelbadge.vercel.app/api/jsrep/crawler-leetcode)](https://crawler-leetcode.vercel.app/)
 
-这个仓库收集了各种网站的爬虫挑战案例，展示了不同类型的反爬虫技术和解决方案。项目使用React+TypeScript开发，通过GitHub Pages进行部署。
+这个仓库收集了各种网站的爬虫挑战案例，展示了不同类型的反爬虫技术和解决方案。项目使用React+TypeScript开发，同时部署在GitHub Pages和Vercel平台上。
 
-**在线访问**: [https://jsrep.github.io/crawler-leetcode/](https://jsrep.github.io/crawler-leetcode/)
+**在线访问**: 
+- GitHub Pages (需要VPN): [https://jsrep.github.io/crawler-leetcode/](https://jsrep.github.io/crawler-leetcode/)
+- Vercel (国内直接访问): [https://crawler-leetcode.vercel.app/](https://crawler-leetcode.vercel.app/)
 
 ![image-20250413185708120](./README.assets/image-20250413185708120.png)
 
