@@ -386,6 +386,9 @@ const ChallengeListPage = () => {
                 <Col span={24}>
                     <h1 style={{ fontSize: isMobile ? '1.5rem' : '2rem', marginBottom: '1rem' }}>
                         {t('challenges.title')}
+                        <span style={{ fontWeight: 'normal', fontSize: isMobile ? '1.2rem' : '1.6rem', marginLeft: '8px' }}>
+                            ({filteredChallenges.length})
+                        </span>
                     </h1>
                     
                     {/* 移动端搜索和过滤器 */}
