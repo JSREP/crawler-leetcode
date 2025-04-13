@@ -416,7 +416,7 @@ function processChallengeData(challenge: any, rootDir: string, isBuild: boolean,
         'create-time': challenge['create-time'] || new Date().toISOString(),
         'update-time': challenge['update-time'] || new Date().toISOString(),
         'base64-url': challenge['base64-url'] || '',
-        externalLink: challenge['external-link'] || '',
+        externalLink: challenge['base64-url'] ? atob(challenge['base64-url']) : challenge['external-link'] || '',
         platform: challenge.platform || 'Web',
         'is-expired': challenge['is-expired'] || false,
         ignored: challenge.ignored || false, // 添加ignored属性
