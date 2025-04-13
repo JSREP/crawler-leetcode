@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { useCallback, useEffect, useMemo, useState } from 'react';
-import { Form, Steps, Button, Card, Space, Affix, message, Progress, Badge, notification } from 'antd';
-import { SaveOutlined, ArrowLeftOutlined, ArrowRightOutlined, CheckOutlined, InfoCircleOutlined } from '@ant-design/icons';
+import { useCallback, useEffect, useState } from 'react';
+import { Form, Button, Card, Space, Affix, message, Progress, Badge, notification, Divider, Typography } from 'antd';
+import { SaveOutlined, FileTextOutlined, InfoCircleOutlined } from '@ant-design/icons';
 import { ChallengeFormData } from './types';
 
 // 导入钩子函数
@@ -27,7 +27,7 @@ import ResponsiveContainer from './components/ResponsiveContainer';
 // 导入样式
 import { styles } from './styles';
 
-const { Step } = Steps;
+const { Title, Text } = Typography;
 
 /**
  * 备份历史模态框组件
@@ -115,8 +115,7 @@ const ChallengeContributePage: React.FC = () => {
   // 表单实例
   const [form] = Form.useForm<ChallengeFormData>();
   
-  // 步骤状态
-  const [currentStep, setCurrentStep] = useState<number>(0);
+  // 状态
   const [isBackupModalVisible, setIsBackupModalVisible] = useState<boolean>(false);
   const [formCompletion, setFormCompletion] = useState<number>(0);
   const [autoSaveVisible, setAutoSaveVisible] = useState<boolean>(false);
@@ -285,117 +284,10 @@ const ChallengeContributePage: React.FC = () => {
     };
   }, [isFormDirty]);
 
-  // 步骤定义
-  const steps = [
-    {
-      title: '基本信息',
-      content: (
-        <>
-          <div style={styles.stepTitle}>步骤 1：填写基本信息</div>
-          <div style={styles.stepDescription}>
-            请填写挑战的基本信息，包括ID、平台类型、名称等必要信息。这些信息将用于在列表页展示和搜索。
-          </div>
-          <BasicInfo form={form} />
-          <DifficultySelector form={form} />
-        </>
-      ),
-      validationFields: ['id', 'platform', 'name', 'difficultyLevel']
-    },
-    {
-      title: '详细描述',
-      content: (
-        <>
-          <div style={styles.stepTitle}>步骤 2：填写详细描述</div>
-          <div style={styles.stepDescription}>
-            请提供挑战的详细描述和目标网站URL（将自动转为Base64编码）。描述应尽可能详细，包括挑战要求和技术背景。
-          </div>
-          <DescriptionFields form={form} />
-          <UrlInput form={form} />
-        </>
-      ),
-      validationFields: ['description', 'base64Url']
-    },
-    {
-      title: '标签与解决方案',
-      content: (
-        <>
-          <div style={styles.stepTitle}>步骤 3：添加标签和解决方案</div>
-          <div style={styles.stepDescription}>
-            添加相关技术标签和解决方案链接，帮助其他用户快速识别和解决挑战。好的标签和解决方案资源能显著提高挑战的价值。
-          </div>
-          <TagsSelector 
-            form={form} 
-            onChange={handleTagsChange}
-          />
-          <SolutionsSection 
-            form={form} 
-            onChange={handleSolutionsChange}
-          />
-        </>
-      ),
-      validationFields: ['tags']
-    },
-    {
-      title: 'YAML预览',
-      content: (
-        <>
-          <div style={styles.stepTitle}>步骤 4：生成和检查YAML</div>
-          <div style={styles.stepDescription}>
-            检查自动生成的YAML内容，确保所有信息正确。您可以复制YAML用于提交挑战。如需修改信息，可以返回前面的步骤进行编辑。
-          </div>
-          <YamlPreviewSection
-            yamlOutput={yamlOutput}
-            onGenerateYaml={generateYaml}
-            onCopyYaml={handleCopyYaml}
-          />
-        </>
-      ),
-      validationFields: []
-    }
-  ];
-
-  // 处理步骤变更前的验证
-  const handleStepChange = async (step: number) => {
-    // 如果是向后移动，验证当前步骤的字段
-    if (step > currentStep) {
-      try {
-        // 获取当前步骤所需验证的字段
-        const fieldsToValidate = steps[currentStep].validationFields;
-        if (fieldsToValidate.length > 0) {
-          await form.validateFields(fieldsToValidate);
-        }
-        // 验证通过，可以移动到下一步
-        setCurrentStep(step);
-        // 如果移动到最后一步，自动生成YAML
-        if (step === steps.length - 1) {
-          setTimeout(() => {
-            generateYaml();
-          }, 300);
-        }
-      } catch (error) {
-        // 验证失败，显示错误消息
-        message.error('请填写所有必填字段后再继续');
-      }
-    } else {
-      // 向前移动不需要验证
-      setCurrentStep(step);
-    }
-  };
-
-  // 前进到下一步
-  const goNext = () => {
-    handleStepChange(currentStep + 1);
-  };
-
-  // 返回上一步
-  const goPrevious = () => {
-    handleStepChange(currentStep - 1);
-  };
-
   return (
     <ResponsiveContainer>
       {/* 进度指示器 */}
-      <div style={{ marginBottom: 16 }}>
+      <div style={styles.progressContainer}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
           <span>表单完成度: {formCompletion}%</span>
           <Badge 
@@ -424,15 +316,6 @@ const ChallengeContributePage: React.FC = () => {
         onShowBackups={showBackupHistory}
       />
       
-      {/* 步骤导航 */}
-      <Card style={{ marginBottom: 20, ...styles.stepCard }}>
-        <Steps current={currentStep} onChange={handleStepChange} responsive={true} style={styles.stepsNav}>
-          {steps.map(step => (
-            <Step key={step.title} title={step.title} />
-          ))}
-        </Steps>
-      </Card>
-      
       {/* 表单内容 */}
       <Form
         form={form}
@@ -446,12 +329,74 @@ const ChallengeContributePage: React.FC = () => {
           <input type="hidden" />
         </Form.Item>
         
-        {/* 当前步骤内容 */}
-        <Card style={styles.stepCard}>
-          {steps[currentStep].content}
-        </Card>
+        <div style={styles.formSection}>
+          {/* 基本信息部分 */}
+          <Card style={styles.stepCard} title={<Title level={4}>基本信息</Title>}>
+            <div style={styles.formSectionContent}>
+              <Text type="secondary" style={{ display: 'block', marginBottom: 16 }}>
+                请填写挑战的基本信息，包括ID、平台类型、名称等必要信息。这些信息将用于在列表页展示和搜索。
+              </Text>
+              <BasicInfo form={form} />
+              <DifficultySelector form={form} />
+            </div>
+          </Card>
+        </div>
         
-        {/* 步骤操作按钮 */}
+        <Divider style={styles.divider} />
+        
+        <div style={styles.formSection}>
+          {/* 详细描述部分 */}
+          <Card style={styles.stepCard} title={<Title level={4}>详细描述</Title>}>
+            <div style={styles.formSectionContent}>
+              <Text type="secondary" style={{ display: 'block', marginBottom: 16 }}>
+                请提供挑战的详细描述和目标网站URL（将自动转为Base64编码）。描述应尽可能详细，包括挑战要求和技术背景。
+              </Text>
+              <DescriptionFields form={form} />
+              <UrlInput form={form} />
+            </div>
+          </Card>
+        </div>
+        
+        <Divider style={styles.divider} />
+        
+        <div style={styles.formSection}>
+          {/* 标签与解决方案部分 */}
+          <Card style={styles.stepCard} title={<Title level={4}>标签与解决方案</Title>}>
+            <div style={styles.formSectionContent}>
+              <Text type="secondary" style={{ display: 'block', marginBottom: 16 }}>
+                添加相关技术标签和解决方案链接，帮助其他用户快速识别和解决挑战。好的标签和解决方案资源能显著提高挑战的价值。
+              </Text>
+              <TagsSelector 
+                form={form} 
+                onChange={handleTagsChange}
+              />
+              <SolutionsSection 
+                form={form} 
+                onChange={handleSolutionsChange}
+              />
+            </div>
+          </Card>
+        </div>
+        
+        <Divider style={styles.divider} />
+        
+        <div style={styles.formBottom}>
+          {/* YAML预览部分 */}
+          <Card style={styles.stepCard} title={<Title level={4}>YAML生成预览</Title>}>
+            <div style={styles.formSectionContent}>
+              <Text type="secondary" style={{ display: 'block', marginBottom: 16 }}>
+                检查自动生成的YAML内容，确保所有信息正确。您可以复制YAML用于提交挑战。
+              </Text>
+              <YamlPreviewSection
+                yamlOutput={yamlOutput}
+                onGenerateYaml={generateYaml}
+                onCopyYaml={handleCopyYaml}
+              />
+            </div>
+          </Card>
+        </div>
+        
+        {/* 底部固定操作按钮 */}
         <Affix offsetBottom={20}>
           <Card style={styles.footerButtons}>
             <Space>
@@ -460,40 +405,17 @@ const ChallengeContributePage: React.FC = () => {
                 onClick={handleManualSave}
                 loading={isSaving}
               >
-                保存
+                保存表单
               </Button>
             </Space>
             
-            <Space>
-              {currentStep > 0 && (
-                <Button 
-                  icon={<ArrowLeftOutlined />} 
-                  onClick={goPrevious}
-                >
-                  上一步
-                </Button>
-              )}
-              
-              {currentStep < steps.length - 1 && (
-                <Button 
-                  type="primary" 
-                  onClick={goNext}
-                  icon={<ArrowRightOutlined />}
-                >
-                  下一步
-                </Button>
-              )}
-              
-              {currentStep === steps.length - 1 && (
-                <Button 
-                  type="primary" 
-                  onClick={generateYaml}
-                  icon={<CheckOutlined />}
-                >
-                  生成YAML
-                </Button>
-              )}
-            </Space>
+            <Button 
+              type="primary" 
+              onClick={generateYaml}
+              icon={<FileTextOutlined />}
+            >
+              生成YAML
+            </Button>
           </Card>
         </Affix>
       </Form>
