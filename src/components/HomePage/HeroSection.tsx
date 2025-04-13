@@ -24,9 +24,9 @@ const { Title, Text, Paragraph } = Typography;
 interface HeroSectionProps {
   challenges: number;
   difficultyCounts: {
-    easy: number;
-    medium: number;
-    hard: number;
+    beginner: number;
+    intermediate: number;
+    advanced: number;
   };
   animatedStats: boolean;
 }
@@ -40,10 +40,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({ challenges, difficultyCounts,
   const isMobile = useMediaQuery({ maxWidth: 768 });
 
   // 计算每个难度级别的百分比
-  const total = difficultyCounts.easy + difficultyCounts.medium + difficultyCounts.hard || 1;
-  const easyPercent = Math.round((difficultyCounts.easy / total) * 100);
-  const mediumPercent = Math.round((difficultyCounts.medium / total) * 100);
-  const hardPercent = Math.round((difficultyCounts.hard / total) * 100);
+  const total = difficultyCounts.beginner + difficultyCounts.intermediate + difficultyCounts.advanced || 1;
+  const beginnerPercent = Math.round((difficultyCounts.beginner / total) * 100);
+  const intermediatePercent = Math.round((difficultyCounts.intermediate / total) * 100);
+  const advancedPercent = Math.round((difficultyCounts.advanced / total) * 100);
 
   // 难度级别卡片样式
   const difficultyCardStyle = {
@@ -174,7 +174,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ challenges, difficultyCounts,
                 <Row gutter={[isMobile ? 8 : 16, isMobile ? 8 : 16]}>
                   {/* 初级难度 */}
                   <Col span={24} sm={8}>
-                    <Tooltip title={`${easyPercent}% ${t('home.hero.stats.ofTotal')}`}>
+                    <Tooltip title={`${beginnerPercent}% ${t('home.hero.stats.ofTotal')}`}>
                       <div 
                         style={{ 
                           ...difficultyCardStyle,
@@ -200,10 +200,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({ challenges, difficultyCounts,
                           marginBottom: '8px',
                           textShadow: '0 0 10px rgba(82, 196, 26, 0.4)'
                         }}>
-                          {difficultyCounts.easy}
+                          {difficultyCounts.beginner}
                         </div>
                         <Progress 
-                          percent={easyPercent} 
+                          percent={beginnerPercent} 
                           showInfo={false}
                           strokeColor="#52c41a"
                           trailColor="rgba(255,255,255,0.1)"
@@ -215,7 +215,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ challenges, difficultyCounts,
                   
                   {/* 中级难度 */}
                   <Col span={24} sm={8}>
-                    <Tooltip title={`${mediumPercent}% ${t('home.hero.stats.ofTotal')}`}>
+                    <Tooltip title={`${intermediatePercent}% ${t('home.hero.stats.ofTotal')}`}>
                       <div 
                         style={{ 
                           ...difficultyCardStyle,
@@ -241,10 +241,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({ challenges, difficultyCounts,
                           marginBottom: '8px',
                           textShadow: '0 0 10px rgba(250, 173, 20, 0.4)'
                         }}>
-                          {difficultyCounts.medium}
+                          {difficultyCounts.intermediate}
                         </div>
                         <Progress 
-                          percent={mediumPercent} 
+                          percent={intermediatePercent} 
                           showInfo={false}
                           strokeColor="#faad14"
                           trailColor="rgba(255,255,255,0.1)"
@@ -256,7 +256,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ challenges, difficultyCounts,
                   
                   {/* 高级难度 */}
                   <Col span={24} sm={8}>
-                    <Tooltip title={`${hardPercent}% ${t('home.hero.stats.ofTotal')}`}>
+                    <Tooltip title={`${advancedPercent}% ${t('home.hero.stats.ofTotal')}`}>
                       <div 
                         style={{ 
                           ...difficultyCardStyle,
@@ -282,10 +282,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({ challenges, difficultyCounts,
                           marginBottom: '8px',
                           textShadow: '0 0 10px rgba(245, 34, 45, 0.4)'
                         }}>
-                          {difficultyCounts.hard}
+                          {difficultyCounts.advanced}
                         </div>
                         <Progress 
-                          percent={hardPercent} 
+                          percent={advancedPercent} 
                           showInfo={false}
                           strokeColor="#f5222d"
                           trailColor="rgba(255,255,255,0.1)"
