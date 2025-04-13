@@ -91,6 +91,7 @@ const zhTranslations = {
         }
     },
     challenges: {
+        title: '挑战列表',
         filters: {
             tags: '标签筛选',
             difficulty: '难度筛选',
@@ -98,6 +99,7 @@ const zhTranslations = {
             allPlatforms: '所有平台',
             search: '搜索挑战...',
             clearAll: '清空所有',
+            clearAllShort: '清空',
             searchTags: '搜索标签...'
         },
         sort: {
@@ -108,13 +110,17 @@ const zhTranslations = {
         },
         dates: {
             created: '创建',
-            updated: '更新'
+            updated: '更新',
+            createdShort: '创建',
+            updatedShort: '更新'
         },
         controls: {
             sortBy: '排序方式',
             ascending: '升序',
             descending: '降序',
-            platform: '平台筛选'
+            platform: '平台筛选',
+            filter: '筛选',
+            filterAndSort: '筛选与排序'
         },
         empty: {
             title: '未找到挑战',
@@ -145,6 +151,7 @@ const zhTranslations = {
             created: '创建时间',
             updated: '更新时间',
             startChallenge: '去试试',
+            startChallengeShort: '试试',
             viewSolution: '查看解决方案',
             tags: '标签',
             description: '问题描述',
