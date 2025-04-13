@@ -44,6 +44,7 @@
     "@typescript-eslint/eslint-plugin": "5.62.0",
     "@typescript-eslint/parser": "5.62.0",
     "@vitejs/plugin-react": "^4.3.4",
+    "chokidar": "^4.0.3",
     "eslint": "^8.57.0",
     "eslint-plugin-react": "^7.37.4",
     "gh-pages": "^6.3.0",
