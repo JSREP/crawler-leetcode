@@ -11,11 +11,11 @@ import { useMediaQuery } from 'react-responsive';
 const getDifficultyCounts = () => {
   const counts = { easy: 0, medium: 0, hard: 0 };
   challenges.forEach(challenge => {
-    // 匹配挑战列表页面的难度分类:
-    // easy: 1-2星, medium: 3-4星, hard: 5星
-    if (challenge.difficulty <= 2) counts.easy++;
-    else if (challenge.difficulty <= 4) counts.medium++;
-    else if (challenge.difficulty === 5) counts.hard++;
+    // 匹配新的难度分类:
+    // easy: 1星, medium: 2-3星, hard: 4-5星
+    if (challenge.difficulty === 1) counts.easy++;
+    else if (challenge.difficulty === 2 || challenge.difficulty === 3) counts.medium++;
+    else if (challenge.difficulty >= 4) counts.hard++;
   });
   return counts;
 };

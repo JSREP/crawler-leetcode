@@ -214,11 +214,11 @@ const ChallengeListPage = () => {
         if (difficultyParams.length === 1) {
             const diffParam = difficultyParams[0];
             if (diffParam === 'easy') {
-                difficultyParams = ['1', '2'];
+                difficultyParams = ['1'];
             } else if (diffParam === 'medium') {
-                difficultyParams = ['3', '4'];
+                difficultyParams = ['2', '3'];
             } else if (diffParam === 'hard') {
-                difficultyParams = ['5'];
+                difficultyParams = ['4', '5'];
             }
         }
         
