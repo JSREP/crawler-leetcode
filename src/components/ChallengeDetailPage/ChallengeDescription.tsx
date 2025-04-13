@@ -10,6 +10,10 @@ const { Title } = Typography;
 
 interface ChallengeDescriptionProps {
     challenge: Challenge;
+    /**
+     * 是否为移动端视图
+     */
+    isMobile?: boolean;
 }
 
 // 测试图片 - 1x1像素透明PNG
@@ -82,7 +86,7 @@ const MarkdownLink = (props: any) => {
 /**
  * 挑战描述组件，显示问题的Markdown描述
  */
-const ChallengeDescription: React.FC<ChallengeDescriptionProps> = ({ challenge }) => {
+const ChallengeDescription: React.FC<ChallengeDescriptionProps> = ({ challenge, isMobile = false }) => {
     const { t, i18n } = useTranslation();
     
     // 根据当前语言选择显示描述
@@ -217,14 +221,25 @@ const ChallengeDescription: React.FC<ChallengeDescriptionProps> = ({ challenge }
         if (extractedImageUrl) {
             return (
                 <div>
-                    <Title level={3}>{t('challenge.detail.description')}</Title>
+                    <Title 
+                        level={isMobile ? 4 : 3} 
+                        style={{ 
+                            marginBottom: isMobile ? '12px' : '24px',
+                            fontSize: isMobile ? '18px' : '24px'
+                        }}
+                    >
+                        {t('challenge.detail.description')}
+                    </Title>
                     
                     <Card 
                         bordered={false} 
                         style={{ 
-                            marginBottom: 24,
+                            marginBottom: isMobile ? 16 : 24,
                             wordWrap: 'break-word',
                             overflowWrap: 'break-word'
+                        }}
+                        bodyStyle={{ 
+                            padding: isMobile ? '12px' : '24px' 
                         }}
                     >
                         <div className="markdown-content">
@@ -237,7 +252,7 @@ const ChallengeDescription: React.FC<ChallengeDescriptionProps> = ({ challenge }
                                 style={{
                                     maxWidth: '100%',
                                     borderRadius: '4px',
-                                    margin: '16px 0',
+                                    margin: isMobile ? '8px 0' : '16px 0',
                                     display: 'block'
                                 }}
                                 preview={{
@@ -248,9 +263,7 @@ const ChallengeDescription: React.FC<ChallengeDescriptionProps> = ({ challenge }
                                             点击图片外区域关闭 | 滚轮缩放 | 左键拖动
                                         </div>
                                     ),
-                                    rootClassName: 'custom-image-preview'
                                 }}
-                                fallback={FALLBACK_IMAGE}
                             />
                         </div>
                     </Card>
@@ -259,54 +272,46 @@ const ChallengeDescription: React.FC<ChallengeDescriptionProps> = ({ challenge }
         }
     }
     
-    // 默认渲染方式 - 使用ReactMarkdown
+    // 正常处理Markdown内容
     return (
         <div>
-            <Title level={3}>{t('challenge.detail.description')}</Title>
+            <Title 
+                level={isMobile ? 4 : 3}
+                style={{ 
+                    marginBottom: isMobile ? '12px' : '24px',
+                    fontSize: isMobile ? '18px' : '24px'
+                }}
+            >
+                {t('challenge.detail.description')}
+            </Title>
             
-            {/* 实际挑战描述 */}
-            {displayDescription ? (
-                <Card 
-                    bordered={false} 
-                    style={{ 
-                        marginBottom: 24,
-                        wordWrap: 'break-word',
-                        overflowWrap: 'break-word'
-                    }}
-                >
-                    <div className="markdown-content">
-                        <ReactMarkdown 
+            <Card 
+                bordered={false} 
+                style={{ 
+                    marginBottom: isMobile ? 16 : 24,
+                    wordWrap: 'break-word',
+                    overflowWrap: 'break-word'
+                }}
+                bodyStyle={{ 
+                    padding: isMobile ? '12px' : '24px' 
+                }}
+            >
+                {displayDescription ? (
+                    <div className="markdown-content" style={{ fontSize: isMobile ? '14px' : '16px' }}>
+                        <ReactMarkdown
                             rehypePlugins={[rehypeRaw]}
                             components={{
-                                img: MarkdownImage,
                                 a: MarkdownLink,
-                                pre: (props: any) => (
-                                    <pre style={{ 
-                                        overflowX: 'auto',
-                                        whiteSpace: 'pre-wrap',
-                                        wordWrap: 'break-word',
-                                        maxWidth: '100%'
-                                    }} {...props} />
-                                ),
-                                code: (props: any) => (
-                                    <code style={{ 
-                                        overflowWrap: 'break-word',
-                                        wordWrap: 'break-word',
-                                        wordBreak: 'break-word'
-                                    }} {...props} />
-                                )
+                                img: MarkdownImage,
                             }}
                         >
                             {displayDescription}
                         </ReactMarkdown>
                     </div>
-                </Card>
-            ) : (
-                <Empty 
-                    description={t('challenge.detail.noDescription', '暂无详细描述')} 
-                    style={{ marginTop: 24, marginBottom: 24 }}
-                />
-            )}
+                ) : (
+                    <Empty description={t('challenge.detail.noDescription')} />
+                )}
+            </Card>
         </div>
     );
 };

@@ -24,6 +24,11 @@ interface ChallengePaginationProps {
      * 点击下一个挑战的回调
      */
     onNextClick: () => void;
+
+    /**
+     * 是否为移动端视图
+     */
+    isMobile?: boolean;
 }
 
 /**
@@ -34,20 +39,32 @@ const ChallengePagination: React.FC<ChallengePaginationProps> = ({
     prevChallenge,
     nextChallenge,
     onPrevClick,
-    onNextClick
+    onNextClick,
+    isMobile = false
 }) => {
     const { t } = useTranslation();
     
     return (
-        <div style={{ display: 'flex', justifyContent: 'space-between', margin: '20px 0' }}>
+        <div style={{ 
+            display: 'flex', 
+            justifyContent: 'space-between', 
+            margin: isMobile ? '12px 0' : '20px 0',
+            flexWrap: 'wrap',
+            gap: isMobile ? '8px' : '0'
+        }}>
             <Tooltip title={t('challenge.pagination.leftKeyHint')}>
                 <Button 
                     type="default" 
                     icon={<LeftOutlined />} 
                     onClick={onPrevClick} 
                     disabled={!prevChallenge}
+                    size={isMobile ? "middle" : "default"}
+                    style={{ 
+                        minWidth: isMobile ? '100px' : '140px',
+                        flex: isMobile ? 1 : 'initial'
+                    }}
                 >
-                    {t('challenge.pagination.previous')} <span style={{ fontSize: '12px', opacity: 0.8 }}>(←)</span>
+                    {isMobile ? '' : `${t('challenge.pagination.previous')} `}<span style={{ fontSize: '12px', opacity: 0.8 }}>(←)</span>
                 </Button>
             </Tooltip>
             
@@ -57,8 +74,13 @@ const ChallengePagination: React.FC<ChallengePaginationProps> = ({
                     icon={<RightOutlined />} 
                     onClick={onNextClick} 
                     disabled={!nextChallenge}
+                    size={isMobile ? "middle" : "default"}
+                    style={{ 
+                        minWidth: isMobile ? '100px' : '140px',
+                        flex: isMobile ? 1 : 'initial'
+                    }}
                 >
-                    {t('challenge.pagination.next')} <span style={{ fontSize: '12px', opacity: 0.8 }}>(→)</span>
+                    {isMobile ? '' : `${t('challenge.pagination.next')} `}<span style={{ fontSize: '12px', opacity: 0.8 }}>(→)</span>
                 </Button>
             </Tooltip>
         </div>

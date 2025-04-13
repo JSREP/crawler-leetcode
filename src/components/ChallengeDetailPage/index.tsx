@@ -4,6 +4,7 @@ import { Card, Space, Divider, Alert } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { Challenge } from '../../types/challenge';
 import { challenges } from '../ChallengeListPage/exports';
+import { useMediaQuery } from 'react-responsive';
 
 // 导入各个子组件
 import ChallengeHeader from './ChallengeHeader';
@@ -28,6 +29,8 @@ const ChallengeDetailPage = () => {
     const [error, setError] = useState<string | null>(null);
     const [prevChallenge, setPrevChallenge] = useState<Challenge | null>(null);
     const [nextChallenge, setNextChallenge] = useState<Challenge | null>(null);
+    // 添加响应式判断
+    const isMobile = useMediaQuery({ maxWidth: 768 });
 
     // 查找当前挑战以及前后挑战
     useEffect(() => {
@@ -126,7 +129,12 @@ const ChallengeDetailPage = () => {
     }
 
     return (
-        <div style={{ padding: '20px', maxWidth: '1000px', margin: '0 auto' }}>
+        <div style={{ 
+            padding: isMobile ? '10px' : '20px', 
+            maxWidth: '1000px', 
+            margin: '0 auto',
+            overflow: 'hidden'
+        }}>
             {/* 使用提取出的失效警告组件 */}
             <ChallengeExpiredAlert isExpired={challenge.isExpired} />
             
@@ -136,30 +144,35 @@ const ChallengeDetailPage = () => {
                 nextChallenge={nextChallenge}
                 onPrevClick={goToPrevChallenge}
                 onNextClick={goToNextChallenge}
+                isMobile={isMobile}
             />
             
-            <Card bordered={false} style={{ marginBottom: '20px' }}>
-                <Space direction="vertical" size="large" style={{ width: '100%' }}>
+            <Card 
+                bordered={false} 
+                style={{ marginBottom: '20px' }}
+                bodyStyle={{ padding: isMobile ? '12px' : '24px' }}
+            >
+                <Space direction="vertical" size={isMobile ? 'middle' : 'large'} style={{ width: '100%' }}>
                     {/* 标题区域 */}
-                    <ChallengeHeader challenge={challenge} />
+                    <ChallengeHeader challenge={challenge} isMobile={isMobile} />
 
                     {/* 元数据信息 */}
-                    <ChallengeMetadata challenge={challenge} />
+                    <ChallengeMetadata challenge={challenge} isMobile={isMobile} />
 
                     {/* 标签 */}
-                    <ChallengeTags challenge={challenge} />
+                    <ChallengeTags challenge={challenge} isMobile={isMobile} />
 
                     {/* 问题描述 */}
-                    <ChallengeDescription challenge={challenge} />
+                    <ChallengeDescription challenge={challenge} isMobile={isMobile} />
 
-                    <Divider />
+                    <Divider style={{ margin: isMobile ? '12px 0' : '24px 0' }} />
 
                     {/* 解决方案 */}
-                    <ChallengeSolutions challenge={challenge} />
-                    <Divider />
+                    <ChallengeSolutions challenge={challenge} isMobile={isMobile} />
+                    <Divider style={{ margin: isMobile ? '12px 0' : '24px 0' }} />
                     
                     {/* 外部链接和返回 */}
-                    <ChallengeActions challenge={challenge} />
+                    <ChallengeActions challenge={challenge} isMobile={isMobile} />
                 </Space>
             </Card>
             
@@ -169,6 +182,7 @@ const ChallengeDetailPage = () => {
                 nextChallenge={nextChallenge}
                 onPrevClick={goToPrevChallenge}
                 onNextClick={goToNextChallenge}
+                isMobile={isMobile}
             />
         </div>
     );

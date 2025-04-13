@@ -1,66 +1,83 @@
-import { Typography } from 'antd';
+import { Descriptions, Typography } from 'antd';
+import { useTranslation } from 'react-i18next';
 import { Challenge } from '../../types/challenge';
 import StarRating from '../StarRating';
-import { useNavigate } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
-import PlatformTag from '../PlatformTag';
+import { formatDateTime } from './utils';
 
 const { Text } = Typography;
 
 interface ChallengeMetadataProps {
     challenge: Challenge;
+    /**
+     * 是否为移动端视图
+     */
+    isMobile?: boolean;
 }
 
 /**
- * 挑战元数据组件，展示难度、平台、创建时间等信息
+ * 挑战元数据组件
+ * 展示挑战的基本信息，如日期、时间、难度等
  */
-const ChallengeMetadata: React.FC<ChallengeMetadataProps> = ({ challenge }) => {
-    const navigate = useNavigate();
+const ChallengeMetadata: React.FC<ChallengeMetadataProps> = ({ challenge, isMobile = false }) => {
     const { t } = useTranslation();
     
-    // 点击难度星级时跳转到列表页并按难度筛选
-    const handleDifficultyClick = (difficulty: number) => {
-        navigate(`/challenges?difficulty=${difficulty}`);
-    };
-    
-    // 点击平台标签时跳转到列表页并按平台筛选
-    const handlePlatformClick = (platform: string) => {
-        navigate(`/challenges?platform=${platform || 'all'}`);
-    };
-    
     return (
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px' }}>
-            <div>
-                <Text type="secondary">{t('challenge.detail.difficulty')}:</Text>
-                <span style={{ marginLeft: '8px', display: 'inline-flex', alignItems: 'center' }}>
-                    <StarRating 
-                        difficulty={challenge.difficulty} 
-                        onClick={handleDifficultyClick}
-                    />
-                </span>
-            </div>
+        <Descriptions 
+            bordered={false} 
+            column={isMobile ? 1 : 2} 
+            size={isMobile ? "small" : "default"}
+            labelStyle={{ 
+                fontWeight: 'bold',
+                padding: isMobile ? '8px 8px 8px 0' : '8px 16px 8px 0',
+                width: isMobile ? '80px' : '120px',
+            }}
+            contentStyle={{
+                padding: isMobile ? '8px 0' : '8px 24px 8px 8px',
+            }}
+        >
+            <Descriptions.Item label={t('challenge.detail.difficulty')}>
+                <StarRating 
+                    difficulty={challenge.difficulty || 0} 
+                    onClick={() => {}} 
+                    style={{ cursor: 'default' }}
+                />
+            </Descriptions.Item>
 
-            <div>
-                <Text type="secondary">{t('challenge.detail.targetWebsite')}:</Text>
-                <span style={{ marginLeft: '8px' }}>
-                    <PlatformTag 
-                        platform={challenge.platform || ''} 
-                        clickable 
-                        onClick={handlePlatformClick}
-                    />
-                </span>
-            </div>
+            <Descriptions.Item label={t('challenge.detail.platform')}>
+                {challenge.platform || t('challenge.detail.unspecified')}
+            </Descriptions.Item>
 
-            <div>
-                <Text type="secondary">{t('challenge.detail.created')}:</Text>
-                <Text style={{ marginLeft: '8px' }}>{challenge.createTime.toLocaleString()}</Text>
-            </div>
+            <Descriptions.Item label={t('challenge.detail.created')}>
+                <Text style={{ fontSize: isMobile ? '12px' : '14px' }}>
+                    {formatDateTime(challenge.createTime)}
+                </Text>
+            </Descriptions.Item>
 
-            <div>
-                <Text type="secondary">{t('challenge.detail.updated')}:</Text>
-                <Text style={{ marginLeft: '8px' }}>{challenge.updateTime.toLocaleString()}</Text>
-            </div>
-        </div>
+            <Descriptions.Item label={t('challenge.detail.updated')}>
+                <Text style={{ fontSize: isMobile ? '12px' : '14px' }}>
+                    {formatDateTime(challenge.updateTime)}
+                </Text>
+            </Descriptions.Item>
+            
+            {challenge.externalLink && (
+                <Descriptions.Item 
+                    label={t('challenge.detail.originalLink')}
+                    span={isMobile ? 1 : 2}
+                >
+                    <a 
+                        href={challenge.externalLink} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        style={{ 
+                            wordBreak: 'break-all',
+                            fontSize: isMobile ? '12px' : '14px'
+                        }}
+                    >
+                        {challenge.externalLink}
+                    </a>
+                </Descriptions.Item>
+            )}
+        </Descriptions>
     );
 };
 
