@@ -2,8 +2,10 @@ import { Tag, Typography, Space } from 'antd';
 import { TagOutlined } from '@ant-design/icons';
 import { Challenge } from '../../types/challenge';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
+import TopicTag from '../TopicTag';
 
-const { Title } = Typography;
+const { Title, Text } = Typography;
 
 interface ChallengeTagsProps {
     challenge: Challenge;
@@ -18,48 +20,74 @@ interface ChallengeTagsProps {
  */
 const ChallengeTags: React.FC<ChallengeTagsProps> = ({ challenge, isMobile = false }) => {
     const { t } = useTranslation();
+    const navigate = useNavigate();
     
     // 如果没有标签，不显示
     if (!challenge.tags || challenge.tags.length === 0) {
         return null;
     }
     
-    return (
-        <div>
-            <Title 
-                level={isMobile ? 5 : 4} 
-                style={{ 
-                    marginBottom: isMobile ? '8px' : '16px',
-                    fontSize: isMobile ? '16px' : '18px'
-                }}
-            >
-                <TagOutlined style={{ marginRight: '8px' }} />
-                {t('challenge.detail.tags')}
-            </Title>
-            
+    // 处理标签点击，跳转到列表页并应用过滤
+    const handleTagClick = (tag: string) => {
+        navigate(`/challenges?tags=${encodeURIComponent(tag)}`);
+    };
+    
+    // 移动端布局
+    if (isMobile) {
+        return (
             <div>
-                {/* 使用Space组件，允许标签换行 */}
-                <Space 
-                    size={[isMobile ? 4 : 8, isMobile ? 4 : 8]} 
-                    wrap
+                <Title 
+                    level={5}
                     style={{ 
-                        display: 'flex', 
-                        flexWrap: 'wrap',
+                        marginBottom: '8px',
+                        fontSize: '16px'
                     }}
                 >
-                    {challenge.tags.map((tag, index) => (
-                        <Tag
-                            key={index}
-                            style={{ 
-                                margin: '0',
-                                fontSize: isMobile ? '12px' : '14px',
-                                padding: isMobile ? '0 6px' : '0 8px',
-                            }}
-                        >
-                            {tag}
-                        </Tag>
-                    ))}
-                </Space>
+                    <TagOutlined style={{ marginRight: '8px' }} />
+                    {t('challenge.detail.tags')}
+                </Title>
+                
+                <div>
+                    <Space 
+                        size={[4, 4]} 
+                        wrap
+                        style={{ 
+                            display: 'flex', 
+                            flexWrap: 'wrap',
+                        }}
+                    >
+                        {challenge.tags.map((tag, index) => (
+                            <Tag
+                                key={index}
+                                style={{ 
+                                    margin: '0',
+                                    fontSize: '12px',
+                                    padding: '0 6px',
+                                }}
+                            >
+                                {tag}
+                            </Tag>
+                        ))}
+                    </Space>
+                </div>
+            </div>
+        );
+    }
+    
+    // PC端布局
+    return (
+        <div>
+            <Text type="secondary">{t('challenge.detail.tags')}:</Text>
+            <div style={{ marginTop: '8px' }}>
+                {challenge.tags.map((tag, index) => (
+                    <TopicTag
+                        key={index}
+                        text={tag}
+                        clickable
+                        onClick={() => handleTagClick(tag)}
+                        style={{ marginRight: '8px' }}
+                    />
+                ))}
             </div>
         </div>
     );
