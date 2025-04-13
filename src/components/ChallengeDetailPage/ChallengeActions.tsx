@@ -38,7 +38,7 @@ const ChallengeActions: React.FC<ChallengeActionsProps> = ({ challenge, isMobile
                         maxWidth: '400px'
                     }}
                 >
-                    {t('challenge.detail.backToList')}
+                    {t('challenge.actions.backToList')}
                 </Button>
             </div>
         );
@@ -68,7 +68,7 @@ const ChallengeActions: React.FC<ChallengeActionsProps> = ({ challenge, isMobile
                 )}
             </div>
             <Link to="/challenges" style={{ color: '#1890ff' }}>
-                {t('challenge.detail.backToList')}
+                {t('challenge.actions.backToList')}
             </Link>
         </div>
     );

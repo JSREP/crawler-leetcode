@@ -147,9 +147,11 @@ const zhTranslations = {
             relatedChallenges: '相关挑战',
             technicalTags: '技术标签',
             targetWebsite: '目标网站',
+            platform: '平台',
             difficulty: '难度级别',
             created: '创建时间',
             updated: '更新时间',
+            originalLink: '原始链接',
             startChallenge: '去试试',
             startChallengeShort: '试试',
             viewSolution: '查看解决方案',
@@ -165,7 +167,9 @@ const zhTranslations = {
             correction: '纠错',
             correctionTooltip: '感觉内容可以优化甚至有错误？别犹豫点此去GitHub提PR',
             reportIssue: '反馈问题',
-            issueTooltip: '遇到问题？点此提交GitHub Issue'
+            issueTooltip: '遇到问题？点此提交GitHub Issue',
+            backToList: '返回挑战列表',
+            unspecified: '未指定'
         },
         actions: {
             backToList: '返回挑战列表'
