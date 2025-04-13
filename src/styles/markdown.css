@@ -102,6 +102,24 @@
   margin: 24px auto;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 6px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* 特殊处理base64内嵌图片 */
+.markdown-content img[src^="data:image"] {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  
+  /* 确保base64图片显示完整 */
+  max-width: 100% !important;
+  height: auto !important;
+  object-fit: contain;
+  min-height: 30px; /* 防止图片过小无法显示 */
+  
+  /* 调试用边框，在生产环境可移除 */
+  /* border: 1px dashed #ccc; */
 }
 
 .markdown-content hr {
@@ -156,4 +174,98 @@
 
 .markdown-content a:hover {
   text-decoration: underline;
+}
+
+/* 图片预览样式 */
+.custom-image-preview .ant-image-preview-operations {
+  background-color: rgba(0, 0, 0, 0.8) !important;
+  padding: 12px !important;
+}
+
+/* 淡化或隐藏右上角关闭按钮 */
+.custom-image-preview .ant-image-preview-close {
+  opacity: 0.4 !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border-radius: 50% !important;
+  width: 32px !important;
+  height: 32px !important;
+  line-height: 32px !important;
+  font-size: 18px !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+  top: 16px !important;
+  right: 16px !important;
+  transition: opacity 0.3s ease !important;
+}
+
+.custom-image-preview .ant-image-preview-close:hover {
+  opacity: 0.8 !important;
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  color: #fff !important;
+}
+
+.image-preview-mask {
+  font-size: 14px !important;
+  font-weight: bold !important;
+  color: #fff !important;
+  background-color: rgba(0, 0, 0, 0.6) !important;
+}
+
+/* 关闭按钮指示器 */
+.custom-image-preview .ant-image-preview-close::after {
+  content: '×';
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* 让关闭按钮在缩放时始终保持在可见位置 */
+.custom-image-preview .ant-image-preview-close {
+  position: fixed !important;
+  z-index: 9999 !important;
+}
+
+/* 确保图片预览工具提示正常显示 */
+.custom-image-preview .ant-image-preview-toolbar {
+  position: fixed !important;
+  bottom: 30px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  background: rgba(0, 0, 0, 0.5) !important;
+  padding: 10px 15px !important;
+  border-radius: 8px !important;
+  z-index: 100 !important;
+  width: auto !important;
+  min-width: 200px !important;
+  max-width: 80% !important;
+  height: auto !important;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+  white-space: nowrap !important;
+  writing-mode: horizontal-tb !important;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4) !important;
+}
+
+.custom-image-preview .ant-image-preview-toolbar div {
+  white-space: nowrap !important;
+  writing-mode: horizontal-tb !important;
+  display: block !important;
+  width: auto !important;
+}
+
+/* 图片预览提示信息样式 */
+.image-preview-tip {
+  color: #fff !important;
+  font-size: 14px !important;
+  letter-spacing: 0.5px !important;
+  background: transparent !important;
+  padding: 5px !important;
+  border-radius: 4px !important;
+  text-align: center !important;
+  max-width: 100% !important;
+  margin: 0 auto !important;
+  width: auto !important;
+  white-space: nowrap !important;
+  writing-mode: horizontal-tb !important;
+  font-weight: normal !important;
+  line-height: 1.5 !important;
 } 
