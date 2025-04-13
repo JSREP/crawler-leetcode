@@ -146,7 +146,7 @@ const zhTranslations = {
             discussions: '讨论',
             relatedChallenges: '相关挑战',
             technicalTags: '技术标签',
-            targetWebsite: '目标网站',
+            targetWebsite: '平台',
             platform: '平台',
             difficulty: '难度级别',
             created: '创建时间',
