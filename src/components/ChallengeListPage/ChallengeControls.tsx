@@ -153,10 +153,13 @@ const ChallengeControls: React.FC<ChallengeControlsProps> = ({
             maxHeight: isMobile ? '300px' : '400px', 
             overflowY: 'auto', 
             minWidth: isMobile ? '250px' : '300px',
+            maxWidth: isMobile ? '80vw' : 'none',
             backgroundColor: '#fff',
             boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)',
             borderRadius: '4px',
-            border: '1px solid #f0f0f0'
+            border: '1px solid #f0f0f0',
+            position: 'relative',
+            zIndex: 1050
         }}>
             {/* 添加标签搜索框 */}
             <Input 
@@ -213,7 +216,16 @@ const ChallengeControls: React.FC<ChallengeControlsProps> = ({
             wrap={!isMobile}
         >
             {/* 标签过滤 */}
-            <Dropdown overlay={tagMenu} trigger={['click']}>
+            <Dropdown 
+                overlay={tagMenu} 
+                trigger={['click']} 
+                placement={isMobile ? "bottomCenter" : "bottomLeft"}
+                overlayStyle={{ 
+                    position: 'fixed',
+                    marginTop: '8px',
+                    zIndex: 1050
+                }}
+            >
                 <Button 
                     icon={<TagOutlined />}
                     size={isMobile ? "middle" : "default"}
@@ -224,7 +236,11 @@ const ChallengeControls: React.FC<ChallengeControlsProps> = ({
             </Dropdown>
             
             {/* 难度过滤 */}
-            <Dropdown overlay={difficultyMenu} trigger={['click']}>
+            <Dropdown 
+                overlay={difficultyMenu} 
+                trigger={['click']}
+                placement={isMobile ? "bottomCenter" : "bottomLeft"}
+            >
                 <Button 
                     icon={<FilterOutlined />}
                     size={isMobile ? "middle" : "default"}
@@ -235,7 +251,11 @@ const ChallengeControls: React.FC<ChallengeControlsProps> = ({
             </Dropdown>
             
             {/* 平台过滤 */}
-            <Dropdown overlay={platformMenu} trigger={['click']}>
+            <Dropdown 
+                overlay={platformMenu} 
+                trigger={['click']}
+                placement={isMobile ? "bottomCenter" : "bottomLeft"}
+            >
                 <Button 
                     icon={<FilterOutlined />}
                     size={isMobile ? "middle" : "default"}
@@ -247,7 +267,11 @@ const ChallengeControls: React.FC<ChallengeControlsProps> = ({
             
             {/* 排序控制 - 移到最后 */}
             <Space style={{ width: isMobile ? '100%' : 'auto' }}>
-                <Dropdown overlay={sortMenu} trigger={['click']}>
+                <Dropdown 
+                    overlay={sortMenu} 
+                    trigger={['click']}
+                    placement={isMobile ? "bottomCenter" : "bottomLeft"}
+                >
                     <Button
                         size={isMobile ? "middle" : "default"}
                         style={{ 
