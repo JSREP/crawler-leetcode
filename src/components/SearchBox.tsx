@@ -145,32 +145,24 @@ const SearchBox: React.FC<SearchBoxProps> = ({
                     value={inputValue}
                     onChange={handleInputChange}
                     onSearch={(value: string) => debouncedSearch(value)}
+                    suffix={
+                        <Tooltip 
+                            title={<SearchTooltip />} 
+                            placement="bottomRight"
+                            color="white"
+                            overlayInnerStyle={{ 
+                                boxShadow: '0 3px 10px rgba(0,0,0,0.2)',
+                                borderRadius: '8px'
+                            }}
+                        >
+                            <InfoCircleOutlined 
+                                style={{ 
+                                    color: '#1890ff',
+                                }}
+                            />
+                        </Tooltip>
+                    }
                 />
-                
-                <Tooltip 
-                    title={<SearchTooltip />} 
-                    placement="bottomRight"
-                    color="white"
-                    overlayInnerStyle={{ 
-                        boxShadow: '0 3px 10px rgba(0,0,0,0.2)',
-                        borderRadius: '8px'
-                    }}
-                >
-                    <Button
-                        type="text"
-                        icon={<InfoCircleOutlined />} 
-                        style={{ 
-                            position: 'absolute',
-                            right: 50,
-                            top: '50%',
-                            transform: 'translateY(-50%)',
-                            color: '#1890ff',
-                            padding: '0 8px',
-                            border: 'none',
-                            background: 'transparent'
-                        }} 
-                    />
-                </Tooltip>
             </div>
             
             {/* 最近搜索记录 */}
