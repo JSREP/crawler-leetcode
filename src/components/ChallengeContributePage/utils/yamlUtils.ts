@@ -16,37 +16,40 @@ export const generateYamlFromFormData = (formData: ChallengeFormData): string =>
     ?.map(solution => {
       // 确保解决方案有标题和URL
       if (solution.title && solution.url) {
-        return {
+        const solutionObj: Solution = {
           title: solution.title,
-          url: solution.url,
-          source: solution.source || undefined,
-          author: solution.author || undefined
+          url: solution.url
         };
+        
+        if (solution.source) {
+          solutionObj.source = solution.source;
+        }
+        
+        if (solution.author) {
+          solutionObj.author = solution.author;
+        }
+        
+        return solutionObj;
       }
       return null;
     })
-    .filter((solution): solution is { 
-      title: string; 
-      url: string; 
-      source?: string; 
-      author?: string; 
-    } => solution !== null) || [];
+    .filter((solution): solution is Solution => solution !== null) || [];
   
   // 创建当前时间戳
   const currentTime = new Date().toISOString();
   
   // 创建符合YAML要求的数据结构
   const challengeData: ChallengeData = {
-    id: formData.id,
+    id: formData.id || null,
     'id-alias': formData.idAlias || undefined,
-    platform: formData.platform,
-    name: formData.name,
+    platform: formData.platform || 'Web',
+    name: formData.name || '',
     name_en: formData.nameEn || undefined,
-    'difficulty-level': formData.difficultyLevel,
-    'description-markdown': formData.descriptionMarkdown,
+    'difficulty-level': formData.difficultyLevel || 1,
+    'description-markdown': formData.descriptionMarkdown || '',
     'description-markdown_en': formData.descriptionMarkdownEn || undefined,
-    'base64-url': formData.base64Url,
-    'is-expired': formData.isExpired,
+    'base64-url': formData.base64Url || '',
+    'is-expired': formData.isExpired || false,
     tags: formData.tags || [],
     solutions: solutionsArray,
     'create-time': currentTime,
@@ -73,32 +76,46 @@ export const parseYamlToFormData = (yamlString: string): ChallengeFormData | nul
     const challengeData = YAML.parse(yamlString) as ChallengeData;
     
     // 转换解决方案
-    const solutions = challengeData.solutions?.map(solution => {
-      return {
+    const solutions: Solution[] = (challengeData.solutions || []).map(solution => {
+      const solutionObj: Solution = {
         title: solution.title || '',
-        url: solution.url || '',
-        source: solution.source,
-        author: solution.author
+        url: solution.url || ''
       };
-    }) || [];
+      
+      if (solution.source) {
+        solutionObj.source = solution.source;
+      }
+      
+      if (solution.author) {
+        solutionObj.author = solution.author;
+      }
+      
+      return solutionObj;
+    });
     
     // 创建表单数据，确保类型一致
     const formData: ChallengeFormData = {
       id: challengeData.id || null,
       idAlias: challengeData['id-alias'] || '',
-      platform: (challengeData.platform || 'Web') as 'Web' | 'Android' | 'iOS',
+      platform: challengeData.platform || 'Web',
       name: challengeData.name || '',
       nameEn: challengeData.name_en || '',
       difficultyLevel: challengeData['difficulty-level'] || 1,
       // 映射Markdown内容到表单字段
       description: challengeData['description-markdown'] || '',
       descriptionEn: challengeData['description-markdown_en'] || '',
+      descriptionMarkdown: challengeData['description-markdown'] || '',
+      descriptionMarkdownEn: challengeData['description-markdown_en'] || '',
+      base64Url: challengeData['base64-url'] || '',
+      isExpired: challengeData['is-expired'] || false,
       tags: challengeData.tags || [],
       solutions: solutions,
       // 添加额外字段到表单数据中，让其可以在生成时使用
       example: '',
       testCases: [],
-      comments: []
+      comments: [],
+      // 保存原始YAML文本，以便保留注释和格式
+      rawYaml: yamlString
     };
     
     return formData;
