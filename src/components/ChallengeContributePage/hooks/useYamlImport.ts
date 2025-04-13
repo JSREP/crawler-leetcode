@@ -62,7 +62,7 @@ export const useYamlImport = ({ form, calculateNextId }: UseYamlImportProps) => 
         dispatchCustomEvent('tags-updated', { tags: formData.tags });
       }
       
-      // 处理解决方案
+      // 处理参考资料
       if (formData.solutions && Array.isArray(formData.solutions)) {
         dispatchCustomEvent('solutions-updated', { solutions: formData.solutions });
       }

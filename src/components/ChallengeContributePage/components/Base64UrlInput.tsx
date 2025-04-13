@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useState, useEffect, useCallback, useMemo } from 'react';
-import { Form, Input, message, Tooltip } from 'antd';
-import { InfoCircleOutlined, LinkOutlined } from '@ant-design/icons';
+import { Form, Input, message, Tooltip, Button } from 'antd';
+import { InfoCircleOutlined, LinkOutlined, ExportOutlined } from '@ant-design/icons';
 import { FormInstance } from 'antd';
 import { useBase64UrlEncoder } from '../hooks';
 import { createUrlValidators } from '../utils/validators';
@@ -98,6 +98,29 @@ const useBase64UrlState = (form: FormInstance, onChange?: (value: string) => voi
     }
   }, [plaintextUrl, form, ensureBase64Format, onChange]);
 
+  // 打开URL
+  const openUrl = useCallback(() => {
+    const base64Value = form.getFieldValue('base64Url');
+    if (!base64Value) {
+      message.warning('请先输入URL');
+      return;
+    }
+    
+    try {
+      const url = decodeUrl(base64Value);
+      // 确保URL有效
+      if (!url.startsWith('http')) {
+        throw new Error('无效的URL');
+      }
+      
+      // 在新标签页中打开URL
+      window.open(url, '_blank', 'noopener,noreferrer');
+    } catch (error) {
+      console.error('打开URL失败:', error);
+      message.error('无法打开URL，请检查URL格式');
+    }
+  }, [form, decodeUrl]);
+
   return {
     plaintextUrl,
     isFocused,
@@ -105,7 +128,8 @@ const useBase64UrlState = (form: FormInstance, onChange?: (value: string) => voi
     handleInputChange,
     handleFocus, 
     handleBlur,
-    decodeUrl
+    decodeUrl,
+    openUrl
   };
 };
 
@@ -160,7 +184,8 @@ const Base64UrlInput: React.FC<Base64UrlInputProps> = ({ form, onChange }) => {
     handleInputChange,
     handleFocus,
     handleBlur,
-    decodeUrl
+    decodeUrl,
+    openUrl
   } = useBase64UrlState(form, onChange);
   
   // 处理YAML导入事件
@@ -176,12 +201,22 @@ const Base64UrlInput: React.FC<Base64UrlInputProps> = ({ form, onChange }) => {
     createUrlValidators(decodeUrl), 
   [decodeUrl]);
 
+  // 自定义后缀图标
+  const suffixIcon = (
+    <Tooltip title="在新标签页中打开URL">
+      <ExportOutlined 
+        onClick={openUrl} 
+        style={{ cursor: 'pointer', color: '#1890ff' }} 
+      />
+    </Tooltip>
+  );
+
   return (
     <Form.Item
       name="base64Url"
       label="目标网站URL"
       tooltip={{
-        title: '输入普通URL，系统会自动进行Base64编码。输入框获得焦点时会显示明文，失去焦点时会显示Base64编码值。',
+        title: '输入普通URL，系统会自动进行Base64编码。输入框获得焦点时会显示明文，失去焦点时会显示Base64编码值。点击右侧图标可以在新标签页中打开URL。',
         icon: <InfoCircleOutlined />
       }}
       rules={validationRules}
@@ -193,6 +228,7 @@ const Base64UrlInput: React.FC<Base64UrlInputProps> = ({ form, onChange }) => {
         onFocus={handleFocus}
         onBlur={handleBlur}
         prefix={<LinkOutlined />}
+        suffix={suffixIcon}
       />
     </Form.Item>
   );

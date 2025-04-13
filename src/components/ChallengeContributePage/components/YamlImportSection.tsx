@@ -1,11 +1,12 @@
 import * as React from 'react';
-import { Button, Tabs, Modal } from 'antd';
-import { ImportOutlined } from '@ant-design/icons';
+import { Button, Tabs, Modal, Tooltip, Space, Typography } from 'antd';
+import { ImportOutlined, QuestionCircleOutlined } from '@ant-design/icons';
 import FileImportTab from './yaml-import/FileImportTab';
 import UrlImportTab from './yaml-import/UrlImportTab';
 import TextImportTab from './yaml-import/TextImportTab';
 
 const { TabPane } = Tabs;
+const { Text, Link } = Typography;
 
 interface YamlImportSectionProps {
   onImportYaml: (yamlContent: string) => void;
@@ -98,16 +99,34 @@ const YamlImportSection: React.FC<YamlImportSectionProps> = ({
 
   return (
     <>
-      <Button
-        type="primary"
-        icon={<ImportOutlined />}
-        size="large"
-        block
-        style={{ height: '50px', fontSize: '16px', marginBottom: 24 }}
-        onClick={showImportModal}
-      >
-        导入YAML文件
-      </Button>
+      <div style={{ marginBottom: 24 }}>
+        <Space direction="vertical" style={{ width: '100%' }}>
+          <Button
+            type="primary"
+            icon={<ImportOutlined />}
+            size="large"
+            block
+            style={{ height: '50px', fontSize: '16px' }}
+            onClick={showImportModal}
+          >
+            导入YAML文件
+          </Button>
+          
+          <Space align="center" style={{ display: 'flex', justifyContent: 'center' }}>
+            <QuestionCircleOutlined style={{ color: '#1890ff' }} />
+            <Text type="secondary">
+              YAML是挑战描述的标准格式，详细了解
+              <Link 
+                href="https://github.com/JSREP/crawler-leetcode/blob/main/docs/challenges/README.md" 
+                target="_blank" 
+                style={{ marginLeft: 4 }}
+              >
+                YAML格式标准和贡献指南
+              </Link>
+            </Text>
+          </Space>
+        </Space>
+      </div>
 
       <Modal
         title="导入YAML"

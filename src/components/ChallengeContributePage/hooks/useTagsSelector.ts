@@ -1,23 +1,10 @@
 import { useState, useEffect, useMemo, useCallback, useRef } from 'react';
 import { FormInstance, message } from 'antd';
 import { useEventListener, dispatchFormValueUpdated, TAGS_UPDATED } from './useEventListener';
+import { TagFrequency } from './useAllTags';
 
 // 最近使用的标签本地存储键
 const RECENT_TAGS_KEY = 'recent_used_tags';
-
-// 标签分类定义
-const TAG_CATEGORIES: Record<string, string[]> = {
-  '前端基础': ['HTML', 'CSS', 'JavaScript', 'DOM', 'BOM', 'Web API'],
-  '前端框架': ['React', 'Vue', 'Angular', 'Svelte', 'Solid'],
-  '前端工具': ['Webpack', 'Vite', 'Rollup', 'ESLint', 'Babel', 'TypeScript'],
-  '后端开发': ['Node.js', 'Express', 'Koa', 'Nest.js', 'MongoDB', 'SQL'],
-  '移动端': ['Android', 'iOS', 'Flutter', 'React Native', 'Responsive'],
-  '性能优化': ['Performance', 'Lazy Loading', 'Code Splitting', 'Caching'],
-  '安全': ['Security', 'CORS', 'XSS', 'CSRF', 'Authentication'],
-  '网络': ['HTTP', 'WebSocket', 'REST', 'GraphQL', 'API'],
-  '用户体验': ['Animation', 'Transition', 'UI/UX', 'Accessibility'],
-  '其他': ['Testing', 'DevOps', 'Git', 'Docker', 'CI/CD']
-};
 
 // 保存最近使用的标签
 const saveRecentTags = (tag: string) => {
@@ -56,51 +43,43 @@ const getRecentTags = (): string[] => {
   }
 };
 
-// 将标签按分类归类
-const categorizeTags = (tags: string[]): Record<string, string[]> => {
-  const result: Record<string, string[]> = {};
+// 始终按频率排序的会话存储键
+const SESSION_SORTING_KEY = 'tags_frequency_sorting';
+
+// 重置标签选择器的聚焦状态，用于测试
+const resetFocusState = () => {
+  try {
+    localStorage.removeItem('tags_selector_has_been_focused');
+    // 设置会话存储，表示要按频率排序
+    sessionStorage.setItem(SESSION_SORTING_KEY, 'true');
+    console.log('已重置标签选择器状态，将按频率排序');
+  } catch (error) {
+    console.error('重置聚焦状态失败:', error);
+  }
+};
+
+// 添加到全局窗口对象，以便在控制台调用
+(window as any).resetTagsSelectorFocus = resetFocusState;
+
+// 按标签出现频率统计和排序
+const getTagsByFrequency = (tags: string[]): Array<{ tag: string, count: number }> => {
+  // 统计每个标签出现的频率
+  const tagCounts: Record<string, number> = {};
   
-  // 初始化分类
-  Object.keys(TAG_CATEGORIES).forEach(category => {
-    result[category] = [];
-  });
-  
-  // 分类标签
   tags.forEach(tag => {
-    let categorized = false;
-    
-    // 检查标签属于哪个分类
-    for (const [category, keywords] of Object.entries(TAG_CATEGORIES)) {
-      for (const keyword of keywords) {
-        if (tag.toLowerCase().includes(keyword.toLowerCase()) ||
-            keyword.toLowerCase().includes(tag.toLowerCase())) {
-          result[category].push(tag);
-          categorized = true;
-          break;
-        }
-      }
-      if (categorized) break;
-    }
-    
-    // 如果未分类，添加到"其他"
-    if (!categorized) {
-      result['其他'].push(tag);
-    }
+    tagCounts[tag] = (tagCounts[tag] || 0) + 1;
   });
   
-  // 移除空分类
-  Object.keys(result).forEach(category => {
-    if (result[category].length === 0) {
-      delete result[category];
-    }
-  });
-  
-  return result;
+  // 转换为数组并按频率降序排序
+  return Object.entries(tagCounts)
+    .map(([tag, count]) => ({ tag, count }))
+    .sort((a, b) => b.count - a.count);
 };
 
 interface UseTagsSelectorProps {
   form: FormInstance;
   existingTags?: string[];
+  tagsFrequency?: TagFrequency[];
   onChange?: (value: string[]) => void;
 }
 
@@ -110,7 +89,7 @@ interface UseTagsSelectorReturn {
   tagOptions: { value: string }[];
   isInputFocused: boolean;
   recentlyUsedTags: string[];
-  categorizedTags: Record<string, string[]>;
+  categorizedTags: Record<string, string[]>; // 保留接口兼容
   handleAddTag: () => void;
   handleRemoveTag: (removedTag: string, e?: React.MouseEvent<HTMLElement>) => void;
   handleTagInputChange: (value: string) => void;
@@ -120,12 +99,20 @@ interface UseTagsSelectorReturn {
   handleTagInputKeyPress: (e: React.KeyboardEvent<HTMLInputElement>) => void;
 }
 
+// 在组件加载时自动重置焦点状态
+// 这样确保每次页面加载都按频率排序
+if (typeof window !== 'undefined') {
+  // 设置会话存储，表示要按频率排序
+  sessionStorage.setItem(SESSION_SORTING_KEY, 'true');
+}
+
 /**
  * 标签选择器逻辑 Hook
  */
 export const useTagsSelector = ({ 
   form, 
   existingTags = [], 
+  tagsFrequency = [],
   onChange 
 }: UseTagsSelectorProps): UseTagsSelectorReturn => {
   const [newTag, setNewTag] = useState<string>('');
@@ -134,12 +121,26 @@ export const useTagsSelector = ({
   const [isInputFocused, setIsInputFocused] = useState<boolean>(false);
   const [recentlyUsedTags, setRecentlyUsedTags] = useState<string[]>(getRecentTags());
   
-  // 缓存已有标签的分类
-  const categorizedTags = useMemo(() => 
-    categorizeTags(existingTags), [existingTags]);
+  // 总是使用频率排序标志
+  const [alwaysUseSortByFrequency, setAlwaysUseSortByFrequency] = useState<boolean>(
+    sessionStorage.getItem(SESSION_SORTING_KEY) === 'true'
+  );
+  
+  // 已聚焦标志，但现在我们不再使用它来决定排序方式
+  const [hasBeenFocused, setHasBeenFocused] = useState<boolean>(false);
+  
+  // 为了保持接口兼容，提供一个空的分类对象
+  const categorizedTags = useMemo(() => ({}), []);
   
   // 记录是否已初始化
   const isInitialized = useRef(false);
+
+  // 调试用 - 打印传入的标签频率数据
+  useEffect(() => {
+    if (tagsFrequency.length > 0) {
+      console.log('传入的标签频率数据:', tagsFrequency.slice(0, 10));
+    }
+  }, [tagsFrequency]);
 
   // 包装onChange为稳定的引用，避免引发无限循环
   const stableOnChange = useCallback((updatedTags: string[]) => {
@@ -192,30 +193,48 @@ export const useTagsSelector = ({
   );
 
   /**
-   * 计算最常用的标签
-   * 根据标签在已有挑战中出现的频率，返回前100个最常用的标签
+   * 获取排序后的标签列表
    */
-  const getTopTags = useMemo(() => {
+  const getSortedTags = useCallback(() => {
     // 如果existingTags为空，返回空数组
     if (!existingTags || existingTags.length === 0) {
       return [];
     }
 
-    // 统计每个标签出现的频率
-    const tagFrequency: Record<string, number> = {};
-    existingTags.forEach(tag => {
-      tagFrequency[tag] = (tagFrequency[tag] || 0) + 1;
-    });
+    console.log('是否总是按频率排序:', alwaysUseSortByFrequency);
 
-    // 按频率排序并返回前100个
-    return Object.entries(tagFrequency)
-      .sort((a, b) => b[1] - a[1]) // 按频率降序排序
-      .slice(0, 100) // 取前100个
-      .map(([tag]) => ({ value: tag })); // 转换为AutoComplete需要的格式
-  }, [existingTags]);
+    // 总是按频率排序或第一次聚焦时按频率排序
+    if (alwaysUseSortByFrequency) {
+      // 如果有传入标签频率数据，直接使用
+      if (tagsFrequency && tagsFrequency.length > 0) {
+        console.log('使用标签频率排序:', tagsFrequency.slice(0, 5).map(t => `${t.tag}(${t.count})`));
+        const result = tagsFrequency.map(({ tag }) => ({ value: tag }));
+        return result;
+      } else {
+        // 没有频率数据，按字母顺序排序
+        console.log('没有频率数据，使用字母排序');
+        return [...existingTags]
+          .sort((a, b) => a.localeCompare(b))
+          .map(tag => ({ value: tag }));
+      }
+    } else {
+      // 按字母顺序排序
+      console.log('已聚焦过且非强制频率排序模式，使用字母排序');
+      return [...existingTags]
+        .sort((a, b) => a.localeCompare(b))
+        .map(tag => ({ value: tag }));
+    }
+  }, [existingTags, alwaysUseSortByFrequency, tagsFrequency]);
 
-  // 存储getTopTags的结果，避免重复计算
-  const topTagsOptions = useMemo(() => getTopTags, [getTopTags]);
+  // 存储排序后的标签，避免重复计算
+  const sortedTagsOptions = useMemo(() => {
+    const result = getSortedTags();
+    // 打印排序后的前几个标签，方便调试
+    if (result.length > 0) {
+      console.log('排序后的标签列表（前5个）:', result.slice(0, 5).map(t => t.value));
+    }
+    return result;
+  }, [getSortedTags]);
 
   // 当用户输入标签或输入框获得焦点时，更新自动完成选项
   useEffect(() => {
@@ -229,10 +248,11 @@ export const useTagsSelector = ({
         setTagOptions(filtered.map(tag => ({ value: tag })));
       }
     } else if (isInputFocused) {
-      // 如果输入框获得焦点但没有输入内容，显示最常用的标签
-      setTagOptions(topTagsOptions);
+      // 如果输入框获得焦点但没有输入内容，显示所有标签
+      console.log('设置标签选项:', sortedTagsOptions.length);
+      setTagOptions(sortedTagsOptions);
     }
-  }, [newTag, existingTags, isInputFocused, topTagsOptions]);
+  }, [newTag, existingTags, isInputFocused, sortedTagsOptions, tagOptions.length]);
 
   const handleAddTag = () => {
     // 标签去除首尾空格
@@ -290,8 +310,16 @@ export const useTagsSelector = ({
   const handleInputFocus = () => {
     // 设置输入框焦点状态为true
     setIsInputFocused(true);
-    // 显示最常用的标签，不需要等用户输入
-    setTagOptions(topTagsOptions);
+    
+    // 记录已经获得过焦点，但我们不再使用它来决定排序方式
+    if (!hasBeenFocused) {
+      console.log('第一次聚焦标记');
+      setHasBeenFocused(true);
+    }
+    
+    // 显示所有标签，不需要等用户输入
+    console.log('聚焦时设置标签选项:', sortedTagsOptions.length);
+    setTagOptions(sortedTagsOptions);
   };
 
   // 输入框失去焦点时的处理函数

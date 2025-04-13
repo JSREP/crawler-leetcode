@@ -11,6 +11,7 @@ export { useTagsSelector } from './useTagsSelector';
 export { useFormScrolling } from './useFormScrolling';
 export { useAsyncOperation } from './useAsyncOperation';
 export { useFormStyles } from './useFormStyles';
+export { useAllTags, useTagsWithFrequency } from './useAllTags';
 export { 
   useEventListener, 
   dispatchCustomEvent,

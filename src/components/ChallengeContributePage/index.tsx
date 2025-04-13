@@ -3,13 +3,18 @@ import { useCallback, useEffect, useState } from 'react';
 import { Form, Button, Card, Space, Affix, message, Progress, Badge, notification, Divider, Typography } from 'antd';
 import { SaveOutlined, FileTextOutlined, InfoCircleOutlined } from '@ant-design/icons';
 import { ChallengeFormData } from './types';
+import * as YAML from 'yaml';
 
 // 导入钩子函数
 import { 
   useFormPersistence, 
   useYamlGeneration, 
   useYamlImport,
-  useFormStyles
+  useFormStyles,
+  useAllTags,
+  useTagsWithFrequency,
+  useEventListener,
+  useFormScrolling
 } from './hooks';
 
 // 导入子组件
@@ -23,6 +28,7 @@ import YamlPreviewSection from './components/YamlPreviewSection';
 import YamlImportSection from './components/YamlImportSection';
 import FormHeader from './components/FormHeader';
 import ResponsiveContainer from './components/ResponsiveContainer';
+import ScrollButtons from './components/ScrollButtons';
 
 // 导入样式
 import { styles } from './styles';
@@ -122,6 +128,12 @@ const ChallengeContributePage: React.FC = () => {
 
   // 应用表单样式
   useFormStyles();
+  
+  // 获取所有已存在的标签
+  const allTags = useAllTags();
+  
+  // 获取带有频率的标签列表
+  const tagsWithFrequency = useTagsWithFrequency();
   
   // 使用表单持久化钩子
   const { 
@@ -284,6 +296,94 @@ const ChallengeContributePage: React.FC = () => {
     };
   }, [isFormDirty]);
 
+  // 手动滚动到YAML预览区域
+  const scrollToYamlPreviewSection = useCallback(() => {
+    console.log('手动触发滚动到YAML预览区域');
+    setTimeout(() => {
+      try {
+        // 尝试通过ID查找
+        const element = document.getElementById('yaml-preview-section');
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          return;
+        }
+        
+        // 尝试通过类名查找
+        const elementByClass = document.querySelector('.yaml-preview-section');
+        if (elementByClass) {
+          elementByClass.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          return;
+        }
+        
+        // 尝试查找标题元素
+        const yamlTitle = Array.from(document.querySelectorAll('h4'))
+          .find(el => el.textContent?.includes('YAML生成预览'));
+        if (yamlTitle) {
+          yamlTitle.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          return;
+        }
+        
+        // 最后尝试滚动到底部
+        window.scrollTo({
+          top: document.body.scrollHeight,
+          behavior: 'smooth'
+        });
+      } catch (error) {
+        console.error('手动滚动到YAML预览区域时出错:', error);
+      }
+    }, 300);
+  }, []);
+
+  // 包装生成YAML的方法，确保滚动
+  const handleGenerateYaml = useCallback(() => {
+    console.log('ChallengeContributePage: 调用handleGenerateYaml');
+    
+    try {
+      // 首先直接获取表单当前值，不管验证是否通过
+      const currentFormValues = form.getFieldsValue(true);
+      
+      // 执行YAML生成
+      generateYaml();
+      
+      // 确保滚动到YAML预览区域，使用双重保障
+      setTimeout(scrollToYamlPreviewSection, 300);
+      setTimeout(scrollToYamlPreviewSection, 800); // 再次尝试滚动，以防第一次失败
+      
+      // 如果YAML输出为空，尝试直接使用YAML.stringify
+      setTimeout(() => {
+        if (!yamlOutput && currentFormValues) {
+          console.log('检测到YAML输出为空，尝试直接生成');
+          
+          try {
+            const currentDateTime = new Date().toISOString().replace('T', ' ').substring(0, 19);
+            const directYamlObj = {
+              'id': currentFormValues.id || 0,
+              'id-alias': currentFormValues.idAlias || '',
+              'platform': currentFormValues.platform || 'Web',
+              'name': currentFormValues.name || '未命名挑战',
+              'difficulty-level': currentFormValues.difficultyLevel || 1,
+              'description-markdown': currentFormValues.description || '',
+              'base64-url': currentFormValues.base64Url || '',
+              'tags': currentFormValues.tags || [],
+              'solutions': [],
+              'create-time': currentDateTime,
+              'update-time': currentDateTime
+            };
+            
+            const directYaml = YAML.stringify(directYamlObj, { indent: 2 });
+            setYamlOutput(directYaml);
+            console.log('直接生成YAML成功，长度：', directYaml.length);
+          } catch (error) {
+            console.error('直接生成YAML失败:', error);
+          }
+        }
+      }, 500);
+    } catch (error) {
+      console.error('处理YAML生成时出错:', error);
+      message.error('生成YAML时出错，请检查表单数据');
+    }
+  }, [generateYaml, scrollToYamlPreviewSection, form, yamlOutput, setYamlOutput]);
+
   return (
     <ResponsiveContainer>
       {/* 进度指示器 */}
@@ -334,10 +434,17 @@ const ChallengeContributePage: React.FC = () => {
           <Card style={styles.stepCard} title={<Title level={4}>基本信息</Title>}>
             <div style={styles.formSectionContent}>
               <Text type="secondary" style={{ display: 'block', marginBottom: 16 }}>
-                请填写挑战的基本信息，包括ID、平台类型、名称等必要信息。这些信息将用于在列表页展示和搜索。
+                请填写挑战的基本信息，包括ID、平台类型、名称、目标网站URL等必要信息。这些信息将用于在列表页展示和搜索。
               </Text>
               <BasicInfo form={form} />
               <DifficultySelector form={form} />
+              <UrlInput form={form} />
+              <TagsSelector 
+                form={form} 
+                onChange={handleTagsChange}
+                existingTags={allTags}
+                tagsFrequency={tagsWithFrequency}
+              />
             </div>
           </Card>
         </div>
@@ -349,10 +456,9 @@ const ChallengeContributePage: React.FC = () => {
           <Card style={styles.stepCard} title={<Title level={4}>详细描述</Title>}>
             <div style={styles.formSectionContent}>
               <Text type="secondary" style={{ display: 'block', marginBottom: 16 }}>
-                请提供挑战的详细描述和目标网站URL（将自动转为Base64编码）。描述应尽可能详细，包括挑战要求和技术背景。
+                请提供挑战的详细描述。描述应尽可能详细，包括挑战要求和技术背景。
               </Text>
               <DescriptionFields form={form} />
-              <UrlInput form={form} />
             </div>
           </Card>
         </div>
@@ -360,16 +466,12 @@ const ChallengeContributePage: React.FC = () => {
         <Divider style={styles.divider} />
         
         <div style={styles.formSection}>
-          {/* 标签与解决方案部分 */}
-          <Card style={styles.stepCard} title={<Title level={4}>标签与解决方案</Title>}>
+          {/* 标签与参考资料部分 */}
+          <Card style={styles.stepCard} title={<Title level={4}>标签与参考资料</Title>}>
             <div style={styles.formSectionContent}>
               <Text type="secondary" style={{ display: 'block', marginBottom: 16 }}>
-                添加相关技术标签和解决方案链接，帮助其他用户快速识别和解决挑战。好的标签和解决方案资源能显著提高挑战的价值。
+                添加参考资料链接，帮助其他用户快速识别和解决挑战。好的参考资料资源能显著提高挑战的价值。
               </Text>
-              <TagsSelector 
-                form={form} 
-                onChange={handleTagsChange}
-              />
               <SolutionsSection 
                 form={form} 
                 onChange={handleSolutionsChange}
@@ -389,7 +491,7 @@ const ChallengeContributePage: React.FC = () => {
               </Text>
               <YamlPreviewSection
                 yamlOutput={yamlOutput}
-                onGenerateYaml={generateYaml}
+                onGenerateYaml={handleGenerateYaml}
                 onCopyYaml={handleCopyYaml}
               />
             </div>
@@ -411,7 +513,7 @@ const ChallengeContributePage: React.FC = () => {
             
             <Button 
               type="primary" 
-              onClick={generateYaml}
+              onClick={handleGenerateYaml}
               icon={<FileTextOutlined />}
             >
               生成YAML
@@ -427,6 +529,9 @@ const ChallengeContributePage: React.FC = () => {
         backupOptions={backupOptions}
         onRecover={handleRecoverBackup}
       />
+      
+      {/* 滚动控制按钮 */}
+      <ScrollButtons />
     </ResponsiveContainer>
   );
 };

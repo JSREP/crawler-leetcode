@@ -167,7 +167,7 @@ const ChallengeDetailPage = () => {
 
                     <Divider style={{ margin: isMobile ? '12px 0' : '24px 0' }} />
 
-                    {/* 解决方案 */}
+                    {/* 参考资料 */}
                     <ChallengeSolutions challenge={challenge} isMobile={isMobile} />
                     <Divider style={{ margin: isMobile ? '12px 0' : '24px 0' }} />
                     

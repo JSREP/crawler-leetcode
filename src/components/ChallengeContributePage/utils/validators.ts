@@ -81,29 +81,34 @@ export const tagsValidators = [
   }
 ];
 
-// 解决方案验证
+// 参考资料验证
 export const solutionsValidator = {
-  validator: (_: any, value: ChallengeFormData['solutions']) => {
+  validator: (_: any, value: any) => {
     if (!value || value.length === 0) {
-      return Promise.reject('请添加至少一个解决方案');
+      // 参考资料是可选的，允许为空
+      return Promise.resolve();
     }
-    
-    // 检查每个解决方案的必填字段
+
+    if (!Array.isArray(value)) {
+      return Promise.reject('参考资料必须是数组');
+    }
+
+    // 检查每个参考资料的必填字段
     for (let i = 0; i < value.length; i++) {
       const solution = value[i];
       if (!solution.title || !solution.title.trim()) {
-        return Promise.reject(`第${i+1}个解决方案缺少标题`);
+        return Promise.reject(`第${i+1}个参考资料缺少标题`);
       }
       if (!solution.url || !solution.url.trim()) {
-        return Promise.reject(`第${i+1}个解决方案缺少URL`);
+        return Promise.reject(`第${i+1}个参考资料缺少URL`);
       }
       
       // 验证URL格式
       if (!solution.url.startsWith('http://') && !solution.url.startsWith('https://')) {
-        return Promise.reject(`第${i+1}个解决方案的URL必须以http://或https://开头`);
+        return Promise.reject(`第${i+1}个参考资料的URL必须以http://或https://开头`);
       }
     }
-    
+
     return Promise.resolve();
   }
 };
