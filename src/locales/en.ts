@@ -147,9 +147,11 @@ export default {
             relatedChallenges: 'Related Challenges',
             technicalTags: 'Technical Tags',
             targetWebsite: 'Target Website',
+            platform: 'Platform',
             difficulty: 'Difficulty',
             created: 'Created',
             updated: 'Updated',
+            originalLink: 'Original Link',
             startChallenge: 'Try It',
             startChallengeShort: 'Try',
             viewSolution: 'View Solution',
@@ -165,7 +167,9 @@ export default {
             correction: 'Correction',
             correctionTooltip: 'Think the content could be improved or has errors? Don\'t hesitate to submit a PR on GitHub',
             reportIssue: 'Report Issue',
-            issueTooltip: 'Having a problem? Click to submit a GitHub Issue'
+            issueTooltip: 'Having a problem? Click to submit a GitHub Issue',
+            backToList: 'Back to Challenge List',
+            unspecified: 'Unspecified'
         },
         actions: {
             backToList: 'Back to Challenge List'
