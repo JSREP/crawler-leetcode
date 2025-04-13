@@ -92,3 +92,44 @@
 .read-the-docs {
   color: #888;
 }
+
+/* 移动端响应式样式 */
+@media (max-width: 768px) {
+  /* 导航栏调整 */
+  .navbar-container {
+    width: 100%;
+    padding: 0 16px;
+  }
+
+  /* 移动端内容区域调整 */
+  .content-wrapper {
+    padding: 10px 0 !important;
+  }
+
+  /* 移动端卡片样式调整 */
+  .ant-card {
+    border-radius: 8px;
+  }
+
+  /* 移动端表格调整 */
+  .ant-table {
+    font-size: 12px;
+  }
+
+  /* 移动端表单样式 */
+  .ant-form-item-label {
+    padding-bottom: 4px;
+  }
+
+  /* 移动端按钮样式 */
+  .ant-btn {
+    font-size: 14px;
+    height: 32px;
+    padding: 0 15px;
+  }
+
+  /* 防止溢出 */
+  .mobile-container {
+    overflow-x: hidden;
+  }
+}
