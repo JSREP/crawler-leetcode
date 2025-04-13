@@ -1,0 +1,5 @@
+# 爬虫挑战合集元数据配置文件
+version: 1
+id: test-hot-reload
+name: 测试热更新功能
+difficulty: 1
