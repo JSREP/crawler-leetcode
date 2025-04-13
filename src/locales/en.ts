@@ -146,7 +146,7 @@ export default {
             discussions: 'Discussions',
             relatedChallenges: 'Related Challenges',
             technicalTags: 'Technical Tags',
-            targetWebsite: 'Target Website',
+            targetWebsite: 'Platform',
             platform: 'Platform',
             difficulty: 'Difficulty',
             created: 'Created',
@@ -174,6 +174,16 @@ export default {
         },
         actions: {
             backToList: 'Back to Challenge List'
+        },
+        platforms: {
+            Web: 'Web Site',
+            Android: 'Android App',
+            iOS: 'iOS App',
+            'WeChat-MiniProgram': 'WeChat Mini Program',
+            'Electron': 'Electron App',
+            'Windows-Native': 'Windows Native',
+            'Mac-Native': 'Mac Native',
+            'Linux-Native': 'Linux Native'
         },
         pagination: {
             previous: 'Previous',

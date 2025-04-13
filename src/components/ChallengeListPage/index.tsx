@@ -42,7 +42,10 @@ const ChallengeListPage = () => {
 
     // 过滤掉被标记为忽略的挑战
     const visibleChallenges = useMemo(() => {
-        return challenges.filter(challenge => !challenge.ignored);
+        console.log(`总挑战数量: ${challenges.length}`);
+        const visible = challenges.filter(challenge => challenge.ignored !== true);
+        console.log(`可见挑战数量(排除ignored=true): ${visible.length}`);
+        return visible;
     }, [challenges]);
 
     // 初始化搜索服务
@@ -71,8 +74,10 @@ const ChallengeListPage = () => {
                     }
                     
                     // 设置平台
-                    if (parsedFilters.platform && parsedFilters.platform !== 'all') {
-                        newSearchParams.set('platform', parsedFilters.platform);
+                    if (parsedFilters.platform && parsedFilters.platform.length > 0) {
+                        parsedFilters.platform.forEach((platform: string) => {
+                            newSearchParams.append('platform', platform);
+                        });
                     }
                     
                     // 设置标签
@@ -151,10 +156,54 @@ const ChallengeListPage = () => {
         saveFilterPreferences({ ...filters, difficulty: filters.difficulty });
     };
 
+    // 从URL同步过滤器状态
+    useEffect(() => {
+        const tags = searchParams.getAll('tags');
+        let difficultyParams = searchParams.getAll('difficulty');
+        const platformParam = searchParams.get('platform') || 'all';
+        
+        console.log('URL平台参数:', platformParam);
+        
+        // 处理特殊难度字符串转换
+        if (difficultyParams.length === 1) {
+            const diffParam = difficultyParams[0];
+            if (diffParam === 'easy') {
+                difficultyParams = ['1'];
+            } else if (diffParam === 'medium') {
+                difficultyParams = ['2', '3'];
+            } else if (diffParam === 'hard') {
+                difficultyParams = ['4', '5'];
+            }
+        }
+        
+        const newFilters = { 
+            tags, 
+            difficulty: difficultyParams, 
+            platform: platformParam 
+        };
+        
+        console.log('设置新筛选条件:', newFilters);
+        setFilters(newFilters);
+        
+        // 当URL发生变化时，同步到本地存储
+        if (searchParams.toString()) {
+            saveFilterPreferences(newFilters);
+        }
+    }, [searchParams]);
+
     // 处理平台筛选
     const handlePlatformChange = (platform: string) => {
+        console.log('处理平台筛选变化:', platform);
+        
         const newSearchParams = new URLSearchParams(searchParams);
-        newSearchParams.set('platform', platform);
+        newSearchParams.delete('platform');
+        
+        // 如果选择的不是"all"，则添加平台参数
+        if (platform !== 'all') {
+            newSearchParams.append('platform', platform);
+        }
+        
+        console.log('新URL参数:', newSearchParams.toString());
         navigate(`/challenges?${newSearchParams.toString()}`);
         
         // 保存筛选设置到本地存储
@@ -204,33 +253,6 @@ const ChallengeListPage = () => {
         setDrawerVisible(false);
     };
 
-    // 从URL同步过滤器状态
-    useEffect(() => {
-        const tags = searchParams.getAll('tags');
-        let difficultyParams = searchParams.getAll('difficulty');
-        const platform = searchParams.get('platform') || 'all';
-        
-        // 处理特殊难度字符串转换
-        if (difficultyParams.length === 1) {
-            const diffParam = difficultyParams[0];
-            if (diffParam === 'easy') {
-                difficultyParams = ['1', '2'];
-            } else if (diffParam === 'medium') {
-                difficultyParams = ['3', '4'];
-            } else if (diffParam === 'hard') {
-                difficultyParams = ['5'];
-            }
-        }
-        
-        const newFilters = { tags, difficulty: difficultyParams, platform };
-        setFilters(newFilters);
-        
-        // 当URL发生变化时，同步到本地存储
-        if (searchParams.toString()) {
-            saveFilterPreferences(newFilters);
-        }
-    }, [searchParams]);
-
     // 获取所有可用标签
     const allTags = useMemo(() => {
         const tags = new Set<string>();
@@ -252,12 +274,22 @@ const ChallengeListPage = () => {
     // 使用Fuse.js过滤和排序挑战
     const filteredChallenges = useMemo(() => {
         // 使用搜索服务过滤
+        console.log(`过滤前挑战数量: ${visibleChallenges.length}`);
+        console.log(`过滤条件:`, {
+            tags: filters.tags,
+            difficulty: filters.difficulty.join(','),
+            platform: filters.platform,
+            query: searchQuery
+        });
+        
         const filtered = searchService.filterChallenges(visibleChallenges, {
             tags: filters.tags,
             difficulty: filters.difficulty.join(','),
             platform: filters.platform,
             query: searchQuery
         });
+        
+        console.log(`过滤后挑战数量: ${filtered.length}`);
 
         // 排序
         return filtered.sort((a: Challenge, b: Challenge) => {
@@ -347,22 +379,25 @@ const ChallengeListPage = () => {
     };
 
     // 渲染控制面板（桌面或移动）
-    const renderControls = () => (
-        <ChallengeControls
-            allTags={allTags}
-            allPlatforms={allPlatforms}
-            selectedTags={filters.tags}
-            selectedDifficulty={filters.difficulty}
-            selectedPlatform={filters.platform}
-            sortBy={sortBy}
-            sortOrder={sortOrder}
-            onTagsChange={handleTagsChange}
-            onDifficultyChange={handleDifficultyClick}
-            onPlatformChange={handlePlatformChange}
-            onSortByChange={handleSortByChange}
-            onSortOrderChange={handleSortOrderChange}
-        />
-    );
+    const renderControls = () => {
+        console.log('渲染控制面板，当前平台选择:', filters.platform);
+        return (
+            <ChallengeControls
+                allTags={allTags}
+                allPlatforms={allPlatforms}
+                selectedTags={filters.tags}
+                selectedDifficulty={filters.difficulty}
+                selectedPlatform={filters.platform}
+                sortBy={sortBy}
+                sortOrder={sortOrder}
+                onTagsChange={handleTagsChange}
+                onDifficultyChange={handleDifficultyClick}
+                onPlatformChange={handlePlatformChange}
+                onSortByChange={handleSortByChange}
+                onSortOrderChange={handleSortOrderChange}
+            />
+        );
+    };
 
     // 渲染过滤器（适用于桌面和移动视图）
     const renderFilters = () => (
@@ -386,6 +421,9 @@ const ChallengeListPage = () => {
                 <Col span={24}>
                     <h1 style={{ fontSize: isMobile ? '1.5rem' : '2rem', marginBottom: '1rem' }}>
                         {t('challenges.title')}
+                        <span style={{ fontWeight: 'normal', fontSize: isMobile ? '1.2rem' : '1.6rem', marginLeft: '8px' }}>
+                            ({filteredChallenges.length})
+                        </span>
                     </h1>
                     
                     {/* 移动端搜索和过滤器 */}
@@ -422,7 +460,7 @@ const ChallengeListPage = () => {
                         onPaginationChange={handlePaginationChange}
                         onTagClick={handleTagClick}
                         onDifficultyClick={(difficulty) => handleDifficultyClick(difficulty.toString())}
-                        onPlatformClick={handlePlatformChange}
+                        onPlatformClick={(platform) => handlePlatformChange(platform)}
                         onChallengeClick={(id) => navigate(`/challenge/${id}`)}
                         hidePagination={false}
                     />

@@ -146,7 +146,7 @@ const zhTranslations = {
             discussions: '讨论',
             relatedChallenges: '相关挑战',
             technicalTags: '技术标签',
-            targetWebsite: '目标网站',
+            targetWebsite: '平台',
             platform: '平台',
             difficulty: '难度级别',
             created: '创建时间',
@@ -174,6 +174,16 @@ const zhTranslations = {
         },
         actions: {
             backToList: '返回挑战列表'
+        },
+        platforms: {
+            Web: 'Web网站',
+            Android: 'Android应用',
+            iOS: 'iOS应用',
+            'WeChat-MiniProgram': '微信小程序',
+            'Electron': 'Electron应用',
+            'Windows-Native': 'Windows原生',
+            'Mac-Native': 'Mac原生',
+            'Linux-Native': 'Linux原生'
         },
         pagination: {
             previous: '上一题',
