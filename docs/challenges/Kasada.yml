@@ -1,0 +1,14 @@
+id: 110
+id-alias: Kasada
+platform: Web
+name: Kasada防护
+name_en: ""
+difficulty-level: 3
+description-markdown: Kasada防护
+base64-url: aHR0cHM6Ly93d3cua2FzYWRhLmlvL3Byb2R1Y3Qv
+is-expired: false
+tags:
+  - js-reverse
+solutions: []
+create-time: 2025-04-13 08:00:31
+update-time: 2025-04-13 08:00:31
