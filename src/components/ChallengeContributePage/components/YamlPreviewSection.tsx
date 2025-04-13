@@ -65,6 +65,7 @@ const YamlPreviewSection: React.FC<YamlPreviewSectionProps> = ({
   }, [yamlOutput]);
 
   const showModal = () => {
+    console.log('正在生成YAML预览，确保保留注释...');
     onGenerateYaml(); // 先生成YAML
     setIsModalVisible(true);
   };
@@ -237,6 +238,19 @@ const YamlPreviewSection: React.FC<YamlPreviewSectionProps> = ({
           >
             New Issue
           </Button>
+          
+          {/* 调试按钮，仅在开发环境显示 */}
+          {process.env.NODE_ENV === 'development' && (
+            <Button 
+              onClick={() => {
+                console.log('调试：原始YAML内容', yamlOutput);
+                message.info('已在控制台输出调试信息');
+              }}
+              type="dashed"
+            >
+              调试
+            </Button>
+          )}
         </Space>
       </div>
       
@@ -250,26 +264,25 @@ const YamlPreviewSection: React.FC<YamlPreviewSectionProps> = ({
           <Button key="cancel" onClick={handleCancel}>
             关闭
           </Button>,
-          <Button key="copy" type="primary" icon={<CopyOutlined />} onClick={handleCopyAndClose}>
-            复制
+          <Button key="copy" type="primary" onClick={handleCopyAndClose}>
+            复制并关闭
           </Button>
         ]}
       >
-        <div style={{ padding: '8px 0' }}>
-          <SyntaxHighlighter 
-            language="yaml" 
+        <div style={{ maxHeight: '70vh', overflowY: 'auto' }}>
+          <SyntaxHighlighter
+            language="yaml"
             style={highlightTheme}
-            customStyle={{
-              borderRadius: '4px',
-              fontSize: '14px',
-              lineHeight: '1.5',
-              maxHeight: '60vh',
-              overflow: 'auto',
+            customStyle={{ 
+              fontSize: '14px', 
+              lineHeight: '1.5', 
               padding: '16px',
-              border: '1px solid #eaeaea'
+              whiteSpace: 'pre-wrap',
+              overflowWrap: 'break-word'
             }}
             showLineNumbers={true}
-            wrapLongLines={true}
+            wrapLines={true}
+            preserveWhitespace={true}
           >
             {yamlOutput}
           </SyntaxHighlighter>
