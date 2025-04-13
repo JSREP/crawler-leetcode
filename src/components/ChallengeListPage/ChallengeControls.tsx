@@ -3,6 +3,7 @@ import { SortAscendingOutlined, SortDescendingOutlined, TagOutlined, FilterOutli
 import { useTranslation } from 'react-i18next';
 import { useState, ChangeEvent } from 'react';
 import StarRating from '../StarRating';
+import { useMediaQuery } from 'react-responsive';
 
 // 定义平台枚举值
 const PLATFORM_TYPES = ['Web', 'Android', 'iOS'];
@@ -88,6 +89,7 @@ const ChallengeControls: React.FC<ChallengeControlsProps> = ({
     onSortOrderChange
 }) => {
     const { t } = useTranslation();
+    const isMobile = useMediaQuery({ maxWidth: 768 });
     
     // 在组件的开头部分添加状态
     const [tagSearchText, setTagSearchText] = useState('');
@@ -148,9 +150,9 @@ const ChallengeControls: React.FC<ChallengeControlsProps> = ({
     const tagMenu = (
         <div style={{ 
             padding: '12px', 
-            maxHeight: '400px', 
+            maxHeight: isMobile ? '300px' : '400px', 
             overflowY: 'auto', 
-            minWidth: '300px',
+            minWidth: isMobile ? '250px' : '300px',
             backgroundColor: '#fff',
             boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)',
             borderRadius: '4px',
@@ -190,7 +192,7 @@ const ChallengeControls: React.FC<ChallengeControlsProps> = ({
                                     width: 'auto',
                                     display: 'inline-flex',
                                     alignItems: 'center',
-                                    fontSize: '13px'
+                                    fontSize: isMobile ? '12px' : '13px'
                                 }}
                             >
                                 {tag}
@@ -203,39 +205,66 @@ const ChallengeControls: React.FC<ChallengeControlsProps> = ({
     );
     
     return (
-        <Space split={<Divider type="vertical" />} style={{ marginBottom: 20 }}>
+        <Space 
+            split={isMobile ? null : <Divider type="vertical" />} 
+            style={{ marginBottom: isMobile ? 12 : 20 }}
+            direction={isMobile ? "vertical" : "horizontal"}
+            size={isMobile ? 8 : "middle"}
+            wrap={!isMobile}
+        >
             {/* 标签过滤 */}
             <Dropdown overlay={tagMenu} trigger={['click']}>
-                <Button icon={<TagOutlined />}>
+                <Button 
+                    icon={<TagOutlined />}
+                    size={isMobile ? "middle" : "default"}
+                    style={{ width: isMobile ? '100%' : 'auto', justifyContent: 'space-between', display: 'flex', alignItems: 'center' }}
+                >
                     {t('challenges.filters.tags')} {selectedTags.length > 0 && `(${selectedTags.length})`} <DownOutlined />
                 </Button>
             </Dropdown>
             
             {/* 难度过滤 */}
             <Dropdown overlay={difficultyMenu} trigger={['click']}>
-                <Button icon={<FilterOutlined />}>
+                <Button 
+                    icon={<FilterOutlined />}
+                    size={isMobile ? "middle" : "default"}
+                    style={{ width: isMobile ? '100%' : 'auto', justifyContent: 'space-between', display: 'flex', alignItems: 'center' }}
+                >
                     {t('challenges.filters.difficulty')} <DownOutlined />
                 </Button>
             </Dropdown>
             
             {/* 平台过滤 */}
             <Dropdown overlay={platformMenu} trigger={['click']}>
-                <Button icon={<FilterOutlined />}>
+                <Button 
+                    icon={<FilterOutlined />}
+                    size={isMobile ? "middle" : "default"}
+                    style={{ width: isMobile ? '100%' : 'auto', justifyContent: 'space-between', display: 'flex', alignItems: 'center' }}
+                >
                     {t('challenges.controls.platform')} <DownOutlined />
                 </Button>
             </Dropdown>
             
             {/* 排序控制 - 移到最后 */}
-            <Space>
+            <Space style={{ width: isMobile ? '100%' : 'auto' }}>
                 <Dropdown overlay={sortMenu} trigger={['click']}>
-                    <Button>
-                        {t('challenges.controls.sortBy')}: {t(`challenges.sort.${sortBy}`)} <DownOutlined />
+                    <Button
+                        size={isMobile ? "middle" : "default"}
+                        style={{ 
+                            width: isMobile ? 'calc(100% - 32px)' : 'auto', 
+                            justifyContent: 'space-between', 
+                            display: 'flex', 
+                            alignItems: 'center'
+                        }}
+                    >
+                        {isMobile ? t(`challenges.sort.${sortBy}`) : `${t('challenges.controls.sortBy')}: ${t(`challenges.sort.${sortBy}`)}`} <DownOutlined />
                     </Button>
                 </Dropdown>
                 <Button 
                     icon={sortOrder === 'asc' ? <SortAscendingOutlined /> : <SortDescendingOutlined />}
                     onClick={onSortOrderChange}
                     title={sortOrder === 'asc' ? t('challenges.controls.ascending') : t('challenges.controls.descending')}
+                    size={isMobile ? "middle" : "default"}
                 />
             </Space>
         </Space>

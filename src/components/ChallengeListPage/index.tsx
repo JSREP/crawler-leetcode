@@ -1,13 +1,15 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import { Space } from 'antd';
+import { Space, Row, Col, Drawer, Button } from 'antd';
+import { FilterOutlined } from '@ant-design/icons';
 import { Challenge } from '../../types/challenge';
 import { challenges } from './ChallengeData';
 import ChallengeFilters from './ChallengeFilters';
 import ChallengeControls from './ChallengeControls';
 import SimpleChallengeList from './SimpleChallengeList';
 import { searchService } from '../../services/SearchService';
+import { useMediaQuery } from 'react-responsive';
 
 // 本地存储键
 const FILTER_STORAGE_KEY = 'challenge-filter-preferences';
@@ -19,6 +21,7 @@ const SORT_STORAGE_KEY = 'challenge-sort-preferences';
  */
 const ChallengeListPage = () => {
     const { t } = useTranslation();
+    const isMobile = useMediaQuery({ maxWidth: 768 });
     const [filters, setFilters] = useState({
         difficulty: 'all',
         tags: [] as string[],
@@ -27,9 +30,15 @@ const ChallengeListPage = () => {
     const [sortBy, setSortBy] = useState('updateTime');
     const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc');
     const [searchQuery, setSearchQuery] = useState('');
-    const [pagination, setPagination] = useState({ current: 1, pageSize: 10 });
+    const [pagination, setPagination] = useState({ current: 1, pageSize: isMobile ? 5 : 10 });
+    const [drawerVisible, setDrawerVisible] = useState(false);
     const navigate = useNavigate();
     const [searchParams, setSearchParams] = useSearchParams();
+
+    // 调整页面大小响应窗口变化
+    useEffect(() => {
+        setPagination(prev => ({ ...prev, pageSize: isMobile ? 5 : 10 }));
+    }, [isMobile]);
 
     // 过滤掉被标记为忽略的挑战
     const visibleChallenges = useMemo(() => {
@@ -161,6 +170,16 @@ const ChallengeListPage = () => {
         saveSortPreferences(sortBy, newSortOrder);
     };
 
+    // 显示过滤器抽屉（移动端）
+    const showDrawer = () => {
+        setDrawerVisible(true);
+    };
+
+    // 关闭过滤器抽屉（移动端）
+    const closeDrawer = () => {
+        setDrawerVisible(false);
+    };
+
     // 从URL同步过滤器状态
     useEffect(() => {
         const tags = searchParams.getAll('tags');
@@ -251,85 +270,136 @@ const ChallengeListPage = () => {
             newFilters = { ...newFilters, platform: 'all' };
         }
 
-        navigate(`/challenges?${newSearchParams.toString()}`);
+        setSearchParams(newSearchParams);
         saveFilterPreferences(newFilters);
     };
 
-    // 清空所有过滤器
+    // 清除所有过滤器
     const handleClearAllFilters = () => {
-        const newSearchParams = new URLSearchParams(searchParams);
-        newSearchParams.delete('tags');
-        newSearchParams.delete('difficulty');
-        newSearchParams.delete('platform');
-        navigate(`/challenges?${newSearchParams.toString()}`);
-        
-        // 清空筛选器本地存储或重置为默认值
-        const defaultFilters = { tags: [], difficulty: 'all', platform: 'all' };
-        saveFilterPreferences(defaultFilters);
+        const newSearchParams = new URLSearchParams();
+        setSearchParams(newSearchParams);
+        const newFilters = { tags: [], difficulty: 'all', platform: 'all' };
+        setFilters(newFilters);
+        saveFilterPreferences(newFilters);
     };
 
-    // 多标签选择变更
+    // 处理标签变更 (从标签下拉菜单)
     const handleTagsChange = (tags: string[]) => {
         const newSearchParams = new URLSearchParams(searchParams);
         newSearchParams.delete('tags');
         tags.forEach(tag => newSearchParams.append('tags', tag));
-        navigate(`/challenges?${newSearchParams.toString()}`);
-        
-        // 保存筛选设置到本地存储
+        setSearchParams(newSearchParams);
         saveFilterPreferences({ ...filters, tags });
     };
 
+    // 获取应用的过滤器数量
+    const getAppliedFiltersCount = () => {
+        let count = 0;
+        if (filters.difficulty !== 'all') count++;
+        if (filters.platform !== 'all') count++;
+        count += filters.tags.length;
+        return count;
+    };
+
+    // 渲染控制面板（桌面或移动）
+    const renderControls = () => (
+        <ChallengeControls
+            allTags={allTags}
+            allPlatforms={allPlatforms}
+            selectedTags={filters.tags}
+            selectedDifficulty={filters.difficulty}
+            selectedPlatform={filters.platform}
+            sortBy={sortBy}
+            sortOrder={sortOrder}
+            onTagsChange={handleTagsChange}
+            onDifficultyChange={handleDifficultyClick}
+            onPlatformChange={handlePlatformChange}
+            onSortByChange={handleSortByChange}
+            onSortOrderChange={handleSortOrderChange}
+        />
+    );
+
+    // 渲染过滤器（适用于桌面和移动视图）
+    const renderFilters = () => (
+        <ChallengeFilters
+            selectedTags={filters.tags}
+            selectedDifficulty={filters.difficulty}
+            selectedPlatform={filters.platform}
+            hasFilters={filters.tags.length > 0 || filters.difficulty !== 'all' || filters.platform !== 'all'}
+            onRemoveTag={(tag) => handleFilterRemove('tag', tag)}
+            onRemoveDifficulty={() => handleFilterRemove('difficulty')}
+            onRemovePlatform={() => handleFilterRemove('platform')}
+            onClearAll={handleClearAllFilters}
+            onSearch={handleSearch}
+            searchValue={searchQuery}
+        />
+    );
+
     return (
-        <div className="ChallengeListPage" style={{
-            padding: '24px 0', // 移除左右内边距，只保留上下内边距
-            maxWidth: '1000px', // 调整为与详情页相同的宽度
-            margin: '0 auto',
-            transition: 'all 0.3s ease'
-        }}>
-            <Space direction="vertical" style={{ width: '100%' }}>
-                {/* 已应用的过滤器标签 */}
-                <ChallengeFilters
-                    selectedTags={filters.tags}
-                    selectedDifficulty={filters.difficulty}
-                    selectedPlatform={filters.platform}
-                    hasFilters={filters.tags.length > 0 || filters.difficulty !== 'all' || filters.platform !== 'all'}
-                    onRemoveTag={(tag) => handleFilterRemove('tag', tag)}
-                    onRemoveDifficulty={() => handleFilterRemove('difficulty')}
-                    onRemovePlatform={() => handleFilterRemove('platform')}
-                    onClearAll={handleClearAllFilters}
-                    onSearch={handleSearch}
-                    searchValue={searchQuery}
-                />
+        <div className="challenge-list-page" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 16px' }}>
+            <Row gutter={[16, 16]}>
+                <Col span={24}>
+                    <h1 style={{ fontSize: isMobile ? '1.5rem' : '2rem', marginBottom: '1rem' }}>
+                        {t('challenges.title')}
+                    </h1>
+                    
+                    {/* 移动端搜索和过滤器 */}
+                    {isMobile ? (
+                        <Row gutter={[16, 16]} style={{ marginBottom: '1rem' }}>
+                            <Col span={24}>
+                                {renderFilters()}
+                            </Col>
+                            <Col span={24} style={{ display: 'flex', justifyContent: 'space-between' }}>
+                                <Button 
+                                    type="primary" 
+                                    icon={<FilterOutlined />} 
+                                    onClick={showDrawer}
+                                    style={{ display: 'flex', alignItems: 'center' }}
+                                >
+                                    {t('challenges.controls.filter')}
+                                    {getAppliedFiltersCount() > 0 && ` (${getAppliedFiltersCount()})`}
+                                </Button>
+                            </Col>
+                        </Row>
+                    ) : (
+                        <>
+                            {renderFilters()}
+                            {renderControls()}
+                        </>
+                    )}
+                    
+                    {/* 挑战列表 */}
+                    <SimpleChallengeList
+                        challenges={paginatedData}
+                        selectedTags={filters.tags}
+                        pagination={pagination}
+                        total={filteredChallenges.length}
+                        onPaginationChange={handlePaginationChange}
+                        onTagClick={handleTagClick}
+                        onDifficultyClick={(difficulty) => handleDifficultyClick(difficulty.toString())}
+                        onPlatformClick={handlePlatformChange}
+                        onChallengeClick={(id) => navigate(`/challenge/${id}`)}
+                        hidePagination={false}
+                    />
+                </Col>
+            </Row>
 
-                {/* 搜索和控制项 */}
-                <ChallengeControls
-                    allTags={allTags}
-                    allPlatforms={allPlatforms}
-                    selectedTags={filters.tags}
-                    selectedDifficulty={filters.difficulty}
-                    selectedPlatform={filters.platform}
-                    sortBy={sortBy}
-                    sortOrder={sortOrder}
-                    onTagsChange={handleTagsChange}
-                    onDifficultyChange={handleDifficultyClick}
-                    onPlatformChange={handlePlatformChange}
-                    onSortByChange={handleSortByChange}
-                    onSortOrderChange={handleSortOrderChange}
-                />
-
-                {/* 挑战列表和分页 */}
-                <SimpleChallengeList 
-                    challenges={paginatedData}
-                    selectedTags={filters.tags}
-                    pagination={pagination}
-                    onPaginationChange={handlePaginationChange}
-                    onTagClick={handleTagClick}
-                    onDifficultyClick={handleDifficultyClick}
-                    onPlatformClick={handlePlatformChange}
-                    onChallengeClick={(id) => navigate(`/challenge/${id}`)}
-                    total={filteredChallenges.length}
-                />
-            </Space>
+            {/* 移动端过滤抽屉 */}
+            {isMobile && (
+                <Drawer
+                    title={t('challenges.controls.filterAndSort')}
+                    placement="right"
+                    closable={true}
+                    onClose={closeDrawer}
+                    open={drawerVisible}
+                    width={300}
+                    bodyStyle={{ padding: '12px' }}
+                >
+                    <Space direction="vertical" style={{ width: '100%' }}>
+                        {renderControls()}
+                    </Space>
+                </Drawer>
+            )}
         </div>
     );
 };
