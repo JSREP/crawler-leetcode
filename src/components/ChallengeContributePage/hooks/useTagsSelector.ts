@@ -201,20 +201,30 @@ export const useTagsSelector = ({
       return [];
     }
 
-    // 强制按频率排序，忽略 alwaysUseSortByFrequency 的值
-    // 如果有传入标签频率数据，直接使用
-    if (tagsFrequency && tagsFrequency.length > 0) {
-      console.log('使用标签频率排序:', tagsFrequency.slice(0, 5).map(t => `${t.tag}(${t.count})`));
-      const result = tagsFrequency.map(({ tag }) => ({ value: tag }));
-      return result;
+    console.log('是否总是按频率排序:', alwaysUseSortByFrequency);
+
+    // 总是按频率排序或第一次聚焦时按频率排序
+    if (alwaysUseSortByFrequency) {
+      // 如果有传入标签频率数据，直接使用
+      if (tagsFrequency && tagsFrequency.length > 0) {
+        console.log('使用标签频率排序:', tagsFrequency.slice(0, 5).map(t => `${t.tag}(${t.count})`));
+        const result = tagsFrequency.map(({ tag }) => ({ value: tag }));
+        return result;
+      } else {
+        // 没有频率数据，按字母顺序排序
+        console.log('没有频率数据，使用字母排序');
+        return [...existingTags]
+          .sort((a, b) => a.localeCompare(b))
+          .map(tag => ({ value: tag }));
+      }
     } else {
-      // 没有频率数据，按字母顺序排序
-      console.log('没有频率数据，使用字母排序');
+      // 按字母顺序排序
+      console.log('已聚焦过且非强制频率排序模式，使用字母排序');
       return [...existingTags]
         .sort((a, b) => a.localeCompare(b))
         .map(tag => ({ value: tag }));
     }
-  }, [existingTags, tagsFrequency]);
+  }, [existingTags, alwaysUseSortByFrequency, tagsFrequency]);
 
   // 存储排序后的标签，避免重复计算
   const sortedTagsOptions = useMemo(() => {
