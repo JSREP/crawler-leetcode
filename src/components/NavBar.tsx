@@ -6,6 +6,7 @@ import { PlusOutlined, MenuOutlined } from '@ant-design/icons';
 import { useTranslation } from 'react-i18next';
 import { changeLanguage } from '../i18n';
 import { useMediaQuery } from 'react-responsive';
+import GitHubStarCounter from './GitHubStarCounter';
 // @ts-ignore
 import faviconLogo from '../assets/favicon.png';
 // @ts-ignore
@@ -194,6 +195,9 @@ const NavBar = () => {
                                     <Option value="zh">简体中文</Option>
                                     <Option value="en">English</Option>
                                 </Select>
+
+                                {/* GitHub Star计数 */}
+                                <GitHubStarCounter owner="JSREP" repo="crawler-leetcode" />
                             </div>
                         </Col>
                     )}
@@ -235,6 +239,11 @@ const NavBar = () => {
                             <Option value="zh">简体中文</Option>
                             <Option value="en">English</Option>
                         </Select>
+                    </div>
+
+                    {/* 移动端GitHub Star计数 */}
+                    <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 16 }}>
+                        <GitHubStarCounter owner="JSREP" repo="crawler-leetcode" />
                     </div>
                 </div>
             </Drawer>

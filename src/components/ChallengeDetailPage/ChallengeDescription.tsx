@@ -25,7 +25,7 @@ const MarkdownImage = (props: any) => {
     // 使用传入的src或回退到默认图片
     const imageSrc = src || FALLBACK_IMAGE;
     
-    // 使用Ant Design的Image组件，支持点击预览
+    // 使用Ant Design的Image组件，支持点击预览但无蒙版和提示文本
     return (
         <Image
             src={imageSrc}
@@ -37,14 +37,8 @@ const MarkdownImage = (props: any) => {
                 display: 'block',
             }}
             preview={{
-                mask: <div className="image-preview-mask">点击查看大图</div>,
-                maskClassName: "image-preview-mask",
-                rootClassName: "custom-image-preview",
-                toolbarRender: () => (
-                    <div className="image-preview-tip">
-                        点击图片外区域关闭 | 滚轮缩放 | 左键拖动
-                    </div>
-                )
+                mask: false,
+                rootClassName: "custom-image-preview"
             }}
             fallback={FALLBACK_IMAGE}
         />
@@ -246,13 +240,8 @@ const ChallengeDescription: React.FC<ChallengeDescriptionProps> = ({ challenge, 
                                         display: 'block'
                                     }}
                                     preview={{
-                                        mask: '点击查看大图',
-                                        maskClassName: 'image-preview-mask',
-                                        toolbarRender: () => (
-                                            <div className="image-preview-tip">
-                                                点击图片外区域关闭 | 滚轮缩放 | 左键拖动
-                                            </div>
-                                        ),
+                                        mask: false,
+                                        rootClassName: "custom-image-preview"
                                     }}
                                     fallback={FALLBACK_IMAGE}
                                 />
@@ -289,14 +278,8 @@ const ChallengeDescription: React.FC<ChallengeDescriptionProps> = ({ challenge, 
                                     display: 'block'
                                 }}
                                 preview={{
-                                    mask: <div className="image-preview-mask">点击查看大图</div>,
-                                    maskClassName: "image-preview-mask",
-                                    rootClassName: "custom-image-preview",
-                                    toolbarRender: () => (
-                                        <div className="image-preview-tip">
-                                            点击图片外区域关闭 | 滚轮缩放 | 左键拖动
-                                        </div>
-                                    )
+                                    mask: false,
+                                    rootClassName: "custom-image-preview"
                                 }}
                                 fallback={FALLBACK_IMAGE}
                             />
