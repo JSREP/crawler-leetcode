@@ -215,6 +215,8 @@ const SolutionsSection: React.FC<SolutionsSectionProps> = memo(({ form, onChange
         rules={[solutionsValidator]}
         validateTrigger={['onChange', 'onBlur']}
         style={{ marginBottom: 0 }}
+        extra="参考资料为可选项，无需强制填写"
+        required={false}
       >
         <div style={{ display: 'none' }}></div>
       </Form.Item>

@@ -42,7 +42,7 @@ const zhTranslations = {
                     content: '按照爬虫技术、目标网站和难度等多维度分类，快速定位学习重点'
                 },
                 {
-                    title: '解决方案',
+                    title: '参考资料',
                     content: '查看详细的爬虫实现思路、代码示例和常见反爬绕过技巧'
                 }
             ]
@@ -154,14 +154,15 @@ const zhTranslations = {
             originalLink: '原始链接',
             startChallenge: '去试试',
             startChallengeShort: '试试',
-            viewSolution: '查看解决方案',
+            viewSolution: '查看参考资料',
             tags: '标签',
             description: '问题描述',
-            solutions: '参考解答',
-            viewSolutionLink: '查看解答',
-            noSolutions: '暂无解决方案',
-            contributeSolution: '贡献你的解决方案',
-            contributeTip: '欢迎分享你的解决方案，帮助更多的人！',
+            solutions: '参考资料',
+            viewSolutionLink: '查看资料',
+            noSolutions: '暂无参考资料',
+            contributeSolution: '贡献你的参考资料',
+            contributeTip: '欢迎分享你的参考资料，帮助更多的人！',
+            referencesExplanation: '参考资料为外部链接，包括教程、技术文章和代码示例等，提供学习和参考用途，不提供直接的破解方案。',
             source: '来源',
             author: '作者',
             correction: '纠错',

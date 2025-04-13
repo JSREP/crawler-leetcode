@@ -175,7 +175,7 @@ const ChallengeDescription: React.FC<ChallengeDescriptionProps> = ({ challenge, 
             }
         }
         
-        // 最终解决方案：直接提取并创建图片元素
+        // 最终处理方案：直接提取并创建图片元素
         if (!extractedImageUrl && challenge.descriptionMarkdown) {
             // 从截图看，图片的base64数据被错误地当作文本显示
             // 直接使用这些文本内容作为图片源

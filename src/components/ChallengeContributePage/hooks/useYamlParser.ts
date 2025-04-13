@@ -19,8 +19,10 @@ export const useYamlParser = () => {
     values: ChallengeFormData, 
     currentDateTime: string
   ): string => {
-    if (!values.rawYaml) {
-      return '';
+    // 添加类型检查，确保rawYaml是字符串
+    if (!values.rawYaml || typeof values.rawYaml !== 'string') {
+      console.error('rawYaml不是有效的字符串:', values.rawYaml);
+      throw new Error('YAML更新失败: 原始YAML数据不是有效的字符串');
     }
     
     // 所需替换的字段和值的映射
@@ -178,6 +180,49 @@ export const useYamlParser = () => {
     let hasBase64UrlField = false;
     let base64UrlLineIndex = -1;
     
+    // 处理复杂字段: description-markdown 和 description-markdown_en
+    if (fieldRanges['description-markdown']) {
+      updateDescriptionMarkdown(
+        lines, 
+        modifiedLines, 
+        fieldRanges, 
+        'description-markdown', 
+        fieldValueMap['description-markdown'] as string
+      );
+    }
+    
+    if (fieldRanges['description-markdown_en']) {
+      updateDescriptionMarkdown(
+        lines, 
+        modifiedLines, 
+        fieldRanges, 
+        'description-markdown_en', 
+        fieldValueMap['description-markdown_en'] as string
+      );
+    }
+    
+    // 处理tags数组字段
+    if (fieldRanges['tags']) {
+      updateArrayField(
+        lines,
+        modifiedLines,
+        fieldRanges,
+        'tags',
+        fieldValueMap['tags'] as string[]
+      );
+    }
+    
+    // 处理solutions数组字段
+    if (fieldRanges['solutions']) {
+      updateArrayField(
+        lines,
+        modifiedLines,
+        fieldRanges,
+        'solutions',
+        fieldValueMap['solutions'] as any[]
+      );
+    }
+    
     // 使用更严格的正则表达式检查base64-url字段
     for (let i = 0; i < modifiedLines.length; i++) {
       // 使用正则表达式查找格式为"base64-url:"的字段（可能有空格）
@@ -269,6 +314,169 @@ export const useYamlParser = () => {
     
     // 合并所有行并返回
     return modifiedLines.join('\n');
+  };
+
+  /**
+   * 处理description-markdown字段的更新
+   * 由于这是一个可能包含多行内容的字段，需要特殊处理
+   */
+  const updateDescriptionMarkdown = (
+    lines: string[], 
+    modifiedLines: string[], 
+    fieldRanges: Record<string, FieldRange>,
+    fieldName: string, 
+    value: string
+  ): void => {
+    // 如果字段不存在，不做处理（会在生成默认YAML时添加）
+    if (!fieldRanges[fieldName]) {
+      console.log(`${fieldName}字段不存在，无法更新`);
+      return;
+    }
+
+    const range = fieldRanges[fieldName];
+    // 获取字段行
+    const fieldLine = lines[range.start];
+    const fieldIndentMatch = fieldLine.match(/^(\s*)/);
+    const fieldIndent = fieldIndentMatch ? fieldIndentMatch[1] : '';
+
+    // 检查当前格式是否使用了多行语法(|)
+    const isMultiline = fieldLine.trim().endsWith('|');
+    
+    // 处理字段值
+    if (value && value.includes('\n')) {
+      // 多行内容处理
+      console.log(`${fieldName}包含多行内容，使用多行语法`);
+      
+      // 如果当前不是多行格式，先转换为多行格式
+      if (!isMultiline) {
+        modifiedLines[range.start] = `${fieldIndent}${fieldName}: |`;
+      }
+      
+      // 计算内容缩进（应该比字段缩进多2或4个空格）
+      const contentIndent = fieldIndent + '  '; 
+      
+      // 格式化多行内容，确保每行都有正确缩进
+      const formattedContent = value.split('\n')
+        .map(line => `${contentIndent}${line}`)
+        .join('\n');
+      
+      // 替换范围内的所有行
+      // 先删除范围内的所有行（从start+1到end）
+      if (range.end > range.start) {
+        modifiedLines.splice(range.start + 1, range.end - range.start);
+      }
+      
+      // 在字段行之后插入格式化的内容
+      modifiedLines.splice(range.start + 1, 0, formattedContent);
+    } else {
+      // 单行内容，直接替换第一行的值部分
+      if (isMultiline) {
+        // 如果之前是多行但现在是单行，转换格式
+        modifiedLines[range.start] = `${fieldIndent}${fieldName}: ${value || ''}`;
+        
+        // 删除后续的多行内容
+        if (range.end > range.start) {
+          modifiedLines.splice(range.start + 1, range.end - range.start);
+        }
+      } else if (range.valueStart >= 0) {
+        // 如果之前就是单行，只替换值的部分
+        const line = lines[range.start];
+        modifiedLines[range.start] = line.substring(0, range.valueStart) + (value || '') + line.substring(range.valueEnd);
+      } else {
+        // 值位置无法确定，整行替换
+        modifiedLines[range.start] = `${fieldIndent}${fieldName}: ${value || ''}`;
+      }
+    }
+    
+    console.log(`已更新${fieldName}字段`);
+  };
+
+  /**
+   * 处理数组类型字段的更新，如tags和solutions
+   */
+  const updateArrayField = (
+    lines: string[],
+    modifiedLines: string[],
+    fieldRanges: Record<string, FieldRange>,
+    fieldName: string,
+    values: any[]
+  ): void => {
+    // 如果字段不存在，不做处理
+    if (!fieldRanges[fieldName]) {
+      console.log(`${fieldName}字段不存在，无法更新`);
+      return;
+    }
+
+    const range = fieldRanges[fieldName];
+    // 获取字段行缩进
+    const fieldLine = lines[range.start];
+    const fieldIndentMatch = fieldLine.match(/^(\s*)/);
+    const fieldIndent = fieldIndentMatch ? fieldIndentMatch[1] : '';
+    // 计算列表项缩进（通常比字段缩进多2个空格）
+    const itemIndent = fieldIndent + '  ';
+
+    // 如果数组为空，生成空数组表示
+    if (!values || values.length === 0) {
+      modifiedLines[range.start] = `${fieldIndent}${fieldName}: []`;
+      
+      // 删除原来的数组项
+      if (range.end > range.start) {
+        modifiedLines.splice(range.start + 1, range.end - range.start);
+      }
+      
+      console.log(`已更新${fieldName}为空数组`);
+      return;
+    }
+
+    // 对于非空数组，先保留字段行，然后重新生成所有数组项
+    modifiedLines[range.start] = `${fieldIndent}${fieldName}:`;
+    
+    // 删除原来的数组项
+    if (range.end > range.start) {
+      modifiedLines.splice(range.start + 1, range.end - range.start);
+    }
+
+    // 根据不同字段类型格式化数组项
+    if (fieldName === 'tags') {
+      // tags是简单字符串数组
+      const formattedItems = (values as string[]).map(tag => 
+        `${itemIndent}- ${tag}`
+      );
+      
+      // 在字段行后插入格式化的数组项
+      modifiedLines.splice(range.start + 1, 0, ...formattedItems);
+    } else if (fieldName === 'solutions') {
+      // solutions是对象数组，每个对象有多个属性
+      const formattedItems: string[] = [];
+      
+      (values as any[]).forEach(solution => {
+        // 每个solution项先添加破折号
+        formattedItems.push(`${itemIndent}-`);
+        
+        // 添加必要字段
+        if (solution.title) {
+          formattedItems.push(`${itemIndent}  title: ${formatYamlValue(solution.title)}`);
+        }
+        
+        if (solution.url) {
+          formattedItems.push(`${itemIndent}  url: ${formatYamlValue(solution.url)}`);
+        }
+        
+        // 添加可选字段
+        if (solution.source) {
+          formattedItems.push(`${itemIndent}  source: ${formatYamlValue(solution.source)}`);
+        }
+        
+        if (solution.author) {
+          formattedItems.push(`${itemIndent}  author: ${formatYamlValue(solution.author)}`);
+        }
+      });
+      
+      // 在字段行后插入格式化的对象数组
+      modifiedLines.splice(range.start + 1, 0, ...formattedItems);
+    }
+    
+    console.log(`已更新${fieldName}字段，包含${values.length}个项目`);
   };
 
   /**

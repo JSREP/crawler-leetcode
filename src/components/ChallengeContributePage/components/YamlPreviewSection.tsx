@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button, Space, message, Typography, Input, Alert, Modal, Card, Divider, Tooltip } from 'antd';
-import { CopyOutlined, FileTextOutlined, DownloadOutlined, CheckOutlined, InfoCircleOutlined } from '@ant-design/icons';
+import { CopyOutlined, FileTextOutlined, DownloadOutlined, CheckOutlined, InfoCircleOutlined, ReloadOutlined } from '@ant-design/icons';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { tomorrow } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { styles } from '../styles';
@@ -18,6 +18,9 @@ interface YamlPreviewSectionProps {
  * YAML预览内容组件
  */
 const YamlPreviewContent: React.FC<{ yamlOutput: string }> = ({ yamlOutput }) => {
+  // 添加调试输出
+  console.log('YamlPreviewContent 渲染，YAML长度:', yamlOutput?.length || 0);
+  
   if (!yamlOutput) {
     return (
       <Alert
@@ -51,59 +54,6 @@ const YamlPreviewContent: React.FC<{ yamlOutput: string }> = ({ yamlOutput }) =>
 };
 
 /**
- * YAML操作按钮组件
- */
-const YamlActionButtons: React.FC<{ 
-  yamlOutput: string; 
-  onCopyYaml: () => void; 
-  onDownloadYaml: () => void; 
-}> = ({
-  yamlOutput,
-  onCopyYaml,
-  onDownloadYaml
-}) => {
-  // 处理点击复制按钮
-  const handleCopyClick = () => {
-    if (!yamlOutput) {
-      message.warning('请先生成YAML', 2);
-      return;
-    }
-    onCopyYaml();
-  };
-
-  // 处理点击下载按钮
-  const handleDownloadClick = () => {
-    if (!yamlOutput) {
-      message.warning('请先生成YAML', 2);
-      return;
-    }
-    onDownloadYaml();
-  };
-
-  return (
-    <>
-      <Tooltip title="复制YAML内容到剪贴板">
-        <Button
-          icon={<CopyOutlined />}
-          onClick={handleCopyClick}
-        >
-          复制YAML
-        </Button>
-      </Tooltip>
-      
-      <Tooltip title="将YAML内容下载为文件">
-        <Button
-          icon={<DownloadOutlined />}
-          onClick={handleDownloadClick}
-        >
-          下载YAML
-        </Button>
-      </Tooltip>
-    </>
-  );
-};
-
-/**
  * YAML预览和操作区域
  */
 const YamlPreviewSection: React.FC<YamlPreviewSectionProps> = ({
@@ -115,10 +65,17 @@ const YamlPreviewSection: React.FC<YamlPreviewSectionProps> = ({
   const [downloadFileName, setDownloadFileName] = useState<string>('challenge.yaml');
   const [showDownloadModal, setShowDownloadModal] = useState<boolean>(false);
   const [isCopied, setIsCopied] = useState<boolean>(false);
+  const [displayYaml, setDisplayYaml] = useState<string>('');
+  
+  // 监听yamlOutput变化
+  useEffect(() => {
+    console.log('YamlPreviewSection 接收到 yamlOutput 更新，长度:', yamlOutput?.length || 0);
+    setDisplayYaml(yamlOutput);
+  }, [yamlOutput]);
 
   // 处理YAML下载
   const handleDownloadYaml = () => {
-    if (!yamlOutput) {
+    if (!displayYaml) {
       message.warning('请先生成YAML', 2);
       return;
     }
@@ -127,7 +84,7 @@ const YamlPreviewSection: React.FC<YamlPreviewSectionProps> = ({
 
   // 增强复制功能
   const handleEnhancedCopy = () => {
-    if (!yamlOutput) {
+    if (!displayYaml) {
       message.warning('请先生成YAML', 2);
       return;
     }
@@ -143,10 +100,10 @@ const YamlPreviewSection: React.FC<YamlPreviewSectionProps> = ({
 
   // 确认下载
   const confirmDownload = () => {
-    if (!yamlOutput) return;
+    if (!displayYaml) return;
     
     const element = document.createElement('a');
-    const file = new Blob([yamlOutput], { type: 'text/yaml' });
+    const file = new Blob([displayYaml], { type: 'text/yaml' });
     element.href = URL.createObjectURL(file);
     element.download = downloadFileName;
     document.body.appendChild(element);
@@ -156,14 +113,25 @@ const YamlPreviewSection: React.FC<YamlPreviewSectionProps> = ({
     setShowDownloadModal(false);
     message.success(`已下载 ${downloadFileName}`, 2);
   };
+  
+  // 处理刷新YAML
+  const handleRefreshYaml = () => {
+    console.log('手动刷新YAML');
+    onGenerateYaml();
+  };
 
   return (
-    <div style={{ marginTop: 20, marginBottom: 40 }}>
+    <div style={{ marginTop: 20, marginBottom: 40 }} className="yaml-preview-section" id="yaml-preview-section">
       <Card
         title={
           <div style={{ display: 'flex', alignItems: 'center' }}>
             <FileTextOutlined style={{ marginRight: 8 }} />
             <span>YAML预览</span>
+            {displayYaml ? (
+              <Text type="secondary" style={{ marginLeft: 8, fontSize: '12px' }}>
+                (内容长度: {displayYaml.length})
+              </Text>
+            ) : null}
           </div>
         }
         extra={
@@ -173,6 +141,7 @@ const YamlPreviewSection: React.FC<YamlPreviewSectionProps> = ({
               icon={isCopied ? <CheckOutlined /> : <CopyOutlined />}
               onClick={handleEnhancedCopy}
               style={{ backgroundColor: isCopied ? '#52c41a' : undefined }}
+              disabled={!displayYaml}
             >
               {isCopied ? '已复制' : '复制YAML'}
             </Button>
@@ -180,14 +149,15 @@ const YamlPreviewSection: React.FC<YamlPreviewSectionProps> = ({
             <Button
               icon={<DownloadOutlined />}
               onClick={handleDownloadYaml}
+              disabled={!displayYaml}
             >
               下载
             </Button>
             
             <Button
               type="primary"
-              icon={<FileTextOutlined />}
-              onClick={onGenerateYaml}
+              icon={<ReloadOutlined />}
+              onClick={handleRefreshYaml}
             >
               刷新YAML
             </Button>
@@ -208,7 +178,7 @@ const YamlPreviewSection: React.FC<YamlPreviewSectionProps> = ({
         />
 
         {/* YAML内容预览 */}
-        <YamlPreviewContent yamlOutput={yamlOutput} />
+        <YamlPreviewContent yamlOutput={displayYaml} />
         
         <Divider />
         
@@ -216,7 +186,8 @@ const YamlPreviewSection: React.FC<YamlPreviewSectionProps> = ({
           <Space>
             <Button 
               type="primary"
-              onClick={onGenerateYaml}
+              onClick={handleRefreshYaml}
+              icon={<ReloadOutlined />}
             >
               刷新YAML内容
             </Button>
@@ -249,7 +220,6 @@ const YamlPreviewSection: React.FC<YamlPreviewSectionProps> = ({
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => setDownloadFileName(e.target.value)}
           placeholder="challenge.yaml"
           suffix=".yaml"
-          addonBefore={<FileTextOutlined />}
         />
       </Modal>
     </div>

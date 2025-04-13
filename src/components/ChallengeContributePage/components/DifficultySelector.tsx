@@ -35,6 +35,9 @@ const DifficultySelector: React.FC<DifficultySelectorProps> = ({ form, value, on
     }
   };
 
+  // 空函数，只用于让星星显示为可点击状态
+  const handleStarClick = () => {};
+
   return (
     <Form.Item
       name="difficultyLevel"
@@ -52,31 +55,51 @@ const DifficultySelector: React.FC<DifficultySelectorProps> = ({ form, value, on
         <Option value={1}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
             <span>1 (初级)</span>
-            <StarRating difficulty={1} />
+            <StarRating 
+              difficulty={1} 
+              onClick={handleStarClick}
+              style={{ cursor: 'pointer' }}
+            />
           </div>
         </Option>
         <Option value={2}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
             <span>2 (简单)</span>
-            <StarRating difficulty={2} />
+            <StarRating 
+              difficulty={2} 
+              onClick={handleStarClick}
+              style={{ cursor: 'pointer' }}
+            />
           </div>
         </Option>
         <Option value={3}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
             <span>3 (中等)</span>
-            <StarRating difficulty={3} />
+            <StarRating 
+              difficulty={3} 
+              onClick={handleStarClick}
+              style={{ cursor: 'pointer' }}
+            />
           </div>
         </Option>
         <Option value={4}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
             <span>4 (困难)</span>
-            <StarRating difficulty={4} />
+            <StarRating 
+              difficulty={4} 
+              onClick={handleStarClick}
+              style={{ cursor: 'pointer' }}
+            />
           </div>
         </Option>
         <Option value={5}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
             <span>5 (专家)</span>
-            <StarRating difficulty={5} />
+            <StarRating 
+              difficulty={5} 
+              onClick={handleStarClick}
+              style={{ cursor: 'pointer' }}
+            />
           </div>
         </Option>
       </Select>

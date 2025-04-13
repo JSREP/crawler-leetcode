@@ -42,7 +42,7 @@ export default {
                     content: 'Find challenges organized by crawling technique, target website, and difficulty level'
                 },
                 {
-                    title: 'Solution Guidance',
+                    title: 'Reference Materials',
                     content: 'Access detailed implementation strategies, code examples, and anti-detection techniques'
                 }
             ]
@@ -154,14 +154,15 @@ export default {
             originalLink: 'Original Link',
             startChallenge: 'Try It',
             startChallengeShort: 'Try',
-            viewSolution: 'View Solution',
+            viewSolution: 'View References',
             tags: 'Tags',
             description: 'Problem Description',
-            solutions: 'Reference Solutions',
-            viewSolutionLink: 'View Solution',
-            noSolutions: 'No solution available',
-            contributeSolution: 'Contribute Your Solution',
-            contributeTip: 'Share your solution and help others!',
+            solutions: 'Reference Materials',
+            viewSolutionLink: 'View Material',
+            noSolutions: 'No reference materials available',
+            contributeSolution: 'Contribute Your Reference',
+            contributeTip: 'Share your reference materials and help others!',
+            referencesExplanation: 'Reference materials are external links to tutorials, articles, and code examples for learning purposes only, not direct cracking solutions.',
             source: 'Source',
             author: 'Author',
             correction: 'Correction',

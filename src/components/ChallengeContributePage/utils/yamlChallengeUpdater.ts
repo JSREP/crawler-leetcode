@@ -146,7 +146,7 @@ function generateUpdatedChallengeYaml(
       // 保留原始标签格式
       addFormattedArrayField(lines, indent, fieldName, fieldValue, originalText, 'tags');
     } else if (fieldName === 'solutions' && Array.isArray(fieldValue)) {
-      // 保留原始 solutions 格式
+      // 保留原始参考资料格式
       addFormattedArrayField(lines, indent, fieldName, fieldValue, originalText, 'solutions');
     } else {
       // 处理所有其他普通字段
@@ -276,7 +276,7 @@ function addFormattedArrayField(
       }
     });
   } else if (fieldType === 'solutions') {
-    // 复杂的解决方案对象数组
+    // 复杂的参考资料对象数组
     value.forEach(solution => {
       if (typeof solution === 'string') {
         // 如果是字符串，直接添加
