@@ -1,4 +1,4 @@
-import {HashRouter as Router, Route, Routes} from 'react-router-dom'
+import {HashRouter, BrowserRouter, Route, Routes} from 'react-router-dom'
 import './App.css'
 import NavBar from './components/NavBar'
 import HomePage from './components/HomePage'
@@ -10,6 +10,9 @@ import GitHubRibbon from './components/GitHubRibbon'
 import PageTitle from './components/PageTitle'
 import './gh-fork-ribbon.css';
 import './styles/github-ribbon-fix.css';
+
+// 根据环境选择路由器
+const Router = import.meta.env.VERCEL ? BrowserRouter : HashRouter;
 
 const App = () => {
     return (

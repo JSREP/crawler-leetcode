@@ -222,7 +222,7 @@ function challengesWatchPlugin(): Plugin {
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/crawler-leetcode/',
+  base: process.env.VERCEL ? '/' : '/crawler-leetcode/',
   plugins: [
     react(),
     virtualFileSystemPlugin({
