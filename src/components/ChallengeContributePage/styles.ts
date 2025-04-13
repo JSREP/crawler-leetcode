@@ -50,15 +50,25 @@ export const styles: Record<string, CSSProperties> = {
         color: '#666',
         marginBottom: 24
     },
-    // 步骤卡片
+    // 卡片样式
     stepCard: {
-        marginBottom: 20,
+        marginBottom: 24,
         boxShadow: '0 1px 5px rgba(0,0,0,0.05)',
         borderRadius: 8
     },
-    // 步骤导航
-    stepsNav: {
-        marginBottom: 24
+    // 卡片标题
+    cardTitle: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: 8,
+        marginBottom: 16
+    },
+    // 表单分组标题
+    sectionTitle: {
+        fontSize: 16,
+        fontWeight: 500,
+        marginBottom: 16,
+        color: '#1890ff'
     },
     // 底部固定按钮区
     footerButtons: {
@@ -67,18 +77,14 @@ export const styles: Record<string, CSSProperties> = {
         display: 'flex',
         justifyContent: 'space-between',
         backgroundColor: '#fff',
-        borderRadius: '0 0 8px 8px'
+        borderRadius: '0 0 8px 8px',
+        width: '100%',
+        maxWidth: 1000,
+        margin: '0 auto'
     },
     // 响应式设计 - 移动端适配
     mobileContainer: {
         padding: '16px 12px'
-    },
-    // 表单分组标题
-    sectionTitle: {
-        fontSize: 16,
-        fontWeight: 500,
-        marginBottom: 16,
-        color: '#1890ff'
     },
     // YAML预览区样式
     yamlPreview: {
@@ -96,5 +102,30 @@ export const styles: Record<string, CSSProperties> = {
     highlight: {
         color: '#1890ff',
         fontWeight: 500
+    },
+    // 分隔线样式
+    divider: {
+        margin: '32px 0'
+    },
+    // 表单区块容器
+    formSection: {
+        marginBottom: 40
+    },
+    // 表单区块内部内容
+    formSectionContent: {
+        padding: '0 16px'
+    },
+    // 表单底部区域
+    formBottom: {
+        marginTop: 40,
+        marginBottom: 80 // 给底部固定按钮留空间
+    },
+    // 进度指示器容器
+    progressContainer: {
+        marginBottom: 24,
+        padding: '12px 16px',
+        backgroundColor: '#f9f9f9',
+        borderRadius: '8px',
+        boxShadow: '0 1px 2px rgba(0,0,0,0.03)'
     }
 }; 
