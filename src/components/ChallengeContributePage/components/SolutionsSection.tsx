@@ -1,47 +1,29 @@
 import * as React from 'react';
-import { useState, useEffect } from 'react';
-import { Form, Input, Button, Divider, Space, AutoComplete, message } from 'antd';
-import { PlusOutlined, EditOutlined, DeleteOutlined } from '@ant-design/icons';
+import { useState, useEffect, useCallback, memo } from 'react';
+import { Form, Divider, message, Empty } from 'antd';
+import { DragDropContext, Droppable, Draggable, DropResult, DroppableProvided, DraggableProvided } from 'react-beautiful-dnd';
 import { Solution, SectionProps } from '../types';
+import { isValidUrl, getSourceFromUrl } from '../utils/urlUtils';
+import SolutionItem from './SolutionItem';
+import SolutionForm from './SolutionForm';
+import { solutionsValidator } from '../utils/validators';
 
-// URL校验正则表达式
-const URL_REGEX = /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([/\w .-]*)*\/?$/;
-
-// 定义常见来源的域名映射
-const SOURCE_MAPPING: Record<string, string> = {
-  'github.com': 'GitHub',
-  'mp.weixin.qq.com': '微信公众号',
-  'juejin.cn': '掘金',
-  'csdn.net': 'CSDN',
-  'zhihu.com': '知乎',
-  'segmentfault.com': 'SegmentFault',
-  'jianshu.com': '简书',
-  'leetcode.cn': 'LeetCode',
-  'leetcode.com': 'LeetCode',
-  'bilibili.com': 'B站',
-  'youtube.com': 'YouTube',
-  'blog.csdn.net': 'CSDN',
-  'medium.com': 'Medium',
-  'dev.to': 'Dev.to',
-  'stackoverflow.com': 'Stack Overflow'
+// 拖拽排序后的数组重排
+const reorder = (list: Solution[], startIndex: number, endIndex: number): Solution[] => {
+  const result = Array.from(list);
+  const [removed] = result.splice(startIndex, 1);
+  result.splice(endIndex, 0, removed);
+  return result;
 };
 
-/**
- * 验证URL是否合法
- */
-const isValidUrl = (url: string): boolean => {
-  try {
-    new URL(url);
-    return true;
-  } catch {
-    return false;
-  }
-};
+interface SolutionsSectionProps extends SectionProps {
+  onChange?: (solutions: Solution[]) => void;
+}
 
 /**
  * 参考资料部分组件
  */
-const SolutionsSection: React.FC<SectionProps> = ({ form }) => {
+const SolutionsSection: React.FC<SolutionsSectionProps> = memo(({ form, onChange }) => {
   const [solutions, setSolutions] = useState<Solution[]>([]);
   const [editingSolutionIndex, setEditingSolutionIndex] = useState<number | null>(null);
   const [authors, setAuthors] = useState<string[]>([]);
@@ -52,6 +34,31 @@ const SolutionsSection: React.FC<SectionProps> = ({ form }) => {
     source: '',
     author: ''
   });
+
+  // 包装onChange回调，确保稳定引用
+  const stableOnChange = useCallback((updatedSolutions: Solution[]) => {
+    if (onChange) {
+      onChange(updatedSolutions);
+    }
+  }, [onChange]);
+
+  // 触发表单更新事件 - 使用useCallback确保稳定引用
+  const triggerFormUpdate = useCallback((updatedSolutions: Solution[]) => {
+    // 更新表单字段
+    form.setFieldsValue({ solutions: updatedSolutions });
+    
+    // 主动触发表单验证，确保数据有效
+    form.validateFields(['solutions']).catch(() => {
+      // 忽略验证错误
+    }).then(() => {
+      // 使用自定义事件触发表单值更新
+      const updateEvent = new CustomEvent('form-value-updated');
+      window.dispatchEvent(updateEvent);
+      
+      // 使用稳定的onChange回调
+      stableOnChange(updatedSolutions);
+    });
+  }, [form, stableOnChange]);
 
   // 从所有参考资料中提取作者列表
   useEffect(() => {
@@ -73,42 +80,23 @@ const SolutionsSection: React.FC<SectionProps> = ({ form }) => {
   
   // 监听solutions-updated事件
   useEffect(() => {
-    const handleSolutionsUpdated = (event: any) => {
+    const handleSolutionsUpdated = (event: CustomEvent<{ solutions: Solution[] }>) => {
       if (event.detail && event.detail.solutions && Array.isArray(event.detail.solutions)) {
         setSolutions(event.detail.solutions);
+        
+        // 更新表单字段
+        form.setFieldsValue({ solutions: event.detail.solutions });
       }
     };
     
-    window.addEventListener('solutions-updated', handleSolutionsUpdated);
+    window.addEventListener('solutions-updated', handleSolutionsUpdated as EventListener);
     
     return () => {
-      window.removeEventListener('solutions-updated', handleSolutionsUpdated);
+      window.removeEventListener('solutions-updated', handleSolutionsUpdated as EventListener);
     };
-  }, []);
+  }, [form]);
 
-  // 根据URL自动判断来源
-  const getSourceFromUrl = (url: string): string => {
-    if (!isValidUrl(url)) return '';
-    
-    try {
-      const urlObj = new URL(url);
-      const domain = urlObj.hostname.toLowerCase();
-      
-      // 遍历SOURCE_MAPPING查找匹配的来源
-      for (const [key, value] of Object.entries(SOURCE_MAPPING)) {
-        if (domain.includes(key)) {
-          return value;
-        }
-      }
-      
-      // 如果没有匹配的预定义来源，返回域名的首字母大写形式
-      return domain.split('.')[0].charAt(0).toUpperCase() + domain.split('.')[0].slice(1);
-    } catch {
-      return '';
-    }
-  };
-
-  const handleSolutionChange = (field: keyof Solution, value: string) => {
+  const handleSolutionChange = useCallback((field: keyof Solution, value: string) => {
     setNewSolution(prev => {
       const updated = { ...prev, [field]: value };
       
@@ -127,39 +115,32 @@ const SolutionsSection: React.FC<SectionProps> = ({ form }) => {
       
       return updated;
     });
-  };
+  }, []);
 
-  const handleAddSolution = () => {
+  const handleAddSolution = useCallback(() => {
     // 验证必填字段
-    if (!newSolution.title) {
-      message.error('请输入参考资料标题');
+    if (!newSolution.title || !newSolution.url || !isValidUrl(newSolution.url)) {
       return;
     }
 
-    if (!newSolution.url) {
-      message.error('请输入参考资料链接');
-      return;
-    }
-
-    // 验证URL合法性
-    if (!isValidUrl(newSolution.url)) {
-      message.error('请输入有效的URL地址');
-      return;
-    }
-
+    let updatedSolutions: Solution[];
+    
     if (editingSolutionIndex !== null) {
       // 编辑现有参考资料
-      const updatedSolutions = [...solutions];
+      updatedSolutions = [...solutions];
       updatedSolutions[editingSolutionIndex] = newSolution;
       setSolutions(updatedSolutions);
       setEditingSolutionIndex(null);
-      form.setFieldsValue({ solutions: updatedSolutions });
+      message.success('参考资料已更新');
     } else {
       // 添加新参考资料
-      const updatedSolutions = [...solutions, newSolution];
+      updatedSolutions = [...solutions, newSolution];
       setSolutions(updatedSolutions);
-      form.setFieldsValue({ solutions: updatedSolutions });
+      message.success('参考资料已添加');
     }
+    
+    // 触发表单更新
+    triggerFormUpdate(updatedSolutions);
     
     // 重置表单
     setNewSolution({
@@ -169,169 +150,129 @@ const SolutionsSection: React.FC<SectionProps> = ({ form }) => {
       author: ''
     });
     setUrlError('');
-  };
+  }, [editingSolutionIndex, newSolution, solutions, triggerFormUpdate]);
 
-  const handleEditSolution = (index: number) => {
+  const handleEditSolution = useCallback((index: number) => {
     setNewSolution(solutions[index]);
     setEditingSolutionIndex(index);
     setUrlError('');
-  };
+  }, [solutions]);
 
-  const handleRemoveSolution = (index: number) => {
+  const handleRemoveSolution = useCallback((index: number) => {
     const updatedSolutions = [...solutions];
     updatedSolutions.splice(index, 1);
     setSolutions(updatedSolutions);
-    form.setFieldsValue({ solutions: updatedSolutions });
-  };
+    
+    // 触发表单更新
+    triggerFormUpdate(updatedSolutions);
+    message.success('参考资料已删除');
+  }, [solutions, triggerFormUpdate]);
 
-  const solutionContainerStyle = {
-    marginBottom: '16px',
-    padding: '8px',
-    border: '1px solid #f0f0f0',
-    borderRadius: '4px',
-  };
+  const handleCancelEditing = useCallback(() => {
+    setEditingSolutionIndex(null);
+    setNewSolution({
+      title: '',
+      url: '',
+      source: '',
+      author: ''
+    });
+    setUrlError('');
+  }, []);
+
+  // 处理拖拽结束事件
+  const handleDragEnd = useCallback((result: DropResult) => {
+    // 如果没有目标或拖拽取消，则不执行任何操作
+    if (!result.destination) {
+      return;
+    }
+
+    // 拖拽到了相同位置，不执行任何操作
+    if (result.destination.index === result.source.index) {
+      return;
+    }
+
+    // 重新排序参考资料
+    const updatedSolutions = reorder(
+      solutions,
+      result.source.index,
+      result.destination.index
+    );
+
+    // 更新状态
+    setSolutions(updatedSolutions);
+    
+    // 触发表单更新
+    triggerFormUpdate(updatedSolutions);
+    message.info('参考资料顺序已更新');
+  }, [solutions, triggerFormUpdate]);
 
   return (
     <>
       <Divider orientation="left">参考资料</Divider>
-      {solutions.map((solution, index) => (
-        <div key={index} style={solutionContainerStyle}>
-          <Space style={{ marginBottom: 8, width: '100%', justifyContent: 'space-between' }}>
-            <div>
-              <strong>标题:</strong> {solution.title}
-              {solution.source && <> | <strong>来源:</strong> {solution.source}</>}
-              {solution.author && <> | <strong>作者:</strong> {solution.author}</>}
-            </div>
-            <Space>
-              <Button icon={<EditOutlined />} size="small" onClick={() => handleEditSolution(index)}>
-                编辑
-              </Button>
-              <Button icon={<DeleteOutlined />} size="small" danger onClick={() => handleRemoveSolution(index)}>
-                删除
-              </Button>
-            </Space>
-          </Space>
-          <div>
-            <a href={solution.url} target="_blank" rel="noopener noreferrer">{solution.url}</a>
-          </div>
-        </div>
-      ))}
-
-      <div className="solutions-form-wrapper" style={{ marginTop: 16 }}>
-        <div 
-          className="form-item"
-          style={{ marginBottom: 24 }}
-        >
-          <div className="form-item-label" style={{ marginBottom: 8 }}>
-            <label className="ant-form-item-required">标题</label>
-          </div>
-          <div className="form-item-control">
-            <Input 
-              value={newSolution.title}
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleSolutionChange('title', e.target.value)}
-              placeholder="如: 使用正则表达式解析URL"
-            />
-            <div className="form-item-help" style={{ fontSize: 12, color: '#999', marginTop: 4 }}>
-              请输入参考资料的标题
-            </div>
-          </div>
-        </div>
-
-        <div 
-          className="form-item"
-          style={{ marginBottom: 24 }}
-        >
-          <div className="form-item-label" style={{ marginBottom: 8 }}>
-            <label className="ant-form-item-required">URL</label>
-          </div>
-          <div className="form-item-control">
-            <Input 
-              value={newSolution.url}
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleSolutionChange('url', e.target.value)}
-              placeholder="如: https://github.com/your-repo"
-              status={urlError ? "error" : undefined}
-            />
-            <div className="form-item-help" style={{ fontSize: 12, color: urlError ? '#ff4d4f' : '#999', marginTop: 4 }}>
-              {urlError || "请输入参考资料的链接地址"}
-            </div>
-          </div>
-        </div>
-
-        <div 
-          className="form-item"
-          style={{ marginBottom: 24 }}
-        >
-          <div className="form-item-label" style={{ marginBottom: 8 }}>
-            <label>来源</label>
-          </div>
-          <div className="form-item-control">
-            <Input 
-              value={newSolution.source}
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleSolutionChange('source', e.target.value)}
-              placeholder="如: GitHub"
-            />
-            <div className="form-item-help" style={{ fontSize: 12, color: '#999', marginTop: 4 }}>
-              可选，会根据URL自动填充
-            </div>
-          </div>
-        </div>
-
-        <div 
-          className="form-item"
-          style={{ marginBottom: 24 }}
-        >
-          <div className="form-item-label" style={{ marginBottom: 8 }}>
-            <label>作者</label>
-          </div>
-          <div className="form-item-control">
-            <AutoComplete
-              value={newSolution.author}
-              onChange={(value) => handleSolutionChange('author', value)}
-              options={authors.map(author => ({ value: author }))}
-              placeholder="请输入作者名称"
-              filterOption={(inputValue, option) =>
-                option!.value.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1
-              }
-            />
-            <div className="form-item-help" style={{ fontSize: 12, color: '#999', marginTop: 4 }}>
-              可选，支持自动补全已有作者
-            </div>
-          </div>
-        </div>
-
-        <Button 
-          type="dashed" 
-          onClick={handleAddSolution}
-          icon={<PlusOutlined />}
-          disabled={!newSolution.title || !newSolution.url || !!urlError}
-        >
-          {editingSolutionIndex !== null ? '更新参考资料' : '添加参考资料'}
-        </Button>
-        {editingSolutionIndex !== null && (
-          <Button 
-            style={{ marginLeft: 8 }}
-            onClick={() => {
-              setEditingSolutionIndex(null);
-              setNewSolution({
-                title: '',
-                url: '',
-                source: '',
-                author: ''
-              });
-              setUrlError('');
-            }}
-          >
-            取消编辑
-          </Button>
-        )}
-      </div>
       
-      {/* 隐藏的表单字段，用于提交参考资料数据 */}
-      <Form.Item name="solutions" hidden>
-        <input type="hidden" />
+      <Form.Item
+        name="solutions"
+        rules={[solutionsValidator]}
+        validateTrigger={['onChange', 'onBlur']}
+        style={{ marginBottom: 0 }}
+      >
+        <div style={{ display: 'none' }}></div>
       </Form.Item>
+      
+      {solutions.length === 0 ? (
+        <Empty
+          image={Empty.PRESENTED_IMAGE_SIMPLE}
+          description="暂无参考资料"
+          style={{ margin: '20px 0' }}
+        />
+      ) : (
+        <DragDropContext onDragEnd={handleDragEnd}>
+          <Droppable droppableId="solutions-list">
+            {(provided: DroppableProvided) => (
+              <div
+                {...provided.droppableProps}
+                ref={provided.innerRef}
+                style={{ marginBottom: 20 }}
+              >
+                {solutions.map((solution, index) => (
+                  <Draggable key={`solution-${index}`} draggableId={`solution-${index}`} index={index}>
+                    {(provided: DraggableProvided) => (
+                      <div
+                        ref={provided.innerRef}
+                        {...provided.draggableProps}
+                        {...provided.dragHandleProps}
+                      >
+                        <SolutionItem 
+                          key={index}
+                          solution={solution}
+                          index={index}
+                          onEdit={handleEditSolution}
+                          onRemove={handleRemoveSolution}
+                          isDraggable={true}
+                        />
+                      </div>
+                    )}
+                  </Draggable>
+                ))}
+                {provided.placeholder}
+              </div>
+            )}
+          </Droppable>
+        </DragDropContext>
+      )}
+
+      {/* 参考资料表单 */}
+      <SolutionForm
+        solution={newSolution}
+        authors={authors}
+        urlError={urlError}
+        isEditing={editingSolutionIndex !== null}
+        onSolutionChange={handleSolutionChange}
+        onAddSolution={handleAddSolution}
+        onCancelEditing={handleCancelEditing}
+      />
     </>
   );
-};
+});
 
 export default SolutionsSection; 
