@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useMediaQuery } from 'react-responsive';
 
 interface GitHubRibbonProps {
   /**
@@ -20,12 +21,20 @@ interface GitHubRibbonProps {
 /**
  * GitHub Ribbon组件
  * 显示"Fork me on GitHub"的角标
+ * 在移动端下完全隐藏
  */
 const GitHubRibbon: React.FC<GitHubRibbonProps> = ({
   repositoryUrl,
   text = 'Fork me on GitHub',
   position = 'right'
 }) => {
+  const isMobile = useMediaQuery({ maxWidth: 768 });
+  
+  // 如果是移动设备，不显示GitHub角标
+  if (isMobile) {
+    return null;
+  }
+
   // 根据position确定位置样式
   const getPositionStyle = () => {
     switch(position) {

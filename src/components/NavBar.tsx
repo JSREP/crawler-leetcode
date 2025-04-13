@@ -1,10 +1,11 @@
 // src/components/NavBar.tsx
 import { useState, useEffect } from 'react';
 import {Link, useLocation, useNavigate} from 'react-router-dom';
-import {Layout, Menu, Typography, Select, Row, Col, Button} from 'antd';
-import { PlusOutlined } from '@ant-design/icons';
+import {Layout, Menu, Typography, Select, Row, Col, Button, Drawer, MenuProps} from 'antd';
+import { PlusOutlined, MenuOutlined } from '@ant-design/icons';
 import { useTranslation } from 'react-i18next';
 import { changeLanguage } from '../i18n';
+import { useMediaQuery } from 'react-responsive';
 // @ts-ignore
 import faviconLogo from '../assets/favicon.png';
 // @ts-ignore
@@ -25,6 +26,8 @@ const NavBar = () => {
     const location = useLocation();
     const navigate = useNavigate();
     const [currentLanguage, setCurrentLanguage] = useState(i18n.language);
+    const [drawerVisible, setDrawerVisible] = useState(false);
+    const isMobile = useMediaQuery({ maxWidth: 768 });
 
     // 监听语言变化
     useEffect(() => {
@@ -56,6 +59,25 @@ const NavBar = () => {
     // 跳转到题目编辑页面
     const goToContributePage = () => {
         navigate('/challenge/contribute');
+        if (isMobile) {
+            setDrawerVisible(false);
+        }
+    };
+
+    // 抽屉菜单点击处理
+    const handleMenuClick: MenuProps['onClick'] = (e) => {
+        navigate(e.key);
+        setDrawerVisible(false);
+    };
+
+    // 显示抽屉菜单
+    const showDrawer = () => {
+        setDrawerVisible(true);
+    };
+
+    // 关闭抽屉菜单
+    const closeDrawer = () => {
+        setDrawerVisible(false);
     };
 
     return (
@@ -70,11 +92,11 @@ const NavBar = () => {
             lineHeight: '70px'
         }}>
             {/* 固定宽度的外层容器 */}
-            <div className="navbar-container">
+            <div className="navbar-container" style={{ padding: isMobile ? '0 16px' : '0' }}>
                 {/* 网格布局，确保精确对齐 */}
-                <Row style={{ height: '100%' }}>
+                <Row style={{ height: '100%' }} align="middle" justify="space-between">
                     {/* Logo区域，确保与内容区域左边缘对齐 */}
-                    <Col className="logo-container" style={{ paddingLeft: '0px' }}>
+                    <Col style={{ paddingLeft: '0px' }}>
                         <Link to="/" style={{ display: 'flex', alignItems: 'center', height: '70px' }}>
                             <div style={{
                                 display: 'flex',
@@ -101,65 +123,121 @@ const NavBar = () => {
                                     }}
                                 />
                             </div>
-                            <Title level={3} style={{margin: 0, color: '#2c3e50', whiteSpace: 'nowrap'}}>
+                            <Title level={3} style={{
+                                margin: 0, 
+                                color: '#2c3e50', 
+                                whiteSpace: 'nowrap',
+                                fontSize: isMobile ? '18px' : '24px'
+                            }}>
                                 Crawler LeetCode
                             </Title>
                         </Link>
                     </Col>
 
-                    {/* 弹性布局的菜单区域 */}
-                    <Col flex="auto" style={{ display: 'flex', justifyContent: 'space-between' }}>
-                        <Menu
-                            mode="horizontal"
-                            selectedKeys={[location.pathname]}
-                            items={items}
-                            style={{
-                                borderBottom: 'none',
-                                fontSize: '16px',
-                                fontWeight: 500,
-                                lineHeight: '70px',
-                                height: '70px',
-                                marginLeft: '40px'
-                            }}
-                            disabledOverflow={true}
-                        />
-                        
-                        {/* 右侧工具栏 */}
-                        <div style={{ 
-                            paddingRight: '0px', 
-                            display: 'flex', 
-                            alignItems: 'center',
-                            gap: '8px'
-                        }}>
-                            {/* 贡献题目按钮 */}
+                    {/* 移动端显示菜单按钮 */}
+                    {isMobile ? (
+                        <Col>
                             <Button 
-                                type="primary" 
-                                size="small" 
-                                icon={<PlusOutlined />}
-                                onClick={goToContributePage}
-                                style={{ fontSize: '12px', height: '28px' }}
-                            >
-                                {t('nav.contribute')}
-                            </Button>
-                            
-                            {/* 语言选择器 */}
-                            <Select
-                                value={currentLanguage}
+                                icon={<MenuOutlined />} 
+                                onClick={showDrawer}
+                                type="text"
+                                style={{ fontSize: '18px', height: '32px', padding: '0 8px' }}
+                            />
+                        </Col>
+                    ) : (
+                        /* 弹性布局的菜单区域 - 桌面端 */
+                        <Col flex="auto" style={{ display: 'flex', justifyContent: 'space-between' }}>
+                            <Menu
+                                mode="horizontal"
+                                selectedKeys={[location.pathname]}
+                                items={items}
                                 style={{
-                                    width: 95,
-                                    background: 'transparent',
-                                    fontSize: '14px'
+                                    borderBottom: 'none',
+                                    fontSize: '16px',
+                                    fontWeight: 500,
+                                    lineHeight: '70px',
+                                    height: '70px',
+                                    marginLeft: '40px'
                                 }}
-                                variant="borderless"
-                                onChange={handleLanguageChange}
-                            >
-                                <Option value="zh">简体中文</Option>
-                                <Option value="en">English</Option>
-                            </Select>
-                        </div>
-                    </Col>
+                                disabledOverflow={true}
+                            />
+                            
+                            {/* 右侧工具栏 */}
+                            <div style={{ 
+                                paddingRight: '0px', 
+                                display: 'flex', 
+                                alignItems: 'center',
+                                gap: '8px'
+                            }}>
+                                {/* 贡献题目按钮 */}
+                                <Button 
+                                    type="primary" 
+                                    size="small" 
+                                    icon={<PlusOutlined />}
+                                    onClick={goToContributePage}
+                                    style={{ fontSize: '12px', height: '28px' }}
+                                >
+                                    {t('nav.contribute')}
+                                </Button>
+                                
+                                {/* 语言选择器 */}
+                                <Select
+                                    value={currentLanguage}
+                                    style={{
+                                        width: 95,
+                                        background: 'transparent',
+                                        fontSize: '14px'
+                                    }}
+                                    variant="borderless"
+                                    onChange={handleLanguageChange}
+                                >
+                                    <Option value="zh">简体中文</Option>
+                                    <Option value="en">English</Option>
+                                </Select>
+                            </div>
+                        </Col>
+                    )}
                 </Row>
             </div>
+
+            {/* 移动端抽屉菜单 */}
+            <Drawer
+                title="菜单"
+                placement="right"
+                onClose={closeDrawer}
+                open={drawerVisible}
+                width={250}
+            >
+                <Menu
+                    mode="vertical"
+                    selectedKeys={[location.pathname]}
+                    items={items}
+                    onClick={handleMenuClick}
+                    style={{ border: 'none' }}
+                />
+                <div style={{ marginTop: 24, padding: '0 16px' }}>
+                    <Button 
+                        type="primary" 
+                        icon={<PlusOutlined />}
+                        onClick={goToContributePage}
+                        style={{ marginBottom: 16, width: '100%' }}
+                    >
+                        {t('nav.contribute')}
+                    </Button>
+                    
+                    <div style={{ display: 'flex', alignItems: 'center', marginBottom: 16 }}>
+                        <span style={{ marginRight: 8 }}>语言:</span>
+                        <Select
+                            value={currentLanguage}
+                            style={{ width: 120 }}
+                            onChange={handleLanguageChange}
+                        >
+                            <Option value="zh">简体中文</Option>
+                            <Option value="en">English</Option>
+                        </Select>
+                    </div>
+                </div>
+            </Drawer>
         </Header>
     );
 };
