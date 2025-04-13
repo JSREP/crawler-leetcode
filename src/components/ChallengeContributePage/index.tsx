@@ -126,384 +126,45 @@ const ChallengeContributePage: React.FC = () => {
     // 直接从表单获取完整值，确保包含隐藏字段
     const values = form.getFieldsValue(true);
     console.log('当前表单值：', values);
-    console.log('原始YAML是否存在：', !!values.rawYaml);
-    console.log('原始YAML长度：', values.rawYaml ? values.rawYaml.length : 0);
     
-    if (values.rawYaml) {
-      try {
-        console.log('使用原始YAML作为模板生成新YAML，尝试直接替换字段值，保留所有注释');
-        console.log('原始YAML前100个字符：', values.rawYaml.substring(0, 100));
-        
-        // 提取顶部注释（直接从文件开始到第一个非注释、非空白行）
-        const topComments = [];
-        const lines = values.rawYaml.split('\n');
-        let contentStartLine = 0;
-        
-        for (let i = 0; i < lines.length; i++) {
-          const line = lines[i].trim();
-          if (line === '' || line.startsWith('#')) {
-            topComments.push(lines[i]);
-            contentStartLine = i + 1;
-          } else {
-            break;
-          }
-        }
-        
-        console.log('提取到的顶部注释：', topComments);
-        console.log('内容开始行：', contentStartLine, '内容：', lines[contentStartLine]);
-        
-        // 将原始YAML作为起点
-        let resultYaml = values.rawYaml;
-        
-        // 检查是否是集合格式YAML
-        const isCollection = resultYaml.includes('challenges:') && 
-            resultYaml.match(/\s+-\s+id:\s*\d+/);
-        console.log('是否为集合格式YAML：', isCollection);
-        
-        if (isCollection) {
-          // 提取挑战ID
-          const challengeId = values.id ? parseInt(values.id.toString()) : null;
-          console.log('当前编辑的挑战ID：', challengeId);
-          
-          try {
-            console.log('尝试在集合中更新挑战');
-            
-            // 检查YAML解析结果，判断是否只有一个挑战
-            const yamlData = YAML.parse(resultYaml);
-            console.log('解析后的YAML数据：', yamlData);
-            
-            const isSingleChallenge = yamlData && yamlData.challenges && Array.isArray(yamlData.challenges) && yamlData.challenges.length === 1;
-            console.log('是否为单挑战集合：', isSingleChallenge);
-            console.log('集合中的challenges长度：', yamlData?.challenges?.length || 0);
-
-            if (isSingleChallenge && challengeId === yamlData.challenges[0].id) {
-              console.log('检测到只有一个挑战的集合文件，使用updateChallengeInCollection直接更新并保留所有注释');
-              
-              try {
-                // 在调用updateChallengeInCollection前先分析原始YAML中的标签格式
-                const tagFormatHasSpace = values.rawYaml.includes('- waf') || values.rawYaml.includes('- signature');
-                console.log('标签格式是否有空格:', tagFormatHasSpace);
-                
-                // 处理标签格式
-                let rawYaml = values.rawYaml;
-                if (!tagFormatHasSpace) {
-                  // 修改结果YAML为无空格的标签格式
-                  console.log('准备将标签修改为无空格格式');
-                  
-                  // 直接使用updateChallengeInCollection函数，这个函数会保留所有注释
-                  resultYaml = updateChallengeInCollection(
-                    resultYaml,
-                    challengeId,
-                    {
-                      'id': values.id,
-                      'id-alias': values.idAlias,
-                      'platform': values.platform,
-                      'name': values.name,
-                      'name_en': values.nameEn,
-                      'difficulty-level': values.difficultyLevel,
-                      'description-markdown': values.description || values.descriptionMarkdown,
-                      'description-markdown_en': values.descriptionEn || values.descriptionMarkdownEn,
-                      'base64-url': values.base64Url,
-                      'is-expired': values.isExpired,
-                      'tags': values.tags || [],
-                      'solutions': (values.solutions || [])?.filter(s => s.title && s.url).map(s => ({
-                        title: s.title,
-                        url: s.url,
-                        ...(s.source ? {source: s.source} : {}),
-                        ...(s.author ? {author: s.author} : {})
-                      }))
-                    }
-                  );
-                  
-                  // 修复标签格式（将"- tag"替换为"-tag"）
-                  resultYaml = resultYaml.replace(/(\n\s+)- (waf|signature-detection)/g, '$1-$2');
-                  
-                  console.log('标签空格修复后YAML前100个字符:', resultYaml.substring(0, 100));
-                } else {
-                  // 直接使用updateChallengeInCollection函数，这个函数会保留所有注释
-                  resultYaml = updateChallengeInCollection(
-                    resultYaml,
-                    challengeId,
-                    {
-                      'id': values.id,
-                      'id-alias': values.idAlias,
-                      'platform': values.platform,
-                      'name': values.name,
-                      'name_en': values.nameEn,
-                      'difficulty-level': values.difficultyLevel,
-                      'description-markdown': values.description || values.descriptionMarkdown,
-                      'description-markdown_en': values.descriptionEn || values.descriptionMarkdownEn,
-                      'base64-url': values.base64Url,
-                      'is-expired': values.isExpired,
-                      'tags': values.tags || [],
-                      'solutions': (values.solutions || [])?.filter(s => s.title && s.url).map(s => ({
-                        title: s.title,
-                        url: s.url,
-                        ...(s.source ? {source: s.source} : {}),
-                        ...(s.author ? {author: s.author} : {})
-                      }))
-                    }
-                  );
-                }
-                
-                // 处理solutions字段
-                // 如果原始YAML不包含solutions字段，就去掉生成的solutions字段
-                if (!values.rawYaml.includes('solutions:')) {
-                  console.log('原始YAML不包含solutions字段，删除生成的solutions字段');
-                  const lines = resultYaml.split('\n');
-                  const filteredLines = lines.filter(line => !line.includes('solutions:') && 
-                                                          !line.includes('title:') && 
-                                                          !line.includes('url:'));
-                  resultYaml = filteredLines.join('\n');
-                }
-                
-                console.log('成功更新单挑战集合并保留所有注释');
-                console.log('更新后YAML前100个字符：', resultYaml.substring(0, 100));
-                setYamlOutput(resultYaml);
-                return;
-              } catch (error) {
-                console.error('更新YAML失败:', error);
-                console.warn('回退到常规更新方式');
-                
-                // 直接使用updateChallengeInCollection函数，这个函数会保留所有注释
-                resultYaml = updateChallengeInCollection(
-                  resultYaml,
-                  challengeId,
-                  {
-                    'id': values.id,
-                    'id-alias': values.idAlias,
-                    'platform': values.platform,
-                    'name': values.name,
-                    'name_en': values.nameEn,
-                    'difficulty-level': values.difficultyLevel,
-                    'description-markdown': values.description || values.descriptionMarkdown,
-                    'description-markdown_en': values.descriptionEn || values.descriptionMarkdownEn,
-                    'base64-url': values.base64Url,
-                    'is-expired': values.isExpired,
-                    'tags': values.tags || [],
-                    'solutions': (values.solutions || [])?.filter(s => s.title && s.url).map(s => ({
-                      title: s.title,
-                      url: s.url,
-                      ...(s.source ? {source: s.source} : {}),
-                      ...(s.author ? {author: s.author} : {})
-                    }))
-                  }
-                );
-                console.log('成功更新单挑战集合并保留所有注释');
-                console.log('更新后YAML前100个字符：', resultYaml.substring(0, 100));
-                setYamlOutput(resultYaml);
-                return;
-              }
-            }
-            
-            // 如果不是单挑战或ID不匹配，使用常规方法更新
-            resultYaml = updateChallengeInCollection(
-              resultYaml,
-              challengeId,
-              {
-                'id': values.id,
-                'id-alias': values.idAlias,
-                'platform': values.platform,
-                'name': values.name,
-                'name_en': values.nameEn,
-                'difficulty-level': values.difficultyLevel,
-                'description-markdown': values.description || values.descriptionMarkdown,
-                'description-markdown_en': values.descriptionEn || values.descriptionMarkdownEn,
-                'base64-url': values.base64Url,
-                'is-expired': values.isExpired,
-                'tags': values.tags || [],
-                'solutions': (values.solutions || [])?.filter(s => s.title && s.url).map(s => ({
-                  title: s.title,
-                  url: s.url,
-                  ...(s.source ? {source: s.source} : {}),
-                  ...(s.author ? {author: s.author} : {})
-                }))
-              }
-            );
-            console.log('集合更新成功，保留了注释');
-            setYamlOutput(resultYaml);
-            return;
-          } catch (error) {
-            console.error('更新集合中的挑战失败:', error);
-            console.warn('尝试单独处理挑战，放弃集合格式');
-          }
-        } else {
-          console.log('处理普通的单挑战YAML');
-          // 常规字段替换（对于非集合格式）
-          const standardFields = [
-            'id', 'id-alias', 'platform', 'name', 'name_en', 'difficulty-level',
-            'description-markdown', 'description-markdown_en', 'base64-url', 'is-expired'
-          ];
-          
-          for (const field of standardFields) {
-            console.log(`尝试替换字段 ${field}`);
-            let valueKey = field;
-            
-            // 将中划线字段名映射到驼峰式字段名
-            if (field === 'id-alias') valueKey = 'idAlias';
-            else if (field === 'difficulty-level') valueKey = 'difficultyLevel';
-            else if (field === 'description-markdown') valueKey = 'description';
-            else if (field === 'description-markdown_en') valueKey = 'descriptionEn';
-            else if (field === 'base64-url') valueKey = 'base64Url';
-            else if (field === 'is-expired') valueKey = 'isExpired';
-            else if (field === 'name_en') valueKey = 'nameEn';
-            
-            // 获取对应的值
-            const value = values[valueKey as keyof typeof values];
-            console.log(`字段 ${field} 对应的值:`, value);
-            
-            if (value !== undefined) {
-              // 匹配字段行及其可能的前导注释
-              const fieldRegex = new RegExp(`(\\n?\\s*)(#[^\\n]*\\n)*(\\s*)${field}:\\s*[^\\n]*`, 'g');
-              resultYaml = resultYaml.replace(
-                fieldRegex,
-                (match, beforeComment, comments, beforeField) => {
-                  console.log(`找到字段匹配: ${match}`);
-                  return `${beforeComment || ''}${comments || ''}${beforeField || ''}${field}: ${formatValue(value)}`;
-                }
-              );
-            }
-          }
-          
-          // 特殊处理tags字段
-          if (values.tags) {
-            console.log('处理tags字段:', values.tags);
-            const tagsRegex = new RegExp(`(\\n?\\s*)(#[^\\n]*\\n)*(\\s*)tags:([^]*?)(\\n\\s*[a-zA-Z0-9_-]+:|$)`, 'g');
-            resultYaml = resultYaml.replace(
-              tagsRegex,
-              (match, beforeComment, comments, beforeField, existingTags, after) => {
-                console.log(`找到tags匹配: ${match}`);
-                let tagsStr = `${beforeComment || ''}${comments || ''}${beforeField || ''}tags:`;
-                
-                if (!values.tags || values.tags.length === 0) {
-                  tagsStr += ' []';
-                } else {
-                  // 保持原有缩进
-                  const indentMatch = existingTags.match(/\n(\s+)/);
-                  const indent = indentMatch ? indentMatch[1] : '  ';
-                  
-                  values.tags.forEach(tag => {
-                    tagsStr += `\n${indent}- ${tag}`;
-                  });
-                }
-                
-                return tagsStr + after;
-              }
-            );
-          }
-          
-          // 特殊处理solutions字段
-          if (values.solutions && Array.isArray(values.solutions)) {
-            console.log('处理solutions字段:', values.solutions);
-            const solutionsRegex = new RegExp(`(\\n?\\s*)(#[^\\n]*\\n)*(\\s*)solutions:([^]*?)(\\n\\s*[a-zA-Z0-9_-]+:|$)`, 'g');
-            resultYaml = resultYaml.replace(
-              solutionsRegex,
-              (match, beforeComment, comments, beforeField, existingSolutions, after) => {
-                console.log(`找到solutions匹配: ${match}`);
-                let solutionsStr = `${beforeComment || ''}${comments || ''}${beforeField || ''}solutions:`;
-                
-                if (!values.solutions || values.solutions.length === 0) {
-                  solutionsStr += ' []';
-                } else {
-                  const solutionsList = values.solutions || [];
-                  solutionsList.forEach(solution => {
-                    if (solution.title && solution.url) {
-                      solutionsStr += `\n  - title: ${solution.title}`;
-                      solutionsStr += `\n    url: ${solution.url}`;
-                      if (solution.source) {
-                        solutionsStr += `\n    source: ${solution.source}`;
-                      }
-                      if (solution.author) {
-                        solutionsStr += `\n    author: ${solution.author}`;
-                      }
-                    }
-                  });
-                }
-                
-                return solutionsStr + after;
-              }
-            );
-          }
-          
-          // 更新时间戳
-          const updateTimeRegex = new RegExp(`(\\n?\\s*)(#[^\\n]*\\n)*(\\s*)update-time:\\s*[^\\n]*`, 'g');
-          resultYaml = resultYaml.replace(
-            updateTimeRegex,
-            (match, beforeComment, comments, beforeField) => {
-              console.log(`找到update-time匹配: ${match}`);
-              return `${beforeComment || ''}${comments || ''}${beforeField || ''}update-time: ${new Date().toISOString()}`;
-            }
-          );
-        }
-        
-        console.log('成功保留注释并更新YAML值');
-        setYamlOutput(resultYaml);
-        return;
-      } catch (error) {
-        console.error('直接替换YAML值失败:', error);
-        console.warn('回退到默认方式，但仍将尝试保留顶部注释');
-        
-        try {
-          // 提取顶部注释
-          console.log('尝试保留顶部注释');
-          const topComments = [];
-          const lines = values.rawYaml.split('\n');
-          let contentStartLine = 0;
-          
-          for (let i = 0; i < lines.length; i++) {
-            const line = lines[i].trim();
-            if (line === '' || line.startsWith('#')) {
-              topComments.push(lines[i]);
-              contentStartLine = i + 1;
-            } else {
-              break;
-            }
-          }
-          
-          console.log('提取到的顶部注释：', topComments);
-          
-          // 准备要输出的yaml对象
-          const yamlObj = {
-            'id': values.id,
-            'id-alias': values.idAlias,
-            'platform': values.platform,
-            'name': values.name,
-            'name_en': values.nameEn,
-            'difficulty-level': values.difficultyLevel,
-            'description-markdown': values.description || values.descriptionMarkdown,
-            'description-markdown_en': values.descriptionEn || values.descriptionMarkdownEn,
-            'base64-url': values.base64Url,
-            'is-expired': values.isExpired,
-            'tags': values.tags || [],
-            'solutions': (values.solutions || [])?.filter(s => s.title && s.url).map(s => ({
-              title: s.title,
-              url: s.url,
-              ...(s.source ? {source: s.source} : {}),
-              ...(s.author ? {author: s.author} : {})
-            }))
-          };
-          
-          // 生成YAML
-          const contentYaml = YAML.stringify(yamlObj, {
-            indent: 2,
-            lineWidth: -1
-          });
-          
-          // 合并顶部注释和内容
-          const resultYaml = topComments.join('\n') + (topComments.length > 0 ? '\n' : '') + contentYaml;
-          
-          console.log('成功保留顶部注释');
-          setYamlOutput(resultYaml);
-          return;
-        } catch (commentError) {
-          console.error('保留顶部注释失败:', commentError);
-        }
-      }
+    // 检查是否有原始YAML
+    if (!values.rawYaml) {
+      console.log('没有原始YAML，使用默认格式生成');
+      // 创建一个基本的YAML对象并转换为字符串
+      const yamlObj = {
+        'id': values.id,
+        'id-alias': values.idAlias,
+        'platform': values.platform,
+        'name': values.name,
+        'name_en': values.nameEn,
+        'difficulty-level': values.difficultyLevel,
+        'description-markdown': values.description || values.descriptionMarkdown,
+        'base64-url': values.base64Url,
+        'is-expired': values.isExpired,
+        'tags': values.tags || [],
+        'solutions': (values.solutions || [])?.filter(s => s.title && s.url).map(s => ({
+          title: s.title,
+          url: s.url,
+          ...(s.source ? {source: s.source} : {}),
+          ...(s.author ? {author: s.author} : {})
+        }))
+      };
+      
+      const yamlString = YAML.stringify(yamlObj, {
+        indent: 2,
+        lineWidth: -1
+      });
+      
+      setYamlOutput(yamlString);
+      return;
     }
     
-    console.log('使用默认YAML生成方式');
-    // 如果没有原始YAML或更新失败，使用默认格式
-    const yamlObj = {
+    console.log('使用原始YAML作为模板，只修改值');
+    // 基于文本直接替换，而不是解析后重新生成
+    let modifiedYaml = values.rawYaml;
+    
+    // 创建一个字段到值的映射
+    const fieldValueMap = {
       'id': values.id,
       'id-alias': values.idAlias,
       'platform': values.platform,
@@ -523,11 +184,245 @@ const ChallengeContributePage: React.FC = () => {
       }))
     };
     
-    const yamlString = YAML.stringify(yamlObj, {
-      indent: 2,
-      lineWidth: -1
-    });
-    setYamlOutput(yamlString);
+    // 分析原始YAML的结构
+    const lines = modifiedYaml.split('\n');
+    // 追踪当前处理的字段
+    let currentField = null;
+    let inTags = false;
+    let inSolutions = false;
+    let tagIndent = '';
+    let tagHasSpace = true;
+    
+    // 分析原始标签格式（是否有空格）
+    if (modifiedYaml.includes('-waf') || modifiedYaml.includes('-signature')) {
+      tagHasSpace = false;
+      console.log('检测到原始标签格式无空格');
+    }
+    
+    // 先分析字段和它们的位置
+    const fieldPositions = {};
+    const fieldIndents = {};
+    const modifiedLines = [...lines];
+    
+    console.log('开始分析YAML结构');
+    for (let i = 0; i < lines.length; i++) {
+      const line = lines[i].trim();
+      
+      // 跳过注释和空行
+      if (line.startsWith('#') || line === '') {
+        continue;
+      }
+      
+      // 检查是否是字段行
+      const fieldMatch = lines[i].match(/^(\s*)([a-zA-Z0-9_-]+):(.*)/);
+      if (fieldMatch) {
+        const [, indent, fieldName, restOfLine] = fieldMatch;
+        currentField = fieldName;
+        fieldPositions[fieldName] = i;
+        fieldIndents[fieldName] = indent;
+        
+        console.log(`找到字段 ${fieldName} 在第 ${i} 行, 缩进: '${indent}'`);
+        
+        // 特殊处理tags字段
+        if (fieldName === 'tags') {
+          inTags = true;
+          inSolutions = false;
+          tagIndent = indent + '  '; // 假设子项比父项多缩进2个空格
+        } 
+        // 特殊处理solutions字段
+        else if (fieldName === 'solutions') {
+          inTags = false;
+          inSolutions = true;
+        }
+        else {
+          inTags = false;
+          inSolutions = false;
+        }
+      } 
+      // 如果不是字段行但在tags或solutions内部
+      else if (inTags && line.startsWith('-')) {
+        // 记录标签缩进
+        const tagLineMatch = lines[i].match(/^(\s*)-/);
+        if (tagLineMatch) {
+          tagIndent = tagLineMatch[1];
+          console.log(`找到标签缩进: '${tagIndent}'`);
+          
+          // 检测标签格式（是否有空格）
+          const tagSpaceMatch = lines[i].match(/^(\s*)-(\s+)/);
+          tagHasSpace = !!tagSpaceMatch;
+          console.log(`标签格式有空格: ${tagHasSpace}`);
+        }
+      }
+    }
+    
+    // 现在开始实际修改YAML
+    console.log('开始修改字段值，保持原始格式');
+    
+    // 处理普通字段（非数组）
+    const simpleFields = ['id', 'id-alias', 'platform', 'name', 'name_en', 'difficulty-level', 'base64-url', 'is-expired'];
+    for (const field of simpleFields) {
+      const value = fieldValueMap[field];
+      if (value === undefined || fieldPositions[field] === undefined) continue;
+      
+      const lineIndex = fieldPositions[field];
+      const line = lines[lineIndex];
+      const indent = fieldIndents[field];
+      
+      // 保留原始行的缩进和字段名，只替换值部分
+      const fieldValueMatch = line.match(/^(\s*[a-zA-Z0-9_-]+:)(\s*)(.*)/);
+      if (fieldValueMatch) {
+        const [, fieldPart, spacePart] = fieldValueMatch;
+        modifiedLines[lineIndex] = `${fieldPart}${spacePart}${value}`;
+        console.log(`修改字段 ${field} 为 ${value}`);
+      }
+    }
+    
+    // 处理description-markdown字段（可能是多行）
+    if (fieldValueMap['description-markdown'] && fieldPositions['description-markdown'] !== undefined) {
+      const description = fieldValueMap['description-markdown'];
+      const lineIndex = fieldPositions['description-markdown'];
+      const line = lines[lineIndex];
+      const indent = fieldIndents['description-markdown'];
+      
+      // 检查原始格式是否使用竖线(|)
+      if (line.includes('|')) {
+        // 多行格式使用竖线
+        modifiedLines[lineIndex] = `${indent}description-markdown: |`;
+        
+        // 找到下一个字段的位置
+        let nextFieldIndex = lines.length;
+        for (let i = lineIndex + 1; i < lines.length; i++) {
+          const nextFieldMatch = lines[i].match(/^\s*[a-zA-Z0-9_-]+:/);
+          if (nextFieldMatch) {
+            nextFieldIndex = i;
+            break;
+          }
+        }
+        
+        // 删除当前description的所有行
+        modifiedLines.splice(lineIndex + 1, nextFieldIndex - lineIndex - 1);
+        
+        // 插入新的description行
+        const descLines = description.split('\n');
+        for (let i = 0; i < descLines.length; i++) {
+          modifiedLines.splice(lineIndex + 1 + i, 0, `${indent}  ${descLines[i]}`);
+        }
+        
+        console.log(`修改多行description-markdown字段`);
+      } else {
+        // 单行格式
+        modifiedLines[lineIndex] = `${indent}description-markdown: "${description.replace(/"/g, '\\"')}"`;
+        console.log(`修改单行description-markdown字段`);
+      }
+    }
+    
+    // 处理tags字段
+    if (fieldValueMap.tags && fieldPositions.tags !== undefined) {
+      const tags = fieldValueMap.tags;
+      const lineIndex = fieldPositions['tags'];
+      const indent = fieldIndents['tags'];
+      
+      // 保留tags:行
+      modifiedLines[lineIndex] = `${indent}tags:`;
+      
+      // 找到tags下的所有子项的位置
+      let tagEndIndex = lineIndex + 1;
+      while (tagEndIndex < lines.length) {
+        const line = lines[tagEndIndex].trim();
+        if (line.startsWith('-')) {
+          tagEndIndex++;
+        } else if (!line.startsWith('#') && line !== '') {
+          break;
+        } else {
+          tagEndIndex++;
+        }
+      }
+      
+      // 删除所有现有标签
+      modifiedLines.splice(lineIndex + 1, tagEndIndex - lineIndex - 1);
+      
+      // 添加新标签，保持原始格式
+      tags.forEach((tag, index) => {
+        const tagLine = tagHasSpace 
+          ? `${tagIndent}- ${tag}` 
+          : `${tagIndent}-${tag}`;
+        modifiedLines.splice(lineIndex + 1 + index, 0, tagLine);
+      });
+      
+      console.log(`修改tags字段，保持${tagHasSpace ? '有' : '无'}空格格式`);
+    }
+    
+    // 如果原始YAML没有solutions字段，但表单中有，添加到末尾
+    if (fieldValueMap.solutions && fieldValueMap.solutions.length > 0 && fieldPositions.solutions === undefined) {
+      if (lines[lines.length - 1].trim() !== '') {
+        modifiedLines.push('');  // 添加空行
+      }
+      modifiedLines.push('solutions:');
+      
+      const solutions = fieldValueMap.solutions;
+      solutions.forEach(solution => {
+        modifiedLines.push(`  - title: ${solution.title}`);
+        modifiedLines.push(`    url: ${solution.url}`);
+        if (solution.source) {
+          modifiedLines.push(`    source: ${solution.source}`);
+        }
+        if (solution.author) {
+          modifiedLines.push(`    author: ${solution.author}`);
+        }
+      });
+      
+      console.log('添加solutions字段到YAML末尾');
+    }
+    // 如果原始YAML有solutions字段，并且表单中也有，则更新
+    else if (fieldValueMap.solutions && fieldPositions.solutions !== undefined) {
+      const solutions = fieldValueMap.solutions;
+      const lineIndex = fieldPositions['solutions'];
+      const indent = fieldIndents['solutions'];
+      
+      // 保留solutions:行
+      if (solutions.length === 0) {
+        modifiedLines[lineIndex] = `${indent}solutions: []`;
+      } else {
+        modifiedLines[lineIndex] = `${indent}solutions:`;
+        
+        // 找到solutions下的所有子项的位置
+        let solutionEndIndex = lineIndex + 1;
+        while (solutionEndIndex < lines.length) {
+          const line = lines[solutionEndIndex].trim();
+          if (line.startsWith('-') || line.startsWith('title:') || line.startsWith('url:') || 
+              line.startsWith('source:') || line.startsWith('author:')) {
+            solutionEndIndex++;
+          } else if (!line.startsWith('#') && line !== '') {
+            break;
+          } else {
+            solutionEndIndex++;
+          }
+        }
+        
+        // 删除所有现有solution
+        modifiedLines.splice(lineIndex + 1, solutionEndIndex - lineIndex - 1);
+        
+        // 添加新solution
+        let insertIndex = lineIndex + 1;
+        solutions.forEach(solution => {
+          modifiedLines.splice(insertIndex++, 0, `${indent}  - title: ${solution.title}`);
+          modifiedLines.splice(insertIndex++, 0, `${indent}    url: ${solution.url}`);
+          if (solution.source) {
+            modifiedLines.splice(insertIndex++, 0, `${indent}    source: ${solution.source}`);
+          }
+          if (solution.author) {
+            modifiedLines.splice(insertIndex++, 0, `${indent}    author: ${solution.author}`);
+          }
+        });
+      }
+      
+      console.log('更新solutions字段');
+    }
+    
+    // 合并修改后的行
+    const resultYaml = modifiedLines.join('\n');
+    console.log('成功修改YAML，保留了原始格式');
+    setYamlOutput(resultYaml);
   };
 
   // 格式化值以便在YAML中显示
