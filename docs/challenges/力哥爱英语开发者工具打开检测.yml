@@ -1,0 +1,15 @@
+id: 108
+id-alias: ""
+platform: Web
+name: 力哥爱英语开发者工具打开检测
+name_en: ""
+difficulty-level: 1
+description-markdown: 按F12和打开开发者工具之后都有防护
+base64-url: aHR0cHM6Ly9pZW5nbGlzaDUyMS5jb20v
+is-expired: false
+tags:
+  - js-reverse
+  - anti-dev-tools
+solutions: []
+create-time: 2025-04-13 07:39:39
+update-time: 2025-04-13 07:39:39
