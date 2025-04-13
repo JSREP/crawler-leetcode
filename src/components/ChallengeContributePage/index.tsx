@@ -127,6 +127,9 @@ const ChallengeContributePage: React.FC = () => {
     const values = form.getFieldsValue(true);
     console.log('当前表单值：', values);
     
+    // 更新update-time为当前时间
+    const currentDateTime = new Date().toISOString().replace('T', ' ').substring(0, 19);
+    
     // 检查是否有原始YAML
     if (!values.rawYaml) {
       console.log('没有原始YAML，使用默认格式生成');
@@ -142,12 +145,15 @@ const ChallengeContributePage: React.FC = () => {
         'base64-url': values.base64Url,
         'is-expired': values.isExpired === undefined ? false : values.isExpired,
         'tags': values.tags || [],
-        'solutions': (values.solutions || [])?.filter(s => s.title && s.url).map(s => ({
+        'solutions': (values.solutions || [])?.filter((s: any) => s.title && s.url).map((s: any) => ({
           title: s.title,
           url: s.url,
           ...(s.source ? {source: s.source} : {}),
           ...(s.author ? {author: s.author} : {})
-        }))
+        })),
+        // 添加或更新时间字段
+        'create-time': values.createTime || currentDateTime,
+        'update-time': currentDateTime
       };
       
       const yamlString = YAML.stringify(yamlObj, {
@@ -180,7 +186,10 @@ const ChallengeContributePage: React.FC = () => {
         url: s.url,
         ...(s.source ? {source: s.source} : {}),
         ...(s.author ? {author: s.author} : {})
-      }))
+      })),
+      // 更新时间字段
+      'create-time': values.createTime || currentDateTime,
+      'update-time': currentDateTime
     };
     
     // 分析原始YAML文件结构，但保留完整内容
@@ -515,86 +524,75 @@ const ChallengeContributePage: React.FC = () => {
   // 解析YAML函数
   const parseYaml = (yamlContent: string): ChallengeFormData | null => {
     try {
-      // 解析YAML字符串
+      // 保存原始YAML内容
+      const rawYaml = yamlContent;
+      
+      // 尝试解析YAML内容
       const yamlData = YAML.parse(yamlContent);
+      console.log('解析的YAML数据:', yamlData);
       
-      if (!yamlData) {
-        console.error('YAML解析结果为空');
-        return null;
-      }
-
-      console.log('原始YAML数据结构:', yamlData);
-
-      // 检查是否是集合格式的YAML
-      let challengeData;
-      let originalYaml = yamlContent; // 默认保存完整原始YAML
-      
-      if (yamlData.challenges && Array.isArray(yamlData.challenges) && yamlData.challenges.length > 0) {
-        // 从集合中提取第一个挑战
-        console.log('从集合中提取挑战数据:', yamlData.challenges[0]);
-        challengeData = yamlData.challenges[0];
-        
-        // 尝试获取仅包含这个挑战的YAML部分，但仍然保留原始集合格式
-        try {
-          // 为了保留挑战集合的结构和注释，我们保留整个YAML
-          originalYaml = yamlContent;
-        } catch (e) {
-          console.error('提取单个挑战的YAML失败:', e);
-          // 继续使用完整的原始YAML
+      // 检查是否为挑战集合
+      if (yamlData && typeof yamlData === 'object' && 'challenges' in yamlData && Array.isArray(yamlData.challenges)) {
+        console.log('检测到挑战集合，提取第一个挑战');
+        // 提取第一个挑战
+        if (yamlData.challenges.length === 0) {
+          throw new Error('挑战集合为空');
         }
-      } else if (yamlData.id !== undefined) {
-        // 单个挑战格式
-        challengeData = yamlData;
-      } else {
-        console.error('无法识别的YAML格式，没有找到challenges数组或id字段');
-        return null;
+        
+        const firstChallenge = yamlData.challenges[0];
+        // 递归处理
+        return parseYaml(YAML.stringify(firstChallenge));
       }
       
-      // 处理base64-url字段
-      let base64Url = challengeData['base64-url'] || '';
-      console.log('提取到的base64-url:', base64Url);
+      // 检查是否是单个挑战
+      if (!yamlData || typeof yamlData !== 'object') {
+        throw new Error('YAML格式错误，期望得到一个对象');
+      }
       
-      // 打印关键字段检查
-      console.log('挑战数据关键字段:', {
-        id: challengeData.id,
-        name: challengeData.name,
-        platform: challengeData.platform,
-        'id-alias': challengeData['id-alias'],
-        tags: challengeData.tags,
-        'difficulty-level': challengeData['difficulty-level'],
-        'description-markdown': challengeData['description-markdown']?.substring(0, 100),
-        'base64-url': challengeData['base64-url'],
-        solutions: challengeData.solutions
-      });
+      // 将YAML对象转换为表单数据
+      const challengeData = yamlData as any;
       
-      // 创建表单数据
+      // 开始构建表单数据
       const formData: ChallengeFormData = {
-        id: challengeData.id !== undefined ? Number(challengeData.id) : null,
+        // 保留原始的YAML内容
+        rawYaml: rawYaml,
+        
+        // 基本信息
+        id: challengeData.id || null,
         idAlias: challengeData['id-alias'] || '',
         platform: challengeData.platform || 'Web',
         name: challengeData.name || '',
         nameEn: challengeData.name_en || '',
-        difficultyLevel: Number(challengeData['difficulty-level']) || 1,
-        // 处理描述字段，兼容多种格式
-        description: challengeData['description-markdown'] || challengeData.description || '',
-        descriptionEn: challengeData['description-markdown_en'] || challengeData.descriptionEn || '',
-        descriptionMarkdown: challengeData['description-markdown'] || challengeData.description || '',
-        descriptionMarkdownEn: challengeData['description-markdown_en'] || challengeData.descriptionEn || '',
-        // 处理base64Url字段，确保正确映射
+        
+        // 描述信息
+        description: challengeData['description-markdown'] || '',
+        descriptionMarkdown: challengeData['description-markdown'] || '',
+        descriptionEn: challengeData['description-markdown_en'] || '',
+        descriptionMarkdownEn: challengeData['description-markdown_en'] || '',
+        
+        // 难度级别
+        difficultyLevel: challengeData['difficulty-level'] || 1,
+        
+        // URL处理
         base64Url: challengeData['base64-url'] || '',
+        
         // 处理过期标志
         isExpired: challengeData['is-expired'] === true || false,
+        
+        // 标签处理
         tags: challengeData.tags || [],
+        
+        // 解决方案处理
         solutions: (challengeData.solutions || []).map((solution: any) => ({
           title: solution.title || '',
           url: solution.url || '',
           source: solution.source || '',
           author: solution.author || ''
         })),
-        example: '',
-        testCases: [],
-        comments: [],
-        rawYaml: originalYaml
+        
+        // 时间字段处理
+        createTime: challengeData['create-time'] || '',
+        updateTime: challengeData['update-time'] || ''
       };
       
       console.log('转换后的表单数据:', formData);
@@ -625,6 +623,19 @@ const ChallengeContributePage: React.FC = () => {
       if (formValues.id === undefined) {
         console.warn('导入的YAML缺少id字段，将使用自动生成的ID');
         formValues.id = calculateNextId();
+      }
+      
+      // 更新时间字段为当前时间
+      const currentDateTime = new Date().toISOString().replace('T', ' ').substring(0, 19);
+      formValues.updateTime = currentDateTime;
+      
+      // 如果原始YAML存在，也需要更新其中的update-time字段
+      if (formValues.rawYaml) {
+        // 使用正则表达式更新update-time字段
+        formValues.rawYaml = formValues.rawYaml.replace(
+          /update-time:.*$/m,
+          `update-time: ${currentDateTime}`
+        );
       }
       
       console.log('正在设置表单值:', formValues);

@@ -52,6 +52,10 @@ export interface ChallengeFormData {
   comments?: string[];
   // 原始YAML文本（用于保留注释）
   rawYaml?: string;
+  // 创建时间
+  createTime?: string;
+  // 更新时间
+  updateTime?: string;
 }
 
 export interface ChallengeData {
