@@ -155,12 +155,8 @@ const ChallengeDetailPage = () => {
                     <Divider />
 
                     {/* 解决方案 */}
-                    {challenge.solutions && challenge.solutions.length > 0 && (
-                        <>
-                            <ChallengeSolutions challenge={challenge} />
-                            <Divider />
-                        </>
-                    )}
+                    <ChallengeSolutions challenge={challenge} />
+                    <Divider />
                     
                     {/* 外部链接和返回 */}
                     <ChallengeActions challenge={challenge} />
