@@ -6,7 +6,16 @@ import StarRating from '../StarRating';
 import { useMediaQuery } from 'react-responsive';
 
 // 定义平台枚举值
-const PLATFORM_TYPES = ['Web', 'Android', 'iOS'];
+const PLATFORM_TYPES = [
+  'Web', 
+  'Android', 
+  'iOS', 
+  'WeChat-MiniProgram', 
+  'Electron', 
+  'Windows-Native', 
+  'Mac-Native', 
+  'Linux-Native'
+];
 
 interface ChallengeControlsProps {
     /**

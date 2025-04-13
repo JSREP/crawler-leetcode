@@ -25,7 +25,7 @@ export interface Solution {
 export interface ChallengeFormData {
   id?: number | null;
   idAlias?: string;
-  platform?: 'Web' | 'Android' | 'iOS';
+  platform?: 'Web' | 'Android' | 'iOS' | 'WeChat-MiniProgram' | 'Electron' | 'Windows-Native' | 'Mac-Native' | 'Linux-Native';
   name?: string;
   nameEn?: string;
   difficultyLevel?: number;
@@ -62,7 +62,7 @@ export interface ChallengeData {
   id: number | null;
   'id-alias'?: string;
   tags: string[];
-  platform: 'Web' | 'Android' | 'iOS';
+  platform: 'Web' | 'Android' | 'iOS' | 'WeChat-MiniProgram' | 'Electron' | 'Windows-Native' | 'Mac-Native' | 'Linux-Native';
   name: string;
   name_en?: string;
   'difficulty-level': number;

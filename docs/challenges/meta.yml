@@ -18,7 +18,7 @@ challenges:
       - jsvmp
 
     # 挑战目标网站类型（枚举值，必填）
-    # 允许值: Web / Android / iOS
+    # 允许值: Web / Android / iOS / WeChat-MiniProgram / Electron / Windows-Native / Mac-Native / Linux-Native
     platform: Web
 
     # 挑战名称（必填）

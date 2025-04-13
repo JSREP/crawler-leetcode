@@ -175,6 +175,16 @@ const zhTranslations = {
         actions: {
             backToList: '返回挑战列表'
         },
+        platforms: {
+            Web: 'Web网站',
+            Android: 'Android应用',
+            iOS: 'iOS应用',
+            'WeChat-MiniProgram': '微信小程序',
+            'Electron': 'Electron应用',
+            'Windows-Native': 'Windows原生',
+            'Mac-Native': 'Mac原生',
+            'Linux-Native': 'Linux原生'
+        },
         pagination: {
             previous: '上一题',
             next: '下一题',
