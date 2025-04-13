@@ -26,16 +26,34 @@ const ChallengeActions: React.FC<ChallengeActionsProps> = ({ challenge, isMobile
                 display: 'flex', 
                 justifyContent: 'center',
                 width: '100%',
-                marginTop: '8px'
+                marginTop: '8px',
+                flexDirection: 'column',
+                gap: '12px'
             }}>
+                {challenge.externalLink && (
+                    <Button 
+                        type="primary" 
+                        onClick={() => window.open(challenge.externalLink, '_blank')}
+                        size="middle"
+                        style={{ 
+                            width: '100%',
+                            maxWidth: '400px',
+                            alignSelf: 'center'
+                        }}
+                    >
+                        {t('challenge.detail.startChallenge')}
+                    </Button>
+                )}
+                
                 <Button 
-                    type="primary" 
+                    type="default" 
                     icon={<HomeOutlined />} 
                     onClick={() => navigate('/challenges')}
                     size="middle"
                     style={{ 
                         width: '100%',
-                        maxWidth: '400px'
+                        maxWidth: '400px',
+                        alignSelf: 'center'
                     }}
                 >
                     {t('challenge.actions.backToList')}
