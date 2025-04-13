@@ -41,6 +41,27 @@ const MarkdownImage = (props: any) => {
     );
 };
 
+// 链接组件
+const MarkdownLink = (props: any) => {
+    return (
+        <a
+            {...props}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+                overflowWrap: 'break-word',
+                wordWrap: 'break-word',
+                wordBreak: 'break-word',
+                maxWidth: '100%',
+                display: 'inline-block',
+                ...props.style
+            }}
+        >
+            {props.children}
+        </a>
+    );
+};
+
 /**
  * 挑战描述组件，显示问题的Markdown描述
  */
@@ -58,12 +79,35 @@ const ChallengeDescription: React.FC<ChallengeDescriptionProps> = ({ challenge }
             
             {/* 实际挑战描述 */}
             {displayDescription ? (
-                <Card bordered={false} style={{ marginBottom: 24 }}>
+                <Card 
+                    bordered={false} 
+                    style={{ 
+                        marginBottom: 24,
+                        wordWrap: 'break-word',
+                        overflowWrap: 'break-word'
+                    }}
+                >
                     <div className="markdown-content">
                         <ReactMarkdown 
                             rehypePlugins={[rehypeRaw]}
                             components={{
-                                img: MarkdownImage
+                                img: MarkdownImage,
+                                a: MarkdownLink,
+                                pre: (props: any) => (
+                                    <pre style={{ 
+                                        overflowX: 'auto',
+                                        whiteSpace: 'pre-wrap',
+                                        wordWrap: 'break-word',
+                                        maxWidth: '100%'
+                                    }} {...props} />
+                                ),
+                                code: (props: any) => (
+                                    <code style={{ 
+                                        overflowWrap: 'break-word',
+                                        wordWrap: 'break-word',
+                                        wordBreak: 'break-word'
+                                    }} {...props} />
+                                )
                             }}
                         >
                             {displayDescription}

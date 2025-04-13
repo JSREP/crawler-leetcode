@@ -4,6 +4,10 @@
   line-height: 1.8;
   color: rgba(0, 0, 0, 0.85);
   padding: 8px 0;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
 }
 
 .markdown-content h1,
@@ -60,6 +64,8 @@
   border-radius: 6px;
   margin-bottom: 16px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  white-space: pre-wrap;
+  max-width: 100%;
 }
 
 .markdown-content code {
@@ -110,11 +116,12 @@
 .markdown-content table {
   display: block;
   width: 100%;
-  overflow: auto;
+  overflow-x: auto;
   margin-top: 0;
   margin-bottom: 16px;
   border-spacing: 0;
   border-collapse: collapse;
+  max-width: 100%;
 }
 
 .markdown-content table tr {
@@ -140,6 +147,11 @@
 .markdown-content a {
   color: #1890ff;
   text-decoration: none;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  max-width: 100%;
+  display: inline-block;
 }
 
 .markdown-content a:hover {

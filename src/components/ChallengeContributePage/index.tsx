@@ -140,7 +140,7 @@ const ChallengeContributePage: React.FC = () => {
         'difficulty-level': values.difficultyLevel,
         'description-markdown': values.description || values.descriptionMarkdown,
         'base64-url': values.base64Url,
-        'is-expired': values.isExpired,
+        'is-expired': values.isExpired === undefined ? false : values.isExpired,
         'tags': values.tags || [],
         'solutions': (values.solutions || [])?.filter(s => s.title && s.url).map(s => ({
           title: s.title,
@@ -170,12 +170,12 @@ const ChallengeContributePage: React.FC = () => {
       'name': values.name,
       'name_en': values.nameEn,
       'difficulty-level': values.difficultyLevel,
-      'description-markdown': values.description || values.descriptionMarkdown,
-      'description-markdown_en': values.descriptionEn || values.descriptionMarkdownEn,
+      'description-markdown': values.description || values.descriptionMarkdown || '',
+      'description-markdown_en': values.descriptionEn || values.descriptionMarkdownEn || '',
       'base64-url': values.base64Url,
-      'is-expired': values.isExpired,
+      'is-expired': values.isExpired === undefined ? false : values.isExpired,
       'tags': values.tags || [],
-      'solutions': (values.solutions || [])?.filter(s => s.title && s.url).map(s => ({
+      'solutions': (values.solutions || [])?.filter((s: any) => s.title && s.url).map((s: any) => ({
         title: s.title,
         url: s.url,
         ...(s.source ? {source: s.source} : {}),
@@ -187,7 +187,7 @@ const ChallengeContributePage: React.FC = () => {
     const lines = values.rawYaml.split('\n');
     
     // 新的方法：创建行类型映射，标记每行是什么类型
-    const lineTypes = lines.map(line => {
+    const lineTypes = lines.map((line: string) => {
       const trimmedLine = line.trim();
       if (trimmedLine === '') return 'empty';
       if (trimmedLine.startsWith('#')) return 'comment';
@@ -228,7 +228,7 @@ const ChallengeContributePage: React.FC = () => {
           if (!fieldRanges[currentField]) {
             fieldRanges[currentField] = { start: -1, end: -1, valueStart: -1, valueEnd: -1 };
           }
-          fieldRanges[currentField].end = i - 1;
+          fieldRanges[currentField as string].end = i - 1;
         }
         
         // 记录当前字段的开始位置
@@ -236,14 +236,14 @@ const ChallengeContributePage: React.FC = () => {
         if (!fieldRanges[currentField]) {
           fieldRanges[currentField] = { start: i, end: -1, valueStart: -1, valueEnd: -1 };
         } else {
-          fieldRanges[currentField].start = i;
+          fieldRanges[currentField as string].start = i;
         }
         
         // 找出值的开始位置
         const valueMatch = line.match(/^(\s*[a-zA-Z0-9_-]+:)(\s*)(.*)/);
         if (valueMatch && valueMatch[3]) {
-          fieldRanges[currentField].valueStart = valueMatch[1].length + valueMatch[2].length;
-          fieldRanges[currentField].valueEnd = line.length;
+          fieldRanges[currentField as string].valueStart = valueMatch[1].length + valueMatch[2].length;
+          fieldRanges[currentField as string].valueEnd = line.length;
         }
         
         // 处理tags和solutions字段
@@ -272,7 +272,7 @@ const ChallengeContributePage: React.FC = () => {
     
     // 设置最后一个字段的结束位置
     if (currentField && fieldRanges[currentField]) {
-      fieldRanges[currentField].end = lines.length - 1;
+      fieldRanges[currentField as string].end = lines.length - 1;
     }
     
     console.log('字段范围:', fieldRanges);
@@ -286,6 +286,12 @@ const ChallengeContributePage: React.FC = () => {
     for (const [fieldName, value] of Object.entries(fieldValueMap)) {
       if (fieldName === 'tags' || fieldName === 'solutions' || fieldName === 'description-markdown') {
         continue; // 这些复杂字段单独处理
+      }
+      
+      // 特殊处理is-expired字段，确保它总是有值
+      if (fieldName === 'is-expired' && (value === undefined || value === null)) {
+        // 如果is-expired未定义，默认设为false
+        fieldValueMap['is-expired'] = false;
       }
       
       if (fieldRanges[fieldName] && fieldRanges[fieldName].valueStart >= 0) {
@@ -303,9 +309,10 @@ const ChallengeContributePage: React.FC = () => {
     if (fieldValueMap['description-markdown'] && fieldRanges['description-markdown']) {
       const fieldRange = fieldRanges['description-markdown'];
       const startLine = fieldRange.start;
-      const indent = fieldIndents['description-markdown'];
+      const indent = fieldIndents['description-markdown'] || '';
       
-      const descriptionValue = fieldValueMap['description-markdown'];
+      // 获取最新的描述内容（确保使用最新表单值）
+      const descriptionValue = form.getFieldValue('description') || form.getFieldValue('descriptionMarkdown') || '';
       
       // 检查原始格式是否使用竖线(|)
       if (lines[startLine].includes('|')) {
@@ -576,7 +583,7 @@ const ChallengeContributePage: React.FC = () => {
         // 处理base64Url字段，确保正确映射
         base64Url: challengeData['base64-url'] || '',
         // 处理过期标志
-        isExpired: challengeData['is-expired'] === true,
+        isExpired: challengeData['is-expired'] === true || false,
         tags: challengeData.tags || [],
         solutions: (challengeData.solutions || []).map((solution: any) => ({
           title: solution.title || '',
