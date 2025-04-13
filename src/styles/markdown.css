@@ -203,11 +203,9 @@
   color: #fff !important;
 }
 
-.image-preview-mask {
-  font-size: 14px !important;
-  font-weight: bold !important;
-  color: #fff !important;
-  background-color: rgba(0, 0, 0, 0.6) !important;
+/* 移除悬浮蒙版 */
+.ant-image-mask {
+  display: none !important;
 }
 
 /* 关闭按钮指示器 */
