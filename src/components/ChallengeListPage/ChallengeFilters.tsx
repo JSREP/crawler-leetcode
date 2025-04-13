@@ -124,7 +124,7 @@ const ChallengeFilters: React.FC<ChallengeFiltersProps> = ({
                                         margin: isMobile ? '0 4px 4px 0' : '0 8px 8px 0'
                                     }}
                                 >
-                                    {isMobile ? selectedPlatform : `${t('challenge.detail.targetWebsite')}: ${selectedPlatform}`}
+                                    {isMobile ? selectedPlatform : `${t('challenge.detail.platform')}: ${selectedPlatform}`}
                                 </Tag>
                             )}
                             

@@ -146,7 +146,7 @@ export default {
             discussions: 'Discussions',
             relatedChallenges: 'Related Challenges',
             technicalTags: 'Technical Tags',
-            targetWebsite: 'Target Website',
+            targetWebsite: 'Platform',
             platform: 'Platform',
             difficulty: 'Difficulty',
             created: 'Created',
