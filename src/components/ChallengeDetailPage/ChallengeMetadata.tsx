@@ -72,25 +72,6 @@ const ChallengeMetadata: React.FC<ChallengeMetadataProps> = ({ challenge, isMobi
                         {formatDateTime(challenge.updateTime)}
                     </Text>
                 </Descriptions.Item>
-                
-                {challenge.externalLink && (
-                    <Descriptions.Item 
-                        label={t('challenge.detail.originalLink')}
-                        span={1}
-                    >
-                        <a 
-                            href={challenge.externalLink} 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            style={{ 
-                                wordBreak: 'break-all',
-                                fontSize: '12px'
-                            }}
-                        >
-                            {challenge.externalLink}
-                        </a>
-                    </Descriptions.Item>
-                )}
             </Descriptions>
         );
     }
@@ -128,23 +109,6 @@ const ChallengeMetadata: React.FC<ChallengeMetadataProps> = ({ challenge, isMobi
                 <Text type="secondary">{t('challenge.detail.updated')}:</Text>
                 <Text style={{ marginLeft: '8px' }}>{formatDateTime(challenge.updateTime)}</Text>
             </div>
-            
-            {challenge.externalLink && (
-                <div style={{ width: '100%' }}>
-                    <Text type="secondary">{t('challenge.detail.originalLink')}:</Text>
-                    <a 
-                        href={challenge.externalLink} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        style={{ 
-                            marginLeft: '8px',
-                            wordBreak: 'break-all'
-                        }}
-                    >
-                        {challenge.externalLink}
-                    </a>
-                </div>
-            )}
         </div>
     );
 };
