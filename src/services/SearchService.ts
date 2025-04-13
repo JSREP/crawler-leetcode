@@ -96,8 +96,16 @@ class SearchService {
         filters.tags.every(tag => challenge.tags.includes(tag));
 
       // 难度过滤
-      const matchesDifficulty = !filters.difficulty || filters.difficulty === 'all' ||
-        challenge.difficulty === parseInt(filters.difficulty);
+      let matchesDifficulty = true;
+      if (filters.difficulty && filters.difficulty !== 'all') {
+        // 处理逗号分隔的多难度筛选
+        const difficultyArray = filters.difficulty.split(',').filter(Boolean);
+        if (difficultyArray.length > 0) {
+          matchesDifficulty = difficultyArray.some(diff => 
+            challenge.difficulty === parseInt(diff)
+          );
+        }
+      }
 
       // 平台过滤
       const matchesPlatform = !filters.platform || filters.platform === 'all' ||

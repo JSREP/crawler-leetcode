@@ -1,28 +1,12 @@
 import * as React from 'react';
-import { Button, Modal, Space, message, Typography } from 'antd';
-import { CopyOutlined, GithubOutlined, QuestionCircleOutlined } from '@ant-design/icons';
-import { Light as SyntaxHighlighter } from 'react-syntax-highlighter';
-import yaml from 'react-syntax-highlighter/dist/esm/languages/hljs/yaml';
-import { vs } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { useState, useEffect } from 'react';
+import { Button, Space, message, Typography, Input, Alert, Modal, Card, Divider, Tooltip } from 'antd';
+import { CopyOutlined, FileTextOutlined, DownloadOutlined, CheckOutlined, InfoCircleOutlined, ReloadOutlined } from '@ant-design/icons';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { tomorrow } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { styles } from '../styles';
 
-// 注册YAML语言
-SyntaxHighlighter.registerLanguage('yaml', yaml);
-
-// GitHub仓库信息
-const GITHUB_REPO = 'JSREP/crawler-leetcode';
-const GITHUB_BASE_URL = `https://github.com/${GITHUB_REPO}`;
-
-// YAML长度限制（超过此长度需要手动提交）
-const YAML_LENGTH_LIMIT = 10000;
-
-// 自定义高亮主题
-const highlightTheme = {
-  ...vs,
-  hljs: {
-    ...vs.hljs,
-    background: '#f8f8f8'
-  }
-};
+const { Text, Title } = Typography;
 
 interface YamlPreviewSectionProps {
   yamlOutput: string;
@@ -31,323 +15,214 @@ interface YamlPreviewSectionProps {
 }
 
 /**
- * YAML预览部分组件
+ * YAML预览内容组件
+ */
+const YamlPreviewContent: React.FC<{ yamlOutput: string }> = ({ yamlOutput }) => {
+  // 添加调试输出
+  console.log('YamlPreviewContent 渲染，YAML长度:', yamlOutput?.length || 0);
+  
+  if (!yamlOutput) {
+    return (
+      <Alert
+        message="尚未生成YAML"
+        description="请填写表单并点击'生成YAML'按钮来预览YAML内容"
+        type="info"
+        showIcon
+      />
+    );
+  }
+
+  return (
+    <div style={styles.yamlPreview}>
+      <SyntaxHighlighter
+        language="yaml"
+        style={tomorrow}
+        customStyle={{ 
+          fontSize: '14px', 
+          lineHeight: '1.5', 
+          padding: '16px',
+          margin: 0,
+          backgroundColor: 'transparent',
+          border: 'none'
+        }}
+        showLineNumbers={true}
+      >
+        {yamlOutput}
+      </SyntaxHighlighter>
+    </div>
+  );
+};
+
+/**
+ * YAML预览和操作区域
  */
 const YamlPreviewSection: React.FC<YamlPreviewSectionProps> = ({
   yamlOutput,
   onGenerateYaml,
-  onCopyYaml,
+  onCopyYaml
 }) => {
-  const [isModalVisible, setIsModalVisible] = React.useState<boolean>(false);
-  const [isLengthWarningVisible, setIsLengthWarningVisible] = React.useState<boolean>(false);
-  const [isPrGuideVisible, setIsPrGuideVisible] = React.useState<boolean>(false);
-  const [currentAction, setCurrentAction] = React.useState<'PR' | 'Issue' | null>(null);
-  const [pendingAction, setPendingAction] = React.useState<'PR' | 'Issue' | null>(null);
+  // 状态
+  const [downloadFileName, setDownloadFileName] = useState<string>('challenge.yaml');
+  const [showDownloadModal, setShowDownloadModal] = useState<boolean>(false);
+  const [isCopied, setIsCopied] = useState<boolean>(false);
+  const [displayYaml, setDisplayYaml] = useState<string>('');
   
-  // 监听yamlOutput的变化，当有新的YAML生成时，继续执行之前的操作
-  React.useEffect(() => {
-    if (yamlOutput && pendingAction) {
-      const action = pendingAction;
-      setPendingAction(null);
-      
-      // 检查YAML长度
-      if (yamlOutput.length > YAML_LENGTH_LIMIT) {
-        setCurrentAction(action);
-        setIsLengthWarningVisible(true);
-      } else {
-        if (action === 'PR') {
-          proceedToPullRequest();
-        } else {
-          proceedToIssue();
-        }
-      }
-    }
+  // 监听yamlOutput变化
+  useEffect(() => {
+    console.log('YamlPreviewSection 接收到 yamlOutput 更新，长度:', yamlOutput?.length || 0);
+    setDisplayYaml(yamlOutput);
   }, [yamlOutput]);
 
-  const showModal = () => {
-    console.log('正在生成YAML预览，确保保留注释...');
-    onGenerateYaml(); // 先生成YAML
-    setIsModalVisible(true);
-  };
-
-  const handleCancel = () => {
-    setIsModalVisible(false);
-  };
-
-  const handleLengthWarningCancel = () => {
-    setIsLengthWarningVisible(false);
-    setCurrentAction(null);
-  };
-
-  // 复制并关闭Modal
-  const handleCopyAndClose = () => {
-    onCopyYaml();
-    setIsModalVisible(false);
-  };
-
-  // 提取挑战名称，用于PR和Issue标题
-  const extractChallengeName = (): string => {
-    try {
-      // 尝试从YAML中提取name字段
-      const match = yamlOutput.match(/name:\s*(.+)/);
-      if (match && match[1]) {
-        return match[1].trim();
-      }
-    } catch (e) {
-      console.error('无法提取挑战名称', e);
-    }
-    return '新挑战';
-  };
-
-  // 检查YAML长度并决定是否显示警告
-  const checkYamlLengthAndProceed = (action: 'PR' | 'Issue') => {
-    // 如果还没有YAML，先生成并设置待处理操作
-    if (!yamlOutput) {
-      setPendingAction(action);
-      onGenerateYaml();
+  // 处理YAML下载
+  const handleDownloadYaml = () => {
+    if (!displayYaml) {
+      message.warning('请先生成YAML', 2);
       return;
     }
+    setShowDownloadModal(true);
+  };
 
-    // 如果已有YAML，直接检查长度并处理
-    if (yamlOutput.length > YAML_LENGTH_LIMIT) {
-      setCurrentAction(action);
-      setIsLengthWarningVisible(true);
-    } else {
-      if (action === 'PR') {
-        proceedToPullRequest();
-      } else {
-        proceedToIssue();
-      }
+  // 增强复制功能
+  const handleEnhancedCopy = () => {
+    if (!displayYaml) {
+      message.warning('请先生成YAML', 2);
+      return;
     }
-  };
-
-  // 手动复制YAML，用于超长情况
-  const handleManualCopyYaml = () => {
-    navigator.clipboard.writeText(yamlOutput)
-      .then(() => {
-        message.success('YAML已复制到剪贴板，请在GitHub中粘贴');
-        
-        // 打开相应的GitHub页面
-        if (currentAction === 'PR') {
-          const prUrl = `${GITHUB_BASE_URL}/compare/main...`;
-          window.open(prUrl, '_blank');
-        } else {
-          const issueUrl = `${GITHUB_BASE_URL}/issues/new`;
-          window.open(issueUrl, '_blank');
-        }
-        
-        // 关闭警告弹窗
-        setIsLengthWarningVisible(false);
-        setCurrentAction(null);
-      })
-      .catch((error) => {
-        console.error('复制YAML失败:', error);
-        message.error('复制YAML失败，请手动复制后提交');
-      });
-  };
-
-  // 创建Pull Request的实际实现
-  const proceedToPullRequest = () => {
-    if (!yamlOutput) return;
-
-    const challengeName = extractChallengeName();
     
-    // 使用navigator.clipboard API复制YAML到剪贴板
-    navigator.clipboard.writeText(yamlOutput)
-      .then(() => {
-        message.success('YAML已复制到剪贴板');
-        
-        // 显示PR引导弹窗
-        setIsPrGuideVisible(true);
-      })
-      .catch((error) => {
-        console.error('复制YAML失败:', error);
-        message.error('复制YAML失败，请手动复制后提交');
-      });
-  };
-
-  // 创建Issue的实际实现
-  const proceedToIssue = () => {
-    if (!yamlOutput) return;
-
-    const challengeName = extractChallengeName();
+    onCopyYaml();
+    setIsCopied(true);
     
-    // 使用navigator.clipboard API复制YAML到剪贴板
-    navigator.clipboard.writeText(yamlOutput)
-      .then(() => {
-        message.success('YAML已复制到剪贴板，请在GitHub中粘贴');
-        
-        // 准备Issue标题和基本说明
-        const title = encodeURIComponent(`题目请求: ${challengeName}`);
-        const body = encodeURIComponent(
-          `## 题目请求\n\n` +
-          `请求添加以下挑战题目。\n\n` +
-          `### YAML代码\n\n` +
-          `\`\`\`yaml\n${yamlOutput}\n\`\`\``
-        );
-        
-        // 构建Issue创建URL (使用简短参数)
-        const issueUrl = `${GITHUB_BASE_URL}/issues/new?title=${title}&body=${body}`;
-        
-        // 在新标签页中打开
-        window.open(issueUrl, '_blank');
-      })
-      .catch((error) => {
-        console.error('复制YAML失败:', error);
-        message.error('复制YAML失败，请手动复制后提交');
-      });
+    // 3秒后重置复制状态
+    setTimeout(() => {
+      setIsCopied(false);
+    }, 3000);
   };
 
-  // 创建Pull Request的触发函数
-  const createPullRequest = () => {
-    checkYamlLengthAndProceed('PR');
+  // 确认下载
+  const confirmDownload = () => {
+    if (!displayYaml) return;
+    
+    const element = document.createElement('a');
+    const file = new Blob([displayYaml], { type: 'text/yaml' });
+    element.href = URL.createObjectURL(file);
+    element.download = downloadFileName;
+    document.body.appendChild(element);
+    element.click();
+    document.body.removeChild(element);
+    
+    setShowDownloadModal(false);
+    message.success(`已下载 ${downloadFileName}`, 2);
   };
-
-  // 创建Issue的触发函数
-  const createIssue = () => {
-    checkYamlLengthAndProceed('Issue');
-  };
-
-  // 关闭PR引导弹窗
-  const handlePrGuideCancel = () => {
-    setIsPrGuideVisible(false);
+  
+  // 处理刷新YAML
+  const handleRefreshYaml = () => {
+    console.log('手动刷新YAML');
+    onGenerateYaml();
   };
 
   return (
-    <>
-      {/* 显示操作按钮 */}
-      <div style={{ margin: '24px 0' }}>
-        <Space size="middle">
-          <Button 
-            onClick={showModal}
-            icon={<CopyOutlined />}
-          >
-            预览YAML
-          </Button>
-          
-          <Button
-            onClick={createPullRequest}
-            icon={<GithubOutlined />}
-          >
-            Pull Request
-          </Button>
-          
-          <Button
-            onClick={createIssue}
-            icon={<GithubOutlined />}
-          >
-            New Issue
-          </Button>
-          
-          {/* 调试按钮，仅在开发环境显示 */}
-          {process.env.NODE_ENV === 'development' && (
+    <div style={{ marginTop: 20, marginBottom: 40 }} className="yaml-preview-section" id="yaml-preview-section">
+      <Card
+        title={
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <FileTextOutlined style={{ marginRight: 8 }} />
+            <span>YAML预览</span>
+            {displayYaml ? (
+              <Text type="secondary" style={{ marginLeft: 8, fontSize: '12px' }}>
+                (内容长度: {displayYaml.length})
+              </Text>
+            ) : null}
+          </div>
+        }
+        extra={
+          <Space>
             <Button 
-              onClick={() => {
-                console.log('调试：原始YAML内容', yamlOutput);
-                message.info('已在控制台输出调试信息');
-              }}
-              type="dashed"
+              type="primary"
+              icon={isCopied ? <CheckOutlined /> : <CopyOutlined />}
+              onClick={handleEnhancedCopy}
+              style={{ backgroundColor: isCopied ? '#52c41a' : undefined }}
+              disabled={!displayYaml}
             >
-              调试
+              {isCopied ? '已复制' : '复制YAML'}
             </Button>
-          )}
-        </Space>
-      </div>
-      
-      {/* YAML预览对话框 */}
-      <Modal
-        title="预览YAML代码"
-        open={isModalVisible}
-        onCancel={handleCancel}
-        width={800}
-        footer={[
-          <Button key="cancel" onClick={handleCancel}>
-            关闭
-          </Button>,
-          <Button key="copy" type="primary" onClick={handleCopyAndClose}>
-            复制并关闭
-          </Button>
-        ]}
+            
+            <Button
+              icon={<DownloadOutlined />}
+              onClick={handleDownloadYaml}
+              disabled={!displayYaml}
+            >
+              下载
+            </Button>
+            
+            <Button
+              type="primary"
+              icon={<ReloadOutlined />}
+              onClick={handleRefreshYaml}
+            >
+              刷新YAML
+            </Button>
+          </Space>
+        }
       >
-        <div style={{ maxHeight: '70vh', overflowY: 'auto' }}>
-          <SyntaxHighlighter
-            language="yaml"
-            style={highlightTheme}
-            customStyle={{ 
-              fontSize: '14px', 
-              lineHeight: '1.5', 
-              padding: '16px',
-              whiteSpace: 'pre-wrap',
-              overflowWrap: 'break-word'
-            }}
-            showLineNumbers={true}
-            wrapLines={true}
-            preserveWhitespace={true}
-          >
-            {yamlOutput}
-          </SyntaxHighlighter>
+        <Alert
+          message="下面是生成的YAML内容"
+          description={
+            <Text type="secondary">
+              YAML文件包含了所有表单数据，可用于提交挑战。如需修改，请返回前面的步骤修改表单内容，然后点击"刷新YAML"按钮更新。
+            </Text>
+          }
+          type="info"
+          showIcon
+          icon={<InfoCircleOutlined />}
+          style={{ marginBottom: 16 }}
+        />
+
+        {/* YAML内容预览 */}
+        <YamlPreviewContent yamlOutput={displayYaml} />
+        
+        <Divider />
+        
+        <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+          <Space>
+            <Button 
+              type="primary"
+              onClick={handleRefreshYaml}
+              icon={<ReloadOutlined />}
+            >
+              刷新YAML内容
+            </Button>
+          </Space>
         </div>
-      </Modal>
-      
-      {/* YAML长度警告对话框 */}
+      </Card>
+
+      {/* 下载文件名输入弹窗 */}
       <Modal
-        title="YAML内容过长"
-        open={isLengthWarningVisible}
-        onCancel={handleLengthWarningCancel}
-        footer={[
-          <Button key="cancel" onClick={handleLengthWarningCancel}>
-            取消
-          </Button>,
-          <Button key="copy" type="primary" icon={<CopyOutlined />} onClick={handleManualCopyYaml}>
-            复制YAML并继续
-          </Button>
-        ]}
+        title={
+          <Space>
+            <DownloadOutlined />
+            <span>下载YAML文件</span>
+          </Space>
+        }
+        open={showDownloadModal}
+        onOk={confirmDownload}
+        onCancel={() => setShowDownloadModal(false)}
+        okText="下载"
+        cancelText="取消"
       >
-        <div style={{ padding: '16px 0' }}>
-          <p>生成的YAML内容超过了{YAML_LENGTH_LIMIT}个字符，无法通过URL参数直接传递。</p>
-          <p>请使用以下步骤手动提交:</p>
-          <ol>
-            <li>点击下方的"复制YAML并继续"按钮将YAML内容复制到剪贴板</li>
-            <li>然后会自动跳转到GitHub {currentAction === 'PR' ? 'Pull Request' : 'Issue'} 创建页面</li>
-            <li>在GitHub页面上，填写标题和描述</li>
-            <li>将YAML内容粘贴到描述区域中的合适位置</li>
-            <li>提交{currentAction === 'PR' ? 'Pull Request' : 'Issue'}</li>
-          </ol>
+        <div style={{ marginBottom: 16 }}>
+          <Text>请输入文件名：</Text>
+          <Text type="secondary" style={{ display: 'block', marginTop: 8 }}>
+            文件将保存为YAML格式，可直接用于提交。
+          </Text>
         </div>
+        <Input
+          value={downloadFileName}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => setDownloadFileName(e.target.value)}
+          placeholder="challenge.yaml"
+          suffix=".yaml"
+        />
       </Modal>
-      
-      {/* PR引导对话框 */}
-      <Modal
-        title="如何提交Pull Request"
-        open={isPrGuideVisible}
-        onCancel={handlePrGuideCancel}
-        footer={[
-          <Button key="close" onClick={handlePrGuideCancel}>
-            关闭
-          </Button>,
-        ]}
-      >
-        <div style={{ padding: '16px 0' }}>
-          <Typography.Title level={5}>提交Pull Request的步骤</Typography.Title>
-          <ol style={{ paddingLeft: '20px' }}>
-            <li>访问项目仓库：<Typography.Link href={GITHUB_BASE_URL} target="_blank">{GITHUB_BASE_URL}</Typography.Link></li>
-            <li>点击仓库页面右上角的"Fork"按钮创建自己的分支</li>
-            <li>在Fork后的仓库中，创建一个新的分支</li>
-            <li>在新分支中，导航到challenges文件夹</li>
-            <li>点击"Add file" &gt; "Create new file"</li>
-            <li>为文件命名，格式为：challenges/[题目ID].yaml</li>
-            <li>将已复制的YAML内容粘贴到文件编辑器中</li>
-            <li>点击"Commit new file"提交更改</li>
-            <li>回到仓库主页，点击"Pull requests" &gt; "New pull request"</li>
-            <li>确认更改并点击"Create pull request"</li>
-            <li>填写PR标题和描述，然后点击"Create pull request"完成提交</li>
-          </ol>
-          <Typography.Paragraph>
-            <QuestionCircleOutlined /> 提示：YAML内容已自动复制到剪贴板，您可以直接粘贴。
-          </Typography.Paragraph>
-        </div>
-      </Modal>
-    </>
+    </div>
   );
 };
 

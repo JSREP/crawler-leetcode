@@ -31,7 +31,7 @@ challenges:
     # 挑战难度评级（整数类型，必填）
     # 取值范围: 1-5，1表示最简单，5表示最难
     # 前端展示时会转换为星级显示
-    difficulty-level: 3
+    difficulty-level: 4
 
     # Markdown格式详细描述（必选）
     # 当需要复杂排版时使用

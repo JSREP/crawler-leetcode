@@ -2,12 +2,12 @@ import { FormInstance } from 'antd';
 
 export interface Solution {
   /**
-   * 解决方案标题
+   * 参考资料标题
    */
   title: string;
 
   /**
-   * 解决方案链接
+   * 参考资料链接
    */
   url: string;
 
