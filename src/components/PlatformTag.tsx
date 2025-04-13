@@ -54,10 +54,28 @@ const PlatformTag: React.FC<PlatformTagProps> = ({
     const tooltipText = tooltip || t('tagTooltips.filterByPlatform');
     
     const getColor = () => {
-        if (platform === 'LeetCode') {
-            return 'orange';
+        switch (platform) {
+            case 'Web':
+                return 'blue';
+            case 'Android':
+                return 'green';
+            case 'iOS':
+                return 'volcano';
+            case 'WeChat-MiniProgram':
+                return 'green';
+            case 'Electron':
+                return 'cyan';
+            case 'Windows-Native':
+                return 'blue';
+            case 'Mac-Native': 
+                return 'purple';
+            case 'Linux-Native':
+                return 'orange';
+            case 'LeetCode':
+                return 'orange';
+            default:
+                return 'purple';
         }
-        return 'purple';
     };
     
     const handleClick = (e: React.MouseEvent) => {
