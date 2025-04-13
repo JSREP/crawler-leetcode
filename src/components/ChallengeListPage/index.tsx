@@ -23,7 +23,7 @@ const ChallengeListPage = () => {
     const { t } = useTranslation();
     const isMobile = useMediaQuery({ maxWidth: 768 });
     const [filters, setFilters] = useState({
-        difficulty: 'all',
+        difficulty: [] as string[],
         tags: [] as string[],
         platform: 'all'
     });
@@ -64,8 +64,10 @@ const ChallengeListPage = () => {
                     const newSearchParams = new URLSearchParams(searchParams);
                     
                     // 设置难度
-                    if (parsedFilters.difficulty && parsedFilters.difficulty !== 'all') {
-                        newSearchParams.set('difficulty', parsedFilters.difficulty);
+                    if (parsedFilters.difficulty && parsedFilters.difficulty.length > 0) {
+                        parsedFilters.difficulty.forEach((difficulty: string) => {
+                            newSearchParams.append('difficulty', difficulty);
+                        });
                     }
                     
                     // 设置平台
@@ -120,11 +122,33 @@ const ChallengeListPage = () => {
     // 处理难度点击
     const handleDifficultyClick = (difficulty: string) => {
         const newSearchParams = new URLSearchParams(searchParams);
-        newSearchParams.set('difficulty', difficulty);
+        const currentDifficulties = filters.difficulty;
+        
+        // 检查是否已选中该难度
+        const isSelected = currentDifficulties.includes(difficulty);
+        
+        if (difficulty === 'all') {
+            // 如果选择"全部"，则清除所有难度筛选
+            newSearchParams.delete('difficulty');
+            filters.difficulty = [];
+        } else if (isSelected) {
+            // 如果已选中，则取消选中
+            const newDifficulties = currentDifficulties.filter(d => d !== difficulty);
+            newSearchParams.delete('difficulty');
+            newDifficulties.forEach(d => newSearchParams.append('difficulty', d));
+            filters.difficulty = newDifficulties;
+        } else {
+            // 如果未选中，则添加选中
+            const newDifficulties = [...currentDifficulties, difficulty];
+            newSearchParams.delete('difficulty');
+            newDifficulties.forEach(d => newSearchParams.append('difficulty', d));
+            filters.difficulty = newDifficulties;
+        }
+
         navigate(`/challenges?${newSearchParams.toString()}`);
         
         // 保存筛选设置到本地存储
-        saveFilterPreferences({ ...filters, difficulty });
+        saveFilterPreferences({ ...filters, difficulty: filters.difficulty });
     };
 
     // 处理平台筛选
@@ -183,10 +207,22 @@ const ChallengeListPage = () => {
     // 从URL同步过滤器状态
     useEffect(() => {
         const tags = searchParams.getAll('tags');
-        const difficulty = searchParams.get('difficulty') || 'all';
+        let difficultyParams = searchParams.getAll('difficulty');
         const platform = searchParams.get('platform') || 'all';
         
-        const newFilters = { tags, difficulty, platform };
+        // 处理特殊难度字符串转换
+        if (difficultyParams.length === 1) {
+            const diffParam = difficultyParams[0];
+            if (diffParam === 'easy') {
+                difficultyParams = ['1', '2'];
+            } else if (diffParam === 'medium') {
+                difficultyParams = ['3', '4'];
+            } else if (diffParam === 'hard') {
+                difficultyParams = ['5'];
+            }
+        }
+        
+        const newFilters = { tags, difficulty: difficultyParams, platform };
         setFilters(newFilters);
         
         // 当URL发生变化时，同步到本地存储
@@ -218,7 +254,7 @@ const ChallengeListPage = () => {
         // 使用搜索服务过滤
         const filtered = searchService.filterChallenges(visibleChallenges, {
             tags: filters.tags,
-            difficulty: filters.difficulty,
+            difficulty: filters.difficulty.join(','),
             platform: filters.platform,
             query: searchQuery
         });
@@ -263,8 +299,17 @@ const ChallengeListPage = () => {
             newTags.forEach(t => newSearchParams.append('tags', t));
             newFilters = { ...newFilters, tags: newTags };
         } else if (type === 'difficulty') {
-            newSearchParams.delete('difficulty');
-            newFilters = { ...newFilters, difficulty: 'all' };
+            if (value) {
+                // 仅移除单个难度
+                const newDifficulties = filters.difficulty.filter(d => d !== value);
+                newSearchParams.delete('difficulty');
+                newDifficulties.forEach(d => newSearchParams.append('difficulty', d));
+                newFilters = { ...newFilters, difficulty: newDifficulties };
+            } else {
+                // 移除所有难度
+                newSearchParams.delete('difficulty');
+                newFilters = { ...newFilters, difficulty: [] };
+            }
         } else if (type === 'platform') {
             newSearchParams.delete('platform');
             newFilters = { ...newFilters, platform: 'all' };
@@ -278,7 +323,7 @@ const ChallengeListPage = () => {
     const handleClearAllFilters = () => {
         const newSearchParams = new URLSearchParams();
         setSearchParams(newSearchParams);
-        const newFilters = { tags: [], difficulty: 'all', platform: 'all' };
+        const newFilters = { tags: [], difficulty: [], platform: 'all' };
         setFilters(newFilters);
         saveFilterPreferences(newFilters);
     };
@@ -295,7 +340,7 @@ const ChallengeListPage = () => {
     // 获取应用的过滤器数量
     const getAppliedFiltersCount = () => {
         let count = 0;
-        if (filters.difficulty !== 'all') count++;
+        if (filters.difficulty.length > 0) count++;
         if (filters.platform !== 'all') count++;
         count += filters.tags.length;
         return count;
@@ -325,7 +370,7 @@ const ChallengeListPage = () => {
             selectedTags={filters.tags}
             selectedDifficulty={filters.difficulty}
             selectedPlatform={filters.platform}
-            hasFilters={filters.tags.length > 0 || filters.difficulty !== 'all' || filters.platform !== 'all'}
+            hasFilters={filters.tags.length > 0 || filters.difficulty.length > 0 || filters.platform !== 'all'}
             onRemoveTag={(tag) => handleFilterRemove('tag', tag)}
             onRemoveDifficulty={() => handleFilterRemove('difficulty')}
             onRemovePlatform={() => handleFilterRemove('platform')}

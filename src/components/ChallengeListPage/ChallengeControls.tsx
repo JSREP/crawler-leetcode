@@ -27,7 +27,7 @@ interface ChallengeControlsProps {
     /**
      * 选中的难度
      */
-    selectedDifficulty: string;
+    selectedDifficulty: string[];
     
     /**
      * 选中的平台
@@ -110,8 +110,9 @@ const ChallengeControls: React.FC<ChallengeControlsProps> = ({
     // 难度过滤菜单
     const difficultyMenu = (
         <Menu
-            selectedKeys={[selectedDifficulty]}
+            selectedKeys={selectedDifficulty}
             onClick={({ key }) => onDifficultyChange(key)}
+            multiple={false}
         >
             <Menu.Item key="all">{t('challenges.filters.allDifficulties')}</Menu.Item>
             <Menu.Item key="1">

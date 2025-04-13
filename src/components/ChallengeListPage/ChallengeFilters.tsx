@@ -14,7 +14,7 @@ interface ChallengeFiltersProps {
     /**
      * 选中的难度
      */
-    selectedDifficulty: string;
+    selectedDifficulty: string[];
     
     /**
      * 选中的平台
@@ -92,7 +92,7 @@ const ChallengeFilters: React.FC<ChallengeFiltersProps> = ({
                 <Row gutter={[8, 8]} style={{ marginBottom: isMobile ? '8px' : '16px' }}>
                     <Col span={24}>
                         <Space wrap size={isMobile ? 4 : 8} style={{ width: '100%' }}>
-                            {selectedDifficulty !== 'all' && (
+                            {selectedDifficulty.length > 0 && (
                                 <Tag
                                     closable
                                     onClose={onRemoveDifficulty}
@@ -105,7 +105,11 @@ const ChallengeFilters: React.FC<ChallengeFiltersProps> = ({
                                     }}
                                 >
                                     {isMobile ? '' : `${t('challenges.sort.difficulty')}: `}
-                                    <StarRating difficulty={parseInt(selectedDifficulty)} />
+                                    <Space size={2}>
+                                        {selectedDifficulty.map(diff => (
+                                            <StarRating key={diff} difficulty={parseInt(diff)} />
+                                        ))}
+                                    </Space>
                                 </Tag>
                             )}
                             

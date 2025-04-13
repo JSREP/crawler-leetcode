@@ -1,5 +1,5 @@
-import { List, Typography, Empty, Tag, Card, Space, Button } from 'antd';
-import { GithubOutlined, LinkOutlined } from '@ant-design/icons';
+import { List, Typography, Empty, Tag, Card, Space, Button, Tooltip } from 'antd';
+import { GithubOutlined, LinkOutlined, QuestionCircleOutlined } from '@ant-design/icons';
 import { useTranslation } from 'react-i18next';
 import { Challenge, Solution } from '../../types/challenge';
 
@@ -14,14 +14,14 @@ interface ChallengeSolutionsProps {
 }
 
 /**
- * 挑战解决方案列表
+ * 挑战参考资料列表
  */
 const ChallengeSolutions: React.FC<ChallengeSolutionsProps> = ({ challenge, isMobile = false }) => {
     const { t } = useTranslation();
     
     // 移动端布局
     if (isMobile) {
-        // 如果没有解决方案，显示空状态
+        // 如果没有参考资料，显示空状态
         if (!challenge.solutions || challenge.solutions.length === 0) {
             return (
                 <div>
@@ -32,7 +32,12 @@ const ChallengeSolutions: React.FC<ChallengeSolutionsProps> = ({ challenge, isMo
                             fontSize: '18px'
                         }}
                     >
-                        {t('challenge.detail.solutions')}
+                        <Space>
+                            {t('challenge.detail.solutions')}
+                            <Tooltip title={t('challenge.detail.referencesExplanation')}>
+                                <QuestionCircleOutlined style={{ fontSize: '14px', color: '#1890ff' }} />
+                            </Tooltip>
+                        </Space>
                     </Title>
                     <Empty description={t('challenge.detail.noSolutions')} />
                 </div>
@@ -48,7 +53,12 @@ const ChallengeSolutions: React.FC<ChallengeSolutionsProps> = ({ challenge, isMo
                         fontSize: '18px'
                     }}
                 >
-                    {t('challenge.detail.solutions')}
+                    <Space>
+                        {t('challenge.detail.solutions')}
+                        <Tooltip title={t('challenge.detail.referencesExplanation')}>
+                            <QuestionCircleOutlined style={{ fontSize: '14px', color: '#1890ff' }} />
+                        </Tooltip>
+                    </Space>
                 </Title>
                 
                 <List
@@ -113,7 +123,14 @@ const ChallengeSolutions: React.FC<ChallengeSolutionsProps> = ({ challenge, isMo
     // PC端布局
     return (
         <div>
-            <Title level={3}>{t('challenge.detail.solutions')}</Title>
+            <Title level={3}>
+                <Space align="center">
+                    {t('challenge.detail.solutions')}
+                    <Tooltip title={t('challenge.detail.referencesExplanation')}>
+                        <QuestionCircleOutlined style={{ fontSize: '16px', color: '#1890ff' }} />
+                    </Tooltip>
+                </Space>
+            </Title>
             
             {(!challenge.solutions || challenge.solutions.length === 0) ? (
                 <Card>
@@ -121,19 +138,19 @@ const ChallengeSolutions: React.FC<ChallengeSolutionsProps> = ({ challenge, isMo
                         image={Empty.PRESENTED_IMAGE_SIMPLE}
                         description={
                             <span>
-                                {t('challenge.detail.noSolutions', '暂无解决方案')}
+                                {t('challenge.detail.noSolutions', '暂无参考资料')}
                             </span>
                         }
                     >
                         <Button 
                             type="primary" 
                             icon={<GithubOutlined />}
-                            onClick={() => window.open('https://github.com/JSREP/crawler-leetcode/issues/new?template=solution.md&title=解决方案：' + challenge.name, '_blank')}
+                            onClick={() => window.open('https://github.com/JSREP/crawler-leetcode/issues/new?template=solution.md&title=参考资料：' + challenge.name, '_blank')}
                         >
-                            {t('challenge.detail.contributeSolution', '贡献你的解决方案')}
+                            {t('challenge.detail.contributeSolution', '贡献你的参考资料')}
                         </Button>
                         <div style={{ marginTop: '12px', fontSize: '14px', color: 'rgba(0, 0, 0, 0.45)' }}>
-                            {t('challenge.detail.contributeTip', '欢迎分享你的解决方案，帮助更多的人！')}
+                            {t('challenge.detail.contributeTip', '欢迎分享你的参考资料，帮助更多的人！')}
                         </div>
                     </Empty>
                 </Card>

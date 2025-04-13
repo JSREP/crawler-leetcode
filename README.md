@@ -6,6 +6,8 @@
 
 **在线访问**: [https://jsrep.github.io/crawler-leetcode/](https://jsrep.github.io/crawler-leetcode/)
 
+![image-20250413185708120](./README.assets/image-20250413185708120.png)
+
 ## 项目结构
 
 ```
