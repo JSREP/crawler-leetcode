@@ -1,10 +1,10 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import { Space, Row, Col, Drawer, Button } from 'antd';
-import { FilterOutlined } from '@ant-design/icons';
+import { Space, Row, Col, Drawer, Button, Spin, message } from 'antd';
+import { FilterOutlined, ReloadOutlined } from '@ant-design/icons';
 import { Challenge } from '../../types/challenge';
-import { challenges } from './ChallengeData';
+import { fetchChallengesFromDatabase, clearChallengeCache, testDatabaseConnection } from './DatabaseChallengeData';
 import ChallengeFilters from './ChallengeFilters';
 import ChallengeControls from './ChallengeControls';
 import SimpleChallengeList from './SimpleChallengeList';
@@ -22,6 +22,9 @@ const SORT_STORAGE_KEY = 'challenge-sort-preferences';
 const ChallengeListPage = () => {
     const { t } = useTranslation();
     const isMobile = useMediaQuery({ maxWidth: 768 });
+    const [challenges, setChallenges] = useState<Challenge[]>([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState<string | null>(null);
     const [filters, setFilters] = useState({
         difficulty: [] as string[],
         tags: [] as string[],
@@ -34,6 +37,44 @@ const ChallengeListPage = () => {
     const [drawerVisible, setDrawerVisible] = useState(false);
     const navigate = useNavigate();
     const [searchParams, setSearchParams] = useSearchParams();
+
+    // 加载挑战数据
+    const loadChallenges = async () => {
+        try {
+            setLoading(true);
+            setError(null);
+
+            // 先测试数据库连接
+            const isDbConnected = await testDatabaseConnection();
+            console.log('数据库连接状态:', isDbConnected);
+
+            const challengeData = await fetchChallengesFromDatabase();
+            setChallenges(challengeData);
+
+            if (challengeData.length === 0) {
+                setError('没有找到挑战数据');
+            }
+
+        } catch (err) {
+            console.error('加载挑战数据失败:', err);
+            setError('加载挑战数据失败，请稍后重试');
+            message.error('加载挑战数据失败');
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    // 刷新数据
+    const refreshChallenges = async () => {
+        clearChallengeCache();
+        await loadChallenges();
+        message.success('数据已刷新');
+    };
+
+    // 初始加载数据
+    useEffect(() => {
+        loadChallenges();
+    }, []);
 
     // 调整页面大小响应窗口变化
     useEffect(() => {
@@ -419,12 +460,36 @@ const ChallengeListPage = () => {
         <div className="challenge-list-page" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 16px' }}>
             <Row gutter={[16, 16]}>
                 <Col span={24}>
-                    <h1 style={{ fontSize: isMobile ? '1.5rem' : '2rem', marginBottom: '1rem' }}>
-                        {t('challenges.title')}
-                        <span style={{ fontWeight: 'normal', fontSize: isMobile ? '1.2rem' : '1.6rem', marginLeft: '8px' }}>
-                            ({filteredChallenges.length})
-                        </span>
-                    </h1>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1rem' }}>
+                        <h1 style={{ fontSize: isMobile ? '1.5rem' : '2rem', margin: 0 }}>
+                            {t('challenges.title')}
+                            <span style={{ fontWeight: 'normal', fontSize: isMobile ? '1.2rem' : '1.6rem', marginLeft: '8px' }}>
+                                ({loading ? '...' : filteredChallenges.length})
+                            </span>
+                        </h1>
+                        <Button
+                            icon={<ReloadOutlined />}
+                            onClick={refreshChallenges}
+                            loading={loading}
+                            title="刷新数据"
+                        >
+                            {!isMobile && '刷新'}
+                        </Button>
+                    </div>
+
+                    {/* 错误提示 */}
+                    {error && (
+                        <div style={{
+                            background: '#fff2f0',
+                            border: '1px solid #ffccc7',
+                            borderRadius: '6px',
+                            padding: '12px',
+                            marginBottom: '16px',
+                            color: '#a8071a'
+                        }}>
+                            {error}
+                        </div>
+                    )}
                     
                     {/* 移动端搜索和过滤器 */}
                     {isMobile ? (
@@ -452,18 +517,27 @@ const ChallengeListPage = () => {
                     )}
                     
                     {/* 挑战列表 */}
-                    <SimpleChallengeList
-                        challenges={paginatedData}
-                        selectedTags={filters.tags}
-                        pagination={pagination}
-                        total={filteredChallenges.length}
-                        onPaginationChange={handlePaginationChange}
-                        onTagClick={handleTagClick}
-                        onDifficultyClick={(difficulty) => handleDifficultyClick(difficulty.toString())}
-                        onPlatformClick={(platform) => handlePlatformChange(platform)}
-                        onChallengeClick={(id) => navigate(`/challenge/${id}`)}
-                        hidePagination={false}
-                    />
+                    {loading ? (
+                        <div style={{ textAlign: 'center', padding: '50px 0' }}>
+                            <Spin size="large" />
+                            <div style={{ marginTop: '16px', color: '#666' }}>
+                                正在加载挑战数据...
+                            </div>
+                        </div>
+                    ) : (
+                        <SimpleChallengeList
+                            challenges={paginatedData}
+                            selectedTags={filters.tags}
+                            pagination={pagination}
+                            total={filteredChallenges.length}
+                            onPaginationChange={handlePaginationChange}
+                            onTagClick={handleTagClick}
+                            onDifficultyClick={(difficulty) => handleDifficultyClick(difficulty.toString())}
+                            onPlatformClick={(platform) => handlePlatformChange(platform)}
+                            onChallengeClick={(id) => navigate(`/challenge/${id}`)}
+                            hidePagination={false}
+                        />
+                    )}
                 </Col>
             </Row>
 

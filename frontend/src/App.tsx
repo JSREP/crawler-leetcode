@@ -13,7 +13,7 @@ import './gh-fork-ribbon.css';
 import './styles/github-ribbon-fix.css';
 
 // 根据环境选择路由器
-const Router = import.meta.env.VERCEL ? BrowserRouter : HashRouter;
+const Router = import.meta.env.MODE === 'production' ? BrowserRouter : HashRouter;
 
 const App = () => {
     return (

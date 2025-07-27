@@ -63,7 +63,7 @@ export default function virtualFileSystemPlugin(
                     }
 
                     // 检测是否在构建模式
-                    const isBuild = process.env.NODE_ENV === 'production' || this.meta?.watchMode === false;
+                    const isBuild = import.meta.env.MODE === 'production' || this.meta?.watchMode === false;
                     console.log(`VirtualFileSystemPlugin: Running in ${isBuild ? 'build' : 'development'} mode`);
 
                     // 每次加载时重新扫描所有YAML文件，确保能捕获到新增文件

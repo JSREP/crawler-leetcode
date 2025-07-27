@@ -221,8 +221,8 @@ function challengesWatchPlugin(): Plugin {
 }
 
 // https://vite.dev/config/
-export default defineConfig({
-  base: process.env.VERCEL ? '/' : '/crawler-leetcode/',
+export default defineConfig(({ mode }) => ({
+  base: mode === 'production' ? '/' : '/crawler-leetcode/',
   plugins: [
     react(),
     virtualFileSystemPlugin({
@@ -239,4 +239,4 @@ export default defineConfig({
       // 移除ignored配置，改用默认配置
     }
   }
-})
+}))

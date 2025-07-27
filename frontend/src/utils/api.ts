@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseURL = process.env.NODE_ENV === 'production' 
+const baseURL = import.meta.env.MODE === 'production'
   ? 'https://your-production-api.com/api'  // 需要替换为实际的生产环境API地址
   : 'http://localhost:5000/api';
 
