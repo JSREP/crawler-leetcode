@@ -72,10 +72,10 @@ export interface ChallengeStats {
 }
 
 export interface ChallengeFilters {
-  difficulty: string[];
-  tags: string[];
-  platform: string;
-  query?: string;
+  search?: string;
+  difficulty?: string;
+  tags?: string[];
+  platform?: string;
 }
 
 export interface PaginationConfig {

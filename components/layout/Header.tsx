@@ -33,6 +33,11 @@ export function Header() {
       label: <Link href="/challenges">挑战列表</Link>,
     },
     {
+      key: '/upload',
+      icon: <PlusOutlined />,
+      label: <Link href="/upload">文件上传</Link>,
+    },
+    {
       key: '/about',
       icon: <InfoCircleOutlined />,
       label: <Link href="/about">关于</Link>,

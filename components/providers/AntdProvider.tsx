@@ -47,3 +47,5 @@ export function AntdProvider({ children }: AntdProviderProps) {
     </ConfigProvider>
   );
 }
+
+export default AntdProvider;

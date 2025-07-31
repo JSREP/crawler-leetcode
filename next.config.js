@@ -5,6 +5,12 @@ const nextConfig = {
   },
   images: {
     domains: ['github.com', 'avatars.githubusercontent.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '*.public.blob.vercel-storage.com',
+      },
+    ],
     unoptimized: true
   },
   // 支持静态导出（如果需要）
@@ -12,6 +18,7 @@ const nextConfig = {
   // 环境变量
   env: {
     CUSTOM_KEY: 'my-value',
+    PORT: process.env.PORT || '61395',
   },
   // 重定向配置
   async redirects() {

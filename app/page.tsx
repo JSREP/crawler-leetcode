@@ -1,17 +1,15 @@
 import React from 'react';
 import Link from 'next/link';
 import { Button, Card, Row, Col, Statistic, Progress } from 'antd';
-import { 
-  TrophyOutlined, 
-  RocketOutlined, 
-  FireOutlined, 
-  ThunderboltOutlined,
+import {
+  TrophyOutlined,
+  RocketOutlined,
   ArrowRightOutlined,
   BugOutlined,
   FilterOutlined,
   CodeOutlined
 } from '@ant-design/icons';
-import { getChallengeStats } from '@/lib/database';
+import { getChallengeStats } from '@/lib/db/database';
 import { DIFFICULTY_LEVELS } from '@/types/challenge';
 
 export default async function HomePage() {
@@ -26,7 +24,7 @@ export default async function HomePage() {
   // 计算难度分布百分比
   const getDifficultyPercentage = (level: number) => {
     if (!stats) return 0;
-    const difficulty = stats.difficulties.find(d => d.difficulty_level === level);
+    const difficulty = stats.difficulties.find((d: { difficulty_level: number; count: number }) => d.difficulty_level === level);
     return stats.total > 0 ? Math.round((difficulty?.count || 0) / stats.total * 100) : 0;
   };
 
@@ -90,7 +88,7 @@ export default async function HomePage() {
                   <div className="space-y-4">
                     {[1, 2, 3, 4, 5].map(level => {
                       const difficultyInfo = DIFFICULTY_LEVELS[level as keyof typeof DIFFICULTY_LEVELS];
-                      const count = stats?.difficulties.find(d => d.difficulty_level === level)?.count || 0;
+                      const count = stats?.difficulties.find((d: { difficulty_level: number; count: number }) => d.difficulty_level === level)?.count || 0;
                       const percentage = getDifficultyPercentage(level);
                       
                       return (

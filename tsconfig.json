@@ -24,7 +24,11 @@
       "@/lib/*": ["./lib/*"],
       "@/app/*": ["./app/*"],
       "@/types/*": ["./types/*"],
-      "@/utils/*": ["./utils/*"]
+      "@/utils/*": ["./utils/*"],
+      "@/hooks/*": ["./hooks/*"],
+      "@/constants/*": ["./constants/*"],
+      "@/config/*": ["./config/*"],
+      "@/styles/*": ["./styles/*"]
     },
     "target": "es5",
     "forceConsistentCasingInFileNames": true

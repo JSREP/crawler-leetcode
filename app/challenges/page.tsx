@@ -1,24 +1,21 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
-import { 
-  Row, 
-  Col, 
-  Card, 
-  Button, 
-  Input, 
-  Select, 
-  Tag, 
-  Pagination, 
-  Spin, 
+import React, { useState, useEffect, useCallback } from 'react';
+import {
+  Row,
+  Col,
+  Card,
+  Button,
+  Input,
+  Select,
+  Tag,
+  Pagination,
+  Spin,
   message,
-  Space,
   Empty
 } from 'antd';
-import { 
-  SearchOutlined, 
-  ReloadOutlined, 
-  FilterOutlined,
+import {
+  ReloadOutlined,
   StarFilled,
   LinkOutlined
 } from '@ant-design/icons';
@@ -36,14 +33,14 @@ export default function ChallengesPage() {
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSize] = useState(12);
   const [filters, setFilters] = useState<ChallengeFilters>({
-    difficulty: [],
+    difficulty: '',
     tags: [],
     platform: 'all',
-    query: ''
+    search: ''
   });
 
   // 获取挑战数据
-  const fetchChallenges = async (page: number = 1, currentFilters = filters) => {
+  const fetchChallenges = useCallback(async (page: number = 1, currentFilters = filters) => {
     try {
       setLoading(true);
       
@@ -56,16 +53,16 @@ export default function ChallengesPage() {
         params.append('platform', currentFilters.platform);
       }
       
-      if (currentFilters.difficulty.length > 0) {
-        params.append('difficulty', currentFilters.difficulty[0]);
+      if (currentFilters.difficulty) {
+        params.append('difficulty', currentFilters.difficulty);
       }
-      
-      if (currentFilters.tags.length > 0) {
+
+      if (currentFilters.tags && currentFilters.tags.length > 0) {
         params.append('tag', currentFilters.tags[0]);
       }
-      
-      if (currentFilters.query) {
-        params.append('query', currentFilters.query);
+
+      if (currentFilters.search) {
+        params.append('query', currentFilters.search);
       }
       
       const response = await fetch(`/api/db/challenges?${params}`);
@@ -84,12 +81,12 @@ export default function ChallengesPage() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [filters, pageSize]);
 
   // 初始加载
   useEffect(() => {
     fetchChallenges(1);
-  }, []);
+  }, [fetchChallenges]);
 
   // 处理搜索
   const handleSearch = (value: string) => {
@@ -100,7 +97,7 @@ export default function ChallengesPage() {
   };
 
   // 处理筛选
-  const handleFilterChange = (key: keyof ChallengeFilters, value: any) => {
+  const handleFilterChange = (key: keyof ChallengeFilters, value: string | string[]) => {
     const newFilters = { ...filters, [key]: value };
     setFilters(newFilters);
     setCurrentPage(1);
@@ -267,8 +264,8 @@ export default function ChallengesPage() {
             <Select
               placeholder="难度"
               style={{ width: '100%' }}
-              value={filters.difficulty[0]}
-              onChange={(value) => handleFilterChange('difficulty', value ? [value] : [])}
+              value={filters.difficulty}
+              onChange={(value) => handleFilterChange('difficulty', value || '')}
               allowClear
             >
               {Object.entries(DIFFICULTY_LEVELS).map(([level, info]) => (

@@ -147,3 +147,5 @@ export function Footer() {
     </AntFooter>
   );
 }
+
+export default Footer;
