@@ -2,7 +2,7 @@
  * 挑战列表 API
  */
 import { NextRequest, NextResponse } from 'next/server';
-import { getChallengesPaginated, createChallenge, DatabaseError } from '@/lib/database';
+import { getChallengesPaginated, createChallenge, DatabaseError } from '@/lib/db/database';
 import { DatabaseChallenge } from '@/types/challenge';
 
 export async function GET(request: NextRequest) {

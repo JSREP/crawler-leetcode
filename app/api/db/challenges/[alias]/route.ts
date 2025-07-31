@@ -2,7 +2,7 @@
  * 单个挑战详情 API
  */
 import { NextRequest, NextResponse } from 'next/server';
-import { getChallengeByAlias, updateChallenge, DatabaseError } from '@/lib/database';
+import { getChallengeByAlias, updateChallenge, DatabaseError } from '@/lib/db/database';
 
 interface RouteParams {
   params: {

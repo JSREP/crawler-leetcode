@@ -2,7 +2,7 @@
  * 数据库连接测试 API
  */
 import { NextResponse } from 'next/server';
-import { testDatabaseConnection } from '@/lib/database';
+import { testDatabaseConnection } from '@/lib/db/database';
 
 export async function GET() {
   try {

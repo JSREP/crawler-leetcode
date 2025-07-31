@@ -2,7 +2,7 @@
  * 挑战统计信息 API
  */
 import { NextResponse } from 'next/server';
-import { getChallengeStats, DatabaseError } from '@/lib/database';
+import { getChallengeStats, DatabaseError } from '@/lib/db/database';
 
 export async function GET() {
   try {
