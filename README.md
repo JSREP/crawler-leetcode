@@ -1,30 +1,92 @@
-# LeetCode 爬虫挑战
+# 爬虫LeetCode项目
 
-[![部署GitHub Pages](https://github.com/JSREP/crawler-leetcode/actions/workflows/deploy-github-pages.yml/badge.svg)](https://github.com/JSREP/crawler-leetcode/actions/workflows/deploy-github-pages.yml)
+这是一个基于Next.js的爬虫技术挑战平台，用于展示和管理LeetCode挑战。
 
-这个仓库收集了各种网站的爬虫挑战案例，展示了不同类型的反爬虫技术和解决方案。项目使用React+TypeScript开发，通过GitHub Pages进行部署。
+## 技术栈
 
-**在线访问**: [https://jsrep.github.io/crawler-leetcode/](https://jsrep.github.io/crawler-leetcode/) (需要VPN访问)
+- **前端**: Next.js 14 + TypeScript + Ant Design + Tailwind CSS
+- **后端**: Next.js API Routes
+- **数据库**: Neon Serverless PostgreSQL
+- **文件存储**: Vercel Blob Store
+- **部署**: Vercel
 
-![image-20250413185708120](./README.assets/image-20250413185708120.png)
+## 快速开始
+
+### 环境要求
+
+- Node.js 18+
+- npm 或 yarn
+
+### 安装依赖
+
+```bash
+npm install
+```
+
+### 环境变量配置
+
+🔒 **重要安全提醒**:
+- **`.env.local`** - 包含真实敏感信息，**绝不**提交到git
+- **`.env.example`** - 只包含示例占位符，**可以**提交到git
+
+创建 `.env.local` 文件：
+
+```bash
+cp .env.example .env.local
+```
+
+在 `.env.local` 中配置真实的环境变量：
+
+```env
+# Neon Serverless PostgreSQL
+DATABASE_URL="your_neon_database_url"
+# 向后兼容
+POSTGRES_URL="your_postgres_connection_string"
+# Blob Store
+BLOB_READ_WRITE_TOKEN="your_blob_read_write_token"
+```
+
+⚠️ **安全警告**: 详细安全配置指南请参考 [docs/SECURITY_GUIDE.md](docs/SECURITY_GUIDE.md)
+
+### 启动开发服务器
+
+```bash
+npm run dev
+# 或使用启动脚本
+./start.sh
+```
+
+访问 [http://localhost:61395](http://localhost:61395) 查看应用。
 
 ## 项目结构
 
 ```
 crawler-leetcode/
-├── .github/             # GitHub相关配置
-│   └── workflows/       # GitHub Actions工作流配置
-├── docs/                # 文档和挑战定义
-│   └── challenges/      # 爬虫挑战YAML定义文件
-├── public/              # 静态资源
-├── src/                 # 源代码
-│   ├── components/      # React组件
-│   ├── pages/           # 页面组件
-│   ├── plugins/         # 项目插件
-│   ├── utils/           # 工具函数
-│   └── App.tsx          # 应用入口
-├── package.json         # 项目依赖
-└── vite.config.ts       # Vite配置
+├── app/                    # Next.js App Router
+│   ├── api/               # API Routes (后端)
+│   │   └── db/           # 数据库相关API
+│   ├── challenges/        # 挑战页面
+│   ├── layout.tsx         # 根布局
+│   └── page.tsx           # 首页
+├── components/            # React组件
+│   ├── layout/           # 布局组件
+│   ├── providers/        # Context Providers
+│   └── index.ts          # 组件导出
+├── lib/                   # 工具库
+│   ├── api/              # API相关工具
+│   ├── db/               # 数据库操作
+│   ├── validations/      # 数据验证
+│   └── utils.ts          # 通用工具函数
+├── types/                 # TypeScript类型定义
+├── hooks/                 # 自定义React Hooks
+├── utils/                 # 工具函数
+├── constants/             # 常量定义
+├── config/                # 配置文件
+├── styles/                # 样式文件
+├── public/                # 静态资源
+│   ├── images/           # 图片资源
+│   └── icons/            # 图标资源
+└── 配置文件
 ```
 
 ## 爬虫挑战
@@ -39,6 +101,24 @@ crawler-leetcode/
 - API限流与保护
 - WebAssembly保护
 - 设备指纹和行为分析
+
+## API 接口
+
+### 数据库API
+- `GET /api/db/test` - 数据库连接测试
+- `GET /api/db/challenges` - 获取挑战列表
+- `GET /api/db/challenges/[alias]` - 获取单个挑战
+- `GET /api/db/stats` - 获取统计信息
+
+### 文件上传API
+- `POST /api/upload` - 通用文件上传
+- `POST /api/avatar/upload` - 头像上传
+- `GET /api/upload` - 获取上传配置
+
+详细文档请参考：
+- [🔒 安全配置指南](docs/SECURITY_GUIDE.md) - **必读**
+- [Blob Store使用文档](docs/BLOB_STORE.md)
+- [Neon数据库使用文档](docs/NEON_DATABASE.md)
 
 ## 本地开发
 
