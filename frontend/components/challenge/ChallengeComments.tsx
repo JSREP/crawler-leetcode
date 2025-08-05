@@ -1,102 +1,20 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Card, List, Avatar, Button, Input, message, Spin, Empty, Modal } from 'antd';
-import { MessageOutlined, SendOutlined, GiftOutlined } from '@ant-design/icons';
+import { Card, Button, Input, message, Spin, Empty } from 'antd';
+import { SendOutlined } from '@ant-design/icons';
 import { useAuth } from '@/components/auth/AuthProvider';
 import { ChallengeComment } from '@/types/forum';
 import { formatBalance } from '@/lib/wallet/utils';
 import { WALLET_CONSTANTS } from '@/types/wallet';
+import CommentItem from './CommentItem';
+import TipModal from './TipModal';
 
 const { TextArea } = Input;
 
 interface ChallengeCommentsProps {
   challengeId: number;
 }
-
-interface CommentItemProps {
-  comment: ChallengeComment;
-  onReply: (parentId: number) => void;
-  onTip: (comment: ChallengeComment) => void;
-}
-
-const CommentItem: React.FC<CommentItemProps> = ({ comment, onReply, onTip }) => {
-  const { user } = useAuth();
-
-  return (
-    <div className="comment-item">
-      <div className="flex items-start space-x-3 p-4 border-b border-gray-100">
-        <Avatar
-          src={comment.user?.avatar_url}
-          alt={comment.user?.username}
-          size={40}
-        >
-          {comment.user?.username?.[0]?.toUpperCase()}
-        </Avatar>
-        
-        <div className="flex-1">
-          <div className="flex items-center space-x-2 mb-2">
-            <span className="font-medium text-gray-900">
-              {comment.user?.username}
-            </span>
-            {comment.user?.role === 'admin' && (
-              <span className="px-2 py-1 text-xs bg-red-100 text-red-600 rounded">
-                管理员
-              </span>
-            )}
-            <span className="text-sm text-gray-500">
-              {new Date(comment.created_at).toLocaleString()}
-            </span>
-          </div>
-          
-          <div className="text-gray-800 mb-3 whitespace-pre-wrap">
-            {comment.content}
-          </div>
-          
-          <div className="flex items-center space-x-4">
-            {user && (
-              <>
-                <Button
-                  type="text"
-                  size="small"
-                  icon={<MessageOutlined />}
-                  onClick={() => onReply(comment.id)}
-                  className="text-gray-500 hover:text-blue-500"
-                >
-                  回复
-                </Button>
-                
-                <Button
-                  type="text"
-                  size="small"
-                  icon={<GiftOutlined />}
-                  onClick={() => onTip(comment)}
-                  className="text-gray-500 hover:text-orange-500"
-                >
-                  打赏
-                </Button>
-              </>
-            )}
-          </div>
-          
-          {/* 回复列表 */}
-          {comment.replies && comment.replies.length > 0 && (
-            <div className="mt-4 pl-4 border-l-2 border-gray-200">
-              {comment.replies.map((reply) => (
-                <CommentItem
-                  key={reply.id}
-                  comment={reply}
-                  onReply={onReply}
-                  onTip={onTip}
-                />
-              ))}
-            </div>
-          )}
-        </div>
-      </div>
-    </div>
-  );
-};
 
 const ChallengeComments: React.FC<ChallengeCommentsProps> = ({ challengeId }) => {
   const { user } = useAuth();
@@ -108,8 +26,6 @@ const ChallengeComments: React.FC<ChallengeCommentsProps> = ({ challengeId }) =>
   const [replyContent, setReplyContent] = useState('');
   const [tipModalVisible, setTipModalVisible] = useState(false);
   const [tipTarget, setTipTarget] = useState<ChallengeComment | null>(null);
-  const [tipAmount, setTipAmount] = useState('');
-  const [tipMessage, setTipMessage] = useState('');
 
   // 加载评论列表
   const loadComments = async () => {
@@ -247,43 +163,7 @@ const ChallengeComments: React.FC<ChallengeCommentsProps> = ({ challengeId }) =>
   // 处理打赏
   const handleTip = (comment: ChallengeComment) => {
     setTipTarget(comment);
-    setTipAmount('');
-    setTipMessage('');
     setTipModalVisible(true);
-  };
-
-  // 提交打赏
-  const handleSubmitTip = async () => {
-    if (!tipTarget || !tipAmount) {
-      return;
-    }
-
-    try {
-      const response = await fetch('/api/wallet/tip', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          to_user_id: tipTarget.user_id,
-          target_type: 'comment',
-          target_id: tipTarget.id,
-          amount: tipAmount,
-          message: tipMessage,
-        }),
-      });
-
-      if (response.ok) {
-        message.success('打赏成功');
-        setTipModalVisible(false);
-      } else {
-        const error = await response.json();
-        message.error(error.error || '打赏失败');
-      }
-    } catch (error) {
-      console.error('Tip error:', error);
-      message.error('打赏失败');
-    }
   };
 
   useEffect(() => {
@@ -366,42 +246,14 @@ const ChallengeComments: React.FC<ChallengeCommentsProps> = ({ challengeId }) =>
       </Spin>
 
       {/* 打赏弹窗 */}
-      <Modal
-        title="打赏"
-        open={tipModalVisible}
-        onOk={handleSubmitTip}
-        onCancel={() => setTipModalVisible(false)}
-        okText="确认打赏"
-        cancelText="取消"
-      >
-        <div className="space-y-4">
-          <div>
-            <label className="block text-sm font-medium mb-1">
-              打赏金额 (CRAWLER Coin)
-            </label>
-            <Input
-              value={tipAmount}
-              onChange={(e) => setTipAmount(e.target.value)}
-              placeholder="输入打赏金额"
-              type="number"
-              min="0.1"
-              step="0.1"
-            />
-          </div>
-          <div>
-            <label className="block text-sm font-medium mb-1">
-              打赏留言（可选）
-            </label>
-            <TextArea
-              value={tipMessage}
-              onChange={(e) => setTipMessage(e.target.value)}
-              placeholder="输入打赏留言..."
-              rows={3}
-              maxLength={200}
-            />
-          </div>
-        </div>
-      </Modal>
+      <TipModal
+        visible={tipModalVisible}
+        target={tipTarget}
+        onClose={() => setTipModalVisible(false)}
+        onSuccess={() => {
+          // 可以在这里添加成功后的逻辑，比如刷新评论列表
+        }}
+      />
     </Card>
   );
 };

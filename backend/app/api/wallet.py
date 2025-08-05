@@ -1,14 +1,9 @@
 """
-钱包和交易API路由
+钱包和交易API路由 - 重构版本
+导入模块化的钱包功能
 """
-from datetime import datetime
-from flask import request, jsonify
-from app.api import api_bp
-from app import db
-from app.models import UserWallet, TokenTransaction, TipRecord, User
-from app.auth.middleware import require_auth, get_current_user
-from app.utils.helpers import paginate_query, generate_random_string
-from app.utils.validators import validate_pagination_params
+# 导入所有钱包相关的API端点
+from .wallet import *
 
 
 @api_bp.route('/wallet/info', methods=['GET'])

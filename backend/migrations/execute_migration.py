@@ -1,253 +1,59 @@
 #!/usr/bin/env python3
 """
 数据迁移执行脚本 - 完整的PostgreSQL到MySQL迁移流程
+重构版本：使用模块化设计
 """
 import os
 import sys
-import json
-import time
 from datetime import datetime
 from pathlib import Path
 
 # 添加项目根目录到Python路径
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from app import create_app, db
-from app.models import *
+from migration_executor import MigrationExecutor as ModularMigrationExecutor
 
 
 class MigrationExecutor:
+    """
+    兼容性包装器，保持原有接口的同时使用新的模块化实现
+    """
     def __init__(self):
-        self.app = create_app()
-        self.migration_dir = Path(__file__).parent
-        self.backup_dir = self.migration_dir / 'backups'
-        self.backup_dir.mkdir(exist_ok=True)
-        
-    def create_backup(self):
-        """创建当前MySQL数据备份"""
-        print("💾 创建当前MySQL数据备份...")
-        
-        backup_file = self.backup_dir / f"mysql_backup_{datetime.now().strftime('%Y%m%d_%H%M%S')}.sql"
-        
-        try:
-            with self.app.app_context():
-                # 获取数据库配置
-                db_config = self.app.config['SQLALCHEMY_DATABASE_URI']
-                
-                # 解析数据库连接信息
-                if 'mysql' in db_config:
-                    # 提取数据库信息
-                    import re
-                    match = re.match(r'mysql\+pymysql://([^:]+):([^@]+)@([^:]+):(\d+)/(.+)', db_config)
-                    if match:
-                        user, password, host, port, database = match.groups()
-                        
-                        # 使用mysqldump备份
-                        import subprocess
-                        cmd = [
-                            'mysqldump',
-                            f'--host={host}',
-                            f'--port={port}',
-                            f'--user={user}',
-                            f'--password={password}',
-                            '--single-transaction',
-                            '--routines',
-                            '--triggers',
-                            database
-                        ]
-                        
-                        with open(backup_file, 'w') as f:
-                            result = subprocess.run(cmd, stdout=f, stderr=subprocess.PIPE, text=True)
-                        
-                        if result.returncode == 0:
-                            print(f"✅ MySQL备份完成: {backup_file}")
-                            return backup_file
-                        else:
-                            print(f"❌ MySQL备份失败: {result.stderr}")
-                            return None
-                    else:
-                        print("❌ 无法解析数据库连接字符串")
-                        return None
-                else:
-                    print("⚠️ 当前不是MySQL数据库，跳过备份")
-                    return None
-                    
-        except Exception as e:
-            print(f"❌ 备份过程出错: {e}")
-            return None
-    
-    def verify_mysql_connection(self):
-        """验证MySQL连接"""
-        print("🔍 验证MySQL连接...")
-        
-        try:
-            with self.app.app_context():
-                # 测试数据库连接
-                result = db.session.execute(db.text('SELECT VERSION() as version'))
-                version = result.fetchone().version
-                
-                print(f"✅ MySQL连接成功，版本: {version}")
-                return True
-                
-        except Exception as e:
-            print(f"❌ MySQL连接失败: {e}")
-            return False
-    
-    def initialize_mysql_schema(self):
-        """初始化MySQL数据库结构"""
-        print("🏗️ 初始化MySQL数据库结构...")
-        
-        try:
-            with self.app.app_context():
-                # 删除所有表（如果存在）
-                db.drop_all()
-                print("   清理现有表结构")
-                
-                # 创建所有表
-                db.create_all()
-                print("   创建新表结构")
-                
-                # 验证表创建
-                inspector = db.inspect(db.engine)
-                tables = inspector.get_table_names()
-                
-                expected_tables = [
-                    'users', 'user_sessions', 'challenges', 'challenge_comments',
-                    'forum_posts', 'forum_replies', 'user_storage', 'user_storage_quota',
-                    'user_wallets', 'token_transactions', 'tip_records'
-                ]
-                
-                missing_tables = set(expected_tables) - set(tables)
-                if missing_tables:
-                    print(f"⚠️ 缺少表: {missing_tables}")
-                    return False
-                
-                print(f"✅ 成功创建 {len(tables)} 个表")
-                return True
-                
-        except Exception as e:
-            print(f"❌ 初始化数据库结构失败: {e}")
-            return False
-    
-    def load_postgresql_data(self):
-        """加载PostgreSQL导出的数据"""
-        print("📂 加载PostgreSQL导出数据...")
-        
-        data_file = self.migration_dir / 'exported_data' / 'database_records.json'
-        
-        if not data_file.exists():
-            print(f"❌ 数据文件不存在: {data_file}")
-            print("请先运行: python export_postgresql_data.py")
-            return None
-        
-        try:
-            with open(data_file, 'r', encoding='utf-8') as f:
-                data = json.load(f)
-            
-            print(f"✅ 成功加载数据文件")
-            print(f"   用户数: {len(data.get('users', []))}")
-            print(f"   挑战数: {len(data.get('challenges', []))}")
-            print(f"   存储记录数: {len(data.get('user_storage', []))}")
-            
-            return data
-            
-        except Exception as e:
-            print(f"❌ 加载数据文件失败: {e}")
-            return None
-    
-    def import_users(self, users_data):
-        """导入用户数据"""
-        print("👥 导入用户数据...")
-        
-        try:
-            imported_count = 0
-            
-            for user_data in users_data:
-                user = User(
-                    github_id=user_data['github_id'],
-                    username=user_data['username'],
-                    email=user_data.get('email'),
-                    name=user_data.get('name'),
-                    avatar_url=user_data.get('avatar_url'),
-                    bio=user_data.get('bio'),
-                    location=user_data.get('location'),
-                    company=user_data.get('company'),
-                    blog=user_data.get('blog'),
-                    public_repos=user_data.get('public_repos', 0),
-                    followers=user_data.get('followers', 0),
-                    following=user_data.get('following', 0),
-                    role=user_data.get('role', 'user')
-                )
-                
-                # 设置时间戳
-                if user_data.get('created_at'):
-                    user.created_at = datetime.fromisoformat(user_data['created_at'].replace('Z', '+00:00'))
-                if user_data.get('updated_at'):
-                    user.updated_at = datetime.fromisoformat(user_data['updated_at'].replace('Z', '+00:00'))
-                if user_data.get('last_login_at'):
-                    user.last_login_at = datetime.fromisoformat(user_data['last_login_at'].replace('Z', '+00:00'))
-                
-                db.session.add(user)
-                imported_count += 1
-            
-            db.session.commit()
-            print(f"✅ 成功导入 {imported_count} 个用户")
-            return True
-            
-        except Exception as e:
-            db.session.rollback()
-            print(f"❌ 导入用户数据失败: {e}")
-            return False
-    
-    def import_challenges(self, challenges_data):
-        """导入挑战数据"""
-        print("🎯 导入挑战数据...")
-        
-        try:
-            imported_count = 0
-            
-            for challenge_data in challenges_data:
-                challenge = Challenge(
-                    id_alias=challenge_data['id_alias'],
-                    name=challenge_data['name'],
-                    name_en=challenge_data.get('name_en'),
-                    platform=challenge_data['platform'],
-                    difficulty_level=challenge_data['difficulty_level'],
-                    description_markdown=challenge_data.get('description_markdown'),
-                    description_markdown_en=challenge_data.get('description_markdown_en'),
-                    base64_url=challenge_data['base64_url'],
-                    is_expired=challenge_data.get('is_expired', False)
-                )
-                
-                # 处理标签
-                if challenge_data.get('tags'):
-                    if isinstance(challenge_data['tags'], str):
-                        try:
-                            challenge.tags = challenge_data['tags']
-                        except:
-                            challenge.tags = json.dumps([challenge_data['tags']])
-                    else:
-                        challenge.tags = json.dumps(challenge_data['tags'])
-                
-                # 设置时间戳
-                if challenge_data.get('created_at'):
-                    challenge.created_at = datetime.fromisoformat(challenge_data['created_at'].replace('Z', '+00:00'))
-                if challenge_data.get('updated_at'):
-                    challenge.updated_at = datetime.fromisoformat(challenge_data['updated_at'].replace('Z', '+00:00'))
-                
-                db.session.add(challenge)
-                imported_count += 1
-            
-            db.session.commit()
-            print(f"✅ 成功导入 {imported_count} 个挑战")
-            return True
-            
-        except Exception as e:
-            db.session.rollback()
-            print(f"❌ 导入挑战数据失败: {e}")
-            return False
-    
-    def import_storage_data(self, storage_data):
+        self.modular_executor = ModularMigrationExecutor()
+
+    def execute_full_migration(self):
+        """执行完整的数据迁移 - 委托给模块化实现"""
+        return self.modular_executor.execute_full_migration()
+
+
+def main():
+    """主函数"""
+    executor = MigrationExecutor()
+
+    print("=" * 60)
+    print("🔄 PostgreSQL到MySQL数据迁移工具")
+    print("=" * 60)
+
+    # 确认执行
+    response = input("\n⚠️ 此操作将清空当前MySQL数据库并导入PostgreSQL数据。\n是否继续？(y/N): ")
+
+    if response.lower() != 'y':
+        print("❌ 迁移已取消")
+        return
+
+    try:
+        success = executor.execute_full_migration()
+        sys.exit(0 if success else 1)
+    except KeyboardInterrupt:
+        print("\n⏹️ 迁移被用户中断")
+        sys.exit(1)
+    except Exception as e:
+        print(f"\n💥 迁移过程中出现异常: {e}")
+        sys.exit(1)
+
+
+if __name__ == '__main__':
+    main()
         """导入存储数据"""
         print("💾 导入存储数据...")
         
