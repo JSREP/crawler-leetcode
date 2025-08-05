@@ -1,0 +1,136 @@
+# 爬虫LeetCode项目Nginx配置
+
+# 上游服务器配置
+upstream flask_app {
+    server app:57523;
+    keepalive 32;
+}
+
+# HTTP服务器配置
+server {
+    listen 80;
+    server_name localhost yourdomain.com www.yourdomain.com;
+
+    # 安全头
+    add_header X-Frame-Options "SAMEORIGIN" always;
+    add_header X-XSS-Protection "1; mode=block" always;
+    add_header X-Content-Type-Options "nosniff" always;
+    add_header Referrer-Policy "no-referrer-when-downgrade" always;
+    add_header Content-Security-Policy "default-src 'self' http: https: data: blob: 'unsafe-inline'" always;
+
+    # API代理
+    location /api/ {
+        proxy_pass http://flask_app;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_cache_bypass $http_upgrade;
+        proxy_read_timeout 86400;
+    }
+
+    # 认证代理
+    location /auth/ {
+        proxy_pass http://flask_app;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    # 存储文件代理
+    location /storage/ {
+        proxy_pass http://flask_app;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        
+        # 缓存设置
+        proxy_cache_valid 200 1h;
+        proxy_cache_valid 404 1m;
+        add_header X-Cache-Status $upstream_cache_status;
+    }
+
+    # 静态文件直接服务（可选，用于性能优化）
+    location /static/ {
+        alias /var/www/storage/;
+        expires 1y;
+        add_header Cache-Control "public, immutable";
+        
+        # 安全设置
+        location ~* \.(php|jsp|cgi|asp|aspx)$ {
+            deny all;
+        }
+    }
+
+    # 健康检查
+    location /health {
+        proxy_pass http://flask_app;
+        access_log off;
+    }
+
+    # 机器人文件
+    location /robots.txt {
+        proxy_pass http://flask_app;
+        expires 1d;
+    }
+
+    # 网站图标
+    location /favicon.ico {
+        proxy_pass http://flask_app;
+        expires 1d;
+        log_not_found off;
+    }
+
+    # 默认路由（用于前端应用）
+    location / {
+        # 如果有前端静态文件，可以直接服务
+        # root /var/www/frontend;
+        # try_files $uri $uri/ /index.html;
+        
+        # 或者代理到前端开发服务器
+        proxy_pass http://localhost:57524;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+
+    # 错误页面
+    error_page 404 /404.html;
+    error_page 500 502 503 504 /50x.html;
+    
+    location = /50x.html {
+        root /usr/share/nginx/html;
+    }
+}
+
+# HTTPS服务器配置（如果有SSL证书）
+# server {
+#     listen 443 ssl http2;
+#     server_name yourdomain.com www.yourdomain.com;
+# 
+#     # SSL配置
+#     ssl_certificate /etc/nginx/ssl/yourdomain.com.crt;
+#     ssl_certificate_key /etc/nginx/ssl/yourdomain.com.key;
+#     ssl_session_timeout 1d;
+#     ssl_session_cache shared:MozTLS:10m;
+#     ssl_session_tickets off;
+# 
+#     # 现代SSL配置
+#     ssl_protocols TLSv1.2 TLSv1.3;
+#     ssl_ciphers ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384;
+#     ssl_prefer_server_ciphers off;
+# 
+#     # HSTS
+#     add_header Strict-Transport-Security "max-age=63072000" always;
+# 
+#     # 其他配置与HTTP相同...
+# }

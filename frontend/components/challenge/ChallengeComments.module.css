@@ -1,0 +1,255 @@
+/* 挑战评论组件样式 */
+
+.commentItem {
+  transition: background-color 0.2s ease;
+}
+
+.commentItem:hover {
+  background-color: #fafafa;
+}
+
+.commentContent {
+  line-height: 1.6;
+  word-break: break-word;
+}
+
+.commentActions {
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.commentItem:hover .commentActions {
+  opacity: 1;
+}
+
+.replyBox {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-left: 3px solid #007bff;
+}
+
+.tipModal .ant-modal-body {
+  padding: 24px;
+}
+
+.tipAmountInput {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.commentMeta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.username {
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.adminBadge {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+  color: white;
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-weight: 500;
+}
+
+.timestamp {
+  color: #8e8e93;
+  font-size: 13px;
+}
+
+.replyThread {
+  border-left: 2px solid #e1e5e9;
+  margin-left: 20px;
+  padding-left: 16px;
+  margin-top: 12px;
+}
+
+.actionButton {
+  color: #8e8e93;
+  border: none;
+  background: none;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  font-size: 13px;
+}
+
+.actionButton:hover {
+  background-color: #f0f0f0;
+  color: #1890ff;
+}
+
+.tipButton:hover {
+  color: #fa8c16 !important;
+}
+
+.commentTextArea {
+  border-radius: 8px;
+  border: 1px solid #d9d9d9;
+  transition: border-color 0.2s ease;
+}
+
+.commentTextArea:focus {
+  border-color: #1890ff;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+}
+
+.submitButton {
+  background: linear-gradient(135deg, #1890ff 0%, #096dd9 100%);
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.submitButton:hover {
+  background: linear-gradient(135deg, #096dd9 0%, #0050b3 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(24, 144, 255, 0.3);
+}
+
+.emptyState {
+  text-align: center;
+  padding: 40px 20px;
+  color: #8e8e93;
+}
+
+.loadingSpinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.commentCount {
+  color: #8e8e93;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.costHint {
+  color: #fa8c16;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.tipForm {
+  padding: 20px 0;
+}
+
+.tipFormItem {
+  margin-bottom: 16px;
+}
+
+.tipFormLabel {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: 500;
+  color: #262626;
+}
+
+.tipAmountWrapper {
+  position: relative;
+}
+
+.tipAmountWrapper::after {
+  content: 'CRAWLER';
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #8e8e93;
+  font-size: 12px;
+  pointer-events: none;
+}
+
+.replyIndicator {
+  background: #e6f7ff;
+  border: 1px solid #91d5ff;
+  border-radius: 4px;
+  padding: 8px 12px;
+  margin-bottom: 12px;
+  font-size: 13px;
+  color: #1890ff;
+}
+
+.cancelReplyButton {
+  color: #8e8e93;
+  border: 1px solid #d9d9d9;
+  background: white;
+  margin-right: 8px;
+}
+
+.cancelReplyButton:hover {
+  color: #ff4d4f;
+  border-color: #ff4d4f;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .commentItem {
+    padding: 12px;
+  }
+  
+  .commentMeta {
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  
+  .actionButton {
+    font-size: 12px;
+    padding: 2px 6px;
+  }
+  
+  .replyThread {
+    margin-left: 12px;
+    padding-left: 12px;
+  }
+  
+  .tipModal .ant-modal-body {
+    padding: 16px;
+  }
+}
+
+/* 深色模式支持 */
+@media (prefers-color-scheme: dark) {
+  .commentItem {
+    background-color: #1f1f1f;
+    border-color: #303030;
+  }
+  
+  .commentItem:hover {
+    background-color: #262626;
+  }
+  
+  .username {
+    color: #ffffff;
+  }
+  
+  .timestamp {
+    color: #8c8c8c;
+  }
+  
+  .actionButton {
+    color: #8c8c8c;
+  }
+  
+  .actionButton:hover {
+    background-color: #303030;
+    color: #1890ff;
+  }
+  
+  .replyBox {
+    background: linear-gradient(135deg, #262626 0%, #1f1f1f 100%);
+    border-left-color: #1890ff;
+  }
+  
+  .replyThread {
+    border-left-color: #303030;
+  }
+}

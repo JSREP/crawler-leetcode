@@ -1,0 +1,56 @@
+{
+  "name": "crawler-leetcode-nextjs",
+  "version": "1.0.0",
+  "description": "爬虫技术挑战平台 - Next.js 版本",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 57524",
+    "build": "next build",
+    "build:static": "next build && next export",
+    "start": "next start -p 57524",
+    "serve": "npx serve out -p 57524",
+    "lint": "next lint",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^5.4.0",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@uiw/react-markdown-preview": "^5.1.5",
+    "@uiw/react-md-editor": "^4.0.8",
+    "@vercel/blob": "^1.1.1",
+    "antd": "^5.21.0",
+    "clsx": "^2.1.0",
+    "crypto-js": "^4.2.0",
+    "date-fns": "^4.1.0",
+    "ethers": "^6.15.0",
+    "i18next": "^23.15.0",
+    "js-yaml": "^4.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "lucide-react": "^0.400.0",
+    "next": "^14.2.0",
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0",
+    "react-i18next": "^15.0.0",
+    "react-markdown": "^10.1.0",
+    "react-router-dom": "^6.26.0",
+    "rehype-highlight": "^7.0.2",
+    "remark-gfm": "^4.0.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.0",
+    "@types/crypto-js": "^4.2.2",
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^20.14.0",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "autoprefixer": "^10.4.0",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "^14.2.0",
+    "postcss": "^8.4.0",
+    "tailwindcss": "^3.4.0",
+    "typescript": "^5.5.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
