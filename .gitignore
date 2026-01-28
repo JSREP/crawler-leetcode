@@ -1,6 +1,5 @@
 # ===================================
 # Python Backend
-# ===================================
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -148,9 +147,7 @@ cython_debug/
 backend/migrations/backups/
 backend/migrations/exported_data/
 
-# ===================================
 # Node.js / Frontend
-# ===================================
 
 # Dependencies
 node_modules/
@@ -219,7 +216,6 @@ web_modules/
 .yarn-integrity
 
 # parcel-bundler cache
-.cache
 .parcel-cache
 
 # Next.js build output
@@ -243,21 +239,16 @@ storybook-static
 tmp/
 temp/
 
-# ===================================
 # Environment Variables
-# ===================================
 
 # Environment files (NEVER commit these!)
-.env
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
 .env.*.local
 
-# ===================================
 # IDE and Editors
-# ===================================
 
 # Visual Studio Code
 .vscode/
@@ -289,7 +280,6 @@ temp/
 *~
 
 # Emacs
-*~
 \#*\#
 /.emacs.desktop
 /.emacs.desktop.lock
@@ -298,9 +288,7 @@ auto-save-list
 tramp
 .\#*
 
-# ===================================
 # Operating System
-# ===================================
 
 # macOS
 .DS_Store
@@ -355,7 +343,6 @@ $RECYCLE.BIN/
 *.lnk
 
 # Linux
-*~
 
 # temporary files which can be created if a process still has a handle open of a deleted file
 .fuse_hidden*
@@ -369,9 +356,7 @@ $RECYCLE.BIN/
 # .nfs files are created when an open file is removed but is still being accessed
 .nfs*
 
-# ===================================
 # Deployment and Cloud Services
-# ===================================
 
 # Vercel
 .vercel
@@ -405,28 +390,18 @@ $RECYCLE.BIN/
 .yarn/install-state.gz
 .pnp.*
 
-# ===================================
 # Logs and Monitoring
-# ===================================
 
 # General logs
-*.log
 logs/
 *.log.*
 
 # Runtime logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
 
 # Diagnostic reports
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 
-# ===================================
 # Security and Certificates
-# ===================================
 
 # SSL certificates
 *.pem
@@ -442,9 +417,7 @@ id_rsa.pub
 id_ed25519
 id_ed25519.pub
 
-# ===================================
 # Project Specific
-# ===================================
 
 # Backup files
 *.bak
@@ -455,7 +428,6 @@ id_ed25519.pub
 # Temporary files
 *.tmp
 *.temp
-*~
 
 # Archive files
 *.zip
@@ -471,10 +443,8 @@ static/uploads/
 
 # Generated documentation
 docs/build/
-docs/_build/
 
 # Cache directories
-.cache/
 cache/
 
 # Lock files (optional - uncomment if you want to ignore them)
@@ -482,9 +452,7 @@ cache/
 # yarn.lock
 # pnpm-lock.yaml
 
-# ===================================
 # Testing and Coverage
-# ===================================
 
 # Test results
 test-results/
@@ -492,21 +460,15 @@ test-report.xml
 junit.xml
 
 # Playwright
-test-results/
 playwright-report/
 playwright/.cache/
 
 # Jest
 jest-coverage/
 
-# ===================================
 # Build and Distribution
-# ===================================
 
 # Build outputs
-build/
-dist/
-out/
 
 # Static exports
 export/
@@ -518,23 +480,16 @@ export/
 # Source maps (optional)
 *.map
 
-# ===================================
 # Miscellaneous
-# ===================================
 
-# Thumbnails
 *.thumb
 
 # Image cache
 .image-cache/
 
 # Temporary directories
-tmp/
-temp/
 
 # Editor directories and files
-.vscode/
-!.vscode/extensions.json
 .idea
 *.suo
 *.ntvs*
@@ -551,3 +506,20 @@ local.config.json
 
 # Sentry
 .sentryclirc
+
+
+# Logs
+
+# OS generated files
+
+# IDE specific files
+.vs/
+
+# Python specific
+
+# Node.js specific
+
+# Environment variables
+
+.tmp
+.temp
